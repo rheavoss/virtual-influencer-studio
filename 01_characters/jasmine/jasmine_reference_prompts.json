@@ -1,0 +1,206 @@
+{
+  "character": "Jasmine",
+  "version": "2.0",
+  "updated": "April 2026",
+  "purpose": "LoRA training reference set — 4 images, different settings, outfits, lighting, poses",
+
+  "fixed_core": {
+    "name": "Jasmine",
+    "age": "24-year-old — looks exactly 24, not younger not older",
+    "ethnicity": "East Asian woman",
+    "face_shape": "broad oval face with wide prominent cheekbones — has width and structure, not round",
+    "cheeks": "wide-set prominent cheekbones — the most defining structural feature",
+    "signature_flush": "NONE — zero flush, zero redness anywhere on face. Fair even-toned skin only. Rosy flush is BANNED.",
+    "eyes": "East Asian almond eyes slightly hooded, relaxed and natural — not wide open, not narrow",
+    "eye_color": "dark brown warm hazel irises",
+    "lashes": "clean bare lashes, no liner, no eyeliner",
+    "brows": "medium thickness natural straight-to-soft arch, dark brown, natural ungroomed look",
+    "nose": "medium nose, straight bridge, soft natural tip — not upturned, not wide",
+    "lips": "medium fullness natural bare-pink lips, soft natural shape — no exaggerated cupid's bow",
+    "jawline": "soft moderately defined jawline, blends into neck",
+    "cheekbones": "wide and prominent — defining structural feature of face",
+    "skin_tone": "fair skin with warm neutral-peachy undertone — even-toned, no flush, no redness, no pink cast",
+    "identity_rule": "identical facial proportions and bone structure, zero face morphing allowed",
+    "hair_color": "very dark uniform black-brown, no highlights, no colour variation",
+    "hair_texture": "slight natural waves",
+    "hair_length": "very long, past chest and shoulders",
+    "hair_style_default": "loosely falling over both shoulders",
+    "tattoo": "ONE single small red kiss mark tattoo on upper left chest just below collarbone — only one, never two",
+    "body_classification": "fit busty hourglass figure",
+    "bust": "DDD cup heavy natural bust with natural drop and weight — deep cleavage capable, prominent natural fullness",
+    "midsection": "flat firm toned midsection, no belly, no softness, no rounding",
+    "waist": "dramatically slim defined waist, sharp hourglass inward curve",
+    "hips": "full feminine hips, clear waist-to-hip ratio",
+    "thighs": "toned fit thighs, not heavy or thick",
+    "arms": "slender natural arms, soft not muscular, not chubby — matches slim petite frame",
+    "legs": "toned fit legs, proportionate",
+    "overall_body": "slim petite frame + DDD cup heavy natural bust = dramatic busty hourglass. Slim everywhere except the bust. Not BBW, not plus-size.",
+    "physical_reference": "32DDD-23-36 body ratio — dramatic bust-to-waist contrast on slim 52kg / 5ft4 frame"
+  },
+
+  "skin_quality_standard": {
+    "finish": "matte natural skin finish",
+    "texture": "visible skin pores and natural skin texture",
+    "imperfections": "subtle natural micro-imperfections, faint freckles, light skin variations",
+    "rule": "zero skin smoothing, zero beauty filter, zero airbrushing",
+    "camera_trick": "shot on iPhone 14, slight film grain — breaks AI-perfect smoothness"
+  },
+
+  "negative_prompt_standard": "rosy flush, pink cheeks, red cheeks, blushing, flushed skin, redness on face, shiny skin, glossy skin, oily skin, plastic skin, airbrushed skin, porcelain skin, waxy skin, beauty filter, skin smoothing, studio lighting, ring light, beauty lighting, HDR, over-exposed highlights, artificial light glow, cinematic lighting, dramatic lighting, heavy makeup, eyeliner, winged liner, different face, face morphing, round belly, soft belly, fat belly, pot belly, chubby belly, BBW, BBW body, plus-size, plus-size body, obese, overweight, thick waist, no waist definition, wide hips, thick thighs, heavy thighs, chubby arms, heavy arms, flabby arms, muscular arms, small breasts, two kiss tattoos, double lip tattoo, multiple tattoos, second tattoo, extra tattoo, missing tattoo, freckles, cartoon, anime, CGI, deformed, blurry, low quality",
+
+  "images": [
+
+    {
+      "image_id": "jasmine_ref_002",
+      "scene": "Gym — Morning Workout",
+      "outfit": {
+        "top": "fitted coral salmon sports bra, supportive, shows midriff",
+        "bottom": "black high-waist compression gym leggings, full length",
+        "shoes": "not visible",
+        "accessories": "none"
+      },
+      "expression": "focused and determined, confident direct gaze at camera, lips slightly parted, no smile",
+      "pose": "standing upright, hands on hips, slight 3/4 angle to camera, shoulders back, confident posture",
+      "setting": {
+        "location": "modern gym interior",
+        "background": "gym mirrors and squat rack softly blurred in background",
+        "time": "morning"
+      },
+      "lighting": {
+        "type": "soft diffused indoor gym lighting",
+        "quality": "even, no harsh shadows, no direct overhead light",
+        "color_temperature": "neutral white, no warm or cool cast",
+        "rule": "no ring light, no studio flash, no shiny highlights on skin"
+      },
+      "camera": {
+        "shot": "3/4 body shot, waist to top of head",
+        "angle": "eye level",
+        "lens": "50mm natural lens",
+        "style": "candid gym photography, iPhone feel",
+        "focus": "sharp subject, softly blurred background",
+        "format": "4:5 portrait"
+      },
+      "generation_string": "photorealistic portrait photograph, Jasmine, 24-year-old East Asian woman who looks exactly 24, broad oval face with wide prominent cheekbones, East Asian almond eyes slightly hooded relaxed and natural, dark brown warm hazel irises, clean bare lashes no liner, medium thickness natural dark brows, medium straight-bridged nose with soft natural tip, medium fullness natural bare-pink lips slightly parted, slender neck, soft moderately defined jawline, fair even-toned skin with warm neutral-peachy undertone no flush no redness anywhere, visible natural pores on cheeks and nose, 2-3 small acne marks on left cheek, natural slight under-eye shadow, clean smooth forehead, ONE single small red kiss mark tattoo on upper left chest below collarbone, very long dark uniform black-brown hair with slight natural waves loosely over both shoulders, slim petite frame, slender natural arms, DDD cup heavy natural bust with natural drop and weight deep cleavage, flat firm toned midsection, dramatically slim defined waist, full feminine hips, toned fit legs, slim busty hourglass figure slim everywhere except the bust, wearing a fitted coral sports bra and black high-waist compression gym leggings showing flat toned midriff, standing hands on hips slight 3/4 angle confident posture, focused determined expression direct gaze at camera, modern gym interior background with mirrors and squat rack softly blurred, soft diffused even indoor gym lighting neutral white no shadows no highlights on skin, shot on iPhone 14 50mm lens candid gym photography slight film grain, matte natural skin finish visible pores subtle skin texture zero skin smoothing, 3/4 body shot eye level shallow depth of field 4:5 portrait"
+    },
+
+    {
+      "image_id": "jasmine_ref_003",
+      "scene": "Beach — Golden Hour",
+      "outfit": {
+        "top": "white bikini top, supportive triangle style",
+        "bottom": "high-waist cream linen beach shorts, slightly loose",
+        "shoes": "barefoot",
+        "accessories": "none"
+      },
+      "expression": "natural soft warm smile, relaxed happy, looking directly at camera",
+      "pose": "standing relaxed on sand, one hand gently lifting hair from shoulder, slight body turn, weight on one leg",
+      "setting": {
+        "location": "sandy beach",
+        "background": "soft ocean waves and horizon blurred behind her",
+        "time": "golden hour, 30 minutes before sunset"
+      },
+      "lighting": {
+        "type": "warm golden hour natural sunlight",
+        "direction": "coming from the side, slight angle — not directly behind, not directly in front",
+        "quality": "warm golden tone, long soft shadows on sand",
+        "rule": "no overexposed highlights on skin, no blown-out whites, no shiny wet look"
+      },
+      "camera": {
+        "shot": "3/4 body shot, ankles to top of head",
+        "angle": "eye level, very slight low angle",
+        "lens": "50mm natural lens",
+        "style": "candid beach photography, iPhone feel",
+        "focus": "sharp subject, blurred ocean background",
+        "format": "4:5 portrait"
+      },
+      "generation_string": "photorealistic portrait photograph, Jasmine, 24-year-old East Asian woman who looks exactly 24, broad oval face with wide prominent cheekbones, East Asian almond eyes slightly hooded relaxed and natural, dark brown warm hazel irises, clean bare lashes no liner, medium thickness natural dark brows, medium straight-bridged nose with soft natural tip, medium fullness natural bare-pink lips soft warm smile natural white teeth slightly visible, slender neck, soft moderately defined jawline, fair even-toned skin with warm neutral-peachy undertone no flush no redness anywhere, visible natural pores on cheeks and nose, 2-3 small acne marks on left cheek, natural slight under-eye shadow, clean smooth forehead, ONE single small red kiss mark tattoo on upper left chest below collarbone, very long dark uniform black-brown hair with slight natural waves one hand gently lifting hair from shoulder, heavy natural bust with natural drop and weight, flat firm toned midsection, slim defined waist, proportionate hips, toned fit legs, barefoot on sand, fit busty hourglass figure, wearing a white bikini top and high-waist cream linen beach shorts, standing relaxed on sandy beach slight body turn weight on one leg, natural warm smile looking directly at camera, soft ocean waves and horizon blurred behind her, warm golden hour sunlight coming from the side long soft shadows on sand no blown highlights no shiny skin, shot on iPhone 14 50mm lens candid beach photography slight film grain, matte natural skin finish visible pores subtle skin texture zero skin smoothing, 3/4 body shot eye level shallow depth of field 4:5 portrait"
+    },
+
+    {
+      "image_id": "jasmine_ref_004",
+      "scene": "Café — Indoor Casual",
+      "outfit": {
+        "top": "fitted sage green wrap dress, V-neckline, midi length",
+        "bottom": "same dress",
+        "shoes": "not visible",
+        "accessories": "small gold hoop earrings"
+      },
+      "expression": "warm open approachable expression, slight soft closed-lip smile, relaxed candid energy",
+      "pose": "standing beside café counter, arms relaxed at sides, slight 3/4 body angle, looking directly at camera",
+      "setting": {
+        "location": "cozy café interior",
+        "background": "warm café atmosphere — wooden shelves, coffee equipment, softly blurred",
+        "time": "late morning"
+      },
+      "lighting": {
+        "type": "soft warm indoor ambient light",
+        "quality": "diffused, even, gentle warmth — like light through frosted windows",
+        "color_temperature": "warm amber-white, soft and flattering",
+        "rule": "no overhead harsh light, no ring light, no window glare, no shiny highlights on skin"
+      },
+      "camera": {
+        "shot": "3/4 body shot, waist to top of head",
+        "angle": "eye level",
+        "lens": "50mm natural lens",
+        "style": "candid lifestyle photography, iPhone feel",
+        "focus": "sharp subject, warm blurred café background",
+        "format": "4:5 portrait"
+      },
+      "generation_string": "photorealistic portrait photograph, Jasmine, 24-year-old East Asian woman who looks exactly 24, broad oval face with wide prominent cheekbones, East Asian almond eyes slightly hooded relaxed and natural, dark brown warm hazel irises, clean bare lashes no liner, medium thickness natural dark brows, medium straight-bridged nose with soft natural tip, medium fullness natural bare-pink lips soft closed-lip smile, slender neck, soft moderately defined jawline, fair even-toned skin with warm neutral-peachy undertone no flush no redness anywhere, visible natural pores on cheeks and nose, 2-3 small acne marks on left cheek, natural slight under-eye shadow, clean smooth forehead, ONE single small red kiss mark tattoo on upper left chest below collarbone, very long dark uniform black-brown hair with slight natural waves loosely over both shoulders, slim petite frame, slender natural arms, DDD cup heavy natural bust with natural drop and weight deep cleavage, flat firm toned midsection, dramatically slim defined waist, full feminine hips, toned fit legs, slim busty hourglass figure slim everywhere except the bust, wearing a fitted sage green wrap dress V-neckline midi length, small gold hoop earrings, standing beside café counter arms relaxed at sides slight 3/4 angle, warm open expression soft closed-lip smile looking directly at camera, cozy café interior background wooden shelves coffee equipment softly blurred, soft warm indoor ambient light diffused even gentle warmth like frosted window light no overhead harsh light no shiny highlights on skin, shot on iPhone 14 50mm lens candid lifestyle photography slight film grain, matte natural skin finish visible pores subtle skin texture zero skin smoothing, 3/4 body shot eye level shallow depth of field 4:5 portrait"
+    },
+
+    {
+      "image_id": "jasmine_ref_005",
+      "scene": "Traditional — Heritage Outdoor",
+      "outfit": {
+        "top": "deep teal silk saree blouse, fitted, short sleeve",
+        "bottom": "deep teal silk saree with gold zari border, elegantly draped, showing slim midriff",
+        "shoes": "not visible",
+        "accessories": "thin gold chain necklace, small gold jhumka earrings, thin gold bangles on one wrist"
+      },
+      "expression": "serene composed elegant expression, direct confident gaze at camera, lips naturally parted, slight regal calm",
+      "pose": "standing upright elegant, slight 3/4 body turn, hands gently clasped in front, saree drape naturally falling",
+      "setting": {
+        "location": "outdoor Indian heritage courtyard — sandstone architecture",
+        "background": "carved sandstone pillars or archway, softly blurred warm stone background",
+        "time": "late afternoon soft light"
+      },
+      "lighting": {
+        "type": "soft warm late afternoon natural light",
+        "direction": "gentle side light from left, wrapping softly",
+        "quality": "golden-warm but not harsh, no direct sun on face, diffused through architecture",
+        "rule": "no studio light, no flash, no shiny highlights on skin or silk fabric"
+      },
+      "camera": {
+        "shot": "3/4 body shot, mid-thigh to top of head — saree drape visible",
+        "angle": "eye level",
+        "lens": "85mm portrait lens — slight background compression",
+        "style": "elegant portrait photography, iPhone feel",
+        "focus": "sharp subject, sandstone background softly blurred",
+        "format": "4:5 portrait"
+      },
+      "generation_string": "photorealistic portrait photograph, Jasmine, 24-year-old East Asian woman who looks exactly 24, broad oval face with wide prominent cheekbones, East Asian almond eyes slightly hooded relaxed and natural, dark brown warm hazel irises, clean bare lashes no liner, medium thickness natural dark brows, medium straight-bridged nose with soft natural tip, medium fullness natural bare-pink lips naturally parted serene expression, slender neck, soft moderately defined jawline, fair even-toned skin with warm neutral-peachy undertone no flush no redness anywhere, visible natural pores on cheeks and nose, 2-3 small acne marks on left cheek, natural slight under-eye shadow, clean smooth forehead, ONE single small red kiss mark tattoo on upper left chest below collarbone, very long dark uniform black-brown hair with slight natural waves loosely over both shoulders, heavy natural bust with natural drop and weight, flat firm toned midsection showing slim bare midriff, slim defined waist, proportionate hips, toned fit legs, slender natural arms, fit busty hourglass figure, wearing a deep teal silk saree with gold zari border elegantly draped showing slim flat midriff, fitted teal silk blouse, thin gold chain necklace small gold jhumka earrings thin gold bangles, standing upright elegant slight 3/4 body turn hands gently clasped saree drape naturally falling, serene composed direct gaze at camera, outdoor Indian heritage courtyard carved sandstone pillars blurred warm stone background, soft warm late afternoon natural light gentle side light from left diffused golden-warm no harsh sun no shiny highlights on skin, shot on iPhone 14 85mm portrait lens slight background compression candid elegant portrait slight film grain, matte natural skin finish visible pores subtle skin texture zero skin smoothing, 3/4 body shot mid-thigh to head eye level shallow depth of field 4:5 portrait"
+    }
+
+  ],
+
+  "training_notes": {
+    "total_images_target": 15,
+    "images_ready": 5,
+    "images_remaining": 10,
+    "rejected_images": [
+      "Any image with two kiss mark tattoos — reject",
+      "Any image where rosy flush is not visible — reject",
+      "Any image where face shape has drifted significantly — reject",
+      "Nightclub/neon lit images — reject for LoRA, acceptable for content only"
+    ],
+    "variety_checklist": [
+      "Front facing — at least 3 images",
+      "3/4 angle left — at least 2 images",
+      "3/4 angle right — at least 2 images",
+      "Close-up face/portrait — at least 2 images",
+      "Different lighting conditions — minimum 3 types",
+      "Different outfit categories — minimum 4 types"
+    ]
+  }
+}

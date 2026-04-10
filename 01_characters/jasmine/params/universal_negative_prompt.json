@@ -1,0 +1,58 @@
+{
+  "name": "Universal Negative Prompt",
+  "version": "1.0",
+  "purpose": "Applied to EVERY image generation without exception. Prevents artificial, polished, non-human, AI-looking outputs and enforces photorealistic human skin and face fidelity.",
+
+  "negative_prompt": "plastic skin, barbie skin, porcelain skin, airbrushed skin, flawless skin, waxy skin, glossy skin, overly smooth skin, doll-like skin, perfect skin, makeup overload, AI artifacts, skin smoothing, beauty filter, plastic texture, wax figure, uncanny valley, deformed, blurry, low quality, cartoon, anime, face morphing, different face, changed eye shape, changed nose, changed lips, changed jawline",
+
+  "category_breakdown": {
+    "skin_quality_rejections": [
+      "plastic skin",
+      "barbie skin",
+      "porcelain skin",
+      "airbrushed skin",
+      "flawless skin",
+      "waxy skin",
+      "glossy skin",
+      "overly smooth skin",
+      "doll-like skin",
+      "perfect skin",
+      "skin smoothing",
+      "beauty filter",
+      "plastic texture"
+    ],
+    "ai_artifact_rejections": [
+      "AI artifacts",
+      "wax figure",
+      "uncanny valley",
+      "deformed",
+      "blurry",
+      "low quality",
+      "makeup overload"
+    ],
+    "style_rejections": [
+      "cartoon",
+      "anime"
+    ],
+    "face_consistency_rejections": [
+      "face morphing",
+      "different face",
+      "changed eye shape",
+      "changed nose",
+      "changed lips",
+      "changed jawline"
+    ]
+  },
+
+  "rules": [
+    "Always append this negative_prompt to EVERY image generation — no exceptions",
+    "This prompt prevents AI from generating polished, artificial, non-human looking outputs",
+    "This prompt preserves realistic skin texture, natural imperfections, and face consistency",
+    "This is the base negative prompt — additional character or scene-specific negatives can be added after it",
+    "Never remove any item from this list — each term targets a specific AI failure mode"
+  ],
+
+  "usage": "Copy the 'negative_prompt' string and paste directly into the negative prompt field of any image generation tool (MidJourney, Stable Diffusion, Grok, Flux, etc.)",
+
+  "last_updated": "2026-04-06"
+}

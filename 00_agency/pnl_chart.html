@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jasmine — P&L Dashboard</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#0d1117;color:#e6edf3;font-family:'Segoe UI',system-ui,sans-serif;padding:20px 16px;min-height:100vh}
+h1{text-align:center;font-size:20px;color:#58a6ff;margin-bottom:4px}
+.subtitle{text-align:center;color:#6e7681;font-size:12px;margin-bottom:20px}
+/* Summary cards */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin-bottom:20px}
+.stat{background:#161b22;border:1px solid #30363d;border-radius:10px;padding:14px 16px}
+.stat.green{border-color:#238636}
+.stat-label{font-size:11px;color:#8b949e;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+.stat-value{font-size:20px;font-weight:700;color:#e6edf3}
+.stat-value.g{color:#3fb950}
+.stat-value.r{color:#f85149}
+.stat-value.b{color:#58a6ff}
+.stat-sub{font-size:11px;color:#6e7681;margin-top:3px}
+/* Tabs */
+.tabs{display:flex;gap:0;margin-bottom:16px;border-bottom:1px solid #30363d}
+.tab{background:none;border:none;color:#8b949e;padding:10px 20px;cursor:pointer;font-size:14px;border-bottom:2px solid transparent;margin-bottom:-1px;transition:all .15s}
+.tab:hover{color:#e6edf3}
+.tab.active{color:#58a6ff;border-bottom-color:#58a6ff}
+/* Chart */
+.chart-card{background:#161b22;border:1px solid #30363d;border-radius:10px;padding:20px;margin-bottom:16px}
+.chart-title{font-size:14px;color:#8b949e;margin-bottom:14px;font-weight:600}
+.chart-wrap{height:320px;position:relative}
+.chart-wrap.sm{height:220px}
+/* Legend */
+.legend{display:flex;flex-wrap:wrap;gap:16px;margin-top:12px}
+.leg{display:flex;align-items:center;gap:6px;font-size:11px;color:#8b949e}
+.dot{width:9px;height:9px;border-radius:50%;flex-shrink:0}
+.dsh{width:18px;height:2px;flex-shrink:0;background:repeating-linear-gradient(90deg,rgba(248,81,73,.7) 0 4px,transparent 4px 8px)}
+/* Table */
+.table-outer{overflow-x:auto;border-radius:10px;border:1px solid #30363d}
+table{border-collapse:collapse;width:100%;min-width:1200px;font-size:12px}
+th,td{padding:8px 10px;text-align:right;white-space:nowrap;border-bottom:1px solid #21262d}
+td:first-child,th:first-child{text-align:left;position:sticky;left:0;background:#161b22;z-index:1}
+th{background:#161b22;color:#8b949e;font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.3px}
+th.rev-hd{background:#0d2a12;color:#3fb950}
+th.cost-hd{background:#2d1214;color:#f85149}
+th.pl-hd{background:#101c30;color:#58a6ff}
+td.rev{color:#3fb950}
+td.deduct{color:#f0883e}
+td.cost{color:#f85149}
+td.profit{color:#58a6ff;font-weight:700}
+td.loss{color:#f85149;font-weight:700}
+td.cum{font-weight:700}
+tr.milestone{background:#0d2a1a}
+tr.total-row td{background:#1c2128;font-weight:700;border-top:2px solid #30363d}
+tr:hover td{background:#1c2128}
+tr:hover td:first-child{background:#1c2128}
+/* Annotations */
+.note-box{background:#1c2128;border:1px solid #30363d;border-radius:8px;padding:10px 14px;font-size:11px;color:#8b949e;margin-bottom:16px;line-height:1.6}
+.note-box span.g{color:#3fb950}
+.note-box span.b{color:#58a6ff}
+.note-box span.o{color:#f0883e}
+</style>
+</head>
+<body>
+<h1>Jasmine — 12-Month P&amp;L Dashboard</h1>
+<div class="subtitle">All values in INR · ₹84 = $1 USD · IG subscription ₹200/mo launches at M4 (10k followers)</div>
+
+<div class="stats" id="stats"></div>
+
+<div class="tabs">
+  <button class="tab active" onclick="show('charts')">Charts</button>
+  <button class="tab" onclick="show('table')">Full Breakdown</button>
+</div>
+
+<div id="charts">
+  <div class="note-box">
+    <span class="g">▲ M3</span> $2k MRR milestone &nbsp;·&nbsp;
+    <span class="g">▲ M5</span> $5k MRR &nbsp;·&nbsp;
+    <span class="b">★ M4</span> Instagram ₹200 subscription launches &nbsp;·&nbsp;
+    <span class="g">▲ M10</span> $20k MRR &nbsp;·&nbsp;
+    <span class="o">Hover</span> over graph for full monthly detail
+  </div>
+  <div class="chart-card">
+    <div class="chart-title">Monthly Revenue &amp; Profit</div>
+    <div class="chart-wrap"><canvas id="plChart"></canvas></div>
+    <div class="legend">
+      <div class="leg"><div class="dot" style="background:#58a6ff"></div>Gross Revenue</div>
+      <div class="leg"><div class="dot" style="background:#f0883e"></div>Net Revenue (after platform cuts)</div>
+      <div class="leg"><div class="dot" style="background:#3fb950"></div>Net Profit (after all costs)</div>
+      <div class="leg"><div class="dsh"></div>Total Costs</div>
+    </div>
+  </div>
+  <div class="chart-card">
+    <div class="chart-title">Cumulative Net Profit (Running Total)</div>
+    <div class="chart-wrap sm"><canvas id="cumulChart"></canvas></div>
+  </div>
+</div>
+
+<div id="table" style="display:none">
+  <div class="note-box">
+    Milestone months highlighted in green &nbsp;·&nbsp;
+    Platform cuts: Fanvue 15% · Passes/PPV/Telegram/Brand 10% · Instagram 20% &nbsp;·&nbsp;
+    IG subscription (₹200/mo) active from M4 when Instagram crosses 10,000 followers
+  </div>
+  <div class="table-outer">
+    <table id="tbl"></table>
+  </div>
+</div>
+
+<script>
+// ── RAW DATA ─────────────────────────────────────────────────────────────────
+const months = ['M1','M2','M3','M4','M5','M6','M7','M8','M9','M10','M11','M12'];
+const milestones = {2:'$2k MRR', 4:'IG Sub', 9:'$20k MRR'}; // 0-indexed
+
+// Revenue (INR) per stream per month
+const R = [
+//  fanvue    passes   ppvVoice  telegram  brand    igSubs
+  [  13440,    3360,    4200,       0,       0,       0 ], // M1
+  [  50400,   13440,   12600,       0,       0,       0 ], // M2
+  [ 117600,   33600,   34020,       0,       0,       0 ], // M3
+  [ 184800,   58800,   58800,       0,       0,   36000 ], // M4  IG starts
+  [ 268800,   92400,   79800,       0,       0,   60000 ], // M5
+  [ 352800,  134400,  100800,   67200,       0,   90000 ], // M6  Telegram starts
+  [ 470400,  184800,  134400,   96600,   21000,  120000 ], // M7  Brand starts
+  [ 588000,  235200,  168000,  126000,   42000,  150000 ], // M8
+  [ 714000,  285600,  210000,  155400,   84000,  180000 ], // M9
+  [ 840000,  336000,  252000,  184800,  126000,  210000 ], // M10
+  [ 966000,  403200,  315000,  226800,  168000,  240000 ], // M11
+  [1092000,  470400,  378000,  268800,  210000,  270000 ], // M12
+];
+
+// Keep rates per stream [fanvue, passes, ppvVoice, telegram, brand, igSubs]
+const KEEP = [0.85, 0.90, 0.90, 0.90, 0.90, 0.80];
+
+// Costs (INR) per line item per month
+const C = [
+//  higgs   eleven  grok   claude  ads    research  buffer
+  [  756,    420,   542,   4000,     0,       0,      0 ], // M1
+  [  756,    420,   542,   4000,     0,       0,      0 ], // M2
+  [  756,    420,   542,   4000,  3000,    3000,      0 ], // M3
+  [  756,    420,   542,   4000,  6000,    3000,      0 ], // M4
+  [  756,    420,   542,   4000,  6000,    3000,      0 ], // M5
+  [  756,    420,   542,   4000,  6000,    5000,      0 ], // M6
+  [  756,    420,   542,   4000,  6000,    5000,      0 ], // M7
+  [  756,    420,   542,   4000,  6000,    5000,   1500 ], // M8
+  [  756,    420,   542,   4000,  6000,    5000,   1500 ], // M9
+  [  756,    420,   542,   4000,  6000,    8000,   1500 ], // M10
+  [  756,    420,   542,   4000,  6000,    8000,   1500 ], // M11
+  [  756,    420,   542,   4000,  6000,    8000,   1500 ], // M12
+];
+
+// ── DERIVED VALUES ────────────────────────────────────────────────────────────
+const grossRev = R.map(r => r.reduce((a,b)=>a+b,0));
+const netRev   = R.map(r => r.reduce((s,v,i)=>s+v*KEEP[i],0));
+const platCuts = grossRev.map((g,i) => g - netRev[i]);
+const totalCosts = C.map(c => c.reduce((a,b)=>a+b,0));
+const netProfit  = netRev.map((n,i) => n - totalCosts[i]);
+const cumulative = netProfit.reduce((acc,v,i)=>{ acc.push((acc[i-1]||0)+v); return acc; },[]);
+
+// ── TOTALS ────────────────────────────────────────────────────────────────────
+const sum = arr => arr.reduce((a,b)=>a+b,0);
+const T = {
+  gross: sum(grossRev), net: sum(netRev),
+  costs: sum(totalCosts), profit: sum(netProfit),
+  cuts: sum(platCuts)
+};
+
+// ── FORMATTING ────────────────────────────────────────────────────────────────
+const fi = v => '₹' + Math.round(v).toLocaleString('en-IN');
+const fL = v => {
+  if(v>=10000000) return '₹'+(v/10000000).toFixed(2)+'Cr';
+  if(v>=100000)   return '₹'+(v/100000).toFixed(2)+'L';
+  return '₹'+(v/1000).toFixed(1)+'K';
+};
+
+// ── STATS CARDS ──────────────────────────────────────────────────────────────
+const statsEl = document.getElementById('stats');
+const cards = [
+  {label:'12M Gross Revenue', val:T.gross, cls:'b', sub:'Before platform cuts'},
+  {label:'12M Net Revenue',   val:T.net,   cls:'g', sub:'After all platform fees'},
+  {label:'12M Total Costs',   val:T.costs, cls:'r', sub:'Tools + Ads + Research'},
+  {label:'12M Net Profit',    val:T.profit,cls:'g', sub:'Money in your pocket', green:true},
+];
+statsEl.innerHTML = cards.map(c=>`
+  <div class="stat${c.green?' green':''}">
+    <div class="stat-label">${c.label}</div>
+    <div class="stat-value ${c.cls}">${fL(c.val)}</div>
+    <div class="stat-sub">${fi(c.val)} &nbsp;·&nbsp; ${c.sub}</div>
+  </div>`).join('');
+
+// ── TAB TOGGLE ────────────────────────────────────────────────────────────────
+function show(id){
+  ['charts','table'].forEach(s=>{
+    document.getElementById(s).style.display = s===id?'block':'none';
+  });
+  document.querySelectorAll('.tab').forEach((t,i)=>{
+    t.className='tab'+((['charts','table'][i]===id)?' active':'');
+  });
+}
+
+// ── MILESTONE PLUGIN ─────────────────────────────────────────────────────────
+const milestonePlugin = {
+  id:'ml',
+  afterDraw(chart){
+    const {ctx,scales:{x,y}} = chart;
+    Object.entries(milestones).forEach(([idx,label])=>{
+      const px = x.getPixelForIndex(+idx);
+      ctx.save();
+      ctx.setLineDash([3,4]);
+      ctx.beginPath();
+      ctx.moveTo(px, y.top+16);
+      ctx.lineTo(px, y.bottom);
+      ctx.strokeStyle='rgba(240,136,62,0.4)';
+      ctx.lineWidth=1;
+      ctx.stroke();
+      ctx.setLineDash([]);
+      ctx.fillStyle='#f0883e';
+      ctx.globalAlpha=0.8;
+      ctx.font='10px Segoe UI';
+      ctx.textAlign='center';
+      ctx.fillText(label, px, y.top+12);
+      ctx.restore();
+    });
+  }
+};
+
+// ── TOOLTIP CALLBACK ─────────────────────────────────────────────────────────
+function makeTooltip(){
+  return {
+    backgroundColor:'#1c2128',
+    borderColor:'#30363d',
+    borderWidth:1,
+    titleColor:'#e6edf3',
+    titleFont:{size:13,weight:'700'},
+    bodyColor:'#8b949e',
+    bodyFont:{size:12},
+    padding:14,
+    callbacks:{
+      title: items => {
+        const i = items[0].dataIndex;
+        const ms = milestones[i] ? ` — ${milestones[i]}` : '';
+        return `Month ${i+1}${ms}`;
+      },
+      beforeBody: () => '',
+      label: ctx => {
+        const i = ctx.dataIndex;
+        if(ctx.datasetIndex === 0) return [
+          `  Gross Revenue :  ${fi(grossRev[i])}`,
+          `  Platform Cuts :  ${fi(platCuts[i])}`,
+          `  Net Revenue   :  ${fi(netRev[i])}`,
+        ];
+        if(ctx.datasetIndex === 2) return [
+          `  Net Profit    :  ${fi(netProfit[i])}`,
+          `  Cumulative    :  ${fi(cumulative[i])}`,
+        ];
+        return null;
+      },
+      afterBody: items => {
+        const i = items[0].dataIndex;
+        return [
+          '  ─────────────────────────',
+          `  Total Costs   :  ${fi(totalCosts[i])}`,
+        ];
+      }
+    }
+  };
+}
+
+// ── MAIN CHART ────────────────────────────────────────────────────────────────
+new Chart(document.getElementById('plChart').getContext('2d'),{
+  type:'line',
+  plugins:[milestonePlugin],
+  data:{
+    labels: months,
+    datasets:[
+      {label:'Gross Revenue',data:grossRev,borderColor:'#58a6ff',backgroundColor:'rgba(88,166,255,.05)',borderWidth:2,pointBackgroundColor:'#58a6ff',pointBorderColor:'#0d1117',pointBorderWidth:1.5,pointRadius:5,pointHoverRadius:9,fill:false,tension:.35},
+      {label:'Net Revenue',data:netRev,borderColor:'#f0883e',backgroundColor:'rgba(240,136,62,.05)',borderWidth:2,pointBackgroundColor:'#f0883e',pointBorderColor:'#0d1117',pointBorderWidth:1.5,pointRadius:4,pointHoverRadius:8,fill:false,tension:.35},
+      {label:'Net Profit',data:netProfit,borderColor:'#3fb950',backgroundColor:'rgba(63,185,80,.12)',borderWidth:3,pointBackgroundColor:'#3fb950',pointBorderColor:'#0d1117',pointBorderWidth:1.5,pointRadius:5,pointHoverRadius:9,fill:true,tension:.35},
+      {label:'Total Costs',data:totalCosts,borderColor:'rgba(248,81,73,.6)',backgroundColor:'rgba(248,81,73,.06)',borderWidth:1.5,borderDash:[5,5],pointBackgroundColor:'rgba(248,81,73,.6)',pointRadius:3,pointHoverRadius:5,fill:true,tension:.1},
+    ]
+  },
+  options:{
+    responsive:true, maintainAspectRatio:false,
+    interaction:{intersect:false, mode:'index'},
+    plugins:{
+      legend:{display:false},
+      tooltip: makeTooltip()
+    },
+    scales:{
+      x:{ticks:{color:'#8b949e',font:{size:12}},grid:{color:'#21262d'},border:{color:'#30363d'}},
+      y:{ticks:{color:'#8b949e',font:{size:11},callback:v=>fL(v),maxTicksLimit:7},grid:{color:'#21262d'},border:{color:'#30363d'}}
+    }
+  }
+});
+
+// ── CUMULATIVE CHART ─────────────────────────────────────────────────────────
+new Chart(document.getElementById('cumulChart').getContext('2d'),{
+  type:'line',
+  data:{
+    labels: months,
+    datasets:[{
+      label:'Cumulative Net Profit',
+      data: cumulative,
+      borderColor:'#3fb950',
+      backgroundColor:'rgba(63,185,80,.15)',
+      borderWidth:2.5,
+      pointBackgroundColor:months.map((_,i)=>i===11?'#3fb950':'rgba(63,185,80,.6)'),
+      pointBorderColor:'#0d1117',
+      pointBorderWidth:1.5,
+      pointRadius:months.map((_,i)=>i===11?7:4),
+      fill:true,
+      tension:.4
+    }]
+  },
+  options:{
+    responsive:true, maintainAspectRatio:false,
+    interaction:{intersect:false, mode:'index'},
+    plugins:{
+      legend:{display:false},
+      tooltip:{
+        backgroundColor:'#1c2128',borderColor:'#30363d',borderWidth:1,
+        titleColor:'#e6edf3',bodyColor:'#8b949e',padding:12,
+        callbacks:{
+          title: items => `Month ${items[0].dataIndex+1}`,
+          label: ctx => `  Cumulative Profit: ${fi(ctx.parsed.y)}  (${fL(ctx.parsed.y)})`
+        }
+      }
+    },
+    scales:{
+      x:{ticks:{color:'#8b949e',font:{size:12}},grid:{color:'#21262d'},border:{color:'#30363d'}},
+      y:{ticks:{color:'#8b949e',font:{size:11},callback:v=>fL(v),maxTicksLimit:6},grid:{color:'#21262d'},border:{color:'#30363d'}}
+    }
+  }
+});
+
+// ── DETAILED TABLE ────────────────────────────────────────────────────────────
+const revLabels  = ['Fanvue','Passes','PPV+Voice','Telegram','Brand Deals','IG Subs ₹200'];
+const costLabels = ['Higgsfield','ElevenLabs','Grok','Claude ×2','Meta Ads','Research','Buffer'];
+
+function buildTable(){
+  const tbl = document.getElementById('tbl');
+  const mileMonths = new Set([2,4,9]); // 0-indexed milestone months (M3, M5, M10)
+
+  // Header row 1 (group labels)
+  const hg1 = document.createElement('tr');
+  hg1.innerHTML = `
+    <th rowspan="2" style="text-align:left;background:#0d1117">Month</th>
+    <th colspan="${revLabels.length}" class="rev-hd">Revenue Streams (Gross ₹)</th>
+    <th class="rev-hd">Gross Total</th>
+    <th class="cost-hd" style="color:#f0883e">Platform Cuts</th>
+    <th class="rev-hd">Net Revenue</th>
+    <th colspan="${costLabels.length}" class="cost-hd">Cost Line Items (₹)</th>
+    <th class="cost-hd">Total Costs</th>
+    <th class="pl-hd">Net Profit</th>
+    <th class="pl-hd">Cumulative</th>
+  `;
+  tbl.appendChild(hg1);
+
+  // Header row 2 (column names)
+  const hg2 = document.createElement('tr');
+  hg2.innerHTML = [
+    ...revLabels.map(l=>`<th class="rev-hd">${l}</th>`),
+    `<th class="rev-hd"></th>`,
+    `<th class="cost-hd" style="color:#f0883e"></th>`,
+    `<th class="rev-hd"></th>`,
+    ...costLabels.map(l=>`<th class="cost-hd">${l}</th>`),
+    `<th class="cost-hd"></th>`,
+    `<th class="pl-hd"></th>`,
+    `<th class="pl-hd"></th>`,
+  ].join('');
+  tbl.appendChild(hg2);
+
+  // Data rows
+  const totRev = Array(revLabels.length).fill(0);
+  const totCost = Array(costLabels.length).fill(0);
+  let totGross=0, totCuts=0, totNetRev=0, totTotalCosts=0, totProfit=0;
+
+  months.forEach((m,i)=>{
+    const gross = grossRev[i];
+    const net   = netRev[i];
+    const cuts  = platCuts[i];
+    const cost  = totalCosts[i];
+    const prof  = netProfit[i];
+    const cum   = cumulative[i];
+    const isMile = [2,4,9].includes(i);
+
+    R[i].forEach((v,j)=>totRev[j]+=v);
+    C[i].forEach((v,j)=>totCost[j]+=v);
+    totGross+=gross; totCuts+=cuts; totNetRev+=net;
+    totTotalCosts+=cost; totProfit+=prof;
+
+    const tr = document.createElement('tr');
+    if(isMile) tr.className='milestone';
+    tr.innerHTML = `
+      <td style="color:${isMile?'#3fb950':'#e6edf3'};font-weight:${isMile?'700':'400'}">${m}</td>
+      ${R[i].map(v=>`<td class="rev">${v?fi(v):'—'}</td>`).join('')}
+      <td class="rev" style="font-weight:700">${fi(gross)}</td>
+      <td class="deduct">${fi(cuts)}</td>
+      <td class="rev" style="font-weight:700">${fi(net)}</td>
+      ${C[i].map(v=>`<td class="cost">${v?fi(v):'—'}</td>`).join('')}
+      <td class="cost" style="font-weight:700">${fi(cost)}</td>
+      <td class="${prof>=0?'profit':'loss'}">${fi(prof)}</td>
+      <td class="cum" style="color:#58a6ff">${fi(cum)}</td>
+    `;
+    tbl.appendChild(tr);
+  });
+
+  // Total row
+  const tr = document.createElement('tr');
+  tr.className='total-row';
+  tr.innerHTML = `
+    <td style="color:#e6edf3">TOTAL</td>
+    ${totRev.map(v=>`<td class="rev">${fi(v)}</td>`).join('')}
+    <td class="rev">${fi(totGross)}</td>
+    <td class="deduct">${fi(totCuts)}</td>
+    <td class="rev">${fi(totNetRev)}</td>
+    ${totCost.map(v=>`<td class="cost">${fi(v)}</td>`).join('')}
+    <td class="cost">${fi(totTotalCosts)}</td>
+    <td class="profit">${fi(totProfit)}</td>
+    <td class="cum" style="color:#58a6ff">${fi(totProfit)}</td>
+  `;
+  tbl.appendChild(tr);
+
+  // Visual subtotals row
+  const tr2 = document.createElement('tr');
+  tr2.innerHTML = `
+    <td colspan="${1+revLabels.length+3}" style="color:#6e7681;font-size:11px;padding:6px 10px;border-top:none">
+      Gross ${fL(totGross)} &nbsp;→&nbsp; After platform cuts ${fL(totNetRev)} &nbsp;→&nbsp; After all costs <strong style="color:#3fb950">${fL(totProfit)}</strong>
+    </td>
+    <td colspan="${costLabels.length+3}" style="border-top:none"></td>
+  `;
+  tbl.appendChild(tr2);
+}
+buildTable();
+</script>
+</body>
+</html>

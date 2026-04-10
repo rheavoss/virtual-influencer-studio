@@ -1,0 +1,790 @@
+{
+  "meta": {
+    "title": "AI Tools Research — Video and Image Production Stack",
+    "version": "1.1",
+    "research_date": "2026-04-10",
+    "last_updated": "2026-04-10",
+    "research_method": "Live web search — official documentation + third-party verification",
+    "purpose": "Evaluate all candidate AI tools for Jasmine content pipeline across 8 content types — VIDEO and IMAGE only",
+    "prepared_for": "Antigravity review",
+    "scope_note": "AUDIO IS SOLVED — ElevenLabs is the confirmed and locked audio solution for all voice, narration, and emotion tagging. This document covers VIDEO GENERATION and IMAGE GENERATION only. Tools are not evaluated on audio capability.",
+    "confirmed_locked_tools": {
+      "audio_voice": {
+        "tool": "ElevenLabs",
+        "plan": "Starter — $5/month",
+        "use": "All voice cloning, narration, talking head audio, emotion tags ([excited], [soft], [whispering], [energetic])",
+        "status": "CONFIRMED — no further evaluation needed"
+      }
+    },
+    "key_findings_summary": [
+      "AUDIO CONFIRMED — ElevenLabs handles all audio. Not under evaluation.",
+      "Tensor.art went fully SFW in 2025 — drop it",
+      "Higgsfield hosts Wan 2.6 which is near-uncensored — web-based NSFW video without local GPU",
+      "Wan AI is now on v2.7 (not 2.2 as previously documented)",
+      "Google Imagen 3 confirmed as the Google image generation model — no LoRA support, SFW only",
+      "Your Google One = AI Pro tier = Veo 2 + Veo 3.1 Fast only (not full Veo 3)",
+      "Full Veo 3 requires Google AI Ultra at $249/month — not justified at current stage",
+      "Seedance 2 now accessible via CapCut internationally + fal.ai API (April 2026)",
+      "FaceFusion now on v3.5 — NSFW filter bypassable via one config flag",
+      "MuseTalk retained — its role is VIDEO lip sync (mouth movement), with ElevenLabs audio as the input"
+    ]
+  },
+
+  "tools": [
+
+    {
+      "id": "wan_ai",
+      "name": "Wan AI",
+      "developer": "Alibaba / Qwen",
+      "current_version": "2.7 (released April 6, 2026)",
+      "official_url": "https://wan.video",
+      "what_it_does": "Open-source video generation model family. Supports T2V, I2V, image generation, video editing, and audio-video joint generation. Version 2.7 added Thinking Mode for improved prompt understanding.",
+      "capabilities": {
+        "image_generation": true,
+        "image_generation_notes": "Text-to-image and image-to-image included on platform",
+        "video_generation": true,
+        "video_types": ["T2V", "I2V", "S2V (speech-to-video)", "video editing", "VACE (video-audio-conditioned editing)"],
+        "face_swap": false,
+        "lip_sync": true,
+        "lip_sync_notes": "Via S2V (speech-to-video) feature",
+        "lora_support": true,
+        "lora_notes": "Full LoRA support via ComfyUI or local training. Hosted platform does not support custom LoRA.",
+        "motion_control": true,
+        "output_resolution": "720p and 1080p"
+      },
+      "nsfw": {
+        "hosted_platform": "fully_blocked",
+        "hosted_notes": "Terms of Service explicitly prohibit sexually explicit or suggestive content. API is also censored.",
+        "local_weights": "unrestricted",
+        "local_notes": "Wan 2.1 through 2.7 weights are freely downloadable. No built-in content filter. Running locally via ComfyUI bypasses all restrictions. NSFW LoRAs confirmed working for explicit video generation. Most capable open-source NSFW video pipeline currently available.",
+        "verdict": "Local deployment only for NSFW. Hosted for SFW production use."
+      },
+      "pricing": {
+        "pro": "$5/month (billed yearly) — 300 credits/month",
+        "premium": "$20/month (billed yearly) — 1200 credits/month",
+        "credits_addon": "$1.50 per 30 credits up to $100 per 3900 credits",
+        "api_third_party": "~$0.625 per 720p video via third-party API",
+        "local_weights": "Free — download from HuggingFace"
+      },
+      "verdict": "strong_fit",
+      "verdict_notes": "Core video generation tool for the pipeline. Hosted at $5/mo for SFW production. Local weights for NSFW via ComfyUI on RunPod. Upgrade to 2.7 from 2.2 in all documentation.",
+      "sources": [
+        "https://wan.video/",
+        "https://create.wan.video/pricing",
+        "https://nerdbot.com/2025/11/25/does-wan-ai-allow-to-create-nsfw-videos-complete-guide/",
+        "https://www.financialcontent.com/article/abnewswire-2026-4-6-alibaba-launches-wan-27-breakthrough-ai-image-and-video-generation-model-with-thinking-mode"
+      ]
+    },
+
+    {
+      "id": "meta_ai",
+      "name": "Meta AI",
+      "developer": "Meta",
+      "official_url": "https://meta.ai",
+      "what_it_does": "Meta's consumer AI assistant integrated into Instagram, Facebook, WhatsApp, and Messenger. Includes basic image generation (Imagine with Meta AI) built on Meta's own foundation models.",
+      "capabilities": {
+        "image_generation": true,
+        "image_generation_notes": "Basic image generation only. No LoRA, no custom models, no character consistency mechanism.",
+        "video_generation": false,
+        "video_generation_notes": "Movie Gen research model exists but is not consumer-accessible.",
+        "face_swap": false,
+        "lip_sync": false,
+        "lora_support": false,
+        "motion_control": false
+      },
+      "nsfw": {
+        "hosted_platform": "fully_blocked",
+        "hosted_notes": "Meta policy prohibits nude, intimate, or sexually suggestive imagery. No age-verify toggle. No paid tier unlocks NSFW. Further tightened in Q2 2026 following regulatory pressure.",
+        "local_weights": "not_available",
+        "verdict": "Fully blocked — no path to NSFW, no unlock available"
+      },
+      "pricing": {
+        "free": "Bundled with Meta apps and meta.ai — no paid tier"
+      },
+      "verdict": "drop",
+      "verdict_notes": "No custom models, no LoRA, no video, fully blocked NSFW. Unusable for this pipeline beyond quick SFW concept tests.",
+      "sources": [
+        "https://www.facebook.com/legal/ai-terms"
+      ]
+    },
+
+    {
+      "id": "google_veo3",
+      "name": "Google Veo 3 / Google Flow",
+      "developer": "Google DeepMind",
+      "official_url": "https://labs.google/flow/about",
+      "what_it_does": "Veo 3 is Google's flagship video generation model — the first to natively generate audio (sound effects, ambient noise, dialogue) alongside video. Google Flow is the filmmaking interface that combines Veo, Imagen 3, and Gemini into a single pipeline.",
+      "capabilities": {
+        "image_generation": true,
+        "image_generation_notes": "Via Imagen 3 integration in Flow",
+        "video_generation": true,
+        "video_types": ["T2V", "I2V"],
+        "video_generation_notes": "Accurate lip sync, physics, cinematography controls. Can persist cast, locations, and style as story assets across shots.",
+        "face_swap": false,
+        "lip_sync": true,
+        "lip_sync_notes": "Native audio-video joint generation — not post-production lip sync",
+        "lora_support": false,
+        "lora_notes": "No custom model fine-tuning for end users",
+        "motion_control": true,
+        "motion_notes": "Camera movement and shot type control"
+      },
+      "access_tiers": {
+        "google_one_ai_pro": {
+          "price": "$19.99/month",
+          "veo_access": "Veo 2 + Veo 3.1 Fast only",
+          "note": "This is what the user currently has via Google One"
+        },
+        "google_ai_ultra": {
+          "price": "$249.99/month",
+          "veo_access": "Full Veo 3.1 with audio generation",
+          "credits": "~25000 AI credits/month, ~500 Veo 3 video clips/month at 50 credits each",
+          "note": "Required for full Veo 3 capability — NOT included in current Google One plan"
+        },
+        "vertex_ai": {
+          "price": "Enterprise pay-per-use",
+          "note": "API with configurable safety filters"
+        }
+      },
+      "nsfw": {
+        "hosted_platform": "fully_blocked",
+        "hosted_notes": "Google Responsible AI guidelines block explicit sexual content across all consumer products. Vertex AI can configure safety filter thresholds for violence/sensitivity categories but explicit sexual content remains blocked regardless.",
+        "local_weights": "not_available",
+        "verdict": "Fully blocked — no unlock path"
+      },
+      "pricing": {
+        "current_user_access": "Google AI Pro via Google One — Veo 2 + Veo 3.1 Fast",
+        "full_veo3": "$249.99/month Google AI Ultra"
+      },
+      "verdict": "partial_fit",
+      "verdict_notes": "Outstanding quality for SFW cinematic video. Audio generation is unique. The user's existing Google One gives access to Veo 3.1 Fast — use for lifestyle/travel/fashion B-roll (Content Type 5). Full Veo 3 at $250/mo is not justified at current stage.",
+      "sources": [
+        "https://deepmind.google/models/veo/",
+        "https://labs.google/flow/about",
+        "https://one.google.com/intl/en/about/google-ai-plans/",
+        "https://costgoat.com/pricing/google-veo"
+      ]
+    },
+
+    {
+      "id": "google_imagen3",
+      "name": "Google Imagen 3",
+      "developer": "Google DeepMind",
+      "official_url": "https://deepmind.google/models/imagen/",
+      "what_it_does": "Google's state-of-the-art text-to-image model. Available in Gemini app, Google AI Studio (Gemini API), and Vertex AI. Produces photorealistic images with strong detail and lighting.",
+      "note": "This is the 'Google image generation model' referenced in the research brief",
+      "capabilities": {
+        "image_generation": true,
+        "image_generation_notes": "Photorealistic images, strong prompt adherence. No LoRA or custom model support — fully closed system.",
+        "video_generation": false,
+        "face_swap": false,
+        "lip_sync": false,
+        "lora_support": false,
+        "lora_notes": "Vertex AI supports model customization but not LoRA injection. No fine-tuning available to consumer users.",
+        "motion_control": false
+      },
+      "nsfw": {
+        "hosted_platform": "fully_blocked",
+        "hosted_notes": "Safety filters cover sexual content, violence, derogatory content. Vertex AI person_generation setting controls photorealism of people (not explicit content). Explicit sexual content blocked regardless of any safety setting.",
+        "local_weights": "not_available",
+        "verdict": "Fully blocked — no unlock path"
+      },
+      "pricing": {
+        "gemini_api": "$0.03 per image",
+        "gemini_app": "Free with limits for US users",
+        "google_ai_pro": "Included with $19.99/month plan",
+        "vertex_ai": "Enterprise pricing"
+      },
+      "verdict": "partial_fit",
+      "verdict_notes": "Excellent photorealism at $0.03/image. No LoRA = no character consistency for Jasmine. Use only for occasional SFW backgrounds, location shots, or mood boards where exact Jasmine identity is not required.",
+      "sources": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/models/imagen/3-0-generate",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/image/responsible-ai-imagen",
+        "https://venturebeat.com/ai/google-quietly-opens-imagen-3-access-to-all-u-s-users"
+      ]
+    },
+
+    {
+      "id": "higgsfield",
+      "name": "Higgsfield AI",
+      "developer": "Higgsfield",
+      "official_url": "https://higgsfield.ai",
+      "what_it_does": "Multi-model AI video and image generation platform. Acts as an aggregator — integrates Wan 2.6+, Seedream 4.0, Kling 3.0, Veo 3.1, Sora 2, and their own Higgsfield Soul model. Specialises in face swap, character swap, body swap, and motion transfer.",
+      "capabilities": {
+        "image_generation": true,
+        "image_generation_notes": "Via Seedream 4.0 (ByteDance) integration — uncensored on this platform unlike ByteDance's own apps",
+        "video_generation": true,
+        "video_types": ["I2V", "T2V", "face swap video", "full character/body swap", "AI dance", "motion transfer"],
+        "video_generation_notes": "8000+ motion templates. Multi-model: choose Wan 2.6, Kling 3.0, Sora 2, Veo 3.1 per generation.",
+        "face_swap": true,
+        "face_swap_notes": "Face swap, head swap, full character/body swap — production-grade",
+        "lip_sync": false,
+        "lora_support": false,
+        "lora_notes": "No custom LoRA upload — uses their integrated model stack",
+        "motion_control": true,
+        "motion_notes": "8000+ motion templates for character animation"
+      },
+      "nsfw": {
+        "hosted_platform": "model_dependent",
+        "nsfw_breakdown": {
+          "wan_2_6_model": "near_uncensored — confirmed by multiple independent sources",
+          "seedream_4_model": "uncensored — unique to Higgsfield, not available on ByteDance own apps",
+          "higgsfield_soul_model": "allows NSFW reference photo uploads, no explicit text prompting",
+          "official_higgsfield_models": "blocked via prompt filtering",
+          "veo_3_1_on_higgsfield": "blocked — Google policy applies",
+          "kling_on_higgsfield": "blocked"
+        },
+        "hosted_notes": "Each integrated model applies its own content filter independently. Wan 2.6 and Seedream 4.0 on this platform are the NSFW-capable routes. No local weights required — web-based.",
+        "local_weights": "not_applicable",
+        "verdict": "Age-verify toggle / model-dependent. Wan 2.6 = near-uncensored web NSFW video. This is the key finding."
+      },
+      "pricing": {
+        "free": "10 credits/day, limited models, 1 concurrent job",
+        "basic": "~$9/month",
+        "pro_creator": "~$29-49/month (monthly) or ~$17-50/month (annual), 600-6000 credits",
+        "credit_costs": {
+          "sora2_veo3": "~40-70 credits per video",
+          "kling_3": "~6 credits per video",
+          "wan_2_6": "credits comparable to kling tier"
+        }
+      },
+      "verdict": "strong_fit",
+      "verdict_notes": "Biggest sleeper pick in this stack. Wan 2.6 being uncensored on this platform provides web-based NSFW video without any local GPU setup at $9/month. Face swap + character swap capabilities are production-grade. Multi-model aggregation is unique value. Credit burn rate for high-volume production is the main constraint.",
+      "sources": [
+        "https://higgsfield.ai",
+        "https://www.creativepadmedia.com/does-higgsfield-allow-nsfw-yes-but-theres-a-catch/",
+        "https://www.digitaljournal.com/pr/news/binary-news-network/higgsfield-x-wan-2-5-uncensored-1757664637.html"
+      ]
+    },
+
+    {
+      "id": "tensor_art",
+      "name": "Tensor.art",
+      "developer": "Tensor.art",
+      "official_url": "https://tensor.art",
+      "what_it_does": "Cloud-based AI image generation platform using Stable Diffusion and FLUX models. Previously a major hub for LoRA model hosting and NSFW art generation.",
+      "capabilities": {
+        "image_generation": true,
+        "video_generation": false,
+        "face_swap": false,
+        "lip_sync": false,
+        "lora_support": true,
+        "lora_notes": "Supports LoRA upload and use — but only for SFW content now"
+      },
+      "nsfw": {
+        "hosted_platform": "fully_blocked",
+        "hosted_notes": "Tensor.art transitioned to fully SFW platform in 2025. All NSFW content removed from public visibility and generation. Policy states: 'Any content depicting explicit sexual acts, nudity, or pornographic material is not permitted for public visibility and generation.' Change was forced by credit card processor and regulatory requirements.",
+        "local_weights": "not_applicable",
+        "verdict": "Fully blocked — major policy reversal in 2025"
+      },
+      "pricing": {
+        "note": "Credit/subscription model — details changed with SFW transition"
+      },
+      "verdict": "drop",
+      "verdict_notes": "The SFW policy change in 2025 removes its primary value for this use case. The LoRA infrastructure that made it valuable for NSFW character generation is now useless. Use Civitai for model discovery and local ComfyUI for NSFW generation instead.",
+      "sources": [
+        "https://tensor.art/event/NSFW&CelebrityAdjustments",
+        "https://tensor.art/articles/940575284145485270"
+      ]
+    },
+
+    {
+      "id": "civitai",
+      "name": "Civitai",
+      "developer": "Civitai",
+      "official_url": "https://civitai.com",
+      "what_it_does": "The dominant open-source AI model hub for Stable Diffusion, FLUX, and related checkpoints, LoRAs, embeddings, and workflows. Also has on-site image generator using community models. Central repository for the entire open-source image generation ecosystem.",
+      "capabilities": {
+        "image_generation": true,
+        "image_generation_notes": "On-site generator using community models. LoRA and checkpoint upload/use is core offering. Massive model library.",
+        "video_generation": false,
+        "face_swap": false,
+        "lip_sync": false,
+        "lora_support": true,
+        "lora_notes": "LoRA upload, hosting, and generation is the primary function. Download LoRAs for local use."
+      },
+      "nsfw": {
+        "hosted_platform": "allowed_age_verify",
+        "hosted_notes": "Still allows X and XXX content (graphic nudity, sexual acts) with age verification toggle. Newly banned in 2025: incest, self-harm, diaper/excretion content, non-consensual scenarios. Celebrity/real person content hidden when NSFW browsing enabled. BYOI (Bring Your Own Image) requires minimum 50% denoising. Stability AI models blocked from generating explicit content (July 31, 2025). Payment: shifted to crypto-only for NSFW generation credits as of May 2025 — credit card processors withdrew.",
+        "local_weights": "unrestricted",
+        "local_notes": "Downloaded models run locally with zero restrictions",
+        "verdict": "Allowed with age verification. Crypto payment required for on-site NSFW generation. Download models for local use to avoid payment friction."
+      },
+      "pricing": {
+        "browsing_and_download": "Free",
+        "on_site_generation": "Buzz credits system — crypto payment for NSFW generation (post May 2025)",
+        "note": "Primary value is model download, not on-site generation"
+      },
+      "verdict": "strong_fit",
+      "verdict_notes": "Irreplaceable as a model hub. Primary use: discover and download community LoRAs (including NSFW character LoRAs for Jasmine), download base model checkpoints, upload and share the trained Jasmine LoRA. On-site generation is secondary. Crypto payment friction for NSFW generation — work around by downloading to local ComfyUI.",
+      "sources": [
+        "https://civitai.com/articles/13632/policy-and-content-adjustments",
+        "https://civitai.com/articles/9962/potentially-fixed-as-of-326-psa-enable-mature-content-on-your-on-site-generations",
+        "https://www.unite.ai/civitai-tightens-deepfake-rules-under-pressure-from-mastercard-and-visa/"
+      ]
+    },
+
+    {
+      "id": "mage_space",
+      "name": "Mage.space",
+      "developer": "Mage",
+      "official_url": "https://www.mage.space",
+      "what_it_does": "Web-based AI image and video generator. Known for permissive content policies and anonymous access. Supports multiple models including FLUX and Stable Diffusion variants.",
+      "capabilities": {
+        "image_generation": true,
+        "video_generation": true,
+        "video_generation_notes": "Available on Pro ($30/mo) and above tiers",
+        "face_swap": false,
+        "lip_sync": false,
+        "lora_support": true,
+        "lora_notes": "Custom model import mentioned at Pro Plus tier ($60/mo) — not confirmed for LoRA specifically"
+      },
+      "nsfw": {
+        "hosted_platform": "allowed_within_limits",
+        "hosted_notes": "Platform allows creative freedom within stated boundaries. NSFW content permitted as long as it does not depict real persons, violate copyright, or involve minors. Following 2023 investigation into non-consensual deepfakes, celebrity/real-person generation was restricted. Anonymous/no-login adult generation appears available on free tier. No explicit age-verify toggle documented in 2025 — filter appears to be in settings.",
+        "local_weights": "not_applicable",
+        "verdict": "Allowed within limits — no real persons. Good for anonymous SFW/softcore testing."
+      },
+      "pricing": {
+        "free": "$0/month — daily generation limit, no login required",
+        "basic": "$10/month — unlimited generations, 2x speed",
+        "pro": "$30/month — unlimited video generation, 4x speed",
+        "pro_plus": "$60/month — premium video models, 4K enhancement, custom model import",
+        "max": "$200/month — motion control video, up to 1080p"
+      },
+      "verdict": "partial_fit",
+      "verdict_notes": "Good for quick anonymous testing. No-login free tier is useful for iteration. Not suitable for building consistent Jasmine identity (no reliable LoRA system confirmed). Use as secondary/overflow tool for SFW and softcore static images.",
+      "sources": [
+        "https://www.mage.space/",
+        "https://www.404media.co/mage-space-new-restrictions-non-consensual-porn-celebrities/"
+      ]
+    },
+
+    {
+      "id": "seedance2",
+      "name": "Seedance 2.0",
+      "developer": "ByteDance",
+      "official_url": "https://seed.bytedance.com/en/seedance2_0",
+      "what_it_does": "ByteDance's flagship multimodal video generation model. Supports text, image, audio, and video inputs simultaneously. Up to 9 reference images, 3 video clips, 3 audio clips per generation. Native audio-video joint generation. Director-level control over lighting, shadows, and camera movement.",
+      "capabilities": {
+        "image_generation": false,
+        "video_generation": true,
+        "video_types": ["T2V", "I2V", "multi-reference video synthesis", "audio-driven generation"],
+        "video_generation_notes": "Cinematic quality with motion stability. Director-level camera control. Timeline-based prompting per segment.",
+        "face_swap": false,
+        "lip_sync": true,
+        "lip_sync_notes": "Via audio-driven generation — not a standalone lip sync tool",
+        "lora_support": false,
+        "motion_control": true,
+        "motion_notes": "Lighting, shadows, camera movement control"
+      },
+      "access": {
+        "capcut": "Available via CapCut app — international rollout (Brazil, Indonesia, Malaysia, Mexico, Philippines, Thailand, Vietnam)",
+        "api": "API launched April 2, 2026 via fal.ai and Hypereal AI",
+        "china": "Dreamina app for Chinese market",
+        "note": "ByteDance has paused global direct launch — CapCut is primary access point"
+      },
+      "nsfw": {
+        "hosted_platform": "fully_blocked",
+        "hosted_notes": "ByteDance applies strict content moderation. Banned: explicit sexual material, violence, real-person deepfakes without authorization. Real-person voice cloning suspended February 2026 due to safety concerns. Content filters are keyword-based in English — prompts in other languages have been reported to partially bypass filters (grey area, not reliable).",
+        "local_weights": "not_available",
+        "verdict": "Fully blocked — no unlock path"
+      },
+      "pricing": {
+        "capcut": "Free via CapCut app",
+        "api_fal_ai": "Credit-based — pricing not confirmed",
+        "note": "Most accessible free route is CapCut"
+      },
+      "verdict": "partial_fit",
+      "verdict_notes": "Best tool for Content Type 7 (Product Review/UGC) due to multi-reference video synthesis and product handling. Also strong for Content Type 4 (GRWM/Outfit Transition). SFW only. Now accessible free via CapCut — no cost barrier.",
+      "sources": [
+        "https://seed.bytedance.com/en/seedance2_0",
+        "https://techcrunch.com/2026/03/26/bytedances-new-ai-video-generation-model-dreamina-seedance-2-0-comes-to-capcut/",
+        "https://ai-art-studio.com/blog/does-seedance-allow-nsfw-content-what-you-can-and-cant-generate-in-2026/"
+      ]
+    },
+
+    {
+      "id": "viggle_ai",
+      "name": "Viggle AI",
+      "developer": "Viggle",
+      "official_url": "https://viggle.ai",
+      "what_it_does": "Character animation and face/body swap platform. Specialises in putting a character identity onto pre-existing motion templates, video remixing, and live streaming as a character. Uses JST-1 (video-3D foundation model) for full identity transfer including face, head shape, expressions, and full-body motion.",
+      "capabilities": {
+        "image_generation": false,
+        "video_generation": true,
+        "video_types": ["face swap", "body swap", "motion transfer", "AI dance", "lip sync (Mic feature)", "meme remixing"],
+        "video_generation_notes": "8000+ motion templates. 1080p HD on paid tiers.",
+        "face_swap": true,
+        "face_swap_notes": "Full character/body swap — primary feature",
+        "lip_sync": true,
+        "lip_sync_notes": "Mic feature for lip sync",
+        "lora_support": false,
+        "motion_control": true,
+        "motion_notes": "8000+ pre-built motion templates"
+      },
+      "nsfw": {
+        "hosted_platform": "fully_blocked",
+        "hosted_notes": "SFW platform. No evidence of NSFW mode or adult content capability. Face swap to explicit video is not a documented feature.",
+        "local_weights": "not_available",
+        "verdict": "Fully blocked — SFW entertainment platform only"
+      },
+      "pricing": {
+        "free": "5 relaxed-mode videos/day with watermarks, 15-day storage",
+        "pro": "~$4.99-14.99/month — 80 credits/month, no watermark",
+        "live": "$24.99/month — 200 credits, 1080p, no watermark, livestreaming",
+        "live_max": "$79.99/month — 800 credits, heavy usage",
+        "credit_note": "1 credit = up to 15 seconds. Rap feature = 2 credits per video"
+      },
+      "verdict": "partial_fit",
+      "verdict_notes": "Strong for SFW viral content — pre-LoRA phase, map Jasmine reference image onto trending dance/motion templates. 5 free videos per day is enough for early-stage content production. Not suitable for NSFW pipeline.",
+      "sources": [
+        "https://viggle.ai/pricing",
+        "https://flowith.io/blog/viggle-ai-pricing-2026-free-vs-premium-credits/"
+      ]
+    },
+
+    {
+      "id": "musetalk",
+      "name": "MuseTalk",
+      "developer": "Tencent Music Entertainment (TMElyralab)",
+      "type": "open_source_local",
+      "github": "https://github.com/TMElyralab/MuseTalk",
+      "current_version": "1.5 (released March 28, 2025)",
+      "role_clarification": "VIDEO tool, not audio. MuseTalk takes ElevenLabs audio output as input and drives mouth/lip movement on a video frame. Audio is produced by ElevenLabs — MuseTalk's only job is making the face move in sync with it.",
+      "what_it_does": "Open-source real-time video lip synchronization model. Takes an audio file (from ElevenLabs) and a portrait video/image, outputs a video with mouth movements synced to the audio. Runs at 30+ FPS on NVIDIA V100.",
+      "capabilities": {
+        "image_generation": false,
+        "video_generation": true,
+        "video_types": ["lip sync video — drives mouth movement from audio input"],
+        "face_swap": false,
+        "lip_sync": true,
+        "lip_sync_notes": "Core function. Input: ElevenLabs .mp3/.wav + portrait frame. Output: video with synced mouth movement. v1.5 improved identity consistency and sync accuracy.",
+        "lora_support": false
+      },
+      "pipeline_position": "Step 3 of talking head workflow: ElevenLabs (audio) → MuseTalk (mouth sync) → CapCut (final edit)",
+      "nsfw": {
+        "hosted_platform": "not_applicable",
+        "local_weights": "unrestricted",
+        "local_notes": "Open-source weights, no content filter. Can be applied to any video input including explicit content.",
+        "fal_ai_api": "Available as managed API on fal.ai — fal.ai TOS applies",
+        "verdict": "Fully unrestricted locally"
+      },
+      "access": {
+        "local": "Python 3.10+, CUDA 11.7. Weights on HuggingFace: TMElyralab/MuseTalk and kevinwang676/MuseTalk1.5",
+        "api": "fal.ai managed API — no local GPU required",
+        "training_code": "Open-sourced April 5, 2025"
+      },
+      "run_command": "python -m scripts.realtime_inference --inference_config configs/inference/realtime.yaml --batch_size 4",
+      "pricing": {
+        "local": "Free",
+        "fal_ai": "Pay-per-use credits"
+      },
+      "verdict": "strong_fit",
+      "verdict_notes": "Essential for Content Type 3 (Talking Head). Works directly with ElevenLabs output — feed ElevenLabs .wav into MuseTalk to animate Jasmine's face. Free and open source locally. Available via fal.ai before RunPod is set up.",
+      "sources": [
+        "https://github.com/TMElyralab/MuseTalk",
+        "https://fal.ai/models/fal-ai/musetalk",
+        "https://huggingface.co/kevinwang676/MuseTalk1.5"
+      ]
+    },
+
+    {
+      "id": "facefusion",
+      "name": "FaceFusion",
+      "developer": "FaceFusion (open source)",
+      "type": "open_source_local",
+      "github": "https://github.com/facefusion/facefusion",
+      "current_version": "3.5.0",
+      "what_it_does": "Open-source next-generation face swapper and enhancer. Supports image and video face swap, face enhancement, frame enhancement. Highly configurable. Industry standard for local face swap.",
+      "capabilities": {
+        "image_generation": false,
+        "video_generation": true,
+        "video_types": ["video face swap", "frame-by-frame enhancement"],
+        "face_swap": true,
+        "face_swap_notes": "Primary function. Best-in-class quality for local face swap.",
+        "lip_sync": false,
+        "lora_support": false,
+        "motion_control": false
+      },
+      "nsfw": {
+        "local_weights": "bypassable",
+        "local_notes": "Version 3.5.0 includes built-in NSFW content filter. Filter is bypassable: set skip_nsfw_filter: true in config file or set nsfw_confidence_threshold to 0.95. Community fork 'facefusion-nsfw' exists on GitHub for fully unrestricted operation with no filter at all.",
+        "bypass_method": "Set skip_nsfw_filter: true in config, OR use facefusion-nsfw community fork",
+        "verdict": "Locally unrestricted with one config change"
+      },
+      "pricing": {
+        "local": "Free, open source"
+      },
+      "verdict": "strong_fit",
+      "verdict_notes": "Core tool for Content Type 2 (Face Swap Reel). Combined with Wan AI video + MuseTalk, forms the complete local pipeline: generate → face swap → lip sync → publish. Filter easily disabled. Active development.",
+      "sources": [
+        "https://docs.facefusion.io/faq",
+        "https://github.com/facefusion/facefusion/releases",
+        "https://apatero.com/blog/facefusion-35-disable-content-filter-guide-2025"
+      ]
+    },
+
+    {
+      "id": "meta_seamless",
+      "name": "Meta SeamlessExpressive",
+      "developer": "Meta AI",
+      "type": "future_distribution_feature",
+      "scope_note": "NOT a production tool. NOT relevant to video or image generation. Noted here only as a future distribution multiplier.",
+      "what_it_does": "Meta's AI translation and dubbing system built into Instagram and Facebook Reels. Auto-translates Reels into other languages, clones creator voice, and syncs lip movements. No use in the production pipeline — audio is handled by ElevenLabs.",
+      "why_not_in_scope": "Audio is solved by ElevenLabs. This tool cannot be used outside of Meta's Reels interface. It is not a standalone video or image tool.",
+      "future_use": {
+        "trigger": "When Instagram/Facebook account reaches 1000+ followers",
+        "value": "Auto-dubs all Reels into Hindi, Spanish, Portuguese for free — 20% average engagement boost on dubbed content",
+        "action": "Enable per Reel in creator tools — zero cost, zero production effort"
+      },
+      "verdict": "not_in_scope",
+      "verdict_notes": "Irrelevant to video/image production stack. Revisit as a distribution feature at 1000+ followers.",
+      "sources": [
+        "https://about.fb.com/news/2025/10/translate-dub-and-lip-sync-your-reels-between-hindi-and-english-now-on-instagram-and-facebook/"
+      ]
+    }
+
+  ],
+
+  "nsfw_capability_map": {
+    "summary": "NSFW status as of April 2026 — verified via live search",
+    "platforms": [
+      {
+        "tool": "Wan 2.7 (local weights)",
+        "nsfw_status": "fully_unrestricted",
+        "how": "Download open weights, run via ComfyUI on local GPU or RunPod",
+        "requirement": "GPU access — RunPod ~$0.50/hr"
+      },
+      {
+        "tool": "Higgsfield AI — Wan 2.6 model",
+        "nsfw_status": "near_uncensored",
+        "how": "Select Wan 2.6 model specifically in Higgsfield web interface",
+        "requirement": "Account on Higgsfield — from $9/month"
+      },
+      {
+        "tool": "Higgsfield AI — Seedream 4.0 model",
+        "nsfw_status": "uncensored",
+        "how": "Select Seedream 4.0 in Higgsfield for image generation",
+        "requirement": "Account on Higgsfield"
+      },
+      {
+        "tool": "Civitai (on-site generation)",
+        "nsfw_status": "allowed_age_verify",
+        "how": "Enable X/XXX content toggle, age verification, Buzz credits (crypto payment)",
+        "requirement": "Age verification + crypto payment for NSFW generation credits"
+      },
+      {
+        "tool": "Civitai (downloaded models, local)",
+        "nsfw_status": "fully_unrestricted",
+        "how": "Download LoRA or checkpoint, run locally in ComfyUI",
+        "requirement": "Local GPU or RunPod"
+      },
+      {
+        "tool": "Mage.space",
+        "nsfw_status": "allowed_within_limits",
+        "how": "Free tier, filter toggle in settings",
+        "requirement": "No real persons — fictional characters only",
+        "note": "Softcore/suggestive — not confirmed for fully explicit content"
+      },
+      {
+        "tool": "FaceFusion 3.5 (local)",
+        "nsfw_status": "unrestricted_with_config_change",
+        "how": "Set skip_nsfw_filter: true in config, or use facefusion-nsfw fork",
+        "requirement": "Local GPU or RunPod"
+      },
+      {
+        "tool": "MuseTalk 1.5 (local)",
+        "nsfw_status": "fully_unrestricted",
+        "how": "Open weights, no filter",
+        "requirement": "Local GPU or RunPod, or fal.ai API"
+      },
+      {
+        "tool": "Meta AI",
+        "nsfw_status": "fully_blocked",
+        "how": "No unlock path exists"
+      },
+      {
+        "tool": "Google Veo 3 / Imagen 3 / Flow",
+        "nsfw_status": "fully_blocked",
+        "how": "No unlock path exists"
+      },
+      {
+        "tool": "ByteDance / Seedance 2",
+        "nsfw_status": "fully_blocked",
+        "how": "No unlock path exists"
+      },
+      {
+        "tool": "Viggle AI",
+        "nsfw_status": "fully_blocked",
+        "how": "No unlock path exists"
+      },
+      {
+        "tool": "Tensor.art",
+        "nsfw_status": "fully_blocked",
+        "how": "Policy changed 2025 — previously allowed, now fully SFW"
+      }
+    ]
+  },
+
+  "content_type_tool_mapping": {
+    "note": "Maps each of the 8 Jasmine content types to verified tools",
+    "types": [
+      {
+        "type_id": 1,
+        "name": "Viral Clone Reel (Motion Transfer)",
+        "description": "Download viral reel, extract frame, generate Jasmine in same pose, apply motion from original",
+        "primary_tool": "Flux Kontext (frame → Jasmine image) + Wan 2.7 I2V + DW Pose (skeleton extraction)",
+        "backup_tool": "Viggle AI (simpler, free 5/day — use pre-LoRA phase)",
+        "nsfw_version": "Wan 2.7 local (no filter) — generate NSFW Jasmine start frame, then animate",
+        "sfw_capable": true,
+        "nsfw_capable": true
+      },
+      {
+        "type_id": 2,
+        "name": "Face Swap Reel",
+        "description": "Swap Jasmine's face onto driving video with motion preserved",
+        "primary_tool": "Wan 2.7 T2V + Jasmine LoRA (denoise 0.4-0.5)",
+        "backup_tool": "FaceFusion 3.5 local (filter disabled)",
+        "nsfw_version": "FaceFusion 3.5 local (skip_nsfw_filter: true)",
+        "sfw_capable": true,
+        "nsfw_capable": true
+      },
+      {
+        "type_id": 3,
+        "name": "Talking Head / Direct-to-Camera",
+        "description": "Jasmine speaks directly to camera — ElevenLabs produces the audio, video tools sync the face to it",
+        "audio": "ElevenLabs — CONFIRMED. Produces .wav/.mp3 with emotion tags. Not under evaluation.",
+        "video_primary_tool": "MuseTalk 1.5 (local or fal.ai API) — takes ElevenLabs audio as input, drives Jasmine's mouth movement",
+        "video_backup_tool": "Wan S2V (hosted, SFW only) — also takes audio input",
+        "workflow": "ElevenLabs (audio) → MuseTalk 1.5 (mouth sync on Jasmine frame) → CapCut (captions, final edit)",
+        "nsfw_version": "MuseTalk 1.5 local (fully unrestricted)",
+        "distribution_note": "Meta SeamlessExpressive auto-dub available at 1000+ FB followers — not a production tool",
+        "sfw_capable": true,
+        "nsfw_capable": true
+      },
+      {
+        "type_id": 4,
+        "name": "GRWM / Outfit Transition",
+        "description": "Multiple outfit changes with face lock between transitions",
+        "primary_tool": "Flux Kontext (outfit images) + Wan VACE (transitions with face lock)",
+        "backup_tool": "Seedance 2 via CapCut (multi-reference input)",
+        "nsfw_version": "Higgsfield Wan 2.6 (outfit to NSFW transition — web based)",
+        "sfw_capable": true,
+        "nsfw_capable": true
+      },
+      {
+        "type_id": 5,
+        "name": "Lifestyle / Travel UGC",
+        "description": "Jasmine in travel locations — Goa, Himalaya, Bali, etc.",
+        "primary_tool": "Google Veo 3.1 Fast / Flow (user already has via Google One)",
+        "backup_tool": "Higgsfield AI I2V (cinematic camera moves)",
+        "nsfw_version": "Not applicable — location content is SFW",
+        "sfw_capable": true,
+        "nsfw_capable": false,
+        "cost_note": "Veo 3.1 Fast already paid via Google One — zero additional cost"
+      },
+      {
+        "type_id": 6,
+        "name": "Trend Reaction (PiP)",
+        "description": "Jasmine reaction box beside trending content",
+        "primary_tool": "Wan VACE PiP mode",
+        "backup_tool": "Viggle AI + manual CapCut PiP edit",
+        "nsfw_version": "Not applicable",
+        "sfw_capable": true,
+        "nsfw_capable": false
+      },
+      {
+        "type_id": 7,
+        "name": "Product Review / UGC",
+        "description": "Jasmine holding and reviewing brand products",
+        "primary_tool": "Seedance 2 via CapCut (best multi-reference product handling, free)",
+        "backup_tool": "Flux Kontext (product in hand image) → Wan 2.7 I2V",
+        "nsfw_version": "Not applicable — product content is SFW",
+        "sfw_capable": true,
+        "nsfw_capable": false
+      },
+      {
+        "type_id": 8,
+        "name": "Carousel (Static Multi-Image)",
+        "description": "4-8 slides, same Jasmine, same location, different poses",
+        "primary_tool_sfw": "Flux Kontext 9B + Jasmine LoRA via Fal.ai",
+        "primary_tool_nsfw": "Civitai Generate + Jasmine LoRA (NSFW) OR local ComfyUI",
+        "backup_tool_sfw": "Google Imagen 3 ($0.03/image — no LoRA, SFW backgrounds only)",
+        "backup_tool_nsfw": "Mage.space (softcore) OR Higgsfield Seedream 4.0",
+        "sfw_capable": true,
+        "nsfw_capable": true
+      }
+    ]
+  },
+
+  "recommended_stack": {
+    "scope_note": "Audio = ElevenLabs (confirmed, locked). Stack below covers VIDEO and IMAGE only.",
+    "audio_confirmed": "ElevenLabs Starter $5/month — all voice, narration, emotion tags. Not under review.",
+    "image_sfw": "Flux Kontext 9B + Jasmine LoRA via Fal.ai",
+    "image_nsfw": "Civitai Generate + Jasmine LoRA  OR  local ComfyUI + Flux NSFW",
+    "video_motion_transfer": "Wan 2.7 I2V + DW Pose (local)  OR  Viggle AI (web, free 5/day)",
+    "video_face_lock": "Wan 2.7 T2V + Jasmine LoRA (denoise 0.4-0.5)",
+    "video_cinematic_sfw": "Google Veo 3.1 Fast / Flow — already paid via Google One",
+    "video_product_ugc": "Seedance 2 via CapCut — free",
+    "video_nsfw": "Higgsfield Wan 2.6 (web, $9/mo)  OR  Wan 2.7 local (RunPod)",
+    "video_lip_sync": "MuseTalk 1.5 — takes ElevenLabs audio as input, drives mouth movement on video",
+    "video_lip_sync_backup": "Wan S2V (hosted, SFW only)",
+    "face_swap": "FaceFusion 3.5 (local, skip_nsfw_filter: true)",
+    "face_swap_quick": "Viggle AI (web, free 5/day — pre-LoRA phase)",
+    "editing": "CapCut (free)",
+    "scheduling": "Metricool (free)",
+    "opsec": "FFmpeg + ExifTool",
+    "model_hub": "Civitai (download LoRAs and checkpoints)",
+    "future_distribution": "Meta SeamlessExpressive — auto-dub Reels at 1000+ Facebook followers (not a production tool)"
+  },
+
+  "monthly_cost_breakdown": {
+    "confirmed_audio": {
+      "tool": "ElevenLabs Starter",
+      "cost": "$5/month (~₹420)",
+      "status": "CONFIRMED — locked in, not under review"
+    },
+    "video_and_image_costs": {
+      "wan_ai_pro_hosted": "$5/month (~₹420) — SFW video production",
+      "flux_kontext_fal_ai": "~₹25 (usage based) — SFW image generation",
+      "higgsfield_basic": "$9/month (~₹750) — NSFW video via Wan 2.6 (web, no GPU needed)",
+      "google_veo_flow": "₹0 — already included in Google One — cinematic SFW B-roll",
+      "capcut": "₹0 — free — editing and captions",
+      "metricool": "₹0 — free — scheduling",
+      "musetalk_local": "₹0 — free (takes ElevenLabs audio as input, drives video lip sync)",
+      "facefusion_local": "₹0 — free (face swap, local)",
+      "seedance2_capcut": "₹0 — free (product UGC via CapCut)",
+      "viggle_ai_free": "₹0 — free (5 face swap videos/day)",
+      "runpod_gpu_occasional": "~$1-2 per session (~₹85-170) — LoRA training and NSFW local runs"
+    },
+    "total_fixed_monthly": "~₹1,615/month (including ElevenLabs)",
+    "total_video_image_only": "~₹1,195/month (excluding ElevenLabs)",
+    "note": "Civitai NSFW image generation requires crypto Buzz credits — variable, use sparingly. Primary NSFW image route is local ComfyUI on RunPod."
+  },
+
+  "tools_dropped": [
+    {
+      "tool": "Tensor.art",
+      "reason": "Went fully SFW in 2025 — previously allowed NSFW, now blocked. Core value proposition removed."
+    },
+    {
+      "tool": "Meta AI",
+      "reason": "No LoRA, no video, fully blocked NSFW. Only useful for free SFW concept tests."
+    },
+    {
+      "tool": "Meta SeamlessExpressive (as production tool)",
+      "reason": "Platform-locked to Meta Reels. Cannot be used as a standalone lip sync tool. Re-categorised as a distribution feature at 1000+ followers."
+    }
+  ],
+
+  "critical_prerequisite": {
+    "note": "Everything in this stack depends on this being done first",
+    "task": "Train Jasmine LoRA",
+    "details": {
+      "z_image_lora": "~40-50 training images, RunPod, ~$1-2 one-time cost. Unlocks character consistency in all static image generation.",
+      "wan_lora": "~40-50 training videos/frames, RunPod, ~$1-2 one-time cost. Unlocks face lock in Wan T2V video generation.",
+      "without_lora": "Face swap quality is inconsistent. Wan T2V face lock does not work. Civitai/Tensor.art NSFW generation will not look like Jasmine. All content types degrade significantly.",
+      "priority": "HIGHEST — block all content production until LoRA is trained"
+    }
+  }
+}
