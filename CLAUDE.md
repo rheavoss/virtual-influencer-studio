@@ -1,7 +1,7 @@
 # Jasmine Project — Claude Code Briefing
 
 > Auto-loaded at the start of every session. Keep this current.  
-> Last updated: 2026-04-10 (Session 02)
+> Last updated: 2026-04-11 (Session 03)
 
 ---
 
@@ -10,16 +10,6 @@
 - **CEO** — based in India, all financial decisions in INR. Non-technical on the dev side but fully owns strategy. Works with two AI advisors: Claude Code (you) and Antigravity AI.
 - **Antigravity** — second AI advisor. Handles live browser research, creative strategy, GFE copywriting, captions, DM scripts. Cannot write files or run code. Messages passed to you verbatim by CEO.
 - **You (Claude Code)** — file system, spec compliance, code, persistent memory, task tracking, P&L, document management. Always defer to CEO on values decisions.
-
----
-
-## The Project
-
-**Jasmine** — a 24-year-old East Asian AI-generated influencer.  
-Funnel: Instagram (SFW) → Fanvue (paid GFE content)  
-Goal: $2,000 MRR by Month 3 → $20,000 MRR by Month 12
-
-**This is not a hobby project.** The CEO is running this as a real business. Treat every decision like money is on the line.
 
 ---
 
@@ -32,9 +22,19 @@ Goal: $2,000 MRR by Month 3 → $20,000 MRR by Month 12
 | All revenue platforms live Day 1: Fanvue + Passes + X/Twitter simultaneously | LOCKED |
 | Follower count = cross-platform total (Instagram + Facebook + YouTube + X + Pinterest + Telegram) | LOCKED |
 | Dual sign-off: each advisor reviews the other's work before marking complete | LOCKED |
-| All costs and pricing in INR. USD revenue converted at ₹84 = $1. | LOCKED |
+| All costs and pricing in INR. USD revenue converted at ₹93.08 = $1. | LOCKED |
 | Annual tool plans prorated monthly (annual ÷ 12) | LOCKED |
-| India pricing — always verify actual INR price, not USD × ₹84 (India is cheaper) | LOCKED |
+| India pricing — always verify actual INR price, not USD × ₹93.08 (India is cheaper) | LOCKED |
+
+---
+
+## The Project
+
+**Jasmine** — a 24-year-old East Asian AI-generated influencer.  
+Funnel: Instagram (SFW) → Fanvue (paid GFE content)  
+Goal: $2,000 MRR by Month 3 → $20,000 MRR by Month 12
+
+**This is not a hobby project.** The CEO is running this as a real business. Treat every decision like money is on the line.
 
 ---
 
@@ -71,52 +71,134 @@ Goal: $2,000 MRR by Month 3 → $20,000 MRR by Month 12
 
 ## Revenue Model
 
-| Platform | Keep Rate | Content Type | Launch |
-|---|---|---|---|
-| Fanvue | 85% | GFE subscription (primary) | Day 1 |
-| Passes | 90% | Mirror / PPV | Day 1 |
-| X/Twitter | 90% | Teasers (SFW edge) | Day 1 |
-| Telegram VIP | 90% | Direct, uncensored | M6 |
-| Brand Deals | 90% | Sponsored posts | M7 |
-| Instagram Subs | 80% | ₹200/mo native IG sub | M4 (10k followers trigger) |
+| Platform | Keep Rate | Content Type | Launch | INR Basis |
+|---|---|---|---|---|
+| Fanvue | 85% | GFE subscription (primary) | Day 1 | USD × ₹93.08 |
+| Passes | 90% | Mirror / PPV | Day 1 | USD × ₹93.08 |
+| X/Twitter | 90% | Teasers (SFW edge) | Day 1 | USD × ₹93.08 |
+| Room 11 | ⚠️ TBC | AI companion / GFE (secondary to Fanvue) | After LoRA — requires 30–40 LoRA output photos for profile setup | USD × ₹93.08 |
+| Telegram VIP | 90% | Direct, uncensored | M6 | INR (Indian subscribers) |
+| Brand Deals | 90% | Sponsored posts | M7 | INR |
+| Instagram Subs | 80% | ₹200/mo native IG sub | M4 (10k followers trigger) | INR |
 
-**P&L targets:** M3 = ₹1,49,100 net profit | M10 = ₹16,69,702 net profit | M12 cumulative = ~₹1.07 crore
+> Room 11 is secondary to Fanvue. Cannot be set up until LoRA outputs 30–40 usable photos. Keep rate: verify at room11.com before locking.
+
+**USD milestones:** M3 = $2k MRR (₹1,86,160) · M5 = $5k MRR (₹4,65,400) · M10 = $20k MRR (₹18,61,600)
 
 ---
 
 ## Tool Stack
 
-| Tool | Cost | Status |
-|---|---|---|
-| Higgsfield | ₹756/mo ⚠️ | Verify India price |
-| ElevenLabs | ₹420/mo ⚠️ | Verify India price |
-| Grok (xAI) | ₹542/mo ✅ | ₹6,500/yr confirmed |
-| Claude Code | ₹4,000/mo ✅ | 2 × ₹2,000 confirmed |
-| Google One | ₹___/mo ⏳ | CEO to confirm annual plan ÷ 12 |
-| Metricool | ₹0 | Free tier |
-| Context7 MCP | ₹0 | Queued: P2-09 |
-| Firecrawl MCP | ₹0 | Queued: P2-10 (M3) |
+| Tool | Phase 0 Cost | Phase 1+ Cost | Status |
+|---|---|---|---|
+| Higgsfield | ₹838/mo ($9) | ₹2,699/mo ($29) | Upgrade plan at Phase 1 launch |
+| ElevenLabs | ₹420/mo ⚠️ | ₹420/mo ⚠️ | India price unconfirmed — verify |
+| Grok (xAI) | ₹542/mo ✅ | ₹542/mo ✅ | ₹6,500/yr confirmed |
+| Claude Code | ₹4,000/mo ✅ | ₹4,000/mo ✅ | 2 × ₹2,000 confirmed |
+| Calilio | ₹1,303/mo ✅ | ₹1,303/mo ✅ | US virtual number for IG account creation + SMS verification walls |
+| Namecheap | ₹92/mo ✅ | ₹92/mo ✅ | Domain for Carrd.co redirect chain |
+| Later.com | ₹0 | ₹1,675/mo (from M2) | Social scheduling — activates after first followers |
+| Google One | ₹___/mo ⏳ | ₹___/mo ⏳ | CEO to confirm annual plan ÷ 12 |
+| Metricool | ₹0 | ₹0 (standby) | Free tier — redundant once Later.com active |
 
-**Base fixed (confirmed):** ₹5,718/mo
+**Base fixed:** Phase 0 = ₹7,009/mo · Phase 1+ = ₹10,545/mo (from M2 with Later.com)
 
 ---
 
-## Active Build: Vercel P&L Dashboard
+## Link Architecture (LOCKED — Mother-Daughter Killed)
 
-Hosting `pnl_chart.html` as a Next.js app at a live URL.
+Instagram bio link chain: **IG bio → Namecheap domain → Cloudflare (DNS) → Carrd.co page**
 
-**Stack:** Next.js 14 + Supabase + Vercel (GitHub auto-deploy)  
+- Link.me is dead — IG chain-banning 2026 confirmed by Antigravity's YouTube research
+- Mother-daughter account method is dead — same risk
+- Carrd.co page must be built before Instagram goes live (Phase 0 task)
+- Carrd.co page copy: awaited from Antigravity (Move 12 open item)
+
+---
+
+## OPSEC / Device Protocol
+
+| Phase | Device Strategy |
+|---|---|
+| Phase 0 (single account) | Physical phone safe — one account, no fingerprint risk |
+| Phase 4+ (second account) | Dolphin{anty} anti-detect browser required — do NOT use physical device for second account |
+
+- Calilio US virtual number handles IG account creation and SMS verification walls
+- ExifTool pipeline (P0-07) strips all metadata before any image is uploaded anywhere
+
+---
+
+## Active Build: Vercel P&L Dashboard — LIVE ✅
+
+**Production URL:** https://jasmine-dashboard-lovat.vercel.app  
+**Stack:** Next.js 14 + Supabase + Vercel  
 **Directory:** `20_tech/jasmine-dashboard/`  
-**Status:** All files written ✅ — awaiting credentials to deploy
+**GitHub repo:** `rheavoss/jasmine-dashboard` (private)  
+**Supabase project ref:** `vvyexzbtkncitgzraath` (rheavoss account)
 
-**Deploy order:**
-1. Supabase — create project, run `supabase/schema.sql`, copy URL + anon key
-2. GitHub — push `20_tech/jasmine-dashboard/` to new private repo
-3. Vercel — import from GitHub, add env vars, deploy
+### What the dashboard shows (all on one scrollable page, no tabs)
+1. **Summary cards** — 12M Gross Revenue, Net Revenue, Total Costs, Net Profit
+2. **Line chart** — Monthly Revenue & Profit (Gross / Net Revenue / Net Profit / Costs). Hover any point for full monthly breakdown tooltip.
+3. **Dual-bar chart** — Cumulative profit (green bar) + this month's profit (blue bar) per month
+4. **Glossary** — 9 key financial terms defined in plain language
+5. **Launch timeline** — Platform-by-platform go-live schedule with tasks
+6. **Full breakdown table** — Every rupee, every month (revenue by platform + cost by tool)
 
-**Deploy guide:** `20_tech/jasmine-dashboard/DEPLOY.md`
+### Data architecture
+- **Primary:** Supabase `jasmine_pnl` table (12 rows, one per month)
+- **Fallback:** `lib/fallback-data.js` (used if Supabase is down or unconfigured)
+- Both are now synced and calculated at ₹93.08 = $1
+- USD platforms (Fanvue, Passes, PPV+Voice): INR = USD amount × 93.08
+- INR platforms (Telegram, Brand, IG Subs) and all costs: unchanged
 
-**Credentials needed from CEO:** Supabase URL + anon key → GitHub username → Vercel (OAuth, no creds needed)
+### Known Technical Traps — Read Before Touching Any Dashboard Code
+
+| Trap | What Happens If You Ignore It | Rule |
+|---|---|---|
+| `ssr: false` missing on PLDashboard import | Chart.js crashes on server — blank page in production | `app/page.js` uses `dynamic(() => import(...), { ssr: false })` — NEVER remove this |
+| Second Chart.js instance on the same page | Second chart always renders blank — Chart.js `external` tooltip conflicts between two instances | `CumulativeBars` uses pure CSS bars, NOT Chart.js — do not convert it back |
+| Built-in Chart.js tooltip enabled | Tooltip stops working entirely | Main chart uses `tooltip: { enabled: false, external: externalTooltip }` — both settings required |
+| `vercel --prod` or `vercel deploy` | Returns "Unexpected error" every time, no deployment | Use Vercel API + alias (see deploy method below) |
+| `gh auth` not switched before git/Vercel ops | Push fails ("repository not found") or lands in wrong account | Always run `gh auth switch --user rheavoss` first |
+| `supabase db execute --project-ref` | Flag does not exist in this CLI version | Use Supabase Management REST API (`POST /v1/projects/{ref}/database/query`) |
+
+### CRITICAL: Deploy method (vercel --prod FAILS — use API instead)
+`vercel --prod` consistently returns "Unexpected error" on this account. Always deploy via:
+```bash
+# 1. Push to GitHub
+git push origin main
+
+# 2. Trigger via Vercel API
+VERCEL_TOKEN=$(python3 -c "import json; d=json.load(open('/Users/user/Library/Application Support/com.vercel.cli/auth.json')); print(d['token'])")
+curl -s -X POST "https://api.vercel.com/v13/deployments" \
+  -H "Authorization: Bearer $VERCEL_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{"name":"jasmine-dashboard","gitSource":{"type":"github","repoId":"1207251857","ref":"main"},"target":"production"}'
+
+# 3. Alias to production (get deploy ID from step 2 response)
+curl -s -X POST "https://api.vercel.com/v2/deployments/<DEPLOY_ID>/aliases" \
+  -H "Authorization: Bearer $VERCEL_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{"alias":"jasmine-dashboard-lovat.vercel.app"}'
+```
+
+### CRITICAL: GitHub account discipline
+Three GitHub accounts exist on this machine: `surajhealth` (default), `surajstoic`, `rheavoss`.  
+**Always run this FIRST before any git or Vercel operation on this project:**
+```bash
+gh auth switch --user rheavoss && gh api user --jq '.login'
+```
+Vercel account: `rheavoss` / `contact.rheavoss@gmail.com` / team `rheavoss-projects`
+
+### Supabase update method (supabase CLI --execute flag doesn't exist)
+Use the Management REST API to run SQL:
+```bash
+SUPABASE_TOKEN=<token from memory>
+curl -s -X POST "https://api.supabase.com/v1/projects/vvyexzbtkncitgzraath/database/query" \
+  -H "Authorization: Bearer $SUPABASE_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{"query": "UPDATE jasmine_pnl SET ... WHERE month=N;"}'
+```
 
 ---
 
@@ -131,21 +213,10 @@ Hosting `pnl_chart.html` as a Next.js app at a live URL.
 | `01_characters/jasmine/jasmine_character_bible.json` | Character spec (source of truth) |
 | `10_research/competitor_research/muskan_kariya_case_study_2026-04-10.md` | Indian creator case study — key market validation |
 | `10_research/platform_research/instagram_content_policy_and_tools_2026-04-10.md` | Instagram TOS hard lines |
-| `20_tech/jasmine-dashboard/` | Vercel dashboard project |
-| `memory/MEMORY.md` | Persistent memory index |
-
----
-
-## Open Items (As of Session 02)
-
-| Item | Owner |
-|---|---|
-| Confirm Google One annual plan cost → prorate monthly | CEO |
-| Verify Higgsfield India pricing (higgsfield.ai/pricing) | Antigravity (live browser) |
-| Verify ElevenLabs India pricing (elevenlabs.io/pricing) | Antigravity (live browser) |
-| Antigravity Move 9: confirm Option A ceiling + Day 1 launches + sign-off system | CEO → Antigravity |
-| Supabase credentials → GitHub push → Vercel deploy | CEO provides creds |
-| P0-01: Generate 40 LoRA training images on Grok + Colab | CEO |
+| `20_tech/jasmine-dashboard/` | Live Vercel dashboard project (Next.js 14) |
+| `20_tech/jasmine-dashboard/components/PLDashboard.js` | Main dashboard component — all UI, charts, tooltip, table |
+| `20_tech/jasmine-dashboard/lib/fallback-data.js` | Hardcoded P&L data (₹93.08 rate, synced with Supabase) |
+| `20_tech/jasmine-dashboard/app/page.js` | Next.js page — loads Supabase data, renders PLDashboard |
 
 ---
 

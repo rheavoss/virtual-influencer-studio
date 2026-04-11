@@ -301,30 +301,27 @@
 
 ## Tool Cost Stack
 
-> All costs in INR. Exchange rate: ₹84 = $1 USD (April 2026).  
+> All costs in INR. Exchange rate: ₹93.08 = $1 USD (confirmed April 2026).  
 > Tools with India-specific pricing are flagged — verify actual INR amount on the tool's billing page before locking in numbers.
 
 ### Fixed Monthly Costs
 
-| Tool | Purpose | Monthly Cost | Notes |
+| Tool | Phase 0 | Phase 1+ | Notes |
 |---|---|---|---|
-| Higgsfield | Video generation (Wan 2.6 / Seedream 4.0) | ₹756 ⚠️ | $9/mo converted — verify India price, likely cheaper |
-| ElevenLabs | Voice notes (GFE audio PPV) | ₹420 ⚠️ | $5/mo converted — verify India price, likely cheaper |
-| Grok (xAI) | SFW image generation (batches) | ₹542 ✅ | ₹6,500/yr annual plan ÷ 12 — confirmed |
-| Google One | Colab Pro access + storage | ₹___ ² | Annual plan ÷ 12 — enter your amount |
-| Claude Code | AI strategy + ops (this tool) | ₹4,000 ✅ | ₹2,000/subscription × 2 subscriptions — confirmed |
-| Metricool | Instagram + Facebook scheduler | ₹0 | Free tier |
-| Context7 MCP | Live library docs injected into Claude (prevents hallucinated APIs) | ₹0 | Open source, runs via npx — no subscription |
-| Firecrawl MCP | Competitor website scraping → clean markdown (weekly Monday scan) | ₹0 | Free tier: 500 credits/mo — covers weekly scans easily |
-| **Base Fixed (confirmed, excl. India price correction)** | | **₹5,718/mo** | Higgsfield ₹756 + ElevenLabs ₹420 + Grok ₹542 + Claude Code ₹4,000 |
+| Higgsfield | ₹838 ($9/mo) | ₹2,699 ($29/mo) | Upgrade plan at Phase 1 launch — confirmed |
+| ElevenLabs | ₹420 ⚠️ | ₹420 ⚠️ | India price unconfirmed — verify at elevenlabs.io/pricing |
+| Grok (xAI) | ₹542 ✅ | ₹542 ✅ | ₹6,500/yr ÷ 12 — confirmed by CEO |
+| Claude Code | ₹4,000 ✅ | ₹4,000 ✅ | 2 × ₹2,000 — confirmed |
+| Calilio | ₹1,303 ✅ | ₹1,303 ✅ | $12 seat + $2 US number = $14/mo × ₹93.08 |
+| Namecheap | ₹92 ✅ | ₹92 ✅ | Domain for Carrd.co redirect chain — annual ÷ 12 |
+| Later.com | ₹0 (M1) | ₹1,675 (from M2) ✅ | Social scheduling — activates after first followers |
+| Google One | ₹___ ⏳ | ₹___ ⏳ | CEO to confirm annual plan ÷ 12 |
+| Metricool | ₹0 | ₹0 (standby) | Free tier — redundant once Later.com active |
+| **Phase 0 Base** | **₹7,195** | — | Higgsfield ₹838 + ElevenLabs ₹420 + Grok ₹542 + Claude Code ₹4,000 + Calilio ₹1,303 + Namecheap ₹92 |
+| **Phase 1+ Base (M1)** | — | **₹9,056** | Phase 1 Higgsfield, Later.com not yet active |
+| **Phase 1+ Base (M2+)** | — | **₹10,731** | All tools active including Later.com ₹1,675 |
 
-¹ **Grok annual plan:** ₹6,500/yr — confirmed by CEO. Prorated: **₹542/mo**.
-
-² **Google One annual plan:** Your actual annual cost ÷ 12 = monthly proration.  
-   Reference: 100GB ~₹108/mo | 200GB ~₹175/mo | 2TB ~₹542/mo | AI Premium ~₹1,625/mo (annual prorated)
-
-> **Cost status:** Grok ₹542/mo ✅ | Claude Code ₹4,000/mo ✅ (2 × ₹2,000) | Higgsfield India price ⏳ | ElevenLabs India price ⏳ | Google One ⏳  
-> Higgsfield/ElevenLabs use USD-converted rates as placeholder — actual India prices will reduce base cost. **See [pnl_chart.html](pnl_chart.html) for the live dashboard with full breakdown.**
+> **Cost status:** Higgsfield ✅ confirmed two-phase | Calilio ✅ $14/mo | Grok ✅ | Claude Code ✅ | Namecheap ✅ | ElevenLabs ⚠️ India price unverified | Google One ⏳ CEO to confirm
 
 ### Conditional / Variable Costs
 
@@ -340,33 +337,34 @@
 
 ## Month-by-Month P&L (All values in ₹)
 
-> Revenue: Fanvue/Passes/PPV/Telegram/Brand in USD × ₹84 + Instagram subscription at ₹200/mo (native, from M4)  
+> Revenue: Fanvue/Passes/PPV+Voice in USD × ₹93.08. Telegram/Brand/IG Subs are INR-priced (Indian subscribers).  
 > **Net Revenue** = Fanvue 85% + Passes/PPV/Telegram/Brand 90% + Instagram subscription 80% keep  
-> **Tool Costs** = ₹5,718/mo confirmed base + Meta Ads + Research (scales) + buffer  
-> **Net Profit** = Net Revenue − Tool Costs | **Full breakdown: open [pnl_chart.html](pnl_chart.html)**
+> **Tool Costs** = Phase 1+ base ₹9,056 (M1) / ₹10,731 (M2+) + Meta Ads + Research (scales) + buffer  
+> **Net Profit** = Net Revenue − Tool Costs | **Live dashboard: https://jasmine-dashboard-lovat.vercel.app**
 
 | Month | Gross Revenue | Net Revenue | Tool Costs | **Net Profit** | Cumulative |
 |---|---|---|---|---|---|
 | M0 (setup) | ₹0 | ₹0 | ₹0 | **₹0** | ₹0 |
-| M1 | ₹21,000 | ₹18,228 | ₹5,718 ¹ | **₹12,510** | ₹12,510 |
-| M2 | ₹76,440 | ₹66,276 | ₹5,718 | **₹60,558** | ₹73,068 |
-| M3 | ₹1,85,220 | ₹1,60,818 | ₹11,718 ² | **₹1,49,100** | ₹2,22,168 |
-| M4 ★ | ₹3,38,400 | ₹2,91,720 | ₹14,718 ³ | **₹2,77,002** | ₹4,99,170 |
-| M5 | ₹5,01,000 | ₹4,31,460 | ₹14,718 | **₹4,16,742** | ₹9,15,912 |
-| M6 | ₹7,45,200 | ₹6,44,040 | ₹16,718 ⁴ | **₹6,27,322** | ₹15,43,234 |
-| M8 | ₹13,09,200 | ₹11,33,880 | ₹18,218 ⁵ | **₹11,15,662** | ~₹35,00,000 |
-| M10 | ₹19,48,800 | ₹16,90,920 | ₹21,218 ⁶ | **₹16,69,702** | ~₹66,00,000 |
-| M12 | ₹26,89,200 | ₹23,38,680 | ₹21,218 | **₹23,17,462** | ~₹1.07 crore |
+| M1 | ₹23,270 | ₹20,199 | ₹9,056 ¹ | **₹11,143** | ₹11,143 |
+| M2 | ₹84,703 | ₹73,441 | ₹10,731 ² | **₹62,710** | ₹73,853 |
+| M3 | ₹2,05,241 | ₹1,78,201 | ₹16,731 ³ | **₹1,61,470** | ₹2,35,323 |
+| M4 ★ | ₹3,71,088 | ₹3,20,140 | ₹19,731 ⁴ | **₹3,00,409** | ₹5,35,732 |
+| M5 | ₹5,48,670 | ₹4,72,910 | ₹19,731 | **₹4,53,179** | ₹9,88,911 |
+| M6 | ₹8,08,760 | ₹6,99,337 | ₹21,731 ⁵ | **₹6,77,606** | ₹16,66,517 |
+| M8 | ₹14,16,344 | ₹12,27,132 | ₹23,231 ⁶ | **₹12,03,901** | ~₹37,90,000 |
+| M10 | ₹21,03,160 | ₹18,25,304 | ₹26,231 ⁷ | **₹17,99,073** | ~₹70,50,000 |
+| M12 | ₹28,98,948 | ₹25,21,551 | ₹26,231 | **₹24,95,320** | ~₹1.17 crore |
 
 ★ M4 = Instagram native subscription (₹200/mo) launches — Instagram crosses 10,000 followers
 
 **Footnotes:**
-1. M1–M2: ₹5,718 base (Higgsfield ₹756 + ElevenLabs ₹420 + Grok ₹542 + Claude Code ₹4,000) — no ads or research
-2. M3: ₹5,718 + ₹3,000 Meta Ads + ₹3,000 Research = ₹11,718
-3. M4–M5: ₹5,718 + ₹6,000 Ads + ₹3,000 Research = ₹14,718
-4. M6–M7: ₹5,718 + ₹6,000 Ads + ₹5,000 Research = ₹16,718
-5. M8–M9: ₹16,718 + ₹1,500 buffer = ₹18,218
-6. M10+: ₹5,718 + ₹6,000 Ads + ₹8,000 Research + ₹1,500 buffer = ₹21,218
+1. M1: ₹9,056 base — Higgsfield ₹2,699 + ElevenLabs ₹420 + Grok ₹542 + Claude Code ₹4,000 + Calilio ₹1,303 + Namecheap ₹92 + Later.com ₹0 (not yet active)
+2. M2: ₹10,731 base — same as M1 + Later.com ₹1,675 now active
+3. M3: ₹10,731 + ₹3,000 Meta Ads + ₹3,000 Research = ₹16,731
+4. M4–M5: ₹10,731 + ₹6,000 Ads + ₹3,000 Research = ₹19,731
+5. M6–M7: ₹10,731 + ₹6,000 Ads + ₹5,000 Research = ₹21,731
+6. M8–M9: ₹21,731 + ₹1,500 buffer = ₹23,231
+7. M10+: ₹10,731 + ₹6,000 Ads + ₹8,000 Research + ₹1,500 buffer = ₹26,231
 
 ### Key P&L Observations
 
@@ -374,10 +372,10 @@
 |---|---|
 | **Break-even** | Month 1 — profitable from the first paying subscriber |
 | **Tool cost as % of net revenue** | M1: 19% → M3: 6% → M12: 0.9% |
-| **Total cost to reach ₹1,60,000 MRR (~$2k)** | ~₹16,194 in tool costs (M0–M3) |
-| **Total cost to reach ₹17,50,000 MRR (~$20k)** | ~₹1,30,000 in tool costs (M0–M10) |
-| **Annual run rate at Month 12** | ₹2.54 crore gross / ₹2.14 crore net / ₹2.53 crore net profit |
-| **ROI at Month 10** | ₹14,76,302/mo profit on ~₹1,30,000 total cumulative spend |
+| **Total cost to reach ₹1,86,160 MRR (~$2k)** | ~₹16,194 in tool costs (M0–M3) |
+| **Total cost to reach ₹18,61,600 MRR (~$20k)** | ~₹1,30,000 in tool costs (M0–M10) |
+| **Annual run rate at Month 12** | ₹28.99L gross / ₹25.22L net / ₹25.00L net profit (monthly M12) |
+| **ROI at Month 10** | ₹18,04,086/mo profit on ~₹1,30,000 total cumulative spend |
 
 ### Cost Sensitivity
 
@@ -385,7 +383,7 @@
 |---|---|
 | Ads don't convert (paused at M3) | Saves ₹3,000–₹6,000/mo → net profit higher, growth slows ~20% |
 | RunPod replaces Colab entirely | +₹1,500/mo → negligible at any scale |
-| Higgsfield India price lower than $9 | Saves ₹100–₹400/mo → positive surprise |
+| ElevenLabs India price lower than $5 | Saves ₹100–₹300/mo → positive surprise — verify at elevenlabs.io/pricing |
 | **Only real cost risk** | CEO's time before the automation pipeline is complete |
 
 ---
@@ -394,7 +392,7 @@
 
 | Milestone | INR Target | Monthly Tool Cost | Cumulative Cost to Reach It |
 |---|---|---|---|
-| First paying subscriber | — | ₹3,398 | ~₹3,398 |
-| $2,000 MRR — Month 3 | ₹1,68,000/mo | ₹9,398 | ~₹16,194 |
-| $5,000 MRR — Month 5 | ₹4,20,000/mo | ₹12,398 | ~₹46,000 |
-| $20,000 MRR — Month 10 | ₹16,80,000/mo | ₹18,898 | ~₹1,30,000 |
+| First paying subscriber (M1) | — | ₹9,056 | ~₹9,056 |
+| $2,000 MRR — Month 3 | ₹1,86,160/mo | ₹16,731 | ~₹36,500 |
+| $5,000 MRR — Month 5 | ₹4,65,400/mo | ₹19,731 | ~₹76,000 |
+| $20,000 MRR — Month 10 | ₹18,61,600/mo | ₹26,231 | ~₹1,92,000 |
