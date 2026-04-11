@@ -1,82 +1,98 @@
 # Deploy Guide — Jasmine P&L Dashboard
 
+## Status: LIVE ✅
+
+**Production URL:** https://jasmine-dashboard-lovat.vercel.app  
+**GitHub repo:** https://github.com/rheavoss/jasmine-dashboard (private)  
+**Supabase project ref:** `vvyexzbtkncitgzraath` (rheavoss account)  
+**Vercel account:** `rheavoss` / `contact.rheavoss@gmail.com` / team `rheavoss-projects`
+
+---
+
 ## Stack
 - **Next.js 14** (App Router) — frontend + server-side data fetching
 - **Supabase** — PostgreSQL database (stores P&L projections; update actuals each month)
-- **Vercel** — hosting, auto-deploys from GitHub on every push
+- **Vercel** — hosting, deployed via API (see below)
 
 ---
 
-## Step 1 — Supabase
+## CRITICAL: Account Discipline
 
-1. Go to [supabase.com](https://supabase.com) → New project (name it `jasmine-dashboard`)
-2. Once created, go to **SQL Editor → New query**
-3. Paste the full contents of `supabase/schema.sql` and click **Run**
-   - This creates the `jasmine_pnl` table and seeds all 12 months of projected data
-4. Go to **Project Settings → API**
-   - Copy **Project URL** → this is `NEXT_PUBLIC_SUPABASE_URL`
-   - Copy **anon public key** → this is `NEXT_PUBLIC_SUPABASE_ANON_KEY`
-
----
-
-## Step 2 — GitHub
-
-1. Create a new **private** repo (e.g. `jasmine-dashboard`) on GitHub
-2. In your terminal, from the `20_tech/jasmine-dashboard/` directory:
-   ```bash
-   git init
-   git add .
-   git commit -m "feat: initial P&L dashboard"
-   git remote add origin https://github.com/YOUR_USERNAME/jasmine-dashboard.git
-   git push -u origin main
-   ```
-   > Do NOT commit `.env.local` — it is in `.gitignore`
-
----
-
-## Step 3 — Vercel
-
-1. Go to [vercel.com](https://vercel.com) → **Add New Project**
-2. Import the GitHub repo you just pushed
-3. Framework preset: **Next.js** (auto-detected)
-4. Before clicking Deploy, open **Environment Variables** and add:
-   | Key | Value |
-   |-----|-------|
-   | `NEXT_PUBLIC_SUPABASE_URL` | (from Supabase Step 1) |
-   | `NEXT_PUBLIC_SUPABASE_ANON_KEY` | (from Supabase Step 1) |
-5. Click **Deploy** — your URL will be `https://jasmine-dashboard.vercel.app` (or similar)
-
----
-
-## Step 4 — Local dev (optional)
+Three GitHub accounts exist on this machine: `surajhealth` (default), `surajstoic`, `rheavoss`.  
+**Always run this FIRST before any git or Vercel operation:**
 
 ```bash
-cd 20_tech/jasmine-dashboard
-cp .env.local.example .env.local
-# Fill in your Supabase URL and anon key in .env.local
-npm install
-npm run dev
-# Open http://localhost:3000
+gh auth switch --user rheavoss && gh api user --jq '.login'
+# Must print: rheavoss
+```
+
+---
+
+## CRITICAL: Deploy Method (vercel --prod FAILS)
+
+`vercel --prod` and `vercel deploy` consistently return "Unexpected error" on this account.  
+**Always deploy via Vercel API:**
+
+```bash
+# Step 1 — Push to GitHub
+gh auth switch --user rheavoss
+git push origin main
+
+# Step 2 — Trigger deployment via API
+VERCEL_TOKEN=$(python3 -c "import json; d=json.load(open('/Users/user/Library/Application Support/com.vercel.cli/auth.json')); print(d['token'])")
+
+curl -s -X POST "https://api.vercel.com/v13/deployments" \
+  -H "Authorization: Bearer $VERCEL_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{"name":"jasmine-dashboard","gitSource":{"type":"github","repoId":"1207251857","ref":"main"},"target":"production"}' \
+  > /tmp/deploy.json
+
+# Step 3 — Get deploy ID and wait for READY state
+python3 -c "import json; d=json.load(open('/tmp/deploy.json')); print('ID:', d['id'], '| URL:', d['url'])"
+
+# Poll until ready (replace DEPLOY_ID)
+DEPLOY_ID="<id from above>"
+curl -s "https://api.vercel.com/v13/deployments/$DEPLOY_ID" \
+  -H "Authorization: Bearer $VERCEL_TOKEN" | python3 -c "import sys,json; print(json.load(sys.stdin)['readyState'])"
+
+# Step 4 — Point production alias to new deployment
+curl -s -X POST "https://api.vercel.com/v2/deployments/$DEPLOY_ID/aliases" \
+  -H "Authorization: Bearer $VERCEL_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{"alias":"jasmine-dashboard-lovat.vercel.app"}'
 ```
 
 ---
 
 ## Updating actuals each month
 
-When real numbers come in (month closes), update Supabase directly:
+When real numbers come in, update Supabase via the Management API:
 
-```sql
--- Example: update M1 with actual fanvue revenue
-UPDATE jasmine_pnl
-SET fanvue = 18500, updated_at = now()
-WHERE month = 1;
+```bash
+SUPABASE_TOKEN="<token from Claude memory>"
+curl -s -X POST "https://api.supabase.com/v1/projects/vvyexzbtkncitgzraath/database/query" \
+  -H "Authorization: Bearer $SUPABASE_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{"query": "UPDATE jasmine_pnl SET fanvue = 18500, updated_at = now() WHERE month = 1;"}'
 ```
 
 The dashboard auto-revalidates from Supabase every hour (`revalidate = 3600` in `app/page.js`).
-To force an immediate refresh, trigger a Vercel redeploy.
 
 ---
 
 ## Fallback behaviour
 
-If Supabase credentials are missing or the table is empty, the dashboard silently falls back to the hardcoded projected data in `lib/fallback-data.js`. The site never goes blank.
+If Supabase is down or unconfigured, the dashboard uses `lib/fallback-data.js` (hardcoded projections at ₹93.08 rate). The site never goes blank.
+
+---
+
+## Local dev
+
+```bash
+cd 20_tech/jasmine-dashboard
+cp .env.local.example .env.local
+# Fill in NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY
+npm install
+npm run dev
+# Open http://localhost:3000
+```

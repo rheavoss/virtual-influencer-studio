@@ -1,6 +1,9 @@
+import dynamic from 'next/dynamic';
 import { getSupabaseClient } from '@/lib/supabase';
 import { FALLBACK_DATA } from '@/lib/fallback-data';
-import PLDashboard from '@/components/PLDashboard';
+
+// ssr: false ensures Chart.js only runs in the browser — never on the server
+const PLDashboard = dynamic(() => import('@/components/PLDashboard'), { ssr: false });
 
 async function getData() {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
@@ -21,7 +24,7 @@ async function getData() {
   }
 }
 
-export const revalidate = 3600; // revalidate every hour
+export const revalidate = 3600;
 
 export default async function Page() {
   const data = await getData();
