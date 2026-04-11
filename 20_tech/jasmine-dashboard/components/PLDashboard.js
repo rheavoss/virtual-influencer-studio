@@ -79,8 +79,11 @@ const milestonePlugin = {
 
 const S = {
   page:      { background: C.pageBg, color: C.textPri, fontFamily: "'Segoe UI',system-ui,sans-serif", minHeight: '100vh', padding: '28px 20px 60px' },
-  h1:        { textAlign: 'center', fontSize: 22, fontWeight: 700, color: C.blue, marginBottom: 4 },
-  sub:       { textAlign: 'center', color: C.textSec, fontSize: 12, marginBottom: 28 },
+  header:    { display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: 28 },
+  headerMid: { flex: 1, textAlign: 'center' },
+  h1:        { fontSize: 22, fontWeight: 700, color: C.blue, marginBottom: 4 },
+  sub:       { color: C.textSec, fontSize: 12 },
+  graphBtn:  { flexShrink: 0, marginTop: 2, padding: '6px 14px', fontSize: 12, fontWeight: 600, color: C.blue, background: C.noteBg, border: `1px solid ${C.noteBdr}`, borderRadius: 8, cursor: 'pointer', textDecoration: 'none', whiteSpace: 'nowrap' },
   stats:     { display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(190px,1fr))', gap: 10, marginBottom: 8 },
   statBase:  { background: C.cardBg, border: `1px solid ${C.cardBdr}`, borderRadius: 10, padding: '14px 16px' },
   statGreen: { background: C.greenBg, border: `1px solid ${C.greenBdr}`, borderRadius: 10, padding: '14px 16px' },
@@ -193,8 +196,16 @@ export default function PLDashboard({ data }) {
 
   return (
     <div style={S.page}>
-      <h1 style={S.h1}>Jasmine — 12-Month P&amp;L Dashboard</h1>
-      <div style={S.sub}>All values in INR &nbsp;·&nbsp; ₹93.08 = $1 USD &nbsp;·&nbsp; IG subscription ₹200/mo launches at M4 (10k followers)</div>
+      <div style={S.header}>
+        <div style={{ width: 110 }} />
+        <div style={S.headerMid}>
+          <h1 style={S.h1}>Jasmine — 12-Month P&amp;L Dashboard</h1>
+          <div style={S.sub}>All values in INR &nbsp;·&nbsp; ₹93.08 = $1 USD &nbsp;·&nbsp; IG subscription ₹200/mo launches at M4 (10k followers)</div>
+        </div>
+        <a href="/graph.html" target="_blank" rel="noopener noreferrer" style={S.graphBtn}>
+          🔗 Knowledge Graph
+        </a>
+      </div>
 
       {/* SUMMARY CARDS */}
       <SectionLabel text="12-Month Summary" />
