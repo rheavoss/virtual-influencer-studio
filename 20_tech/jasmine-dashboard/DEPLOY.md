@@ -3,7 +3,8 @@
 ## Status: LIVE ✅
 
 **Production URL:** https://jasmine-dashboard-lovat.vercel.app  
-**GitHub repo:** https://github.com/rheavoss/jasmine-dashboard (private)  
+**GitHub repo:** https://github.com/rheavoss/jasmine-project (private) — single repo  
+**Vercel rootDirectory:** `20_tech/jasmine-dashboard`  
 **Supabase project ref:** `vvyexzbtkncitgzraath` (rheavoss account)  
 **Vercel account:** `rheavoss` / `contact.rheavoss@gmail.com` / team `rheavoss-projects`
 
@@ -28,35 +29,37 @@ gh auth switch --user rheavoss && gh api user --jq '.login'
 
 ---
 
-## CRITICAL: Deploy Method (vercel --prod FAILS)
+## Deploy (from project root `/Users/user/Desktop/Instagram/`)
 
 `vercel --prod` and `vercel deploy` consistently return "Unexpected error" on this account.  
-**Always deploy via Vercel API:**
+**Always deploy via Vercel API. Run from the project root — no need to cd into the dashboard subfolder.**
 
 ```bash
-# Step 1 — Push to GitHub
+# Step 1 — Switch account and push to GitHub (from project root)
 gh auth switch --user rheavoss
 git push origin main
 
 # Step 2 — Trigger deployment via API
 VERCEL_TOKEN=$(python3 -c "import json; d=json.load(open('/Users/user/Library/Application Support/com.vercel.cli/auth.json')); print(d['token'])")
 
-curl -s -X POST "https://api.vercel.com/v13/deployments" \
+DEPLOY_ID=$(curl -s -X POST "https://api.vercel.com/v13/deployments?teamId=team_wA18mcHEsEeyCqns1SIX7Ah3" \
   -H "Authorization: Bearer $VERCEL_TOKEN" \
   -H "Content-Type: application/json" \
-  -d '{"name":"jasmine-dashboard","gitSource":{"type":"github","repoId":"1207251857","ref":"main"},"target":"production"}' \
-  > /tmp/deploy.json
+  -d '{"name":"jasmine-dashboard","gitSource":{"type":"github","repoId":"1207241996","ref":"main"},"target":"production"}' \
+  | python3 -c "import json,sys; print(json.load(sys.stdin)['id'])")
 
-# Step 3 — Get deploy ID and wait for READY state
-python3 -c "import json; d=json.load(open('/tmp/deploy.json')); print('ID:', d['id'], '| URL:', d['url'])"
+echo "Deploy ID: $DEPLOY_ID"
 
-# Poll until ready (replace DEPLOY_ID)
-DEPLOY_ID="<id from above>"
-curl -s "https://api.vercel.com/v13/deployments/$DEPLOY_ID" \
-  -H "Authorization: Bearer $VERCEL_TOKEN" | python3 -c "import sys,json; print(json.load(sys.stdin)['readyState'])"
+# Step 3 — Poll until ready
+for i in 1 2 3 4 5 6 7 8; do
+  STATE=$(curl -s "https://api.vercel.com/v13/deployments/$DEPLOY_ID?teamId=team_wA18mcHEsEeyCqns1SIX7Ah3" \
+    -H "Authorization: Bearer $VERCEL_TOKEN" | python3 -c "import json,sys; print(json.load(sys.stdin)['readyState'])")
+  echo "[$i] $STATE"
+  [ "$STATE" = "READY" ] && break || sleep 15
+done
 
 # Step 4 — Point production alias to new deployment
-curl -s -X POST "https://api.vercel.com/v2/deployments/$DEPLOY_ID/aliases" \
+curl -s -X POST "https://api.vercel.com/v2/deployments/$DEPLOY_ID/aliases?teamId=team_wA18mcHEsEeyCqns1SIX7Ah3" \
   -H "Authorization: Bearer $VERCEL_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{"alias":"jasmine-dashboard-lovat.vercel.app"}'
@@ -69,7 +72,7 @@ curl -s -X POST "https://api.vercel.com/v2/deployments/$DEPLOY_ID/aliases" \
 When real numbers come in, update Supabase via the Management API:
 
 ```bash
-SUPABASE_TOKEN="<token from Claude memory>"
+SUPABASE_TOKEN="<token from /Users/user/Desktop/jasmine_credentials.md>"
 curl -s -X POST "https://api.supabase.com/v1/projects/vvyexzbtkncitgzraath/database/query" \
   -H "Authorization: Bearer $SUPABASE_TOKEN" \
   -H "Content-Type: application/json" \
