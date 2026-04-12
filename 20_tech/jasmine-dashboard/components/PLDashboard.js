@@ -1,5 +1,5 @@
 'use client';
-import { useMemo, useState, useCallback } from 'react';
+import { useMemo } from 'react';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -16,57 +16,84 @@ import { Line, Bar } from 'react-chartjs-2';
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, BarElement, Filler, Tooltip, Legend);
 
 // ── CONSTANTS & DATA ───────────────────────────────────────────────────────────
-// Fees based on PDF: Fanvue 15%, Passes/PPV/Telegram/Brand 10%, IG Subs 20%
-const KEEP        = [0.85, 0.90, 0.90, 0.90, 0.90, 0.80, 0.70];
-const MILESTONES  = { 2: '$2k MRR', 4: 'IG/FB Subs Live', 9: '$30k MRR' };
-const REV_LABELS  = ['Fanvue', 'Passes', 'PPV+Voice', 'Telegram', 'Brand Deals', 'IG Subs', 'FB Subs'];
-const COST_LABELS = ['Higgsfield', 'ElevenLabs', 'Grok', 'Claude ×2', 'Meta Ads', 'Research', 'Buffer'];
+// Platform fee retention rates (1 - fee%):
+// Fanvue 15%, Passes 10%, PPV+Voice 10%, Telegram 10%, Brand 10%, IG Subs 20%, FB Subs 30%
+const KEEP = [0.85, 0.90, 0.90, 0.90, 0.90, 0.80, 0.70];
+
+// Revenue stream labels — maps 1:1 to rArr indices
+const REV_LABELS = ['Fanvue', 'Passes', 'PPV+Voice', 'Telegram', 'Brand Deals', 'IG Subs', 'FB Subs'];
+
+// Expense labels — maps 1:1 to cArr indices (ALL 10 items)
+const COST_LABELS = [
+  'Higgsfield', 'ElevenLabs', 'Grok', 'Claude ×2',
+  'Meta Ads', 'Research', 'Buffer', 'Calilio', 'Namecheap', 'Later.com',
+];
+
+// Platform fee breakdown for display
+const PLATFORM_FEES = [
+  { name: 'Fanvue', fee: '15%', type: 'Subscription Platform', url: 'https://www.fanvue.com' },
+  { name: 'Passes', fee: '10%', type: 'Subscription Platform', url: 'https://www.passes.com' },
+  { name: 'PPV / Voice Notes', fee: '10%', type: 'Pay-Per-View', url: 'https://www.passes.com' },
+  { name: 'Telegram VIP', fee: '10%', type: 'Community Tier', url: 'https://www.telegram.org' },
+  { name: 'Brand Deals', fee: '10%', type: 'Sponsored Content', url: '' },
+  { name: 'IG Subscriptions', fee: '20%', type: 'Native IG (unlocks at 10k)', url: 'https://www.instagram.com' },
+  { name: 'FB Subscriptions', fee: '30%', type: 'Facebook Creator', url: 'https://www.facebook.com/creators' },
+];
+
+// Fixed monthly tool costs — maps 1:1 to cArr
+const TOOL_STACK = [
+  { name: 'Higgsfield',  cost: 2699, desc: 'AI Video Gen / Animation',        url: 'https://higgsfield.ai' },
+  { name: 'ElevenLabs',  cost: 420,  desc: 'AI Voice Cloning & Synthesis',     url: 'https://elevenlabs.io' },
+  { name: 'Grok (X)',    cost: 542,  desc: 'Training Data / Content Research', url: 'https://x.com' },
+  { name: 'Claude x2',   cost: 4000, desc: 'Logic, Scripts & Automation (2 Seats)', url: 'https://claude.ai' },
+  { name: 'Meta Ads',    cost: null, desc: 'Variable — ₹3,000 (M3) → ₹6,000 (M4+)', url: 'https://www.facebook.com/business/ads' },
+  { name: 'Research',    cost: null, desc: 'Variable — ₹3,000 → ₹5,000 → ₹8,000', url: '' },
+  { name: 'Buffer',      cost: null, desc: 'Variable — ₹1,500 from M8 (Metricool/RunPod)', url: '' },
+  { name: 'Calilio',     cost: 1303, desc: 'VoIP / International Comms',       url: 'https://calilio.com' },
+  { name: 'Namecheap',   cost: 92,   desc: 'Domain & Email Hosting',           url: 'https://namecheap.com' },
+  { name: 'Later.com',   cost: 1675, desc: 'Social Media Scheduling (from M2)', url: 'https://later.com' },
+];
+
+const FIXED_MONTHLY_COST = TOOL_STACK.filter(t => t.cost).reduce((s, t) => s + t.cost, 0);
+
+const COMPETITORS = [
+  { name: 'Lu do Magalu',  followers: '6.8M',  url: 'https://www.instagram.com/magazineluiza/', note: 'Brazil — World\'s most followed AI influencer' },
+  { name: 'Lil Miquela',   followers: '2.6M',  url: 'https://www.instagram.com/lilmiquela/',   note: 'USA — Brud / first mainstream AI influencer' },
+  { name: 'Aitana Lopez',  followers: '330K',  url: 'https://www.instagram.com/aitana.lopez.official/', note: 'Spain — €10k/mo, Fanvue creator economy leader' },
+  { name: 'Imma',          followers: '390K',  url: 'https://www.instagram.com/imma.gram/',    note: 'Japan — Fashion-forward virtual model' },
+  { name: 'Shudu',         followers: '240K',  url: 'https://www.instagram.com/shudu.gram/',  note: 'UK — First AI supermodel, Cameron-James Wilson' },
+];
 
 const GLOSSARY = [
-  { t: 'Gross Revenue', d: 'Total money earned across all platforms before anyone takes their cut. (Fanvue + Passes + PPV/Voice + Telegram + Brand + IG Subs)' },
-  { t: 'Platform Cuts', d: 'Commission fees taken by each platform. Fanvue 15%, Passes/PPV/Telegram/Brand 10%, Instagram Subs 20%.' },
-  { t: 'Net Revenue', d: 'Money that actually lands in your account after all platform commissions. (Gross Revenue - Platform Cuts)' },
-  { t: 'Total Costs (Expenses)', d: 'Everything you spend each month: AI tools (Higgsfield, ElevenLabs, Grok, Claude), paid ads, and research.' },
-  { t: 'Net Profit', d: 'The money you actually keep — after platform fees AND all expenses. (Net Revenue - Total Costs)' },
-  { t: 'Cumulative Profit', d: 'Running total of all net profits since Month 1. (Sum of all Net Profits up to this month)' },
-  { t: 'MRR', d: 'Monthly Recurring Revenue — predictable subscription income that auto-renews. (Fanvue + IG subscriptions)' },
-  { t: 'PPV / GFE', d: 'Pay-Per-View & Girlfriend Experience — high-ticket personal interaction, voice notes, and DMs driving premium yield.' },
+  { t: 'Gross Revenue',       d: 'Total money earned across all platforms before anyone takes their cut. (Fanvue + Passes + PPV/Voice + Telegram + Brand + IG Subs + FB Subs)' },
+  { t: 'Platform Cuts',       d: 'Commission fees taken by each platform. Fanvue 15%, Passes/PPV/Telegram/Brand 10%, Instagram Subs 20%, FB Subs 30%.' },
+  { t: 'Net Revenue',         d: 'Money that actually lands in your account after all platform commissions. (Gross Revenue − Platform Cuts)' },
+  { t: 'Total Costs',         d: 'Everything spent each month: AI tools (Higgsfield ₹2,699 + ElevenLabs ₹420 + Grok ₹542 + Claude ₹4,000 + Calilio ₹1,303 + Later.com ₹1,675 + Namecheap ₹92) + variable ads and research.' },
+  { t: 'Net Profit',          d: 'The money you actually keep — after platform fees AND all expenses. (Net Revenue − Total Costs)' },
+  { t: 'Cumulative Profit',   d: 'Running total of all net profits since Month 1. (Sum of all Net Profits up to this month)' },
+  { t: 'MRR',                 d: 'Monthly Recurring Revenue — predictable subscription income that auto-renews. (Fanvue subscriptions + IG subscriptions)' },
+  { t: 'PPV',                 d: 'Pay-Per-View — fans pay once for specific content, not a monthly sub. (Included in PPV+Voice column)' },
+  { t: 'GFE',                 d: 'Girlfriend Experience — premium personal interaction: voice notes, DMs, personalised content. Drives higher Fanvue + PPV yield.' },
+  { t: 'ARPU / ARPPU',        d: 'Average Revenue Per User / Per Paying User. ARPPU excludes free followers and tracks only subscribers and buyers.' },
 ];
 
 const ROADMAP = [
-  { m: 'Pre-Launch Phase 0 — Foundation', d: 'Generate 40 LoRA training images (Grok + Colab) • QC against character bible • Train Flux.1 LoRA on Civitai/RunPod • Verify face/body lock • OPSEC pipeline: ExifTool strip + film grain.' },
-  { m: 'M1 Day 1 — Full Launch', d: 'Fanvue ₹1,200/mo GFE sub • Instagram SFW cycle (1 Post, 3 Stories/day) • Passes mirror • X/Twitter traffic funnel • 12 pre-batched content runway • Metricool setup • DM welcome scripts.' },
-  { m: 'M2 Growth & Content Velocity', d: 'Increase post frequency based on engagement data • Launch first PPV campaign (voice note bundle) • Reddit SFW seeding • A/B test caption styles and posting times.' },
-  { m: 'M3 $2k MRR Milestone (₹1.86L)', d: 'Meta Ads: Paid Instagram promotion (₹3,000/mo budget) • Launch retargeting to profile visitors • First collab shoutout with micro-influencer (barter).' },
-  { m: 'M4 IG Subscriptions Unlock (10k Followers)', d: 'Hit 10k follower milestone • Launch ₹300/mo native IG subscriptions • Exclusive Stories + Close Friends • First "live" voice note AMA session for subscribers.' },
-  { m: 'M5 GFE & Sales Automation', d: 'Expand to Telegram VIP for GFE teasers • Dedicated sales script for voice note bundles • Hiring automated content researcher (Perplexity scanning).' },
-  { m: 'M6 Scaling & Maturity', d: 'Diversify to lifestyle vlogs • Jasmine POD merchandise store • Scale Meta Ads budget to ₹10,000/mo base.' },
-  { m: 'M9+ Maturity & Market Dominance', d: 'Tier-1 Brand sponsorships (Fashion/Tech) • Launch white-label automated GFE SaaS tool • Exit strategy planning — potential $1M+ USD valuation.' },
-];
-
-const COMPETITORS = [
-  { name: 'Lu do Magalu', followers: '6.8M', url: 'https://www.instagram.com/magazineluiza/' },
-  { name: 'Lil Miquela', followers: '2.6M', url: 'https://www.instagram.com/lilmiquela/' },
-  { name: 'Imma', followers: '390K', url: 'https://www.instagram.com/imma.gram/' },
-  { name: 'Aitana Lopez', followers: '330K', url: 'https://www.instagram.com/fit_aitana/' },
-  { name: 'Shudu', followers: '240K', url: 'https://www.instagram.com/shudu.gram/' }
-];
-
-const TOOL_STACK = [
-  { name: 'Higgsfield', cost: 2699, desc: 'AI Video Gen / Animation' },
-  { name: 'ElevenLabs', cost: 420,  desc: 'AI Voice Cloning' },
-  { name: 'Grok (X)',   cost: 542,  desc: 'Training Data / Research' },
-  { name: 'Claude x2',  cost: 4000, desc: 'Logic & Automation (2 Seats)' },
-  { name: 'Calilio',    cost: 1303, desc: 'VoIP / International Comms' },
-  { name: 'Later.com',  cost: 1675, desc: 'Social Media Scheduling' },
-  { name: 'Namecheap',  cost: 92,   desc: 'Domain / Email Hosting' },
+  { m: 'Pre-Launch Phase 0 — Foundation', d: 'Generate 40 LoRA training images (Grok + Colab) • QC against character bible • Train Flux.1 LoRA on Civitai/RunPod • QC LoRA — 5 test images, verify face + body lock • OPSEC pipeline: ExifTool EXIF strip + film grain overlay.' },
+  { m: 'M1 Day 1 — Full Launch',          d: 'Fanvue GFE subscription ₹1,200/mo (free trial first week) • Instagram SFW: 1 post/day, 3 Stories/day, Reels 3×/week • Passes: Mirror of Fanvue + PPV unlocks, voice notes • X/Twitter: SFW-edge teasers → traffic to Fanvue • Post 12 pre-batched content pieces (2-week runway) • Metricool scheduler setup • DM welcome script live on Fanvue • Linktree setup: link-in-bio → Fanvue + Passes.' },
+  { m: 'M2 Growth & Content Velocity',    d: 'Increase post frequency based on engagement data • Launch first PPV campaign — voice note bundle • Start Reddit seeding (SFW communities) • A/B test caption styles and posting times.' },
+  { m: 'M3 — $2k MRR Milestone (₹1.86L)', d: 'Meta Ads: Paid Instagram promotion — ₹3,000/mo budget • $2k MRR ($2,000 USD = ₹1,86,160) target • Launch Meta Ads retargeting to profile visitors • First collab shoutout with micro-influencer (barter).' },
+  { m: 'M4 — IG Subscriptions Unlock (10k Followers)', d: 'Hit 10k follower milestone • Instagram Subscriptions: ₹300/mo native IG sub — exclusive Stories + Close Friends • First "live" voice note AMA session for subscribers.' },
+  { m: 'M5 — GFE & Sales Automation',    d: 'Expand to Telegram — premium channel for GFE teasers (₹500–₹800/mo tier) • Dedicated sales script for voice note bundles (GFE 2.0) • Content researcher role automated using Perplexity.' },
+  { m: 'M6 — Scaling & Infrastructure Maturity', d: 'Diversify content — lifestyle vlogs (high-production values) • Launch branded merchandise store (print-on-demand) • Scale Meta Ads budget to ₹10,000/mo base.' },
+  { m: 'M9+ — Market Dominance',          d: 'Brand sponsorships in Fashion, Tech, Gaming (Tier-1 focus: US/UK/EU minimum ₹21,000/deal) • White-label SaaS: automated GFE tool for other creators.' },
 ];
 
 const FOOTNOTES = [
-  { id: 1, label: 'Aitana Lopez Revenue', text: 'Verified earnings of €10,000/month for Tier-1 virtual models.', url: 'https://www.euractiv.com/section/digital/news/first-spanish-ai-model-earns-up-to-e10000-per-month/' },
-  { id: 2, label: 'Meta Ads CPM Gap', text: 'US/Tier-1 CPM ($15–$20) vs India ($1–$3) benchmarks.', url: 'https://adamigo.ai/meta-ads-cpm-benchmarks/' },
-  { id: 3, label: 'Subscription ARPPU Logic', text: 'Top 1% creator yield: $15 sub + $25 monthly PPV/Tips average.', url: 'https://influencermarketinghub.com/onlyfans-statistics/' },
-  { id: 4, label: 'Market Maturity Lag', text: 'Annual report on 2-year lag in digital influencer monetization between US and India.', url: 'https://www.ey.com/en_in/media-entertainment/the-state-of-influencer-marketing-in-india' }
+  { id: 1, label: 'Aitana Lopez Revenue Proof',   text: 'AI influencer earns €10,000/month ($11k USD) sourced from The Clueless Studio — confirmed by Euractiv & Forbes.',        url: 'https://www.euractiv.com/section/digital/news/first-spanish-ai-model-earns-up-to-e10000-per-month/' },
+  { id: 2, label: 'US vs India Meta Ads CPM Gap', text: 'Tier-1 CPM: $15–$20 (US/UK). Tier-3 CPM: $1–$3 (India). Source: Adamigo Ads Benchmarks 2024.',                         url: 'https://adamigo.ai/meta-ads-cpm-benchmarks/' },
+  { id: 3, label: 'Tier-1 Subscriber LTV Logic',  text: 'US/UK ARPPU calculation: $15.99 base sub + avg $15–$25 PPV = ~$370–$490/yr per paying subscriber. Source: IMH 2024.',   url: 'https://influencermarketinghub.com/onlyfans-statistics/' },
+  { id: 4, label: 'India Market Maturity Lag',     text: 'EY India Influencer Report: Indian market is 2 years behind US/EU in premium creator economy adoption and monetization.', url: 'https://www.ey.com/en_in/media-entertainment/the-state-of-influencer-marketing-in-india' },
+  { id: 5, label: 'Virtual Influencer Market Size', text: 'Global virtual influencer market projected to reach $37.8B by 2030 (CAGR 36%). Source: Grand View Research.',          url: 'https://www.grandviewresearch.com/industry-analysis/virtual-influencer-market-report' },
 ];
 
 // ── HELPERS ────────────────────────────────────────────────────────────────────
@@ -80,6 +107,7 @@ const fL = v => {
 function deriveRows(data) {
   return data.map(row => {
     const rArr  = [row.fanvue, row.passes, row.ppv_voice, row.telegram, row.brand, row.ig_subs, row.fb_subs || 0];
+    // ALL 10 expense fields in exact COST_LABELS order
     const cArr  = [row.higgsfield, row.elevenlabs, row.grok, row.claude_code, row.meta_ads, row.research, row.buffer, row.calilio, row.namecheap, row.later_com];
     const gross = rArr.reduce((a, b) => a + b, 0);
     const net   = rArr.reduce((s, v, i) => s + v * KEEP[i], 0);
@@ -89,39 +117,40 @@ function deriveRows(data) {
   });
 }
 
-// ── COMPACT THEME ──────────────────────────────────────────────────────────────
+// ── COMPACT LIGHT THEME ────────────────────────────────────────────────────────
 const C = {
-  pageBg:    '#f6f8fa',
-  cardBg:    '#ffffff',
-  cardBdr:   '#d0d7de',
-  textPri:   '#1f2328',
-  textSec:   '#57606a',
-  textMut:   '#8c959f',
-  grid:      '#d8dee4',
-  blue:      '#0969da',
-  green:     '#1a7f37',
-  orange:    '#bc4c00',
-  red:       '#cf222e',
-  accent:    '#8250df',
-  noteBg:    '#f0f6ff',
-  noteBdr:   '#cae3fb',
-  greenBg:   '#dafbe1',
-  greenBdr:  '#2da44e',
+  pageBg:   '#f6f8fa',
+  cardBg:   '#ffffff',
+  cardBdr:  '#d0d7de',
+  textPri:  '#1f2328',
+  textSec:  '#57606a',
+  textMut:  '#8c959f',
+  grid:     '#d8dee4',
+  blue:     '#0969da',
+  green:    '#1a7f37',
+  orange:   '#bc4c00',
+  red:      '#cf222e',
+  accent:   '#8250df',
+  noteBg:   '#f0f6ff',
+  noteBdr:  '#cae3fb',
+  greenBg:  '#dafbe1',
+  greenBdr: '#2da44e',
 };
 
 const S = {
-  page:      { background: C.pageBg, color: C.textPri, fontFamily: "-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif", padding: '24px 20px 80px' },
+  page:      { background: C.pageBg, color: C.textPri, fontFamily: "-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif", padding: '24px 20px 80px', maxWidth: 1600, margin: '0 auto' },
   header:    { textAlign: 'center', marginBottom: 24 },
-  h1:        { fontSize: 24, fontWeight: 700, color: C.blue, marginBottom: 4 },
+  h1:        { fontSize: 22, fontWeight: 700, color: C.blue, marginBottom: 4 },
   sub:       { color: C.textSec, fontSize: 12 },
   stats:     { display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 12, marginBottom: 16 },
   statBox:   { background: C.cardBg, border: `1px solid ${C.cardBdr}`, borderRadius: 8, padding: '12px 14px' },
   statLbl:   { fontSize: 10, color: C.textMut, textTransform: 'uppercase', fontWeight: 600, marginBottom: 4 },
   card:      { background: C.cardBg, border: `1px solid ${C.cardBdr}`, borderRadius: 8, padding: 16, marginBottom: 16 },
-  cardTitle: { fontSize: 11, fontWeight: 700, color: C.textSec, textTransform: 'uppercase', marginBottom: 12, display: 'flex', alignItems: 'center', gap: 6 },
+  cardTitle: { fontSize: 11, fontWeight: 700, color: C.textSec, textTransform: 'uppercase', marginBottom: 12, letterSpacing: '0.5px' },
   fn:        { verticalAlign: 'super', fontSize: 9, fontWeight: 700, color: C.blue, marginLeft: 2, cursor: 'help' },
   link:      { color: C.blue, textDecoration: 'none', cursor: 'pointer' },
-  grid2:     { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: 16 },
+  grid2:     { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: 16, marginBottom: 16 },
+  divider:   { borderBottom: `1px solid ${C.grid}`, paddingBottom: 8, marginBottom: 8 },
 };
 
 // ── MAIN COMPONENT ─────────────────────────────────────────────────────────────
@@ -130,300 +159,322 @@ export default function PLDashboard({ data }) {
   const months     = rows.map(r => r.label);
   const grossRev   = rows.map(r => r.gross);
   const netRev     = rows.map(r => r.net);
-  const totalCosts = rows.map(r => r.costs);
   const netProfit  = rows.map(r => r.profit);
   const cumulative = netProfit.reduce((acc, v, i) => { acc.push((acc[i - 1] || 0) + v); return acc; }, []);
 
   const T = {
     gross:  grossRev.reduce((a, b) => a + b, 0),
     net:    netRev.reduce((a, b) => a + b, 0),
-    costs:  totalCosts.reduce((a, b) => a + b, 0),
+    costs:  rows.map(r => r.costs).reduce((a, b) => a + b, 0),
     profit: netProfit.reduce((a, b) => a + b, 0),
   };
 
-  const mainChartData = {
+  const lineChartData = {
     labels: months,
     datasets: [
-      { label: 'Gross Revenue', data: grossRev,   borderColor: C.blue,   backgroundColor: 'rgba(9,105,218,0.05)',  borderWidth: 2, pointRadius: 4, fill: false, tension: 0.3 },
-      { label: 'Net Profit',    data: netProfit,  borderColor: C.green,  backgroundColor: 'rgba(26,127,55,0.1)',   borderWidth: 2, pointRadius: 4, fill: true, tension: 0.3 },
+      { label: 'Gross Revenue', data: grossRev,  borderColor: C.blue,  backgroundColor: 'rgba(9,105,218,0.05)', borderWidth: 2, pointRadius: 4, fill: false, tension: 0.3 },
+      { label: 'Net Profit',    data: netProfit, borderColor: C.green, backgroundColor: 'rgba(26,127,55,0.1)',  borderWidth: 2, pointRadius: 4, fill: true,  tension: 0.3 },
     ],
   };
 
+  const barChartData = {
+    labels: months,
+    datasets: [{
+      label: 'Cumulative Profit',
+      data: cumulative,
+      backgroundColor: cumulative.map(v => v < 0 ? C.red + '55' : C.green + '88'),
+      borderColor:     cumulative.map(v => v < 0 ? C.red : C.green),
+      borderWidth: 1,
+    }],
+  };
+
+  const chartOpts = (cb) => ({
+    responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { display: false } },
+    scales: {
+      x: { ticks: { font: { size: 10 } }, grid: { display: false } },
+      y: { ticks: { font: { size: 10 }, callback: cb || (v => fL(v)) } },
+    },
+  });
+
   return (
     <div style={S.page}>
-      {/* HEADER */}
+
+      {/* ── HEADER ── */}
       <div style={S.header}>
         <h1 style={S.h1}>Virtual Influencer Infrastructure — 12-Month P&L</h1>
         <div style={S.sub}>
-           ₹93.08 = $1 USD &nbsp;·&nbsp; <strong>Modeled for EXACTLY 1 Influencer</strong> &nbsp;·&nbsp; Institutional Investment Deck
+          ₹93.08 = $1 USD &nbsp;·&nbsp; <strong>Modeled for EXACTLY 1 Influencer</strong> &nbsp;·&nbsp; Institutional Investment Deck
         </div>
         <div style={{ ...S.sub, marginTop: 4, fontSize: 11, color: C.accent }}>
-           IG Subscriptions (₹300/mo) unlock at M4 (10k follower milestone)
+          IG Subscriptions (₹300/mo) unlock at M4 (10k follower milestone) &nbsp;·&nbsp; FB Subs launch M5
         </div>
       </div>
 
-      {/* 12M SUMMARY */}
+      {/* ── 12-MONTH SUMMARY CARDS ── */}
       <div style={S.stats}>
         {[
-          { l: '12M Gross Revenue', v: T.gross },
-          { l: '12M Net Revenue',   v: T.net },
+          { l: '12M Gross Revenue',  v: T.gross },
+          { l: '12M Net Revenue',    v: T.net },
           { l: '12M Total Expenses', v: T.costs },
-          { l: '12M Net Profit',    v: T.profit, green: true },
+          { l: '12M Net Profit',     v: T.profit, green: true },
         ].map(c => (
           <div key={c.l} style={{ ...S.statBox, background: c.green ? C.greenBg : C.cardBg, borderColor: c.green ? C.greenBdr : C.cardBdr }}>
             <div style={S.statLbl}>{c.l}</div>
             <div style={{ fontSize: 20, fontWeight: 800, color: c.green ? C.green : C.textPri }}>{fL(c.v)}</div>
-            <div style={{ fontSize: 10, color: C.textSec }}>{fi(c.v)}</div>
+            <div style={{ fontSize: 10, color: C.textSec, marginTop: 2 }}>{fi(c.v)}</div>
           </div>
         ))}
       </div>
 
-      {/* REVENUE GROWTH CHARTS */}
+      {/* ── CHARTS ── */}
       <div style={S.grid2}>
         <div style={S.card}>
           <div style={S.cardTitle}>Monthly Revenue & Profit Growth</div>
-          <div style={{ height: 220 }}>
-            <Line data={mainChartData} options={{ 
-              responsive: true, maintainAspectRatio: false, 
-              plugins: { legend: { display: false } },
-              scales: { 
-                x: { ticks: { font: { size: 10 } }, grid: { display: false } },
-                y: { ticks: { font: { size: 10 }, callback: v => fL(v) } }
-              }
-            }} />
-          </div>
-          <div style={{ display: 'flex', gap: 16, marginTop: 12, fontSize: 10, justifyContent: 'center' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}><div style={{ width: 10, height: 10, background: C.blue }} /> Gross Revenue</div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}><div style={{ width: 10, height: 10, background: C.green }} /> Net Profit</div>
+          <div style={{ height: 210 }}><Line data={lineChartData} options={chartOpts()} /></div>
+          <div style={{ display: 'flex', gap: 16, marginTop: 10, fontSize: 10, justifyContent: 'center' }}>
+            <span style={{ display: 'flex', alignItems: 'center', gap: 4 }}><span style={{ display: 'inline-block', width: 10, height: 10, background: C.blue }} /> Gross Revenue</span>
+            <span style={{ display: 'flex', alignItems: 'center', gap: 4 }}><span style={{ display: 'inline-block', width: 10, height: 10, background: C.green }} /> Net Profit</span>
           </div>
         </div>
-
         <div style={S.card}>
-          <div style={S.cardTitle}>Cumulative Profit Projection</div>
-          <div style={{ height: 220 }}>
-            <Bar 
-              data={{
-                labels: months,
-                datasets: [{ label: 'Cumulative Profit', data: cumulative, backgroundColor: cumulative.map(v => v < 0 ? C.red + '44' : C.green + '88'), borderColor: cumulative.map(v => v < 0 ? C.red : C.green), borderWidth: 1 }]
-              }} 
-              options={{ 
-                responsive: true, maintainAspectRatio: false, 
-                plugins: { legend: { display: false } },
-                scales: { 
-                  x: { ticks: { font: { size: 10 } }, grid: { display: false } },
-                  y: { ticks: { font: { size: 10 }, callback: v => fL(v) } }
-                }
-              }} 
-            />
-          </div>
-          <div style={{ textAlign: 'center', marginTop: 12, fontSize: 10, color: C.textSec }}>
-            Reach Break-Even at Month 4 &nbsp;·&nbsp; Target ₹1.18Cr+ Annual Profit
+          <div style={S.cardTitle}>Cumulative Profit — Path to Break-Even</div>
+          <div style={{ height: 210 }}><Bar data={barChartData} options={chartOpts()} /></div>
+          <div style={{ textAlign: 'center', marginTop: 10, fontSize: 10, color: C.textSec }}>
+            Break-even: Month 4 &nbsp;·&nbsp; Year-1 Target: ₹1.18Cr+
           </div>
         </div>
       </div>
 
-      {/* STRATEGIC ADVANTAGE: THE SEVEN MOATS */}
+      {/* ── THE SEVEN MOATS + GEOGRAPHY YIELD ── */}
       <div style={S.grid2}>
         <div style={S.card}>
-          <div style={S.cardTitle}>🛡️ The Seven Moats (Institutional Defensibility)</div>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
+          <div style={S.cardTitle}>🛡️ The Seven Moats — Institutional Defensibility</div>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
             {[
-              { t: 'Identity Sovereignty', d: 'Immortality: no aging, no fatigue, no retirement.' },
-              { t: 'Structural Consistency', d: 'Proprietary Flux identity-lock workflows.' },
-              { t: 'Capital Efficiency', d: '90% lower marginal OpEx than human agencies.' },
-              { t: 'Yield Arbitrage', d: 'US/UK targeting from low-cost compute base.' },
-              { t: 'Market Lag Advantage', d: 'Capturing the 2-year maturity gap in India.' },
-              { t: 'Automated Scale', d: '24/7 omnipresence across 7 revenue streams.' },
-              { t: 'IP Consolidation', d: '100% talent equity retained by the infrastructure.' }
+              { t: '1. Identity Sovereignty',    d: 'Immortality: no aging, no fatigue, no retirement. Ever.' },
+              { t: '2. Structural Consistency',  d: 'Proprietary Flux.1 LoRA identity-lock — perfect face/body every render.' },
+              { t: '3. Capital Efficiency',      d: '90%+ lower marginal production cost vs. human influencer operations.' },
+              { t: '4. Yield Arbitrage',         d: 'Targeting US/UK ($400+ yield) from a sub-$100/mo compute base.' },
+              { t: '5. Market Lag Advantage',    d: 'Indian market is 2 years behind US/EU. First-mover captures premium.' },
+              { t: '6. Omnipresent Scale',       d: '24/7 content production across 7 revenue streams simultaneously.' },
+              { t: '7. IP Consolidation',        d: '100% talent equity and character IP retained by the infrastructure.' },
             ].map(m => (
-              <div key={m.t} style={{ borderBottom: `1px solid #f0f0f0`, paddingBottom: 6 }}>
+              <div key={m.t} style={S.divider}>
                 <div style={{ fontSize: 11, fontWeight: 700, color: C.blue }}>{m.t}</div>
-                <div style={{ fontSize: 10, color: C.textSec }}>{m.d}</div>
+                <div style={{ fontSize: 10, color: C.textSec, marginTop: 2 }}>{m.d}</div>
               </div>
             ))}
           </div>
         </div>
 
-        {/* MARKET GAP & YIELD */}
         <div style={S.card}>
-          <div style={S.cardTitle}>📍 Geography Yield Gap — ARPU Analysis</div>
-          <div style={{ background: C.noteBg, border: `1px solid ${C.noteBdr}`, borderRadius: 6, padding: 10, marginBottom: 12 }}>
-             <p style={{ margin: 0, fontSize: 11, color: C.textSec }}>
-               Tier-1 (US/UK) yield is driven by aggressive PPV spending power, whereas India remains subscription-heavy.<span style={S.fn}>[4]</span>
-             </p>
+          <div style={S.cardTitle}>📍 Target Geography — Yield Gap Analysis</div>
+          <div style={{ background: C.noteBg, border: `1px solid ${C.noteBdr}`, borderRadius: 6, padding: 10, marginBottom: 12, fontSize: 11, color: C.textSec }}>
+            We target <strong>Tier-1 markets only (US, UK, EU, Canada, Australia)</strong>. India has the subscribers but not the spending power. The arbitrage is: run the operation from India, sell to the West.<span style={S.fn}>[4]</span>
           </div>
-          <table style={{ width: '100%', fontSize: 11 }}>
+          <table style={{ width: '100%', fontSize: 11, borderCollapse: 'collapse' }}>
             <tbody>
-              <tr style={{ borderBottom: `1px solid ${C.grid}` }}><td style={{ padding: '6px 0' }}>Annual Yield / Sub (US/UK)</td><td style={{ textAlign: 'right', fontWeight: 700, color: C.green }}>$400 – $600 <span style={S.fn}>[3]</span></td></tr>
-              <tr style={{ borderBottom: `1px solid ${C.grid}` }}><td style={{ padding: '6px 0' }}>Annual Yield / Sub (India)</td><td style={{ textAlign: 'right', color: C.red }}>$45 – $60</td></tr>
-              <tr style={{ borderBottom: `1px solid ${C.grid}` }}><td style={{ padding: '6px 0' }}>Meta Ads CPM (US Avg)</td><td style={{ textAlign: 'right', color: C.blue }}>$18.50 <span style={S.fn}>[2]</span></td></tr>
-              <tr><td style={{ padding: '6px 0' }}>Spending Power Ratio</td><td style={{ textAlign: 'right', fontWeight: 700, color: C.blue }}>10x Advantage</td></tr>
+              <tr style={{ borderBottom: `1px solid ${C.grid}` }}>
+                <td style={{ padding: '6px 0', color: C.textSec }}>Annual Yield / Paying Sub (US/UK)</td>
+                <td style={{ textAlign: 'right', fontWeight: 700, color: C.green }}>$370 – $490 <span style={S.fn}>[3]</span></td>
+              </tr>
+              <tr style={{ borderBottom: `1px solid ${C.grid}` }}>
+                <td style={{ padding: '6px 0', color: C.textSec }}>Calculation basis</td>
+                <td style={{ textAlign: 'right', fontSize: 10, color: C.textMut }}>$15.99 sub + ~$20 PPV avg × 12</td>
+              </tr>
+              <tr style={{ borderBottom: `1px solid ${C.grid}` }}>
+                <td style={{ padding: '6px 0', color: C.textSec }}>Annual Yield / Paying Sub (India)</td>
+                <td style={{ textAlign: 'right', color: C.red }}>$45 – $60</td>
+              </tr>
+              <tr style={{ borderBottom: `1px solid ${C.grid}` }}>
+                <td style={{ padding: '6px 0', color: C.textSec }}>Meta Ads CPM — US Avg</td>
+                <td style={{ textAlign: 'right', color: C.blue }}>$15 – $20 <span style={S.fn}>[2]</span></td>
+              </tr>
+              <tr style={{ borderBottom: `1px solid ${C.grid}` }}>
+                <td style={{ padding: '6px 0', color: C.textSec }}>Meta Ads CPM — India Avg</td>
+                <td style={{ textAlign: 'right', color: C.textMut }}>$1 – $3</td>
+              </tr>
+              <tr>
+                <td style={{ padding: '6px 0', fontWeight: 700 }}>Spending Power Multiple</td>
+                <td style={{ textAlign: 'right', fontWeight: 800, color: C.blue }}>~8x – 10x</td>
+              </tr>
             </tbody>
           </table>
         </div>
       </div>
 
-      {/* OPERATIONAL STACK & PRICING */}
+      {/* ── TOOL STACK & MONTHLY COSTS ── */}
       <div style={S.card}>
-        <div style={S.cardTitle}>🛠️ Operational Infrastructure & Monthly Pricing</div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 12 }}>
+        <div style={S.cardTitle}>🛠️ Operational Stack — Full Monthly Pricing Breakdown</div>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 10, marginBottom: 14 }}>
           {TOOL_STACK.map(t => (
-            <div key={t.name} style={{ display: 'flex', justifyContent: 'space-between', borderBottom: `1px solid ${C.grid}`, paddingBottom: 6 }}>
+            <div key={t.name} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', borderBottom: `1px solid ${C.grid}`, paddingBottom: 8 }}>
               <div>
-                <div style={{ fontSize: 11, fontWeight: 700 }}>{t.name}</div>
-                <div style={{ fontSize: 9, color: C.textMut }}>{t.desc}</div>
+                <div style={{ fontSize: 11, fontWeight: 700 }}>
+                  {t.url ? <a href={t.url} target="_blank" style={S.link}>{t.name}</a> : t.name}
+                </div>
+                <div style={{ fontSize: 9, color: C.textMut, marginTop: 2 }}>{t.desc}</div>
               </div>
-              <div style={{ textAlign: 'right' }}>
-                <div style={{ fontSize: 11, fontWeight: 700, color: C.red }}>{fi(t.cost)}</div>
+              <div style={{ textAlign: 'right', flexShrink: 0, paddingLeft: 8 }}>
+                <div style={{ fontSize: 11, fontWeight: 700, color: t.cost ? C.red : C.orange }}>
+                  {t.cost ? fi(t.cost) : 'Variable'}
+                </div>
                 <div style={{ fontSize: 9, color: C.textMut }}>per month</div>
               </div>
             </div>
           ))}
-          <div style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: 6 }}>
-            <div>
-              <div style={{ fontSize: 11, fontWeight: 700 }}>Meta Ads & Research</div>
-              <div style={{ fontSize: 9, color: C.textMut }}>Scaled performance levers</div>
-            </div>
-            <div style={{ textAlign: 'right' }}>
-              <div style={{ fontSize: 11, fontWeight: 700, color: C.red }}>₹3,000 – ₹14,000</div>
-              <div style={{ fontSize: 9, color: C.textMut }}>Variable</div>
-            </div>
-          </div>
+        </div>
+        <div style={{ background: C.greenBg, border: `1px solid ${C.greenBdr}`, borderRadius: 6, padding: '10px 14px', fontSize: 11 }}>
+          <strong>Fixed Monthly Overhead (excl. Ads & Research):</strong> {fi(FIXED_MONTHLY_COST)} &nbsp;·&nbsp;
+          <span style={{ color: C.textSec }}>Breakeven on fixed costs from Month 1.</span>
         </div>
       </div>
 
-      {/* PLATFORMS & COMPETITORS */}
+      {/* ── PLATFORM FEES + COMPETITORS ── */}
       <div style={S.grid2}>
         <div style={S.card}>
-          <div style={S.cardTitle}>🚀 Multichannel Ecosystem</div>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
-            <div>
-              <div style={{ fontSize: 9, color: C.textMut, fontWeight: 700, marginBottom: 6 }}>MONETIZATION</div>
-              <ul style={{ margin: 0, paddingLeft: 14, fontSize: 11, color: C.textSec, lineHeight: 1.8 }}>
-                <li><a href="https://www.fanvue.com" target="_blank" style={S.link}>Fanvue (15% Fee)</a></li>
-                <li><a href="https://www.passes.com" target="_blank" style={S.link}>Passes (10% Fee)</a></li>
-                <li><a href="https://www.facebook.com/creators" target="_blank" style={S.link}>FB Subs (30% Fee)</a></li>
-                <li><a href="https://www.telegram.org" target="_blank" style={S.link}>Telegram VIP</a></li>
-              </ul>
-            </div>
-            <div>
-              <div style={{ fontSize: 9, color: C.textMut, fontWeight: 700, marginBottom: 6 }}>TRAFFIC CHANNELS</div>
-              <ul style={{ margin: 0, paddingLeft: 14, fontSize: 11, color: C.textSec, lineHeight: 1.8 }}>
-                <li><a href="https://www.instagram.com" target="_blank" style={S.link}>IG Reels/Stories</a></li>
-                <li><a href="https://www.x.com" target="_blank" style={S.link}>X (Twitter) Threads</a></li>
-                <li><a href="https://www.reddit.com" target="_blank" style={S.link}>Reddit Communities</a></li>
-              </ul>
-            </div>
-          </div>
+          <div style={S.cardTitle}>🚀 Revenue Platforms & Fee Structure</div>
+          <table style={{ width: '100%', fontSize: 11, borderCollapse: 'collapse' }}>
+            <thead>
+              <tr style={{ background: '#f6f8fa', borderBottom: `1px solid ${C.grid}` }}>
+                <th style={{ padding: '8px 6px', textAlign: 'left', fontWeight: 600, color: C.textMut }}>Platform</th>
+                <th style={{ padding: '8px 6px', textAlign: 'left', fontWeight: 600, color: C.textMut }}>Type</th>
+                <th style={{ padding: '8px 6px', textAlign: 'right', fontWeight: 600, color: C.textMut }}>Fee</th>
+                <th style={{ padding: '8px 6px', textAlign: 'right', fontWeight: 600, color: C.textMut }}>We Keep</th>
+              </tr>
+            </thead>
+            <tbody>
+              {PLATFORM_FEES.map((p, i) => (
+                <tr key={p.name} style={{ borderBottom: `1px solid ${C.grid}`, background: i % 2 === 0 ? '#fff' : '#fafbfc' }}>
+                  <td style={{ padding: '7px 6px', fontWeight: 700 }}>
+                    {p.url ? <a href={p.url} target="_blank" style={S.link}>{p.name}</a> : p.name}
+                  </td>
+                  <td style={{ padding: '7px 6px', color: C.textSec, fontSize: 10 }}>{p.type}</td>
+                  <td style={{ padding: '7px 6px', textAlign: 'right', color: C.orange }}>{p.fee}</td>
+                  <td style={{ padding: '7px 6px', textAlign: 'right', fontWeight: 700, color: C.green }}>{(100 - parseInt(p.fee)) + '%'}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <div style={{ marginTop: 10, fontSize: 10, color: C.textMut }}>+ Marketing: Instagram, X, Reddit (traffic channels, no fee)</div>
         </div>
+
         <div style={S.card}>
-          <div style={S.cardTitle}>🔥 Global Competitor Benchmarks</div>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
+          <div style={S.cardTitle}>🔥 Global Virtual Influencer Benchmarks</div>
+          <div style={{ display: 'grid', gap: 10 }}>
             {COMPETITORS.map(c => (
-              <a key={c.name} href={c.url} target="_blank" style={{ ...S.link, background: '#f6f8fa', border: `1px solid ${C.cardBdr}`, borderRadius: 6, padding: '6px 10px', fontSize: 10, display: 'flex', alignItems: 'center', gap: 6 }}>
-                <span style={{ fontWeight: 700 }}>{c.name}</span>
-                <span style={{ color: C.textMut }}>{c.followers}</span>
-              </a>
+              <div key={c.name} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: `1px solid ${C.grid}`, paddingBottom: 8 }}>
+                <div>
+                  <a href={c.url} target="_blank" style={{ ...S.link, fontWeight: 700, fontSize: 12 }}>{c.name}</a>
+                  <div style={{ fontSize: 10, color: C.textSec, marginTop: 2 }}>{c.note}</div>
+                </div>
+                <div style={{ textAlign: 'right', flexShrink: 0, paddingLeft: 8 }}>
+                  <div style={{ fontSize: 13, fontWeight: 800, color: C.textPri }}>{c.followers}</div>
+                  <div style={{ fontSize: 9, color: C.textMut }}>followers</div>
+                </div>
+              </div>
             ))}
           </div>
-          <div style={{ marginTop: 12, fontSize: 10, color: C.textSec, borderTop: `1px solid ${C.grid}`, paddingTop: 8 }}>
-             <strong>Market Lead:</strong> Aitana Lopez earns ~$11k/mo ($132k/yr) at 330k followers.<span style={S.fn}>[1]</span>
+          <div style={{ marginTop: 10, background: C.noteBg, border: `1px solid ${C.noteBdr}`, borderRadius: 6, padding: '8px 12px', fontSize: 10, color: C.textSec }}>
+            <strong>Market Proof:</strong> Aitana Lopez (330K followers) earns €10k/month (~₹9.3L) through Fanvue subscriptions and brand deals. <a href={FOOTNOTES[0].url} target="_blank" style={S.link}>Source [1]</a>
           </div>
         </div>
       </div>
 
-      {/* ROADMAP & GLOSSARY */}
+      {/* ── ROADMAP + GLOSSARY ── */}
       <div style={S.grid2}>
         <div style={S.card}>
-          <div style={S.cardTitle}>🗓️ Detailed Execution Roadmap (M1 - M9+)</div>
+          <div style={S.cardTitle}>🗓️ Detailed Execution Roadmap (Phase 0 → M9+)</div>
           <div style={{ display: 'grid', gap: 14 }}>
             {ROADMAP.map(r => (
-              <div key={r.m}>
+              <div key={r.m} style={S.divider}>
                 <div style={{ fontSize: 11, fontWeight: 700, color: C.blue }}>{r.m}</div>
-                <div style={{ fontSize: 10, color: C.textSec, lineHeight: 1.5 }}>{r.d}</div>
+                <div style={{ fontSize: 10, color: C.textSec, lineHeight: 1.6, marginTop: 3 }}>{r.d}</div>
               </div>
             ))}
           </div>
         </div>
         <div style={S.card}>
           <div style={S.cardTitle}>📖 Key Terms Glossary</div>
-          <div style={{ display: 'grid', gap: 14 }}>
+          <div style={{ display: 'grid', gap: 12 }}>
             {GLOSSARY.map(g => (
-              <div key={g.t}>
+              <div key={g.t} style={S.divider}>
                 <div style={{ fontSize: 11, fontWeight: 700 }}>{g.t}</div>
-                <div style={{ fontSize: 10, color: C.textSec, lineHeight: 1.5 }}>{g.d}</div>
+                <div style={{ fontSize: 10, color: C.textSec, lineHeight: 1.5, marginTop: 3 }}>{g.d}</div>
               </div>
             ))}
           </div>
         </div>
       </div>
 
-      {/* MONTHLY REVENUE TABLE — FULL AUDIT DETAIL */}
+      {/* ── FULL P&L AUDIT TABLE ── */}
       <div style={S.card}>
-        <div style={S.cardTitle}>Month-by-Month Financial Audit Breakdown</div>
+        <div style={S.cardTitle}>📊 Month-by-Month Full Financial Audit (All Columns)</div>
         <div style={{ overflowX: 'auto' }}>
-          <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 10, minWidth: 1200 }}>
+          <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 10, minWidth: 1600 }}>
             <thead>
               <tr style={{ background: '#f6f8fa', borderBottom: `2px solid ${C.grid}` }}>
-                <th style={{ padding: '10px 4px', textAlign: 'left' }}>MONTH</th>
-                {/* REVENUE COLUMNS */}
-                {REV_LABELS.map(l => <th key={l} style={{ padding: '10px 4px', textAlign: 'right', fontWeight: 400, color: C.textMut }}>{l.toUpperCase()}</th>)}
-                <th style={{ padding: '10px 6px', textAlign: 'right', fontWeight: 800 }}>GROSS REV</th>
-                <th style={{ padding: '10px 6px', textAlign: 'right', color: C.orange }}>PLAT. CUTS</th>
-                <th style={{ padding: '10px 6px', textAlign: 'right' }}>NET REV</th>
-                {/* EXPENSE COLUMNS */}
-                {COST_LABELS.slice(0, 6).map(l => <th key={l} style={{ padding: '10px 4px', textAlign: 'right', fontWeight: 400, color: C.textMut }}>{l.toUpperCase()}</th>)}
-                <th style={{ padding: '10px 6px', textAlign: 'right', color: C.red }}>TOTAL EXP</th>
-                <th style={{ padding: '10px 8px', textAlign: 'right', color: C.green }}>NET PROFIT</th>
-                <th style={{ padding: '10px 8px', textAlign: 'right', color: C.blue }}>CUMULATIVE</th>
+                <th style={{ padding: '10px 5px', textAlign: 'left', position: 'sticky', left: 0, background: '#f6f8fa' }}>MONTH</th>
+                {/* Revenue sub-columns */}
+                {REV_LABELS.map(l => <th key={l} style={{ padding: '10px 5px', textAlign: 'right', color: C.blue, fontWeight: 500 }}>{l}</th>)}
+                <th style={{ padding: '10px 6px', textAlign: 'right', fontWeight: 800, borderLeft: `2px solid ${C.grid}` }}>GROSS</th>
+                <th style={{ padding: '10px 6px', textAlign: 'right', color: C.orange }}>CUTS</th>
+                <th style={{ padding: '10px 6px', textAlign: 'right', borderRight: `2px solid ${C.grid}` }}>NET REV</th>
+                {/* Expense sub-columns — ALL 10 */}
+                {COST_LABELS.map(l => <th key={l} style={{ padding: '10px 5px', textAlign: 'right', color: C.red, fontWeight: 500 }}>{l}</th>)}
+                <th style={{ padding: '10px 6px', textAlign: 'right', color: C.red, fontWeight: 800, borderLeft: `2px solid ${C.grid}` }}>TOTAL EXP</th>
+                <th style={{ padding: '10px 8px', textAlign: 'right', color: C.green, fontWeight: 800 }}>NET PROFIT</th>
+                <th style={{ padding: '10px 8px', textAlign: 'right', color: C.blue, fontWeight: 800 }}>CUMULATIVE</th>
               </tr>
             </thead>
             <tbody>
               {rows.map((r, i) => (
                 <tr key={r.month} style={{ borderBottom: `1px solid ${C.grid}`, background: i % 2 === 0 ? '#fff' : '#fafbfc' }}>
-                  <td style={{ padding: '8px 4px', fontWeight: 700 }}>{r.label}</td>
-                  {/* REVENUE CELLS */}
-                  {r.rArr.map((v, idx) => <td key={idx} style={{ padding: '8px 4px', textAlign: 'right', color: C.textSec }}>{v > 0 ? fi(v) : '—'}</td>)}
-                  <td style={{ padding: '8px 6px', textAlign: 'right', fontWeight: 700 }}>{fi(r.gross)}</td>
-                  <td style={{ padding: '8px 6px', textAlign: 'right', color: C.orange }}>{fi(r.cuts)}</td>
-                  <td style={{ padding: '8px 6px', textAlign: 'right' }}>{fi(r.net)}</td>
-                  {/* EXPENSE CELLS */}
-                  {r.cArr.slice(0, 6).map((v, idx) => <td key={idx} style={{ padding: '8px 4px', textAlign: 'right', color: C.textSec }}>{v > 0 ? fi(v) : '—'}</td>)}
-                  <td style={{ padding: '8px 6px', textAlign: 'right', fontWeight: 700, color: C.red }}>{fi(r.costs)}</td>
-                  <td style={{ padding: '8px 8px', textAlign: 'right', fontWeight: 800, color: C.green }}>{fi(r.profit)}</td>
-                  <td style={{ padding: '8px 8px', textAlign: 'right', fontWeight: 800, color: C.blue }}>{fi(cumulative[i])}</td>
+                  <td style={{ padding: '7px 5px', fontWeight: 700, position: 'sticky', left: 0, background: i % 2 === 0 ? '#fff' : '#fafbfc' }}>{r.label}</td>
+                  {r.rArr.map((v, idx) => <td key={idx} style={{ padding: '7px 5px', textAlign: 'right', color: C.textSec }}>{v > 0 ? fi(v) : '—'}</td>)}
+                  <td style={{ padding: '7px 6px', textAlign: 'right', fontWeight: 700, borderLeft: `2px solid ${C.grid}` }}>{fi(r.gross)}</td>
+                  <td style={{ padding: '7px 6px', textAlign: 'right', color: C.orange }}>{fi(r.cuts)}</td>
+                  <td style={{ padding: '7px 6px', textAlign: 'right', borderRight: `2px solid ${C.grid}` }}>{fi(r.net)}</td>
+                  {r.cArr.map((v, idx) => <td key={idx} style={{ padding: '7px 5px', textAlign: 'right', color: C.textSec }}>{v > 0 ? fi(v) : '—'}</td>)}
+                  <td style={{ padding: '7px 6px', textAlign: 'right', fontWeight: 700, color: C.red, borderLeft: `2px solid ${C.grid}` }}>{fi(r.costs)}</td>
+                  <td style={{ padding: '7px 8px', textAlign: 'right', fontWeight: 800, color: r.profit < 0 ? C.red : C.green }}>{fi(r.profit)}</td>
+                  <td style={{ padding: '7px 8px', textAlign: 'right', fontWeight: 800, color: cumulative[i] < 0 ? C.orange : C.blue }}>{fi(cumulative[i])}</td>
                 </tr>
               ))}
             </tbody>
             <tfoot>
-               <tr style={{ background: '#f6f8fa', fontWeight: 800 }}>
-                 <td style={{ padding: '12px 4px' }}>TOTAL</td>
-                 {REV_LABELS.map((l, idx) => <td key={idx} style={{ padding: '12px 4px', textAlign: 'right' }}>{fi(rows.reduce((s, r) => s + r.rArr[idx], 0))}</td>)}
-                 <td style={{ padding: '12px 6px', textAlign: 'right' }}>{fi(T.gross)}</td>
-                 <td style={{ padding: '12px 6px', textAlign: 'right', color: C.orange }}>{fi(T.gross - T.net)}</td>
-                 <td style={{ padding: '12px 6px', textAlign: 'right' }}>{fi(T.net)}</td>
-                 {COST_LABELS.slice(0, 6).map((l, idx) => <td key={idx} style={{ padding: '12px 4px', textAlign: 'right' }}>{fi(rows.reduce((s, r) => s + r.cArr[idx], 0))}</td>)}
-                 <td style={{ padding: '12px 6px', textAlign: 'right', color: C.red }}>{fi(T.costs)}</td>
-                 <td style={{ padding: '12px 8px', textAlign: 'right', color: C.green }}>{fi(T.profit)}</td>
-                 <td style={{ padding: '12px 8px', textAlign: 'right', color: C.blue }}>{fi(T.profit)}</td>
-               </tr>
+              <tr style={{ background: '#f6f8fa', fontWeight: 800, borderTop: `2px solid ${C.grid}` }}>
+                <td style={{ padding: '12px 5px', position: 'sticky', left: 0, background: '#f6f8fa' }}>12M TOTAL</td>
+                {REV_LABELS.map((_, idx) => <td key={idx} style={{ padding: '12px 5px', textAlign: 'right' }}>{fi(rows.reduce((s, r) => s + r.rArr[idx], 0))}</td>)}
+                <td style={{ padding: '12px 6px', textAlign: 'right', borderLeft: `2px solid ${C.grid}` }}>{fi(T.gross)}</td>
+                <td style={{ padding: '12px 6px', textAlign: 'right', color: C.orange }}>{fi(T.gross - T.net)}</td>
+                <td style={{ padding: '12px 6px', textAlign: 'right', borderRight: `2px solid ${C.grid}` }}>{fi(T.net)}</td>
+                {COST_LABELS.map((_, idx) => <td key={idx} style={{ padding: '12px 5px', textAlign: 'right' }}>{fi(rows.reduce((s, r) => s + r.cArr[idx], 0))}</td>)}
+                <td style={{ padding: '12px 6px', textAlign: 'right', color: C.red, borderLeft: `2px solid ${C.grid}` }}>{fi(T.costs)}</td>
+                <td style={{ padding: '12px 8px', textAlign: 'right', color: C.green }}>{fi(T.profit)}</td>
+                <td style={{ padding: '12px 8px', textAlign: 'right', color: C.blue }}>{fi(T.profit)}</td>
+              </tr>
             </tfoot>
           </table>
         </div>
+        <div style={{ marginTop: 10, fontSize: 10, color: C.textMut }}>
+          * All 10 expense categories are visible. Total Expenses column = sum of all 10. Revenue conversion: Fanvue/Passes/PPV at ₹93.08 = $1.
+        </div>
       </div>
 
-      {/* TECHNICAL APPENDIX */}
-      <div id="appendix" style={{ ...S.card, background: '#fcfcfc', border: `1px dashed ${C.cardBdr}`, marginTop: 40 }}>
+      {/* ── TECHNICAL APPENDIX ── */}
+      <div id="appendix" style={{ ...S.card, background: '#fcfcfc', border: `1px dashed ${C.cardBdr}`, marginTop: 8 }}>
         <div style={S.cardTitle}>📝 Technical Appendix & Verification Sources</div>
         <div style={{ display: 'grid', gap: 14 }}>
           {FOOTNOTES.map(f => (
             <div key={f.id} style={{ display: 'flex', gap: 12, fontSize: 11 }}>
-              <div style={{ fontWeight: 800, color: C.blue, minWidth: 20 }}>[{f.id}]</div>
+              <div style={{ fontWeight: 800, color: C.blue, minWidth: 22, flexShrink: 0 }}>[{f.id}]</div>
               <div>
                 <div style={{ fontWeight: 700, marginBottom: 2 }}>{f.label}</div>
                 <div style={{ color: C.textSec, lineHeight: 1.5 }}>
                   {f.text} &nbsp;
-                  <a href={f.url} target="_blank" style={{ color: C.blue, textDecoration: 'underline' }}>Source Document</a>
+                  <a href={f.url} target="_blank" style={{ color: C.blue, textDecoration: 'underline' }}>Source →</a>
                 </div>
               </div>
             </div>
@@ -432,7 +483,7 @@ export default function PLDashboard({ data }) {
       </div>
 
       <div style={{ textAlign: 'center', marginTop: 40, color: C.textMut, fontSize: 10 }}>
-        Institutional Pitch Deck v1.2 — Confidential & Proprietary Information
+        Institutional Pitch Deck v2.0 — Confidential &amp; Proprietary. Do Not Distribute.
       </div>
     </div>
   );
