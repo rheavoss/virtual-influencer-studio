@@ -175,9 +175,9 @@ export default function PLDashboard({ data }) {
               </div>
               <table style={{ width: '100%', fontSize: 13, color: C.textSec }}>
                 <tbody>
-                  <tr style={{ borderBottom: `1px solid ${C.grid}` }}><td style={{ padding: '8px 0' }}>Est. ARPU (Tier 1)</td><td style={{ textAlign: 'right', color: C.green }}>$45.00+ / year</td></tr>
-                  <tr style={{ borderBottom: `1px solid ${C.grid}` }}><td style={{ padding: '8px 0' }}>Est. ARPU (India)</td><td style={{ textAlign: 'right', color: C.red }}>$0.80 / year</td></tr>
-                  <tr><td style={{ padding: '8px 0' }}>Yield Multiple</td><td style={{ textAlign: 'right', color: C.blue, fontWeight: 700 }}>~56x Revenue per User</td></tr>
+                  <tr style={{ borderBottom: `1px solid ${C.grid}` }}><td style={{ padding: '8px 0' }}>Annual Yield / Sub (US/UK)</td><td style={{ textAlign: 'right', color: C.green }}>$400 - $600</td></tr>
+                  <tr style={{ borderBottom: `1px solid ${C.grid}` }}><td style={{ padding: '8px 0' }}>Annual Yield / Sub (India)</td><td style={{ textAlign: 'right', color: C.red }}>$45 - $60</td></tr>
+                  <tr><td style={{ padding: '8px 0' }}>Spending Power Multiple</td><td style={{ textAlign: 'right', color: C.blue, fontWeight: 700 }}>~8x - 10x Revenue Gap</td></tr>
                 </tbody>
               </table>
             </div>
