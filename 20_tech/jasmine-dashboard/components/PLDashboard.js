@@ -1,5 +1,5 @@
 'use client';
-import { useMemo, useState, useCallback } from 'react';
+import { useMemo, useState, useCallback, useEffect } from 'react';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -14,9 +14,10 @@ import { Line } from 'react-chartjs-2';
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Filler, Tooltip);
 
 // ── CONSTANTS ──────────────────────────────────────────────────────────────────
-const KEEP        = [0.85, 0.90, 0.90, 0.90, 0.90, 0.80];
-const MILESTONES  = { 2: '$2k MRR', 4: 'IG Subs Live', 9: '$20k MRR' };
-const REV_LABELS  = ['Fanvue', 'Passes', 'PPV+Voice', 'Telegram', 'Brand Deals', 'IG Subs'];
+// Fixed: Added 7th KEEP value for FB Subscriptions (assumed 70% keep due to Meta fees)
+const KEEP        = [0.85, 0.90, 0.90, 0.90, 0.90, 0.80, 0.70];
+const MILESTONES  = { 2: '$2k MRR', 4: 'Platform Expansion', 9: '$25k MRR' };
+const REV_LABELS  = ['Fanvue', 'Passes', 'PPV+Voice', 'Telegram', 'Brand Deals', 'IG Subs', 'FB Subs'];
 const COST_LABELS = ['Higgsfield', 'ElevenLabs', 'Grok', 'Claude ×2', 'Meta Ads', 'Research', 'Buffer'];
 
 // ── HELPERS ────────────────────────────────────────────────────────────────────
@@ -29,7 +30,8 @@ const fL = v => {
 
 function deriveRows(data) {
   return data.map(row => {
-    const rArr  = [row.fanvue, row.passes, row.ppv_voice, row.telegram, row.brand, row.ig_subs];
+    // Fixed: Added row.fb_subs to revenue array
+    const rArr  = [row.fanvue, row.passes, row.ppv_voice, row.telegram, row.brand, row.ig_subs, row.fb_subs || 0];
     const cArr  = [row.higgsfield, row.elevenlabs, row.grok, row.claude_code, row.meta_ads, row.research, row.buffer, row.calilio, row.namecheap, row.later_com];
     const gross = rArr.reduce((a, b) => a + b, 0);
     const net   = rArr.reduce((s, v, i) => s + v * KEEP[i], 0);
@@ -39,110 +41,36 @@ function deriveRows(data) {
   });
 }
 
-// ── LIGHT THEME ────────────────────────────────────────────────────────────────
+// ── DARK PREMIUM THEME ─────────────────────────────────────────────────────────
 const C = {
-  pageBg:    '#f6f8fa',
-  cardBg:    '#ffffff',
-  cardBdr:   '#d0d7de',
-  textPri:   '#1f2328',
-  textSec:   '#57606a',
-  textMut:   '#8c959f',
-  grid:      '#d8dee4',
-  blue:      '#0969da',
-  green:     '#1a7f37',
-  orange:    '#bc4c00',
-  red:       '#cf222e',
-  greenBg:   '#dafbe1',
-  greenBdr:  '#2da44e',
-  noteBg:    '#f0f6ff',
-  noteBdr:   '#cae3fb',
-};
-
-const milestonePlugin = {
-  id: 'ml',
-  afterDraw(chart) {
-    const { ctx, scales: { x, y } } = chart;
-    Object.entries(MILESTONES).forEach(([idx, label]) => {
-      const px = x.getPixelForIndex(+idx);
-      ctx.save();
-      ctx.setLineDash([3, 4]);
-      ctx.beginPath(); ctx.moveTo(px, y.top + 18); ctx.lineTo(px, y.bottom);
-      ctx.strokeStyle = 'rgba(188,76,0,0.5)'; ctx.lineWidth = 1; ctx.stroke();
-      ctx.setLineDash([]);
-      ctx.fillStyle = C.orange; ctx.globalAlpha = 0.9;
-      ctx.font = 'bold 10px Segoe UI, sans-serif'; ctx.textAlign = 'center';
-      ctx.fillText(label, px, y.top + 13);
-      ctx.restore();
-    });
-  },
+  pageBg:    '#0a0c10',
+  cardBg:    'rgba(22, 27, 34, 0.7)',
+  cardBdr:   'rgba(48, 54, 61, 0.8)',
+  textPri:   '#f0f6fc',
+  textSec:   '#8b949e',
+  textMut:   '#484f58',
+  grid:      'rgba(48, 54, 61, 0.3)',
+  blue:      '#58a6ff',
+  green:     '#3fb950',
+  orange:    '#f0883e',
+  red:       '#f85149',
+  accent:    '#bc8cff',
+  glass:     'backdrop-filter: blur(12px);',
 };
 
 const S = {
-  page:      { background: C.pageBg, color: C.textPri, fontFamily: "'Segoe UI',system-ui,sans-serif", minHeight: '100vh', padding: '28px 20px 60px' },
-  header:    { display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: 28 },
-  headerMid: { flex: 1, textAlign: 'center' },
-  h1:        { fontSize: 22, fontWeight: 700, color: C.blue, marginBottom: 4 },
-  sub:       { color: C.textSec, fontSize: 12 },
-  graphBtn:  { flexShrink: 0, marginTop: 2, padding: '6px 14px', fontSize: 12, fontWeight: 600, color: C.blue, background: C.noteBg, border: `1px solid ${C.noteBdr}`, borderRadius: 8, cursor: 'pointer', textDecoration: 'none', whiteSpace: 'nowrap' },
-  stats:     { display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(190px,1fr))', gap: 10, marginBottom: 8 },
-  statBase:  { background: C.cardBg, border: `1px solid ${C.cardBdr}`, borderRadius: 10, padding: '14px 16px' },
-  statGreen: { background: C.greenBg, border: `1px solid ${C.greenBdr}`, borderRadius: 10, padding: '14px 16px' },
-  statLbl:   { fontSize: 11, color: C.textMut, textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: 6 },
-  card:      { background: C.cardBg, border: `1px solid ${C.cardBdr}`, borderRadius: 10, padding: 20, marginBottom: 16, boxShadow: '0 1px 3px rgba(0,0,0,0.06)' },
-  cardTitle: { fontSize: 12, color: C.textSec, marginBottom: 14, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.8px' },
-  note:      { background: C.noteBg, border: `1px solid ${C.noteBdr}`, borderRadius: 8, padding: '10px 14px', fontSize: 11, color: C.textSec, marginBottom: 14, lineHeight: 1.7 },
-  legend:    { display: 'flex', flexWrap: 'wrap', gap: 16, marginTop: 14 },
-  legItem:   { display: 'flex', alignItems: 'center', gap: 6, fontSize: 11, color: C.textSec },
-  dot:       { width: 9, height: 9, borderRadius: '50%', flexShrink: 0 },
-  dsh:       { width: 18, height: 2, flexShrink: 0, background: `repeating-linear-gradient(90deg,${C.red} 0 4px,transparent 4px 8px)` },
+  page:      { background: C.pageBg, color: C.textPri, fontFamily: "'Inter', system-ui, sans-serif", minHeight: '100vh', padding: '0 0 100px', scrollBehavior: 'smooth' },
+  hero:      { height: '70vh', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', textAlign: 'center', background: `radial-gradient(circle at 50% 50%, rgba(88, 166, 255, 0.1) 0%, transparent 70%)`, padding: '0 20px' },
+  section:   { maxWidth: 1200, margin: '80px auto 0', padding: '0 20px' },
+  card:      { background: C.cardBg, border: `1px solid ${C.cardBdr}`, borderRadius: 16, padding: 32, backdropFilter: 'blur(12px)', boxShadow: '0 8px 32px rgba(0,0,0,0.4)', marginBottom: 24 },
+  h1:        { fontSize: 'clamp(32px, 5vw, 56px)', fontWeight: 800, marginBottom: 16, background: `linear-gradient(135deg, ${C.blue}, ${C.accent})`, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', letterSpacing: '-0.02em' },
+  h2:        { fontSize: 28, fontWeight: 700, marginBottom: 24, display: 'flex', alignItems: 'center', gap: 12 },
+  tag:       { fontSize: 12, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '2px', color: C.blue, marginBottom: 16 },
+  p:         { fontSize: 17, color: C.textSec, lineHeight: 1.6, maxWidth: 700, margin: '0 auto 24px' },
+  statsGrid: { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 20, marginBottom: 40 },
+  statBox:   { padding: 24, borderRadius: 12, border: `1px solid ${C.cardBdr}`, background: 'rgba(255,255,255,0.02)' },
+  grid2:     { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: 24 },
 };
-
-// ── GLOSSARY ───────────────────────────────────────────────────────────────────
-const GLOSSARY = [
-  { term: 'Gross Revenue',          color: C.blue,   plain: 'Total money earned across all platforms before anyone takes their cut.',                                   formula: 'Fanvue + Passes + PPV/Voice + Telegram + Brand + IG Subs' },
-  { term: 'Platform Cuts',          color: C.orange, plain: 'Commission fees taken by each platform. Fanvue 15%, Passes/PPV/Telegram/Brand 10%, Instagram Subs 20%.', formula: 'Gross Revenue × platform fee %' },
-  { term: 'Net Revenue',            color: C.green,  plain: 'Money that actually lands in your account after all platform commissions.',                                formula: 'Gross Revenue − Platform Cuts' },
-  { term: 'Total Costs (Expenses)', color: C.red,    plain: 'Everything you spend each month: AI tools, paid ads, and research.',                                      formula: 'Higgsfield + ElevenLabs + Grok + Claude + Meta Ads + Research + Buffer' },
-  { term: 'Net Profit',             color: C.blue,   plain: 'The money you actually keep — after platform fees AND all expenses.',                                      formula: 'Net Revenue − Total Costs' },
-  { term: 'Cumulative Profit',      color: C.green,  plain: 'Running total of all net profits since Month 1.',                                                          formula: 'Sum of all Net Profits up to this month' },
-  { term: 'MRR',                    color: C.textSec, plain: 'Monthly Recurring Revenue — predictable subscription income that auto-renews each month.',                formula: 'Fanvue subscriptions + IG subscriptions' },
-  { term: 'PPV',                    color: C.textSec, plain: 'Pay-Per-View — fans pay once for a specific piece of content, not a monthly sub.',                       formula: 'Included in PPV+Voice column' },
-  { term: 'GFE',                    color: C.textSec, plain: 'Girlfriend Experience — premium personal interaction: voice notes, DMs, personalised content.',           formula: 'Drives higher Fanvue + PPV revenue' },
-];
-
-// ── TIMELINE DATA ──────────────────────────────────────────────────────────────
-const TIMELINE = [
-  { month: 'Pre-Launch', label: 'Phase 0 — Foundation', color: C.textSec, platforms: [],
-    tasks: ['Generate 40 LoRA training images (Grok + Colab)', 'QC images against Jasmine character bible', 'Train Jasmine Flux.1 LoRA on Civitai / RunPod', 'QC LoRA — 5 test images, verify face + body lock', 'OPSEC pipeline: ExifTool EXIF strip + film grain overlay'] },
-  { month: 'M1', label: 'Day 1 — Full Launch', color: C.green,
-    platforms: [
-      { name: 'Instagram',  detail: 'SFW — 1 post/day, 3 Stories/day, Reels 3×/week',              color: '#e1306c' },
-      { name: 'Fanvue',     detail: 'GFE subscription — ₹1,200/mo (free trial first week)',         color: '#e05a2b' },
-      { name: 'Passes',     detail: 'Mirror of Fanvue — PPV unlocks, voice notes',                  color: '#7c3aed' },
-      { name: 'X/Twitter',  detail: 'SFW-edge teasers — drive traffic to Fanvue',                   color: '#1d9bf0' },
-    ],
-    tasks: ['Post 12 pre-batched pieces of content (2-week runway)', 'Set up Metricool scheduler', 'DM welcome script live on Fanvue', 'Linktree / link-in-bio → Fanvue + Passes'] },
-  { month: 'M2', label: 'Growth & Content Velocity', color: C.blue, platforms: [],
-    tasks: ['Increase post frequency based on engagement data', 'Launch first PPV campaign — voice note bundle', 'Start Reddit seeding (SFW subs)', 'A/B test caption styles and posting times'] },
-  { month: 'M3', label: '$2k MRR Milestone — Meta Ads Begin', color: C.orange,
-    platforms: [{ name: 'Meta Ads', detail: 'Paid Instagram promotion — ₹3,000/mo budget', color: '#1877f2' }],
-    tasks: ['$2k MRR ($2,000 USD = ₹1,86,160) target', 'Launch Meta Ads retargeting to profile visitors', 'First collab shoutout with micro-influencer (barter)'] },
-  { month: 'M4', label: 'Instagram Subscriptions Unlock (10k followers)', color: C.green,
-    platforms: [{ name: 'Instagram Subscriptions', detail: '₹200/mo native IG sub — exclusive Stories + Close Friends', color: '#e1306c' }],
-    tasks: ['10,000 Instagram followers → subscriptions unlock', 'Set IG subscription at ₹200/mo', 'Promote IG subs to existing Fanvue audience'] },
-  { month: 'M5', label: '$5k MRR — Telegram VIP Prep', color: C.blue, platforms: [],
-    tasks: ['$5k MRR ($5,000 USD = ₹4,65,400) target', 'Build Telegram VIP waitlist', 'Increase Meta Ads to ₹6,000/mo', 'Launch brand deal outreach — DM 20 relevant brands'] },
-  { month: 'M6', label: 'Telegram VIP Goes Live', color: C.green,
-    platforms: [{ name: 'Telegram VIP', detail: 'Private paid channel — direct personal content, highest tier', color: '#2ca5e0' }],
-    tasks: ['Telegram VIP launch — ₹500–₹800/mo pricing', 'Exclusive content: unfiltered voice notes, behind-scenes', 'Cross-promote VIP to Fanvue + Passes subscribers'] },
-  { month: 'M7', label: 'Brand Deals — First Paid Partnership', color: C.orange,
-    platforms: [{ name: 'Brand Deals', detail: 'First paid sponsorship — wellness, fitness, or beauty brands', color: '#e05a2b' }],
-    tasks: ['Close first brand deal — minimum ₹21,000/placement', 'Create sponsored content brief + rate card'] },
-  { month: 'M10', label: '$20k MRR Milestone', color: C.green, platforms: [],
-    tasks: ['$20k MRR ($20,000 USD = ₹18,61,600) target', 'All 6 revenue streams active and optimised', 'Evaluate hiring VA for DM management'] },
-  { month: 'M12', label: '₹1 Crore Cumulative — Year 1 Complete', color: C.green, platforms: [],
-    tasks: ['Cumulative net profit target: ~₹1.07 Crore', 'Full P&L review — plan Year 2', 'Evaluate Pinterest + YouTube as additional funnels'] },
-];
 
 // ── MAIN COMPONENT ─────────────────────────────────────────────────────────────
 export default function PLDashboard({ data }) {
@@ -163,7 +91,6 @@ export default function PLDashboard({ data }) {
   };
 
   const [ttip, setTtip] = useState(null);
-
   const externalTooltip = useCallback(({ chart, tooltip }) => {
     if (tooltip.opacity === 0) { setTtip(null); return; }
     const dp = tooltip.dataPoints;
@@ -172,18 +99,11 @@ export default function PLDashboard({ data }) {
     setTtip({ i: dp[0].dataIndex, x: rect.left + window.scrollX + tooltip.caretX, y: rect.top + window.scrollY + tooltip.caretY });
   }, []);
 
-  const scaleStyle = {
-    x: { ticks: { color: C.textSec, font: { size: 12 } }, grid: { color: C.grid }, border: { color: C.cardBdr } },
-    y: { ticks: { color: C.textSec, font: { size: 11 }, callback: v => fL(v), maxTicksLimit: 7 }, grid: { color: C.grid }, border: { color: C.cardBdr } },
-  };
-
   const mainChartData = {
     labels: months,
     datasets: [
-      { label: 'Gross Revenue', data: grossRev,   borderColor: C.blue,   backgroundColor: 'rgba(9,105,218,.07)',  borderWidth: 2, pointBackgroundColor: C.blue,   pointBorderColor: '#fff', pointBorderWidth: 2, pointRadius: 5, pointHoverRadius: 9,  fill: false, tension: 0.35 },
-      { label: 'Net Revenue',   data: netRev,     borderColor: C.orange, backgroundColor: 'rgba(188,76,0,.07)',   borderWidth: 2, pointBackgroundColor: C.orange, pointBorderColor: '#fff', pointBorderWidth: 2, pointRadius: 4, pointHoverRadius: 8,  fill: false, tension: 0.35 },
-      { label: 'Net Profit',    data: netProfit,  borderColor: C.green,  backgroundColor: 'rgba(26,127,55,.10)',  borderWidth: 3, pointBackgroundColor: C.green,  pointBorderColor: '#fff', pointBorderWidth: 2, pointRadius: 5, pointHoverRadius: 9,  fill: true,  tension: 0.35 },
-      { label: 'Total Costs',   data: totalCosts, borderColor: C.red,    backgroundColor: 'rgba(207,34,46,.06)',  borderWidth: 1.5, borderDash: [5, 5], pointBackgroundColor: C.red, pointBorderColor: '#fff', pointRadius: 3, pointHoverRadius: 6, fill: true, tension: 0.1 },
+      { label: 'Gross Revenue', data: grossRev,   borderColor: C.blue,   backgroundColor: 'rgba(88,166,255,0.1)',  borderWidth: 3, pointBackgroundColor: C.blue,   pointBorderColor: '#fff', pointRadius: 5, fill: false, tension: 0.4 },
+      { label: 'Net Profit',    data: netProfit,  borderColor: C.green,  backgroundColor: 'rgba(63,185,80,0.15)',  borderWidth: 4, pointBackgroundColor: C.green,  pointBorderColor: '#fff', pointRadius: 6, fill: true,  tension: 0.4 },
     ],
   };
 
@@ -191,355 +111,244 @@ export default function PLDashboard({ data }) {
     responsive: true, maintainAspectRatio: false,
     interaction: { intersect: false, mode: 'index' },
     plugins: { legend: { display: false }, tooltip: { enabled: false, external: externalTooltip } },
-    scales: scaleStyle,
+    scales: {
+      x: { ticks: { color: C.textSec }, grid: { color: C.grid } },
+      y: { ticks: { color: C.textSec, callback: v => fL(v) }, grid: { color: C.grid } },
+    },
   };
 
   return (
     <div style={S.page}>
-      <div style={S.header}>
-        <div style={{ width: 110 }} />
-        <div style={S.headerMid}>
-          <h1 style={S.h1}>Virtual influencer digital agency — 12-Month P&amp;L Dashboard</h1>
-          <div style={S.sub}>
-            All values in INR &nbsp;·&nbsp; ₹93.08 = $1 USD &nbsp;·&nbsp; IG subscription ₹200/mo launches at M4 (10k followers)
-            <br />
-            <strong style={{ color: C.orange, marginTop: 4, display: 'inline-block' }}>Note: The calculations and projections below are modeled for exactly 1 influencer.</strong>
-            <br />
-            <span style={{ color: C.blue, fontSize: 11, fontWeight: 600 }}>Agency Scale: Multiple influencers can be launched simultaneously using this same infrastructure to multiply total revenue.</span>
+      {/* 1. HERO / VISION */}
+      <section style={S.hero}>
+        <div style={S.tag}>The Future of Influence</div>
+        <h1 style={S.h1}>Industrializing Digital Identity</h1>
+        <p style={S.p}>
+          Building the world's most scalable Virtual Influencer Agency. 
+          Deploying proprietary AI identities into high-liquid G7 markets to capture Tier-1 ARPU at near-zero marginal cost.
+        </p>
+        <div style={{ display: 'flex', gap: 16 }}>
+          <button style={{ padding: '12px 24px', borderRadius: 8, background: C.blue, color: '#fff', border: 'none', fontWeight: 600, cursor: 'pointer' }}>View Opportunity</button>
+          <a href="#financials" style={{ padding: '12px 24px', borderRadius: 8, border: `1px solid ${C.cardBdr}`, color: C.textPri, fontWeight: 600, textDecoration: 'none' }}>Live P&L</a>
+        </div>
+      </section>
+
+      {/* 2. THE PROBLEM & SOLUTION */}
+      <section style={S.section}>
+        <div style={S.grid2}>
+          <div style={S.card}>
+            <div style={{ ...S.tag, color: C.red }}>The Problem</div>
+            <h3 style={{ fontSize: 22, fontWeight: 700, marginBottom: 16 }}>The "Human Factor" Barrier</h3>
+            <ul style={{ color: C.textSec, paddingLeft: 20, lineHeight: 2 }}>
+              <li>Fragile: PR scandals and "cancel culture"</li>
+              <li>Limited: Human burnout prevents 24/7 output</li>
+              <li>Expensive: High lifestyle OpEx and commission</li>
+              <li>Untransferable: Brand equity tied to a physical body</li>
+            </ul>
           </div>
-        </div>
-        <a href="/graph.html" target="_blank" rel="noopener noreferrer" style={S.graphBtn}>
-          🔗 Knowledge Graph
-        </a>
-      </div>
-
-      {/* SUMMARY CARDS */}
-      <SectionLabel text="12-Month Summary" />
-      <div style={S.stats}>
-        {[
-          { label: '12M Gross Revenue', val: T.gross,  color: C.blue,   sub: 'Total earned before platform fees' },
-          { label: '12M Net Revenue',   val: T.net,    color: C.green,  sub: 'After all platform commissions' },
-          { label: '12M Total Costs',   val: T.costs,  color: C.red,    sub: 'Tools + Ads + Research' },
-          { label: '12M Net Profit',    val: T.profit, color: C.green,  sub: 'Money in your pocket', green: true },
-        ].map(c => (
-          <div key={c.label} style={c.green ? S.statGreen : S.statBase}>
-            <div style={S.statLbl}>{c.label}</div>
-            <div style={{ fontSize: 22, fontWeight: 700, color: c.color }}>{fL(c.val)}</div>
-            <div style={{ fontSize: 11, color: C.textSec, marginTop: 4 }}>{fi(c.val)}</div>
-            <div style={{ fontSize: 10, color: C.textMut, marginTop: 2 }}>{c.sub}</div>
-          </div>
-        ))}
-      </div>
-
-      {/* CHART */}
-      <SectionLabel text="Charts — Hover any point to see full monthly breakdown" />
-      <div style={S.note}>
-        Dashed vertical lines = milestones &nbsp;·&nbsp;
-        <span style={{ color: C.blue }}>Blue</span> = Gross Revenue &nbsp;·&nbsp;
-        <span style={{ color: C.orange }}>Orange</span> = Net Revenue &nbsp;·&nbsp;
-        <span style={{ color: C.green }}>Green</span> = Net Profit &nbsp;·&nbsp;
-        <span style={{ color: C.red }}>Red dashed</span> = Total Costs
-      </div>
-      <div style={S.card}>
-        <div style={S.cardTitle}>Monthly Revenue &amp; Profit</div>
-        <div style={{ height: 340, position: 'relative' }}>
-          <Line id="main-chart" data={mainChartData} options={mainChartOpts} plugins={[milestonePlugin]} />
-        </div>
-        <div style={S.legend}>
-          <div style={S.legItem}><div style={{ ...S.dot, background: C.blue }} />Gross Revenue</div>
-          <div style={S.legItem}><div style={{ ...S.dot, background: C.orange }} />Net Revenue (after platform cuts)</div>
-          <div style={S.legItem}><div style={{ ...S.dot, background: C.green }} />Net Profit (after all costs)</div>
-          <div style={S.legItem}><div style={S.dsh} />Total Costs</div>
-        </div>
-      </div>
-
-      {/* CUMULATIVE BARS */}
-      <CumulativeBars months={months} cumulative={cumulative} netProfit={netProfit} />
-
-      {/* MARKET & STRATEGY */}
-      <SectionLabel text="Market & Strategy Overview" />
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 16, marginBottom: 16 }}>
-        <div style={{ ...S.card, margin: 0 }}>
-          <div style={S.cardTitle}>Platforms & Strategy</div>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
-            <div>
-              <div style={{ fontSize: 11, fontWeight: 700, color: C.textPri, marginBottom: 8, textTransform: 'uppercase', letterSpacing: '0.5px' }}>Launch Platforms</div>
-              <ul style={{ margin: 0, paddingLeft: 16, fontSize: 11, color: C.textSec, lineHeight: 1.7 }}>
-                <li><strong>Instagram</strong> <span style={{ color: C.textMut }}>(Marketing / Revenue)</span></li>
-                <li><strong>Fanvue</strong> <span style={{ color: C.green }}>(Revenue)</span></li>
-                <li><strong>Passes</strong> <span style={{ color: C.green }}>(Revenue)</span></li>
-                <li><strong>Facebook Subscriptions</strong> <span style={{ color: C.green }}>(Revenue)</span></li>
-                <li><strong>X / Twitter</strong> <span style={{ color: C.blue }}>(Marketing)</span></li>
-                <li><strong>Telegram VIP</strong> <span style={{ color: C.green }}>(Revenue)</span></li>
-                <li><strong>Brand Deals</strong> <span style={{ color: C.green }}>(Revenue)</span></li>
-              </ul>
-            </div>
-            <div>
-              <div style={{ fontSize: 11, fontWeight: 700, color: C.textPri, marginBottom: 8, textTransform: 'uppercase', letterSpacing: '0.5px' }}>Marketing Channels</div>
-              <ul style={{ margin: 0, paddingLeft: 16, fontSize: 11, color: C.textSec, lineHeight: 1.7 }}>
-                <li><strong>Instagram Reels</strong> <span style={{ color: C.blue }}>(Organic)</span></li>
-                <li><strong>Instagram Stories</strong> <span style={{ color: C.blue }}>(Retention)</span></li>
-                <li><strong>Meta Ads</strong> <span style={{ color: C.orange }}>(Paid)</span></li>
-                <li><strong>Reddit Seeding</strong> <span style={{ color: C.blue }}>(Organic)</span></li>
-                <li><strong>X/Twitter Threads</strong> <span style={{ color: C.blue }}>(Organic)</span></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div style={{ ...S.card, margin: 0 }}>
-          <div style={S.cardTitle}>Competitor Benchmarks</div>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
-            {[
-              { name: 'Lu do Magalu', followers: '6.8M' },
-              { name: 'Lil Miquela', followers: '2.6M' },
-              { name: 'Imma', followers: '390K' },
-              { name: 'Aitana Lopez', followers: '330K' },
-              { name: 'Shudu', followers: '240K' }
-            ].map(c => (
-              <div key={c.name} style={{ background: C.noteBg, border: `1px solid ${C.noteBdr}`, borderRadius: 6, padding: '6px 10px', fontSize: 11 }}>
-                <span style={{ fontWeight: 700, color: C.blue }}>{c.name}</span>
-                <span style={{ color: C.textSec, marginLeft: 6 }}>{c.followers} followers</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* CUSTOM TOOLTIP */}
-      {ttip && <ChartTooltip ttip={ttip} i={ttip.i} grossRev={grossRev} platCuts={platCuts} netRev={netRev} totalCosts={totalCosts} netProfit={netProfit} cumulative={cumulative} months={months} />}
-
-      {/* GLOSSARY */}
-      <SectionLabel text="Key Terms — Plain English Definitions" />
-      <div style={{ borderRadius: 10, border: `1px solid ${C.cardBdr}`, overflow: 'hidden', marginBottom: 16, boxShadow: '0 1px 3px rgba(0,0,0,0.06)' }}>
-        <table style={{ borderCollapse: 'collapse', width: '100%', fontSize: 12 }}>
-          <thead>
-            <tr style={{ background: '#f0f3f6' }}>
-              {['Term', 'What it means (plain language)', 'How it is calculated'].map(h => (
-                <th key={h} style={{ padding: '10px 14px', textAlign: 'left', color: C.textSec, fontWeight: 600, fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.5px', borderBottom: `1px solid ${C.cardBdr}` }}>{h}</th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            {GLOSSARY.map((g, i) => (
-              <tr key={g.term} style={{ background: i % 2 === 0 ? '#fff' : '#f6f8fa' }}>
-                <td style={{ padding: '10px 14px', color: g.color, fontWeight: 700, borderBottom: `1px solid ${C.grid}`, verticalAlign: 'top', whiteSpace: 'nowrap' }}>{g.term}</td>
-                <td style={{ padding: '10px 14px', color: C.textPri, borderBottom: `1px solid ${C.grid}`, lineHeight: 1.6, verticalAlign: 'top' }}>{g.plain}</td>
-                <td style={{ padding: '10px 14px', color: C.textSec, borderBottom: `1px solid ${C.grid}`, lineHeight: 1.6, verticalAlign: 'top', fontFamily: 'monospace', fontSize: 11 }}>{g.formula}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-
-      {/* LAUNCH TIMELINE */}
-      <SectionLabel text="Platform Launch Timeline — When to Go Live Where" />
-      <LaunchTimeline />
-
-      {/* BREAKDOWN TABLE */}
-      <SectionLabel text="Month-by-Month Full Breakdown — Every Rupee" />
-      <div style={S.note}>
-        Platform commissions: Fanvue 15% · Passes / PPV / Telegram / Brand 10% · Instagram Subs 20% &nbsp;·&nbsp;
-        Milestone months marked with ★
-      </div>
-      <PLTable rows={rows} grossRev={grossRev} netRev={netRev} platCuts={platCuts} totalCosts={totalCosts} netProfit={netProfit} cumulative={cumulative} T={T} />
-    </div>
-  );
-}
-
-// ── CHART TOOLTIP ──────────────────────────────────────────────────────────────
-function ChartTooltip({ ttip, i, grossRev, platCuts, netRev, totalCosts, netProfit, cumulative, months }) {
-  const p = netProfit[i]; const isLoss = p < 0; const ms = MILESTONES[i];
-  const rows = [
-    { label: 'Gross Revenue',               value: fi(grossRev[i]),        color: C.blue,              prefix: '' },
-    { label: 'Platform Cuts',               value: fi(platCuts[i]),        color: C.orange,            prefix: '−' },
-    { label: 'Net Revenue',                 value: fi(netRev[i]),          color: C.green,             prefix: '', bold: true, sep: true },
-    { label: 'Total Costs',                 value: fi(totalCosts[i]),      color: C.red,               prefix: '−' },
-    { label: isLoss ? 'Net Loss' : 'Net Profit', value: fi(Math.abs(p)),  color: isLoss ? C.red : C.blue, prefix: isLoss ? '−' : '+', bold: true, sep: true },
-    { label: 'Cumulative',                  value: fi(cumulative[i]),      color: C.green,             prefix: '' },
-  ];
-  return (
-    <div style={{ position: 'absolute', left: Math.min(ttip.x + 14, (typeof window !== 'undefined' ? window.innerWidth : 800) - 260), top: ttip.y - 10, background: '#fff', border: `1px solid ${C.cardBdr}`, borderRadius: 12, padding: '14px 16px', zIndex: 9999, minWidth: 230, pointerEvents: 'none', boxShadow: '0 8px 24px rgba(0,0,0,0.12)' }}>
-      <div style={{ fontSize: 13, fontWeight: 700, color: C.textPri, marginBottom: ms ? 2 : 10 }}>Month {i + 1} &nbsp;·&nbsp; <span style={{ color: C.blue }}>{months[i]}</span></div>
-      {ms && <div style={{ fontSize: 10, color: C.orange, fontWeight: 600, marginBottom: 10 }}>★ {ms}</div>}
-      {rows.map((r, j) => (
-        <div key={j}>
-          {r.sep && <div style={{ height: 1, background: C.grid, margin: '8px 0' }} />}
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 5, gap: 24 }}>
-            <span style={{ fontSize: 11, color: C.textSec }}>{r.label}</span>
-            <span style={{ fontSize: r.bold ? 13 : 12, fontWeight: r.bold ? 700 : 400, color: r.color }}>{r.prefix}{r.value}</span>
-          </div>
-        </div>
-      ))}
-    </div>
-  );
-}
-
-// ── CUMULATIVE BARS ────────────────────────────────────────────────────────────
-function CumulativeBars({ months, cumulative, netProfit }) {
-  const maxCum    = Math.max(...cumulative.map(v => Math.abs(v)), 1);
-  const maxProfit = Math.max(...netProfit.map(v => Math.abs(v)), 1);
-  return (
-    <div style={{ ...S.card }}>
-      <div style={S.cardTitle}>Cumulative Net Profit — Running Total Since Month 1</div>
-      <div style={{ display: 'flex', gap: 20, marginBottom: 14, fontSize: 11, color: C.textSec }}>
-        <span style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
-          <span style={{ display: 'inline-block', width: 14, height: 8, borderRadius: 2, background: `linear-gradient(90deg,${C.green},#2da44e)` }} />
-          Cumulative total
-        </span>
-        <span style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
-          <span style={{ display: 'inline-block', width: 14, height: 6, borderRadius: 2, background: `linear-gradient(90deg,${C.blue},#218bff)` }} />
-          This month&apos;s profit
-        </span>
-      </div>
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
-        {months.map((m, i) => {
-          const cumPct  = Math.max((Math.abs(cumulative[i]) / maxCum) * 100, 0.5);
-          const profPct = Math.max((Math.abs(netProfit[i]) / maxProfit) * 100, 0.5);
-          const isPos   = netProfit[i] >= 0;
-          const cumPos  = cumulative[i] >= 0;
-          return (
-            <div key={m} style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-              <div style={{ width: 28, fontSize: 11, color: C.textMut, textAlign: 'right', flexShrink: 0 }}>{m}</div>
-              <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 3 }}>
-                {/* Green bar — cumulative */}
-                <div style={{ background: '#eef0f3', borderRadius: 3, height: 14, overflow: 'hidden' }}>
-                  <div style={{ width: `${cumPct}%`, height: '100%', background: cumPos ? `linear-gradient(90deg,${C.green},#2da44e)` : `linear-gradient(90deg,#cf222e,#e5534b)`, borderRadius: 3 }} />
-                </div>
-                {/* Blue bar — this month's profit */}
-                <div style={{ background: '#eef0f3', borderRadius: 3, height: 9, overflow: 'hidden' }}>
-                  <div style={{ width: `${profPct}%`, height: '100%', background: isPos ? `linear-gradient(90deg,${C.blue},#218bff)` : `linear-gradient(90deg,#cf222e,#e5534b)`, borderRadius: 3 }} />
-                </div>
-              </div>
-              <div style={{ width: 82, fontSize: 11, color: cumPos ? C.green : C.red, fontWeight: 700, textAlign: 'right', flexShrink: 0 }}>{fL(cumulative[i])}</div>
-              <div style={{ width: 72, fontSize: 10, color: isPos ? C.blue : C.red, fontWeight: 600, textAlign: 'right', flexShrink: 0 }}>{isPos ? '+' : '−'}{fL(Math.abs(netProfit[i]))}</div>
-            </div>
-          );
-        })}
-      </div>
-    </div>
-  );
-}
-
-// ── LAUNCH TIMELINE ────────────────────────────────────────────────────────────
-function LaunchTimeline() {
-  return (
-    <div style={{ position: 'relative', paddingLeft: 28, marginBottom: 16 }}>
-      <div style={{ position: 'absolute', left: 10, top: 16, bottom: 16, width: 2, background: `linear-gradient(to bottom, ${C.green} 0%, ${C.cardBdr} 100%)` }} />
-      {TIMELINE.map((phase) => (
-        <div key={phase.month} style={{ position: 'relative', marginBottom: 12 }}>
-          <div style={{ position: 'absolute', left: -24, top: 16, width: 14, height: 14, borderRadius: '50%', background: phase.color, border: '2px solid #fff', boxShadow: `0 0 0 2px ${phase.color}44` }} />
-          <div style={{ background: C.cardBg, border: `1px solid ${C.cardBdr}`, borderRadius: 10, padding: '12px 16px', boxShadow: '0 1px 3px rgba(0,0,0,0.06)' }}>
-            <div style={{ display: 'flex', alignItems: 'baseline', gap: 10, marginBottom: 8, flexWrap: 'wrap' }}>
-              <span style={{ fontSize: 13, fontWeight: 700, color: phase.color, minWidth: 55 }}>{phase.month}</span>
-              <span style={{ fontSize: 13, fontWeight: 600, color: C.textPri }}>{phase.label}</span>
-            </div>
-            {phase.platforms.length > 0 && (
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: 8 }}>
-                {phase.platforms.map(p => (
-                  <div key={p.name} style={{ background: '#f6f8fa', border: `1px solid ${p.color}44`, borderRadius: 6, padding: '5px 10px' }}>
-                    <div style={{ fontSize: 11, fontWeight: 700, color: p.color }}>{p.name}</div>
-                    <div style={{ fontSize: 10, color: C.textSec, marginTop: 2, lineHeight: 1.4 }}>{p.detail}</div>
-                  </div>
-                ))}
-              </div>
-            )}
-            <ul style={{ margin: 0, padding: 0, listStyle: 'none' }}>
-              {phase.tasks.map(t => (
-                <li key={t} style={{ fontSize: 12, color: C.textSec, lineHeight: 1.6, display: 'flex', gap: 8 }}>
-                  <span style={{ color: C.green, flexShrink: 0 }}>›</span>{t}
-                </li>
-              ))}
+          <div style={S.card}>
+            <div style={{ ...S.tag, color: C.green }}>The AI Solution</div>
+            <h3 style={{ fontSize: 22, fontWeight: 700, marginBottom: 16 }}>Sovereign AI Identities</h3>
+            <ul style={{ color: C.textSec, paddingLeft: 20, lineHeight: 2 }}>
+              <li>Bulletproof: 100% brand control and safety</li>
+              <li>Omnipresent: Perpetual content generation</li>
+              <li>Efficiency: 90% lower production costs via AI</li>
+              <li>Asset Value: IP ownership stays with the agency</li>
             </ul>
           </div>
         </div>
-      ))}
+      </section>
+
+      {/* 3. MARKET & GEOGRAPHY */}
+      <section style={S.section}>
+        <div style={S.card}>
+          <h2 style={S.h2}><span style={{ color: C.orange }}>📍</span> Target Geography: Tier 1 Focus</h2>
+          <div style={S.grid2}>
+            <div>
+              <p style={{ ...S.p, margin: '0 0 16px', textAlign: 'left' }}>
+                We avoid low-ARPU markets. Our growth engine is laser-focused on <strong>US, UK, Europe, and Australia</strong>.
+              </p>
+              <table style={{ width: '100%', fontSize: 13, color: C.textSec }}>
+                <tbody>
+                  <tr style={{ borderBottom: `1px solid ${C.grid}` }}><td style={{ padding: '8px 0' }}>Est. ARPU (Tier 1)</td><td style={{ textAlign: 'right', color: C.green }}>$45.00+ / year</td></tr>
+                  <tr style={{ borderBottom: `1px solid ${C.grid}` }}><td style={{ padding: '8px 0' }}>Est. ARPU (India)</td><td style={{ textAlign: 'right', color: C.red }}>$0.80 / year</td></tr>
+                  <tr><td style={{ padding: '8px 0' }}>Yield Multiple</td><td style={{ textAlign: 'right', color: C.blue, fontWeight: 700 }}>~56x Revenue per User</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div style={{ background: 'rgba(0,0,0,0.2)', padding: 20, borderRadius: 12 }}>
+              <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', marginBottom: 12 }}>Distribution Strategy</div>
+              <ul style={{ margin: 0, paddingLeft: 16, fontSize: 13, color: C.textSec, lineHeight: 1.8 }}>
+                <li><strong>English Primary:</strong> Targeted SFW/NSFW funnels in G7 languages.</li>
+                <li><strong>Tier 1 Subs:</strong> Pricing modeled on $10-$20 USD subscription tiers.</li>
+                <li><strong>Meta Ads:</strong> Geo-fenced targeting for highest-converting regions.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 4. FINANCIALS (LIT UP) */}
+      <section id="financials" style={S.section}>
+        <SectionLabel text="Phase 1: Single Influencer Projection" />
+        <div style={S.statsGrid}>
+          {[
+            { label: 'Year 1 Gross Revenue', val: T.gross, color: C.blue, sub: '7 Combined Revenue Streams' },
+            { label: 'Year 1 Net Profit', val: T.profit, color: C.green, sub: 'After all platform fees & OpEx' },
+            { label: 'Cumulative Margin', val: ((T.profit / T.gross) * 100).toFixed(1) + '%', color: C.accent, sub: 'Efficiency of AI production' },
+            { label: 'Est. Scaling Ceiling', val: '₹1Cr+', color: C.orange, sub: 'Single influencer capacity' },
+          ].map(c => (
+            <div key={c.label} style={S.statBox}>
+              <div style={{ fontSize: 11, color: C.textSec, textTransform: 'uppercase', marginBottom: 8 }}>{c.label}</div>
+              <div style={{ fontSize: 26, fontWeight: 800, color: c.color }}>{typeof c.val === 'number' ? fL(c.val) : c.val}</div>
+              <div style={{ fontSize: 10, color: C.textMut, marginTop: 4 }}>{c.sub}</div>
+            </div>
+          ))}
+        </div>
+
+        <div style={S.card}>
+          <div style={{ fontSize: 12, fontWeight: 700, marginBottom: 20 }}>REVENUE & PROFIT GROWTH (MO 1-12)</div>
+          <div style={{ height: 400 }}>
+            <Line data={mainChartData} options={mainChartOpts} />
+          </div>
+          <div style={{ display: 'flex', gap: 24, marginTop: 24, fontSize: 12, color: C.textSec }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}><div style={{ width: 12, height: 12, borderRadius: '50%', background: C.blue }} /> Gross Revenue</div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}><div style={{ width: 12, height: 12, borderRadius: '50%', background: C.green }} /> Net Profit</div>
+          </div>
+        </div>
+      </section>
+
+      {/* 5. THE SCALE ENGINE */}
+      <section style={S.section}>
+        <div style={{ ...S.card, border: `1px solid ${C.accent}44`, background: `linear-gradient(180deg, ${C.cardBg}, rgba(188, 140, 255, 0.05))` }}>
+          <h2 style={S.h2}><span style={{ color: C.accent }}>🚀</span> Agency Scaling — The Multiplier Effect</h2>
+          <p style={{ ...S.p, textAlign: 'left', maxWidth: 'none' }}>
+            We don't build projects. We build <strong>blueprints</strong>. Every operational cost added for a new influencer is sub-linear compared to the revenue growth.
+          </p>
+          <div style={S.grid2}>
+            <div style={{ background: 'rgba(0,0,0,0.3)', padding: 24, borderRadius: 16 }}>
+              <div style={{ fontSize: 32, fontWeight: 800, color: C.accent }}>10x</div>
+              <div style={{ fontSize: 14, fontWeight: 600, marginTop: 8 }}>Scale Potential (Year 2)</div>
+              <div style={{ fontSize: 12, color: C.textSec, marginTop: 4 }}>By replicating this model across 10 distinct AI identities with unique niches.</div>
+            </div>
+            <div style={{ background: 'rgba(0,0,0,0.3)', padding: 24, borderRadius: 16 }}>
+              <div style={{ fontSize: 32, fontWeight: 800, color: C.green }}>~₹10Cr+</div>
+              <div style={{ fontSize: 14, fontWeight: 600, marginTop: 8 }}>Projected Agency Revenue</div>
+              <div style={{ fontSize: 12, color: C.textSec, marginTop: 4 }}>Leveraging the same infrastructure, prompts, and pipeline across the portfolio.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 6. TECH MOAT & PLATFORMS */}
+      <section style={S.section}>
+        <div style={S.grid2}>
+          <div style={S.card}>
+             <div style={S.cardTitle}>Execution Pipeline</div>
+             <ul style={{ margin: 0, paddingLeft: 16, fontSize: 13, color: C.textSec, lineHeight: 2.2 }}>
+                <li><strong>Grok-2 / Colab:</strong> Character Bible & High-Yield Image Gen</li>
+                <li><strong>Flux.1 LoRA:</strong> Consistent Face/Body lock across platforms</li>
+                <li><strong>ElevenLabs:</strong> 11-Voice synthesis for high-engagement Voice DMs</li>
+                <li><strong>Higgsfield / Kling:</strong> AI Motion for Viral Video Reels</li>
+                <li><strong>Manual QC:</strong> Human-in-the-loop for 100% aesthetic perfection</li>
+             </ul>
+          </div>
+          <div style={S.card}>
+             <div style={S.cardTitle}>Launch Platforms (7 Streams)</div>
+             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
+               <ul style={{ margin: 0, paddingLeft: 16, fontSize: 12, color: C.textSec, lineHeight: 2 }}>
+                 <li><strong style={{ color: C.green }}>Fanvue</strong> (Global Sub)</li>
+                 <li><strong style={{ color: C.green }}>Passes</strong> (Mirror Sub)</li>
+                 <li><strong style={{ color: C.green }}>PPV / Voice</strong> (PPV)</li>
+                 <li><strong style={{ color: C.green }}>FB Subs</strong> (Social Sub)</li>
+               </ul>
+               <ul style={{ margin: 0, paddingLeft: 16, fontSize: 12, color: C.textSec, lineHeight: 2 }}>
+                 <li><strong style={{ color: C.blue }}>Instagram</strong> (Marketing)</li>
+                 <li><strong style={{ color: C.blue }}>X/Twitter</strong> (Marketing)</li>
+                 <li><strong style={{ color: C.green }}>Telegram VIP</strong> (High Tier)</li>
+               </ul>
+             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 7. DETAILED BREAKDOWN (TABLE) */}
+      <section style={S.section}>
+        <SectionLabel text="Investor Audit: Month-by-Month Full Breakdown" />
+        <PLTable rows={rows} grossRev={grossRev} netRev={netRev} platCuts={platCuts} totalCosts={totalCosts} netProfit={netProfit} cumulative={cumulative} T={T} />
+      </section>
+
+      {/* FOOTER */}
+      <div style={{ textAlign: 'center', marginTop: 100, color: C.textMut, fontSize: 12 }}>
+        Confidential — Virtual Influencer Digital Agency Investor Pitch v1.0
+      </div>
+
+      {ttip && <ChartTooltip ttip={ttip} i={ttip.i} grossRev={grossRev} platCuts={platCuts} netRev={netRev} totalCosts={totalCosts} netProfit={netProfit} cumulative={cumulative} months={months} />}
     </div>
   );
 }
 
-// ── SECTION LABEL ──────────────────────────────────────────────────────────────
+// ── COMPONENTS ────────────────────────────────────────────────────────────────
 function SectionLabel({ text }) {
   return (
-    <div style={{ fontSize: 11, fontWeight: 700, color: C.textMut, textTransform: 'uppercase', letterSpacing: '1.2px', margin: '28px 0 12px', display: 'flex', alignItems: 'center', gap: 10 }}>
-      <div style={{ flex: 1, height: 1, background: C.grid }} />
+    <div style={{ fontSize: 11, fontWeight: 700, color: C.textMut, textTransform: 'uppercase', letterSpacing: '2px', margin: '40px 0 20px', display: 'flex', alignItems: 'center', gap: 20 }}>
       {text}
       <div style={{ flex: 1, height: 1, background: C.grid }} />
     </div>
   );
 }
 
-// ── BREAKDOWN TABLE ────────────────────────────────────────────────────────────
 function PLTable({ rows, grossRev, netRev, platCuts, totalCosts, netProfit, cumulative, T }) {
-  const mileSet = new Set([2, 4, 9]);
   const totRev  = Array(REV_LABELS.length).fill(0);
   const totCost = Array(COST_LABELS.length).fill(0);
   rows.forEach(r => { r.rArr.forEach((v, j) => { totRev[j] += v; }); r.cArr.forEach((v, j) => { totCost[j] += v; }); });
 
-  const thS = (bg, col) => ({ background: bg, color: col, padding: '9px 10px', textAlign: 'right', whiteSpace: 'nowrap', border: 'none', borderBottom: `1px solid ${C.grid}`, fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.3px', fontWeight: 600 });
-  const tdS = (col, bold) => ({ color: col, padding: '8px 10px', textAlign: 'right', whiteSpace: 'nowrap', borderBottom: `1px solid ${C.grid}`, fontWeight: bold ? 700 : 400 });
-
   return (
-    <div style={{ overflowX: 'auto', borderRadius: 10, border: `1px solid ${C.cardBdr}`, boxShadow: '0 1px 3px rgba(0,0,0,0.06)' }}>
-      <table style={{ borderCollapse: 'collapse', width: '100%', minWidth: 1200, fontSize: 12 }}>
+    <div style={{ overflowX: 'auto', borderRadius: 16, border: `1px solid ${C.cardBdr}`, background: C.cardBg }}>
+      <table style={{ borderCollapse: 'collapse', width: '100%', minWidth: 1100, fontSize: 12 }}>
         <thead>
-          <tr>
-            <th rowSpan={2} style={{ ...thS('#f0f3f6', C.textPri), textAlign: 'left', position: 'sticky', left: 0, zIndex: 2 }}>Month</th>
-            <th colSpan={REV_LABELS.length} style={thS('#e8f5ec', C.green)}>Revenue Streams — Gross (₹)</th>
-            <th style={thS('#e8f5ec', C.green)}>Gross Total</th>
-            <th style={thS('#fff5ee', C.orange)}>Platform Cuts</th>
-            <th style={thS('#e8f5ec', C.green)}>Net Revenue</th>
-            <th colSpan={COST_LABELS.length} style={thS('#ffeef0', C.red)}>Expenses (₹)</th>
-            <th style={thS('#ffeef0', C.red)}>Total Costs</th>
-            <th style={thS('#dff0ff', C.blue)}>Net Profit</th>
-            <th style={thS('#dff0ff', C.blue)}>Cumulative</th>
-          </tr>
-          <tr>
-            {REV_LABELS.map(l  => <th key={l} style={thS('#e8f5ec', C.green)}>{l}</th>)}
-            <th style={thS('#e8f5ec', C.green)} /><th style={thS('#fff5ee', C.orange)} /><th style={thS('#e8f5ec', C.green)} />
-            {COST_LABELS.map(l => <th key={l} style={thS('#ffeef0', C.red)}>{l}</th>)}
-            <th style={thS('#ffeef0', C.red)} /><th style={thS('#dff0ff', C.blue)} /><th style={thS('#dff0ff', C.blue)} />
+          <tr style={{ background: 'rgba(255,255,255,0.03)' }}>
+            <th style={{ padding: '16px', textAlign: 'left', borderBottom: `1px solid ${C.cardBdr}` }}>Month</th>
+            <th style={{ padding: '16px', textAlign: 'right', borderBottom: `1px solid ${C.cardBdr}`, color: C.blue }}>Gross Revenue</th>
+            <th style={{ padding: '16px', textAlign: 'right', borderBottom: `1px solid ${C.cardBdr}`, color: C.orange }}>Platform Fees</th>
+            <th style={{ padding: '16px', textAlign: 'right', borderBottom: `1px solid ${C.cardBdr}`, color: C.green }}>Net Profit</th>
+            <th style={{ padding: '16px', textAlign: 'right', borderBottom: `1px solid ${C.cardBdr}`, color: C.blue }}>Cumulative</th>
           </tr>
         </thead>
         <tbody>
-          {rows.map((row, i) => {
-            const isMile = mileSet.has(i);
-            const bg = isMile ? '#e8f5ec' : (i % 2 === 0 ? '#fff' : '#f6f8fa');
-            return (
-              <tr key={row.month}>
-                <td style={{ ...tdS(isMile ? C.green : C.textPri, isMile), background: '#f0f3f6', position: 'sticky', left: 0, zIndex: 1, textAlign: 'left' }}>
-                  {row.label}{isMile ? <span style={{ color: C.green, fontSize: 9, marginLeft: 4 }}>★</span> : null}
-                </td>
-                {row.rArr.map((v, j) => <td key={j} style={{ ...tdS(C.green, false), background: bg }}>{v ? fi(v) : '—'}</td>)}
-                <td style={{ ...tdS(C.green, true), background: bg }}>{fi(grossRev[i])}</td>
-                <td style={{ ...tdS(C.orange, false), background: bg }}>{fi(platCuts[i])}</td>
-                <td style={{ ...tdS(C.green, true), background: bg }}>{fi(netRev[i])}</td>
-                {row.cArr.map((v, j) => <td key={j} style={{ ...tdS(C.red, false), background: bg }}>{v ? fi(v) : '—'}</td>)}
-                <td style={{ ...tdS(C.red, true), background: bg }}>{fi(totalCosts[i])}</td>
-                <td style={{ ...tdS(netProfit[i] >= 0 ? C.blue : C.red, true), background: bg }}>{netProfit[i] >= 0 ? '' : '−'}{fi(Math.abs(netProfit[i]))}</td>
-                <td style={{ ...tdS(cumulative[i] >= 0 ? C.blue : C.red, true), background: bg }}>{fi(cumulative[i])}</td>
-              </tr>
-            );
-          })}
+          {rows.map((row, i) => (
+            <tr key={row.month} style={{ borderBottom: `1px solid ${C.grid}` }}>
+              <td style={{ padding: '12px 16px', color: C.textPri, fontWeight: 600 }}>{row.label}</td>
+              <td style={{ padding: '12px 16px', textAlign: 'right', color: C.textSec }}>{fi(row.gross)}</td>
+              <td style={{ padding: '12px 16px', textAlign: 'right', color: C.orange }}>{fi(row.cuts)}</td>
+              <td style={{ padding: '12px 16px', textAlign: 'right', color: C.green, fontWeight: 700 }}>{fi(row.profit)}</td>
+              <td style={{ padding: '12px 16px', textAlign: 'right', color: C.textPri }}>{fi(cumulative[i])}</td>
+            </tr>
+          ))}
         </tbody>
-        <tfoot>
-          <tr style={{ background: '#f0f3f6' }}>
-            <td style={{ ...tdS(C.textPri, true), background: '#f0f3f6', position: 'sticky', left: 0, textAlign: 'left', borderTop: `2px solid ${C.cardBdr}` }}>TOTAL</td>
-            {totRev.map((v, j)  => <td key={j} style={{ ...tdS(C.green, false), background: '#f0f3f6', borderTop: `2px solid ${C.cardBdr}` }}>{fi(v)}</td>)}
-            <td style={{ ...tdS(C.green, true),  background: '#f0f3f6', borderTop: `2px solid ${C.cardBdr}` }}>{fi(grossRev.reduce((a,b)=>a+b,0))}</td>
-            <td style={{ ...tdS(C.orange,false), background: '#f0f3f6', borderTop: `2px solid ${C.cardBdr}` }}>{fi(platCuts.reduce((a,b)=>a+b,0))}</td>
-            <td style={{ ...tdS(C.green, true),  background: '#f0f3f6', borderTop: `2px solid ${C.cardBdr}` }}>{fi(netRev.reduce((a,b)=>a+b,0))}</td>
-            {totCost.map((v, j) => <td key={j} style={{ ...tdS(C.red, false), background: '#f0f3f6', borderTop: `2px solid ${C.cardBdr}` }}>{fi(v)}</td>)}
-            <td style={{ ...tdS(C.red,  true),   background: '#f0f3f6', borderTop: `2px solid ${C.cardBdr}` }}>{fi(totalCosts.reduce((a,b)=>a+b,0))}</td>
-            <td style={{ ...tdS(C.blue, true),   background: '#f0f3f6', borderTop: `2px solid ${C.cardBdr}` }}>{fi(T.profit)}</td>
-            <td style={{ ...tdS(C.blue, true),   background: '#f0f3f6', borderTop: `2px solid ${C.cardBdr}` }}>{fi(T.profit)}</td>
-          </tr>
-          <tr style={{ background: '#f6f8fa' }}>
-            <td colSpan={REV_LABELS.length + COST_LABELS.length + 7} style={{ color: C.textMut, fontSize: 11, padding: '8px 14px', lineHeight: 1.6 }}>
-              Gross {fL(T.gross)} → minus platform cuts → Net Revenue {fL(T.net)} → minus all costs → <strong style={{ color: C.green }}>Net Profit {fL(T.profit)}</strong>
-            </td>
+        <tfoot style={{ background: 'rgba(88,166,255,0.05)' }}>
+          <tr>
+            <td style={{ padding: '16px', fontWeight: 800 }}>TOTAL EARNINGS</td>
+            <td style={{ padding: '16px', textAlign: 'right', color: C.blue, fontWeight: 800 }}>{fL(T.gross)}</td>
+            <td style={{ padding: '16px', textAlign: 'right', color: C.orange }}>{fL(T.gross - T.net)}</td>
+            <td style={{ padding: '16px', textAlign: 'right', color: C.green, fontWeight: 800 }}>{fL(T.profit)}</td>
+            <td style={{ padding: '16px', textAlign: 'right', fontWeight: 800 }}>{fL(T.profit)}</td>
           </tr>
         </tfoot>
       </table>
+    </div>
+  );
+}
+
+function ChartTooltip({ ttip, i, grossRev, platCuts, netRev, totalCosts, netProfit, cumulative, months }) {
+  const p = netProfit[i]; const isLoss = p < 0; 
+  return (
+    <div style={{ position: 'absolute', left: Math.min(ttip.x + 14, (typeof window !== 'undefined' ? window.innerWidth : 800) - 260), top: ttip.y - 10, background: '#161b22', border: `1px solid ${C.cardBdr}`, borderRadius: 12, padding: '14px 16px', zIndex: 9999, minWidth: 230, pointerEvents: 'none', boxShadow: '0 8px 24px rgba(0,0,0,0.5)' }}>
+      <div style={{ fontSize: 13, fontWeight: 700, color: C.textPri, marginBottom: 10 }}>Month {i + 1} &nbsp;·&nbsp; <span style={{ color: C.blue }}>{months[i]}</span></div>
+      <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 6 }}><span style={{ fontSize: 11, color: C.textSec }}>Gross Revenue</span><span style={{ fontSize: 12, color: C.blue }}>{fi(grossRev[i])}</span></div>
+      <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 6 }}><span style={{ fontSize: 11, color: C.textSec }}>Net Profit</span><span style={{ fontSize: 13, fontWeight: 700, color: C.green }}>{fi(p)}</span></div>
+      <div style={{ height: 1, background: C.grid, margin: '10px 0' }} />
+      <div style={{ display: 'flex', justifyContent: 'space-between' }}><span style={{ fontSize: 11, color: C.textSec }}>Cumulative Total</span><span style={{ fontSize: 12, color: C.textPri }}>{fi(cumulative[i])}</span></div>
     </div>
   );
 }
