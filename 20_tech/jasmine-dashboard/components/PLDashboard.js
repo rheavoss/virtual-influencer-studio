@@ -16,24 +16,32 @@ import { Line, Bar } from 'react-chartjs-2';
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, BarElement, Filler, Tooltip, Legend);
 
 // ── CONSTANTS & DATA ───────────────────────────────────────────────────────────
+// Fees based on PDF: Fanvue 15%, Passes/PPV/Telegram/Brand 10%, IG Subs 20%
 const KEEP        = [0.85, 0.90, 0.90, 0.90, 0.90, 0.80, 0.70];
 const MILESTONES  = { 2: '$2k MRR', 4: 'IG/FB Subs Live', 9: '$30k MRR' };
 const REV_LABELS  = ['Fanvue', 'Passes', 'PPV+Voice', 'Telegram', 'Brand Deals', 'IG Subs', 'FB Subs'];
 const COST_LABELS = ['Higgsfield', 'ElevenLabs', 'Grok', 'Claude ×2', 'Meta Ads', 'Research', 'Buffer'];
 
 const GLOSSARY = [
-  { t: 'Gross Revenue', d: 'Total user spend across all platforms before cuts.' },
-  { t: 'Platform Cuts', d: 'Fees from Fanvue (20%), Passes (10%), Meta (30%).' },
-  { t: 'Net Revenue', d: 'Actual cash inflow to bank after platform commissions.' },
-  { t: 'Operating Costs', d: 'Fixed tech overhead (Compute, APIs, Storage).' },
-  { t: 'Net Profit', d: 'Final take-home income after all costs and cuts.' },
+  { t: 'Gross Revenue', d: 'Total money earned across all platforms before anyone takes their cut. (Fanvue + Passes + PPV/Voice + Telegram + Brand + IG Subs)' },
+  { t: 'Platform Cuts', d: 'Commission fees taken by each platform. Fanvue 15%, Passes/PPV/Telegram/Brand 10%, Instagram Subs 20%.' },
+  { t: 'Net Revenue', d: 'Money that actually lands in your account after all platform commissions. (Gross Revenue - Platform Cuts)' },
+  { t: 'Total Costs (Expenses)', d: 'Everything you spend each month: AI tools (Higgsfield, ElevenLabs, Grok, Claude), paid ads, and research.' },
+  { t: 'Net Profit', d: 'The money you actually keep — after platform fees AND all expenses. (Net Revenue - Total Costs)' },
+  { t: 'Cumulative Profit', d: 'Running total of all net profits since Month 1. (Sum of all Net Profits up to this month)' },
+  { t: 'MRR', d: 'Monthly Recurring Revenue — predictable subscription income that auto-renews. (Fanvue + IG subscriptions)' },
+  { t: 'PPV / GFE', d: 'Pay-Per-View & Girlfriend Experience — high-ticket personal interaction, voice notes, and DMs driving premium yield.' },
 ];
 
 const ROADMAP = [
-  { m: 'M1-M2: Foundation', d: 'Character LoRA training, identity deck, account maturity, and initial social seeding.' },
-  { m: 'M3-M4: Traction', d: 'Fanvue/Passes launch, Meta Ads scaling, and Telegram VIP community activation.' },
-  { m: 'M5-M8: Scale', d: 'Voice-clone integration, GFE automation, and high-ticket PPV funnel optimization.' },
-  { m: 'M9+: Maturity', d: 'Brand partnership outreach and infrastructure replication for new AI identities.' },
+  { m: 'Pre-Launch Phase 0 — Foundation', d: 'Generate 40 LoRA training images (Grok + Colab) • QC against character bible • Train Flux.1 LoRA on Civitai/RunPod • Verify face/body lock • OPSEC pipeline: ExifTool strip + film grain.' },
+  { m: 'M1 Day 1 — Full Launch', d: 'Fanvue ₹1,200/mo GFE sub • Instagram SFW cycle (1 Post, 3 Stories/day) • Passes mirror • X/Twitter traffic funnel • 12 pre-batched content runway • Metricool setup • DM welcome scripts.' },
+  { m: 'M2 Growth & Content Velocity', d: 'Increase post frequency based on engagement data • Launch first PPV campaign (voice note bundle) • Reddit SFW seeding • A/B test caption styles and posting times.' },
+  { m: 'M3 $2k MRR Milestone (₹1.86L)', d: 'Meta Ads: Paid Instagram promotion (₹3,000/mo budget) • Launch retargeting to profile visitors • First collab shoutout with micro-influencer (barter).' },
+  { m: 'M4 IG Subscriptions Unlock (10k Followers)', d: 'Hit 10k follower milestone • Launch ₹300/mo native IG subscriptions • Exclusive Stories + Close Friends • First "live" voice note AMA session for subscribers.' },
+  { m: 'M5 GFE & Sales Automation', d: 'Expand to Telegram VIP for GFE teasers • Dedicated sales script for voice note bundles • Hiring automated content researcher (Perplexity scanning).' },
+  { m: 'M6 Scaling & Maturity', d: 'Diversify to lifestyle vlogs • Jasmine POD merchandise store • Scale Meta Ads budget to ₹10,000/mo base.' },
+  { m: 'M9+ Maturity & Market Dominance', d: 'Tier-1 Brand sponsorships (Fashion/Tech) • Launch white-label automated GFE SaaS tool • Exit strategy planning — potential $1M+ USD valuation.' },
 ];
 
 const COMPETITORS = [
@@ -84,6 +92,7 @@ const C = {
   green:     '#1a7f37',
   orange:    '#bc4c00',
   red:       '#cf222e',
+  accent:    '#8250df',
   noteBg:    '#f0f6ff',
   noteBdr:   '#cae3fb',
   greenBg:   '#dafbe1',
@@ -102,6 +111,7 @@ const S = {
   cardTitle: { fontSize: 11, fontWeight: 700, color: C.textSec, textTransform: 'uppercase', marginBottom: 12, display: 'flex', alignItems: 'center', gap: 6 },
   fn:        { verticalAlign: 'super', fontSize: 9, fontWeight: 700, color: C.blue, marginLeft: 2, cursor: 'help' },
   link:      { color: C.blue, textDecoration: 'none', cursor: 'pointer' },
+  grid2:     { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: 16 },
 };
 
 // ── MAIN COMPONENT ─────────────────────────────────────────────────────────────
@@ -112,7 +122,6 @@ export default function PLDashboard({ data }) {
   const netRev     = rows.map(r => r.net);
   const totalCosts = rows.map(r => r.costs);
   const netProfit  = rows.map(r => r.profit);
-  const platCuts   = rows.map(r => r.cuts);
   const cumulative = netProfit.reduce((acc, v, i) => { acc.push((acc[i - 1] || 0) + v); return acc; }, []);
 
   const T = {
@@ -136,7 +145,10 @@ export default function PLDashboard({ data }) {
       <div style={S.header}>
         <h1 style={S.h1}>Virtual Influencer Infrastructure — 12-Month P&L</h1>
         <div style={S.sub}>
-          Targeting Tier-1 (US/UK/EU) Arbitrage Model &nbsp;·&nbsp; ₹93.08 = $1 USD &nbsp;·&nbsp; Detailed Institutional Pitch
+           ₹93.08 = $1 USD &nbsp;·&nbsp; <strong>Modeled for EXACTLY 1 Influencer</strong> &nbsp;·&nbsp; Institutional Investment Deck
+        </div>
+        <div style={{ ...S.sub, marginTop: 4, fontSize: 11, color: C.accent }}>
+           IG Subscriptions (₹300/mo) unlock at M4 (10k follower milestone)
         </div>
       </div>
 
@@ -145,7 +157,7 @@ export default function PLDashboard({ data }) {
         {[
           { l: '12M Gross Revenue', v: T.gross },
           { l: '12M Net Revenue',   v: T.net },
-          { l: '12M Total Costs',   v: T.costs },
+          { l: '12M Total Expenses', v: T.costs },
           { l: '12M Net Profit',    v: T.profit, green: true },
         ].map(c => (
           <div key={c.l} style={{ ...S.statBox, background: c.green ? C.greenBg : C.cardBg, borderColor: c.green ? C.greenBdr : C.cardBdr }}>
@@ -235,39 +247,13 @@ export default function PLDashboard({ data }) {
               <tr style={{ borderBottom: `1px solid ${C.grid}` }}><td style={{ padding: '6px 0' }}>Annual Yield / Sub (US/UK)</td><td style={{ textAlign: 'right', fontWeight: 700, color: C.green }}>$400 – $600 <span style={S.fn}>[3]</span></td></tr>
               <tr style={{ borderBottom: `1px solid ${C.grid}` }}><td style={{ padding: '6px 0' }}>Annual Yield / Sub (India)</td><td style={{ textAlign: 'right', color: C.red }}>$45 – $60</td></tr>
               <tr style={{ borderBottom: `1px solid ${C.grid}` }}><td style={{ padding: '6px 0' }}>Meta Ads CPM (US Avg)</td><td style={{ textAlign: 'right', color: C.blue }}>$18.50 <span style={S.fn}>[2]</span></td></tr>
-              <tr><td style={{ padding: '6px 0' }}>Spending Multiplier</td><td style={{ textAlign: 'right', fontWeight: 700, color: C.blue }}>10x Advantage</td></tr>
+              <tr><td style={{ padding: '6px 0' }}>Spending Power Ratio</td><td style={{ textAlign: 'right', fontWeight: 700, color: C.blue }}>10x Advantage</td></tr>
             </tbody>
           </table>
         </div>
       </div>
 
-      {/* GLOSSARY & ROADMAP */}
-      <div style={S.grid2}>
-        <div style={S.card}>
-          <div style={S.cardTitle}>📖 Glossary of Terms</div>
-          <div style={{ display: 'grid', gap: 10 }}>
-            {GLOSSARY.map(g => (
-              <div key={g.t}>
-                <div style={{ fontSize: 11, fontWeight: 700 }}>{g.t}</div>
-                <div style={{ fontSize: 10, color: C.textSec }}>{g.d}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-        <div style={S.card}>
-          <div style={S.cardTitle}>🗓️ Detailed Launch Roadmap</div>
-          <div style={{ display: 'grid', gap: 10 }}>
-            {ROADMAP.map(r => (
-              <div key={r.m}>
-                <div style={{ fontSize: 11, fontWeight: 700, color: C.accent }}>{r.m}</div>
-                <div style={{ fontSize: 10, color: C.textSec }}>{r.d}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* PLATFORMS & COMPETITORS */}
+      {/* COMPACT ECOSYSTEM & COMPETITORS */}
       <div style={S.grid2}>
         <div style={S.card}>
           <div style={S.cardTitle}>🚀 Multichannel Ecosystem</div>
@@ -275,18 +261,18 @@ export default function PLDashboard({ data }) {
             <div>
               <div style={{ fontSize: 9, color: C.textMut, fontWeight: 700, marginBottom: 6 }}>MONETIZATION</div>
               <ul style={{ margin: 0, paddingLeft: 14, fontSize: 11, color: C.textSec, lineHeight: 1.8 }}>
-                <li><a href="https://www.fanvue.com" target="_blank" style={S.link}>Fanvue</a></li>
-                <li><a href="https://www.passes.com" target="_blank" style={S.link}>Passes</a></li>
-                <li><a href="https://www.facebook.com/creators" target="_blank" style={S.link}>FB Subscriptions</a></li>
+                <li><a href="https://www.fanvue.com" target="_blank" style={S.link}>Fanvue (15% Fee)</a></li>
+                <li><a href="https://www.passes.com" target="_blank" style={S.link}>Passes (10% Fee)</a></li>
+                <li><a href="https://www.facebook.com/creators" target="_blank" style={S.link}>FB Subs (30% Fee)</a></li>
                 <li><a href="https://www.telegram.org" target="_blank" style={S.link}>Telegram VIP</a></li>
               </ul>
             </div>
             <div>
-              <div style={{ fontSize: 9, color: C.textMut, fontWeight: 700, marginBottom: 6 }}>MARKETING</div>
+              <div style={{ fontSize: 9, color: C.textMut, fontWeight: 700, marginBottom: 6 }}>TRAFFIC CHANNELS</div>
               <ul style={{ margin: 0, paddingLeft: 14, fontSize: 11, color: C.textSec, lineHeight: 1.8 }}>
-                <li><a href="https://www.instagram.com" target="_blank" style={S.link}>Instagram</a></li>
-                <li><a href="https://www.x.com" target="_blank" style={S.link}>X / Twitter</a></li>
-                <li><a href="https://www.reddit.com" target="_blank" style={S.link}>Reddit Seeding</a></li>
+                <li><a href="https://www.instagram.com" target="_blank" style={S.link}>IG Reels/Stories</a></li>
+                <li><a href="https://www.x.com" target="_blank" style={S.link}>X (Twitter) Threads</a></li>
+                <li><a href="https://www.reddit.com" target="_blank" style={S.link}>Reddit Communities</a></li>
               </ul>
             </div>
           </div>
@@ -301,24 +287,50 @@ export default function PLDashboard({ data }) {
               </a>
             ))}
           </div>
-          <div style={{ marginTop: 12, fontSize: 9, color: C.textMut, fontStyle: 'italic' }}>
-            Success Proof: Aitana Lopez earns €10k/mo ($11k USD) with 330k followers.<span style={S.fn}>[1]</span>
+          <div style={{ marginTop: 12, fontSize: 10, color: C.textSec, borderTop: `1px solid ${C.grid}`, paddingTop: 8 }}>
+             <strong>Market Lead:</strong> Aitana Lopez earns ~$11k/mo ($132k/yr) at 330k followers.<span style={S.fn}>[1]</span>
+          </div>
+        </div>
+      </div>
+
+      {/* ROADMAP & GLOSSARY */}
+      <div style={S.grid2}>
+        <div style={S.card}>
+          <div style={S.cardTitle}>🗓️ Detailed Execution Roadmap (M1 - M9+)</div>
+          <div style={{ display: 'grid', gap: 14 }}>
+            {ROADMAP.map(r => (
+              <div key={r.m}>
+                <div style={{ fontSize: 11, fontWeight: 700, color: C.blue }}>{r.m}</div>
+                <div style={{ fontSize: 10, color: C.textSec, lineHeight: 1.5 }}>{r.d}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div style={S.card}>
+          <div style={S.cardTitle}>📖 Key Terms Glossary</div>
+          <div style={{ display: 'grid', gap: 14 }}>
+            {GLOSSARY.map(g => (
+              <div key={g.t}>
+                <div style={{ fontSize: 11, fontWeight: 700 }}>{g.t}</div>
+                <div style={{ fontSize: 10, color: C.textSec, lineHeight: 1.5 }}>{g.d}</div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
 
       {/* MONTHLY REVENUE TABLE */}
       <div style={S.card}>
-        <div style={S.cardTitle}>Month-by-Month Audit Detail</div>
+        <div style={S.cardTitle}>Month-by-Month Financial Audit</div>
         <div style={{ overflowX: 'auto' }}>
           <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 11, minWidth: 900 }}>
             <thead>
               <tr style={{ background: '#f6f8fa', borderBottom: `2px solid ${C.grid}` }}>
                 <th style={{ padding: '10px 8px', textAlign: 'left' }}>Month</th>
                 <th style={{ padding: '10px 8px', textAlign: 'right' }}>Gross Rev</th>
-                <th style={{ padding: '10px 8px', textAlign: 'right' }}>Plat. Cuts</th>
+                <th style={{ padding: '10px 8px', textAlign: 'right' }}>Plat. Fees</th>
                 <th style={{ padding: '10px 8px', textAlign: 'right' }}>Net revenue</th>
-                <th style={{ padding: '10px 8px', textAlign: 'right' }}>Total Costs</th>
+                <th style={{ padding: '10px 8px', textAlign: 'right' }}>Expenses</th>
                 <th style={{ padding: '10px 8px', textAlign: 'right', color: C.green }}>Net Profit</th>
                 <th style={{ padding: '10px 8px', textAlign: 'right', color: C.blue }}>Cumulative</th>
               </tr>
@@ -352,9 +364,9 @@ export default function PLDashboard({ data }) {
       </div>
 
       {/* TECHNICAL APPENDIX */}
-      <div id="appendix" style={{ ...S.card, background: '#fcfcfc', border: `1px dashed ${C.cardBdr}` }}>
-        <div style={S.cardTitle}>📝 Technical Appendix & Financial Footnotes</div>
-        <div style={{ display: 'grid', gap: 12 }}>
+      <div id="appendix" style={{ ...S.card, background: '#fcfcfc', border: `1px dashed ${C.cardBdr}`, marginTop: 40 }}>
+        <div style={S.cardTitle}>📝 Technical Appendix & Verification Sources</div>
+        <div style={{ display: 'grid', gap: 14 }}>
           {FOOTNOTES.map(f => (
             <div key={f.id} style={{ display: 'flex', gap: 12, fontSize: 11 }}>
               <div style={{ fontWeight: 800, color: C.blue, minWidth: 20 }}>[{f.id}]</div>
@@ -362,7 +374,7 @@ export default function PLDashboard({ data }) {
                 <div style={{ fontWeight: 700, marginBottom: 2 }}>{f.label}</div>
                 <div style={{ color: C.textSec, lineHeight: 1.5 }}>
                   {f.text} &nbsp;
-                  <a href={f.url} target="_blank" style={{ color: C.blue, textDecoration: 'underline' }}>Source Data</a>
+                  <a href={f.url} target="_blank" style={{ color: C.blue, textDecoration: 'underline' }}>Source Document</a>
                 </div>
               </div>
             </div>
@@ -371,7 +383,7 @@ export default function PLDashboard({ data }) {
       </div>
 
       <div style={{ textAlign: 'center', marginTop: 40, color: C.textMut, fontSize: 10 }}>
-        Institutional Pitch Deck v1.1 — Standard Non-Disclosure Agreement Applies
+        Institutional Pitch Deck v1.2 — Confidential & Proprietary Information
       </div>
     </div>
   );
