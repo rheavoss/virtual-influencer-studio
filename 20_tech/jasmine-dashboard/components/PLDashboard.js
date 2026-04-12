@@ -199,8 +199,12 @@ export default function PLDashboard({ data }) {
       <div style={S.header}>
         <div style={{ width: 110 }} />
         <div style={S.headerMid}>
-          <h1 style={S.h1}>Jasmine — 12-Month P&amp;L Dashboard</h1>
-          <div style={S.sub}>All values in INR &nbsp;·&nbsp; ₹93.08 = $1 USD &nbsp;·&nbsp; IG subscription ₹200/mo launches at M4 (10k followers)</div>
+          <h1 style={S.h1}>Virtual influencer digital agency — 12-Month P&amp;L Dashboard</h1>
+          <div style={S.sub}>
+            All values in INR &nbsp;·&nbsp; ₹93.08 = $1 USD &nbsp;·&nbsp; IG subscription ₹200/mo launches at M4 (10k followers)
+            <br />
+            <strong style={{ color: C.orange, marginTop: 4, display: 'inline-block' }}>Note: The calculations and projections below are modeled for exactly 1 influencer.</strong>
+          </div>
         </div>
         <a href="/graph.html" target="_blank" rel="noopener noreferrer" style={S.graphBtn}>
           🔗 Knowledge Graph
@@ -249,6 +253,54 @@ export default function PLDashboard({ data }) {
 
       {/* CUMULATIVE BARS */}
       <CumulativeBars months={months} cumulative={cumulative} netProfit={netProfit} />
+
+      {/* MARKET & STRATEGY */}
+      <SectionLabel text="Market & Strategy Overview" />
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 16, marginBottom: 16 }}>
+        <div style={{ ...S.card, margin: 0 }}>
+          <div style={S.cardTitle}>Platforms & Strategy</div>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
+            <div>
+              <div style={{ fontSize: 11, fontWeight: 700, color: C.textPri, marginBottom: 8, textTransform: 'uppercase', letterSpacing: '0.5px' }}>Launch Platforms</div>
+              <ul style={{ margin: 0, paddingLeft: 16, fontSize: 11, color: C.textSec, lineHeight: 1.7 }}>
+                <li><strong>Instagram</strong> <span style={{ color: C.textMut }}>(Marketing / Revenue)</span></li>
+                <li><strong>Fanvue</strong> <span style={{ color: C.green }}>(Revenue)</span></li>
+                <li><strong>Passes</strong> <span style={{ color: C.green }}>(Revenue)</span></li>
+                <li><strong>X / Twitter</strong> <span style={{ color: C.blue }}>(Marketing)</span></li>
+                <li><strong>Telegram VIP</strong> <span style={{ color: C.green }}>(Revenue)</span></li>
+                <li><strong>Brand Deals</strong> <span style={{ color: C.green }}>(Revenue)</span></li>
+              </ul>
+            </div>
+            <div>
+              <div style={{ fontSize: 11, fontWeight: 700, color: C.textPri, marginBottom: 8, textTransform: 'uppercase', letterSpacing: '0.5px' }}>Marketing Channels</div>
+              <ul style={{ margin: 0, paddingLeft: 16, fontSize: 11, color: C.textSec, lineHeight: 1.7 }}>
+                <li><strong>Instagram Reels</strong> <span style={{ color: C.blue }}>(Organic)</span></li>
+                <li><strong>Instagram Stories</strong> <span style={{ color: C.blue }}>(Retention)</span></li>
+                <li><strong>Meta Ads</strong> <span style={{ color: C.orange }}>(Paid)</span></li>
+                <li><strong>Reddit Seeding</strong> <span style={{ color: C.blue }}>(Organic)</span></li>
+                <li><strong>X/Twitter Threads</strong> <span style={{ color: C.blue }}>(Organic)</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div style={{ ...S.card, margin: 0 }}>
+          <div style={S.cardTitle}>Competitor Benchmarks</div>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
+            {[
+              { name: 'Lu do Magalu', followers: '6.8M' },
+              { name: 'Lil Miquela', followers: '2.6M' },
+              { name: 'Imma', followers: '390K' },
+              { name: 'Aitana Lopez', followers: '330K' },
+              { name: 'Shudu', followers: '240K' }
+            ].map(c => (
+              <div key={c.name} style={{ background: C.noteBg, border: `1px solid ${C.noteBdr}`, borderRadius: 6, padding: '6px 10px', fontSize: 11 }}>
+                <span style={{ fontWeight: 700, color: C.blue }}>{c.name}</span>
+                <span style={{ color: C.textSec, marginLeft: 6 }}>{c.followers} followers</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
 
       {/* CUSTOM TOOLTIP */}
       {ttip && <ChartTooltip ttip={ttip} i={ttip.i} grossRev={grossRev} platCuts={platCuts} netRev={netRev} totalCosts={totalCosts} netProfit={netProfit} cumulative={cumulative} months={months} />}
