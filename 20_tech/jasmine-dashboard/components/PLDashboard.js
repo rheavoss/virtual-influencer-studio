@@ -319,42 +319,52 @@ export default function PLDashboard({ data }) {
         </div>
       </div>
 
-      {/* MONTHLY REVENUE TABLE */}
+      {/* MONTHLY REVENUE TABLE — FULL AUDIT DETAIL */}
       <div style={S.card}>
-        <div style={S.cardTitle}>Month-by-Month Financial Audit</div>
+        <div style={S.cardTitle}>Month-by-Month Financial Audit Breakdown</div>
         <div style={{ overflowX: 'auto' }}>
-          <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 11, minWidth: 900 }}>
+          <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 10, minWidth: 1200 }}>
             <thead>
               <tr style={{ background: '#f6f8fa', borderBottom: `2px solid ${C.grid}` }}>
-                <th style={{ padding: '10px 8px', textAlign: 'left' }}>Month</th>
-                <th style={{ padding: '10px 8px', textAlign: 'right' }}>Gross Rev</th>
-                <th style={{ padding: '10px 8px', textAlign: 'right' }}>Plat. Fees</th>
-                <th style={{ padding: '10px 8px', textAlign: 'right' }}>Net revenue</th>
-                <th style={{ padding: '10px 8px', textAlign: 'right' }}>Expenses</th>
-                <th style={{ padding: '10px 8px', textAlign: 'right', color: C.green }}>Net Profit</th>
-                <th style={{ padding: '10px 8px', textAlign: 'right', color: C.blue }}>Cumulative</th>
+                <th style={{ padding: '10px 4px', textAlign: 'left' }}>MONTH</th>
+                {/* REVENUE COLUMNS */}
+                {REV_LABELS.map(l => <th key={l} style={{ padding: '10px 4px', textAlign: 'right', fontWeight: 400, color: C.textMut }}>{l.toUpperCase()}</th>)}
+                <th style={{ padding: '10px 6px', textAlign: 'right', fontWeight: 800 }}>GROSS REV</th>
+                <th style={{ padding: '10px 6px', textAlign: 'right', color: C.orange }}>PLAT. CUTS</th>
+                <th style={{ padding: '10px 6px', textAlign: 'right' }}>NET REV</th>
+                {/* EXPENSE COLUMNS */}
+                {COST_LABELS.slice(0, 6).map(l => <th key={l} style={{ padding: '10px 4px', textAlign: 'right', fontWeight: 400, color: C.textMut }}>{l.toUpperCase()}</th>)}
+                <th style={{ padding: '10px 6px', textAlign: 'right', color: C.red }}>TOTAL EXP</th>
+                <th style={{ padding: '10px 8px', textAlign: 'right', color: C.green }}>NET PROFIT</th>
+                <th style={{ padding: '10px 8px', textAlign: 'right', color: C.blue }}>CUMULATIVE</th>
               </tr>
             </thead>
             <tbody>
               {rows.map((r, i) => (
                 <tr key={r.month} style={{ borderBottom: `1px solid ${C.grid}`, background: i % 2 === 0 ? '#fff' : '#fafbfc' }}>
-                  <td style={{ padding: '8px', fontWeight: 600 }}>{r.label}</td>
-                  <td style={{ padding: '8px', textAlign: 'right' }}>{fi(r.gross)}</td>
-                  <td style={{ padding: '8px', textAlign: 'right', color: C.orange }}>{fi(r.cuts)}</td>
-                  <td style={{ padding: '8px', textAlign: 'right' }}>{fi(r.net)}</td>
-                  <td style={{ padding: '8px', textAlign: 'right', color: C.red }}>{fi(r.costs)}</td>
-                  <td style={{ padding: '8px', textAlign: 'right', fontWeight: 700, color: C.green }}>{fi(r.profit)}</td>
-                  <td style={{ padding: '8px', textAlign: 'right', fontWeight: 700, color: C.blue }}>{fi(cumulative[i])}</td>
+                  <td style={{ padding: '8px 4px', fontWeight: 700 }}>{r.label}</td>
+                  {/* REVENUE CELLS */}
+                  {r.rArr.map((v, idx) => <td key={idx} style={{ padding: '8px 4px', textAlign: 'right', color: C.textSec }}>{v > 0 ? fi(v) : '—'}</td>)}
+                  <td style={{ padding: '8px 6px', textAlign: 'right', fontWeight: 700 }}>{fi(r.gross)}</td>
+                  <td style={{ padding: '8px 6px', textAlign: 'right', color: C.orange }}>{fi(r.cuts)}</td>
+                  <td style={{ padding: '8px 6px', textAlign: 'right' }}>{fi(r.net)}</td>
+                  {/* EXPENSE CELLS */}
+                  {r.cArr.slice(0, 6).map((v, idx) => <td key={idx} style={{ padding: '8px 4px', textAlign: 'right', color: C.textSec }}>{v > 0 ? fi(v) : '—'}</td>)}
+                  <td style={{ padding: '8px 6px', textAlign: 'right', fontWeight: 700, color: C.red }}>{fi(r.costs)}</td>
+                  <td style={{ padding: '8px 8px', textAlign: 'right', fontWeight: 800, color: C.green }}>{fi(r.profit)}</td>
+                  <td style={{ padding: '8px 8px', textAlign: 'right', fontWeight: 800, color: C.blue }}>{fi(cumulative[i])}</td>
                 </tr>
               ))}
             </tbody>
             <tfoot>
                <tr style={{ background: '#f6f8fa', fontWeight: 800 }}>
-                 <td style={{ padding: '12px 8px' }}>TOTAL</td>
-                 <td style={{ padding: '12px 8px', textAlign: 'right' }}>{fi(T.gross)}</td>
-                 <td style={{ padding: '12px 8px', textAlign: 'right', color: C.orange }}>{fi(T.gross - T.net)}</td>
-                 <td style={{ padding: '12px 8px', textAlign: 'right' }}>{fi(T.net)}</td>
-                 <td style={{ padding: '12px 8px', textAlign: 'right', color: C.red }}>{fi(T.costs)}</td>
+                 <td style={{ padding: '12px 4px' }}>TOTAL</td>
+                 {REV_LABELS.map((l, idx) => <td key={idx} style={{ padding: '12px 4px', textAlign: 'right' }}>{fi(rows.reduce((s, r) => s + r.rArr[idx], 0))}</td>)}
+                 <td style={{ padding: '12px 6px', textAlign: 'right' }}>{fi(T.gross)}</td>
+                 <td style={{ padding: '12px 6px', textAlign: 'right', color: C.orange }}>{fi(T.gross - T.net)}</td>
+                 <td style={{ padding: '12px 6px', textAlign: 'right' }}>{fi(T.net)}</td>
+                 {COST_LABELS.slice(0, 6).map((l, idx) => <td key={idx} style={{ padding: '12px 4px', textAlign: 'right' }}>{fi(rows.reduce((s, r) => s + r.cArr[idx], 0))}</td>)}
+                 <td style={{ padding: '12px 6px', textAlign: 'right', color: C.red }}>{fi(T.costs)}</td>
                  <td style={{ padding: '12px 8px', textAlign: 'right', color: C.green }}>{fi(T.profit)}</td>
                  <td style={{ padding: '12px 8px', textAlign: 'right', color: C.blue }}>{fi(T.profit)}</td>
                </tr>
