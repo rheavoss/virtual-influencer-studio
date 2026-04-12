@@ -204,6 +204,8 @@ export default function PLDashboard({ data }) {
             All values in INR &nbsp;·&nbsp; ₹93.08 = $1 USD &nbsp;·&nbsp; IG subscription ₹200/mo launches at M4 (10k followers)
             <br />
             <strong style={{ color: C.orange, marginTop: 4, display: 'inline-block' }}>Note: The calculations and projections below are modeled for exactly 1 influencer.</strong>
+            <br />
+            <span style={{ color: C.blue, fontSize: 11, fontWeight: 600 }}>Agency Scale: Multiple influencers can be launched simultaneously using this same infrastructure to multiply total revenue.</span>
           </div>
         </div>
         <a href="/graph.html" target="_blank" rel="noopener noreferrer" style={S.graphBtn}>
@@ -266,6 +268,7 @@ export default function PLDashboard({ data }) {
                 <li><strong>Instagram</strong> <span style={{ color: C.textMut }}>(Marketing / Revenue)</span></li>
                 <li><strong>Fanvue</strong> <span style={{ color: C.green }}>(Revenue)</span></li>
                 <li><strong>Passes</strong> <span style={{ color: C.green }}>(Revenue)</span></li>
+                <li><strong>Facebook Subscriptions</strong> <span style={{ color: C.green }}>(Revenue)</span></li>
                 <li><strong>X / Twitter</strong> <span style={{ color: C.blue }}>(Marketing)</span></li>
                 <li><strong>Telegram VIP</strong> <span style={{ color: C.green }}>(Revenue)</span></li>
                 <li><strong>Brand Deals</strong> <span style={{ color: C.green }}>(Revenue)</span></li>
