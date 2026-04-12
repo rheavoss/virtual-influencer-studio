@@ -130,6 +130,7 @@ export default function PLDashboard({ data }) {
         </p>
         <div style={{ display: 'flex', gap: 16 }}>
           <button style={{ padding: '12px 24px', borderRadius: 8, background: C.blue, color: '#fff', border: 'none', fontWeight: 600, cursor: 'pointer' }}>View Opportunity</button>
+          <a href="/graph.html" target="_blank" rel="noopener noreferrer" style={{ padding: '12px 24px', borderRadius: 8, border: `1px solid ${C.cardBdr}`, color: C.textPri, fontWeight: 600, textDecoration: 'none' }}>🔗 Knowledge Graph</a>
           <a href="#financials" style={{ padding: '12px 24px', borderRadius: 8, border: `1px solid ${C.cardBdr}`, color: C.textPri, fontWeight: 600, textDecoration: 'none' }}>Live P&L</a>
         </div>
       </section>
