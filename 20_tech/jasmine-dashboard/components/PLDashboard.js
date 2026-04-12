@@ -52,6 +52,16 @@ const COMPETITORS = [
   { name: 'Shudu', followers: '240K', url: 'https://www.instagram.com/shudu.gram/' }
 ];
 
+const TOOL_STACK = [
+  { name: 'Higgsfield', cost: 2699, desc: 'AI Video Gen / Animation' },
+  { name: 'ElevenLabs', cost: 420,  desc: 'AI Voice Cloning' },
+  { name: 'Grok (X)',   cost: 542,  desc: 'Training Data / Research' },
+  { name: 'Claude x2',  cost: 4000, desc: 'Logic & Automation (2 Seats)' },
+  { name: 'Calilio',    cost: 1303, desc: 'VoIP / International Comms' },
+  { name: 'Later.com',  cost: 1675, desc: 'Social Media Scheduling' },
+  { name: 'Namecheap',  cost: 92,   desc: 'Domain / Email Hosting' },
+];
+
 const FOOTNOTES = [
   { id: 1, label: 'Aitana Lopez Revenue', text: 'Verified earnings of €10,000/month for Tier-1 virtual models.', url: 'https://www.euractiv.com/section/digital/news/first-spanish-ai-model-earns-up-to-e10000-per-month/' },
   { id: 2, label: 'Meta Ads CPM Gap', text: 'US/Tier-1 CPM ($15–$20) vs India ($1–$3) benchmarks.', url: 'https://adamigo.ai/meta-ads-cpm-benchmarks/' },
@@ -253,7 +263,36 @@ export default function PLDashboard({ data }) {
         </div>
       </div>
 
-      {/* COMPACT ECOSYSTEM & COMPETITORS */}
+      {/* OPERATIONAL STACK & PRICING */}
+      <div style={S.card}>
+        <div style={S.cardTitle}>🛠️ Operational Infrastructure & Monthly Pricing</div>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 12 }}>
+          {TOOL_STACK.map(t => (
+            <div key={t.name} style={{ display: 'flex', justifyContent: 'space-between', borderBottom: `1px solid ${C.grid}`, paddingBottom: 6 }}>
+              <div>
+                <div style={{ fontSize: 11, fontWeight: 700 }}>{t.name}</div>
+                <div style={{ fontSize: 9, color: C.textMut }}>{t.desc}</div>
+              </div>
+              <div style={{ textAlign: 'right' }}>
+                <div style={{ fontSize: 11, fontWeight: 700, color: C.red }}>{fi(t.cost)}</div>
+                <div style={{ fontSize: 9, color: C.textMut }}>per month</div>
+              </div>
+            </div>
+          ))}
+          <div style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: 6 }}>
+            <div>
+              <div style={{ fontSize: 11, fontWeight: 700 }}>Meta Ads & Research</div>
+              <div style={{ fontSize: 9, color: C.textMut }}>Scaled performance levers</div>
+            </div>
+            <div style={{ textAlign: 'right' }}>
+              <div style={{ fontSize: 11, fontWeight: 700, color: C.red }}>₹3,000 – ₹14,000</div>
+              <div style={{ fontSize: 9, color: C.textMut }}>Variable</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* PLATFORMS & COMPETITORS */}
       <div style={S.grid2}>
         <div style={S.card}>
           <div style={S.cardTitle}>🚀 Multichannel Ecosystem</div>
