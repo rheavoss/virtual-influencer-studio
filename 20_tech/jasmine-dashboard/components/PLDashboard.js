@@ -150,10 +150,10 @@ export default function PLDashboard({ data }) {
             <div style={{ ...S.tag, color: C.green }}>The AI Solution</div>
             <h3 style={{ fontSize: 22, fontWeight: 700, marginBottom: 16 }}>Sovereign AI Identities</h3>
             <ul style={{ color: C.textSec, paddingLeft: 20, lineHeight: 2 }}>
-              <li>Bulletproof: 100% brand control and safety</li>
-              <li>Omnipresent: Perpetual content generation</li>
-              <li>Efficiency: 90% lower production costs via AI</li>
-              <li>Asset Value: IP ownership stays with the agency</li>
+              <li><strong>Immortality:</strong> Do not age, do not tire, do not retire</li>
+              <li><strong>Consistency:</strong> 100% brand control and safety</li>
+              <li><strong>Omnipresent:</strong> Perpetual 24/7 content generation</li>
+              <li><strong>Asset Value:</strong> IP ownership stays with the agency</li>
             </ul>
           </div>
         </div>
@@ -168,6 +168,9 @@ export default function PLDashboard({ data }) {
               <p style={{ ...S.p, margin: '0 0 16px', textAlign: 'left' }}>
                 We avoid low-ARPU markets. Our growth engine is laser-focused on <strong>US, UK, Europe, and Australia</strong>.
               </p>
+              <div style={{ background: 'rgba(56, 185, 80, 0.1)', borderLeft: `3px solid ${C.green}`, padding: '8px 12px', marginBottom: 16, fontSize: 13 }}>
+                <strong style={{ color: C.green }}>Market Opportunity:</strong> The Indian market is currently <strong>2 years behind the US</strong> – creating a distinct first-mover advantage for Tier-1 arbitrage.
+              </div>
               <table style={{ width: '100%', fontSize: 13, color: C.textSec }}>
                 <tbody>
                   <tr style={{ borderBottom: `1px solid ${C.grid}` }}><td style={{ padding: '8px 0' }}>Est. ARPU (Tier 1)</td><td style={{ textAlign: 'right', color: C.green }}>$45.00+ / year</td></tr>
@@ -236,6 +239,29 @@ export default function PLDashboard({ data }) {
               <div style={{ fontSize: 14, fontWeight: 600, marginTop: 8 }}>Projected Agency Revenue</div>
               <div style={{ fontSize: 12, color: C.textSec, marginTop: 4 }}>Leveraging the same infrastructure, prompts, and pipeline across the portfolio.</div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* MOATS */}
+      <section style={S.section}>
+        <div style={{ ...S.card, border: `1px solid ${C.blue}44` }}>
+          <h2 style={S.h2}><span style={{ color: C.blue }}>🛡️</span> The Seven Moats</h2>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 16 }}>
+            {[
+              { t: "Proprietary Data", d: "Custom character bibles & high-yield training assets." },
+              { t: "Structural Consistency", d: "Fixed identity across 12-month content runways." },
+              { t: "Sub-linear OpEx", d: "90% lower marginal production costs than human peers." },
+              { t: "24/7 Omni-presence", d: "Automated distribution & infinite content output." },
+              { t: "Tier-1 Arbitrage", d: "Targeting high-ARPU markets (US/UK) from day one." },
+              { t: "Eternal IP", d: "Zero churn risk; the influencer never leaves or retires." },
+              { t: "Algorithmic Feedback", d: "AI character refinement based on real-time data." }
+            ].map((m, i) => (
+              <div key={i} style={{ padding: 16, borderRadius: 12, border: `1px solid ${C.grid}`, background: 'rgba(255,255,255,0.02)' }}>
+                <div style={{ color: C.blue, fontSize: 12, fontWeight: 700, marginBottom: 4 }}>Moat {i+1}: {m.t}</div>
+                <div style={{ color: C.textSec, fontSize: 12 }}>{m.d}</div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
