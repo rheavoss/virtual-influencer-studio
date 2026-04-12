@@ -6,18 +6,35 @@ import {
   LinearScale,
   PointElement,
   LineElement,
+  BarElement,
   Filler,
   Tooltip,
+  Legend,
 } from 'chart.js';
-import { Line } from 'react-chartjs-2';
+import { Line, Bar } from 'react-chartjs-2';
 
-ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Filler, Tooltip);
+ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, BarElement, Filler, Tooltip, Legend);
 
 // ── CONSTANTS & DATA ───────────────────────────────────────────────────────────
 const KEEP        = [0.85, 0.90, 0.90, 0.90, 0.90, 0.80, 0.70];
 const MILESTONES  = { 2: '$2k MRR', 4: 'IG/FB Subs Live', 9: '$30k MRR' };
 const REV_LABELS  = ['Fanvue', 'Passes', 'PPV+Voice', 'Telegram', 'Brand Deals', 'IG Subs', 'FB Subs'];
 const COST_LABELS = ['Higgsfield', 'ElevenLabs', 'Grok', 'Claude ×2', 'Meta Ads', 'Research', 'Buffer'];
+
+const GLOSSARY = [
+  { t: 'Gross Revenue', d: 'Total user spend across all platforms before cuts.' },
+  { t: 'Platform Cuts', d: 'Fees from Fanvue (20%), Passes (10%), Meta (30%).' },
+  { t: 'Net Revenue', d: 'Actual cash inflow to bank after platform commissions.' },
+  { t: 'Operating Costs', d: 'Fixed tech overhead (Compute, APIs, Storage).' },
+  { t: 'Net Profit', d: 'Final take-home income after all costs and cuts.' },
+];
+
+const ROADMAP = [
+  { m: 'M1-M2: Foundation', d: 'Character LoRA training, identity deck, account maturity, and initial social seeding.' },
+  { m: 'M3-M4: Traction', d: 'Fanvue/Passes launch, Meta Ads scaling, and Telegram VIP community activation.' },
+  { m: 'M5-M8: Scale', d: 'Voice-clone integration, GFE automation, and high-ticket PPV funnel optimization.' },
+  { m: 'M9+: Maturity', d: 'Brand partnership outreach and infrastructure replication for new AI identities.' },
+];
 
 const COMPETITORS = [
   { name: 'Lu do Magalu', followers: '6.8M', url: 'https://www.instagram.com/magazineluiza/' },
@@ -139,22 +156,47 @@ export default function PLDashboard({ data }) {
         ))}
       </div>
 
-      {/* REVENUE GROWTH CHART */}
-      <div style={S.card}>
-        <div style={S.cardTitle}>Monthly Revenue & Profit Growth</div>
-        <div style={{ height: 260 }}>
-          <Line data={mainChartData} options={{ 
-            responsive: true, maintainAspectRatio: false, 
-            plugins: { legend: { display: false } },
-            scales: { 
-              x: { ticks: { font: { size: 10 } }, grid: { display: false } },
-              y: { ticks: { font: { size: 10 }, callback: v => fL(v) } }
-            }
-          }} />
+      {/* REVENUE GROWTH CHARTS */}
+      <div style={S.grid2}>
+        <div style={S.card}>
+          <div style={S.cardTitle}>Monthly Revenue & Profit Growth</div>
+          <div style={{ height: 220 }}>
+            <Line data={mainChartData} options={{ 
+              responsive: true, maintainAspectRatio: false, 
+              plugins: { legend: { display: false } },
+              scales: { 
+                x: { ticks: { font: { size: 10 } }, grid: { display: false } },
+                y: { ticks: { font: { size: 10 }, callback: v => fL(v) } }
+              }
+            }} />
+          </div>
+          <div style={{ display: 'flex', gap: 16, marginTop: 12, fontSize: 10, justifyContent: 'center' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}><div style={{ width: 10, height: 10, background: C.blue }} /> Gross Revenue</div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}><div style={{ width: 10, height: 10, background: C.green }} /> Net Profit</div>
+          </div>
         </div>
-        <div style={{ display: 'flex', gap: 16, marginTop: 12, fontSize: 10, justifyContent: 'center' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}><div style={{ width: 10, height: 10, background: C.blue }} /> Gross Revenue</div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}><div style={{ width: 10, height: 10, background: C.green }} /> Net Profit</div>
+
+        <div style={S.card}>
+          <div style={S.cardTitle}>Cumulative Profit Projection</div>
+          <div style={{ height: 220 }}>
+            <Bar 
+              data={{
+                labels: months,
+                datasets: [{ label: 'Cumulative Profit', data: cumulative, backgroundColor: cumulative.map(v => v < 0 ? C.red + '44' : C.green + '88'), borderColor: cumulative.map(v => v < 0 ? C.red : C.green), borderWidth: 1 }]
+              }} 
+              options={{ 
+                responsive: true, maintainAspectRatio: false, 
+                plugins: { legend: { display: false } },
+                scales: { 
+                  x: { ticks: { font: { size: 10 } }, grid: { display: false } },
+                  y: { ticks: { font: { size: 10 }, callback: v => fL(v) } }
+                }
+              }} 
+            />
+          </div>
+          <div style={{ textAlign: 'center', marginTop: 12, fontSize: 10, color: C.textSec }}>
+            Reach Break-Even at Month 4 &nbsp;·&nbsp; Target ₹1.18Cr+ Annual Profit
+          </div>
         </div>
       </div>
 
@@ -196,6 +238,32 @@ export default function PLDashboard({ data }) {
               <tr><td style={{ padding: '6px 0' }}>Spending Multiplier</td><td style={{ textAlign: 'right', fontWeight: 700, color: C.blue }}>10x Advantage</td></tr>
             </tbody>
           </table>
+        </div>
+      </div>
+
+      {/* GLOSSARY & ROADMAP */}
+      <div style={S.grid2}>
+        <div style={S.card}>
+          <div style={S.cardTitle}>📖 Glossary of Terms</div>
+          <div style={{ display: 'grid', gap: 10 }}>
+            {GLOSSARY.map(g => (
+              <div key={g.t}>
+                <div style={{ fontSize: 11, fontWeight: 700 }}>{g.t}</div>
+                <div style={{ fontSize: 10, color: C.textSec }}>{g.d}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div style={S.card}>
+          <div style={S.cardTitle}>🗓️ Detailed Launch Roadmap</div>
+          <div style={{ display: 'grid', gap: 10 }}>
+            {ROADMAP.map(r => (
+              <div key={r.m}>
+                <div style={{ fontSize: 11, fontWeight: 700, color: C.accent }}>{r.m}</div>
+                <div style={{ fontSize: 10, color: C.textSec }}>{r.d}</div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
