@@ -46,7 +46,7 @@ This document archives the end-to-end proprietary video pipeline broken down by 
 
 ---
 
-## Key Technical Takeaways for Rhea Voss
+## Key Technical Takeaways for Jasmine
 1.  **Low-Fidelity is the secret:** To pass the Turing test on Instagram Reels, the content must look like it was shot quickly on an iPhone. "High Definition Cinematic AI" is the fastest way to get called out in the comments.
 2.  **Audio gives it away:** Visuals are good enough now, but audio cadence immediately betrays AI. Step 5 (Audio Humanizing) is mandatory for conversion. 
-3.  **Nano Banana 2 logic:** We can replicate this Step 3 consistency locally via ComfyUI using `IP-Adapter-FaceID` to lock Rhea Voss's specific features.
+3.  **Nano Banana 2 logic:** We can replicate this Step 3 consistency locally via ComfyUI using `IP-Adapter-FaceID` to lock Jasmine's specific features.

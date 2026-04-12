@@ -16,7 +16,7 @@ This document maps the heavily promoted paid tools from the Sirio Berati / Kora 
 
 ## The "Low Volume" Advantage
 Enterprise platforms charge heavy subscriptions ($30 to $500/mo) primarily for *speed at scale*—allowing agencies to pump out 500 images and 50 videos a day. 
-For an operation like Rhea Voss, where the strategic goal is **curated daily impact** (1 high-quality Reel, 2 premium images for Fanvue), the open-source and free-tier route offers 95% of the quality of an H100 serverless stack at $0. 
+For an operation like Jasmine, where the strategic goal is **curated daily impact** (1 high-quality Reel, 2 premium images for Fanvue), the open-source and free-tier route offers 95% of the quality of an H100 serverless stack at $0. 
 
 ## The Custom Python Agent
 The ultimate replacement for the Enhancor "AI Agent" mode is utilizing an iterative loop with local IDE models (Claude Code / Antigravity), combining the `character_bible.json` with a python execution script to stitch standard API calls together.

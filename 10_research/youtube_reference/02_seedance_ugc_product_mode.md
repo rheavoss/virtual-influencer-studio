@@ -34,5 +34,5 @@ The video honestly admitted several ongoing flaws with the model:
 2.  **Minor Text Morphing:** Very small text on the back of bottles still morphs and wiggles due to temporal instability.
 3.  **"Phantom Words":** The lip-sync engine occasionally adds an extra mouth movement or "word" at the end of the video that wasn't in the audio track.
 
-## Application to Rhea Voss
+## Application to Jasmine
 Seedance 2.0 proves that the technology to automate highly lucrative product sponsorships (gym wear, supplements, travel bags) completely exists. By writing robust prompts, Rhea can hold "real" products to drive affiliate traffic or execute paid brand deals.

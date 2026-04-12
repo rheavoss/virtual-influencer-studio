@@ -63,7 +63,7 @@
 **Critical insight — YouTube vs IG Subscription disconnect:**
 Sofia has 855K YouTube subscribers and 73M views but only 7,412 IG subscribers. This confirms again: YouTube builds mass awareness but does NOT build parasocial GFE depth. Her 73M YouTube views generate almost zero paid subscribers because YouTube audiences treat her as entertainment, not a personal connection.
 
-**For Rhea Voss:** Sofia's YouTube content style (especially dance Shorts) is the viral format blueprint. Her Dholna Short at 17M views is the clearest proof that Indian folk dance + model = algorithmic gold. This is a recurring content pillar for Rhea.
+**For Jasmine:** Sofia's YouTube content style (especially dance Shorts) is the viral format blueprint. Her Dholna Short at 17M views is the clearest proof that Indian folk dance + model = algorithmic gold. This is a recurring content pillar for Rhea.
 
 ### Facebook Page: facebook.com/sofiaansari9f
 
@@ -89,7 +89,7 @@ Sofia has 855K YouTube subscribers and 73M views but only 7,412 IG subscribers. 
 | Green saree, standing | 15K |
 
 **Key Observations:**
-- She does NOT cross-promote her Instagram subscription in Facebook post captions — **this is a gap we will exploit**. Every Rhea Voss Facebook Reel ends with CTA: *"Subscribe on Instagram 👑 link in bio"*
+- She does NOT cross-promote her Instagram subscription in Facebook post captions — **this is a gap we will exploit**. Every Jasmine Facebook Reel ends with CTA: *"Subscribe on Instagram 👑 link in bio"*
 - Facebook Subscription at ₹869/month is significantly higher than her IG price of ₹180/month — smaller but more dedicated paying audience
 - Content on Facebook mirrors Instagram exactly — same Reels repurposed, zero extra production
 - Top Reel (429K) is a close-up modeling shot, NOT a dance — confirms that on Facebook, visual impact beats choreography
@@ -106,7 +106,7 @@ Sofia has 855K YouTube subscribers and 73M views but only 7,412 IG subscribers. 
 
 **She does NOT actively redirect these groups to her Instagram subscription.** The groups are organic fan communities that amplify her brand passively. 425K group members who are fans of her — completely untapped for subscription conversion.
 
-**Strategic gap for Rhea Voss:** Once Rhea has fan groups forming (which happens organically after ~50K followers), we actively seed them with subscription CTAs. Even a 1% conversion from 425K group members = 4,250 new subscribers. At ₹499/month = **₹21 lakh additional monthly revenue** from this one untapped channel alone.
+**Strategic gap for Jasmine:** Once Rhea has fan groups forming (which happens organically after ~50K followers), we actively seed them with subscription CTAs. Even a 1% conversion from 425K group members = 4,250 new subscribers. At ₹499/month = **₹21 lakh additional monthly revenue** from this one untapped channel alone.
 
 ### Facebook Channel (her official broadcast channel)
 
@@ -120,7 +120,7 @@ Sofia has 855K YouTube subscribers and 73M views but only 7,412 IG subscribers. 
 
 **Facebook Channels** = one-way broadcast tool (like Instagram Broadcast Channels / WhatsApp Channels). She controls the message, members receive it. Zero interaction cost.
 
-**Rhea Voss action:** Create an official Facebook Channel from Day 1 — even before 10K followers. Use it to broadcast teaser content, exclusive previews, and subscription CTAs. It's free and builds a captive push-notification audience separate from the main feed algorithm.
+**Jasmine action:** Create an official Facebook Channel from Day 1 — even before 10K followers. Use it to broadcast teaser content, exclusive previews, and subscription CTAs. It's free and builds a captive push-notification audience separate from the main feed algorithm.
 
 
 
@@ -148,7 +148,7 @@ Sofia has 855K YouTube subscribers and 73M views but only 7,412 IG subscribers. 
 | **Content exclusivity feel** | High — she's NOT everywhere | Low — she's on every platform as celebrity |
 | **Conversion** | 8.7% | 0.047% |
 
-### The Rhea Voss Implication — NON-NEGOTIABLE RULE
+### The Jasmine Implication — NON-NEGOTIABLE RULE
 
 > **Rhea must ALWAYS be GFE-focused. The moment she becomes a mainstream "model" account, conversion collapses 185× to Sofia levels.**
 
@@ -197,7 +197,7 @@ Note: Sofia is a valid content clone source because her posts are 6+ months old 
 
 **Why she's on Threads:** Threads indexes in Google search and gets algorithmic distribution from Meta. It's free reach with zero extra content production — same images/Reels repurposed. Adds another discovery funnel.
 
-**Rhea Voss on Threads:** Create @rheavoss Threads account on Day 1. Same content auto-repurposed. Threads has 200M+ users and is growing rapidly in India. Zero cost, builds additional SEO presence for the Rhea Voss persona name.
+**Jasmine on Threads:** Create @rheavoss Threads account on Day 1. Same content auto-repurposed. Threads has 200M+ users and is growing rapidly in India. Zero cost, builds additional SEO presence for the Jasmine persona name.
 
 ---
 
@@ -275,9 +275,9 @@ Instagram @purplehalcyon (277K followers)
 
 ---
 
-## Why Rhea Voss Structurally Beats This Model
+## Why Jasmine Structurally Beats This Model
 
-| Dimension | @purplehalcyon (Human) | Rhea Voss (AI) |
+| Dimension | @purplehalcyon (Human) | Jasmine (AI) |
 |---|---|---|
 | **Production cost** | High — personal time, travel, equipment | ₹865/month total |
 | **Content volume speed** | 135 posts over multiple years | 135 posts in 45 days |
@@ -292,26 +292,26 @@ Instagram @purplehalcyon (277K followers)
 
 ---
 
-## Replicated Funnel for Rhea Voss
+## Replicated Funnel for Jasmine
 
 This is the EXACT structure we will copy:
 
 ```
-Rhea Voss YouTube Shorts (@rheavoss or similar)
+Jasmine YouTube Shorts (@rheavoss or similar)
 ├── Same Reels exported as Shorts (zero extra production)
 ├── Goal: 500K+ views driving IG profile visits
 └── No monetization — pure top-of-funnel
 
          ↓
 
-Rhea Voss Facebook Page
+Jasmine Facebook Page
 ├── Same content auto-repurposed (Task 57)
 ├── Target: 50K+ Indian Facebook followers
 └── Bio → Instagram profile link
 
          ↓
 
-Rhea Voss Instagram @rheavoss.official
+Jasmine Instagram @rheavoss
 ├── GFE persona — fitness/travel/lifestyle
 ├── Full content matrix (content_production_matrix.md)
 └── → Subscription paywall (post 10K followers) + Fanvue link in bio
@@ -386,7 +386,7 @@ No manual application form. Facebook determines eligibility automatically.
 
 Sofia prices FB at **₹869/month** vs ₹180/month on IG — 4.8× higher. FB audience is older, more premium, less price-sensitive. **Rhea should always price FB subscriptions higher than IG subscriptions.**
 
-### ⚠️ AI Content Rules on Facebook — Non-Negotiable for Rhea Voss
+### ⚠️ AI Content Rules on Facebook — Non-Negotiable for Jasmine
 
 | Rule | Detail |
 |---|---|
@@ -396,11 +396,11 @@ Sofia prices FB at **₹869/month** vs ₹180/month on IG — 4.8× higher. FB a
 | **Penalty for skipping** | Reduced reach, downranking, potential demonetization |
 | **"AI Slop" penalty** | Mass-produced, repetitive, low-quality AI content is algorithmically demoted |
 | **AI creators banned?** | ❌ NO — AI content is explicitly allowed. Only transparency (labeling) is required |
-| **Impersonation ban** | ❌ Cannot impersonate a real existing person — Rhea Voss is a fictional persona, so this is fine |
+| **Impersonation ban** | ❌ Cannot impersonate a real existing person — Jasmine is a fictional persona, so this is fine |
 
-**Rhea Voss Facebook rule:** Label all AI content with "AI Info" on upload. This does NOT prevent monetization — it just adds a label. Many AI content creators operate successfully on Facebook with this label.
+**Jasmine Facebook rule:** Label all AI content with "AI Info" on upload. This does NOT prevent monetization — it just adds a label. Many AI content creators operate successfully on Facebook with this label.
 
-### Revenue Projections — Rhea Voss Facebook Subscribers
+### Revenue Projections — Jasmine Facebook Subscribers
 
 | FB Followers | Subscriptions Status | Subscribers (8.7% rate) | Price | Gross Monthly |
 |---|---|---|---|---|
@@ -411,7 +411,7 @@ Sofia prices FB at **₹869/month** vs ₹180/month on IG — 4.8× higher. FB a
 Note: FB subscribers are a separate revenue stream ON TOP OF IG subscriptions + Fanvue. All three run simultaneously.
 
 ### New Tasks Added to Roadmap
-- **Task 78:** Create Rhea Voss Facebook professional Page (separate from personal profile)
+- **Task 78:** Create Jasmine Facebook professional Page (separate from personal profile)
 - **Task 79:** Grow FB Page to 10,000 followers to unlock Fan Subscriptions
 - **Task 80:** Enable FB Subscriber Hub at 10K followers — price ₹499–₹869/month
 - **Standing rule:** All AI-generated FB content must carry "AI Info" label

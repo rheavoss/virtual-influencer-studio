@@ -59,7 +59,7 @@ const FIXED_MONTHLY_COST = TOOL_STACK.filter(t => t.cost).reduce((s, t) => s + t
 const COMPETITORS = [
   { name: 'Lu do Magalu',  followers: '6.8M',  url: 'https://www.instagram.com/magazineluiza/', note: 'Brazil — World\'s most followed AI influencer' },
   { name: 'Lil Miquela',   followers: '2.6M',  url: 'https://www.instagram.com/lilmiquela/',   note: 'USA — Brud / first mainstream AI influencer' },
-  { name: 'Aitana Lopez',  followers: '330K',  url: 'https://www.instagram.com/aitana.lopez.official/', note: 'Spain — €10k/mo, Fanvue creator economy leader' },
+  { name: 'Aitana Lopez',  followers: '330K',  url: 'https://www.instagram.com/aitana.lopez/', note: 'Spain — €10k/mo, Fanvue creator economy leader' },
   { name: 'Imma',          followers: '390K',  url: 'https://www.instagram.com/imma.gram/',    note: 'Japan — Fashion-forward virtual model' },
   { name: 'Shudu',         followers: '240K',  url: 'https://www.instagram.com/shudu.gram/',  note: 'UK — First AI supermodel, Cameron-James Wilson' },
 ];

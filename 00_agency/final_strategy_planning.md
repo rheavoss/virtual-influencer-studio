@@ -738,7 +738,7 @@ Working assumption: 1.25% Instagram-to-Fanvue conversion rate. With strong GFE f
 
 | Killed Task | Reason |
 |---|---|
-| `rhea_voss_agent.py` | Wrong character. Dead. |
+| `jasmine_voss_agent.py` | Wrong character. Dead. |
 | Rhea Instagram profile setup | Wrong character. Dead. |
 | Kling AI for lip sync | Superseded by MuseTalk 1.5 + Higgsfield. |
 | TikTok anti-detect bypass architecture | RICE score of 150,000 assumes reach that evaporates on account ban. TikTok actively detects AI content + residential proxy patterns. Risk of permanent ban in Week 1 outweighs all projected reach. Removed entirely until TikTok policy changes. |

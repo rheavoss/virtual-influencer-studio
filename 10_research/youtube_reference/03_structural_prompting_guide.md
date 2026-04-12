@@ -12,9 +12,9 @@ The most professional way to lock in consistency over a 5 to 15-second clip is t
 **Format:**
 `[MM:SS - MM:SS] [Camera Angle] [Subject Action] [Lighting/Environment] [Camera Movement]`
 
-**Example for Rhea Voss:**
+**Example for Jasmine:**
 ```text
-[00:00-00:03] Handheld iPhone selfie view. Rhea Voss looking directly into the lens, talking naturally. Subtle ambient breeze moving dark wavy hair. 
+[00:00-00:03] Handheld iPhone selfie view. Jasmine looking directly into the lens, talking naturally. Subtle ambient breeze moving dark wavy hair. 
 [00:03-00:07] Continued talking, soft eye blinks. Natural chest breathing. Slight camera shake mimicking a human holding the phone.
 [00:07-00:10] Rhea smiles warmly, breaking deep eye contact. Natural finish. No morphing of facial geometry.
 ```
@@ -33,7 +33,7 @@ Camera: [Lens type, framing, movement]
 Vibe: [Lighting, film grain, aesthetic]
 ```
 
-**Example for Rhea Voss (Protein Bar Ad):**
+**Example for Jasmine (Protein Bar Ad):**
 ```text
 Subject: 26-year-old curvy East Asian woman, full round cheeks, precise Japanese irezumi arm tattoos.
 Wardrobe: Black tight sports bra, high-waisted teal leggings.

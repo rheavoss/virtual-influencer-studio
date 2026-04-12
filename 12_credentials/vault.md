@@ -1,7 +1,7 @@
 # 🔐 OPSEC CREDENTIAL VAULT
 
 **WARNING: DO NOT UPLOAD THIS FILE.**
-This file contains the core identity mappings for the Rhea Voss ecosystem.
+This file contains the core identity mappings for the Jasmine ecosystem.
 
 ## 1. The Recovery Anchor
 This is the isolated "Burner" recovery email used strictly for unlocking blocked accounts. It is hosted on ProtonMail to avoid Google cross-referencing.
@@ -15,7 +15,7 @@ This is the "Public Facing" email. It is treated like a real human. It is the re
 - **Service:** Gmail / Instagram
 - **Email:** `contact.rheavoss@gmail.com`
 - **Password:** `Kriger.5490`
-- **Instagram Handle:** `@rheavoss.official`
+- **Instagram Handle:** `@rheavoss`
 
 ## 3. Burner Scraper Ecosystem (Task #08)
 *Pending Creation. These will be added later.*
