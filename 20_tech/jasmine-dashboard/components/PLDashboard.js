@@ -41,34 +41,35 @@ function deriveRows(data) {
   });
 }
 
-// ── DARK PREMIUM THEME ─────────────────────────────────────────────────────────
+// ── LIGHT PREMIUM THEME ────────────────────────────────────────────────────────
 const C = {
-  pageBg:    '#0a0c10',
-  cardBg:    'rgba(22, 27, 34, 0.7)',
-  cardBdr:   'rgba(48, 54, 61, 0.8)',
-  textPri:   '#f0f6fc',
-  textSec:   '#8b949e',
-  textMut:   '#484f58',
-  grid:      'rgba(48, 54, 61, 0.3)',
-  blue:      '#58a6ff',
-  green:     '#3fb950',
-  orange:    '#f0883e',
-  red:       '#f85149',
-  accent:    '#bc8cff',
-  glass:     'backdrop-filter: blur(12px);',
+  pageBg:    '#f6f8fa',
+  cardBg:    '#ffffff',
+  cardBdr:   '#d0d7de',
+  textPri:   '#1f2328',
+  textSec:   '#57606a',
+  textMut:   '#8c959f',
+  grid:      '#d8dee4',
+  blue:      '#0969da',
+  green:     '#1a7f37',
+  orange:    '#bc4c00',
+  red:       '#cf222e',
+  accent:    '#8250df',
+  noteBg:    '#f0f6ff',
+  noteBdr:   '#cae3fb',
 };
 
 const S = {
   page:      { background: C.pageBg, color: C.textPri, fontFamily: "'Inter', system-ui, sans-serif", minHeight: '100vh', padding: '0 0 100px', scrollBehavior: 'smooth' },
-  hero:      { height: '70vh', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', textAlign: 'center', background: `radial-gradient(circle at 50% 50%, rgba(88, 166, 255, 0.1) 0%, transparent 70%)`, padding: '0 20px' },
+  hero:      { height: '70vh', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', textAlign: 'center', background: `radial-gradient(circle at 50% 50%, rgba(9, 105, 218, 0.05) 0%, transparent 70%)`, padding: '0 20px' },
   section:   { maxWidth: 1200, margin: '80px auto 0', padding: '0 20px' },
-  card:      { background: C.cardBg, border: `1px solid ${C.cardBdr}`, borderRadius: 16, padding: 32, backdropFilter: 'blur(12px)', boxShadow: '0 8px 32px rgba(0,0,0,0.4)', marginBottom: 24 },
+  card:      { background: C.cardBg, border: `1px solid ${C.cardBdr}`, borderRadius: 16, padding: 32, boxShadow: '0 1px 3px rgba(0,0,0,0.06), 0 8px 24px rgba(140,149,159,0.12)', marginBottom: 24 },
   h1:        { fontSize: 'clamp(32px, 5vw, 56px)', fontWeight: 800, marginBottom: 16, background: `linear-gradient(135deg, ${C.blue}, ${C.accent})`, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', letterSpacing: '-0.02em' },
   h2:        { fontSize: 28, fontWeight: 700, marginBottom: 24, display: 'flex', alignItems: 'center', gap: 12 },
   tag:       { fontSize: 12, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '2px', color: C.blue, marginBottom: 16 },
   p:         { fontSize: 17, color: C.textSec, lineHeight: 1.6, maxWidth: 700, margin: '0 auto 24px' },
   statsGrid: { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 20, marginBottom: 40 },
-  statBox:   { padding: 24, borderRadius: 12, border: `1px solid ${C.cardBdr}`, background: 'rgba(255,255,255,0.02)' },
+  statBox:   { padding: 24, borderRadius: 12, border: `1px solid ${C.cardBdr}`, background: '#f6f8fa' },
   grid2:     { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: 24 },
 };
 
@@ -102,8 +103,8 @@ export default function PLDashboard({ data }) {
   const mainChartData = {
     labels: months,
     datasets: [
-      { label: 'Gross Revenue', data: grossRev,   borderColor: C.blue,   backgroundColor: 'rgba(88,166,255,0.1)',  borderWidth: 3, pointBackgroundColor: C.blue,   pointBorderColor: '#fff', pointRadius: 5, fill: false, tension: 0.4 },
-      { label: 'Net Profit',    data: netProfit,  borderColor: C.green,  backgroundColor: 'rgba(63,185,80,0.15)',  borderWidth: 4, pointBackgroundColor: C.green,  pointBorderColor: '#fff', pointRadius: 6, fill: true,  tension: 0.4 },
+      { label: 'Gross Revenue', data: grossRev,   borderColor: C.blue,   backgroundColor: 'rgba(9,105,218,0.05)',  borderWidth: 3, pointBackgroundColor: C.blue,   pointBorderColor: '#fff', pointRadius: 5, fill: false, tension: 0.4 },
+      { label: 'Net Profit',    data: netProfit,  borderColor: C.green,  backgroundColor: 'rgba(26,127,55,0.1)',   borderWidth: 4, pointBackgroundColor: C.green,  pointBorderColor: '#fff', pointRadius: 6, fill: true,  tension: 0.4 },
     ],
   };
 
@@ -124,7 +125,7 @@ export default function PLDashboard({ data }) {
         <div style={S.tag}>The Future of Influence</div>
         <h1 style={S.h1}>Industrializing Digital Identity</h1>
         <p style={S.p}>
-          Building the world's most scalable Virtual Influencer Agency. 
+          Building the world's most scalable Virtual Influencer Infrastructure. 
           Deploying proprietary AI identities into high-liquid G7 markets to capture Tier-1 ARPU at near-zero marginal cost.
         </p>
         <div style={{ display: 'flex', gap: 16 }}>
@@ -150,11 +151,11 @@ export default function PLDashboard({ data }) {
             <div style={{ ...S.tag, color: C.green }}>The AI Solution</div>
             <h3 style={{ fontSize: 22, fontWeight: 700, marginBottom: 16 }}>Sovereign AI Identities</h3>
             <ul style={{ color: C.textSec, paddingLeft: 20, lineHeight: 2 }}>
-              <li><strong>Immortality:</strong> Do not age, do not tire, do not retire</li>
-              <li><strong>Consistency:</strong> 100% brand control and safety</li>
-              <li><strong>Omnipresent:</strong> Perpetual 24/7 content generation</li>
-              <li><strong>Asset Value:</strong> IP ownership stays with the agency</li>
-            </ul>
+                <li><strong>Immortality:</strong> Do not age, do not tire, do not retire</li>
+                <li><strong>Consistency:</strong> 100% brand control and safety</li>
+                <li><strong>Omnipresent:</strong> Perpetual 24/7 content generation</li>
+                <li><strong>Asset Value:</strong> IP ownership remains in-house</li>
+              </ul>
           </div>
         </div>
       </section>
@@ -179,7 +180,7 @@ export default function PLDashboard({ data }) {
                 </tbody>
               </table>
             </div>
-            <div style={{ background: 'rgba(0,0,0,0.2)', padding: 20, borderRadius: 12 }}>
+            <div style={{ background: '#f6f8fa', padding: 20, borderRadius: 12, border: `1px solid ${C.cardBdr}` }}>
               <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', marginBottom: 12 }}>Distribution Strategy</div>
               <ul style={{ margin: 0, paddingLeft: 16, fontSize: 13, color: C.textSec, lineHeight: 1.8 }}>
                 <li><strong>English Primary:</strong> Targeted SFW/NSFW funnels in G7 languages.</li>
@@ -223,20 +224,20 @@ export default function PLDashboard({ data }) {
 
       {/* 5. THE SCALE ENGINE */}
       <section style={S.section}>
-        <div style={{ ...S.card, border: `1px solid ${C.accent}44`, background: `linear-gradient(180deg, ${C.cardBg}, rgba(188, 140, 255, 0.05))` }}>
-          <h2 style={S.h2}><span style={{ color: C.accent }}>🚀</span> Agency Scaling — The Multiplier Effect</h2>
+        <div style={{ ...S.card, border: `1px solid ${C.accent}44`, background: `linear-gradient(180deg, ${C.cardBg}, rgba(130, 80, 223, 0.05))` }}>
+          <h2 style={S.h2}><span style={{ color: C.accent }}>🚀</span> Professional Scaling — The Multiplier Effect</h2>
           <p style={{ ...S.p, textAlign: 'left', maxWidth: 'none' }}>
             We don't build projects. We build <strong>blueprints</strong>. Every operational cost added for a new influencer is sub-linear compared to the revenue growth.
           </p>
           <div style={S.grid2}>
-            <div style={{ background: 'rgba(0,0,0,0.3)', padding: 24, borderRadius: 16 }}>
+            <div style={{ background: '#f6f8fa', padding: 24, borderRadius: 16, border: `1px solid ${C.cardBdr}` }}>
               <div style={{ fontSize: 32, fontWeight: 800, color: C.accent }}>10x</div>
               <div style={{ fontSize: 14, fontWeight: 600, marginTop: 8 }}>Scale Potential (Year 2)</div>
               <div style={{ fontSize: 12, color: C.textSec, marginTop: 4 }}>By replicating this model across 10 distinct AI identities with unique niches.</div>
             </div>
-            <div style={{ background: 'rgba(0,0,0,0.3)', padding: 24, borderRadius: 16 }}>
+            <div style={{ background: '#f6f8fa', padding: 24, borderRadius: 16, border: `1px solid ${C.cardBdr}` }}>
               <div style={{ fontSize: 32, fontWeight: 800, color: C.green }}>~₹10Cr+</div>
-              <div style={{ fontSize: 14, fontWeight: 600, marginTop: 8 }}>Projected Agency Revenue</div>
+              <div style={{ fontSize: 14, fontWeight: 600, marginTop: 8 }}>Projected Infrastructure Revenue</div>
               <div style={{ fontSize: 12, color: C.textSec, marginTop: 4 }}>Leveraging the same infrastructure, prompts, and pipeline across the portfolio.</div>
             </div>
           </div>
@@ -257,7 +258,7 @@ export default function PLDashboard({ data }) {
               { t: "Eternal IP", d: "Zero churn risk; the influencer never leaves or retires." },
               { t: "Algorithmic Feedback", d: "AI character refinement based on real-time data." }
             ].map((m, i) => (
-              <div key={i} style={{ padding: 16, borderRadius: 12, border: `1px solid ${C.grid}`, background: 'rgba(255,255,255,0.02)' }}>
+              <div key={i} style={{ padding: 16, borderRadius: 12, border: `1px solid ${C.grid}`, background: '#f6f8fa' }}>
                 <div style={{ color: C.blue, fontSize: 12, fontWeight: 700, marginBottom: 4 }}>Moat {i+1}: {m.t}</div>
                 <div style={{ color: C.textSec, fontSize: 12 }}>{m.d}</div>
               </div>
@@ -306,7 +307,7 @@ export default function PLDashboard({ data }) {
 
       {/* FOOTER */}
       <div style={{ textAlign: 'center', marginTop: 100, color: C.textMut, fontSize: 12 }}>
-        Confidential — Virtual Influencer Digital Agency Investor Pitch v1.0
+        Confidential — Virtual Influencer Infrastructure Investor Pitch v1.0
       </div>
 
       {ttip && <ChartTooltip ttip={ttip} i={ttip.i} grossRev={grossRev} platCuts={platCuts} netRev={netRev} totalCosts={totalCosts} netProfit={netProfit} cumulative={cumulative} months={months} />}
@@ -369,7 +370,7 @@ function PLTable({ rows, grossRev, netRev, platCuts, totalCosts, netProfit, cumu
 function ChartTooltip({ ttip, i, grossRev, platCuts, netRev, totalCosts, netProfit, cumulative, months }) {
   const p = netProfit[i]; const isLoss = p < 0; 
   return (
-    <div style={{ position: 'absolute', left: Math.min(ttip.x + 14, (typeof window !== 'undefined' ? window.innerWidth : 800) - 260), top: ttip.y - 10, background: '#161b22', border: `1px solid ${C.cardBdr}`, borderRadius: 12, padding: '14px 16px', zIndex: 9999, minWidth: 230, pointerEvents: 'none', boxShadow: '0 8px 24px rgba(0,0,0,0.5)' }}>
+    <div style={{ position: 'absolute', left: Math.min(ttip.x + 14, (typeof window !== 'undefined' ? window.innerWidth : 800) - 260), top: ttip.y - 10, background: '#fff', border: `1px solid ${C.cardBdr}`, borderRadius: 12, padding: '14px 16px', zIndex: 9999, minWidth: 230, pointerEvents: 'none', boxShadow: '0 8px 24px rgba(140,149,159,0.2)' }}>
       <div style={{ fontSize: 13, fontWeight: 700, color: C.textPri, marginBottom: 10 }}>Month {i + 1} &nbsp;·&nbsp; <span style={{ color: C.blue }}>{months[i]}</span></div>
       <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 6 }}><span style={{ fontSize: 11, color: C.textSec }}>Gross Revenue</span><span style={{ fontSize: 12, color: C.blue }}>{fi(grossRev[i])}</span></div>
       <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 6 }}><span style={{ fontSize: 11, color: C.textSec }}>Net Profit</span><span style={{ fontSize: 13, fontWeight: 700, color: C.green }}>{fi(p)}</span></div>
