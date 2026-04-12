@@ -1,13 +1,16 @@
 # Jasmine Mako — Phase 0 & Phase 1 Execution Pipeline
-**Updated:** 2026-04-11 (Session 03 — Move 15 sweep)
+**Updated:** 2026-04-11 (Session 04 — Dataset complete, LoRA training next)
 
 ## PHASE 0: LAUNCH & ASSETS
 
 ### Infrastructure & Approvals
 - [x] Tech stack finalized and pricing verified (Higgsfield Plus $29/mo).
-- [x] Initial Jasmine Mako Character Bible locked and saved.
+- [x] Initial Jasmine Mako Character Bible locked and saved — **v2.1 (2026-04-11): dual kiss marks, straight silky hair**.
 - [x] Image Generation 40-prompt JSON Matrix locked (Batch 1 SFW + Batch 2/3 NSFW).
 - [x] Batch Generation script developed (`jasmine_batch_generator.py`).
+- [x] **P0-01 COMPLETE: 47-image hybrid LoRA training dataset assembled** — 40 curated body/pose images (suhuuu) + 7 Grok East Asian face anchors. Stored in `03_ai_models/jasmine/training_data/training_ready/`.
+- [x] **Character Card written** (`01_characters/jasmine/jasmine_character_card.md`) — ready for SpicyChat/Janitor AI deployment.
+- [ ] **P0-03 ACTIVE — NEXT: Train Jasmine Flux.1 LoRA** using the 47-image dataset. See training section below.
 - [ ] CEO to physically subscribe to Higgsfield Starter ($9/mo) for Phase 0; upgrade to Plus ($29/mo) at Phase 1 launch.
 - [ ] CEO to verify presence of Veo 3.1 in Higgsfield video models.
 - [ ] Google One annual plan — CEO to confirm price and prorate monthly.
@@ -67,9 +70,24 @@
 - [ ] **Create the Claude 'Video Prompt Builder' Skill:** Develop the prompt matrix to break 15-second scenes into exactly 10 chunks, mapping `[image 1]`, `[image 2]`, and `[image 3]` to specific timestamps to lock visual fidelity.
 - [ ] **Execute First Reel (3-Image Omni-Reference):**
   - Generate 3 base SFW images of Jasmine (intro pose, mid-action, hero ending).
-  - Upload to Higgsfield SeaDance 2.0 in order. Screenshot the UI so Claude knows the `[image]` tag order.
+  - 🔥 **Zero-Cost Test:** Run Image-to-Video using LTX 2.3 via Modal.com ($5 free tier). Test for capability and Edge-of-TOS censorship evasion.
+  - If LTX visual fidelity fails, fallback: Upload to Higgsfield SeaDance 2.0 in order. Screenshot the UI so Claude knows the `[image]` tag order.
   - Paste the 3,000-character Claude multi-shot prompt.
-  - Let SeaDance natively generate the sound design & music.
+  - Let SeaDance/Modal natively generate the sound design & music.
 - [ ] Record results and build a 20-shot pool if cherry-picking is required for visual artifacts.
 - [ ] **Avatar 5.0 Long-Form Setup:** Record a 15-second human source video, apply Jasmine deepfake, and load it into Avatar 5 as zero-drift reference for 10-minute PPV talking scripts.
 - [ ] Build ManyChat automation for IG DMs to push traffic to Fanvue (primary) and Room 11 (secondary).
+
+### Agent Automation & DevOps (Triggered post First Revenue)
+- [ ] Deploy Hermes-Agent on $5 VPS to act as central executive brain and TCP Gateway.
+- [ ] Connect Hermes-Agent to Telegram for remote CEO operations + Status reporting.
+- [ ] Install Firecrawl & Context7 MCPs within Hermes-Agent for background competitor scraping.
+- [ ] Configure `jasmine_character_bible.json` within Hermes-Agent for Fanvue GFE DM persistence.
+
+---
+
+## BACKLOG (Post $500 MRR)
+
+- [ ] **SpicyChat / Janitor AI Character Card Deployment:** Deploy `jasmine_character_card.md` to SpicyChat AI and Janitor AI (R-rated tier). Add Fanvue funnel trigger inside her responses. Explore ElevenLabs voice integration for premium voice companion tier ($50-100/mo upsell).
+- [ ] **Duo Engine Expansion:** Launch second female character as Jasmine's "best friend" — run cross-tagging Instagram strategy + collaborative Fanvue content. Evaluate once Jasmine hits Proof of Concept MRR.
+- [ ] **Paid Community Page Shoutouts:** Once organic engagement proof (3%+ ER + 5,000 followers), activate paid shoutouts on top Girls of Delhi/Mumbai pages at ₹500-2,000 per feature.

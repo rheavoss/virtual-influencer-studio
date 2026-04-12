@@ -1,6 +1,6 @@
 export const metadata = {
-  title: 'Jasmine — P&L Dashboard',
-  description: '12-month revenue and profit projection — Jasmine AI Influencer',
+  title: 'Virtual Influencer — P&L Dashboard',
+  description: '12-month revenue and profit projection — Virtual Influencer Digital Agency',
 };
 
 export default function RootLayout({ children }) {

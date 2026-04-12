@@ -1,0 +1,14 @@
+[
+    {
+        "username": "YOUR_BURNER_1_USERNAME",
+        "password": "YOUR_BURNER_1_PASSWORD"
+    },
+    {
+        "username": "YOUR_BURNER_2_USERNAME",
+        "password": "YOUR_BURNER_2_PASSWORD"
+    },
+    {
+        "username": "YOUR_BURNER_3_USERNAME",
+        "password": "YOUR_BURNER_3_PASSWORD"
+    }
+]

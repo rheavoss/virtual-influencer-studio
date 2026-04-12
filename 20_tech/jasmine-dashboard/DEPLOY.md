@@ -2,7 +2,7 @@
 
 ## Status: LIVE ✅
 
-**Production URL:** https://jasmine-dashboard-lovat.vercel.app  
+**Production URL:** https://virtual-influencer-dashboard.vercel.app  
 **GitHub repo:** https://github.com/rheavoss/jasmine-project (private) — single repo  
 **Vercel rootDirectory:** `20_tech/jasmine-dashboard`  
 **Supabase project ref:** `vvyexzbtkncitgzraath` (rheavoss account)  
@@ -45,7 +45,7 @@ VERCEL_TOKEN=$(python3 -c "import json; d=json.load(open('/Users/user/Library/Ap
 DEPLOY_ID=$(curl -s -X POST "https://api.vercel.com/v13/deployments?teamId=team_wA18mcHEsEeyCqns1SIX7Ah3" \
   -H "Authorization: Bearer $VERCEL_TOKEN" \
   -H "Content-Type: application/json" \
-  -d '{"name":"jasmine-dashboard","gitSource":{"type":"github","repoId":"1207241996","ref":"main"},"target":"production"}' \
+  -d '{"name":"virtual-influencer-dashboard","gitSource":{"type":"github","repoId":"1207241996","ref":"main"},"target":"production"}' \
   | python3 -c "import json,sys; print(json.load(sys.stdin)['id'])")
 
 echo "Deploy ID: $DEPLOY_ID"
@@ -62,7 +62,7 @@ done
 curl -s -X POST "https://api.vercel.com/v2/deployments/$DEPLOY_ID/aliases?teamId=team_wA18mcHEsEeyCqns1SIX7Ah3" \
   -H "Authorization: Bearer $VERCEL_TOKEN" \
   -H "Content-Type: application/json" \
-  -d '{"alias":"jasmine-dashboard-lovat.vercel.app"}'
+  -d '{"alias":"virtual-influencer-dashboard.vercel.app"}'
 ```
 
 ---

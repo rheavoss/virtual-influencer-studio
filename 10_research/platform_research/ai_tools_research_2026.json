@@ -1,9 +1,9 @@
 {
   "meta": {
     "title": "AI Tools Research — Video and Image Production Stack",
-    "version": "1.1",
+    "version": "1.2",
     "research_date": "2026-04-10",
-    "last_updated": "2026-04-10",
+    "last_updated": "2026-04-11",
     "research_method": "Live web search — official documentation + third-party verification",
     "purpose": "Evaluate all candidate AI tools for Jasmine content pipeline across 8 content types — VIDEO and IMAGE only",
     "prepared_for": "Antigravity review",
@@ -774,6 +774,48 @@
     {
       "tool": "Meta SeamlessExpressive (as production tool)",
       "reason": "Platform-locked to Meta Reels. Cannot be used as a standalone lip sync tool. Re-categorised as a distribution feature at 1000+ followers."
+    },
+    {
+      "tool": "Promptchan AI",
+      "reason": "No LoRA upload support. Cannot inject Jasmine's trained identity file. Every generation produces a random unknown face — not Jasmine. Character consistency is impossible. Rejected 2026-04-11."
+    },
+    {
+      "tool": "SoulGen",
+      "reason": "No LoRA upload support. Same fundamental problem as Promptchan — no character consistency mechanism. Face swap feature does not preserve Jasmine identity across multiple images reliably. Rejected 2026-04-11."
+    },
+    {
+      "tool": "Candy AI",
+      "reason": "AI companion/chat product — wrong use case entirely. Not an image generation pipeline tool. Rejected 2026-04-11."
+    },
+    {
+      "tool": "OurDream.ai",
+      "reason": "All-in-one companion platform with no LoRA support. Cannot maintain Jasmine identity across generations. Rejected 2026-04-11."
+    },
+    {
+      "tool": "Venice.ai",
+      "reason": "No confirmed LoRA upload. Good for uncensored concept testing of new prompts but cannot maintain character consistency. Suitable only as a scratch-test tool before production. Not added to main stack. Rejected 2026-04-11."
+    },
+    {
+      "tool": "Perchance AI / ZenCreator",
+      "reason": "No LoRA support, no character consistency. Useful only as a free zero-config scratch test. Not suitable for production pipeline. Rejected 2026-04-11."
+    },
+    {
+      "tool": "Nastia AI",
+      "reason": "AI companion product — not an image generation pipeline tool. Rejected 2026-04-11."
+    }
+  ],
+
+  "new_tools_added_2026_04_11": [
+    {
+      "tool": "SeaArt.ai",
+      "url": "https://www.seaart.ai",
+      "status": "ADDED — backup image generation",
+      "lora_support": true,
+      "lora_notes": "Supports LoRA upload on free tier — primary reason for inclusion",
+      "nsfw": "Allowed with age verification toggle",
+      "cost": "Free tier sufficient for backup use",
+      "role": "Backup NSFW image generator when Civitai on-site generation has crypto payment friction. Upload Jasmine LoRA, generate with NSFW checkpoint.",
+      "verdict": "ADDED as backup to Civitai for on-site NSFW image generation with Jasmine LoRA"
     }
   ],
 

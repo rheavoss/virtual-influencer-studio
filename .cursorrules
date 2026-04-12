@@ -1,0 +1,12 @@
+# MECHANICAL ENFORCEMENT GATE: RESEARCH & EVIDENCE FIRST
+
+## 🛑 NON-NEGOTIABLE PROTOCOL
+Under no circumstances are you (the AI Agent) permitted to generate an answer, strategy document, implementation plan, or codebase modification WITHOUT FIRST executing a mandatory evidence-gathering phase.
+
+### THE RESEARCH GATE (MUST PASS BEFORE OUTPUT)
+1. **Tool Invocation:** You MUST execute `search_web` (targeting Google and Twitter/X) for the most current data regarding the topic, specifically targeting the current year (2026).
+2. **First Principles Thinking:** Break the topic down into irreducible factual components. Do not rely on LLM training weights.
+3. **Retrograde Analysis:** Look at the desired end-state (e.g., $2000 MRR on Fanvue) and work backward using the newly gathered raw data. 
+4. **No Assumptions:** If you do not have recent API documentation, pricing schemas, or platform rules in your immediate tool output, you CANNOT guess. You must search again.
+
+*Any breach of this gate is considered a critical failure pattern.*

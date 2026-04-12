@@ -85,6 +85,7 @@ Goal: $2,000 MRR by Month 3 → $20,000 MRR by Month 12
 | Fanvue | 85% | GFE subscription (primary) | Day 1 | USD × ₹93.08 |
 | Passes | 90% | Mirror / PPV | Day 1 | USD × ₹93.08 |
 | X/Twitter | 90% | Teasers (SFW edge) | Day 1 | USD × ₹93.08 |
+| Facebook Stars | 100% | Zero-effort tips on cross-posted photos/reels ($0.01/star) | M2 (Requires 500 followers) | USD × ₹93.08 |
 | Room 11 | ⚠️ TBC | AI companion / GFE (secondary to Fanvue) | After LoRA — requires 30–40 LoRA output photos for profile setup | USD × ₹93.08 |
 | Telegram VIP | 90% | Direct, uncensored | M6 | INR (Indian subscribers) |
 | Brand Deals | 90% | Sponsored posts | M7 | INR |

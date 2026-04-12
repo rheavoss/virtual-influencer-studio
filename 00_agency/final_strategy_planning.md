@@ -775,6 +775,7 @@ Working assumption: 1.25% Instagram-to-Fanvue conversion rate. With strong GFE f
 | P1-07 | First Saree Transition Reel (highest viral probability) | Execute | Wan 2.7 I2V or Higgsfield |
 | P1-08 | First Gym Flex Reel (character swap on viral base) | Execute | Higgsfield Character Swap |
 | P1-09 | Fanvue PPV pricing ladder — 3 tiers | Antigravity | — |
+| P1-10 | Deploy Hermes-Agent on $5 VPS (CEO Telegram Gateway & Automation Host) | Execute | Hermes-Agent |
 
 #### PHASE 2 — Video Pipeline (Month 1–2) | Target: $2,000 MRR | Gate: 8,000 followers + 100 subs
 
@@ -1572,4 +1573,67 @@ All session work committed and deployed.
 **Pending open items:**
 - iPhone 12 vs iPhone 14 decision (LoRA training vs production UGC) — awaiting CEO ruling
 - Carrd.co link-in-bio page copy — awaiting Antigravity
-- P0-01: CEO to generate 40 LoRA training images in Grok + Colab T4
+- ~~P0-01: CEO to curate the Final 40 LoRA training images from the strict-filtered CV dataset.~~ **✅ COMPLETE — 2026-04-11**
+- **STRATEGIC OPEN QUESTION (Backlog):** The "Duo Engine" expansion. Should we launch a second female character to post cross-collaboration "couple/friends" content and capture dual-audience dynamics? (Currently paused by CEO until Jasmine strictly achieves Proof of Concept and initial MRR).
+
+---
+
+## ♟️ Antigravity Move 17: Dataset Curation — COMPLETE ✅
+**Date:** 2026-04-11 | **Session Type:** Automation + Manual QC
+
+### What Was Done
+
+#### Phase 1 — Automated CV Filtering (P0-01 Step 1)
+- Downloaded 2,183 Instagram images from source account (`suhuuu`).
+- Ran `sort_lora_dataset.py` (OpenCV Haar Cascade face detection + Laplacian sharpness filter).
+- **Result:** 768 Approved / 1,411 Discarded.
+- Ran `sort_strict.py` (strict re-scan with `minNeighbors=12` to eliminate false positives like flower shadows being detected as faces).
+
+#### Phase 2 — Visual Inspection + Manual QC
+- Generated a 6-column thumbnail grid of all images using `create_train_grid.py` (Pillow).
+- Visually inspected all 70 shortlisted images.
+- Flagged and excluded 30 images for: face obstructions, duplicate sessions, multiple people, motion blur, dark underexposure, glasses duplicates, and unusable crops.
+
+#### Phase 3 — Final 40 Dataset Assembled
+- Exactly **40 images** selected and copied to `/Users/user/Desktop/train/approved/`.
+- Dataset covers all 4 required training criteria:
+  - ✅ 10x Face Identity Lock (sharp close-ups, direct gaze)
+  - ✅ 10x GFE / Casual (domestic, lifestyle, unposed)
+  - ✅ 10x Deep Cleavage / Edge-of-TOS (body physics anchor)
+  - ✅ 10x Full Body / Proportion Lock (height + hourglass ratio)
+
+### Scripts Created This Session
+| Script | Purpose |
+|---|---|
+| `00_agency/scripts/sort_lora_dataset.py` | First-pass CV sort (face detection + sharpness) |
+| `00_agency/scripts/sort_strict.py` | Strict re-scan on approved folder to remove false positives |
+| `00_agency/scripts/create_train_grid.py` | Visual thumbnail grid generator for manual QC |
+
+### Task Status Update
+| Task | Previous Status | New Status |
+|---|---|---|
+| P0-01: Source + curate 40 LoRA training images | 🔴 In Progress | ✅ COMPLETE |
+| P0-02: QC images against character bible | ⬜ Not Started | 🟡 NEXT |
+| P0-03: Train Jasmine Flux.1 LoRA | ⬜ Not Started | ⬜ Blocked on P0-02 |
+
+### Next Immediate Action
+**P0-02:** Run the 40 approved images through the character bible checklist (face drift check, tattoo visible, no BBW drift, no multiple faces) before submitting to LoRA trainer.
+
+---
+
+## 🔑 SYNC CODE WORD — ESTABLISHED 2026-04-11
+
+**Code Word: `SYNC`**
+
+Whenever the CEO types **`SYNC`**, both Antigravity and Claude Code must immediately:
+1. Log a new numbered Move block in this document (`final_strategy_planning.md`).
+2. Record: date, what was completed, what scripts/files were created or modified, and updated task statuses.
+3. Update the Pending Open Items list at the bottom.
+4. No explanation needed — `SYNC` alone is the full instruction.
+
+**Pending open items (updated 2026-04-11):**
+- iPhone 12 vs iPhone 14 decision (LoRA training vs production UGC) — awaiting CEO ruling
+- Carrd.co link-in-bio page copy — awaiting Antigravity
+- **P0-02:** QC final 40 images against character bible — NEXT immediate task
+- **P0-03:** Train Jasmine Flux.1 LoRA — Blocked on P0-02
+- **STRATEGIC OPEN QUESTION (Backlog):** Duo Engine expansion — paused until Jasmine hits first MRR.

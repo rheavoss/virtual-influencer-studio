@@ -293,9 +293,10 @@
 
 1. **Video pipeline live (Month 3)** — single biggest lever. Reels reach 5× static images.
 2. **Passes on Day 1** — captures revenue that was being left behind. No extra work.
-3. **X/Twitter NSFW content** — drives the highest-intent traffic to Fanvue. Users who find Jasmine on X already know what they're looking for.
-4. **Viral outlier event** — one Saree Transition Reel hitting a trending Bollywood audio can add 10,000 followers overnight. Not modelled above — upside only.
-5. **PPV discipline** — dropping one PPV per month minimum keeps the subs engaged and adds $300–$4,500/month on top of subscriptions depending on scale.
+3. **Facebook Stars (Month 2+)** — 100% passive "free money" from audiences tipping the same SFW images you already cross-post via Metricool. Zero extra production effort.
+4. **X/Twitter NSFW content** — drives the highest-intent traffic to Fanvue. Users who find Jasmine on X already know what they're looking for.
+5. **Viral outlier event** — one Saree Transition Reel hitting a trending Bollywood audio can add 10,000 followers overnight. Not modelled above — upside only.
+6. **PPV discipline** — dropping one PPV per month minimum keeps the subs engaged and adds $300–$4,500/month on top of subscriptions depending on scale.
 
 ---
 

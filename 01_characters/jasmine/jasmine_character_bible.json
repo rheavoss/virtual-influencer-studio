@@ -2,9 +2,9 @@
   "character": {
     "name": "Jasmine",
     "age": 24,
-    "version": "2.0",
-    "last_updated": "April 2026",
-    "reference_image": "Grok-generated reference — city street, white off-shoulder crop top, blue denim shorts"
+    "version": "2.1",
+    "last_updated": "2026-04-11",
+    "reference_image": "Grok-generated reference — Bangkok city street, black scoop-neck t-shirt, black high-waist jeans, two red kiss mark tattoos visible"
   },
 
   "face_lock": {
@@ -33,19 +33,21 @@
   "hair": {
     "base_color": "Very dark black-brown — uniform deep dark color, no visible highlights or colour variation",
     "highlights": "None — solid dark throughout",
-    "texture": "Slightly wavy, natural movement — loose and casual",
+    "texture": "Poker straight, silky smooth — zero waves, zero frizz, glass-like shine",
     "length": "Very long, past chest and shoulders",
-    "style_default": "Loose and flowing, natural movement, falls over both shoulders",
+    "style_default": "Straight and flowing, falls in two clean panels over both shoulders",
     "part": "Center or slightly off-center"
   },
 
   "tattoos": {
-    "kiss_mark": {
-      "placement": "Upper left chest / décolletage — just below the left collarbone",
-      "design": "Small red lipstick kiss mark print",
+    "kiss_marks": {
+      "placement": "TWO symmetrical red kiss marks — one below each collarbone on upper chest décolletage, mirrored left and right",
+      "design": "Small red lipstick kiss mark prints — identical size, symmetrically placed",
       "colors": "Bright red",
-      "prompt": "small red kiss mark tattoo on upper chest décolletage, red lip print tattoo",
-      "enforcement": "MANDATORY when chest or décolletage is visible"
+      "count": "ALWAYS TWO — one on left upper chest, one on right upper chest, both visible simultaneously when décolletage is visible",
+      "prompt": "two small red kiss mark tattoos on upper chest décolletage below both collarbones, symmetrical red lip print tattoos left and right",
+      "enforcement": "MANDATORY when chest or décolletage is visible — always both marks, never just one",
+      "brand_note": "Dual kiss marks are Jasmine's signature brand identifier — they must appear in every image where her upper chest is visible. This is her visual logo."
     }
   },
 
@@ -117,17 +119,17 @@
     "prompt": "soft open warm expression, natural gaze at camera, approachable and gentle energy, slightly innocent look, lips naturally parted"
   },
 
-  "permanent_core": "photorealistic portrait photograph, Jasmine, 24-year-old East Asian woman who looks exactly 24 not younger not older, broad oval face with wide prominent cheekbones, East Asian almond eyes slightly hooded relaxed and natural, dark brown warm hazel irises, clean bare lashes no liner, medium thickness natural dark brows, medium straight-bridged nose with soft natural tip, medium fullness natural bare-pink lips soft natural shape, natural white slightly imperfect teeth visible only when smiling, slender neck, soft rounded jawline, fair even-toned skin with warm neutral-peachy undertone no flush no redness anywhere, visible natural pores on cheeks and nose, 2 to 3 small acne marks on left cheek, no freckles, natural slight under-eye shadow, clean smooth forehead, matte natural skin finish zero skin smoothing, identical facial proportions and bone structure, zero face morphing allowed, ONE single small red kiss mark tattoo on upper left chest below collarbone, very long dark uniform black-brown hair with slight natural waves falling loosely over both shoulders, slim petite frame, slender natural arms, DDD cup heavy natural bust with natural drop and weight deep cleavage, flat firm toned midsection, dramatically slim defined waist, full feminine hips, toned fit legs, slim busty hourglass figure — slim everywhere except the bust",
+  "permanent_core": "photorealistic portrait photograph, Jasmine, 24-year-old East Asian woman who looks exactly 24 not younger not older, broad oval face with wide prominent cheekbones, East Asian almond eyes slightly hooded relaxed and natural, dark brown warm hazel irises, clean bare lashes no liner, medium thickness natural dark brows, medium straight-bridged nose with soft natural tip, medium fullness natural bare-pink lips soft natural shape, natural white slightly imperfect teeth visible only when smiling, slender neck, soft rounded jawline, fair even-toned skin with warm neutral-peachy undertone no flush no redness anywhere, visible natural pores on cheeks and nose, 2 to 3 small acne marks on left cheek, no freckles, natural slight under-eye shadow, clean smooth forehead, matte natural skin finish zero skin smoothing, identical facial proportions and bone structure, zero face morphing allowed, TWO small red kiss mark tattoos on upper chest décolletage one below each collarbone symmetrical left and right, very long dark uniform black-brown poker straight silky hair falling in clean panels over both shoulders, slim petite frame, slender natural arms, DDD cup heavy natural bust with natural drop and weight deep cleavage, flat firm toned midsection, dramatically slim defined waist, full feminine hips, toned fit legs, slim busty hourglass figure — slim everywhere except the bust",
 
-  "negative_prompt": "plastic skin, barbie skin, porcelain skin, airbrushed skin, flawless skin, perfect skin, waxy skin, overly smooth skin, doll-like skin, glass skin, AI artifacts, skin smoothing, beauty filter, plastic texture, uncanny valley, rosy flush, pink cheeks, red cheeks, blushing, flushed cheeks, redness on face, shiny skin, oily skin, glossy skin, heavy eyeliner, winged liner, heavy makeup, full coverage foundation, concealed pores, concealed marks, deformed, blurry, low quality, cartoon, anime, face morphing, different face, changed eye shape, changed nose, changed lips, changed jawline, small breasts, round belly, soft belly, fat belly, pot belly, thick waist, no waist definition, chubby arms, heavy arms, flabby arms, BBW, plus-size, obese, overweight, missing tattoo, two tattoos, double kiss mark, extra tattoo",
+  "negative_prompt": "plastic skin, barbie skin, porcelain skin, airbrushed skin, flawless skin, perfect skin, waxy skin, overly smooth skin, doll-like skin, glass skin, AI artifacts, skin smoothing, beauty filter, plastic texture, uncanny valley, rosy flush, pink cheeks, red cheeks, blushing, flushed cheeks, redness on face, shiny skin, oily skin, glossy skin, heavy eyeliner, winged liner, heavy makeup, full coverage foundation, concealed pores, concealed marks, deformed, blurry, low quality, cartoon, anime, face morphing, different face, changed eye shape, changed nose, changed lips, changed jawline, small breasts, round belly, soft belly, fat belly, pot belly, thick waist, no waist definition, chubby arms, heavy arms, flabby arms, BBW, plus-size, obese, overweight, missing tattoo, one tattoo only, single kiss mark, no tattoos, wavy hair, curly hair, frizzy hair",
 
   "usage_rules": [
     "NEVER add rosy flush, pink cheeks, blushing or any redness to face — Jasmine has zero flush, zero redness, fair even-toned skin only",
     "NEVER add heavy eyeliner — clean natural lashes only unless explicitly requested for a specific look",
-    "Always keep hair dark and uniform — no highlights",
+    "Always keep hair dark, uniform and poker straight — no highlights, no waves, no frizz",
     "Never change face shape, eye shape, nose, lips, or jawline",
     "Never slim down the body, tone the arms, flatten the belly, or reduce bust size",
-    "Always include the kiss mark tattoo when chest or décolletage is visible",
+    "Always include BOTH kiss mark tattoos (left and right upper chest) when décolletage is visible — never just one",
     "Keep expression warm and open as the default"
   ]
 }
