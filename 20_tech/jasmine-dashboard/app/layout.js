@@ -1,6 +1,6 @@
 export const metadata = {
   title: 'Virtual Influencer — P&L Dashboard',
-  description: '12-month revenue and profit projection — Institutional Pitch Deck',
+  description: '12-month revenue and profit projection',
 };
 
 export default function RootLayout({ children }) {

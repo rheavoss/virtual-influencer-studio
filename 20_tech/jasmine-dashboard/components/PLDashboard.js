@@ -18,20 +18,21 @@ ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, BarEleme
 // ── CONSTANTS & DATA ───────────────────────────────────────────────────────────
 // Platform fee retention rates (1 - fee%):
 // Fanvue 15%, Passes 10%, PPV+Voice 10%, Telegram 10%, Brand 10%, IG Subs 20%, FB Subs 30%
-const KEEP = [0.85, 0.90, 0.90, 0.90, 0.90, 0.80, 0.70];
+const KEEP = [0.85, 0.60, 0.90, 0.90, 0.90, 0.90, 0.80, 0.70];
 
 // Revenue stream labels — maps 1:1 to rArr indices
-const REV_LABELS = ['Fanvue', 'Passes', 'PPV+Voice', 'Telegram', 'Brand Deals', 'IG Subs', 'FB Subs'];
+const REV_LABELS = ['Fanvue', 'Room 11', 'Passes', 'PPV+Voice', 'Telegram', 'Brand Deals', 'IG Subs', 'FB Subs'];
 
 // Expense labels — maps 1:1 to cArr indices (ALL 10 items)
 const COST_LABELS = [
   'Higgsfield', 'ElevenLabs', 'Grok', 'Claude ×2',
-  'Meta Ads', 'Research', 'Buffer', 'Calilio', 'Namecheap', 'Later.com',
+  'Meta Ads', 'Research', 'Buffer', 'Calilio', 'Namecheap', 'SpicyChat', 'Carrd.co', 'Dolphin',
 ];
 
 // Platform fee breakdown for display
 const PLATFORM_FEES = [
   { name: 'Fanvue', fee: '15%', type: 'Subscription Platform', url: 'https://www.fanvue.com' },
+  { name: 'Room 11', fee: '40%', type: 'Managed DM Service', url: 'https://room11.com' },
   { name: 'Passes', fee: '10%', type: 'Subscription Platform', url: 'https://www.passes.com' },
   { name: 'PPV / Voice Notes', fee: '10%', type: 'Pay-Per-View', url: 'https://www.passes.com' },
   { name: 'Telegram VIP', fee: '10%', type: 'Community Tier', url: 'https://www.telegram.org' },
@@ -50,8 +51,11 @@ const TOOL_STACK = [
   { name: 'Research',    cost: null, desc: 'Variable — ₹3,000 → ₹5,000 → ₹8,000', url: '' },
   { name: 'Buffer',      cost: null, desc: 'Variable — ₹1,500 from M8 (Metricool/RunPod)', url: '' },
   { name: 'Calilio',     cost: 1303, desc: 'VoIP / International Comms',       url: 'https://calilio.com' },
-  { name: 'Namecheap',   cost: 92,   desc: 'Domain & Email Hosting',           url: 'https://namecheap.com' },
-  { name: 'Later.com',   cost: 1675, desc: 'Social Media Scheduling (from M2)', url: 'https://later.com' },
+  { name: 'Namecheap',   cost: 92,   desc: 'Domain Only (Redirect Chain)',           url: 'https://namecheap.com' },
+  { name: 'SpicyChat AI', cost: 1260, desc: 'Automated GFE DM Engine', url: 'https://spicychat.ai' },
+  { name: 'Carrd.co Pro', cost: 147,  desc: 'Link-in-bio redirect page', url: 'https://carrd.co' },
+  { name: 'Dolphin{anty}',cost: 930,  desc: 'OpSec Browser + USA Proxy', url: 'https://dolphin-anty.com' },
+  { name: 'Metricool',   cost: 0,    desc: 'Social Scheduling (Free Tier)', url: 'https://metricool.com' },
 ];
 
 const FIXED_MONTHLY_COST = TOOL_STACK.filter(t => t.cost).reduce((s, t) => s + t.cost, 0);
@@ -68,7 +72,7 @@ const GLOSSARY = [
   { t: 'Gross Revenue',       d: 'Total money earned across all platforms before anyone takes their cut. (Fanvue + Passes + PPV/Voice + Telegram + Brand + IG Subs + FB Subs)' },
   { t: 'Platform Cuts',       d: 'Commission fees taken by each platform. Fanvue 15%, Passes/PPV/Telegram/Brand 10%, Instagram Subs 20%, FB Subs 30%.' },
   { t: 'Net Revenue',         d: 'Money that actually lands in your account after all platform commissions. (Gross Revenue − Platform Cuts)' },
-  { t: 'Total Costs',         d: 'Everything spent each month: AI tools (Higgsfield ₹2,699 + ElevenLabs ₹420 + Grok ₹542 + Claude ₹4,000 + Calilio ₹1,303 + Later.com ₹1,675 + Namecheap ₹92) + variable ads and research.' },
+  { t: 'Total Costs',         d: 'Everything spent each month: AI tools (Higgsfield ₹2,699 + ElevenLabs ₹420 + Grok ₹542 + Claude ₹4,000 + Calilio ₹1,303 + SpicyChat ₹1,260 + Carrd.co ₹147 + Namecheap ₹92) + variable ads and research.' },
   { t: 'Net Profit',          d: 'The money you actually keep — after platform fees AND all expenses. (Net Revenue − Total Costs)' },
   { t: 'Cumulative Profit',   d: 'Running total of all net profits since Month 1. (Sum of all Net Profits up to this month)' },
   { t: 'MRR',                 d: 'Monthly Recurring Revenue — predictable subscription income that auto-renews. (Fanvue subscriptions + IG subscriptions)' },
@@ -106,9 +110,9 @@ const fL = v => {
 
 function deriveRows(data) {
   return data.map(row => {
-    const rArr  = [row.fanvue, row.passes, row.ppv_voice, row.telegram, row.brand, row.ig_subs, row.fb_subs || 0];
-    // ALL 10 expense fields in exact COST_LABELS order
-    const cArr  = [row.higgsfield, row.elevenlabs, row.grok, row.claude_code, row.meta_ads, row.research, row.buffer, row.calilio, row.namecheap, row.later_com];
+    const rArr  = [row.fanvue, row.room11 || 0, row.passes, row.ppv_voice, row.telegram, row.brand, row.ig_subs, row.fb_subs || 0];
+    // ALL 11 expense fields in exact COST_LABELS order
+    const cArr  = [row.higgsfield, row.elevenlabs, row.grok, row.claude_code, row.meta_ads, row.research, row.buffer, row.calilio, row.namecheap, row.spicychat, row.carrd, row.dolphin || 0];
     const gross = rArr.reduce((a, b) => a + b, 0);
     const net   = rArr.reduce((s, v, i) => s + v * KEEP[i], 0);
     const cuts  = gross - net;
@@ -204,7 +208,7 @@ export default function PLDashboard({ data }) {
       <div style={S.header}>
         <h1 style={S.h1}>Virtual Influencer Infrastructure — 12-Month P&L</h1>
         <div style={S.sub}>
-          ₹93.08 = $1 USD &nbsp;·&nbsp; <strong>Modeled for EXACTLY 1 Influencer</strong> &nbsp;·&nbsp; Institutional Investment Deck
+          ₹93.08 = $1 USD &nbsp;·&nbsp; <strong>Modeled for EXACTLY 1 Influencer</strong>
         </div>
         <div style={{ ...S.sub, marginTop: 4, fontSize: 11, color: C.accent }}>
           IG Subscriptions (₹300/mo) unlock at M4 (10k follower milestone) &nbsp;·&nbsp; FB Subs launch M5
@@ -249,7 +253,7 @@ export default function PLDashboard({ data }) {
       {/* ── THE SEVEN MOATS + GEOGRAPHY YIELD ── */}
       <div style={S.grid2}>
         <div style={S.card}>
-          <div style={S.cardTitle}>🛡️ The Seven Moats — Institutional Defensibility</div>
+          <div style={S.cardTitle}>🛡️ The Seven Moats — Business Defensibility</div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
             {[
               { t: '1. Identity Sovereignty',    d: 'Immortality: no aging, no fatigue, no retirement. Ever.' },
@@ -483,7 +487,7 @@ export default function PLDashboard({ data }) {
       </div>
 
       <div style={{ textAlign: 'center', marginTop: 40, color: C.textMut, fontSize: 10 }}>
-        Institutional Pitch Deck v2.0 — Confidential &amp; Proprietary. Do Not Distribute.
+        Financial Dashboard v2.0 — Confidential &amp; Proprietary.
       </div>
     </div>
   );

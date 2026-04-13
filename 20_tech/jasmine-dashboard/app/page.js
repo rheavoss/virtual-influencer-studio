@@ -17,7 +17,9 @@ async function getData() {
       .from('jasmine_pnl')
       .select('*')
       .order('month');
-    if (error || !data || data.length === 0) return FALLBACK_DATA;
+    if (error || !data || data.length === 0 || data[0].spicychat === undefined) {
+      return FALLBACK_DATA;
+    }
     return data;
   } catch {
     return FALLBACK_DATA;
