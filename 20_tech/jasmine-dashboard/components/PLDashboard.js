@@ -184,9 +184,9 @@ const COMPETITORS = [
 const GLOSSARY = [
   { t: 'Gross Revenue',       d: 'Total money earned across all platforms before anyone takes their cut. (Fanvue + Passes + PPV/Voice + Telegram + Brand + IG Subs + FB Subs)' },
   { t: 'Platform Cuts',       d: 'Commission fees taken by each platform. Fanvue 15%, Passes/PPV/Telegram/Brand 10%, Instagram Subs 20%, FB Subs 30%.' },
-  { t: 'Net Revenue',         d: 'Money that actually lands in your account after all platform commissions. (Gross Revenue − Platform Cuts)' },
+  { t: 'Net Revenue',         d: 'Money that hits your bank account after platform commissions AND Payment Gateway/Forex fees (Razorpay 2.5% on INR + Skydo flat ₹3537 for USD).' },
   { t: 'Total Costs',         d: 'Everything spent each month: AI tools (Higgsfield ₹2,699 + ElevenLabs ₹420 + Grok ₹542 + Claude ₹4,000 + Calilio ₹1,303 + SpicyChat ₹1,260 + Carrd.co ₹147 + Namecheap ₹92) + variable ads and research.' },
-  { t: 'Net Profit',          d: 'The money you actually keep — after platform fees AND all expenses. (Net Revenue − Total Costs)' },
+  { t: 'Net Profit',          d: 'The money you actually keep — after platform fees, gateway fees AND all expenses. (Net Revenue − Total Costs)' },
   { t: 'Cumulative Profit',   d: 'Running total of all net profits since Month 1. (Sum of all Net Profits up to this month)' },
   { t: 'MRR',                 d: 'Monthly Recurring Revenue — predictable subscription income that auto-renews. (Fanvue subscriptions + IG subscriptions)' },
   { t: 'PPV',                 d: 'Pay-Per-View — fans pay once for specific content, not a monthly sub. (Included in PPV+Voice column)' },
@@ -226,11 +226,24 @@ function deriveRows(data, costMultiplier = 1) {
     const rArr  = [row.fanvue, row.room11 || 0, row.passes, row.ppv_voice, row.telegram, row.brand, row.ig_subs, row.fb_subs || 0];
     // ALL cost fields multiplied by costMultiplier
     const cArr  = [row.higgsfield, row.elevenlabs, row.grok, row.claude_code, row.meta_ads, row.research, row.buffer, row.calilio, row.namecheap, row.spicychat, row.carrd, row.dolphin || 0].map(v => v * costMultiplier);
+    
     const gross = rArr.reduce((a, b) => a + b, 0);
-    const net   = rArr.reduce((s, v, i) => s + v * KEEP[i], 0);
-    const cuts  = gross - net;
+    const platformNet = rArr.reduce((s, v, i) => s + v * KEEP[i], 0);
+    
+    // Gateway Fees: Razorpay (2.5% on INR platforms) + Skydo (Flat $38 = ₹3537 for USD payouts)
+    // Telegram is rArr[4], Brand is rArr[5], IG/FB Subs are rArr[6], rArr[7]
+    const inrRev = rArr[4] + rArr[5] + rArr[6] + rArr[7];
+    const razorpayFee = inrRev * 0.025;
+    const skydoFee = 3537;
+    const gatewayFees = razorpayFee + skydoFee;
+    
+    // Final Cuts = Platform Commission + Gateway Fees
+    const platformCuts = gross - platformNet;
+    const cuts = platformCuts + gatewayFees;
+    const trueNet = platformNet - gatewayFees;
+    
     const costs = cArr.reduce((a, b) => a + b, 0);
-    return { ...row, rArr, cArr, gross, net, cuts, costs, profit: net - costs };
+    return { ...row, rArr, cArr, gross, net: trueNet, cuts, costs, profit: trueNet - costs };
   });
 }
 
