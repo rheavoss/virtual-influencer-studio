@@ -41,132 +41,134 @@ const PLATFORM_FEES = [
   { name: 'FB Subscriptions', fee: '30%', type: 'Facebook Creator', url: 'https://www.facebook.com/creators' },
 ];
 
-// Fixed monthly tool costs — maps 1:1 to cArr (all costs ×3)
+// Fixed monthly tool costs — base values (×1). Multiplied at render time via costMultiplier prop.
 const TOOL_STACK = [
-  { name: 'Higgsfield',  cost: 8097, desc: 'AI Video Gen / Animation',        url: 'https://higgsfield.ai' },
-  { name: 'ElevenLabs',  cost: 1260, desc: 'AI Voice Cloning & Synthesis',     url: 'https://elevenlabs.io' },
-  { name: 'Grok (X)',    cost: 1626, desc: 'Training Data / Content Research', url: 'https://x.com' },
-  { name: 'Claude x2',   cost: 12000, desc: 'Logic, Scripts & Automation (2 Seats)', url: 'https://claude.ai' },
-  { name: 'Meta Ads',    cost: null, desc: 'Variable — ₹9,000 (M3) → ₹18,000 (M4+)', url: 'https://www.facebook.com/business/ads' },
-  { name: 'Research',    cost: null, desc: 'Variable — ₹9,000 → ₹15,000 → ₹24,000', url: '' },
-  { name: 'Buffer',      cost: null, desc: 'Variable — ₹4,500 from M8 (Metricool/RunPod)', url: '' },
-  { name: 'Calilio',     cost: 3909, desc: 'VoIP / International Comms',       url: 'https://calilio.com' },
-  { name: 'Namecheap',   cost: 276,  desc: 'Domain Only (Redirect Chain)',     url: 'https://namecheap.com' },
-  { name: 'SpicyChat AI', cost: 3780, desc: 'Automated GFE DM Engine',        url: 'https://spicychat.ai' },
-  { name: 'Carrd.co Pro', cost: 441,  desc: 'Link-in-bio redirect page',      url: 'https://carrd.co' },
-  { name: 'Dolphin{anty}',cost: 2790, desc: 'OpSec Browser + USA Proxy',      url: 'https://dolphin-anty.com' },
+  { name: 'Higgsfield',  cost: 2699, desc: 'AI Video Gen / Animation',        url: 'https://higgsfield.ai' },
+  { name: 'ElevenLabs',  cost: 420,  desc: 'AI Voice Cloning & Synthesis',     url: 'https://elevenlabs.io' },
+  { name: 'Grok (X)',    cost: 542,  desc: 'Training Data / Content Research', url: 'https://x.com' },
+  { name: 'Claude x2',   cost: 4000, desc: 'Logic, Scripts & Automation (2 Seats)', url: 'https://claude.ai' },
+  { name: 'Meta Ads',    cost: null, desc: 'Variable — scales with multiplier', url: 'https://www.facebook.com/business/ads' },
+  { name: 'Research',    cost: null, desc: 'Variable — scales with multiplier', url: '' },
+  { name: 'Buffer',      cost: null, desc: 'Variable — scales with multiplier', url: '' },
+  { name: 'Calilio',     cost: 1303, desc: 'VoIP / International Comms',       url: 'https://calilio.com' },
+  { name: 'Namecheap',   cost: 92,   desc: 'Domain Only (Redirect Chain)',     url: 'https://namecheap.com' },
+  { name: 'SpicyChat AI', cost: 1260, desc: 'Automated GFE DM Engine',        url: 'https://spicychat.ai' },
+  { name: 'Carrd.co Pro', cost: 147,  desc: 'Link-in-bio redirect page',      url: 'https://carrd.co' },
+  { name: 'Dolphin{anty}',cost: 930,  desc: 'OpSec Browser + USA Proxy',      url: 'https://dolphin-anty.com' },
   { name: 'Metricool',   cost: 0,    desc: 'Social Scheduling (Free Tier)',   url: 'https://metricool.com' },
 ];
 
 const FIXED_MONTHLY_COST = TOOL_STACK.filter(t => t.cost).reduce((s, t) => s + t.cost, 0);
 
 // ── CONTENT PRODUCTION MATRIX ─────────────────────────────────────────────────
+// costs are BASE numbers (×1). Multiplied at render time by costMultiplier prop.
+// cost: 0 = free. cost: -1 = 'included'. cost: -2 = 'already paid'.
 const CONTENT_TYPES = [
   {
     id: 'CT-1', name: 'Viral Clone Reel', emoji: '🎬',
     volume: '60% of all output', format: 'Instagram Reel · 15–30s · 9:16',
     components: [
-      { role: 'Source',              tool: 'Instaloader',                    cost: '₹0' },
-      { role: 'Frame extraction',    tool: 'FFmpeg',                         cost: '₹0' },
-      { role: 'Jasmine pose match',  tool: 'Flux Kontext 9B FP8 (Fal.ai)',  cost: '~₹75/mo' },
-      { role: 'Motion skeleton',     tool: 'DW Pose',                        cost: '₹0' },
-      { role: 'Video gen (I2V)',      tool: 'Wan AI Animate 2.2 I2V',        cost: '₹1,260/mo' },
-      { role: 'Color correction',    tool: 'CapCut',                         cost: '₹0' },
-      { role: 'Captions overlay',    tool: 'CapCut auto-caption',            cost: '₹0' },
-      { role: 'Script / caption text', tool: 'jasmine_agent.py',            cost: '₹0' },
-      { role: 'OPSEC',               tool: 'ExifTool + FFmpeg',             cost: '₹0' },
-      { role: 'Scheduling',          tool: 'Metricool',                     cost: '₹0' },
+      { role: 'Source',                tool: 'Instaloader',                    cost: 0 },
+      { role: 'Frame extraction',      tool: 'FFmpeg',                         cost: 0 },
+      { role: 'Jasmine pose match',    tool: 'Flux Kontext 9B FP8 (Fal.ai)',  cost: 25, approx: true },
+      { role: 'Motion skeleton',       tool: 'DW Pose',                        cost: 0 },
+      { role: 'Video gen (I2V)',        tool: 'Wan AI Animate 2.2 I2V',        cost: 420 },
+      { role: 'Color correction',      tool: 'CapCut',                         cost: 0 },
+      { role: 'Captions overlay',      tool: 'CapCut auto-caption',            cost: 0 },
+      { role: 'Script / caption text', tool: 'jasmine_agent.py',               cost: 0 },
+      { role: 'OPSEC',                 tool: 'ExifTool + FFmpeg',              cost: 0 },
+      { role: 'Scheduling',            tool: 'Metricool',                      cost: 0 },
     ],
   },
   {
     id: 'CT-2', name: 'Face Swap Reel', emoji: '🔄',
     volume: 'Alt to CT-1 (complex motion)', format: 'Instagram Reel · 15–30s · 9:16',
     components: [
-      { role: 'Driving video source', tool: 'Reels / TikTok (manual)',       cost: '₹0' },
-      { role: 'Video gen (T2V)',      tool: 'Wan AI 2.2 T2V + Jasmine Wan LoRA · denoise 0.4–0.5', cost: '₹1,260/mo' },
-      { role: 'Color correction',    tool: 'CapCut',                         cost: '₹0' },
-      { role: 'Script / caption text', tool: 'jasmine_agent.py',            cost: '₹0' },
-      { role: 'OPSEC',               tool: 'ExifTool + FFmpeg',             cost: '₹0' },
-      { role: 'Scheduling',          tool: 'Metricool',                     cost: '₹0' },
+      { role: 'Driving video source',  tool: 'Reels / TikTok (manual)',        cost: 0 },
+      { role: 'Video gen (T2V)',        tool: 'Wan AI 2.2 T2V + Jasmine Wan LoRA · denoise 0.4–0.5', cost: 420 },
+      { role: 'Color correction',      tool: 'CapCut',                         cost: 0 },
+      { role: 'Script / caption text', tool: 'jasmine_agent.py',               cost: 0 },
+      { role: 'OPSEC',                 tool: 'ExifTool + FFmpeg',              cost: 0 },
+      { role: 'Scheduling',            tool: 'Metricool',                      cost: 0 },
     ],
   },
   {
     id: 'CT-3', name: 'Talking Head / Direct-to-Camera', emoji: '🎤',
     volume: '1–2 per week', format: 'Instagram Reel + repurposed as Stories',
     components: [
-      { role: 'Script',              tool: 'Claude / manual',                cost: '₹0' },
-      { role: 'Voice (emotion-tagged)', tool: 'OmniVoice (local/Colab)',    cost: '₹0' },
-      { role: 'Voice clone ref (M1 only)', tool: 'ElevenLabs Starter',      cost: '₹1,260 (M1 only)' },
-      { role: 'Lip-sync video (S2V)', tool: 'Wan AI S2V',                   cost: '₹1,260/mo' },
-      { role: 'Background image',    tool: 'Flux Kontext OR Google Whisk',  cost: '₹0' },
-      { role: 'Captions overlay',    tool: 'CapCut',                        cost: '₹0' },
-      { role: 'Script / caption text', tool: 'jasmine_agent.py',            cost: '₹0' },
-      { role: 'OPSEC',               tool: 'ExifTool + FFmpeg',             cost: '₹0' },
-      { role: 'Scheduling',          tool: 'Metricool',                     cost: '₹0' },
+      { role: 'Script',                      tool: 'Claude / manual',                cost: 0 },
+      { role: 'Voice (emotion-tagged)',       tool: 'OmniVoice (local/Colab)',        cost: 0 },
+      { role: 'Voice clone ref (M1 only)',    tool: 'ElevenLabs Starter',             cost: 420, m1only: true },
+      { role: 'Lip-sync video (S2V)',         tool: 'Wan AI S2V',                     cost: 420 },
+      { role: 'Background image',            tool: 'Flux Kontext OR Google Whisk',   cost: 0 },
+      { role: 'Captions overlay',            tool: 'CapCut',                         cost: 0 },
+      { role: 'Script / caption text',       tool: 'jasmine_agent.py',               cost: 0 },
+      { role: 'OPSEC',                       tool: 'ExifTool + FFmpeg',              cost: 0 },
+      { role: 'Scheduling',                  tool: 'Metricool',                      cost: 0 },
     ],
   },
   {
     id: 'CT-4', name: 'GRWM / Outfit Transition', emoji: '👗',
     volume: '2–4 per month', format: 'Instagram Reel · High saves format',
     components: [
-      { role: 'Static outfit images (2–3)', tool: 'Z-Image Base+Turbo + Jasmine Z-Image LoRA (Fal.ai)', cost: '~₹0' },
-      { role: 'Transition video (VACE chain)', tool: 'Wan VACE',            cost: '₹1,260/mo' },
-      { role: 'Voice narration (optional)', tool: 'OmniVoice',              cost: '₹0' },
-      { role: 'Trending audio',      tool: 'CapCut music library',          cost: '₹0' },
-      { role: 'OPSEC',               tool: 'ExifTool + FFmpeg',             cost: '₹0' },
-      { role: 'Scheduling',          tool: 'Metricool',                     cost: '₹0' },
+      { role: 'Static outfit images (2–3)',   tool: 'Z-Image Base+Turbo + Jasmine Z-Image LoRA (Fal.ai)', cost: 0 },
+      { role: 'Transition video (VACE chain)', tool: 'Wan VACE',                    cost: 420 },
+      { role: 'Voice narration (optional)',   tool: 'OmniVoice',                     cost: 0 },
+      { role: 'Trending audio',              tool: 'CapCut music library',           cost: 0 },
+      { role: 'OPSEC',                       tool: 'ExifTool + FFmpeg',              cost: 0 },
+      { role: 'Scheduling',                  tool: 'Metricool',                      cost: 0 },
     ],
   },
   {
     id: 'CT-5', name: 'Lifestyle / Travel UGC', emoji: '✈️',
     volume: '4–6 per month', format: 'Instagram Reel or Feed Post',
     components: [
-      { role: 'Location mood board', tool: 'Pinterest',                     cost: '₹0' },
-      { role: 'Video gen (primary)', tool: 'Google Veo 3 via Flow (Google One)', cost: '₹0 (already paid)' },
-      { role: 'Video gen (fallback)', tool: 'Flux Kontext',                 cost: '~₹75/mo' },
-      { role: 'Voice narration (optional)', tool: 'OmniVoice',              cost: '₹0' },
-      { role: 'Grain / film filter', tool: 'CapCut',                        cost: '₹0' },
-      { role: 'Script / caption text', tool: 'jasmine_agent.py',            cost: '₹0' },
-      { role: 'OPSEC',               tool: 'ExifTool + FFmpeg',             cost: '₹0' },
-      { role: 'Scheduling',          tool: 'Metricool',                     cost: '₹0' },
+      { role: 'Location mood board',         tool: 'Pinterest',                      cost: 0 },
+      { role: 'Video gen (primary)',          tool: 'Google Veo 3 via Flow (Google One)', cost: -2 },
+      { role: 'Video gen (fallback)',         tool: 'Flux Kontext',                   cost: 25, approx: true },
+      { role: 'Voice narration (optional)',   tool: 'OmniVoice',                     cost: 0 },
+      { role: 'Grain / film filter',         tool: 'CapCut',                         cost: 0 },
+      { role: 'Script / caption text',       tool: 'jasmine_agent.py',               cost: 0 },
+      { role: 'OPSEC',                       tool: 'ExifTool + FFmpeg',              cost: 0 },
+      { role: 'Scheduling',                  tool: 'Metricool',                      cost: 0 },
     ],
   },
   {
     id: 'CT-6', name: 'Trend Reaction', emoji: '⚡',
     volume: 'As trends emerge', format: 'Instagram Reel · Reaction/PiP format',
     components: [
-      { role: 'Viral trend clip',    tool: 'Reels / TikTok (manual)',        cost: '₹0' },
-      { role: 'PiP video (reaction box)', tool: 'Wan VACE (PiP mode)',      cost: '₹1,260/mo' },
-      { role: 'Voice reaction',      tool: 'OmniVoice',                     cost: '₹0' },
-      { role: 'Trending audio + captions', tool: 'CapCut',                  cost: '₹0' },
-      { role: 'Script / caption text', tool: 'jasmine_agent.py',            cost: '₹0' },
-      { role: 'OPSEC',               tool: 'ExifTool + FFmpeg',             cost: '₹0' },
-      { role: 'Scheduling',          tool: 'Metricool',                     cost: '₹0' },
+      { role: 'Viral trend clip',            tool: 'Reels / TikTok (manual)',        cost: 0 },
+      { role: 'PiP video (reaction box)',    tool: 'Wan VACE (PiP mode)',            cost: 420 },
+      { role: 'Voice reaction',              tool: 'OmniVoice',                      cost: 0 },
+      { role: 'Trending audio + captions',   tool: 'CapCut',                         cost: 0 },
+      { role: 'Script / caption text',       tool: 'jasmine_agent.py',               cost: 0 },
+      { role: 'OPSEC',                       tool: 'ExifTool + FFmpeg',              cost: 0 },
+      { role: 'Scheduling',                  tool: 'Metricool',                      cost: 0 },
     ],
   },
   {
     id: 'CT-7', name: 'Product Review / UGC Ad', emoji: '🛍️',
     volume: 'On demand (affiliate / brand deals)', format: 'Instagram Reel · Structured UGC',
     components: [
-      { role: 'Product image',       tool: 'Instagram Shop / Brand',        cost: '₹0' },
-      { role: 'API orchestration',   tool: 'Claude Code + .md Skill File',  cost: '₹12,000/mo (shared)' },
-      { role: 'Static ad frames (batch)', tool: 'Higgsfield API (auto)',    cost: '₹2,514/mo' },
-      { role: 'A-roll video (S2V)',   tool: 'Higgsfield Cinema Studio',      cost: 'included' },
-      { role: 'Voice',               tool: 'OmniVoice',                     cost: '₹0' },
-      { role: 'Final edit',          tool: 'CapCut / Premiere',             cost: '₹0' },
-      { role: 'Script / caption text', tool: 'jasmine_agent.py',            cost: '₹0' },
-      { role: 'OPSEC',               tool: 'ExifTool + FFmpeg',             cost: '₹0' },
+      { role: 'Product image',               tool: 'Instagram Shop / Brand',         cost: 0 },
+      { role: 'API orchestration',           tool: 'Claude Code + .md Skill File',   cost: 4000 },
+      { role: 'Static ad frames (batch)',    tool: 'Higgsfield API (auto-batch)',     cost: 838 },
+      { role: 'A-roll video (S2V)',          tool: 'Higgsfield Cinema Studio',        cost: -1 },
+      { role: 'Voice',                       tool: 'OmniVoice',                      cost: 0 },
+      { role: 'Final edit',                  tool: 'CapCut / Premiere',              cost: 0 },
+      { role: 'Script / caption text',       tool: 'jasmine_agent.py',               cost: 0 },
+      { role: 'OPSEC',                       tool: 'ExifTool + FFmpeg',              cost: 0 },
     ],
   },
   {
     id: 'CT-8', name: 'Carousel (Static Multi-Image)', emoji: '🖼️',
     volume: '4–6 per month', format: 'Instagram Carousel · 4–8 slides · Max saves',
     components: [
-      { role: 'Multi-image gen (4–8 slides)', tool: 'Flux Kontext 9B + Jasmine Z-Image LoRA (ComfyUI)', cost: '~₹75/mo' },
-      { role: 'Compile + order',     tool: 'CapCut or direct upload',       cost: '₹0' },
-      { role: 'Caption text per slide', tool: 'jasmine_agent.py',          cost: '₹0' },
-      { role: 'OPSEC (each image)',   tool: 'ExifTool',                     cost: '₹0' },
-      { role: 'Scheduling',          tool: 'Metricool',                     cost: '₹0' },
+      { role: 'Multi-image gen (4–8 slides)', tool: 'Flux Kontext 9B + Jasmine Z-Image LoRA (ComfyUI)', cost: 25, approx: true },
+      { role: 'Compile + order',             tool: 'CapCut or direct upload',        cost: 0 },
+      { role: 'Caption text per slide',      tool: 'jasmine_agent.py',               cost: 0 },
+      { role: 'OPSEC (each image)',          tool: 'ExifTool',                        cost: 0 },
+      { role: 'Scheduling',                  tool: 'Metricool',                      cost: 0 },
     ],
   },
 ];
@@ -219,11 +221,11 @@ const fL = v => {
   return '₹' + (v / 1000).toFixed(1) + 'K';
 };
 
-function deriveRows(data) {
+function deriveRows(data, costMultiplier = 1) {
   return data.map(row => {
     const rArr  = [row.fanvue, row.room11 || 0, row.passes, row.ppv_voice, row.telegram, row.brand, row.ig_subs, row.fb_subs || 0];
-    // ALL 11 expense fields in exact COST_LABELS order
-    const cArr  = [row.higgsfield, row.elevenlabs, row.grok, row.claude_code, row.meta_ads, row.research, row.buffer, row.calilio, row.namecheap, row.spicychat, row.carrd, row.dolphin || 0];
+    // ALL cost fields multiplied by costMultiplier
+    const cArr  = [row.higgsfield, row.elevenlabs, row.grok, row.claude_code, row.meta_ads, row.research, row.buffer, row.calilio, row.namecheap, row.spicychat, row.carrd, row.dolphin || 0].map(v => v * costMultiplier);
     const gross = rArr.reduce((a, b) => a + b, 0);
     const net   = rArr.reduce((s, v, i) => s + v * KEEP[i], 0);
     const cuts  = gross - net;
@@ -269,8 +271,18 @@ const S = {
 };
 
 // ── MAIN COMPONENT ─────────────────────────────────────────────────────────────
-export default function PLDashboard({ data }) {
-  const rows       = useMemo(() => deriveRows(data), [data]);
+// Helper to format a CONTENT_TYPES component cost with a multiplier
+function fCost(comp, m) {
+  if (comp.cost === -1) return 'included';
+  if (comp.cost === -2) return '₹0 (already paid)';
+  if (comp.cost === 0)  return '₹0';
+  const v = comp.cost * m;
+  return (comp.approx ? '~' : '') + '₹' + Math.round(v).toLocaleString('en-IN') + (comp.m1only ? ' (M1 only)' : '/mo');
+}
+
+export default function PLDashboard({ data, costMultiplier = 1 }) {
+  const m = costMultiplier; // shorthand
+  const rows       = useMemo(() => deriveRows(data, m), [data, m]);
   const months     = rows.map(r => r.label);
   const grossRev   = rows.map(r => r.gross);
   const netRev     = rows.map(r => r.net);
@@ -318,6 +330,11 @@ export default function PLDashboard({ data }) {
       {/* ── HEADER ── */}
       <div style={S.header}>
         <h1 style={S.h1}>Virtual Influencer Infrastructure — 12-Month P&L</h1>
+        {m > 1 && (
+          <div style={{ display: 'inline-block', marginTop: 8, background: C.accent, color: '#fff', borderRadius: 20, padding: '3px 14px', fontSize: 11, fontWeight: 700, letterSpacing: '0.5px' }}>
+            📊 Investor View — Projected Infrastructure Costs ×{m}
+          </div>
+        )}
         <div style={S.sub}>
           ₹93.08 = $1 USD &nbsp;·&nbsp; <strong>Modeled for EXACTLY 1 Influencer</strong>
         </div>
@@ -482,19 +499,19 @@ export default function PLDashboard({ data }) {
                     ) : null}
                     <td style={{ padding: '7px 8px', color: C.textSec }}>{comp.role}</td>
                     <td style={{ padding: '7px 8px', fontWeight: 600, color: C.textPri }}>{comp.tool}</td>
-                    <td style={{ padding: '7px 8px', textAlign: 'right', fontWeight: 700, whiteSpace: 'nowrap', color: comp.cost === '₹0' ? C.green : comp.cost === 'included' ? C.textMut : C.orange }}>{comp.cost}</td>
+                    <td style={{ padding: '7px 8px', textAlign: 'right', fontWeight: 700, whiteSpace: 'nowrap', color: comp.cost <= 0 ? (comp.cost === 0 ? C.green : C.textMut) : C.orange }}>{fCost(comp, m)}</td>
                   </tr>
                 ))
               )}
             </tbody>
             <tfoot>
               <tr style={{ background: '#f6f8fa', borderTop: `2px solid ${C.grid}` }}>
-                <td colSpan={4} style={{ padding: '10px 8px', fontWeight: 700, fontSize: 11 }}>Monthly Tool Cost Rollup (M2+) — all costs ×3</td>
-                <td style={{ padding: '10px 8px', textAlign: 'right', fontWeight: 800, fontSize: 12, color: C.green }}>~₹3,849/mo</td>
+                <td colSpan={4} style={{ padding: '10px 8px', fontWeight: 700, fontSize: 11 }}>Monthly Tool Cost Rollup (M2+){m > 1 ? ` — costs ×${m}` : ''}</td>
+                <td style={{ padding: '10px 8px', textAlign: 'right', fontWeight: 800, fontSize: 12, color: C.green }}>~{fi(1283 * m)}/mo</td>
               </tr>
               <tr style={{ background: '#f6f8fa' }}>
                 <td colSpan={5} style={{ padding: '6px 8px', fontSize: 9, color: C.textMut }}>
-                  Wan AI ₹1,260 · Higgsfield ₹2,514 · Flux/Fal.ai ~₹75 · ElevenLabs ₹1,260 (M1 only, then ₹0) · OmniVoice ₹0 · Google Veo 3 ₹0 (already paid) · CapCut ₹0 · FFmpeg/ExifTool ₹0 · Metricool ₹0
+                  Wan AI {fi(420*m)} · Higgsfield {fi(838*m)} · Flux/Fal.ai ~{fi(25*m)} · ElevenLabs {fi(420*m)} (M1 only, then ₹0) · OmniVoice ₹0 · Google Veo 3 ₹0 (already paid) · CapCut ₹0 · FFmpeg/ExifTool ₹0 · Metricool ₹0
                 </td>
               </tr>
             </tfoot>
@@ -516,7 +533,7 @@ export default function PLDashboard({ data }) {
               </div>
               <div style={{ textAlign: 'right', flexShrink: 0, paddingLeft: 8 }}>
                 <div style={{ fontSize: 11, fontWeight: 700, color: t.cost ? C.red : C.orange }}>
-                  {t.cost ? fi(t.cost) : 'Variable'}
+                  {t.cost ? fi(t.cost * m) : 'Variable'}
                 </div>
                 <div style={{ fontSize: 9, color: C.textMut }}>per month</div>
               </div>
@@ -524,7 +541,7 @@ export default function PLDashboard({ data }) {
           ))}
         </div>
         <div style={{ background: C.greenBg, border: `1px solid ${C.greenBdr}`, borderRadius: 6, padding: '10px 14px', fontSize: 11 }}>
-          <strong>Fixed Monthly Overhead (excl. Ads & Research):</strong> {fi(FIXED_MONTHLY_COST)} &nbsp;·&nbsp;
+          <strong>Fixed Monthly Overhead (excl. Ads & Research):</strong> {fi(FIXED_MONTHLY_COST * m)} &nbsp;·&nbsp;
           <span style={{ color: C.textSec }}>Breakeven on fixed costs from Month 1.</span>
         </div>
       </div>

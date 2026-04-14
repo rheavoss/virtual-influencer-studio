@@ -28,8 +28,8 @@ async function getData() {
 
 export const revalidate = 3600;
 
-// Owner view — original costs ×1
-export default async function Page() {
+// Investor view — all costs ×5
+export default async function InvestorPage() {
   const data = await getData();
-  return <PLDashboard data={data} costMultiplier={1} />;
+  return <PLDashboard data={data} costMultiplier={5} />;
 }
