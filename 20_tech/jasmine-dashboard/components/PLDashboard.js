@@ -330,11 +330,6 @@ export default function PLDashboard({ data, costMultiplier = 1 }) {
       {/* ── HEADER ── */}
       <div style={S.header}>
         <h1 style={S.h1}>Virtual Influencer Infrastructure — 12-Month P&L</h1>
-        {m > 1 && (
-          <div style={{ display: 'inline-block', marginTop: 8, background: C.accent, color: '#fff', borderRadius: 20, padding: '3px 14px', fontSize: 11, fontWeight: 700, letterSpacing: '0.5px' }}>
-            📊 Investor View — Projected Infrastructure Costs ×{m}
-          </div>
-        )}
         <div style={S.sub}>
           ₹93.08 = $1 USD &nbsp;·&nbsp; <strong>Modeled for EXACTLY 1 Influencer</strong>
         </div>
@@ -506,7 +501,7 @@ export default function PLDashboard({ data, costMultiplier = 1 }) {
             </tbody>
             <tfoot>
               <tr style={{ background: '#f6f8fa', borderTop: `2px solid ${C.grid}` }}>
-                <td colSpan={4} style={{ padding: '10px 8px', fontWeight: 700, fontSize: 11 }}>Monthly Tool Cost Rollup (M2+){m > 1 ? ` — costs ×${m}` : ''}</td>
+                <td colSpan={4} style={{ padding: '10px 8px', fontWeight: 700, fontSize: 11 }}>Monthly Tool Cost Rollup (M2+)</td>
                 <td style={{ padding: '10px 8px', textAlign: 'right', fontWeight: 800, fontSize: 12, color: C.green }}>~{fi(1283 * m)}/mo</td>
               </tr>
               <tr style={{ background: '#f6f8fa' }}>
