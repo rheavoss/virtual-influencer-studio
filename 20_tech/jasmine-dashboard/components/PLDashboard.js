@@ -60,6 +60,117 @@ const TOOL_STACK = [
 
 const FIXED_MONTHLY_COST = TOOL_STACK.filter(t => t.cost).reduce((s, t) => s + t.cost, 0);
 
+// ── CONTENT PRODUCTION MATRIX ─────────────────────────────────────────────────
+const CONTENT_TYPES = [
+  {
+    id: 'CT-1', name: 'Viral Clone Reel', emoji: '🎬',
+    volume: '60% of all output', format: 'Instagram Reel · 15–30s · 9:16',
+    components: [
+      { role: 'Source',              tool: 'Instaloader',                    cost: '₹0' },
+      { role: 'Frame extraction',    tool: 'FFmpeg',                         cost: '₹0' },
+      { role: 'Jasmine pose match',  tool: 'Flux Kontext 9B FP8 (Fal.ai)',  cost: '~₹25/mo' },
+      { role: 'Motion skeleton',     tool: 'DW Pose',                        cost: '₹0' },
+      { role: 'Video gen (I2V)',      tool: 'Wan AI Animate 2.2 I2V',        cost: '₹420/mo' },
+      { role: 'Color correction',    tool: 'CapCut',                         cost: '₹0' },
+      { role: 'Captions overlay',    tool: 'CapCut auto-caption',            cost: '₹0' },
+      { role: 'Script / caption text', tool: 'jasmine_agent.py',            cost: '₹0' },
+      { role: 'OPSEC',               tool: 'ExifTool + FFmpeg',             cost: '₹0' },
+      { role: 'Scheduling',          tool: 'Metricool',                     cost: '₹0' },
+    ],
+  },
+  {
+    id: 'CT-2', name: 'Face Swap Reel', emoji: '🔄',
+    volume: 'Alt to CT-1 (complex motion)', format: 'Instagram Reel · 15–30s · 9:16',
+    components: [
+      { role: 'Driving video source', tool: 'Reels / TikTok (manual)',       cost: '₹0' },
+      { role: 'Video gen (T2V)',      tool: 'Wan AI 2.2 T2V + Jasmine Wan LoRA · denoise 0.4–0.5', cost: '₹420/mo' },
+      { role: 'Color correction',    tool: 'CapCut',                         cost: '₹0' },
+      { role: 'Script / caption text', tool: 'jasmine_agent.py',            cost: '₹0' },
+      { role: 'OPSEC',               tool: 'ExifTool + FFmpeg',             cost: '₹0' },
+      { role: 'Scheduling',          tool: 'Metricool',                     cost: '₹0' },
+    ],
+  },
+  {
+    id: 'CT-3', name: 'Talking Head / Direct-to-Camera', emoji: '🎤',
+    volume: '1–2 per week', format: 'Instagram Reel + repurposed as Stories',
+    components: [
+      { role: 'Script',              tool: 'Claude / manual',                cost: '₹0' },
+      { role: 'Voice (emotion-tagged)', tool: 'OmniVoice (local/Colab)',    cost: '₹0' },
+      { role: 'Voice clone ref (M1 only)', tool: 'ElevenLabs Starter',      cost: '₹420 (M1 only)' },
+      { role: 'Lip-sync video (S2V)', tool: 'Wan AI S2V',                   cost: '₹420/mo' },
+      { role: 'Background image',    tool: 'Flux Kontext OR Google Whisk',  cost: '₹0' },
+      { role: 'Captions overlay',    tool: 'CapCut',                        cost: '₹0' },
+      { role: 'Script / caption text', tool: 'jasmine_agent.py',            cost: '₹0' },
+      { role: 'OPSEC',               tool: 'ExifTool + FFmpeg',             cost: '₹0' },
+      { role: 'Scheduling',          tool: 'Metricool',                     cost: '₹0' },
+    ],
+  },
+  {
+    id: 'CT-4', name: 'GRWM / Outfit Transition', emoji: '👗',
+    volume: '2–4 per month', format: 'Instagram Reel · High saves format',
+    components: [
+      { role: 'Static outfit images (2–3)', tool: 'Z-Image Base+Turbo + Jasmine Z-Image LoRA (Fal.ai)', cost: '~₹0' },
+      { role: 'Transition video (VACE chain)', tool: 'Wan VACE',            cost: '₹420/mo' },
+      { role: 'Voice narration (optional)', tool: 'OmniVoice',              cost: '₹0' },
+      { role: 'Trending audio',      tool: 'CapCut music library',          cost: '₹0' },
+      { role: 'OPSEC',               tool: 'ExifTool + FFmpeg',             cost: '₹0' },
+      { role: 'Scheduling',          tool: 'Metricool',                     cost: '₹0' },
+    ],
+  },
+  {
+    id: 'CT-5', name: 'Lifestyle / Travel UGC', emoji: '✈️',
+    volume: '4–6 per month', format: 'Instagram Reel or Feed Post',
+    components: [
+      { role: 'Location mood board', tool: 'Pinterest',                     cost: '₹0' },
+      { role: 'Video gen (primary)', tool: 'Google Veo 3 via Flow (Google One)', cost: '₹0 (already paid)' },
+      { role: 'Video gen (fallback)', tool: 'Flux Kontext',                 cost: '~₹25/mo' },
+      { role: 'Voice narration (optional)', tool: 'OmniVoice',              cost: '₹0' },
+      { role: 'Grain / film filter', tool: 'CapCut',                        cost: '₹0' },
+      { role: 'Script / caption text', tool: 'jasmine_agent.py',            cost: '₹0' },
+      { role: 'OPSEC',               tool: 'ExifTool + FFmpeg',             cost: '₹0' },
+      { role: 'Scheduling',          tool: 'Metricool',                     cost: '₹0' },
+    ],
+  },
+  {
+    id: 'CT-6', name: 'Trend Reaction', emoji: '⚡',
+    volume: 'As trends emerge', format: 'Instagram Reel · Reaction/PiP format',
+    components: [
+      { role: 'Viral trend clip',    tool: 'Reels / TikTok (manual)',        cost: '₹0' },
+      { role: 'PiP video (reaction box)', tool: 'Wan VACE (PiP mode)',      cost: '₹420/mo' },
+      { role: 'Voice reaction',      tool: 'OmniVoice',                     cost: '₹0' },
+      { role: 'Trending audio + captions', tool: 'CapCut',                  cost: '₹0' },
+      { role: 'Script / caption text', tool: 'jasmine_agent.py',            cost: '₹0' },
+      { role: 'OPSEC',               tool: 'ExifTool + FFmpeg',             cost: '₹0' },
+      { role: 'Scheduling',          tool: 'Metricool',                     cost: '₹0' },
+    ],
+  },
+  {
+    id: 'CT-7', name: 'Product Review / UGC Ad', emoji: '🛍️',
+    volume: 'On demand (affiliate / brand deals)', format: 'Instagram Reel · Structured UGC',
+    components: [
+      { role: 'Product image',       tool: 'Instagram Shop / Brand',        cost: '₹0' },
+      { role: 'API orchestration',   tool: 'Claude Code + .md Skill File',  cost: '₹4,000/mo (shared)' },
+      { role: 'Static ad frames (batch)', tool: 'Higgsfield API (auto)',    cost: '₹838/mo' },
+      { role: 'A-roll video (S2V)',   tool: 'Higgsfield Cinema Studio',      cost: 'included' },
+      { role: 'Voice',               tool: 'OmniVoice',                     cost: '₹0' },
+      { role: 'Final edit',          tool: 'CapCut / Premiere',             cost: '₹0' },
+      { role: 'Script / caption text', tool: 'jasmine_agent.py',            cost: '₹0' },
+      { role: 'OPSEC',               tool: 'ExifTool + FFmpeg',             cost: '₹0' },
+    ],
+  },
+  {
+    id: 'CT-8', name: 'Carousel (Static Multi-Image)', emoji: '🖼️',
+    volume: '4–6 per month', format: 'Instagram Carousel · 4–8 slides · Max saves',
+    components: [
+      { role: 'Multi-image gen (4–8 slides)', tool: 'Flux Kontext 9B + Jasmine Z-Image LoRA (ComfyUI)', cost: '~₹25/mo' },
+      { role: 'Compile + order',     tool: 'CapCut or direct upload',       cost: '₹0' },
+      { role: 'Caption text per slide', tool: 'jasmine_agent.py',          cost: '₹0' },
+      { role: 'OPSEC (each image)',   tool: 'ExifTool',                     cost: '₹0' },
+      { role: 'Scheduling',          tool: 'Metricool',                     cost: '₹0' },
+    ],
+  },
+];
+
 const COMPETITORS = [
   { name: 'Lu do Magalu',  followers: '6.8M',  url: 'https://www.instagram.com/magazineluiza/', note: 'Brazil — World\'s most followed AI influencer' },
   { name: 'Lil Miquela',   followers: '2.6M',  url: 'https://www.instagram.com/lilmiquela/',   note: 'USA — Brud / first mainstream AI influencer' },
@@ -304,6 +415,89 @@ export default function PLDashboard({ data }) {
                 <td style={{ textAlign: 'right', fontWeight: 800, color: C.blue }}>~8x – 10x</td>
               </tr>
             </tbody>
+          </table>
+        </div>
+      </div>
+
+      {/* ── CONTENT PRODUCTION MATRIX ── */}
+      <div style={S.card}>
+        <div style={S.cardTitle}>🎯 Content Production Matrix — All 8 Types · Components · Tools · Costs</div>
+        <div style={{ overflowX: 'auto' }}>
+          <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 10 }}>
+            <thead>
+              <tr style={{ background: '#f6f8fa', borderBottom: `2px solid ${C.grid}` }}>
+                <th style={{ padding: '9px 8px', textAlign: 'left', color: C.textMut, fontWeight: 600, whiteSpace: 'nowrap' }}>Type</th>
+                <th style={{ padding: '9px 8px', textAlign: 'left', color: C.textMut, fontWeight: 600, whiteSpace: 'nowrap' }}>Volume</th>
+                <th style={{ padding: '9px 8px', textAlign: 'left', color: C.textMut, fontWeight: 600 }}>Component / Role</th>
+                <th style={{ padding: '9px 8px', textAlign: 'left', color: C.textMut, fontWeight: 600 }}>Tool</th>
+                <th style={{ padding: '9px 8px', textAlign: 'right', color: C.textMut, fontWeight: 600, whiteSpace: 'nowrap' }}>Cost</th>
+              </tr>
+            </thead>
+            <tbody>
+              {CONTENT_TYPES.map((ct, ctIdx) =>
+                ct.components.map((comp, compIdx) => (
+                  <tr
+                    key={`${ct.id}-${compIdx}`}
+                    style={{
+                      borderBottom: compIdx === ct.components.length - 1
+                        ? `2px solid ${C.grid}`
+                        : `1px solid ${C.grid}`,
+                      background: ctIdx % 2 === 0 ? '#fff' : '#fafbfc',
+                    }}
+                  >
+                    {compIdx === 0 ? (
+                      <td
+                        rowSpan={ct.components.length}
+                        style={{
+                          padding: '8px 8px',
+                          verticalAlign: 'top',
+                          fontWeight: 700,
+                          color: C.blue,
+                          borderRight: `1px solid ${C.grid}`,
+                          whiteSpace: 'nowrap',
+                          fontSize: 10,
+                        }}
+                      >
+                        <div style={{ fontSize: 14, marginBottom: 2 }}>{ct.emoji}</div>
+                        <div>{ct.id}</div>
+                        <div style={{ fontWeight: 800, fontSize: 10.5, color: C.textPri, marginTop: 2 }}>{ct.name}</div>
+                        <div style={{ fontWeight: 400, fontSize: 9, color: C.textMut, marginTop: 3, maxWidth: 130, whiteSpace: 'normal', lineHeight: 1.4 }}>{ct.format}</div>
+                      </td>
+                    ) : null}
+                    {compIdx === 0 ? (
+                      <td
+                        rowSpan={ct.components.length}
+                        style={{
+                          padding: '8px 8px',
+                          verticalAlign: 'top',
+                          color: C.accent,
+                          fontWeight: 600,
+                          fontSize: 9.5,
+                          borderRight: `1px solid ${C.grid}`,
+                          whiteSpace: 'nowrap',
+                        }}
+                      >
+                        {ct.volume}
+                      </td>
+                    ) : null}
+                    <td style={{ padding: '7px 8px', color: C.textSec }}>{comp.role}</td>
+                    <td style={{ padding: '7px 8px', fontWeight: 600, color: C.textPri }}>{comp.tool}</td>
+                    <td style={{ padding: '7px 8px', textAlign: 'right', fontWeight: 700, whiteSpace: 'nowrap', color: comp.cost === '₹0' ? C.green : comp.cost === 'included' ? C.textMut : C.orange }}>{comp.cost}</td>
+                  </tr>
+                ))
+              )}
+            </tbody>
+            <tfoot>
+              <tr style={{ background: '#f6f8fa', borderTop: `2px solid ${C.grid}` }}>
+                <td colSpan={4} style={{ padding: '10px 8px', fontWeight: 700, fontSize: 11 }}>Monthly Tool Cost Rollup (M2+)</td>
+                <td style={{ padding: '10px 8px', textAlign: 'right', fontWeight: 800, fontSize: 12, color: C.green }}>~₹1,283/mo</td>
+              </tr>
+              <tr style={{ background: '#f6f8fa' }}>
+                <td colSpan={5} style={{ padding: '6px 8px', fontSize: 9, color: C.textMut }}>
+                  Wan AI ₹420 · Higgsfield ₹838 · Flux/Fal.ai ~₹25 · ElevenLabs ₹420 (M1 only, then ₹0) · OmniVoice ₹0 · Google Veo 3 ₹0 (already paid) · CapCut ₹0 · FFmpeg/ExifTool ₹0 · Metricool ₹0
+                </td>
+              </tr>
+            </tfoot>
           </table>
         </div>
       </div>
