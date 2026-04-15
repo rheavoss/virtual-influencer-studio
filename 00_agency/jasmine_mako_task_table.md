@@ -81,6 +81,19 @@
 - [ ] **[P1-17]** `[Exec Dept]` (CEO) *(RICE: 10×8×1.0÷2 = 40)* - Configure Skydo receiving account as the default payout destination for all payment gateways.
 - [ ] **[P1-18]** `[Exec Dept]` (CEO) *(RICE: 6×8×0.8÷2 = 19.2)* - Follow up on Paddle / Lemon Squeezy (MoR) account approvals with $15k MRR 90-day projection.
 
+### Post-Production VFX & Schedulers
+- [ ] **[P1-19]** `[Tech Ops]` (Antigravity) *(RICE: 10×9×0.9÷4 = 20.2)* - Deploy self-hosted `Postiz` instance on Railway for multi-account portfolio scheduling.
+- [ ] **[P1-20]** `[Exec Dept]` (CEO) *(RICE: 10×8×0.8÷3 = 21.3)* - Complete OAuth app approvals for Instagram, Threads, TikTok for Postiz integration.
+- [ ] **[P1-21]** `[Content]` (Antigravity) *(RICE: 10×9×0.8÷3 = 24.0)* - Test `TNTwise/REAL-Video-Enhancer` (or `VEnhancer`) GUI toolkit to fix waxy faces/artifacts in AI output.
+- [ ] **[P1-22]** `[Tech Ops]` (Antigravity) *(RICE: 8×9×0.7÷6 = 8.4)* - Integrate `Netflix VOID` for professional object interaction and physics scene reasoning on CapCut exports.
+- [ ] **[P1-23]** `[Content]` (Antigravity) *(RICE: 10×9×0.8÷4 = 18.0)* - Use `CharaConsist` to maintain Jasmine's physical consistency across all batch-generated videos.
+- [ ] **[P1-24]** `[Tech Ops]` (Antigravity) *(RICE: 8×8×0.9÷3 = 19.2)* - Build central ComfyUI post-prod pipeline via `ComfyUI-VideoHelperSuite`.
+
+### IDE & Workflow Upgrades
+- [ ] **[P1-25]** `[AI Ops]` (CEO) *(RICE: 10×8×1.0÷2 = 40)* - Install `claude-mem` + `token-savior` for persistent context saving and 97% reduced token usage.
+- [ ] **[P1-26]** `[AI Ops]` (Antigravity) *(RICE: 9×8×0.9÷3 = 21.6)* - Connect `ruflo` for multi-agent swarm orchestration inside Claude Code.
+- [ ] **[P1-27]** `[AI Ops]` (CEO) *(RICE: 10×9×1.0÷1 = 90)* - Inject `andrej-karpathy-skills` `CLAUDE.md` to enforce strict, surgical, goal-driven AI coding parameters.
+
 ---
 
 ## BACKLOG (Post $500 MRR)
