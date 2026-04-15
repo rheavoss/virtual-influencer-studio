@@ -1,44 +1,28 @@
 {
-  // ─── Foam: Knowledge Graph Settings ───────────────────────────────────────
-  // Controls which files appear in the Foam graph (Cmd+Shift+P → Foam: Show Graph)
-  // Excluded files still exist — they're just hidden from the visual graph to reduce noise.
-
   "foam.files.ignore": [
-    // Archive & historical docs — noise in graph, useful for humans to grep
     "00_agency/archive/**",
     "00_agency/session_logs/**",
-
-    // Raw transcript files (not analyses — those are in 10_research/transcripts/)
     "tmp/**",
-
-    // Training data caption files — not documents, just AI captions
     "03_ai_models/**/*.txt",
-
-    // Auto-generated / tool output
     "graphify-out/**",
-
-    // Credential files — sensitive, no reason in graph
     "12_credentials/**",
-
-    // Large JSON data blobs — not readable notes
     "10_research/platform_research/*.json",
-
-    // YouTube reference pipeline notes — low-value for graph navigation
-    "10_research/youtube_reference/**"
+    "10_research/youtube_reference/**",
+    "10_research/transcripts/**",
+    "20_tech/jasmine-dashboard/node_modules/**",
+    "20_tech/jasmine-dashboard/.next/**",
+    "20_tech/jasmine-dashboard/public/graph.html"
   ],
-
-  // ─── File Associations ─────────────────────────────────────────────────────
   "files.associations": {
     "*.md": "markdown"
   },
-
-  // ─── Explorer: hide noise from file tree ──────────────────────────────────
   "files.exclude": {
     "**/.DS_Store": true,
     "**/node_modules": true,
     "**/.next": true,
     "**/venv": true,
     "**/__pycache__": true,
-    "**/.vercel": true
+    "**/.vercel": true,
+    "**/graphify-out/cache": true
   }
 }

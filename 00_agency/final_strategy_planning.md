@@ -67,12 +67,12 @@ One term in the taxonomy must be corrected before any generation runs:
 
 **PERMANENT_CORE** (prepended to every prompt):
 ```
-photorealistic portrait photograph, Jasmine, 24-year-old East Asian woman who looks exactly 24, broad oval face with wide prominent cheekbones, East Asian almond eyes slightly hooded relaxed and natural, dark brown warm hazel irises, clean bare lashes no liner, medium thickness natural dark brows, medium straight-bridged nose with soft natural tip, medium fullness natural bare-pink lips soft natural shape, slender neck, soft moderately defined jawline, fair even-toned skin with warm neutral-peachy undertone no flush no redness anywhere, visible natural pores on cheeks and nose, 2-3 small acne marks on left cheek, no freckles, natural slight under-eye shadow, clean smooth forehead, matte natural skin finish zero skin smoothing, ONE single small red kiss mark tattoo on upper left chest below collarbone, very long dark uniform black-brown hair with slight natural waves falling loosely over both shoulders, slim petite frame, slender natural arms, DDD cup heavy natural bust with natural drop and weight deep cleavage, flat firm toned midsection, dramatically slim defined waist, full feminine hips, toned fit legs, slim busty hourglass figure — slim everywhere except the bust
+photorealistic portrait photograph, Jasmine, 24-year-old East Asian woman who looks exactly 24, broad oval face with wide prominent cheekbones, East Asian almond eyes slightly hooded relaxed and natural, dark brown warm hazel irises, clean bare lashes no liner, medium thickness natural dark brows, medium straight-bridged nose with soft natural tip, medium fullness natural bare-pink lips soft natural shape, slender neck, soft moderately defined jawline, fair even-toned skin with warm neutral-peachy undertone no flush no redness anywhere, visible natural pores on cheeks and nose, 2-3 small acne marks on left cheek, no freckles, natural slight under-eye shadow, clean smooth forehead, matte natural skin finish zero skin smoothing, very long dark uniform black-brown hair with slight natural waves falling loosely over both shoulders, slim petite frame, slender natural arms, DDD cup heavy natural bust with natural drop and weight deep cleavage, flat firm toned midsection, dramatically slim defined waist, full feminine hips, toned fit legs, slim busty hourglass figure — slim everywhere except the bust
 ```
 
 **STANDARD_NEGATIVE** (applied to every prompt):
 ```
-plastic skin, airbrushed skin, glass skin, porcelain skin, skin smoothing, beauty filter, rosy flush, pink cheeks, red cheeks, blushing, shiny skin, oily skin, heavy eyeliner, winged liner, heavy makeup, deformed, blurry, low quality, cartoon, anime, CGI, face morphing, different face, changed eye shape, small breasts, round belly, soft belly, fat belly, pot belly, thick waist, no waist definition, chubby arms, heavy arms, flabby arms, BBW, plus-size, obese, overweight, missing tattoo, two tattoos, extra tattoo, G-cup, extremely large breasts
+plastic skin, airbrushed skin, glass skin, porcelain skin, skin smoothing, beauty filter, rosy flush, pink cheeks, red cheeks, blushing, shiny skin, oily skin, heavy eyeliner, winged liner, heavy makeup, deformed, blurry, low quality, cartoon, anime, CGI, face morphing, different face, changed eye shape, small breasts, round belly, soft belly, fat belly, pot belly, thick waist, no waist definition, chubby arms, heavy arms, flabby arms, BBW, plus-size, obese, overweight, G-cup, extremely large breasts, tattoos
 ```
 
 ---
@@ -173,7 +173,7 @@ plastic skin, airbrushed skin, glass skin, porcelain skin, skin smoothing, beaut
     "id": "J012",
     "batch": 2,
     "label": "GFE POV — pillow close-up, messy bun",
-    "positive": "PERMANENT_CORE, sleepy natural expression soft gaze up at camera, lying on white pillow, hair in loose messy bun with strands falling around face, wearing oversized white tee slipping slightly off one shoulder, POV close-up shot from above head and upper chest, ONE red kiss mark tattoo visible on upper left chest, dim warm bedroom ambient light, matte skin natural pores acne marks visible, shot on iPhone 14, 4:5 portrait",
+    "positive": "PERMANENT_CORE, sleepy natural expression soft gaze up at camera, lying on white pillow, hair in loose messy bun with strands falling around face, wearing oversized white tee slipping slightly off one shoulder, POV close-up shot from above head and upper chest, dim warm bedroom ambient light, matte skin natural pores acne marks visible, shot on iPhone 14, 4:5 portrait",
     "negative": "STANDARD_NEGATIVE, full studio lighting, heavy makeup, hair perfectly neat",
     "resolution": "896x1120"
   },
@@ -189,7 +189,7 @@ plastic skin, airbrushed skin, glass skin, porcelain skin, skin smoothing, beaut
     "id": "J014",
     "batch": 2,
     "label": "GFE — lying sideways on white sheets, tee slipping off shoulder",
-    "positive": "PERMANENT_CORE, soft warm expression looking at camera lips naturally parted, lying on side on white bed sheets, wearing white oversized cotton tee slipping off one shoulder, ONE red kiss mark tattoo on upper left chest visible, DDD cup bust natural weight visible in side-lying position through loose fabric, very long dark hair spread loosely, morning window light soft diffused natural, shot on iPhone 14 eye level, 4:5 portrait",
+    "positive": "PERMANENT_CORE, soft warm expression looking at camera lips naturally parted, lying on side on white bed sheets, wearing white oversized cotton tee slipping off one shoulder, DDD cup bust natural weight visible in side-lying position through loose fabric, very long dark hair spread loosely, morning window light soft diffused natural, shot on iPhone 14 eye level, 4:5 portrait",
     "negative": "STANDARD_NEGATIVE, direct overhead lighting, studio flash, perfectly arranged sheets",
     "resolution": "896x1120"
   },
@@ -357,7 +357,7 @@ plastic skin, airbrushed skin, glass skin, porcelain skin, skin smoothing, beaut
     "id": "J035",
     "batch": 4,
     "label": "Desi — full saree traditional, sandstone architecture",
-    "positive": "PERMANENT_CORE, serene composed elegant expression direct confident gaze at camera, wearing deep teal silk saree with gold zari border elegantly draped showing slim flat bare midriff, fitted deep teal silk saree blouse plunging neckline, ONE red kiss mark tattoo on upper left chest visible, thin gold chain necklace small gold jhumka earrings thin gold bangles one wrist, standing upright elegant slight 3/4 body turn hands gently clasped saree drape naturally falling, outdoor Indian heritage sandstone courtyard carved pillars blurred warm stone background, soft warm late afternoon natural light gentle side light from left diffused golden-warm, shot on iPhone 14 85mm portrait lens, 4:5 portrait",
+    "positive": "PERMANENT_CORE, serene composed elegant expression direct confident gaze at camera, wearing deep teal silk saree with gold zari border elegantly draped showing slim flat bare midriff, fitted deep teal silk saree blouse plunging neckline, thin gold chain necklace small gold jhumka earrings thin gold bangles one wrist, standing upright elegant slight 3/4 body turn hands gently clasped saree drape naturally falling, outdoor Indian heritage sandstone courtyard carved pillars blurred warm stone background, soft warm late afternoon natural light gentle side light from left diffused golden-warm, shot on iPhone 14 85mm portrait lens, 4:5 portrait",
     "negative": "STANDARD_NEGATIVE, studio flash, modern setting, nipple visible",
     "resolution": "896x1120"
   },
@@ -365,7 +365,7 @@ plastic skin, airbrushed skin, glass skin, porcelain skin, skin smoothing, beaut
     "id": "J036",
     "batch": 4,
     "label": "Desi — saree close-up midriff and jewelry",
-    "positive": "PERMANENT_CORE, serene composed expression, wearing deep teal silk saree with gold zari border showing slim flat toned bare midriff between saree blouse and draped skirt, gold belly chain and traditional waist jewelry visible, ONE red kiss mark tattoo on upper left chest visible above saree blouse neckline, close-up half-body shot from mid-thigh to chin, outdoor warm afternoon light, shot on iPhone 14 50mm, 4:5 portrait",
+    "positive": "PERMANENT_CORE, serene composed expression, wearing deep teal silk saree with gold zari border showing slim flat toned bare midriff between saree blouse and draped skirt, gold belly chain and traditional waist jewelry visible, close-up half-body shot from mid-thigh to chin, outdoor warm afternoon light, shot on iPhone 14 50mm, 4:5 portrait",
     "negative": "STANDARD_NEGATIVE, round belly, soft belly, studio lighting, modern setting",
     "resolution": "896x1120"
   },
@@ -397,7 +397,7 @@ plastic skin, airbrushed skin, glass skin, porcelain skin, skin smoothing, beaut
     "id": "J040",
     "batch": 4,
     "label": "Hero shot — golden backlit outdoor, flowing dress, direct gaze",
-    "positive": "PERMANENT_CORE, serene composed confident expression direct gaze at camera, standing outdoors at golden hour, wearing fitted deep forest green wrap dress V-neckline midi length, DDD cup bust natural shape in wrap dress, slim waist defined, ONE red kiss mark tattoo on upper left chest visible above neckline, small gold hoop earrings, hair loose with slight movement, warm golden backlit sunlight from behind creating soft rim light on hair and shoulders, foreground slightly warm-toned ambient light on face, soft outdoor background with trees blurred, shot on iPhone 14 50mm, 4:5 portrait",
+    "positive": "PERMANENT_CORE, serene composed confident expression direct gaze at camera, standing outdoors at golden hour, wearing fitted deep forest green wrap dress V-neckline midi length, DDD cup bust natural shape in wrap dress, slim waist defined, small gold hoop earrings, hair loose with slight movement, warm golden backlit sunlight from behind creating soft rim light on hair and shoulders, foreground slightly warm-toned ambient light on face, soft outdoor background with trees blurred, shot on iPhone 14 50mm, 4:5 portrait",
     "negative": "STANDARD_NEGATIVE, studio lighting, nipple visible, flat grey background, heavy makeup",
     "resolution": "896x1120"
   }
@@ -439,7 +439,7 @@ The user already has Grok access via X.com. Grok includes free image generation 
 2. If Batch 1 face output matches character bible: proceed to Batches 2 and 4 on Civitai
 3. Run Batch 3 on RunPod ComfyUI — use `skip_nsfw_filter: true` in ComfyUI node settings
 4. QC all 40 images against the variety checklist in `jasmine_reference_prompts.json` before submitting to LoRA training
-5. Reject any image where: face has drifted, BBW body drift appears, tattoo is missing or doubled, flush/redness appears on face
+5. Reject any image where: face has drifted, BBW body drift appears, flush/redness appears on face
 
 **Antigravity, your move: review this dataset for creative variety gaps before we lock and execute.**
 
@@ -582,7 +582,7 @@ Every variable that defines Jasmine as a product. Source: `jasmine_character_bib
 | Skin tone | Fair, warm neutral-peachy — zero flush, zero redness, zero pink cast |
 | Skin finish | Matte natural — no glow, no shine (gym sweat and beach warmth are the only exceptions) |
 | Skin texture | Visible pores on cheeks/nose, 2–3 acne marks on LEFT cheek only, no freckles |
-| Tattoo | ONE red kiss mark, upper left chest below collarbone — mandatory when chest is visible |
+| Tattoo | None permanently locked in the base model. Temporary tattoos to be added manually during specific campaigns/events. |
 | Hair color | Very dark uniform black-brown, zero highlights |
 | Hair texture | Slight natural waves |
 | Hair length | Very long, past chest and shoulders |

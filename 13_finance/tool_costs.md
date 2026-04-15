@@ -26,9 +26,9 @@
 | Claude Code | AI strategy + ops | ₹4,000 ✅ | Monthly | Same as Phase 0 |
 | Calilio | US virtual number (Instagram verification walls) | ₹1,303 ✅ | Monthly | Same as Phase 0 |
 | Namecheap | Domain registration | ₹92 ✅ | Annual ÷ 12 | Same as Phase 0 |
-| Later.com | Social scheduling (Instagram + Facebook + X) | ₹1,675 | Monthly | Activates Month 2 — after first followers confirmed |
-| Metricool | Instagram + Facebook scheduler | ₹0 | Free tier | Standby until Later.com active, then redundant |
-| **Phase 1+ Base (confirmed)** | | **₹10,731/mo** | | All above (Later.com active from M2) |
+| SpicyChat AI Premium | DM/Chat automation generation (SFW/NSFW) | ₹1,260 | Monthly | Content Types 5 & 7 (Custom Dialogues/Roleplay) |
+| Metricool | Social scheduling (Instagram + Facebook + TikTok) | ₹0 | Free tier | Replaces Later.com; safe from shadowbans |
+| **Phase 1+ Base (confirmed)** | | **₹10,316/mo** | | All above (Metricool covers scheduling) |
 
 > ⚠️ ElevenLabs India pricing unconfirmed. Likely cheaper than USD × rate. Verify at elevenlabs.io/pricing before locking.
 
@@ -54,12 +54,12 @@
 | Phase | Base | Ads | Research | Buffer | Total |
 |---|---|---|---|---|---|
 | Phase 0 (setup, pre-launch) | ₹7,195 | ₹0 | ₹0 | ₹0 | **₹7,195** |
-| M1 (live, no Later.com yet) | ₹9,056 | ₹0 | ₹0 | ₹0 | **₹9,056** |
-| M2 (Later.com active) | ₹10,731 | ₹0 | ₹0 | ₹0 | **₹10,731** |
-| M3 | ₹10,731 | ₹3,000 | ₹3,000 | ₹0 | **₹16,731** |
-| M4–M5 | ₹10,731 | ₹6,000 | ₹3,000 | ₹0 | **₹19,731** |
-| M6–M7 | ₹10,731 | ₹6,000 | ₹5,000 | ₹0 | **₹21,731** |
-| M8–M9 | ₹10,731 | ₹6,000 | ₹5,000 | ₹1,500 | **₹23,231** |
-| M10+ | ₹10,731 | ₹6,000 | ₹8,000 | ₹1,500 | **₹26,231** |
+| M1 (live, no ads yet)       | ₹10,316 | ₹0 | ₹0 | ₹0 | **₹10,316** |
+| M2 (live)                   | ₹10,316 | ₹0 | ₹0 | ₹0 | **₹10,316** |
+| M3                          | ₹10,316 | ₹3,000 | ₹3,000 | ₹0 | **₹16,316** |
+| M4–M5                       | ₹10,316 | ₹6,000 | ₹3,000 | ₹0 | **₹19,316** |
+| M6–M7                       | ₹10,316 | ₹6,000 | ₹5,000 | ₹0 | **₹21,316** |
+| M8–M9                       | ₹10,316 | ₹6,000 | ₹5,000 | ₹1,500 | **₹22,816** |
+| M10+                        | ₹10,316 | ₹6,000 | ₹8,000 | ₹1,500 | **₹25,816** |
 
-> M1 base = ₹9,056 because Higgsfield upgrades to $29 at Phase 1 but Later.com starts Month 2 (after first followers confirmed).
+> M1 base = ₹10,316 because Higgsfield upgrades to $29 and SpicyChat ($15) is fully active for subscriber DMs.

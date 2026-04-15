@@ -8,7 +8,7 @@
 ## POSITIVE PROMPT
 
 ```
-photorealistic portrait photograph, Jasmine, 24-year-old East Asian woman who looks exactly 24, broad oval face with wide prominent cheekbones, East Asian almond eyes slightly hooded relaxed and natural, dark brown warm hazel irises, clean bare lashes no liner, medium thickness natural dark brows, medium straight-bridged nose with soft natural tip, medium fullness natural bare-pink lips soft natural shape, soft moderately defined jawline, slender neck, fair even-toned skin with warm neutral-peachy undertone no flush no redness anywhere, visible natural pores on cheeks and nose, 2-3 small acne marks on left cheek, natural slight under-eye shadow, clean smooth forehead, matte natural skin finish zero skin smoothing, ONE single small red kiss mark tattoo on upper left chest below collarbone, very long dark uniform black-brown poker straight silky hair falling in clean panels over both shoulders, slim petite frame, slender natural arms, DDD cup heavy natural bust with natural drop and weight deep cleavage, flat firm toned midsection, dramatically slim defined waist, full feminine hips, toned fit legs, slim busty hourglass figure — slim everywhere except the bust,
+photorealistic portrait photograph, Jasmine, 24-year-old East Asian woman who looks exactly 24, broad oval face with wide prominent cheekbones, East Asian almond eyes slightly hooded relaxed and natural, dark brown warm hazel irises, clean bare lashes no liner, medium thickness natural dark brows, medium straight-bridged nose with soft natural tip, medium fullness natural bare-pink lips soft natural shape, soft moderately defined jawline, slender neck, fair even-toned skin with warm neutral-peachy undertone no flush no redness anywhere, visible natural pores on cheeks and nose, 2-3 small acne marks on left cheek, natural slight under-eye shadow, clean smooth forehead, matte natural skin finish zero skin smoothing, very long dark uniform black-brown poker straight silky hair falling in clean panels over both shoulders, slim petite frame, slender natural arms, DDD cup heavy natural bust with natural drop and weight deep cleavage, flat firm toned midsection, dramatically slim defined waist, full feminine hips, toned fit legs, slim busty hourglass figure — slim everywhere except the bust,
 
 [INSERT OUTFIT HERE],
 
@@ -20,7 +20,7 @@ shot on iPhone 14, soft overcast natural daylight, no direct sunlight, matte nat
 ## NEGATIVE PROMPT
 
 ```
-rosy flush, pink cheeks, red cheeks, blushing, flushed skin, redness on face, shiny skin, glossy skin, oily skin, wet skin, plastic skin, airbrushed skin, porcelain skin, beauty filter, skin smoothing, studio lighting, ring light, beauty lighting, HDR, over-exposed highlights, artificial light glow, backlit halo, cinematic lighting, dramatic lighting, heavy makeup, winged eyeliner, different face, face morphing, round belly, soft belly, fat belly, pot belly, BBW, BBW body, plus-size, obese, overweight, thick waist, no waist definition, chubby arms, heavy arms, flabby arms, wide hips, thick thighs, small breasts, cartoon, anime, CGI, low quality, blurry, deformed, freckles, extra tattoo, two kiss tattoos, missing tattoo, double lip tattoo
+rosy flush, pink cheeks, red cheeks, blushing, flushed skin, redness on face, shiny skin, glossy skin, oily skin, wet skin, plastic skin, airbrushed skin, porcelain skin, beauty filter, skin smoothing, studio lighting, ring light, beauty lighting, HDR, over-exposed highlights, artificial light glow, backlit halo, cinematic lighting, dramatic lighting, heavy makeup, winged eyeliner, different face, face morphing, round belly, soft belly, fat belly, pot belly, BBW, BBW body, plus-size, obese, overweight, thick waist, no waist definition, chubby arms, heavy arms, flabby arms, wide hips, thick thighs, small breasts, cartoon, anime, CGI, low quality, blurry, deformed, freckles, , , , 
 ```
 
 ---
@@ -71,7 +71,7 @@ rosy flush, pink cheeks, red cheeks, blushing, flushed skin, redness on face, sh
 - Always include `matte natural skin finish, visible skin pores, zero skin smoothing`
 - Always include `shot on iPhone 14, slight film grain`
 - Lips are always **natural bare pink-brown tone** — never dark berry, never glossy rosy-pink, never nude-white
-- Kiss mark tattoo is always on the **upper LEFT chest below collarbone** — only one, never two
+
 - Face always has wide prominent cheekbones and broad oval structure — never round, never narrow
 - Eyes are East Asian almond, slightly hooded, relaxed — never wide-open anime eyes, never narrow
 - Nose is medium straight-bridged — never upturned button, never wide

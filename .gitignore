@@ -31,3 +31,15 @@ secrets.json
 *.avi
 *.wav
 *.mp3
+
+# Critical OpSec: Do not track plain-text credentials in git
+12_credentials/
+
+# Giant model/image directories (To be handled by DVC, not Git)
+03_ai_models/
+30_dataset/
+01_characters/
+02_reference_images/
+tmp/
+*.safetensors
+*.ckpt

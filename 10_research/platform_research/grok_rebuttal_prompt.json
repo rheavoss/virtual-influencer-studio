@@ -1,0 +1,78 @@
+{
+  "role": "user",
+  "intent": "Challenge AI Tooling Suggestions & Finalize Pipeline",
+  "project_context": {
+    "name": "Jasmine Mako",
+    "business_model": "AI Influencer running an uncensored 'Girlfriend Experience' (GFE) funnel from Instagram (SFW/Edge-of-TOS) to Fanvue (NSFW/Paywalled).",
+    "goal": "Reach $2,000 MRR as quickly as possible.",
+    "core_requirement": "Tools must allow 'Instagram Edge' content (bikinis, deep cleavage, seductive poses, sheer fabric) without triggering safety filters, bans, or account blocks."
+  },
+  "content_types_to_produce": [
+    {
+      "type": "1. Static Images",
+      "purpose": "Instagram feed, Stories, and Fanvue paywalled photo sets.",
+      "composition": "Image only",
+      "tools_used": "FLUX.2 Custom LoRA via Civitai / Grok (ensures permanent identity and tattoo lock)."
+    },
+    {
+      "type": "2. Reels Without Dialogue",
+      "purpose": "Viral clone videos, motion transfers, trending audio dances, and B-roll.",
+      "composition": "Video + Background Music",
+      "tools_used": "Higgsfield (Wan 2.6 for uncensored motion) + CapCut (Audio/Color Correction)."
+    },
+    {
+      "type": "3. Reels With Dialogue & Lip Movement",
+      "purpose": "Talking heads, direct-to-camera engagement, life updates.",
+      "composition": "Video + Spoken Audio + Lip Sync",
+      "tools_used": "Higgsfield (Seedream/S2V) + ElevenLabs (To train and use a custom Hindi-speaking voice model)."
+    },
+    {
+      "type": "4. Product Advertisements",
+      "purpose": "Sponsorships and UGC brand deals.",
+      "composition": "Static Product Image merged into Video + Voiceover / Lip Sync",
+      "tools_used": "FLUX.2 (to merge product into Jasmine's hand) + Higgsfield + ElevenLabs."
+    },
+    {
+      "type": "5. Custom Dialogues & PPV",
+      "purpose": "Fanvue pay-per-view requests and personalized subscriber video/voice notes.",
+      "composition": "Spoken Audio OR Video + Spoken Audio",
+      "tools_used": "SpicyChat Premium (to generate the unhinged/custom script response) + ElevenLabs (Custom Hindi Model) + Higgsfield."
+    },
+    {
+      "type": "6. Outfit Transitions / GRWM",
+      "purpose": "High-retention Reels showing multiple outfits (e.g., Gym to Club).",
+      "composition": "Video + Transitions + Optional Voiceover",
+      "tools_used": "FLUX.2 (to generate the outfit base images) + Higgsfield VACE (to chain transitions) + ElevenLabs."
+    },
+    {
+      "type": "7. Text Roleplay & Automations",
+      "purpose": "Daily Fanvue DM chatting and engagement.",
+      "composition": "Text + Triggered Static Selfies",
+      "tools_used": "SpicyChat Premium (SFW/NSFW memory roleplay) + FLUX.2."
+    }
+  ],
+  "our_current_internal_stack": {
+    "image_generation": "Civitai + Custom FLUX.2 LoRA (Identity & Tattoo locked)",
+    "video_generation": "Higgsfield AI (Wan 2.6 / Seedream 4.0 models) - cost $29/mo (~₹2,699/mo) Creator Tier",
+    "voice_generation": "ElevenLabs (Custom Hindi Voice Model) - cost $5/mo (~₹420/mo)",
+    "operations_and_strategy": "Claude Code API - cost ~$48/mo (~₹4,000/mo)",
+    "infrastructure": "Calilio (US Phone Number) + Namecheap (Domain Redirect) - cost ~$16/mo (~₹1,395/mo)",
+    "social_scheduling": "Later.com (starting Month 2) - cost ~$20/mo (~₹1,675/mo)"
+  },
+  "grok_previous_suggestions": {
+    "video_generation": "Kling 3.0 (Standard Plan $7 - $10)",
+    "chat_automation": "SpicyChat AI Premium ($15)",
+    "social_scheduling": "Metricool ($0 - $15)"
+  },
+  "our_objections_and_context": [
+    "1. KLING 3.0 CENSORSHIP: We rejected your suggestion of Kling 3.0 because, according to our rigorous YouTube and platform research, Kling has strict NSFW/Safety filters. Our funnel requires 'Edge-of-TOS' content (lingerie, seductive motion) to convert Instagram users to Fanvue. Kling will block these prompts, breaking our funnel. We selected Higgsfield specifically because its Wan 2.6 and Seedream 4.0 models are near-uncensored and allow Character Swapping on NSFW reference material.",
+    "2. SPICYCHAT AI ADDITION: We previously planned to handle chat/DMs manually or via Anthropic API. You suggested adding SpicyChat AI Premium for $15/mo. We are open to this, but need to know exactly how a 3rd party AI chatting app integrates seamlessly into Fanvue subscriber DMs without massive manual copy-pasting.",
+    "3. HIDDEN OVERHEADS: Your original pricing table completely ignored mandatory operational infrastructure (Calilio US Virtual Numbers for IG verification bypass, Domains for Carrd.co redirect pipelines to protect against shadowbans, etc.)."
+  ],
+  "direct_questions_for_grok": [
+    "Question 1: Look at the 'content_types_to_produce' array. Given that Kling 3.0 aggressively censors seductive content, how do you defend suggesting it for an influencer funnel that completely relies on 'Reels Without Dialogue' and 'Reels With Dialogue' featuring edge-of-TOS bikini/lifestyle content? Do you concede that Higgsfield is the superior, necessary choice for this specific business model despite the $29/mo cost?",
+    "Question 2: Regarding your SpicyChat AI Premium ($15/mo) suggestion—how exactly does SpicyChat fulfill Content Type 5 (Custom Dialogues) and 7 (Text Roleplay)? Does Fanvue have an API for this, or were you assuming we would manually copy-paste every DM between Fanvue and SpicyChat?",
+    "Question 3: If we utilize Metricool's free tier instead of Later.com, are there any shadowban or API penalty risks on Instagram for an AI influencer account posting highly seductive content via a scheduler rather than native posting?",
+    "Question 4: Now that you have our full infrastructure context, the 7 required content types, the requirement for a Custom Hindi ElevenLabs model, and our censorship objections, please provide an updated, highly-critical assessment of our pipeline. Find any remaining 'single points of failure' in our stack that we have missed."
+  ]
+}

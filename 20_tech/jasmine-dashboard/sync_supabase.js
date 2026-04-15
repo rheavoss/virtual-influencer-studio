@@ -1,0 +1,43 @@
+// sync_supabase.js — Run with: node sync_supabase.js
+// Upserts the canonical fallback-data into Supabase so the live dashboard reflects current figures.
+
+const SUPABASE_URL = 'https://vvyexzbtkncitgzraath.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZ2eWV4emJ0a25jaXRnenJhYXRoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU4MjE1MTgsImV4cCI6MjA5MTM5NzUxOH0.u4nztJnikUZjfdc494JA9kGdknG6aaPtj4NNVkdvKv0';
+
+const DATA = [
+  { month:  1, label:'M1',  fanvue:   14893, room11:      0, passes:   3723, ppv_voice:   4654, telegram:      0, brand:       0, ig_subs:      0, fb_subs:      0, higgsfield: 2699, elevenlabs: 420, grok: 542, claude_code: 4000, spicychat: 1260, carrd: 147, dolphin: 930, meta_ads:    0, research:    0, buffer:    0, calilio: 1303, namecheap:  92 },
+  { month:  2, label:'M2',  fanvue:   55848, room11:   8000, passes:  14893, ppv_voice:  13962, telegram:      0, brand:       0, ig_subs:      0, fb_subs:      0, higgsfield: 2699, elevenlabs: 0, grok: 542, claude_code: 4000, spicychat: 1260, carrd: 147, dolphin: 930, meta_ads:    0, research:    0, buffer:    0, calilio: 1303, namecheap:  92 },
+  { month:  3, label:'M3',  fanvue:  130312, room11:  18000, passes:  37232, ppv_voice:  37697, telegram:      0, brand:       0, ig_subs:      0, fb_subs:      0, higgsfield: 2699, elevenlabs: 0, grok: 542, claude_code: 4000, spicychat: 1260, carrd: 147, dolphin: 930, meta_ads: 3000, research: 3000, buffer:    0, calilio: 1303, namecheap:  92 },
+  { month:  4, label:'M4',  fanvue:  204776, room11:  28000, passes:  65156, ppv_voice:  65156, telegram:      0, brand:       0, ig_subs:  36000, fb_subs:      0, higgsfield: 2699, elevenlabs: 0, grok: 542, claude_code: 4000, spicychat: 1260, carrd: 147, dolphin: 930, meta_ads: 6000, research: 3000, buffer:    0, calilio: 1303, namecheap:  92 },
+  { month:  5, label:'M5',  fanvue:  297856, room11:  40000, passes: 102388, ppv_voice:  88426, telegram:      0, brand:       0, ig_subs:  60000, fb_subs:  25000, higgsfield: 2699, elevenlabs: 0, grok: 542, claude_code: 4000, spicychat: 1260, carrd: 147, dolphin: 930, meta_ads: 6000, research: 3000, buffer:    0, calilio: 1303, namecheap:  92 },
+  { month:  6, label:'M6',  fanvue:  390936, room11:  52000, passes: 148928, ppv_voice: 111696, telegram:  67200, brand:       0, ig_subs:  90000, fb_subs:  45000, higgsfield: 2699, elevenlabs: 0, grok: 542, claude_code: 4000, spicychat: 1260, carrd: 147, dolphin: 930, meta_ads: 6000, research: 5000, buffer:    0, calilio: 1303, namecheap:  92 },
+  { month:  7, label:'M7',  fanvue:  521248, room11:  68000, passes: 204776, ppv_voice: 148928, telegram:  96600, brand:   21000, ig_subs: 120000, fb_subs:  70000, higgsfield: 2699, elevenlabs: 0, grok: 542, claude_code: 4000, spicychat: 1260, carrd: 147, dolphin: 930, meta_ads: 6000, research: 5000, buffer:    0, calilio: 1303, namecheap:  92 },
+  { month:  8, label:'M8',  fanvue:  651560, room11:  85000, passes: 260624, ppv_voice: 186160, telegram: 126000, brand:   42000, ig_subs: 150000, fb_subs: 100000, higgsfield: 2699, elevenlabs: 0, grok: 542, claude_code: 4000, spicychat: 1260, carrd: 147, dolphin: 930, meta_ads: 6000, research: 5000, buffer: 1500, calilio: 1303, namecheap:  92 },
+  { month:  9, label:'M9',  fanvue:  791180, room11: 100000, passes: 316472, ppv_voice: 232700, telegram: 155400, brand:   84000, ig_subs: 180000, fb_subs: 130000, higgsfield: 2699, elevenlabs: 0, grok: 542, claude_code: 4000, spicychat: 1260, carrd: 147, dolphin: 930, meta_ads: 6000, research: 5000, buffer: 1500, calilio: 1303, namecheap:  92 },
+  { month: 10, label:'M10', fanvue:  930800, room11: 115000, passes: 372320, ppv_voice: 279240, telegram: 184800, brand:  126000, ig_subs: 210000, fb_subs: 160000, higgsfield: 2699, elevenlabs: 0, grok: 542, claude_code: 4000, spicychat: 1260, carrd: 147, dolphin: 930, meta_ads: 6000, research: 8000, buffer: 1500, calilio: 1303, namecheap:  92 },
+  { month: 11, label:'M11', fanvue: 1070420, room11: 130000, passes: 446784, ppv_voice: 349050, telegram: 226800, brand:  168000, ig_subs: 240000, fb_subs: 190000, higgsfield: 2699, elevenlabs: 0, grok: 542, claude_code: 4000, spicychat: 1260, carrd: 147, dolphin: 930, meta_ads: 6000, research: 8000, buffer: 1500, calilio: 1303, namecheap:  92 },
+  { month: 12, label:'M12', fanvue: 1210040, room11: 150000, passes: 521248, ppv_voice: 418860, telegram: 268800, brand:  210000, ig_subs: 270000, fb_subs: 220000, higgsfield: 2699, elevenlabs: 0, grok: 542, claude_code: 4000, spicychat: 1260, carrd: 147, dolphin: 930, meta_ads: 6000, research: 8000, buffer: 1500, calilio: 1303, namecheap:  92 },
+];
+
+async function sync() {
+  console.log('🚀 Syncing', DATA.length, 'rows to Supabase...');
+  const res = await fetch(`${SUPABASE_URL}/rest/v1/jasmine_pnl`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'apikey': SUPABASE_ANON_KEY,
+      'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+      'Prefer': 'resolution=merge-duplicates',
+    },
+    body: JSON.stringify(DATA),
+  });
+
+  if (res.ok) {
+    console.log('✅ Supabase sync successful! Status:', res.status);
+  } else {
+    const err = await res.text();
+    console.error('❌ Supabase sync failed:', res.status, err);
+  }
+}
+
+sync();

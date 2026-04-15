@@ -220,7 +220,7 @@
 | Passes: 200 subs × $20 | $4,000 |
 | PPV + voice notes | $3,000 |
 | Telegram VIP | $2,200 |
-| Brand deals (2–3/mo) | $1,500 |
+| Brand deals / Affiliate UGC | $1,500 |
 | **Total MRR** | **~$20,700** |
 
 **✅ $20,000 MRR milestone hit — Month 10 (ahead of target)**
@@ -245,7 +245,7 @@
 | Passes: 280 subs × $20 | $5,600 |
 | PPV + voice notes | $4,500 |
 | Telegram VIP | $3,200 |
-| Brand deals (3–5/mo) | $2,500 |
+| Brand deals / Affiliate / YT Interviews | $2,500 |
 | **Gross MRR** | **~$28,800** |
 
 | After Platform Cuts | Amount |

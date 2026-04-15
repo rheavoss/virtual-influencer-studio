@@ -37,6 +37,7 @@ This is where the traffic is harvested. The paywall layer receives the *extended
 | **Fanvue / Patreon** | PPV (Pay Per View) Message | Any | Image/Video/Audio | The "Tease & Reward" loop. |
 | **Fanvue / Patreon** | Feed Post | Any | Image/Video | Exclusive subscriber retention content. |
 | **Facebook** | Subscriber Only Hub | 9:16 or 4:5 | Image/Video | Native monetization without clicking off-platform. |
+| **Room 11** | Managed Chat / CRM | Any | Image/Video Output | Secondary funnel via Carrd.co. High-intent managed DMs (60% split). |
 
 ## Maximum Efficiency Rule:
 **Never render in 16:9 (Landscape) or 1:1 (Square) natively.** 

@@ -3,6 +3,6 @@
 
 ## Monthly Revenue
 
-| Month | Fanvue Subs (₹) | Brand Deals (₹) | Other (₹) | Total (₹) | Costs (₹) | Net (₹) |
-|---|---|---|---|---|---|---|
-| Apr 2026 | 0 | 0 | 0 | 0 | ~865 | -865 |
+| Month | Fanvue Subs (₹) | Room 11 (60%) (₹) | Brand Deals (₹) | Other (₹) | Total (₹) | Phase Costs (₹) | Net (₹) |
+|---|---|---|---|---|---|---|---|
+| Apr 2026 | 0 | 0 | 0 | 0 | 0 | ~10,316 | -10,316 |
