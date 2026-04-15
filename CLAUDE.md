@@ -1,7 +1,7 @@
 # Jasmine Project — Claude Code Briefing
 
 > Auto-loaded at the start of every session. Keep this current.  
-> Last updated: 2026-04-11 (Session 04)
+> Last updated: 2026-04-15 (Session 06 — Karpathy Protocol + Vercel alias fix)
 
 ---
 
@@ -150,7 +150,7 @@ Instagram bio link chain: **IG bio → Namecheap domain → Cloudflare (DNS) →
 
 ## Active Build: Vercel P&L Dashboard — LIVE ✅
 
-**Production URL:** https://jasmine-dashboard-lovat.vercel.app  
+**Production URL:** https://virtual-influencer-dashboard.vercel.app ✅ (verified live 2026-04-15)  
 **Stack:** Next.js 14 + Supabase + Vercel  
 **Directory:** `20_tech/jasmine-dashboard/`  
 **GitHub repo:** `rheavoss/jasmine-project` (private) · Vercel rootDirectory: `20_tech/jasmine-dashboard`  
