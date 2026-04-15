@@ -110,13 +110,13 @@
 
 ### Building Components
 1. Pinterest reference images for location (Goa beach, Himalayan trail, luxury hotel)
-2. Jasmine reference + location mood board → Wan Animate multi-reference
+2. Jasmine reference + location mood board → Wan Animate multi-reference OR Higgsfield Seedance 2.0
 3. Optional ambient OmniVoice narration ("three days in Goa was everything I needed")
 4. iPhone-style grain filter (CapCut)
 5. OPSEC
 
 ### Tools
-`Pinterest → Flux Kontext → OmniVoice (optional) → CapCut`
+`Pinterest → Flux Kontext OR Higgsfield Seedance 2.0 → OmniVoice (optional) → CapCut`
 
 ---
 
@@ -189,6 +189,7 @@ Slide 4: standing by mirror, gym bag on shoulder, ready to leave
 | OmniVoice (Colab) | 3, 4, 5, 6, 7 | ₹0 |
 | Flux Kontext 9B (via Fal.ai) | 1, 8 | ~₹25 |
 | Claude Code API | 7 (Ad generation) | Variable |
+| Higgsfield Seedance 2.0 | 5 (High-Status Motion) | Included in $9/mo sub |
 
 | Meta AI Image (meta.ai) | Quick concept tests | ₹0 |
 | CapCut | All | ₹0 |
