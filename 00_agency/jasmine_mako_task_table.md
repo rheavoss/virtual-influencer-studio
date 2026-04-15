@@ -2,7 +2,7 @@
 **Updated:** 2026-04-12 (Session 05 — Agent Routing & RICE Matrix applied)
 
 **Legend:**
-- **Assignee:** [Antigravity] (Code/Workflows/OpSec), [Claude Code] (Text Prompts/Strategy/Scraping), [CEO] (Physical accounts/Payments).
+- **Assignee:** [Antigravity] (Code/Workflows/OpSec), [Claude Code] (Text Prompts/Scripting), [Grok] (Market Intel/Trends/X & Web Research), [CEO] (Physical accounts/Payments).
 - **RICE Score:** Reach (1-10) × Impact (1-10) × Confidence (0-100%) ÷ Effort (1-10) = Priority Score. Higher is better.
 
 ---
@@ -62,7 +62,7 @@
 ### Content & Growth
 - [ ] **[P1-03]** `[Growth]` (CEO) *(RICE: 9×8×0.8÷2 = 28.8)* - Turn on $5/day IG Boost for static images.
 - [ ] **[P1-04]** `[Tech Ops]` (Antigravity) *(RICE: 10×9×0.8÷6 = 12)* - Set up Apify + Context7 automated competitor reel scraper.
-- [ ] **[P1-05]** `[Strategy]` (Claude) *(RICE: 10×8×0.9÷4 = 18)* - Configure `/jasmine-ideas` parallel trend search skill in Claude Code.
+- [ ] **[P1-05]** `[Strategy]` (Grok) *(RICE: 10×8×0.9÷4 = 18)* - Execute daily X/Reddit trend sweeps for /jasmine-ideas via live web access.
 - [ ] **[P1-06]** `[Strategy]` (Claude) *(RICE: 10×9×0.9÷5 = 16.2)* - Create 'Video Prompt Builder' Skill (15-second chunk mapping).
 - [ ] **[P1-07]** `[AI Ops]` (Antigravity) *(RICE: 10×10×0.8÷6 = 13.3)* - Execute First Reel (3-Image Omni-Reference) via Higgsfield.
 - [ ] **[P1-08]** `[AI Ops]` (Antigravity) *(RICE: 10×10×0.9÷4 = 22.5)* - **SPOF Fix:** Create Antigravity `.md` Skill file to automate A-roll/B-roll product ads via Claude + Higgsfield API.
@@ -73,7 +73,7 @@
 - [ ] **[P1-11]** `[Tech Ops]` (Antigravity) *(RICE: 10×9×0.9÷4 = 20.2)* - Connect Hermes-Agent to Telegram for remote ops.
 - [ ] **[P1-12]** `[Tech Ops]` (Antigravity) *(RICE: 10×8×0.7÷6 = 9.3)* - **SPOF Fix:** Build Zapier/Browser script to pipe SpicyChat responses into Fanvue automatically.
 - [ ] **[P1-13]** `[Tech Ops]` (Antigravity) *(RICE: 10×8×0.8÷5 = 12.8)* - Build ManyChat automation for IG DMs routing to Fanvue.
-- [ ] **[P1-14]** `[Tech Ops]` (Antigravity) *(RICE: 10×9×0.9÷5 = 16.2)* - **Grok Workflow:** Build Playwright Headless Script to query X/Grok UI for daily trends without API costs.
+- [ ] **[P1-14]** `[Market Intel]` (Grok) *(RICE: 10×9×0.9÷5 = 16.2)* - **Grok Workflow:** Operate Playwright Headless Script to query X/Grok UI for daily trends without API costs.
 
 ### Payment Infrastructure & Geo-Routing
 - [ ] **[P1-15]** `[Tech Ops]` (Antigravity) *(RICE: 10×9×1.0÷2 = 45)* - Implement `middleware.ts` on Vercel for Cashfree (IN) vs. WHOP (Intl) geo-routing.
