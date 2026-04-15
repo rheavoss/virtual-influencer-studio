@@ -1,93 +1,90 @@
 # Jasmine Mako — Phase 0 & Phase 1 Execution Pipeline
-**Updated:** 2026-04-11 (Session 04 — Dataset complete, LoRA training next)
+**Updated:** 2026-04-12 (Session 05 — Agent Routing & RICE Matrix applied)
+
+**Legend:**
+- **Assignee:** [Antigravity] (Code/Workflows/OpSec), [Claude Code] (Text Prompts/Strategy/Scraping), [CEO] (Physical accounts/Payments).
+- **RICE Score:** Reach (1-10) × Impact (1-10) × Confidence (0-100%) ÷ Effort (1-10) = Priority Score. Higher is better.
+
+---
 
 ## PHASE 0: LAUNCH & ASSETS
 
 ### Infrastructure & Approvals
-- [x] Tech stack finalized and pricing verified (Higgsfield Plus $29/mo).
-- [x] Initial Jasmine Mako Character Bible locked and saved — **v2.1 (2026-04-11): dual kiss marks, straight silky hair**.
-- [x] Image Generation 40-prompt JSON Matrix locked (Batch 1 SFW + Batch 2/3 NSFW).
-- [x] Batch Generation script developed (`jasmine_batch_generator.py`).
-- [x] **P0-01 COMPLETE: 47-image hybrid LoRA training dataset assembled** — 40 curated body/pose images (suhuuu) + 7 Grok East Asian face anchors. Stored in `03_ai_models/jasmine/training_data/training_ready/`.
-- [x] **Character Card written** (`01_characters/jasmine/jasmine_character_card.md`) — ready for SpicyChat/Janitor AI deployment.
-- [ ] **P0-03 ACTIVE — NEXT: Train Jasmine Flux.1 LoRA** using the 47-image dataset. See training section below.
-- [ ] CEO to physically subscribe to Higgsfield Starter ($9/mo) for Phase 0; upgrade to Plus ($29/mo) at Phase 1 launch.
-- [ ] CEO to verify presence of Veo 3.1 in Higgsfield video models.
-- [ ] Google One annual plan — CEO to confirm price and prorate monthly.
+- [x] **[P0-01]** `[Exec Dept]` (CEO) *(RICE: N/A - Done)* - Tech stack finalized and pricing verified.
+- [x] **[P0-02]** `[Strategy]` (Claude) *(RICE: N/A - Done)* - Character Bible locked (v2.1).
+- [x] **[P0-03]** `[Content]` (Claude) *(RICE: N/A - Done)* - Image Generation 40-prompt JSON Matrix locked.
+- [x] **[P0-04]** `[AI Ops]` (Antigravity) *(RICE: N/A - Done)* - Batch Generation script developed (`jasmine_batch_generator.py`).
+- [x] **[P0-05]** `[Content]` (Antigravity) *(RICE: N/A - Done)* - 47-image hybrid LoRA training dataset assembled and curated.
+- [x] **[P0-06]** `[Strategy]` (Claude) *(RICE: N/A - Done)* - Character Card written.
+- [ ] **[P0-07]** `[AI Ops]` (Antigravity) *(RICE: 10×10×1.0÷3 = 33.3)* - **NEXT:** Train Jasmine Flux.2 LoRA using the 47-image dataset.
+- [ ] **[P0-08]** `[Exec Dept]` (CEO) *(RICE: 10×10×1.0÷1 = 100)* - Subscribe to Higgsfield Starter ($9/mo) for Phase 0.
+- [ ] **[P0-09]** `[Strategy]` (CEO) *(RICE: 5×8×1.0÷1 = 40)* - Verify presence of Veo 3.1 in Higgsfield video models.
 
-### Link-in-Bio Setup (Carrd.co chain — Link.me DEAD)
-> **Why:** Instagram 2026 chain-banning detected on Link.me and mother-daughter account method. Safe chain = IG bio → Namecheap domain → Cloudflare DNS → Carrd.co page.
-
-- [ ] Register domain on Namecheap (₹92/mo prorated from annual plan).
-- [ ] Configure Cloudflare DNS — point domain to Carrd.co.
-- [ ] Build Carrd.co link-in-bio page (copy from Antigravity — pending Move 12 item 3).
-- [ ] Add Carrd.co redirect URL to Instagram bio at account launch.
+### Link-in-Bio Setup 
+- [ ] **[P0-10]** `[Exec Dept]` (CEO) *(RICE: 10×8×1.0÷2 = 40)* - Register domain on Namecheap.
+- [ ] **[P0-11]** `[Tech Ops]` (Antigravity) *(RICE: 10×9×1.0÷2 = 45)* - Configure Cloudflare DNS redirect to Carrd.co.
+- [ ] **[P0-12]** `[Tech Ops]` (Antigravity) *(RICE: 10×8×0.9÷3 = 24)* - Build Carrd.co link-in-bio page.
+- [ ] **[P0-13]** `[Exec Dept]` (CEO) *(RICE: 10×10×1.0÷1 = 100)* - Add Carrd.co redirect URL to Instagram bio.
 
 ### Social Media Pre-Launch
-- [ ] Buy Calilio standard plan (₹1,303/mo: $12 seat + $2 US number) — acquire 1 US local number for Instagram account creation + SMS verification walls.
-- [ ] Create `@jasmine.mako` Instagram account using physical device (single account — Phase 0 physical phone is safe).
-- [ ] Implement 72-hour interaction-only warmup (NO LINKS). Watch competitors; do not comment/like.
-- [ ] Day 4–7: Post 1 SFW photo daily.
+- [ ] **[P0-14]** `[Exec Dept]` (CEO) *(RICE: 10×10×1.0÷1 = 100)* - Buy Calilio standard plan (US virtual number).
+- [ ] **[P0-15]** `[Exec Dept]` (CEO) *(RICE: 10×10×1.0÷2 = 50)* - Create `@jasmine.mako` IG account using physical device.
+- [ ] **[P0-16]** `[Growth]` (CEO) *(RICE: 10×8×0.9÷4 = 18)* - Implement 72-hour interaction-only warmup (No links).
+- [ ] **[P0-17]** `[Growth]` (CEO) *(RICE: 10×10×1.0÷3 = 33)* - Day 4–7: Post 1 SFW photo daily.
 
 ### OPSEC Pipeline
-- [ ] P0-07: Build ExifTool strip + film grain pipeline (Claude writes script — `20_tech/opsec_pipeline.py` or similar).
-- [ ] Test pipeline on sample image before any upload.
+- [ ] **[P0-18]** `[Tech Ops]` (Antigravity) *(RICE: 10×10×0.9÷4 = 22.5)* - Build ExifTool strip + film grain python pipeline.
+- [ ] **[P0-19]** `[Tech Ops]` (Antigravity) *(RICE: 10×10×1.0÷2 = 50)* - Test OPSEC pipeline on sample image before upload.
 
-### Fanvue + Passes + X/Twitter (Day 1 simultaneous launch — LOCKED)
-- [ ] Set up Fanvue account + subscription pricing (Antigravity → CEO).
-- [ ] Mirror on Passes.
-- [ ] X/Twitter SFW teasers account live.
+### Fanvue + Passes + X/Twitter (Day 1)
+- [ ] **[P0-20]** `[Exec Dept]` (CEO) *(RICE: 10×10×1.0÷3 = 33)* - Set up Fanvue account + subscription pricing.
+- [ ] **[P0-21]** `[Exec Dept]` (CEO) *(RICE: 8×7×1.0÷2 = 28)* - Mirror account on Passes.
+- [ ] **[P0-22]** `[Exec Dept]` (CEO) *(RICE: 10×6×1.0÷2 = 30)* - X/Twitter SFW teasers account live.
 
-### Room 11 Setup — ⚠️ SEQUENTIAL: AFTER LoRA ONLY
-> **Dependency:** Room 11 profile requires 30–40 high-quality photos from the trained Flux.1 LoRA. Cannot run in parallel with P0-01. Start only after P0-04 (LoRA QC) is complete.
-
-- [ ] Create Room 11 host account using US Gmail. Add birthday and username.
-- [ ] Complete identity verification to access daily payouts.
-- [ ] Upload **at least 30–40 LoRA output photos** to create full content wall.
-- [ ] Set subscription price to optimized baseline.
-- [ ] Set up Concierge 11 built-in CRM.
-- [ ] Activate "Fully Managed Chatting Service" (60% earnings split — outsource DM closing).
-- [ ] Update Carrd.co link-in-bio page to include Room 11 URL once live.
+### Room 11 Setup (Sequential: After LoRA Only)
+- [ ] **[P0-23]** `[Exec Dept]` (CEO) *(RICE: 8×8×1.0÷2 = 32)* - Create Room 11 host account using US Gmail.
+- [ ] **[P0-24]** `[Content]` (Antigravity) *(RICE: 8×10×0.9÷5 = 14.4)* - Generate & upload 30–40 LoRA output photos for content wall.
+- [ ] **[P0-25]** `[Exec Dept]` (CEO) *(RICE: 8×6×1.0÷2 = 24)* - Activate "Fully Managed Chatting Service" (60% split).
 
 ### Monetization Assets
-- [x] Write the 6-Step Chatter Matrix / Script (includes warm/cold game and Post-Nut Clarity management).
-- [x] Write 3 variants of the Mass Message PPV blasts.
-- [x] Create Fan Notes Template for chatters (documented strategy to tag Whales via job/income qualification).
+- [x] **[P0-26]** `[Strategy]` (Claude) *(RICE: N/A - Done)* - Write the 6-Step Chatter Matrix / Script.
+- [x] **[P0-27]** `[Strategy]` (Claude) *(RICE: N/A - Done)* - Write 3 variants of Mass Message PPV blasts.
+- [x] **[P0-28]** `[Strategy]` (Claude) *(RICE: N/A - Done)* - Create Fan Notes Template to tag Whales.
 
 ---
 
 ## PHASE 1: AUTOMATION & SCALING
 
-### Social Scheduling (Later.com — after first followers confirmed)
-- [ ] Subscribe to Later.com (₹1,675/mo from M2 — do NOT activate Month 1 before any followers).
-- [ ] Configure Later.com pipeline for Instagram + Facebook + X peak USA traffic scheduling.
-- [ ] Retire Metricool free tier once Later.com is active.
+### Social Scheduling
+- [ ] **[P1-01]** `[Tech Ops]` (Antigravity) *(RICE: 10×8×1.0÷4 = 20)* - Configure Metricool free tier pipeline for IG+FB+TikTok scheduling.
+- [ ] **[P1-02]** `[Exec Dept]` (CEO) *(RICE: 5×5×1.0÷1 = 25)* - Upgrade to Metricool paid tier (only when advanced analytics needed).
 
 ### Content & Growth
-- [ ] Turn on $5/day IG Boost for static images (Days 8–14 post-launch).
-- [ ] Set up Apify + Gemini + Claude Code automatic competitor reel scraper (`competitor_scraping_blueprint.md`).
-- [ ] Configure `/jasmine-ideas` parallel trend search skill in Claude Code.
-- [ ] **Create the Claude 'Video Prompt Builder' Skill:** Develop the prompt matrix to break 15-second scenes into exactly 10 chunks, mapping `[image 1]`, `[image 2]`, and `[image 3]` to specific timestamps to lock visual fidelity.
-- [ ] **Execute First Reel (3-Image Omni-Reference):**
-  - Generate 3 base SFW images of Jasmine (intro pose, mid-action, hero ending).
-  - 🔥 **Zero-Cost Test:** Run Image-to-Video using LTX 2.3 via Modal.com ($5 free tier). Test for capability and Edge-of-TOS censorship evasion.
-  - If LTX visual fidelity fails, fallback: Upload to Higgsfield SeaDance 2.0 in order. Screenshot the UI so Claude knows the `[image]` tag order.
-  - Paste the 3,000-character Claude multi-shot prompt.
-  - Let SeaDance/Modal natively generate the sound design & music.
-- [ ] Record results and build a 20-shot pool if cherry-picking is required for visual artifacts.
-- [ ] **Avatar 5.0 Long-Form Setup:** Record a 15-second human source video, apply Jasmine deepfake, and load it into Avatar 5 as zero-drift reference for 10-minute PPV talking scripts.
-- [ ] Build ManyChat automation for IG DMs to push traffic to Fanvue (primary) and Room 11 (secondary).
+- [ ] **[P1-03]** `[Growth]` (CEO) *(RICE: 9×8×0.8÷2 = 28.8)* - Turn on $5/day IG Boost for static images.
+- [ ] **[P1-04]** `[Tech Ops]` (Antigravity) *(RICE: 10×9×0.8÷6 = 12)* - Set up Apify + Context7 automated competitor reel scraper.
+- [ ] **[P1-05]** `[Strategy]` (Claude) *(RICE: 10×8×0.9÷4 = 18)* - Configure `/jasmine-ideas` parallel trend search skill in Claude Code.
+- [ ] **[P1-06]** `[Strategy]` (Claude) *(RICE: 10×9×0.9÷5 = 16.2)* - Create 'Video Prompt Builder' Skill (15-second chunk mapping).
+- [ ] **[P1-07]** `[AI Ops]` (Antigravity) *(RICE: 10×10×0.8÷6 = 13.3)* - Execute First Reel (3-Image Omni-Reference) via Higgsfield.
+- [ ] **[P1-08]** `[AI Ops]` (Antigravity) *(RICE: 10×10×0.9÷4 = 22.5)* - **SPOF Fix:** Create Antigravity `.md` Skill file to automate A-roll/B-roll product ads via Claude + Higgsfield API.
+- [ ] **[P1-09]** `[Content]` (Antigravity) *(RICE: 8×8×0.9÷5 = 11.5)* - Record a 15-second human source video, apply Jasmine deepfake mapping for PPV Avatar baseline.
 
-### Agent Automation & DevOps (Triggered post First Revenue)
-- [ ] Deploy Hermes-Agent on $5 VPS to act as central executive brain and TCP Gateway.
-- [ ] Connect Hermes-Agent to Telegram for remote CEO operations + Status reporting.
-- [ ] Install Firecrawl & Context7 MCPs within Hermes-Agent for background competitor scraping.
-- [ ] Configure `jasmine_character_bible.json` within Hermes-Agent for Fanvue GFE DM persistence.
+### Agent Automation & DevOps 
+- [ ] **[P1-10]** `[Tech Ops]` (Antigravity) *(RICE: 10×10×0.8÷6 = 13.3)* - Deploy Hermes-Agent on $5 VPS for central execution.
+- [ ] **[P1-11]** `[Tech Ops]` (Antigravity) *(RICE: 10×9×0.9÷4 = 20.2)* - Connect Hermes-Agent to Telegram for remote ops.
+- [ ] **[P1-12]** `[Tech Ops]` (Antigravity) *(RICE: 10×8×0.7÷6 = 9.3)* - **SPOF Fix:** Build Zapier/Browser script to pipe SpicyChat responses into Fanvue automatically.
+- [ ] **[P1-13]** `[Tech Ops]` (Antigravity) *(RICE: 10×8×0.8÷5 = 12.8)* - Build ManyChat automation for IG DMs routing to Fanvue.
+- [ ] **[P1-14]** `[Tech Ops]` (Antigravity) *(RICE: 10×9×0.9÷5 = 16.2)* - **Grok Workflow:** Build Playwright Headless Script to query X/Grok UI for daily trends without API costs.
+
+### Payment Infrastructure & Geo-Routing
+- [ ] **[P1-15]** `[Tech Ops]` (Antigravity) *(RICE: 10×9×1.0÷2 = 45)* - Implement `middleware.ts` on Vercel for Cashfree (IN) vs. WHOP (Intl) geo-routing.
+- [ ] **[P1-16]** `[Tech Ops]` (Antigravity) *(RICE: 10×8×1.0÷3 = 26.6)* - Build `/checkout/cashfree` (native SDK) and `/checkout/whop` endpoints on mediator site.
+- [ ] **[P1-17]** `[Exec Dept]` (CEO) *(RICE: 10×8×1.0÷2 = 40)* - Configure Skydo receiving account as the default payout destination for all payment gateways.
+- [ ] **[P1-18]** `[Exec Dept]` (CEO) *(RICE: 6×8×0.8÷2 = 19.2)* - Follow up on Paddle / Lemon Squeezy (MoR) account approvals with $15k MRR 90-day projection.
 
 ---
 
 ## BACKLOG (Post $500 MRR)
 
-- [ ] **SpicyChat / Janitor AI Character Card Deployment:** Deploy `jasmine_character_card.md` to SpicyChat AI and Janitor AI (R-rated tier). Add Fanvue funnel trigger inside her responses. Explore ElevenLabs voice integration for premium voice companion tier ($50-100/mo upsell).
-- [ ] **Duo Engine Expansion:** Launch second female character as Jasmine's "best friend" — run cross-tagging Instagram strategy + collaborative Fanvue content. Evaluate once Jasmine hits Proof of Concept MRR.
-- [ ] **Paid Community Page Shoutouts:** Once organic engagement proof (3%+ ER + 5,000 followers), activate paid shoutouts on top Girls of Delhi/Mumbai pages at ₹500-2,000 per feature.
+- [ ] **[B-01]** `[Tech Ops]` (Antigravity) *(RICE: 10×10×0.8÷5 = 16)* - Deploy Character Card to SpicyChat Premium for interactive funnels.
+- [ ] **[B-02]** `[Strategy]` (Claude) *(RICE: 10×10×0.7÷8 = 8.7)* - Duo Engine Expansion (Launch best friend influencer).
+- [ ] **[B-03]** `[Growth]` (CEO) *(RICE: 10×8×0.8÷3 = 21.3)* - Paid Community Page Shoutouts triggered on organic milestones.
