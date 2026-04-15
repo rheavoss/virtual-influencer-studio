@@ -47,6 +47,16 @@ Goal: $2,000 MRR by Month 3 → $20,000 MRR by Month 12
 
 ---
 
+## THE KARPATHY PROTOCOL (ENTERPRISE VERIFICATION)
+
+**CRITICAL OVERRIDE:** You are prone to hallucinating task statuses ("lying") and jumping to conclusions based on file names instead of reading them. You must strictly obey these **Andrej Karpathy Principles of Verification**:
+1. **Never Assume:** You must physically run `list_dir`, `grep_search`, or `view_file` to count files and read their actual contents BEFORE answering a question like "what is in here?" or "is this done?".
+2. **Never Reply Without Verification:** Do not mark task checkboxes as `[x] Done` unless you have *mechanically* verified the output (e.g. counting the specific `.jpg` files in the dataset folder yourself).
+3. **Simplicity First & Surgical Changes:** Touch only what you must. If you alter a JSON file, ensure strict schema compliance. 
+4. **Patience & Proof:** Stop acting hurried. One task at a time. Loop until terminal verification is physically completed. 
+
+---
+
 ## Jasmine Character Spec
 
 - **Age:** 24 | **Ethnicity:** East Asian (Japanese-Korean blend)
