@@ -10,7 +10,7 @@
 |---|---|---|---|
 | **Character Identity — Images** | Locks Jasmine's face/body/tattoos in static images | Z-Image Base + Turbo + Jasmine Z-Image LoRA | ~₹0 (Fal.ai, negligible) |
 | **Character Identity — Video** | Locks Jasmine's face during video generation | Wan 2.2 T2V + Jasmine Wan LoRA | $5/month (Wan AI Pro) |
-| **Voice Identity** | Jasmine's cloned voice + emotion tags | ElevenLabs (stability=0.65, similarity=0.85, style=0.45) | $5/month |
+| **Voice Identity** | Jasmine's cloned voice + emotion tags | OmniVoice (Local/Colab) — Initial reference via ElevenLabs | ₹0/month |
 | **OPSEC** | EXIF strip, film grain, metadata clean before every post | ExifTool + FFmpeg | ₹0 |
 | **Frame Extraction** | Lossless frame extraction from driving Reels | FFmpeg (`ffmpeg -i reel.mp4 -ss 00:00:01 -vframes 1 frame1.png`) | ₹0 |
 | **Caption + Platform Text** | IG caption + Fanvue teaser + X thread per post | jasmine_agent.py (triple-text output) | ₹0 |
@@ -75,14 +75,14 @@
 
 ### Building Components
 1. Write script (gym tips, travel commentary, GFE personal chat)
-2. ElevenLabs generates voice with emotion tags: [excited], [soft], [whispering], [energetic]
+2. OmniVoice generates voice with emotion tags: [laughter], [sigh], [energetic]
 3. Wan AI S2V (Speech-to-Video) lip-syncs Jasmine's static reference image to audio
 4. Add background (lifestyle location image via Flux Kontext or Google Whisk)
 5. Captions overlay (CapCut)
 6. OPSEC
 
 ### Tools
-`Script → ElevenLabs → Wan AI S2V → CapCut`
+`Script → OmniVoice → Wan AI S2V → CapCut`
 
 ---
 
@@ -95,12 +95,12 @@
 2. Generate Jasmine in Outfit 2 → e.g., evening dress
 3. Generate Jasmine in Outfit 3 (optional) → e.g., travel casual
 4. VACE chaining: links outfit segments with face lock between transitions
-5. Optional: ElevenLabs voiceover ("okay, so which one are you taking to Goa?")
+5. Optional: OmniVoice voiceover ("okay, so which one are you taking to Goa?")
 6. Trending audio overlay (CapCut music library)
 7. OPSEC
 
 ### Tools
-`Z-Image Base+Turbo (Fal.ai) + Jasmine Z-Image LoRA → Wan VACE → ElevenLabs (optional) → CapCut`
+`Z-Image Base+Turbo (Fal.ai) + Jasmine Z-Image LoRA → Wan VACE → OmniVoice (optional) → CapCut`
 
 ---
 
@@ -110,13 +110,13 @@
 
 ### Building Components
 1. Pinterest reference images for location (Goa beach, Himalayan trail, luxury hotel)
-2. Jasmine reference + location mood board → Wan Animate multi-reference or Veo 3 (Google One)
-3. Optional ambient ElevenLabs narration ("three days in Goa was everything I needed")
+2. Jasmine reference + location mood board → Wan Animate multi-reference
+3. Optional ambient OmniVoice narration ("three days in Goa was everything I needed")
 4. iPhone-style grain filter (CapCut)
 5. OPSEC
 
 ### Tools
-`Pinterest → Flux Kontext OR Google Veo 3 (Flow) → ElevenLabs (optional) → CapCut`
+`Pinterest → Flux Kontext → OmniVoice (optional) → CapCut`
 
 ---
 
@@ -127,30 +127,30 @@
 ### Building Components
 1. Source viral trend clip from Reels/TikTok
 2. VACE picture-in-picture: Jasmine reaction box beside trend footage
-3. ElevenLabs voice reaction: "[laughs] okay wait, did she really just—"
+3. OmniVoice voice reaction: "[laughs] okay wait, did she really just—"
 4. Trending audio + captions (CapCut)
 5. OPSEC
 
 ### Tools
-`Source clip → Wan VACE (PiP mode) → ElevenLabs → CapCut`
+`Source clip → Wan VACE (PiP mode) → OmniVoice → CapCut`
 
 ---
 
-## Content Type 7 — Product Review / UGC
-**Volume:** On-demand (brand deals only — future)  
+## Content Type 7 — Product Review / UGC Ads
+**Volume:** On-demand (Instagram Shop Affiliate / Brand Deals)  
 **Format:** Instagram Reel, portrait. Structured UGC format
 
 ### Building Components
-1. Brand sends product image
-2. Flux Kontext image edit: "she is holding [product]" → generates Jasmine holding product
-3. Seedance 2.0 structural prompt: `Reference @image | Subject | Wardrobe | Product State | Action | Scene | Lipsync Script`
-4. Timeline prompting per segment: `[00:00–00:05] unboxing... [00:05–00:10] reaction...`
-5. ElevenLabs lipsync with enthusiasm: "[excited] okay this is actually insane"
-6. Show actual physical product image at least once (compliance requirement)
+1. Source raw real-world affiliate product image (e.g., from Instagram Shop/Brand)
+2. Execute custom Antigravity `.md` Skill file via Claude Code
+3. Claude automatically hits Higgsfield API to mass-generate Static ad frames (Jasmine holding product) and writes voiceover scripts.
+4. Select best A-roll frame -> Feed to Higgsfield Cinema Studio for Speech-to-Video.
+5. Generate Voice using OmniVoice.
+6. Editor (CapCut/Premiere) splices A-roll, generated B-roll, and Audio.
 7. OPSEC
 
 ### Tools
-`Product image → Flux Kontext → Seedance 2.0 → ElevenLabs → CapCut`
+`Product image + .md Skill File → Claude Code → Higgsfield API + OmniVoice → CapCut`
 
 ---
 
@@ -185,14 +185,16 @@ Slide 4: standing by mirror, gym bag on shoulder, ready to leave
 | Tool | Content Types | Monthly Cost |
 |---|---|---|
 | Wan AI Pro | 1, 2, 3, 4, 6 | $5 (~₹420) |
-| ElevenLabs Starter | 3, 4, 5, 6, 7 | $5 (~₹420) |
-| Flux Kontext 9B (via Fal.ai) | 1, 7, 8 | ~₹25 |
-| Google Veo 3 / Flow (Google One) | 5 | ₹0 (already paid) |
+| ElevenLabs Starter | Master clone ref only (Month 1) | ₹420 (M1 only) |
+| OmniVoice (Colab) | 3, 4, 5, 6, 7 | ₹0 |
+| Flux Kontext 9B (via Fal.ai) | 1, 8 | ~₹25 |
+| Claude Code API | 7 (Ad generation) | Variable |
+
 | Meta AI Image (meta.ai) | Quick concept tests | ₹0 |
 | CapCut | All | ₹0 |
 | FFmpeg | 1, 2, OPSEC | ₹0 |
 | Metricool | All (scheduling) | ₹0 |
-| **TOTAL** | | **~₹865/month** |
+| **TOTAL** | | **~₹445/month (M2+)** |
 
 ---
 
