@@ -58,7 +58,7 @@
 4. **Makeup Transformation** — 1M+
 5. **Bike / Lifestyle** — 1.2M
 
-**These are our motion transfer templates.** The dance Shorts (especially Dholna at 17M views) are the exact format to clone for Rhea via Wan AI motion transfer. Same choreography, Rhea's face and body swapped in.
+**These are our motion transfer templates.** The dance Shorts (especially Dholna at 17M views) are the exact format to clone for Jasmine via Wan AI motion transfer. Same choreography, Jasmine's face and body swapped in.
 
 **Critical insight — YouTube vs IG Subscription disconnect:**
 Sofia has 855K YouTube subscribers and 73M views but only 7,412 IG subscribers. This confirms again: YouTube builds mass awareness but does NOT build parasocial GFE depth. Her 73M YouTube views generate almost zero paid subscribers because YouTube audiences treat her as entertainment, not a personal connection.
@@ -150,7 +150,7 @@ Sofia has 855K YouTube subscribers and 73M views but only 7,412 IG subscribers. 
 
 ### The Jasmine Implication — NON-NEGOTIABLE RULE
 
-> **Rhea must ALWAYS be GFE-focused. The moment she becomes a mainstream "model" account, conversion collapses 185× to Sofia levels.**
+> **Jasmine must ALWAYS be GFE-focused. The moment she becomes a mainstream "model" account, conversion collapses 185× to Sofia levels.**
 
 This means:
 - Stories feel personal, not performed
@@ -297,30 +297,30 @@ Instagram @purplehalcyon (277K followers)
 This is the EXACT structure we will copy:
 
 ```
-Jasmine YouTube Shorts (@rheavoss or similar)
-├── Same Reels exported as Shorts (zero extra production)
+Jasmine YouTube Shorts
+├── Same Reels exported as Shorts (zero extra production via Metricool)
 ├── Goal: 500K+ views driving IG profile visits
 └── No monetization — pure top-of-funnel
 
          ↓
 
 Jasmine Facebook Page
-├── Same content auto-repurposed (Task 57)
+├── Same content auto-repurposed (Metricool mirrors automatically)
 ├── Target: 50K+ Indian Facebook followers
 └── Bio → Instagram profile link
 
          ↓
 
-Jasmine Instagram @rheavoss
+Jasmine Instagram @jasmine.mako
 ├── GFE persona — fitness/travel/lifestyle
 ├── Full content matrix (content_production_matrix.md)
 └── → Subscription paywall (post 10K followers) + Fanvue link in bio
 
          ↓
 
-Fanvue ($9.99/month, 85% creator keep)
-+ Telegram (CupidBot warm-up → higher LTV)
-+ Meta AI Studio (24/7 DM engagement, ₹0 cost)
+Fanvue ($20/month, 80% creator keep)
++ Passes.com ($20/month, 90% creator keep — same content, higher margin)
++ Telegram VIP (Month 4, CupidBot warm-up → higher LTV)
 ```
 
 ---

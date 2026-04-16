@@ -1,6 +1,6 @@
 # VERIFICATION REQUEST: AI Influencer Dataset Generation Pipeline
 
-**Objective:** Build a $10 custom FLUX.2 LoRA to permanently lock the identity of an uncensored AI influencer (Jasmine Mako) for Instagram/Fanvue monetization.
+**Objective:** Build a $10 custom Flux.1 Dev LoRA to permanently lock the identity of an uncensored AI influencer (Jasmine Mako) for Instagram/Fanvue monetization.
 
 ## 1. The Core Problem Statement
 
@@ -30,8 +30,8 @@ We abandon browser-based GUI solutions entirely and programmatically generate th
     5.  The cloud API executes the generation (taking ~10 seconds per image on an H100 GPU) and strictly locks the facial geometry to the reference photo. 
     6.  The 30 perfect, photorealistic, identical faces are downloaded straight to a local folder.
 *   **Cost & Time:** This will cost approximately $0.60 to $1.00 total in API credits and will take 5 minutes to run, bypassing all browser/Colab bugs.
-*   **Next Step:** With 30 identical faces secured, we upload them to Civitai to train the $10 FLUX.2 LoRA, achieving permanent censorship-free identity lock. 
+*   **Next Step:** With 30 identical faces secured, we upload them to Civitai to train the $10 Flux.1 Dev LoRA, achieving permanent censorship-free identity lock. 
 
 ---
 **Prompt for Grok/Claude Reviewer:** 
-*Given the blockers (no local GPU, browser failure, 101 drifting images) and the goal (uncensored FLUX.2 Fanvue influencer), is the proposed solution (Python API Python script -> Fal.ai/Replicate PuLID -> 30 face-locked images -> Civitai LoRA Trainer) the most technically sound and modern way to solve this bottleneck?*
+*Given the blockers (no local GPU, browser failure, 101 drifting images) and the goal (uncensored Flux.1 Dev Fanvue influencer), is the proposed solution (Python API Python script -> Fal.ai/Replicate PuLID -> 30 face-locked images -> Civitai LoRA Trainer) the most technically sound and modern way to solve this bottleneck?*

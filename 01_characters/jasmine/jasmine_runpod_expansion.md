@@ -1,4 +1,4 @@
-# RunPod ComfyUI Architecture (FLUX.2 Dev + PuLID + Kontext)
+# RunPod ComfyUI Architecture (Flux.1 Dev + PuLID + Kontext)
 
 **Direct Workflow Link:** https://www.runcomfy.com/comfyui-workflows/flux-kontext-pulid-consistent-character-generation
 *(Search "Flux Kontext PuLID Consistent Character" on runcomfy.com if link breaks)*
@@ -20,8 +20,8 @@
    - **Text Prompt:** From the 35-prompt list below
    - **Output:** Connect to FLUX sampler.
 
-4. **FLUX.2 Dev Sampler (Core Generation)**
-   - **Model:** FLUX.2 Dev
+4. **Flux.1 Dev Sampler (Core Generation)**
+   - **Model:** Flux.1 Dev
    - **Positive Prompt:** From Kontext
    - **Negative Prompt:** Use standard negative list (no tattoos)
    - **Steps:** 28–35

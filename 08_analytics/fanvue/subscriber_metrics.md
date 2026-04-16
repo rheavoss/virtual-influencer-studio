@@ -8,5 +8,5 @@
 | Apr 2026 | | | | | |
 
 ## Notes
-- Subscription price: TBD
-- Trial offer: TBD
+- Subscription price: **$20/month** (locked — see master_decisions_log.md §5)
+- Trial offer: TBD — evaluate free trial vs paid-only on launch
