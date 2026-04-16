@@ -47,7 +47,8 @@ const TOOL_STACK = [
   { name: 'ElevenLabs',  cost: 420,  desc: 'AI Voice Cloning & Synthesis',     url: 'https://elevenlabs.io' },
   { name: 'Grok (X)',    cost: 542,  desc: 'Training Data / Content Research', url: 'https://x.com' },
   { name: 'Claude x2',   cost: 4000, desc: 'Logic, Scripts & Automation (2 Seats)', url: 'https://claude.ai' },
-  { name: 'Meta Ads',    cost: null, desc: 'Variable — scales with multiplier', url: 'https://www.facebook.com/business/ads' },
+  { name: 'IG Reels Ads', cost: null, desc: 'SFW lifestyle ads → IG profile growth (safe on Meta)', url: 'https://www.facebook.com/business/ads' },
+  { name: 'Taboola / ExoClick', cost: null, desc: 'Adult ad networks → mediator → Fanvue only. NEVER direct to IG.', url: 'https://www.taboola.com' },
   { name: 'Research',    cost: null, desc: 'Variable — scales with multiplier', url: '' },
   { name: 'Buffer',      cost: null, desc: 'Variable — scales with multiplier', url: '' },
   { name: 'Calilio',     cost: 1303, desc: 'VoIP / International Comms',       url: 'https://calilio.com' },
@@ -225,7 +226,7 @@ function deriveRows(data, costMultiplier = 1) {
   return data.map(row => {
     const rArr  = [row.fanvue, row.room11 || 0, row.passes, row.ppv_voice, row.telegram, row.brand, row.ig_subs, row.fb_subs || 0];
     // ALL cost fields multiplied by costMultiplier
-    const cArr  = [row.higgsfield, row.elevenlabs, row.grok, row.claude_code, row.meta_ads, row.research, row.buffer, row.calilio, row.namecheap, row.spicychat, row.carrd, row.dolphin || 0].map(v => v * costMultiplier);
+    const cArr  = [row.higgsfield, row.elevenlabs, row.grok, row.claude_code, row.ig_ads, row.taboola, row.research, row.buffer, row.calilio, row.namecheap, row.spicychat, row.carrd, row.dolphin || 0].map(v => v * costMultiplier);
     
     const gross = rArr.reduce((a, b) => a + b, 0);
     const platformNet = rArr.reduce((s, v, i) => s + v * KEEP[i], 0);
