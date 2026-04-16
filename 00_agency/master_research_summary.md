@@ -54,9 +54,10 @@
 - **Native Sound Design:** Do not export to CapCut for audio. SeaDance 2.0 automatically generates synced sound effects and background music within its 15-second generation.
 - **The "Cherry-Pick" Method:** A 15-second generation costs ~90 credits ($3 value). Generate twice using the exact same 3 Omni-images but different Claude prompts to build a 20-shot pool, then cherry-pick the flawless shots if Higgsfield's auto-edit has visual artifacting.
 
-### 1.4c Long-Form PPV & Dialogue Pipeline (Avatar 5.0)
-- **The Zero-Drift Strategy:** SeaDance is for 15s cinematic hooks. For 1-to-10 minute talking head videos (Direct-to-camera Reals or $50 PPV DMs on Fanvue), we use Avatar 5.0. 
-- **The 15-Second Source:** We will feed Avatar 5 a 15-second reference video of a real human with Jasmine's deepfake applied. Avatar 5 learns the micro-movements, allowing us to drop 10-minute scripts that it will generate flawlessly without the "cousin drift" hallucination typical of image-based models.
+### ~~1.4c Long-Form PPV & Dialogue Pipeline (Avatar 5.0)~~ — ⚠️ DEPRECATED 2026-04-17
+> **DEPRECATED:** Avatar 5.0 is not in current stack. Use **Wan AI S2V** for talking head / long-form video. See `master_decisions_log.md` §4 and tech stack table above.
+- ~~**The Zero-Drift Strategy:** SeaDance is for 15s cinematic hooks. For 1-to-10 minute talking head videos (Direct-to-camera Reals or $50 PPV DMs on Fanvue), we use Avatar 5.0.~~
+- ~~**The 15-Second Source:** We will feed Avatar 5 a 15-second reference video of a real human with Jasmine's deepfake applied. Avatar 5 learns the micro-movements, allowing us to drop 10-minute scripts that it will generate flawlessly without the "cousin drift" hallucination typical of image-based models.~~
 
 ### 1.5 Revenue Architecture & Chatting (6-Step Ladder)
 - **Revenue Split:** Focus on generating volume traffic so the Room 11 managed chatters can convert PPV Messages (50-60%) and Mass Message PPVs (10-15%).

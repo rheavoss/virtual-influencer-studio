@@ -59,7 +59,7 @@ To ensure zero censorship and full ownership of the Intellectual Property, this 
 
 ### 6. Voice & Audio Assets
 *   **The Content:** Custom voice model for scripts and Fanvue voice notes.
-*   **Target Platform:** Fanvue Voice Notes, Voiceovers for Reels/TikToks.
+*   **Target Platform:** Fanvue Voice Notes, Voiceovers for Reels/Instagram Shorts. ~~TikToks — DEPRECATED~~
 *   **Estimated Cost:** ~$5/month.
 *   **The Tool:** **ElevenLabs or Cartesia.ai**
 *   **The Justification:** ElevenLabs remains high quality, but Cartesia.ai is the 2026 standard for sub-40ms latency and drastically cheaper volume scaling for daily Fanvue audio messages. 
