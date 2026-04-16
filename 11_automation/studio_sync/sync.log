@@ -698,3 +698,87 @@ Elapsed time:         1.0s
 =============================================
 [Fri Apr 17 02:00:17 IST 2026] Starting Studio Auto-Sync...
 >>> Syncing Code to GitHub...
+[graphify hook] graph.html synced to public/
+[main ca42014] chore(sync): automated studio heartbeat sync
+ 1 file changed, 39 insertions(+)
+To https://github.com/rheavoss/virtual-influencer-studio.git
+   63f3363..ca42014  main -> main
+>>> Syncing High-Value Assets to Drive...
+Transferred:   	          0 B / 0 B, -, 0 B/s, ETA -
+Checks:                 0 / 0, -, Listed 1
+Elapsed time:         0.5sTransferred:   	          0 B / 0 B, -, 0 B/s, ETA -
+Checks:                 0 / 0, -, Listed 2
+Elapsed time:         0.9sTransferred:   	          0 B / 0 B, -, 0 B/s, ETA -
+Checks:                 0 / 0, -, Listed 12
+Elapsed time:         1.4sTransferred:   	          0 B / 21.281 KiB, 0%, 0 B/s, ETA -
+Checks:                 8 / 8, 100%, Listed 24
+Transferred:            0 / 5, 0%
+Elapsed time:         1.9s
+Transferring:
+ *          jasmine/jasmine_character_bible.json:  0% /2.117Ki, 0/s, -
+ *             jasmine/jasmine_character_card.md:  0% /5.013Ki, 0/s, -
+ *        jasmine/voice_consistency_blueprint.md:  0% /2.312Ki, 0/s, -
+ *          jasmine/jasmine_kling_360_prompts.md:  0% /5.426Ki, 0/s, -
+ *           jasmine/jasmine_runpod_expansion.md:  0% /6.414Ki, 0/s, -Transferred:   	   21.281 KiB / 21.281 KiB, 100%, 0 B/s, ETA -
+Checks:                 8 / 8, 100%, Listed 24
+Transferred:            0 / 5, 0%
+Elapsed time:         2.4s
+Transferring:
+ *          jasmine/jasmine_character_bible.json:100% /2.117Ki, 0/s, -
+ *             jasmine/jasmine_character_card.md:100% /5.013Ki, 0/s, -
+ *        jasmine/voice_consistency_blueprint.md:100% /2.312Ki, 0/s, -
+ *          jasmine/jasmine_kling_360_prompts.md:100% /5.426Ki, 0/s, -
+ *           jasmine/jasmine_runpod_expansion.md:100% /6.414Ki, 0/s, -Transferred:   	   21.281 KiB / 21.281 KiB, 100%, 0 B/s, ETA -
+Checks:                11 / 11, 100%, Listed 27
+Transferred:            0 / 5, 0%
+Elapsed time:         2.9s
+Transferring:
+ *          jasmine/jasmine_character_bible.json:100% /2.117Ki, 2.116Ki/s, 0s
+ *             jasmine/jasmine_character_card.md:100% /5.013Ki, 5.012Ki/s, 0s
+ *        jasmine/voice_consistency_blueprint.md:100% /2.312Ki, 2.303Ki/s, 0s
+ *          jasmine/jasmine_kling_360_prompts.md:100% /5.426Ki, 5.410Ki/s, 0s
+ *           jasmine/jasmine_runpod_expansion.md:100% /6.414Ki, 6.392Ki/s, 0sTransferred:   	   21.281 KiB / 21.281 KiB, 100%, 7.093 KiB/s, ETA 0s
+Checks:                11 / 11, 100%, Listed 27
+Transferred:            0 / 5, 0%
+Elapsed time:         3.4s
+Transferring:
+ *          jasmine/jasmine_character_bible.json:100% /2.117Ki, 2.116Ki/s, 0s
+ *             jasmine/jasmine_character_card.md:100% /5.013Ki, 5.012Ki/s, 0s
+ *        jasmine/voice_consistency_blueprint.md:100% /2.312Ki, 2.303Ki/s, 0s
+ *          jasmine/jasmine_kling_360_prompts.md:100% /5.426Ki, 5.410Ki/s, 0s
+ *           jasmine/jasmine_runpod_expansion.md:100% /6.414Ki, 6.392Ki/s, 0sTransferred:   	   21.281 KiB / 21.281 KiB, 100%, 7.093 KiB/s, ETA 0s
+Checks:                11 / 11, 100%, Listed 27
+Transferred:            4 / 5, 80%
+Elapsed time:         3.9s
+Transferring:
+ *           jasmine/jasmine_runpod_expansion.md:100% /6.414Ki, 3.195Ki/s, 0sTransferred:   	   21.281 KiB / 21.281 KiB, 100%, 5.319 KiB/s, ETA 0s
+Checks:                11 / 11, 100%, Listed 27
+Transferred:            5 / 5, 100%
+Elapsed time:         4.4sTransferred:   	   21.281 KiB / 21.281 KiB, 100%, 5.319 KiB/s, ETA 0s
+Checks:                11 / 11, 100%, Listed 27
+Transferred:            5 / 5, 100%
+Elapsed time:         4.9sTransferred:   	   21.281 KiB / 21.281 KiB, 100%, 5.319 KiB/s, ETA 0s
+Checks:                11 / 11, 100%, Listed 27
+Transferred:            5 / 5, 100%
+Elapsed time:         5.0s
+Transferred:   	          0 B / 0 B, -, 0 B/s, ETA -
+Checks:                 0 / 0, -, Listed 2
+Elapsed time:         0.5sTransferred:   	          0 B / 0 B, -, 0 B/s, ETA -
+Checks:                 1 / 1, 100%, Listed 5
+Elapsed time:         0.9sTransferred:   	          0 B / 0 B, -, 0 B/s, ETA -
+Checks:                 1 / 1, 100%, Listed 25
+Elapsed time:         1.5sTransferred:   	          0 B / 0 B, -, 0 B/s, ETA -
+Checks:                20 / 20, 100%, Listed 44
+Elapsed time:         1.6s
+Transferred:   	          0 B / 0 B, -, 0 B/s, ETA -
+Checks:                 0 / 0, -, Listed 7
+Elapsed time:         0.4sTransferred:   	          0 B / 0 B, -, 0 B/s, ETA -
+Checks:                 3 / 3, 100%, Listed 52
+Elapsed time:         0.9sTransferred:   	          0 B / 0 B, -, 0 B/s, ETA -
+Checks:                41 / 41, 100%, Listed 90
+Elapsed time:         1.2s
+[Fri Apr 17 02:00:35 IST 2026] Sync Complete!
+=============================================
+=============================================
+[Fri Apr 17 02:30:35 IST 2026] Starting Studio Auto-Sync...
+>>> Syncing Code to GitHub...
