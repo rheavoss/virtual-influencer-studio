@@ -782,3 +782,85 @@ Elapsed time:         1.2s
 =============================================
 [Fri Apr 17 02:30:35 IST 2026] Starting Studio Auto-Sync...
 >>> Syncing Code to GitHub...
+[graphify hook] graph.html synced to public/
+[main 863a81a] chore(sync): automated studio heartbeat sync
+ 1 file changed, 85 insertions(+)
+To https://github.com/rheavoss/virtual-influencer-studio.git
+   ca42014..863a81a  main -> main
+>>> Syncing High-Value Assets to Drive...
+Transferred:   	          0 B / 0 B, -, 0 B/s, ETA -
+Checks:                 0 / 0, -, Listed 2
+Elapsed time:         0.5sTransferred:   	          0 B / 0 B, -, 0 B/s, ETA -
+Checks:                 0 / 0, -, Listed 2
+Elapsed time:         1.0sTransferred:   	          0 B / 0 B, -, 0 B/s, ETA -
+Checks:                 0 / 0, -, Listed 12
+Elapsed time:         1.4sTransferred:   	    5.022 KiB / 5.022 KiB, 100%, 0 B/s, ETA -
+Checks:                 7 / 7, 100%, Listed 21
+Transferred:            0 / 1, 0%
+Elapsed time:         1.9s
+Transferring:
+ *             jasmine/jasmine_character_card.md:100% /5.022Ki, 0/s, -Transferred:   	    5.022 KiB / 5.022 KiB, 100%, 2.511 KiB/s, ETA 0s
+Checks:                 7 / 7, 100%, Listed 21
+Transferred:            0 / 1, 0%
+Elapsed time:         2.4s
+Transferring:
+ *             jasmine/jasmine_character_card.md:100% /5.022Ki, 0/s, -Transferred:   	    5.022 KiB / 5.022 KiB, 100%, 2.511 KiB/s, ETA 0s
+Checks:                 8 / 8, 100%, Listed 24
+Transferred:            0 / 1, 0%
+Elapsed time:         2.9s
+Transferring:
+ *             jasmine/jasmine_character_card.md:100% /5.022Ki, 5.021Ki/s, 0sTransferred:   	    7.825 KiB / 7.825 KiB, 100%, 1.674 KiB/s, ETA 0s
+Checks:                11 / 11, 100%, Listed 27
+Transferred:            0 / 2, 0%
+Elapsed time:         3.4s
+Transferring:
+ *             jasmine/jasmine_character_card.md:100% /5.022Ki, 5.021Ki/s, 0s
+ * jasmine/params/seedanc…parameter_framework.md:100% /2.803Ki, 0/s, -Transferred:   	    7.825 KiB / 7.825 KiB, 100%, 1.674 KiB/s, ETA 0s
+Checks:                11 / 11, 100%, Listed 27
+Transferred:            1 / 2, 50%
+Elapsed time:         3.9s
+Transferring:
+ * jasmine/params/seedanc…parameter_framework.md:100% /2.803Ki, 0/s, -Transferred:   	    7.825 KiB / 7.825 KiB, 100%, 1.956 KiB/s, ETA 0s
+Checks:                11 / 11, 100%, Listed 27
+Transferred:            1 / 2, 50%
+Elapsed time:         4.4s
+Transferring:
+ * jasmine/params/seedanc…parameter_framework.md:100% /2.803Ki, 2.802Ki/s, 0sTransferred:   	    7.825 KiB / 7.825 KiB, 100%, 1.956 KiB/s, ETA 0s
+Checks:                11 / 11, 100%, Listed 27
+Transferred:            1 / 2, 50%
+Elapsed time:         4.9s
+Transferring:
+ * jasmine/params/seedanc…parameter_framework.md:100% /2.803Ki, 2.802Ki/s, 0sTransferred:   	    7.825 KiB / 7.825 KiB, 100%, 1.564 KiB/s, ETA 0s
+Checks:                11 / 11, 100%, Listed 27
+Transferred:            2 / 2, 100%
+Elapsed time:         5.5sTransferred:   	    7.825 KiB / 7.825 KiB, 100%, 1.564 KiB/s, ETA 0s
+Checks:                11 / 11, 100%, Listed 27
+Transferred:            2 / 2, 100%
+Elapsed time:         6.0sTransferred:   	    7.825 KiB / 7.825 KiB, 100%, 1.564 KiB/s, ETA 0s
+Checks:                11 / 11, 100%, Listed 27
+Transferred:            2 / 2, 100%
+Elapsed time:         6.4sTransferred:   	    7.825 KiB / 7.825 KiB, 100%, 1.564 KiB/s, ETA 0s
+Checks:                11 / 11, 100%, Listed 27
+Transferred:            2 / 2, 100%
+Elapsed time:         6.8s
+Transferred:   	          0 B / 0 B, -, 0 B/s, ETA -
+Checks:                 0 / 0, -, Listed 2
+Elapsed time:         0.5sTransferred:   	          0 B / 0 B, -, 0 B/s, ETA -
+Checks:                 1 / 1, 100%, Listed 6
+Elapsed time:         0.9sTransferred:   	          0 B / 0 B, -, 0 B/s, ETA -
+Checks:                 1 / 1, 100%, Listed 25
+Elapsed time:         1.4sTransferred:   	          0 B / 0 B, -, 0 B/s, ETA -
+Checks:                20 / 20, 100%, Listed 44
+Elapsed time:         1.6s
+Transferred:   	          0 B / 0 B, -, 0 B/s, ETA -
+Checks:                 3 / 3, 100%, Listed 52
+Elapsed time:         0.5sTransferred:   	          0 B / 0 B, -, 0 B/s, ETA -
+Checks:                22 / 22, 100%, Listed 71
+Elapsed time:         1.0sTransferred:   	          0 B / 0 B, -, 0 B/s, ETA -
+Checks:                41 / 41, 100%, Listed 90
+Elapsed time:         1.0s
+[Fri Apr 17 02:31:15 IST 2026] Sync Complete!
+=============================================
+=============================================
+[Fri Apr 17 03:01:15 IST 2026] Starting Studio Auto-Sync...
+>>> Syncing Code to GitHub...
