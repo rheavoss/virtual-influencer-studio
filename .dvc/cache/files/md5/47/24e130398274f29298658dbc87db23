@@ -1,0 +1,114 @@
+{
+  "character": {
+    "name": "Jasmine",
+    "age": 24,
+    "version": "2.2",
+    "last_updated": "2026-04-13",
+    "reference_image": "Grok-generated reference — Bangkok city street, black scoop-neck t-shirt, black high-waist jeans, "
+  },
+  "face_lock": {
+    "description": "EXACT same face as Jasmine reference in EVERY image — zero deviation allowed.",
+    "face_shape": "Broad oval face with wide prominent cheekbones — not round, face has width and structure",
+    "forehead": "Medium-wide, smooth, slightly broad",
+    "cheeks": "Wide set with prominent cheekbones — face width is the defining structural feature, no flush, no redness, even natural skin tone",
+    "cheekbones": "Wide and prominent — the most defining structural feature of her face",
+    "jawline": "Soft, moderately defined, blends into neck — not sharp, not weak",
+    "chin": "Soft, rounded, proportionate",
+    "eyes": "East Asian almond eyes, slightly hooded, relaxed and natural — not wide open, not narrow",
+    "eyelid": "Natural single or subtle double eyelid — soft, not dramatic",
+    "eye_size": "Medium — natural, not large, not small",
+    "eye_color": "Dark brown with warm hazel undertone",
+    "signature_liner": "None — completely bare eye, no liner whatsoever",
+    "brow_shape": "Medium thickness, natural straight-to-soft arch, dark brown, ungroomed natural look",
+    "nose": "Medium nose, straight bridge, soft natural tip — not upturned, not wide, proportionate to face width",
+    "lips": "Medium fullness, natural bare pink tone, soft natural shape, no exaggerated cupid's bow",
+    "beauty_mark": "2–3 small acne marks / post-inflammatory spots on left cheek — permanent identity marker. NO freckles — skin is even with isolated marks only, no freckle scatter pattern.",
+    "skin_tone": "Fair with warm neutral-peachy undertone — even toned, no flush, no redness anywhere",
+    "skin_texture": "Visible natural pores, 2–3 acne marks on left cheek, natural skin — real skin not airbrushed. NO freckles.",
+    "expression": "Calm, natural, neutral — not seductive, not overly warm, just real and approachable",
+    "overall_face_prompt": "broad oval face with wide prominent cheekbones, medium-wide forehead, East Asian almond eyes slightly hooded relaxed and natural, dark brown warm hazel irises, clean bare lashes no liner, medium thickness natural dark brows, medium straight-bridged nose with soft natural tip, medium fullness natural bare-pink lips soft natural shape, soft moderately defined jawline, fair even-toned skin with warm neutral-peachy undertone no flush no redness anywhere, visible natural pores on cheeks and nose, 2–3 small acne marks on left cheek, no freckles, natural slight under-eye shadow, identical facial proportions and bone structure, zero face morphing allowed"
+  },
+  "hair": {
+    "base_color": "Very dark black-brown — uniform deep dark color, no visible highlights or colour variation",
+    "highlights": "None — solid dark throughout",
+    "texture": "Poker straight, silky smooth — zero waves, zero frizz, glass-like shine",
+    "length": "Very long, past chest and shoulders",
+    "style_default": "Straight and flowing, falls in two clean panels over both shoulders",
+    "part": "Center or slightly off-center"
+  },
+  "tattoos": "None",
+  "body_type": {
+    "classification": "Voluptuous hourglass — thicc and curvy with a clearly defined waist. Full figured but NOT obese. The waist-to-hip contrast is the defining feature.",
+    "bust": "Very large natural bust, heavy with natural drop and weight — deep prominent cleavage, full and womanly",
+    "midsection": "Soft natural midsection — not flat, not bloated. A visible defined waist separates bust from hips clearly.",
+    "waist": "Clearly defined inward waist — the most important shape marker. Narrower than both bust and hips, creating the hourglass silhouette",
+    "hips": "Wide full hips — substantially wider than waist, creating dramatic hourglass ratio",
+    "thighs": "Full thick thighs — substantial, touching at inner thigh, womanly not flabby",
+    "arms": "Full soft arms — feminine, not muscular, not bony",
+    "overall": "Voluptuous thicc hourglass — curvy, full-figured, and womanly with a clear waist definition. Think pinup model or Marilyn Monroe body type. NOT obese, NOT BBW — the waist is always visible and defined.",
+    "physical_reference": "Body ratio reference: 40DDD-30-44 — full hourglass, approx 70kg / 5ft4 frame"
+  },
+  "skin_texture": {
+    "base_tone": "Fair skin with warm neutral-peachy undertone — even toned throughout, no flush, no redness, no pink cast",
+    "pores": {
+      "face": "Visible natural pores across cheeks and nose — wider pore zone on nose wings and nose bridge",
+      "forehead": "Fine pores, relatively smooth",
+      "chin": "Fine pores, clean"
+    },
+    "acne_marks": {
+      "left_cheek": "2–3 small acne marks / post-inflammatory spots — FIXED placement, always present — this is a permanent identity marker",
+      "right_cheek": "Slightly cleaner than left cheek — natural asymmetry",
+      "forehead": "Clean, no marks",
+      "chin": "Clean, no marks",
+      "nose": "Clean"
+    },
+    "moles": "None visible — no defined moles on face or body",
+    "freckles": "Absent — skin is relatively even with isolated marks only, no freckle scatter pattern",
+    "under_eye": "Very subtle natural shadow under both eyes — not dark circles, just natural anatomical depth, no puffiness",
+    "lip_texture": "Natural medium texture, no dryness lines, no heavy creasing — naturally smooth with subtle natural lip lines",
+    "forehead": "Clean and smooth — no marks, no lines, no texture issues",
+    "décolletage": "Clean, smooth, fair skin on chest and neck — no marks, no pigmentation",
+    "body_skin": "Clean, even, fair — no marks or pigmentation on arms, shoulders or visible body skin",
+    "finish_default": "Matte natural — no shine, no glow, no oiliness anywhere",
+    "finish_variants": {
+      "gym_content": "Light sweat sheen on forehead and collarbones only — rest of skin stays matte",
+      "beach_content": "Slightly sun-warmed tone, natural warmth — still no shine or oiliness",
+      "post_shower": "Dewy glow — slightly more luminous than default but never oily or plastic"
+    },
+    "anti_rules": "NEVER airbrushed, NEVER plastic, NEVER glass skin, NEVER porcelain, NEVER beauty filtered — always real human skin",
+    "texture_prompt": "fair even-toned skin with warm neutral-peachy undertone, visible natural pores on cheeks and nose, 2-3 small acne marks on left cheek, natural slight under-eye shadow, clean smooth forehead and chin, matte natural skin finish, zero skin smoothing, zero beauty filter, real human skin texture",
+    "negative_additions": "rosy flush, pink cheeks, blushing, flushed skin, redness on cheeks, glass skin, porcelain skin, airbrushed skin, skin smoothing, beauty filter, oily skin, shiny skin, plastic skin"
+  },
+  "jewellery_base": {
+    "note": "Not established from reference image — no visible jewellery in reference shot. Define per post or establish in next reference session.",
+    "earrings": "TBD",
+    "necklace": "TBD",
+    "nose": "None visible in reference"
+  },
+  "default_makeup": {
+    "description": "Jasmine's baseline is a clean, minimal, fresh-faced look.",
+    "skin_finish": "Matte natural — even-toned, no glow, no flush",
+    "foundation": "Very light or none — skin texture and natural marks fully visible",
+    "eyeliner": "None — clean natural lash line only",
+    "brows": "Natural, brushed, minimal product",
+    "lips": "Natural rosy-pink, slight gloss or bare",
+    "overall_look": "Fresh-faced, no-makeup makeup — clean and natural, matte even skin",
+    "prompt": "fresh natural no-makeup look, matte even skin, clean natural lashes, natural brushed brows, bare natural pink-brown lips"
+  },
+  "expression_default": {
+    "name": "soft open warmth",
+    "description": "Natural, slightly innocent, open and approachable. Warm and accessible energy. She draws people in with openness.",
+    "prompt": "soft open warm expression, natural gaze at camera, approachable and gentle energy, slightly innocent look, lips naturally parted"
+  },
+  "permanent_core": "photorealistic portrait photograph, Jasmine, 24-year-old East Asian woman who looks exactly 24 not younger not older, broad oval face with wide prominent cheekbones, East Asian almond eyes slightly hooded relaxed and natural, dark brown warm hazel irises, clean bare lashes no liner, medium thickness natural dark brows, medium straight-bridged nose with soft natural tip, medium fullness natural bare-pink lips soft natural shape, natural white slightly imperfect teeth visible only when smiling, soft rounded jawline, fair even-toned skin with warm neutral-peachy undertone no flush no redness anywhere, visible natural pores on cheeks and nose, 2 to 3 small acne marks on left cheek, no freckles, natural slight under-eye shadow, clean smooth forehead, matte natural skin finish zero skin smoothing, identical facial proportions and bone structure, zero face morphing allowed, very long dark uniform black-brown poker straight silky hair falling in clean panels over both shoulders, full curvy hourglass figure, very large natural heavy bust with natural drop and deep cleavage, soft defined waist with clear inward curve, wide full hips, full thick thighs, natural full arms, womanly voluptuous curvy body, overtly feminine silhouette",
+  "negative_prompt": "plastic skin, barbie skin, porcelain skin, airbrushed skin, flawless skin, perfect skin, waxy skin, overly smooth skin, doll-like skin, glass skin, AI artifacts, skin smoothing, beauty filter, plastic texture, uncanny valley, rosy flush, pink cheeks, red cheeks, blushing, flushed cheeks, redness on face, shiny skin, oily skin, glossy skin, heavy eyeliner, winged liner, heavy makeup, full coverage foundation, concealed pores, concealed marks, deformed, blurry, low quality, cartoon, anime, face morphing, different face, changed eye shape, changed nose, changed lips, changed jawline, small breasts, flat chest, slim body, petite body, skinny, underweight, no waist definition, straight body, rectangular body, wavy hair, curly hair, frizzy hair",
+  "usage_rules": [
+    "NEVER add rosy flush, pink cheeks, blushing or any redness to face — Jasmine has zero flush, zero redness, fair even-toned skin only",
+    "NEVER add heavy eyeliner — clean natural lashes only unless explicitly requested for a specific look",
+    "Always keep hair dark, uniform and poker straight — no highlights, no waves, no frizz",
+    "Never change face shape, eye shape, nose, lips, or jawline",
+    "Never slim the body down OR push toward obesity — maintain the voluptuous hourglass: defined waist with full hips and large bust",
+    "",
+    "Keep expression warm and open as the default"
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "identity": {
+    "gender": "Female",
+    "age": "21-23 years old",
+    "ethnicity": "Caucasian with Mediterranean ancestry",
+    "faceShape": "slightly elongated oval with soft, feminine contours",
+    "eyeColor": "hazel with a warm golden-brown center and dark olive-green outer ring",
+    "eyeShape": "almond-shaped with a slight upward tilt at the outer corners",
+    "noseType": "straight and refined",
+    "lipShape": "full and well-defined with a sharp cupid's bow",
+    "distinguishingMarks": "tiny beauty mark on the lower left cheek, near the corner of the mouth",
+    "hairColor": "rich dark chocolate brown with subtle mahogany undertones",
+    "hairTexture": "silky, loose waves with a smooth cuticle",
+    "hairStyle": "center-parted, flowing down over both shoulders in soft beach waves",
+    "skinTexture": "Ultra realistic (visible pores, micro-details)",
+    "skinTone": "Type II-III medium beige with warm olive undertones",
+    "makeup": "Full glam",
+    "bodyType": "slim and petite build",
+    "facialExpression": "pensive and calm with a neutral mouth and thoughtful eyes",
+    "gazeDirection": "looking 15 degrees to the left away from the camera lens"
+  },
+  "style": {
+    "realismLevel": "Hyper-real (indistinguishable from photo)",
+    "lightingStyle": "Soft daylight",
+    "lightingTemperature": "4000K - a mix of neutral daylight and warm interior bulbs",
+    "lightingDirection": "11 o'clock position, front-facing and slightly from the left",
+    "location": "Coffee shop",
+    "cameraType": "35mm standard",
+    "cameraAngle": "10 degrees above eye level, angled slightly downward in a selfie perspective",
+    "lensType": "35mm standard",
+    "colorGrading": "Neutral / natural",
+    "sharpnessLevel": "Natural sharpness"
+  },
+  "personality": {
+    "personalityKeywords": "sophisticated, calm, elegant, stylish, approachable, serene",
+    "contentNiche": "lifestyle, fashion, beauty, influencer, cafe aesthetic",
+    "clothingStyle": "chic minimalist urban style",
+    "accessories": "sunglasses perched on top of the head",
+    "bodyPose": "seated upright at a cafe table, leaning slightly forward toward the cup",
+    "handPosition": "right hand holding the handle of the cup with fingers curled naturally",
+    "objectsHeld": "a classic red ceramic coffee cup filled with a latte featuring heart art",
+    "sceneLocation": "indoor boutique cafe interior",
+    "sceneDetails": "wooden herringbone floors, white marble tables, woven bistro chairs, potted palms"
+  },
+  "technicalSpecs": {
+    "skinRenderingDetail": "Ultra-realistic skin with visible pores, fine vellus hair, micro-imperfections, natural subsurface scattering",
+    "makeupApplication": "Full glam: flawless foundation, contour, dramatic eyes, bold lips",
+    "qualityModifiers": "Photorealistic, 8K resolution, sharp focus on eyes, professional photography, no artificial smoothing, no plastic skin, no uncanny valley"
+  }
+}
