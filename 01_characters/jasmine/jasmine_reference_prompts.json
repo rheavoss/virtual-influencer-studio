@@ -25,7 +25,7 @@
     "hair_texture": "slight natural waves",
     "hair_length": "very long, past chest and shoulders",
     "hair_style_default": "loosely falling over both shoulders",
-    "tattoo": "ONE single small red kiss mark tattoo on upper left chest just below collarbone — only one, never two",
+    "tattoo": "none",
     "body_classification": "fit busty hourglass figure",
     "bust": "DDD cup heavy natural bust with natural drop and weight — deep cleavage capable, prominent natural fullness",
     "midsection": "flat firm toned midsection, no belly, no softness, no rounding",
@@ -189,8 +189,7 @@
     "images_ready": 5,
     "images_remaining": 10,
     "rejected_images": [
-      "",
-      "Any image where rosy flush is not visible — reject",
+      "Any image where rosy flush IS visible — reject",
       "Any image where face shape has drifted significantly — reject",
       "Nightclub/neon lit images — reject for LoRA, acceptable for content only"
     ],

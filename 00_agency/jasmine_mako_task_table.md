@@ -1,5 +1,5 @@
 # Jasmine Mako — Phase 0 & Phase 1 Execution Pipeline
-**Updated:** 2026-04-16 (Session 07 — Grok chat analysis, new video repos, investor backlog, GBrain live)
+**Updated:** 2026-04-16 (Session 08 — Grok chat analysis, P0-00 added, Flux.2 error corrected)
 
 **Legend:**
 - **Assignee:** [Antigravity] (Code/Workflows/OpSec), [Claude Code] (Text Prompts/Scripting), [Grok] (Market Intel/Trends/X & Web Research), [CEO] (Physical accounts/Payments).
@@ -10,13 +10,14 @@
 ## PHASE 0: LAUNCH & ASSETS
 
 ### Infrastructure & Approvals
+- [ ] **[P0-00]** `[Tech Ops]` (Antigravity) *(RICE: 6×7×0.9÷3 = 12.6)* - Implement pre-commit hooks + JSON Schema enforcement. Files provided by Grok (Apr 16) but NOT committed. Create `.pre-commit-config.yaml` + `schemas/character_bible.schema.json`, run `pre-commit install`, then commit.
 - [x] **[P0-01]** `[Exec Dept]` (CEO) *(RICE: N/A - Done)* - Tech stack finalized and pricing verified.
 - [x] **[P0-02]** `[Strategy]` (Claude) *(RICE: N/A - Done)* - Character Bible locked (v2.1).
 - [x] **[P0-03]** `[Content]` (Claude) *(RICE: N/A - Done)* - Image Generation 40-prompt JSON Matrix locked.
 - [x] **[P0-04]** `[AI Ops]` (Antigravity) *(RICE: N/A - Done)* - Batch Generation script developed (`jasmine_batch_generator.py`).
 - [ ] **[P0-05]** `[Content]` (Antigravity) *(RICE: 10×10×1.0÷3 = 33.3)* - 47-image hybrid LoRA training dataset assembled, cropped (1024x1024), and curated in target folder.
 - [x] **[P0-06]** `[Strategy]` (Claude) *(RICE: N/A - Done)* - Character Card written.
-- [ ] **[P0-07]** `[AI Ops]` (Antigravity) *(RICE: 10×10×1.0÷3 = 33.3)* - **NEXT:** Rent GPU on Vast.ai (using $10 USD credits) to train Jasmine Flux.2 LoRA using the 47-image dataset and generate the 40-image batch.
+- [ ] **[P0-07]** `[AI Ops]` (Antigravity) *(RICE: 10×10×1.0÷3 = 33.3)* - **NEXT:** Rent GPU on Vast.ai (using $10 USD credits) to train Jasmine Flux.1 Dev LoRA using the 47-image dataset and generate the 40-image batch.
 - [ ] **[P0-08]** `[Exec Dept]` (CEO) *(RICE: 10×10×1.0÷1 = 100)* - Subscribe to Higgsfield Starter ($9/mo) for Phase 0.
 
 ### Link-in-Bio Setup 
