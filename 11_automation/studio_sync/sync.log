@@ -110,3 +110,86 @@ Elapsed time:         1.2s
 =============================================
 [Thu Apr 16 15:48:52 IST 2026] Starting Studio Auto-Sync...
 >>> Syncing Code to GitHub...
+[graphify hook] graph.html synced to public/
+[main c74094d] chore(sync): automated studio heartbeat sync
+ 15 files changed, 300 insertions(+), 57 deletions(-)
+ create mode 100644 graphify-out/cache/00a85de425e34f4518286b55ea183f6a7cfea35de9bc1c292d4b939c691e8b3d.json
+ create mode 100644 graphify-out/cache/16816f799bed3462ba5e02f91956ec2254526beace6a8c3a4ee4ad0c5cbdefc8.json
+ create mode 100644 graphify-out/cache/181befabf2bafc2df7a68b8116f366f32f4f36b25c186d89a8a415b6a1124dba.json
+ create mode 100644 graphify-out/cache/194ea6b9de50949374e4769ef32ec8c2e8cef51f8545d1f85d48da5c018eb010.json
+ create mode 100644 graphify-out/cache/4f519a36d11f5c83183b0726b73e14175129719cb69067c3dbb7e57a0f0485c3.json
+ create mode 100644 graphify-out/cache/6613144dd7497d77a8c97f7e9bc0d3327a7ebfa4edc00a4d8ddd0a83541a5768.json
+ create mode 100644 graphify-out/cache/86156f25a0b23d158dad96c75330938768483e886c6342a940ab0932b45a5b47.json
+ create mode 100644 graphify-out/cache/8d16df51c6b5923f88a9379379f1670950ccd0815bb623640493a5bb944bc13c.json
+ create mode 100644 graphify-out/cache/97772afcbaf8d4d9ab31d49e184d2c6c41075684838ddf877db0c2325d775618.json
+ create mode 100644 graphify-out/cache/deb3c290810a6d4b74ff23658e8a9e3902ae8df5bc950e88f56f5c3819a51a43.json
+To https://github.com/rheavoss/virtual-influencer-studio.git
+   b88cbd0..c74094d  main -> main
+>>> Syncing High-Value Assets to Drive...
+Transferred:   	          0 B / 0 B, -, 0 B/s, ETA -
+Checks:                 0 / 0, -, Listed 2
+Elapsed time:         0.6sTransferred:   	          0 B / 0 B, -, 0 B/s, ETA -
+Checks:                 0 / 0, -, Listed 2
+Elapsed time:         1.0sTransferred:   	          0 B / 0 B, -, 0 B/s, ETA -
+Checks:                 0 / 0, -, Listed 2
+Elapsed time:         1.4sTransferred:   	          0 B / 0 B, -, 0 B/s, ETA -
+Checks:                 0 / 0, -, Listed 12
+Elapsed time:         1.9sTransferred:   	          0 B / 16.819 KiB, 0%, 0 B/s, ETA -
+Checks:                 6 / 6, 100%, Listed 22
+Transferred:            0 / 2, 0%
+Elapsed time:         2.4s
+Transferring:
+ *        jasmine/voice_consistency_blueprint.md:  0% /2.034Ki, 0/s, -
+ *           jasmine/jasmine_prompts_batch1.json:  0% /14.785Ki, 0/s, -Transferred:   	   16.819 KiB / 16.819 KiB, 100%, 0 B/s, ETA -
+Checks:                 9 / 9, 100%, Listed 25
+Transferred:            0 / 2, 0%
+Elapsed time:         2.9s
+Transferring:
+ *        jasmine/voice_consistency_blueprint.md:100% /2.034Ki, 0/s, -
+ *           jasmine/jasmine_prompts_batch1.json:100% /14.785Ki, 0/s, -Transferred:   	   16.819 KiB / 16.819 KiB, 100%, 5.605 KiB/s, ETA 0s
+Checks:                 9 / 9, 100%, Listed 25
+Transferred:            0 / 2, 0%
+Elapsed time:         3.4s
+Transferring:
+ *        jasmine/voice_consistency_blueprint.md:100% /2.034Ki, 2.033Ki/s, 0s
+ *           jasmine/jasmine_prompts_batch1.json:100% /14.785Ki, 14.783Ki/s, 0sTransferred:   	   16.819 KiB / 16.819 KiB, 100%, 5.605 KiB/s, ETA 0s
+Checks:                 9 / 9, 100%, Listed 25
+Transferred:            0 / 2, 0%
+Elapsed time:         3.9s
+Transferring:
+ *        jasmine/voice_consistency_blueprint.md:100% /2.034Ki, 2.033Ki/s, 0s
+ *           jasmine/jasmine_prompts_batch1.json:100% /14.785Ki, 14.783Ki/s, 0sTransferred:   	   16.819 KiB / 16.819 KiB, 100%, 4.204 KiB/s, ETA 0s
+Checks:                 9 / 9, 100%, Listed 25
+Transferred:            0 / 2, 0%
+Elapsed time:         4.4s
+Transferring:
+ *        jasmine/voice_consistency_blueprint.md:100% /2.034Ki, 1.017Ki/s, 0s
+ *           jasmine/jasmine_prompts_batch1.json:100% /14.785Ki, 7.392Ki/s, 0sTransferred:   	   16.819 KiB / 16.819 KiB, 100%, 4.204 KiB/s, ETA 0s
+Checks:                 9 / 9, 100%, Listed 25
+Transferred:            2 / 2, 100%
+Elapsed time:         5.0sTransferred:   	   16.819 KiB / 16.819 KiB, 100%, 4.204 KiB/s, ETA 0s
+Checks:                 9 / 9, 100%, Listed 25
+Transferred:            2 / 2, 100%
+Elapsed time:         5.4sTransferred:   	   16.819 KiB / 16.819 KiB, 100%, 4.204 KiB/s, ETA 0s
+Checks:                 9 / 9, 100%, Listed 25
+Transferred:            2 / 2, 100%
+Elapsed time:         5.5s
+Transferred:   	          0 B / 0 B, -, 0 B/s, ETA -
+Checks:                 1 / 1, 100%, Listed 5
+Elapsed time:         0.5sTransferred:   	          0 B / 0 B, -, 0 B/s, ETA -
+Checks:                 1 / 1, 100%, Listed 5
+Elapsed time:         0.9sTransferred:   	          0 B / 0 B, -, 0 B/s, ETA -
+Checks:                 1 / 1, 100%, Listed 25
+Elapsed time:         1.5sTransferred:   	          0 B / 0 B, -, 0 B/s, ETA -
+Checks:                20 / 20, 100%, Listed 44
+Elapsed time:         1.6s
+Transferred:   	          0 B / 0 B, -, 0 B/s, ETA -
+Checks:                 3 / 3, 100%, Listed 52
+Elapsed time:         0.5sTransferred:   	          0 B / 0 B, -, 0 B/s, ETA -
+Checks:                41 / 41, 100%, Listed 90
+Elapsed time:         0.9s
+[Thu Apr 16 15:49:10 IST 2026] Sync Complete!
+=============================================
+=============================================
+[Thu Apr 16 16:19:10 IST 2026] Starting Studio Auto-Sync...
+>>> Syncing Code to GitHub...
