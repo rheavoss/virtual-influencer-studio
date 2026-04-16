@@ -7,13 +7,14 @@ We are not just selling photos; we are selling intimacy, validation, and parasoc
 ---
 
 ## 🎯 The Financial Math to $2000 MRR
-*Fanvue takes roughly 15% (85% creator keep for 12 months).* To gross ~$2,350 (netting $2,000), we need some combination of subscriptions and PPV (Pay-Per-View).
+*Fanvue keep rate: **80%** (20% platform fee).* To gross ~$2,500 (netting $2,000), we need some combination of subscriptions and PPV.
 
-**Target Composition:**
-*   `100` Core Subscribers @ $9.99 = ~$1,000
-*   `20` VIP Subscribers @ $24.99 = ~$500
-*   `PPV & Tips (DMs)` = ~$850
-*   **Total = $2,350 Gross ($2,000 Net)**
+> ⚠️ Pricing update: Sub price is **$20/month flat** (locked in master_decisions_log.md §5). The $9.99/$24.99 tier split below is a deprecated draft. Use $20/mo as the baseline subscription price.
+
+**Target Composition (at $20/mo sub price):**
+*   `75` Core Subscribers @ $20 = ~$1,500
+*   `PPV & Tips (DMs)` = ~$1,000
+*   **Total = $2,500 Gross ($2,000 Net at 80% keep)**
 
 ---
 

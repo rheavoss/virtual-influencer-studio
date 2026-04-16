@@ -11,8 +11,10 @@ The strategy relies on **"Funnel Architecture"** or **"Edge-of-TOS Marking"**: t
 ### Where Instagram Draws the Line
 Instagram’s "Adult Nudity and Sexual Activity" guidelines use computer vision to scan for extremely specific geometrical variables.
 
+> ⚠️ **GENERATION SPEC NOTE:** While Instagram allows G-cup in real human content, Flux.1 Dev models exhibit BBW drift at G-cup. Jasmine's character spec is **LOCKED at 32DDD** (NOT G-cup). See `master_decisions_log.md` §2.
+
 **Instagram WILL ALLOW:**
-*   **Extreme Cleavage:** There is no volume limit. A natural or augmented G-cup is mathematical body tissue, not a violation.
+*   **Extreme Cleavage:** There is no volume limit on cleavage. However: Jasmine's character spec uses **32DDD** — not G-cup. G-cup causes BBW drift in Flux generation models.
 *   **Tight/Wet Clothing:** As long as opaque fabric covers the restricted zones, the physics of how tight it is does not matter.
 *   **Suggestive Poses:** "Utility" poses (bending over, gym squats, stretching) are permitted as they are classified in the fitness/lifestyle taxonomy.
 

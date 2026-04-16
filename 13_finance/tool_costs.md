@@ -36,8 +36,10 @@
 
 | Cost Item | Amount | Trigger |
 |---|---|---|
-| Meta Ads (Instagram) | ₹3,000/mo | M3 — after organic proof (>3% engagement on one post) |
-| Meta Ads (scale-up) | ₹6,000/mo | M4 — after ROI confirmed positive |
+| IG Reels Ads (Meta — SFW only → IG profile) | ₹1,500–2,000/mo | M3 — after organic proof (>3% engagement on one post) |
+| Taboola / ExoClick (adult networks → mediator → Fanvue) | ₹1,500–3,000/mo | M3 — separate channel. NEVER route to IG profile. |
+| IG Reels Ads scale-up | ₹3,000/mo | M4 — after ROI confirmed positive |
+| Taboola / ExoClick scale-up | ₹6,000/mo | M4 — after ROI confirmed positive |
 | Competitor research | ₹3,000 → ₹5,000 → ₹8,000/mo | M3–M5 ₹3k · M6–M9 ₹5k · M10+ ₹8k |
 | Buffer / contingency | ₹1,500/mo | From M8 |
 | RunPod (ComfyUI) | ₹150/session | Only when Colab quota exhausted |
@@ -47,7 +49,7 @@
 | Item | Cost | Date |
 |---|---|---|
 | Jasmine Flux.1 LoRA training (RunPod / Civitai) | ~₹168–₹336 ($1–2) | TBD — Phase 0 |
-| Carrd.co Pro plan (link-in-bio page) | ₹___ | Phase 0 — confirm pricing |
+| Bouncy.cc (link-in-bio) | ₹0 (free tier sufficient) | Phase 0 — replaces Carrd.co. Opens native browser = higher Fanvue conversion. |
 
 ## Monthly Cost by Phase
 

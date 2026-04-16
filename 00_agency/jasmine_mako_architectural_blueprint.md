@@ -8,7 +8,15 @@ This document outlines the definitive technical stack and production pipeline fo
 **The Core Architectural Decision: Owning Weights vs. Renting APIs**
 Proprietary platforms (e.g., Enhancer, Krea, Midjourney) enforce strict corporate safety filters. Because Jasmine's monetization model relies on generating suggestive and explicit content via Fanvue, utilizing closed APIs is a fatal business risk. 
 
-To ensure zero censorship and full ownership of the Intellectual Property, this architecture relies strictly on **Open Weights (FLUX.2 family) and custom-trained Identity Weights (LoRAs)**. 
+To ensure zero censorship and full ownership of the Intellectual Property, this architecture relies strictly on **Open Weights (Flux.1 Dev — NOT FLUX.2 which is a fictional model name) and custom-trained Identity Weights (LoRAs)**.
+
+> ⚠️ **Stack corrections (2026-04-17):** This doc was written early and contains outdated tool references:
+> - FLUX.2 → **Flux.1 Dev** (actual model name)
+> - TikTok → **DEPRECATED** (see master_decisions_log.md §7)
+> - Later.com → **DEPRECATED** — replaced by Metricool free tier
+> - Avatar 5.0 → not in current stack (use Wan AI S2V for talking head)
+> - Kling 3.0 as primary video → replaced by **Wan AI 2.2** ($5/month vs $240–360/month)
+> See `master_decisions_log.md` §4 for locked video production decisions. 
 
 ---
 

@@ -10,7 +10,7 @@
 ## PHASE 0: LAUNCH & ASSETS
 
 ### Infrastructure & Approvals
-- [ ] **[P0-00]** `[Tech Ops]` (Antigravity) *(RICE: 6×7×0.9÷3 = 12.6)* - Implement pre-commit hooks + JSON Schema enforcement. Files provided by Grok (Apr 16) but NOT committed. Create `.pre-commit-config.yaml` + `schemas/character_bible.schema.json`, run `pre-commit install`, then commit.
+- [x] **[P0-00]** `[Tech Ops]` (Antigravity) *(RICE: 6×7×0.9÷3 = 12.6)* - Implement pre-commit hooks + JSON Schema enforcement. `.pre-commit-config.yaml` + `schemas/character_bible.schema.json` created and committed 2026-04-17.
 - [x] **[P0-01]** `[Exec Dept]` (CEO) *(RICE: N/A - Done)* - Tech stack finalized and pricing verified.
 - [x] **[P0-02]** `[Strategy]` (Claude) *(RICE: N/A - Done)* - Character Bible locked (v2.1).
 - [x] **[P0-03]** `[Content]` (Claude) *(RICE: N/A - Done)* - Image Generation 40-prompt JSON Matrix locked.
@@ -22,9 +22,9 @@
 
 ### Link-in-Bio Setup 
 - [ ] **[P0-10]** `[Exec Dept]` (CEO) *(RICE: 10×8×1.0÷2 = 40)* - Register domain on Namecheap.
-- [ ] **[P0-11]** `[Tech Ops]` (Antigravity) *(RICE: 10×9×1.0÷2 = 45)* - Configure Cloudflare DNS redirect to Carrd.co.
-- [ ] **[P0-12]** `[Tech Ops]` (Antigravity) *(RICE: 10×8×0.9÷3 = 24)* - Build Carrd.co link-in-bio page.
-- [ ] **[P0-13]** `[Exec Dept]` (CEO) *(RICE: 10×10×1.0÷1 = 100)* - Add Carrd.co redirect URL to Instagram bio.
+- [ ] **[P0-11]** `[Tech Ops]` (Antigravity) *(RICE: 10×9×1.0÷2 = 45)* - Configure Namecheap domain to redirect to Bouncy.cc link page. ~~Carrd.co deprecated — in-app browser = logged-out users = low conversion.~~
+- [ ] **[P0-12]** `[Tech Ops]` (Antigravity) *(RICE: 10×8×0.9÷3 = 24)* - Build Bouncy.cc link-in-bio page (free tier). ~~Carrd.co deprecated.~~
+- [ ] **[P0-13]** `[Exec Dept]` (CEO) *(RICE: 10×10×1.0÷1 = 100)* - Add Bouncy.cc redirect URL to Instagram bio. ~~Carrd.co deprecated.~~
 
 ### Social Media Pre-Launch
 - [ ] **[P0-14]** `[Exec Dept]` (CEO) *(RICE: 10×10×1.0÷1 = 100)* - Buy Calilio standard plan (US virtual number).
@@ -56,7 +56,7 @@
 ## PHASE 1: AUTOMATION & SCALING
 
 ### Social Scheduling
-- [ ] **[P1-01]** `[Tech Ops]` (Antigravity) *(RICE: 10×8×1.0÷4 = 20)* - Configure Metricool free tier pipeline for IG+FB+TikTok scheduling.
+- [ ] **[P1-01]** `[Tech Ops]` (Antigravity) *(RICE: 10×8×1.0÷4 = 20)* - Configure Metricool free tier pipeline for IG+FB+YouTube Shorts scheduling. ~~TikTok DEPRECATED 2026-04-11.~~
 - [ ] **[P1-02]** `[Exec Dept]` (CEO) *(RICE: 5×5×1.0÷1 = 25)* - Upgrade to Metricool paid tier (only when advanced analytics needed).
 - [ ] **[P1-41]** `[Strategy]` (Claude) *(RICE: 9×9×0.9÷3 = 24.3)* - Run full Brand Blueprint exercise for Jasmine: (1) Goals + impediments, (2) Niche stack (category→niche→sub-niche), (3) TAM analysis — quantify Hindi-speaking Indian GFE market size, (4) Recognizability audit — costume/sonic/backdrop/iconic feature locked, (5) Aspirational vs attainable positioning, (6) Output to `01_characters/jasmine/jasmine_brand_blueprint.md`. Framework: Faceless Francis Brand Blueprint (OFM).
 - [ ] **[P1-42]** `[Content]` (Antigravity) *(RICE: 8×9×0.7÷2 = 25.2)* - **Monitor OmniShow (12.3B product-hold model):** Code not released yet (as of Apr 2026). Watch repo — when live, test "Jasmine holds [product]" workflow: input = person image + product image + audio + pose reference → output = lip-synced product-hold video. Primary use case: brand deal UGC without needing a real shoot. Check GitHub/HuggingFace weekly.
@@ -97,7 +97,7 @@
 
 ### Post-Production VFX & Schedulers
 - [ ] **[P1-19]** `[Tech Ops]` (Antigravity) *(RICE: 10×9×0.9÷4 = 20.2)* - Deploy self-hosted `Postiz` instance on Railway for multi-account portfolio scheduling.
-- [ ] **[P1-20]** `[Exec Dept]` (CEO) *(RICE: 10×8×0.8÷3 = 21.3)* - Complete OAuth app approvals for Instagram, Threads, TikTok for Postiz integration.
+- [ ] **[P1-20]** `[Exec Dept]` (CEO) *(RICE: 10×8×0.8÷3 = 21.3)* - Complete OAuth app approvals for Instagram, Threads, YouTube for Postiz integration. ~~TikTok DEPRECATED 2026-04-11.~~
 - [ ] **[P1-21]** `[Content]` (Antigravity) *(RICE: 10×9×0.8÷3 = 24.0)* - Test `TNTwise/REAL-Video-Enhancer` (or `VEnhancer`) GUI toolkit to fix waxy faces/artifacts in AI output.
 - [ ] **[P1-22]** `[Tech Ops]` (Antigravity) *(RICE: 8×9×0.7÷6 = 8.4)* - Integrate `Netflix VOID` for professional object interaction and physics scene reasoning on CapCut exports.
 - [ ] **[P1-23]** `[Content]` (Antigravity) *(RICE: 10×9×0.8÷4 = 18.0)* - Use `CharaConsist` to maintain Jasmine's physical consistency across all batch-generated videos.

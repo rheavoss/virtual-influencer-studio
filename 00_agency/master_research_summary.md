@@ -29,7 +29,7 @@
 
 1. **Day 1–3:** Create `@jasmine.mako` via physical phone. Add profile/soft bio (student, saving money, nothing sexy). Follow 5–20 USA accounts (Logan Paul, brands). Watch competitor reels only, do not like or comment. Wait 24 hrs. NO LINK.
 2. **Day 4–7:** Post 1 SFW photo daily. Still NO LINK in bio. Let algorithm train based on watch-time.
-3. **Day 8:** Add Carrd.co link-in-bio URL (Namecheap → Cloudflare → Carrd.co chain). Begin Reels. **Do NOT use mother-daughter method — see Section 1.3 deprecation.**
+3. **Day 8:** Add **Bouncy.cc** link-in-bio URL (opens native Safari/Chrome = logged-in users = higher Fanvue conversion). ~~Carrd.co is DEPRECATED — in-app browser = logged-out users = low conversion.~~ Begin Reels. **Do NOT use mother-daughter method — see Section 1.3 deprecation.**
 4. **Day 8–14:** Boost 2–3 static images at $5/day to males 30–50, USA.
 
 ### 1.3 Mother-Daughter Link Method — ⛔ DEPRECATED 2026-04-11

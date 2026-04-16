@@ -16,8 +16,8 @@ We will use all available content platforms, but prioritize them by ROI:
    - Used purely as a free marketing funnel to attract the target audience (men interested in fitness, travel, and curves). 
    - Strategy: High-engagement Reels and carefully curated photo sets (4:5 format) that use the "Tease" mechanic.
 2. **Fanvue (Primary Monetization - 80% of MRR)**
-   - The primary destination link in bio. 
-   - Why: Extremely AI-friendly, 85% creator keep (first 12 months), and excellent internal discovery tools built for our exact demographic.
+   - The primary destination link in bio.
+   - Why: Extremely AI-friendly, **80% creator keep rate**, and excellent internal discovery tools built for our exact demographic.
 3. **Passes (Secondary Monetization - Margin Booster)**
    - Used for higher-margin VIP content. 
    - Why: 90% creator keep. Automated mirroring of Fanvue content for whales who want to spend more.
@@ -57,8 +57,11 @@ To hit our goal rapidly, we will operate like a tech startup, not a standard inf
    - Use Metricool/Popsters to rip the exact visual formats and engagement hooks from top earners.
 2. **Automated Content Factory (Days 4-7):** 
    - Deploy the `jasmine_agent` to batch-produce 30 days of high-quality, hot yoga + travel content (ensuring the extreme sweat and realism we established).
-3. **Ad Optimization (Months 1-3):** 
-   - Deploy the ₹3,000/month budget on Meta ads. Constantly A/B test creatives (Studio vs. Hot Yoga vs. Travel) to see which drives the lowest Cost Per Click (CPC) to the Fanvue link.
+3. **Ad Optimization (Months 1-3):**
+   - Two separate ad channels (never confuse them):
+     - **IG Reels Ads** (Meta): ₹1,500–2,000/month SFW lifestyle content → IG profile growth only. NEVER link to Fanvue from Meta ads.
+     - **Taboola / ExoClick** (Adult networks): ₹1,500–3,000/month → mediator page (rheavoss.com) → Fanvue ONLY. NEVER route adult network traffic to IG profile (instant shadowban).
+   - Both start Month 3 after organic proof.
 4. **The GFE Flywheel (Ongoing):** 
    - Utilize Claude agents to generate personalized, warm responses on Fanvue, increasing subscriber retention and triggering high-value tipping.
 

@@ -8,7 +8,7 @@ A single vertical (9:16) video can be natively pushed to 6 different major algor
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | **Instagram** | Reels | 9:16 (Vertical) | 1080x1920 | 5-15s | Link in Bio / Stories |
 | **Facebook** | Reels | 9:16 (Vertical) | 1080x1920 | 5-15s | High (Comments, Profile) |
-| **TikTok** | Feed Video | 9:16 (Vertical) | 1080x1920 | 7-15s | Link in Bio (once unlocked) |
+| ~~**TikTok**~~ | ~~Feed Video~~ | ~~9:16 (Vertical)~~ | ~~1080x1920~~ | ~~7-15s~~ | ~~DEPRECATED 2026-04-11: algorithm deprioritizes AI content, ban risk high~~ |
 | **YouTube** | Shorts | 9:16 (Vertical) | 1080x1920 | 10-60s | Pinned Comment Link |
 | **Snapchat** | Spotlight / Stories | 9:16 (Vertical) | 1080x1920 | 5-10s | Swipe Up Link |
 | **Pinterest** | Idea Pins | 9:16 (Vertical) | 1080x1920 | 15s | Direct Outbound Link |
@@ -37,7 +37,7 @@ This is where the traffic is harvested. The paywall layer receives the *extended
 | **Fanvue / Patreon** | PPV (Pay Per View) Message | Any | Image/Video/Audio | The "Tease & Reward" loop. |
 | **Fanvue / Patreon** | Feed Post | Any | Image/Video | Exclusive subscriber retention content. |
 | **Facebook** | Subscriber Only Hub | 9:16 or 4:5 | Image/Video | Native monetization without clicking off-platform. |
-| **Room 11** | Managed Chat / CRM | Any | Image/Video Output | Secondary funnel via Carrd.co. High-intent managed DMs (60% split). |
+| **Room 11** | Managed Chat / CRM | Any | Image/Video Output | Secondary funnel via Bouncy.cc link page. High-intent managed DMs (60% split). |
 
 ## Maximum Efficiency Rule:
 **Never render in 16:9 (Landscape) or 1:1 (Square) natively.** 
