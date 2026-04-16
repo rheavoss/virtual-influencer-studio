@@ -1,3 +1,18 @@
+# STUDIO OPERATING SYSTEM v1 — GENERIC FRAMEWORK
+Project: AI Virtual Influencer Studio
+First Character: Jasmine (Character #1)
+
+All governing documents, schemas, matrices, task lists, and workflows must now use generic "Virtual Influencer" / "Character" terminology so any future character can be duplicated instantly using 00_studio_template/.
+
+**Primary Visual Reference:** Connie Perignon aesthetic (strong hourglass / voluptuous figure, bold sensual style)
+
+**Content Ceiling (Option A – Edge-Pushing Non-Nude NSFW)**
+- Deep cleavage, micro-bikinis, sheer/see-through lingerie, sensual teasing poses, wet skin, bedroom/fantasy settings, high-heat GFE voice notes.
+- Nipple/areola must ALWAYS remain covered.
+- No nudity, no topless, no genital exposure on any platform.
+- Goal: Push as close to the edge as possible on each platform (Fanvue most permissive, Instagram strictest) to maximize subscriber conversion while staying fully compliant.
+
+Last updated: 2026-04-16
 # Jasmine Project — Claude Code Briefing
 
 > Auto-loaded at the start of every session. Keep this current.  
@@ -247,3 +262,6 @@ At the end of each session, Claude updates:
 2. **Open Items** — remove resolved, add new ones
 3. **Active Build** section — update status of whatever is being built
 4. Bump the "Last updated" date at the top
+
+### ACCOUNTS AND INTEGRATION LINKING (Logged April 16 2026)
+* The GitHub repository (`rheavoss/jasmine-project`, transitioning to `virtual-influencer-studio`), Vercel deployments (`virtual-influencer-dashboard`), and Supabase CLI integrations are all explicitly linked and authorized under the **rheavoss** core executor accounts.
