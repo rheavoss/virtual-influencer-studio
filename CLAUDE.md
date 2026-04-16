@@ -1,5 +1,5 @@
 # Jasmine Project — Claude Code Briefing
-> Last updated: 2026-04-16 (Session 08)
+> Last updated: 2026-04-16 (Session 09)
 
 ---
 
@@ -64,7 +64,8 @@ Nothing is live. No LoRA. No Instagram. No Fanvue.
 
 | Task | Status | Owner |
 |---|---|---|
-| P0-01 Generate 47 LoRA training images | ⏳ 27/47 done | CEO (Grok) |
+| P0-00 Pre-commit hooks + JSON schema | ✅ Done | Claude |
+| P0-01 Generate 47 LoRA training images | ⏳ 32/47 done | CEO (Grok) |
 | P0-03 Train Jasmine Flux.1 Dev LoRA | ⏳ Pending | CEO (Vast.ai) |
 | P0-05 Set up Instagram account | ⏳ Pending | CEO |
 | P0-06 Set up Fanvue account + pricing | ⏳ Pending | CEO |
