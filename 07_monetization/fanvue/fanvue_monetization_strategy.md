@@ -27,8 +27,10 @@ We are not just selling photos; we are selling intimacy, validation, and parasoc
 *   "Locked" posts where the image is blurred.
 *   **Monetization Mechanism:** The user has to pay **$4.99 to $9.99** just to view a single locked post or PPV message. This catches the impulsive spenders who don't want a monthly subscription yet.
 
-### 2. The Core Boyfriend Tier (The Anchor)
-**Price:** $9.99 / Month
+### 2. ~~The Core Boyfriend Tier (The Anchor)~~
+> ⚠️ **DEPRECATED TIER:** $9.99/$24.99 split is superseded. Sub price is **$20/month flat** (see note above and `master_decisions_log.md` §5). Sections below are kept for historical GFE mechanics reference only.
+
+**Price:** ~~$9.99 / Month~~ → **$20/month flat**
 **What they get:**
 *   Unlocks all standard Fanvue posts (3-4 exclusive posts per week—more intimate/casual than Instagram).
 *   Gets "Good Morning / Goodnight" mass messages (sent via Claude Agent automation).
@@ -53,4 +55,4 @@ This is where the real MRR accelerator lives.
 To run this without you sitting at a keyboard 12 hours a day:
 1. **The Content Agent** generates the Fanvue post backlog.
 2. **Claude Chatbot Workflow:** When a VIP messages her, you paste their message into Claude alongside the prompt: *"You are Jasmine. Answering a $25/mo VIP patron named Mark. Respond flirtatiously to this."*
-3. **ElevenLabs:** Use the "Bubbly Indian/Asian English" voice clone to generate 5-second voice replies for tips over $10.
+3. **ElevenLabs:** Use the "soft warm East Asian accent" voice clone to generate 5-second voice replies for tips over $10.

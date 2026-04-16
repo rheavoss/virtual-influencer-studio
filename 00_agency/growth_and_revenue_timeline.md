@@ -266,7 +266,7 @@
 
 | After Platform Cuts | Amount |
 |---|---|
-| Fanvue (85% keep): $13,000 × 0.85 | $11,050 |
+| Fanvue (80% keep): $13,000 × 0.80 | $10,400 |
 | Passes (90% keep): $5,600 × 0.90 | $5,040 |
 | PPV + voice + Telegram + deals (est. 90%) | $9,180 |
 | **Net MRR to CEO** | **~$25,270** |
@@ -330,13 +330,13 @@
 | Grok (xAI) | ₹542 ✅ | ₹542 ✅ | ₹6,500/yr ÷ 12 — confirmed by CEO |
 | Claude Code | ₹4,000 ✅ | ₹4,000 ✅ | 2 × ₹2,000 — confirmed |
 | Calilio | ₹1,303 ✅ | ₹1,303 ✅ | $12 seat + $2 US number = $14/mo × ₹93.08 |
-| Namecheap | ₹92 ✅ | ₹92 ✅ | Domain for Carrd.co redirect chain — annual ÷ 12 |
-| Later.com | ₹0 (M1) | ₹1,675 (from M2) ✅ | Social scheduling — activates after first followers |
+| Namecheap | ₹92 ✅ | ₹92 ✅ | Domain for Bouncy.cc link-in-bio redirect — annual ÷ 12 |
+| ~~Later.com~~ | ~~₹0~~ | ~~₹1,675~~ | **DEPRECATED 2026-04-11 — replaced by Metricool free tier** |
 | Google One | ₹___ ⏳ | ₹___ ⏳ | CEO to confirm annual plan ÷ 12 |
-| Metricool | ₹0 | ₹0 (standby) | Free tier — redundant once Later.com active |
+| Metricool | ₹0 | ₹0 | Free tier — **primary scheduler, replaces Later.com (zero cost)** |
 | **Phase 0 Base** | **₹7,195** | — | Higgsfield ₹838 + ElevenLabs ₹420 + Grok ₹542 + Claude Code ₹4,000 + Calilio ₹1,303 + Namecheap ₹92 |
-| **Phase 1+ Base (M1)** | — | **₹9,056** | Phase 1 Higgsfield, Later.com not yet active |
-| **Phase 1+ Base (M2+)** | — | **₹10,731** | All tools active including Later.com ₹1,675 |
+| **Phase 1+ Base (M1+)** | — | **₹9,056** | Later.com deprecated — Metricool free covers scheduling |
+| **Phase 1+ Base (M2+)** | — | **₹9,056** | Later.com deprecated — Metricool free. Same base as M1. |
 
 > **Cost status:** Higgsfield ✅ confirmed two-phase | Calilio ✅ $14/mo | Grok ✅ | Claude Code ✅ | Namecheap ✅ | ElevenLabs ⚠️ India price unverified | Google One ⏳ CEO to confirm
 
@@ -345,7 +345,8 @@
 | Cost Item | Amount | Trigger |
 |---|---|---|
 | RunPod (ComfyUI sessions) | ₹150/session | Only when Colab quota exhausted |
-| Meta Ads (Instagram) | ₹3,000/mo | After Month 2 organic proof (>3% engagement on one post) |
+| IG Reels Ads (SFW → IG profile) | ₹1,500–2,000/mo | After Month 2 organic proof (>3% engagement on one post) — Meta only, never direct adult traffic to IG |
+| Taboola / ExoClick (adult → mediator → Fanvue) | ₹1,500–3,000/mo | After Month 2 — separate channel, NEVER route to IG profile |
 | Meta Ads (scale-up) | ₹6,000/mo | After Month 4 (ROI confirmed positive) |
 | Competitor research (paid subscriptions) | ₹3,000 → ₹5,000 → ₹8,000/mo | From M3. Subscribe to top human IG influencer platforms to monitor real content trends. Scales with revenue: M3–M5 ₹3k | M6–M9 ₹5k | M10+ ₹8k |
 | Civitai credits (Batch 4) | ₹840–₹1,680 one-time | LoRA training dataset (explicit diversity) |
@@ -355,33 +356,33 @@
 ## Month-by-Month P&L (All values in ₹)
 
 > Revenue: Fanvue/Passes/PPV+Voice in USD × ₹93.08. Telegram/Brand/IG Subs are INR-priced (Indian subscribers).  
-> **Net Revenue** = Fanvue 85% + Passes/PPV/Telegram/Brand 90% + Instagram subscription 80% keep  
-> **Tool Costs** = Phase 1+ base ₹9,056 (M1) / ₹10,731 (M2+) + Meta Ads + Research (scales) + buffer  
+> **Net Revenue** = Fanvue **80%** + Passes/PPV/Telegram/Brand 90% + Instagram subscription 80% keep  
+> **Tool Costs** = Phase 1+ base ₹9,056 (M1+, Later.com deprecated) + Ads + Research (scales) + buffer  
 > **Net Profit** = Net Revenue − Tool Costs | **Live dashboard: https://jasmine-dashboard-lovat.vercel.app**
 
 | Month | Gross Revenue | Net Revenue | Tool Costs | **Net Profit** | Cumulative |
 |---|---|---|---|---|---|
 | M0 (setup) | ₹0 | ₹0 | ₹0 | **₹0** | ₹0 |
 | M1 | ₹23,270 | ₹20,199 | ₹9,056 ¹ | **₹11,143** | ₹11,143 |
-| M2 | ₹84,703 | ₹73,441 | ₹10,731 ² | **₹62,710** | ₹73,853 |
-| M3 | ₹2,05,241 | ₹1,78,201 | ₹16,731 ³ | **₹1,61,470** | ₹2,35,323 |
-| M4 ★ | ₹3,71,088 | ₹3,20,140 | ₹19,731 ⁴ | **₹3,00,409** | ₹5,35,732 |
-| M5 | ₹5,48,670 | ₹4,72,910 | ₹19,731 | **₹4,53,179** | ₹9,88,911 |
-| M6 | ₹8,08,760 | ₹6,99,337 | ₹21,731 ⁵ | **₹6,77,606** | ₹16,66,517 |
-| M8 | ₹14,16,344 | ₹12,27,132 | ₹23,231 ⁶ | **₹12,03,901** | ~₹37,90,000 |
-| M10 | ₹21,03,160 | ₹18,25,304 | ₹26,231 ⁷ | **₹17,99,073** | ~₹70,50,000 |
-| M12 | ₹28,98,948 | ₹25,21,551 | ₹26,231 | **₹24,95,320** | ~₹1.17 crore |
+| M2 | ₹84,703 | ₹73,441 | ₹9,056 ² | **₹64,385** | ₹75,528 |
+| M3 | ₹2,05,241 | ₹1,78,201 | ₹15,056 ³ | **₹1,63,145** | ₹2,38,673 |
+| M4 ★ | ₹3,71,088 | ₹3,20,140 | ₹18,056 ⁴ | **₹3,02,084** | ₹5,40,757 |
+| M5 | ₹5,48,670 | ₹4,72,910 | ₹18,056 | **₹4,54,854** | ₹9,95,611 |
+| M6 | ₹8,08,760 | ₹6,99,337 | ₹20,056 ⁵ | **₹6,79,281** | ₹16,74,892 |
+| M8 | ₹14,16,344 | ₹12,27,132 | ₹21,556 ⁶ | **₹12,05,576** | ~₹38,00,000 |
+| M10 | ₹21,03,160 | ₹18,25,304 | ₹24,556 ⁷ | **₹18,00,748** | ~₹70,70,000 |
+| M12 | ₹28,98,948 | ₹25,21,551 | ₹24,556 | **₹24,96,995** | ~₹1.17 crore |
 
 ★ M4 = Instagram native subscription (₹200/mo) launches — Instagram crosses 10,000 followers
 
 **Footnotes:**
-1. M1: ₹9,056 base — Higgsfield ₹2,699 + ElevenLabs ₹420 + Grok ₹542 + Claude Code ₹4,000 + Calilio ₹1,303 + Namecheap ₹92 + Later.com ₹0 (not yet active)
-2. M2: ₹10,731 base — same as M1 + Later.com ₹1,675 now active
-3. M3: ₹10,731 + ₹3,000 Meta Ads + ₹3,000 Research = ₹16,731
-4. M4–M5: ₹10,731 + ₹6,000 Ads + ₹3,000 Research = ₹19,731
-5. M6–M7: ₹10,731 + ₹6,000 Ads + ₹5,000 Research = ₹21,731
-6. M8–M9: ₹21,731 + ₹1,500 buffer = ₹23,231
-7. M10+: ₹10,731 + ₹6,000 Ads + ₹8,000 Research + ₹1,500 buffer = ₹26,231
+1. M1: ₹9,056 base — Higgsfield ₹2,699 + ElevenLabs ₹420 + Grok ₹542 + Claude Code ₹4,000 + Calilio ₹1,303 + Namecheap ₹92 + Metricool ₹0
+2. M2: ₹9,056 base — same as M1. Later.com deprecated; Metricool free covers scheduling.
+3. M3: ₹9,056 + ₹3,000 IG Reels Ads + ₹3,000 Research = ₹15,056
+4. M4–M5: ₹9,056 + ₹6,000 Ads + ₹3,000 Research = ₹18,056
+5. M6–M7: ₹9,056 + ₹6,000 Ads + ₹5,000 Research = ₹20,056
+6. M8–M9: ₹20,056 + ₹1,500 buffer = ₹21,556
+7. M10+: ₹9,056 + ₹6,000 Ads + ₹8,000 Research + ₹1,500 buffer = ₹24,556
 
 ### Key P&L Observations
 

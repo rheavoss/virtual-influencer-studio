@@ -25,37 +25,37 @@ To ensure zero censorship and full ownership of the Intellectual Property, this 
 ### 1. High-End Editorial Photos (Instagram Feed)
 *   **The Content:** High-resolution, highly detailed modeling photos demonstrating perfect anatomy, realistic skin texture, and lighting.
 *   **Target Platform:** Instagram Main Feed, X (Twitter) Timeline.
-*   **Estimated Cost:** ~$10-20/month (Civitai Buzz membership or Fall.ai API usage). FLUX.2 [klein] drops inference costs significantly.
-*   **The Tool:** **FLUX.2 [dev] (Base Model) + Custom LoRA + Flux Kontext / IP-Adapter**
-*   **The Justification:** FLUX.2 (released late 2025) is the absolute open-weight standard. A single LoRA causes "identity drift", so the 2026 workflow uses Civitai's FLUX.2 trainer combined with **Flux Kontext** (in-context editing) and **IP-Adapter** to ensure zero-drift, 100% facial consistency across 100+ images. 
+*   **Estimated Cost:** ~$10-20/month (Civitai Buzz membership or Fal.ai API usage).
+*   **The Tool:** **Flux.1 Dev (Base Model) + Custom LoRA + Flux Kontext / IP-Adapter**
+*   **The Justification:** Flux.1 Dev is the open-weight standard. A single LoRA causes "identity drift", so the 2026 workflow uses Civitai's Flux.1 Dev trainer combined with **Flux Kontext** (in-context editing) and **IP-Adapter** to ensure zero-drift, 100% facial consistency across 100+ images. 
 
 ### 2. Spontaneous Lifestyle Photos (Instagram Stories)
 *   **The Content:** Low-fidelity, mirror selfies, "shot on phone" casual images designed to build parasocial relationships.
 *   **Target Platform:** Instagram Stories, Fanvue Teasers, X (Twitter) Feed.
 *   **Estimated Cost:** $0 (Included in the base image generation budget above).
-*   **The Tool:** **FLUX.2 [dev] + Custom LoRA + Lo-Fi LoRAs**
+*   **The Tool:** **Flux.1 Dev + Custom LoRA + Lo-Fi LoRAs**
 *   **The Justification:** Using the exact same base model/LoRA ensures facial consistency, augmented by specific "grainy phone camera" LoRAs to emulate amateur lighting and flash photography.
 
 ### 3. Monetized Explicit Photos (Fanvue / OF)
 *   **The Content:** Highly suggestive, lingerie, and explicit content.
 *   **Target Platform:** Fanvue (Paywall), Telegram VIP Group.
 *   **Estimated Cost:** ~$15-30/month (RunPod pay-as-you-go GPU rental or PixelBunny.ai).
-*   **The Tool:** **FLUX.2 [dev] + Custom LoRA + Uncensored Cloud GPU (RunPod / PixelBunny.ai)**
-*   **The Justification:** Fanvue content generation pipelines cannot be shut down by corporate API updates. We run FLUX.2 and our LoRA inside a private ComfyUI instance on a rented RunPod GPU or aggregator like PixelBunny.ai to bypass all safety filters natively.
+*   **The Tool:** **Flux.1 Dev + Custom LoRA + Uncensored Cloud GPU (RunPod / PixelBunny.ai)**
+*   **The Justification:** Fanvue content generation pipelines cannot be shut down by corporate API updates. We run Flux.1 Dev and our LoRA inside a private ComfyUI instance on a rented RunPod GPU to bypass all safety filters natively.
 
-### 4. Cinematic B-Roll (TikTok / Reels Backgrounds)
+### 4. Cinematic B-Roll (Reels Backgrounds)
 *   **The Content:** Non-speaking video clips (walking, posing, drinking coffee).
-*   **Target Platform:** TikTok, Instagram Reels, YouTube Shorts.
-*   **Estimated Cost:** ~$10-15/month (Kling credits or Runway standard tier).
-*   **The Tool:** **Kling 3.0 / O3 or Runway Gen-4.5 (Image-to-Video via API)**
-*   **The Justification:** Kling 3.0 currently leads for character temporal consistency (tattoos/face won't melt in motion). Runway Gen-4.5 wins for professional director control (motion brushes). We input our perfect FLUX.2 static image to animate.
+*   **Target Platform:** Instagram Reels, YouTube Shorts, Facebook Reels. ~~TikTok — DEPRECATED~~
+*   **Estimated Cost:** ~$5/month (Wan AI 2.2 — 300 credits/month covers 40–60 Reels).
+*   **The Tool:** **Wan AI 2.2 Image-to-Video (Start Frame method)**
+*   **The Justification:** Wan AI 2.2 at $5/month replaces HeyGen ($2–6/min) and Kling for standard B-roll. Always generate a static Flux.1 Dev image first and use it as Start Frame — gives 30–40% better consistency. See `master_decisions_log.md` §4.
 
-### 5. Lip-Synced Talking Head Videos (Reels / TikToks)
+### 5. Lip-Synced Talking Head Videos (Reels / GFE)
 *   **The Content:** Jasmine speaking directly to the camera, used for vlogs or answering Fanvue messages.
-*   **Target Platform:** TikTok, Instagram Reels, Fanvue PPV (Pay-Per-View) Messages.
-*   **Estimated Cost:** ~$10/month (Hedra basic creator tier or native Kling).
-*   **The Tool:** **Hedra, Kling 3.0 Native Lip-Sync, or Magic Hour**
-*   **The Justification:** Standard video generators break when lips move. These 2026 tools map audio-driven facial landmarks onto our static FLUX.2 source image, keeping the identity 100% locked while animating lips and micro-expressions.
+*   **Target Platform:** Instagram Reels, Fanvue PPV (Pay-Per-View) Messages. ~~TikTok — DEPRECATED~~
+*   **Estimated Cost:** ~$5/month (included in Wan AI 2.2 plan or Higgsfield Seedance 2.0).
+*   **The Tool:** **Wan AI 2.2 S2V or Higgsfield Seedance 2.0** (ElevenLabs audio → lip-sync)
+*   **The Justification:** Generate Flux.1 Dev static reference image → feed as Start Frame → Wan AI animates speaking. ElevenLabs provides the voice audio. Result: consistent GFE talking head video at near-zero marginal cost.
 
 ### 6. Voice & Audio Assets
 *   **The Content:** Custom voice model for scripts and Fanvue voice notes.
@@ -76,7 +76,7 @@ To ensure zero censorship and full ownership of the Intellectual Property, this 
 ## Production Workflow (How It Operates)
 
 1. **Dataset Generation:** Taking our curated 100+ images (from Grok).
-2. **LoRA Training (Next Step):** Upload the dataset to Civitai to compute the **FLUX.2 weights**. 
-3. **Daily Generation:** Use ComfyUI / Civitai to prompt FLUX.2 + our LoRA (augmented with IP-Adapter & Flux Kontext for zero-drift consistency).
-4. **Animation:** Pass static images to Kling 3.0 for B-roll or Hedra for speaking videos.
+2. **LoRA Training (Next Step):** Upload the dataset to Civitai / RunPod to train the **Flux.1 Dev LoRA**. 
+3. **Daily Generation:** Use ComfyUI / Civitai to prompt Flux.1 Dev + our LoRA (augmented with IP-Adapter & Flux Kontext for zero-drift consistency).
+4. **Animation:** Pass static images to **Wan AI 2.2** as Start Frame for B-roll; use **Wan AI S2V or Higgsfield Seedance 2.0** for speaking videos.
 5. **Distribution:** Polish in CapCut and schedule via Metricool.

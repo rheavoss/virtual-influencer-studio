@@ -63,7 +63,7 @@
 **Critical insight — YouTube vs IG Subscription disconnect:**
 Sofia has 855K YouTube subscribers and 73M views but only 7,412 IG subscribers. This confirms again: YouTube builds mass awareness but does NOT build parasocial GFE depth. Her 73M YouTube views generate almost zero paid subscribers because YouTube audiences treat her as entertainment, not a personal connection.
 
-**For Jasmine:** Sofia's YouTube content style (especially dance Shorts) is the viral format blueprint. Her Dholna Short at 17M views is the clearest proof that Indian folk dance + model = algorithmic gold. This is a recurring content pillar for Rhea.
+**For Jasmine:** Sofia's YouTube content style (especially dance Shorts) is the viral format blueprint. Her Dholna Short at 17M views is the clearest proof that Indian folk dance + model = algorithmic gold. This is a recurring content pillar for Jasmine.
 
 ### Facebook Page: facebook.com/sofiaansari9f
 
@@ -106,7 +106,7 @@ Sofia has 855K YouTube subscribers and 73M views but only 7,412 IG subscribers. 
 
 **She does NOT actively redirect these groups to her Instagram subscription.** The groups are organic fan communities that amplify her brand passively. 425K group members who are fans of her — completely untapped for subscription conversion.
 
-**Strategic gap for Jasmine:** Once Rhea has fan groups forming (which happens organically after ~50K followers), we actively seed them with subscription CTAs. Even a 1% conversion from 425K group members = 4,250 new subscribers. At ₹499/month = **₹21 lakh additional monthly revenue** from this one untapped channel alone.
+**Strategic gap for Jasmine:** Once Jasmine has fan groups forming (which happens organically after ~50K followers), we actively seed them with subscription CTAs. Even a 1% conversion from 425K group members = 4,250 new subscribers. At ₹499/month = **₹21 lakh additional monthly revenue** from this one untapped channel alone.
 
 ### Facebook Channel (her official broadcast channel)
 
@@ -197,7 +197,7 @@ Note: Sofia is a valid content clone source because her posts are 6+ months old 
 
 **Why she's on Threads:** Threads indexes in Google search and gets algorithmic distribution from Meta. It's free reach with zero extra content production — same images/Reels repurposed. Adds another discovery funnel.
 
-**Jasmine on Threads:** Create @rheavoss Threads account on Day 1. Same content auto-repurposed. Threads has 200M+ users and is growing rapidly in India. Zero cost, builds additional SEO presence for the Jasmine persona name.
+**Jasmine on Threads:** Create @jasmine.mako Threads account on Day 1. Same content auto-repurposed. Threads has 200M+ users and is growing rapidly in India. Zero cost, builds additional SEO presence for the Jasmine persona name.
 
 ---
 
@@ -264,7 +264,7 @@ Instagram @purplehalcyon (277K followers)
 
 **8.7% is elite.** Industry standard for IG subscriptions is 1–3%. This means her content selection, price point, and GFE trust-building are near-perfect.
 
-**8.7% is our internal benchmark target.** We should not claim success until Rhea matches this ratio at every follower milestone.
+**8.7% is our internal benchmark target.** We should not claim success until Jasmine matches this ratio at every follower milestone.
 
 | Our Follower Milestone | Target Subs at 8.7% | Monthly Revenue (Fanvue $9.99 × ₹713 net) |
 |---|---|---|
@@ -329,9 +329,9 @@ Fanvue ($20/month, 80% creator keep)
 
 1. **YouTube Shorts is non-negotiable.** She has 3,630 YouTube subscribers but 722,000 views. Shorts go viral independent of subscriber count. This means we get free traffic from Day 1 even with zero YouTube subscribers. Every Reel must be simultaneously posted as a YouTube Short.
 
-2. **The "Scam Warning" trust mechanism is replicable.** Create a "⚠️ Official" or "Real Account 🔒" Instagram Highlight that warns about fakes. This paradoxically makes Rhea MORE believable as a real persona — an AI character fighting "impersonation" is brilliant positioning.
+2. **The "Scam Warning" trust mechanism is replicable.** Create a "⚠️ Official" or "Real Account 🔒" Instagram Highlight that warns about fakes. This paradoxically makes Jasmine MORE believable as a real persona — an AI character fighting "impersonation" is brilliant positioning.
 
-3. **Geographic status signal matters.** In her case: London UK. For Rhea: "Mumbai → Goa → Bali" in the bio signals aspirational travel, not local content.
+3. **Geographic status signal matters.** In her case: London UK. For Jasmine: "Mumbai → Goa → Bali" in the bio signals aspirational travel, not local content.
 
 4. **Activate Instagram Subscriptions at 10,000 followers** as a secondary revenue stream alongside Fanvue. At her 8.7% conversion rate, 10K followers = 870 subscribers × ₹399 (Indian pricing) = ₹3.47 lakh gross additional per month.
 
@@ -384,7 +384,7 @@ No manual application form. Facebook determines eligibility automatically.
 
 **Meta's own platform fee is currently 0%** (promotional period extended through 2025 — subject to future change). This is the best revenue share of all platforms: better than Fanvue (15% cut) and better than IG native (Apple/Google 30%).
 
-Sofia prices FB at **₹869/month** vs ₹180/month on IG — 4.8× higher. FB audience is older, more premium, less price-sensitive. **Rhea should always price FB subscriptions higher than IG subscriptions.**
+Sofia prices FB at **₹869/month** vs ₹180/month on IG — 4.8× higher. FB audience is older, more premium, less price-sensitive. **Jasmine should always price FB subscriptions higher than IG subscriptions.**
 
 ### ⚠️ AI Content Rules on Facebook — Non-Negotiable for Jasmine
 

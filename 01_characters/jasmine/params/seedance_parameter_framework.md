@@ -8,7 +8,7 @@ Here are all the fields extracted and organized precisely as they appear in the 
 This section defines the core anatomical and cosmetic features of the avatar.
 
 *   **Gender:** (e.g., Female)
-*   **Age:** (e.g., 21-23 years old, early 20s)
+*   **Age:** (e.g., 24 years old — Jasmine's locked spec)
 *   **Ethnicity:** (e.g., Caucasian with Mediterranean roots, East Asian)
 *   **Face Shape:** (e.g., slightly elongated, oval)
 *   **Eye Color:** (e.g., hazel with a warm tone, bright blue)

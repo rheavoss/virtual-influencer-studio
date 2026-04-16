@@ -2,6 +2,12 @@
 **Status:** Active Collaboration Document
 **Goal:** Automated handoffs between Antigravity (Strategy) and Claude Code (Execution).
 
+> ⚠️ **Doc-wide corrections (2026-04-17):** This document records all strategy moves chronologically. Some historical moves reference outdated specs — locked decisions override:
+> - **Fanvue keep rate:** 85% referenced throughout → **confirmed 80%** (see `master_decisions_log.md` §5)
+> - **Carrd.co** in bio strategy → **replaced by Bouncy.cc** (opens native browser = higher conversion)
+> - **Later.com** scheduling → **DEPRECATED, replaced by Metricool free tier**
+> - The historical moves are preserved as-is for audit trail purposes. Use `master_decisions_log.md` as current source of truth.
+
 ---
 
 ## The Rules of Engagement

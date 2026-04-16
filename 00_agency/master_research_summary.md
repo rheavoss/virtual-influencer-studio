@@ -19,7 +19,7 @@
 > **⚠️ PARTIALLY DEPRECATED 2026-04-11:** The "removing Fanvue entirely" instruction below is superseded. Antigravity's Move 13 ruling locks **Fanvue as primary** and Room 11 as secondary. Do not route all traffic to Room 11 only.
 
 - **Automation Philosophy:** Room 11's fully managed chatting service handles DM closing automatically 24/7. You forfeit 40% of DM revenue to keep the pipeline passive. **Fanvue subscription revenue runs in parallel as primary.**
-- **Traffic Routing:** Instagram and X/Twitter traffic → Fanvue (primary) + Room 11 (secondary via Carrd.co link page).
+- **Traffic Routing:** Instagram and X/Twitter traffic → Fanvue (primary) + Room 11 (secondary via Bouncy.cc link page).
 - **Data Centralization:** The Concierge 11 CRM logs subscriber LTV, tracking which whales the automated chatters are capturing.
 
 ### 1.2 Account Activation & Hardware Protocol (Phase 0)
@@ -36,7 +36,7 @@
 
 > **DEPRECATED:** Instagram chain-banning of linked accounts confirmed in 2026. Creating a dummy @jasmine.mako.link account for the mother-daughter method will trigger IG's coordinated inauthentic behavior detection and ban both accounts. Link.me is also flagged. Do not use this method.
 >
-> **Replacement:** Single account `@jasmine.mako` with bio pointing directly to Namecheap domain → Cloudflare → Carrd.co link page. See Section 1.2 Day 8 for updated bio link activation timing.
+> **Replacement:** Single account `@jasmine.mako` with bio pointing directly to Namecheap domain → Cloudflare → Bouncy.cc link-in-bio page. See Section 1.2 Day 8 for updated bio link activation timing.
 
 ~~- **Main account:** `@jasmine.mako` — bio reads: `link in @jasmine.mako.link 👇`~~
 ~~- **Dummy account:** `@jasmine.mako.link` — bio contains ONLY the bridge page link (Link.me/Linktree).~~
@@ -73,11 +73,11 @@
 |---|---|---|
 | **Higgsfield Plus** | Images (NanaBanana Pro unlimited), Video (SeaDance 2.0 / Kling 3.0), Audio (ElevenLabs v3), Motion Control | $29/mo (annual) |
 | **Loomflow AI** | The "Uncensored" alternative for SeaDance 2.0. To be used immediately if Higgsfield begins throwing "Face Detected / Violation" errors for Jasmine's realism. Features a built-in automated Prompt Agent, eliminating the need for Claude. | Pay-per-use |
-| **Avatar 5.0** | Long-form Video-to-Video generation. Uses a 15-second source video to lock identity for zero-drift 10-minute PPV talking head videos. | TBD |
+| ~~**Avatar 5.0**~~ | ~~Long-form Video-to-Video generation.~~ **DEPRECATED — not in current stack.** Use Wan AI S2V for talking head video instead. | — |
 | **Google Colab + Flux.1** | NSFW Batch 2-3 image generation (uncensored) | Free |
 | **fal.ai** | API for Kling 3.0 batch video generation (Phase 2 automation) | Pay-per-use |
 | **Weave AI (Node Loophole)** | Zero-cost fallback for SeaDance 2.0. Involves looping Fal.ai model links into Weave AI via ProtonMail burners to get 15 free generations per account. | Free (High Labor) |
-| **Later.com** | Posting scheduling for peak USA traffic | ~$18/mo |
+| ~~**Later.com**~~ | ~~Posting scheduling for peak USA traffic~~ **DEPRECATED — replaced by Metricool free tier** | ~~$18/mo~~ → ₹0 |
 | **Apify + Gemini** | Competitor Reel scraping & hook analysis pipeline | Pay-per-use / Free tier |
 
 ## SECTION 3: NEW TECHNIQUES

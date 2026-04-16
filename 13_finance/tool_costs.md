@@ -12,7 +12,7 @@
 | Grok (xAI) | Image generation (LoRA training batches) | ₹542 ✅ | Annual ÷ 12 | ₹6,500/yr confirmed by CEO |
 | Claude Code | AI strategy + ops | ₹4,000 ✅ | Monthly | 2 × ₹2,000 confirmed |
 | Calilio | US virtual number (Instagram verification walls) | ₹1,303 ✅ | Monthly | Local US number for IG account creation + SMS verification |
-| Namecheap | Domain registration (jasmine.link or similar) | ₹92 ✅ | Annual ÷ 12 | Carrd.co redirect chain: IG → Namecheap → Cloudflare → Carrd |
+| Namecheap | Domain registration (jasmine.link or similar) | ₹92 ✅ | Annual ÷ 12 | Bouncy.cc link-in-bio redirect — opens native browser = higher Fanvue conversion |
 | Google One | Colab Pro + storage | ₹___ ⏳ | Annual ÷ 12 | CEO to confirm annual plan amount |
 | **Phase 0 Base (confirmed)** | | **₹7,195/mo** | | Higgsfield + ElevenLabs + Grok + Claude Code + Calilio + Namecheap |
 
@@ -27,7 +27,7 @@
 | Calilio | US virtual number (Instagram verification walls) | ₹1,303 ✅ | Monthly | Same as Phase 0 |
 | Namecheap | Domain registration | ₹92 ✅ | Annual ÷ 12 | Same as Phase 0 |
 | SpicyChat AI Premium | DM/Chat automation generation (SFW/NSFW) | ₹1,260 | Monthly | Content Types 5 & 7 (Custom Dialogues/Roleplay) |
-| Metricool | Social scheduling (Instagram + Facebook + TikTok) | ₹0 | Free tier | Replaces Later.com; safe from shadowbans |
+| Metricool | Social scheduling (Instagram + Facebook + YouTube Shorts) | ₹0 | Free tier | Replaces Later.com; safe from shadowbans |
 | **Phase 1+ Base (confirmed)** | | **₹10,316/mo** | | All above (Metricool covers scheduling) |
 
 > ⚠️ ElevenLabs India pricing unconfirmed. Likely cheaper than USD × rate. Verify at elevenlabs.io/pricing before locking.
