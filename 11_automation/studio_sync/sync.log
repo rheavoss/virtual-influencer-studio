@@ -229,3 +229,66 @@ Elapsed time:         1.2s
 =============================================
 [Thu Apr 16 16:49:25 IST 2026] Starting Studio Auto-Sync...
 >>> Syncing Code to GitHub...
+[graphify hook] graph.html synced to public/
+[main 7f9a39a] chore(sync): automated studio heartbeat sync
+ 3 files changed, 42 insertions(+), 5 deletions(-)
+To https://github.com/rheavoss/virtual-influencer-studio.git
+   22e46df..7f9a39a  main -> main
+>>> Syncing High-Value Assets to Drive...
+Transferred:   	          0 B / 0 B, -, 0 B/s, ETA -
+Checks:                 0 / 0, -, Listed 1
+Elapsed time:         0.5sTransferred:   	          0 B / 0 B, -, 0 B/s, ETA -
+Checks:                 0 / 0, -, Listed 2
+Elapsed time:         1.0sTransferred:   	          0 B / 0 B, -, 0 B/s, ETA -
+Checks:                 0 / 0, -, Listed 12
+Elapsed time:         1.4sTransferred:   	   16.781 KiB / 16.781 KiB, 100%, 0 B/s, ETA -
+Checks:                 8 / 8, 100%, Listed 24
+Transferred:            0 / 1, 0%
+Elapsed time:         1.9s
+Transferring:
+ *        jasmine/jasmine_reference_prompts.json:100% /16.781Ki, 0/s, -Transferred:   	   16.781 KiB / 16.781 KiB, 100%, 8.390 KiB/s, ETA 0s
+Checks:                11 / 11, 100%, Listed 27
+Transferred:            0 / 1, 0%
+Elapsed time:         2.4s
+Transferring:
+ *        jasmine/jasmine_reference_prompts.json:100% /16.781Ki, 0/s, -Transferred:   	   16.781 KiB / 16.781 KiB, 100%, 8.390 KiB/s, ETA 0s
+Checks:                11 / 11, 100%, Listed 27
+Transferred:            0 / 1, 0%
+Elapsed time:         2.9s
+Transferring:
+ *        jasmine/jasmine_reference_prompts.json:100% /16.781Ki, 16.778Ki/s, 0sTransferred:   	   16.781 KiB / 16.781 KiB, 100%, 5.593 KiB/s, ETA 0s
+Checks:                11 / 11, 100%, Listed 27
+Transferred:            0 / 1, 0%
+Elapsed time:         3.5s
+Transferring:
+ *        jasmine/jasmine_reference_prompts.json:100% /16.781Ki, 16.778Ki/s, 0sTransferred:   	   16.781 KiB / 16.781 KiB, 100%, 4.194 KiB/s, ETA 0s
+Checks:                11 / 11, 100%, Listed 27
+Transferred:            0 / 1, 0%
+Elapsed time:         4.0s
+Transferring:
+ *        jasmine/jasmine_reference_prompts.json:100% /16.781Ki, 8.389Ki/s, 0sTransferred:   	   16.781 KiB / 16.781 KiB, 100%, 4.194 KiB/s, ETA 0s
+Checks:                11 / 11, 100%, Listed 27
+Transferred:            1 / 1, 100%
+Elapsed time:         4.4sTransferred:   	   16.781 KiB / 16.781 KiB, 100%, 4.194 KiB/s, ETA 0s
+Checks:                11 / 11, 100%, Listed 27
+Transferred:            1 / 1, 100%
+Elapsed time:         4.7s
+Transferred:   	          0 B / 0 B, -, 0 B/s, ETA -
+Checks:                 0 / 1, 0%, Listed 4
+Elapsed time:         0.5sTransferred:   	          0 B / 0 B, -, 0 B/s, ETA -
+Checks:                 1 / 1, 100%, Listed 25
+Elapsed time:         1.0sTransferred:   	          0 B / 0 B, -, 0 B/s, ETA -
+Checks:                20 / 20, 100%, Listed 44
+Elapsed time:         1.4s
+Transferred:   	          0 B / 0 B, -, 0 B/s, ETA -
+Checks:                 3 / 3, 100%, Listed 52
+Elapsed time:         0.5sTransferred:   	          0 B / 0 B, -, 0 B/s, ETA -
+Checks:                 3 / 3, 100%, Listed 52
+Elapsed time:         1.0sTransferred:   	          0 B / 0 B, -, 0 B/s, ETA -
+Checks:                41 / 41, 100%, Listed 90
+Elapsed time:         1.0s
+[Thu Apr 16 16:49:42 IST 2026] Sync Complete!
+=============================================
+=============================================
+[Thu Apr 16 17:19:42 IST 2026] Starting Studio Auto-Sync...
+>>> Syncing Code to GitHub...
