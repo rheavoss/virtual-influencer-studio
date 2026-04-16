@@ -23,7 +23,7 @@ Here is the 40-image Scene Taxonomy for your mechanical prompt generation:
 - **Angles:** 3 Extreme Face Close-Ups, 3 Half-body (torso focus), 4 Full-body.
 - **Wardrobe:** Basic, form-fitting, opaque outfits ensuring no fabric distracts from the body lines (e.g., tight white sports bra, black yoga pants).
 - **Lighting:** Flat studio lighting, hard photography flash (shadowless).
-- **Goal:** Establish the mathematical identity lock for her face structure and G-cup volume parameters.
+- **Goal:** Establish the mathematical identity lock for her face structure and DDD cup volume parameters (32DDD — NOT G-cup; G-cup causes BBW drift in Flux models).
 
 ### Batch 2: The "Girlfriend Experience" (GFE) (10 Prompts)
 - **Angles:** POV (boyfriend perspective holding the camera), laying down looking up, looking over the shoulder.

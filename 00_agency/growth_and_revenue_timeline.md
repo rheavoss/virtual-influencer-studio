@@ -6,6 +6,22 @@
 
 ---
 
+## Acquisition Channel Economics (Locked Benchmarks)
+
+| Channel | Budget | Cost Per Follower | Notes |
+|---|---|---|---|
+| IG Reels Ads | ₹1,500–2,000/mo | ₹15–25 | SFW content only. Safe on Meta. Starts M3. |
+| IG Reels Ads (fitness niche) | — | ₹18–45 | Higher quality followers, higher intent |
+| Taboola / ExoClick | ₹1,500–3,000/mo | ₹1–6/click | Routes to mediator → Fanvue ONLY. Never direct to IG. |
+| Adult networks daily volume | ₹3,000/mo | 500–1,000 visits/day | High volume, lower quality vs IG ads |
+| Organic (hacks playbook) | ₹0 | — | Community pages, Reddit, Telegram bridge |
+
+**Passes.com note:** 90% creator keep rate vs Fanvue's 80%. Same content, higher margin. Launch same day as Fanvue.
+
+**Non-nude viability (research confirmed):** Top non-nude/softcore creators earn $5k–$30k/month. Fitness/travel niche earns $1,500–$6,000/month. Content ceiling (Lena Paul level) is fully commercially viable.
+
+---
+
 ## Platform Launch Schedule
 
 ### Day 1 — Everything Goes Live Simultaneously
@@ -129,7 +145,7 @@
 | PPV + voice notes | $700 |
 | **Total MRR** | **~$3,600** |
 
-**Milestone:** Meta Ads activated (organic proof confirmed). Second character evaluation begins (if $500 MRR was sustained ×2 months).
+**Milestone:** IG Reels Ads + Taboola/ExoClick activated (organic proof confirmed). Second character evaluation begins (if $500 MRR sustained ×2 months).
 
 ---
 

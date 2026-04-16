@@ -117,6 +117,60 @@
 
 ---
 
+## TIER 4 — Paid Acquisition (Month 3+, after organic proof)
+
+### 💰 Account Activation Protocol (MUST DO BEFORE REELS)
+**Critical rule:** Instagram suppresses Reels for accounts under 1,000 followers. Algorithm will not distribute content until this threshold is crossed.
+
+**Steps:**
+1. Post 3 high-quality static images (feed posts, NOT Reels)
+2. Immediately boost each at **₹20–30/day for 5–7 days** using IG's native Boost button
+3. This unlocks the algorithm's promotion engine — Reels will then get real distribution
+4. Only AFTER crossing ~1,000 followers begin posting Reels
+
+**Cost:** ₹300–₹600 total. Non-negotiable pre-condition for all organic growth hacks above.
+
+---
+
+### 💰 Hack 13: IG Reels Ads (Safe on Meta — SFW content only)
+**What:** Promote SFW lifestyle/fitness Reels to Indian male audience via Meta Ads Manager.
+**Content rule:** Only SFW content in ads. Never promote suggestive or Fanvue-linked content through Meta — account will be banned.
+**Budget:** ₹1,500–₹2,000/month (starts Month 3 after organic proof)
+**Benchmarks:**
+- CPM (India, lifestyle/fitness): ₹60–120
+- Cost per follower: ₹15–25
+- Cost per follower (fitness niche): ₹18–45
+**Goal:** High-quality, safe IG followers who convert to Fanvue organically.
+
+---
+
+### 💰 Hack 14: Taboola / ExoClick Adult Network Traffic
+**What:** Buy cheap adult-content-friendly traffic and route to Fanvue directly.
+**CRITICAL ROUTING RULE:** Adult network → `rheavoss.com` mediator → Fanvue link. NEVER drive adult network traffic directly to IG profile (instant shadowban).
+**Networks:** Taboola, ExoClick, TrafficJunky, Outbrain
+**Budget:** ₹1,500–₹3,000/month (starts Month 3)
+**Benchmarks:**
+- Cost per click: ₹1–6 (often lower in India)
+- Profile visits per day: 500–1,000+ at ₹3,000/month
+- These are high-volume, lower-quality vs IG ads but dramatically cheaper
+**Goal:** Funnel volume directly to Fanvue subscriptions, bypassing IG entirely.
+
+---
+
+### 💰 Hack 15: Threads Method (Aged Accounts)
+**What:** Deploy aged 2014+ Instagram accounts on Threads to drive traffic to Telegram QR → Fanvue.
+**Method:**
+1. Buy aged 2014+ IG accounts (~$2.50 each)
+2. Use mobile proxy (~₹4,500–5,000/month, handles 4–6 accounts)
+3. Post 3–5 times/day on Threads (3 photos + final photo is QR code linking to Telegram VIP)
+4. CupidBot handles auto-conversion from Telegram → Fanvue
+
+**Why it works:** Case study result: 5,800 clicks → 300 subs → $4,500 revenue.
+**OpSec:** Use Dolphin{anty} browser to isolate Threads activity from all other accounts.
+**Note:** Never link aged accounts directly to main Jasmine IG profile — keep them as separate traffic sources only.
+
+---
+
 ## Priority Execution Order (Launch Week)
 
 | Day | Action |

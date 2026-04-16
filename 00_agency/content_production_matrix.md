@@ -199,6 +199,81 @@ Slide 4: standing by mirror, gym bag on shoulder, ready to leave
 
 ---
 
+## Production Best Practices (Buried Research — Now Locked)
+
+### Rule 1: Start Frame Technique (ALWAYS generate image first)
+**Never prompt text directly into a video model.** Always:
+1. Generate a perfect static image of Jasmine in the exact pose/outfit/scene using Flux Kontext or Z-Image
+2. Feed that image as the **Start Frame** into Wan AI / Kling / Seedance
+3. This improves consistency by 30–40% vs text-only video prompts
+
+For motion transfer specifically: extract Frame 1 of the driving video → face-swap Jasmine onto it → use THAT as Start Frame. This locks her face from frame 1.
+
+---
+
+### Rule 2: Wan AI Official Prompt Recipe
+**Format:** `Subject + Scene + Motion + Aesthetic Control + Stylization`
+**Length:** 80–120 words. Natural language only — NOT Stable Diffusion keyword tags.
+
+**Good example:**
+```
+Jasmine, a young East Asian woman with long black hair and a voluptuous figure,
+walks slowly through a sunlit Goa beach. She turns her head toward the camera
+with a soft confident smile. Warm golden hour light, gentle ocean breeze moves
+her hair. Cinematic teal-orange grade, shallow depth of field, smooth motion.
+```
+
+**Bad (keyword stacking — degrades output):**
+```
+jasmine, beach, walking, golden hour, 4k, photorealistic, bokeh, high quality
+```
+
+---
+
+### Rule 3: Seedance 2.0 Structural Prompt Format (Higgsfield)
+Two prompt types accepted:
+
+**Type A — Freestyle (outcome-focused):**
+Natural language description of the final scene. Best for lifestyle/travel.
+
+**Type B — Structural (timeline breakdown):**
+```
+[00:00–00:03] Jasmine standing at hotel balcony, looking at city skyline, wind in hair.
+[00:03–00:06] She slowly turns toward camera, soft smile, raises glass of wine.
+[00:06–00:10] Close-up on her face, warm sunset light, confident expression.
+```
+Use structural format for: GFE videos, PPV content, scripted Reels.
+
+**Voice consistency rule (from character bible):** Always include `"soft warm East Asian accent, gentle and intimate tone"` in every voice/Seedance prompt. Never leave accent vague.
+
+---
+
+### Rule 4: Pinterest → Prompt Reverse-Engineering Workflow
+For lifestyle/travel content where you need a specific scene:
+1. Find the exact real-world reference photo on Pinterest (Goa beach, Himalayan trail, luxury hotel lobby)
+2. Feed that image to **Qwen 3VL** (vision model): *"Describe this photo as a generation prompt — include lighting, composition, background details, mood, and camera angle"*
+3. Use Qwen's output as the scene prompt for Wan AI / Flux Kontext
+4. This produces ultra-detailed, research-backed prompts vs guessing scene descriptions
+
+---
+
+### Rule 5: Cherry-Pick Method (Cost Efficiency)
+For any high-stakes generation (PPV content, hero feed posts):
+1. Generate **twice** using the same 3 Omni-reference images but **two different Claude-written prompts**
+2. Select the best output, discard the other
+3. For Higgsfield: screenshot the image upload order — note which slot is `[image 1]`, `[image 2]`, `[image 3]` so Claude can reference them precisely in prompts by tag
+
+---
+
+### Rule 6: Wan AI Credit Economics
+- Wan2.2-Animate (I2V): 1 credit per generation
+- Speech-to-Video (S2V): 1 credit per generation
+- Pro tier: 300 credits/month at $5/month
+- Typical Reel (5–10 sec): 4–8 credits (accelerated mode)
+- **Output:** 40–60 Reels per month at $5 total — the core reason Wan beats HeyGen ($240–360/month for same output)
+
+---
+
 ## LoRA Reference
 
 | LoRA | Trained On | Optimizer | Steps | Use Case |

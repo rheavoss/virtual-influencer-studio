@@ -12,13 +12,27 @@
   },
   "facial_features": {
     "face_shape": "soft oval",
+    "eye_shape": "slightly hooded almond, relaxed and natural",
+    "iris_color": "dark brown warm hazel",
+    "nose": "medium straight-bridged with soft natural tip",
+    "lips": "medium fullness, natural bare-pink, soft shape",
+    "jawline": "soft moderately defined",
     "distinctive_marks": []
   },
   "skin_and_markings": {
+    "skin_tone": "fair even-toned, warm neutral-peachy undertone, no flush, no redness",
+    "skin_finish": "matte natural, zero smoothing — visible natural pores on cheeks and nose",
+    "imperfections": "2-3 small acne marks on left cheek, natural slight under-eye shadow, clean smooth forehead",
     "tattoos": [],
     "freckles": null,
     "scars": [],
     "birthmarks": []
+  },
+  "voice_and_audio": {
+    "accent": "soft warm East Asian accent, gentle and intimate tone",
+    "consistency_rule": "ALWAYS specify accent explicitly in every single video and voice prompt. Never leave accent vague — vague accent causes voice drift between clips and breaks character consistency.",
+    "voice_clone_reference": "ElevenLabs Starter (Month 1 only for clone reference)",
+    "daily_engine": "OmniVoice (local/Colab) — ₹0/month"
   },
   "content_ceiling": {
     "max_level": "non-nude NSFW edge",
