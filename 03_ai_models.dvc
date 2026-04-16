@@ -1,0 +1,6 @@
+outs:
+- md5: bb4548e21de836181d1aa248e1b02848.dir
+  size: 35451584
+  nfiles: 147
+  hash: md5
+  path: 03_ai_models

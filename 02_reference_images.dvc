@@ -1,0 +1,6 @@
+outs:
+- md5: ac698e9e9fdf672773247ff9f3a0b0fa.dir
+  size: 1070883
+  nfiles: 7
+  hash: md5
+  path: 02_reference_images

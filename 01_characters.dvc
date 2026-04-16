@@ -1,0 +1,6 @@
+outs:
+- md5: 478c2b6d48706aab3d44ac647b6f67d9.dir
+  size: 58709
+  nfiles: 9
+  hash: md5
+  path: 01_characters
