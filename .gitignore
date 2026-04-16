@@ -39,9 +39,9 @@ studio-secrets/
 credentials*
 
 # Giant model/image directories (To be handled by DVC, not Git)
+# NOTE: 01_characters/ is TEXT/JSON only — keep in git, NOT DVC
 03_ai_models/
 30_dataset/
-01_characters/
 02_reference_images/
 tmp/
 *.safetensors
