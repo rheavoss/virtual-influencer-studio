@@ -1,5 +1,5 @@
 # Jasmine Mako — Phase 0 & Phase 1 Execution Pipeline
-**Updated:** 2026-04-12 (Session 05 — Agent Routing & RICE Matrix applied)
+**Updated:** 2026-04-16 (Session 07 — Grok chat analysis, new video repos, investor backlog, GBrain live)
 
 **Legend:**
 - **Assignee:** [Antigravity] (Code/Workflows/OpSec), [Claude Code] (Text Prompts/Scripting), [Grok] (Market Intel/Trends/X & Web Research), [CEO] (Physical accounts/Payments).
@@ -75,7 +75,7 @@
 - [ ] **[P1-14]** `[Market Intel]` (Grok) *(RICE: 10×9×0.9÷5 = 16.2)* - **Grok Workflow:** Operate Playwright Headless Script to query X/Grok UI for daily trends without API costs.
 
 ### Payment Infrastructure & Geo-Routing
-- [ ] **[P1-15]** `[Tech Ops]` (Antigravity) *(RICE: 10×9×1.0÷2 = 45)* - Implement `middleware.ts` on Vercel for Cashfree (IN) vs. WHOP (Intl) geo-routing.
+- [x] **[P1-15]** `[Tech Ops]` (Antigravity) *(RICE: N/A - Done)* - Implement `middleware.ts` on Vercel for Cashfree (IN) vs. WHOP (Intl) geo-routing.
 - [ ] **[P1-16]** `[Tech Ops]` (Antigravity) *(RICE: 10×8×1.0÷3 = 26.6)* - Build `/checkout/cashfree` (native SDK) and `/checkout/whop` endpoints on mediator site.
 - [ ] **[P1-17]** `[Exec Dept]` (CEO) *(RICE: 10×8×1.0÷2 = 40)* - Configure Skydo receiving account as the default payout destination for all payment gateways.
 - [ ] **[P1-18]** `[Exec Dept]` (CEO) *(RICE: 6×8×0.8÷2 = 19.2)* - Follow up on Paddle / Lemon Squeezy (MoR) account approvals with $15k MRR 90-day projection.
@@ -91,12 +91,40 @@
 ### IDE & Workflow Upgrades
 - [ ] **[P1-25]** `[AI Ops]` (CEO) *(RICE: 10×8×1.0÷2 = 40)* - Install `claude-mem` + `token-savior` for persistent context saving and 97% reduced token usage.
 - [ ] **[P1-26]** `[AI Ops]` (Antigravity) *(RICE: 9×8×0.9÷3 = 21.6)* - Connect `ruflo` for multi-agent swarm orchestration inside Claude Code.
-- [ ] **[P1-27]** `[AI Ops]` (CEO) *(RICE: 10×9×1.0÷1 = 90)* - Inject `andrej-karpathy-skills` `CLAUDE.md` to enforce strict, surgical, goal-driven AI coding parameters.
+- [x] **[P1-27]** `[AI Ops]` (CEO) *(RICE: N/A - Done)* - Inject `andrej-karpathy-skills` `CLAUDE.md` to enforce strict, surgical, goal-driven AI coding parameters. Karpathy Protocol live in CLAUDE.md.
+
+### Additional Video Post-Production (Identified via Grok Research — Apr 15)
+- [ ] **[P1-28]** `[Content]` (Antigravity) *(RICE: 10×9×0.8÷3 = 24.0)* - Test `willermo/video-enhancer` — 2-stage Real-ESRGAN + GFPGAN pipeline to fix waxy AI faces and skin artifacts on CapCut exports.
+- [ ] **[P1-29]** `[Content]` (Antigravity) *(RICE: 9×8×0.8÷3 = 19.2)* - Test `phoenix104104/fast_blind_video_consistency` to eliminate frame-to-frame jitter and flickering in AI-generated Reels.
+- [ ] **[P1-30]** `[Content]` (Antigravity) *(RICE: 9×8×0.8÷4 = 14.4)* - Test `sczhou/Upscale-A-Video` (CVPR 2024) — diffusion-based upscale 720p CapCut exports to crisp 1080p/4K without introducing new flicker.
+
+### Payment Infrastructure (Remaining)
+- [ ] **[P1-31]** `[Tech Ops]` (Antigravity) *(RICE: 8×7×0.9÷2 = 25.2)* - Add manual country-selector dropdown on checkout page as user override for geo-routing (India/International toggle).
+- [ ] **[P1-32]** `[Exec Dept]` (CEO) *(RICE: 10×10×1.0÷1 = 100)* - Run end-to-end test transactions — one Indian payment via Cashfree, one international via WHOP. Verify live flow before launch.
 
 ---
 
 ## BACKLOG (Post $500 MRR)
 
+### Studio Expansion
 - [ ] **[B-01]** `[Tech Ops]` (Antigravity) *(RICE: 10×10×0.8÷5 = 16)* - Deploy Character Card to SpicyChat Premium for interactive funnels.
-- [ ] **[B-02]** `[Strategy]` (Claude) *(RICE: 10×10×0.7÷8 = 8.7)* - Duo Engine Expansion (Launch best friend influencer).
+- [ ] **[B-02]** `[Strategy]` (Claude) *(RICE: 10×10×0.7÷8 = 8.7)* - Duo Engine Expansion (Launch best friend influencer / second character).
 - [ ] **[B-03]** `[Growth]` (CEO) *(RICE: 10×8×0.8÷3 = 21.3)* - Paid Community Page Shoutouts triggered on organic milestones.
+
+### Payment Optimisation
+- [ ] **[B-04]** `[Tech Ops]` (Antigravity) *(RICE: 6×7×0.7÷3 = 9.8)* - A/B test WHOP vs Paddle / Lemon Squeezy for international checkout conversion. Requires Paddle/LemonSqueezy approvals first (P1-18).
+- [ ] **[B-05]** `[Exec Dept]` (CEO) *(RICE: 7×8×0.8÷2 = 22.4)* - Follow up Grey Business account approval — alternative international payout rail to Skydo.
+
+### Investor Deck & Fundraising (Post M3 Traction — Target: $750k–$900k at $7–7.5M post-money SAFE)
+> **Trigger:** Only start after 3 months of real Jasmine data (followers, Fanvue MRR, CAC proof). Do not pitch before M3.
+
+- [ ] **[B-06]** `[Strategy]` (Claude) *(RICE: 8×9×0.8÷4 = 14.4)* - Reframe entire deck as "AI Virtual Influencer Studio" — portfolio-first model, not single-character bet.
+- [ ] **[B-07]** `[Strategy]` (Claude) *(RICE: 8×9×0.8÷3 = 19.2)* - Build Studio Ops Evolution Roadmap slide (M1–M3 solo founder → M4–M6 VAs → M7+ operator at >₹14L MRR).
+- [ ] **[B-08]** `[Strategy]` (Claude) *(RICE: 8×9×0.8÷3 = 19.2)* - Build De-Risked Multi-Platform Architecture diagram slide (shared backend + parallel characters + owned audience).
+- [ ] **[B-09]** `[Strategy]` (Claude) *(RICE: 8×9×0.8÷3 = 19.2)* - Create 3-scenario CAC sensitivity table (Base / Conservative / Pessimistic) with actual Taboola CPL data.
+- [ ] **[B-10]** `[Strategy]` (Claude) *(RICE: 7×8×0.8÷2 = 22.4)* - Update Use-of-Funds slide with portfolio milestones and tranches.
+- [ ] **[B-11]** `[Strategy]` (Claude) *(RICE: 7×8×0.8÷2 = 22.4)* - Create IP Moat & Legal slide (trademarks, prompts, assets, automation workflows).
+- [ ] **[B-12]** `[Strategy]` (Claude) *(RICE: 7×7×0.8÷2 = 19.6)* - Create Postiz self-hosted slide (unlimited portfolio scale, zero SaaS cost vs competitors).
+- [ ] **[B-13]** `[Strategy]` (Claude) *(RICE: 8×9×0.9÷2 = 32.4)* - Prepare 1-page traction update document for 90-day outreach (hard M3 metrics only — no projections).
+- [ ] **[B-14]** `[Strategy]` (Claude + CEO) *(RICE: 8×9×0.8÷3 = 19.2)* - Draft customised outreach emails + one-pager for target funds: Inner Circle, Night Ventures, Slow Ventures, Creator Ventures, a16z, Sequoia.
+- [ ] **[B-15]** `[Exec Dept]` (CEO) *(RICE: 9×10×0.7÷4 = 15.75)* - Finalise raise amount, valuation cap, and SAFE terms. Current Grok recommendation: **$750k–$900k at $7–7.5M post-money SAFE**. CEO to confirm before outreach.
