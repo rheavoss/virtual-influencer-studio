@@ -1,0 +1,24 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.6.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-json
+      - id: check-merge-conflict
+      - id: detect-private-key
+
+  - repo: https://github.com/python-jsonschema/check-jsonschema
+    rev: v0.37.1
+    hooks:
+      - id: check-jsonschema
+        name: Validate Character Bible JSONs
+        files: ^01_characters/.*character_bible\.json$
+        args: ["--schemafile", "schemas/character_bible.schema.json"]
+
+  - repo: https://github.com/pre-commit/mirrors-prettier
+    rev: v3.1.0
+    hooks:
+      - id: prettier
+        types_or: [yaml, json, md, ts, js]

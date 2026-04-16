@@ -1,0 +1,50 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Virtual Influencer Character Bible Schema",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "character_id",
+    "character_name",
+    "visual_reference",
+    "content_ceiling",
+    "style_guidelines"
+  ],
+  "properties": {
+    "schema_version": { "type": "string" },
+    "character_id": { "type": "string" },
+    "character_name": { "type": "string" },
+    "description": { "type": "string" },
+    "visual_reference": { "type": "string" },
+    "anatomical_metrics": {
+      "type": "object",
+      "properties": {
+        "height_cm": { "type": "number" },
+        "weight_kg": { "type": "number" },
+        "body_type": { "type": "string" },
+        "measurements": { "type": "string" }
+      }
+    },
+    "facial_features": { "type": "object" },
+    "skin_and_markings": {
+      "type": "object",
+      "properties": {
+        "tattoos": { "type": "array" },
+        "freckles": {},
+        "scars": { "type": "array" },
+        "birthmarks": { "type": "array" }
+      }
+    },
+    "content_ceiling": {
+      "type": "object",
+      "required": ["max_level", "allowed", "hard_limits"],
+      "properties": {
+        "max_level": { "type": "string" },
+        "allowed": { "type": "array", "items": { "type": "string" } },
+        "hard_limits": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "style_guidelines": { "type": "object" }
+  },
+  "additionalProperties": true
+}

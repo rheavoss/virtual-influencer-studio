@@ -1,52 +1,37 @@
 # VERIFICATION REQUEST: AI Influencer Dataset Generation Pipeline
 
-**Objective:** Build a custom Flux.1 Dev LoRA to permanently lock the identity of Jasmine Mako for Instagram/Fanvue monetization.
+**Objective:** Build a $10 custom FLUX.2 LoRA to permanently lock the identity of an uncensored AI influencer (Jasmine Mako) for Instagram/Fanvue monetization.
 
 ## 1. The Core Problem Statement
 
-To train a high-quality LoRA on Vast.ai (see P0-07), the trainer requires a dataset of 47 images with **consistent facial geometry**.
+To train a high-quality, professional-grade LoRA on Civitai, the trainer requires a dataset of 30 imposing, high-resolution images featuring the **exact same facial geometry**. 
 
-- **The Flaw in the Current Dataset:** We have 27 images generated via Grok. While body type and aesthetic are correct, some images have subtle face drift. If we feed morphing faces into a LoRA trainer, the resulting model will generate a blurry or averaged face.
-- **The Hardware/Tooling Blockers:**
-  1. Mac lacks the GPU required to run ComfyUI locally
-  2. Browser-based cloud UIs (Colab / HuggingFace Spaces) crash during automated generation
-  3. Proprietary platforms (Midjourney, Krea) enforce safety filters, killing the Fanvue model
+*   **The Flaw in the Current Dataset:** We currently possess 101 images generated via Grok. While the body type and aesthetic are correct, the dataset contains 5+ subtle variations of her face ("identity drift"). If we feed these 101 morphing faces into a LoRA trainer, the resulting model will generate a blurry or averaged face, ruining the photorealism.
+*   **The Hardware/Tooling Blockers:** We need to generate 30 new, perfectly locked faces from 1 singular reference photo. However:
+    1.  The user's local Mac hardware lacks the GPU required to run ComfyUI locally.
+    2.  Browser-based cloud UIs (Google Colab / HuggingFace Spaces) crash or fail during automated generation.
+    3.  Proprietary platforms (Midjourney, Krea) will eventualy enforce safety filters, killing the Fanvue monetization model.
 
-**Bottleneck:** Cannot train the LoRA because we cannot generate the remaining 20 identical training images due to local hardware limits and browser instability.
+**Summary of the Bottleneck:** *We cannot train the necessary FLUX LoRA because we cannot generate the 30 identical training images due to local hardware limits and browser instability.*
 
 ---
 
 ## 2. The Proposed Solution
 
-Programmatically generate the 20-image gap by hitting a cloud GPU **API** using a Python script.
+We abandon browser-based GUI solutions entirely and programmatically generate the flawless 30-image dataset by hitting a cloud GPU **API** using a Python script.
 
-- **Technology:** PuLID for Flux.1 Dev — tuning-free ID customization. Injects a perfect identity into Flux.1 generation without training.
-- **Provider:** Fal.ai serverless API (`fal-ai/flux-pulid`)
-- **Script:** `03_ai_models/jasmine_mako/generation/generate_dataset.py` (ready to run)
-
-**Execution Plan:**
-1. Place the single best approved Jasmine reference image at `jasmine_reference.jpg`
-2. Set `export FAL_KEY="your-key"` (from credentials vault)
-3. Run `python generate_dataset.py`
-4. Script loops through 20 scene prompts (different outfits, lighting, angles)
-5. Cloud API (H100 GPU, ~10s/image) locks facial geometry to reference photo
-6. 20 images downloaded to `03_ai_models/jasmine_mako/training_data/jasmine_dataset/`
-
-**Cost & Time:** ~$0.40–$0.60 total in Fal.ai credits. ~5 minutes runtime.
-
-**Result:** 47-image dataset ready for Vast.ai Flux.1 Dev LoRA training (P0-07).
+*   **The Technology:** **PuLID for FLUX** (Tuning-free ID Customization). PuLID is the 2026 standard for injecting a perfect identity into FLUX generation without training.
+*   **The Provider:** Serverless API providers like **Fal.ai** (`fal-ai/flux-pulid`) or **Replicate** (`bytedance/flux-pulid`).
+*   **The Execution Plan:**
+    1.  We choose the **ONE** best, approved image of Jasmine from the current batch.
+    2.  An AI writes a short Python script (`generate_dataset.py`) for the user's Mac. 
+    3.  The script passes the 1 reference image to the Fal.ai or Replicate API via code.
+    4.  The script iteratively loops through 30 different text prompts (changing her clothes, the lighting, angles, and background).
+    5.  The cloud API executes the generation (taking ~10 seconds per image on an H100 GPU) and strictly locks the facial geometry to the reference photo. 
+    6.  The 30 perfect, photorealistic, identical faces are downloaded straight to a local folder.
+*   **Cost & Time:** This will cost approximately $0.60 to $1.00 total in API credits and will take 5 minutes to run, bypassing all browser/Colab bugs.
+*   **Next Step:** With 30 identical faces secured, we upload them to Civitai to train the $10 FLUX.2 LoRA, achieving permanent censorship-free identity lock. 
 
 ---
-
-## 3. Character Spec Reminder for Reviewer
-
-Jasmine spec (source of truth: `01_characters/jasmine/jasmine_character_bible.json`):
-- East Asian, 24yo, 163cm/52kg, 32DDD-23-36
-- **NO tattoo** (previously had kiss mark — removed Apr 2026)
-- No flush, no redness, matte natural skin
-- Negative prompt includes: tattoo, rosy flush, BBW, plus-size
-
----
-
-**Prompt for Grok Reviewer:**
-*Given the blockers (no local GPU, browser failure, 27/47 images done) and the goal (Flux.1 Dev LoRA for Fanvue influencer), is the proposed solution (Python script → Fal.ai PuLID → 20 face-locked images → Vast.ai LoRA trainer) the most technically sound approach? Any better alternatives in April 2026?*
+**Prompt for Grok/Claude Reviewer:** 
+*Given the blockers (no local GPU, browser failure, 101 drifting images) and the goal (uncensored FLUX.2 Fanvue influencer), is the proposed solution (Python API Python script -> Fal.ai/Replicate PuLID -> 30 face-locked images -> Civitai LoRA Trainer) the most technically sound and modern way to solve this bottleneck?*
