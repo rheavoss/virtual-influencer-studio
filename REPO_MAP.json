@@ -5,7 +5,7 @@
     "character": "Jasmine",
     "project": "AI Virtual Influencer — Funnel: Instagram SFW → Fanvue GFE",
     "current_phase": "PHASE 0 — Foundation (nothing live yet)",
-    "last_updated": "2026-04-16",
+    "last_updated": "2026-04-18",
     "storage_note": "Large binary files (images, model weights) are tracked via DVC, NOT git. They exist only on the CEO local machine. Only TEXT and JSON files are in this GitHub repo."
   },
 
