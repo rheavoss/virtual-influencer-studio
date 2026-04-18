@@ -1,46 +1,89 @@
-# Vast.ai — Jasmine Flux.1 Dev LoRA Training Guide
+# Vast.ai — Jasmine Flux.1 Dev LoRA Training Playbook
 **Account:** kriger5490@gmail.com
-**Credit available:** $4.56 (sufficient — training costs ~$2)
-**Dataset:** 38 images in `03_ai_models/jasmine_mako/training_data/jasmine_dataset/`
+**Credit:** $4.56 (training costs ~$0.25–0.55 total)
+**Dataset:** 38 images — `03_ai_models/jasmine_mako/training_data/jasmine_dataset/`
+**Trigger word:** `jasmakogirl`
 
 ---
 
-## Training Parameters
-| Parameter | Value |
-|---|---|
-| Base model | Flux.1 Dev |
-| Tool | ostris/ai-toolkit |
-| Steps | 2000 |
-| LoRA rank | 16 |
-| Trigger word | `jasmakogirl` |
-| Est. cost | ~$2 (~₹186) |
-
----
-
-## Step 1 — Rent GPU on Vast.ai
-
-1. Go to [cloud.vast.ai](https://cloud.vast.ai)
-2. Click **Search** in left sidebar
-3. Filter: **GPU RAM ≥ 24GB**, **CUDA 12+**
-4. Recommended GPU: **RTX 4090** or **A100** (cheapest with 24GB+)
-5. Template: Search for **"ostris ai-toolkit"** or **"Flux LoRA"** in template search
-   - If not found: use **PyTorch 2.x** base template
-6. Disk space: set **50GB minimum**
-7. Click **Rent** — note the instance IP and port
-
----
-
-## Step 2 — Connect to Instance
+## STEP 0 — One-time Setup (Mac)
 
 ```bash
-ssh -p <PORT> root@<IP_ADDRESS>
+# Install CLI
+pip install vastai
+
+# Get API key from: https://cloud.vast.ai/cli/
+# Copy the command shown there — it looks like:
+vastai set api-key YOUR_KEY_HERE
+
+# Verify
+vastai show user
 ```
 
 ---
 
-## Step 3 — Install ai-toolkit (if not pre-installed)
+## STEP 1 — Search for RTX 4090
 
 ```bash
+vastai search offers 'gpu_name=RTX_4090 num_gpus=1 disk_space>=50 reliability>0.98' \
+  -t on-demand -o dph_total
+```
+
+Look at first result — note the **ID** (leftmost number). That's your offer_id.
+
+---
+
+## STEP 2 — Rent the Instance
+
+```bash
+vastai create instance <OFFER_ID> \
+  --image pytorch/pytorch:2.1.0-cuda12.1-cudnn8-runtime \
+  --disk 50 \
+  --ssh --direct \
+  --onstart "env >> /etc/environment"
+```
+
+Then check status:
+```bash
+vastai show instances
+```
+
+Wait until status = **running** (takes 2–5 min). Note the **SSH command** shown.
+
+---
+
+## STEP 3 — Upload Dataset from Mac
+
+```bash
+# Get SSH port and IP from:
+vastai show instances --raw
+
+# Upload dataset (replace PORT and IP)
+scp -P <PORT> -r \
+  "/Users/user/Desktop/Instagram/03_ai_models/jasmine_mako/training_data/jasmine_dataset/" \
+  root@<IP>:/workspace/jasmine_dataset/
+```
+
+Using vastai copy (alternative):
+```bash
+vastai copy local:"/Users/user/Desktop/Instagram/03_ai_models/jasmine_mako/training_data/jasmine_dataset" \
+  C.<INSTANCE_ID>:/workspace/jasmine_dataset
+```
+
+---
+
+## STEP 4 — SSH Into Instance
+
+```bash
+ssh -p <PORT> root@<IP>
+```
+
+---
+
+## STEP 5 — Install ai-toolkit (on instance)
+
+```bash
+cd /workspace
 git clone https://github.com/ostris/ai-toolkit.git
 cd ai-toolkit
 git submodule update --init --recursive
@@ -49,38 +92,29 @@ pip install -r requirements.txt
 
 ---
 
-## Step 4 — Upload Dataset
+## STEP 6 — Caption Images (on instance)
 
-From your local machine:
 ```bash
-# Zip the dataset first
-cd /Users/user/Desktop/Instagram/03_ai_models/jasmine_mako/training_data
-zip -r jasmine_dataset.zip jasmine_dataset/
-
-# Upload to Vast.ai instance
-scp -P <PORT> jasmine_dataset.zip root@<IP_ADDRESS>:/workspace/
-```
-
-On the instance:
-```bash
-cd /workspace
-unzip jasmine_dataset.zip
-mkdir -p training_data/jasmine
-mv jasmine_dataset/* training_data/jasmine/
+cd /workspace/jasmine_dataset
+for img in *.png *.jpg; do
+  base="${img%.*}"
+  echo "jasmakogirl, east asian taiwanese woman, high dark bun, blue eyes, bold red lips, DD bust, defined waist, white skin, photorealistic" > "${base}.txt"
+done
+echo "Captions done: $(ls *.txt | wc -l) files"
 ```
 
 ---
 
-## Step 5 — Create config.yaml
+## STEP 7 — Create Training Config (on instance)
 
 ```bash
-cat > /workspace/ai-toolkit/config/jasmine_lora.yaml << 'EOF'
+cat > /workspace/ai-toolkit/config/jasmine.yaml << 'EOF'
 job: extension
 config:
-  name: jasmine_lora_v1
+  name: jasmine_v1
   process:
     - type: 'sd_trainer'
-      training_folder: "/workspace/output/jasmine_lora"
+      training_folder: "/workspace/output"
       device: cuda:0
       trigger_word: "jasmakogirl"
       network:
@@ -92,7 +126,7 @@ config:
         save_every: 500
         max_step_saves_to_keep: 4
       datasets:
-        - folder_path: "/workspace/training_data/jasmine"
+        - folder_path: "/workspace/jasmine_dataset"
           caption_ext: "txt"
           caption_dropout_rate: 0.05
           shuffle_tokens: false
@@ -119,11 +153,11 @@ config:
       sample:
         sampler: "flowmatch"
         sample_every: 500
-        width: 512
-        height: 768
+        width: 768
+        height: 1024
         prompts:
-          - "jasmakogirl, studio portrait, white background, red lips, photorealistic"
-          - "jasmakogirl, pink micro bikini, confident pose, photorealistic"
+          - "jasmakogirl, pink micro bikini, white background, red lips, blue eyes, photorealistic"
+          - "jasmakogirl, red dress, studio lighting, confident, photorealistic"
         neg: ""
         seed: 42
         walk_seed: true
@@ -134,55 +168,68 @@ EOF
 
 ---
 
-## Step 6 — Caption the Images
-
-Each image needs a `.txt` caption file. Run this on the instance:
-
-```bash
-cd /workspace/training_data/jasmine
-
-for img in *.png *.jpg; do
-  base="${img%.*}"
-  echo "jasmakogirl, East Asian woman, high dark bun, bold red lips, full bust, defined waist, photorealistic" > "${base}.txt"
-done
-```
-
----
-
-## Step 7 — Run Training
+## STEP 8 — Run Training (on instance)
 
 ```bash
 cd /workspace/ai-toolkit
-python run.py config/jasmine_lora.yaml
+python run.py config/jasmine.yaml
 ```
 
-Training takes ~30-45 minutes on RTX 4090. Watch for loss going down.
+**What to watch:**
+- Loss should decrease gradually
+- Sample images generated every 500 steps — check quality
+- Total time: ~35–45 min on RTX 4090
 
 ---
 
-## Step 8 — Download the LoRA
-
-When done, the `.safetensors` file is in `/workspace/output/jasmine_lora/`:
+## STEP 9 — Download LoRA (from Mac)
 
 ```bash
-# On your local machine:
-scp -P <PORT> root@<IP_ADDRESS>:/workspace/output/jasmine_lora/jasmine_lora_v1.safetensors \
-  /Users/user/Desktop/Instagram/03_ai_models/jasmine_mako/lora_checkpoints/
+scp -P <PORT> \
+  root@<IP>:/workspace/output/jasmine_v1/*.safetensors \
+  "/Users/user/Desktop/Instagram/03_ai_models/jasmine_mako/lora_checkpoints/"
 ```
 
 ---
 
-## Step 9 — Destroy Instance
+## STEP 10 — DESTROY INSTANCE IMMEDIATELY
 
-**IMPORTANT: Destroy the instance immediately after download to stop billing.**
+```bash
+vastai destroy instance <INSTANCE_ID>
+```
 
-In Vast.ai console → Instances → Click **Destroy** on your instance.
+Verify destroyed:
+```bash
+vastai show instances
+```
+
+Should return empty. **If not destroyed, you keep getting charged.**
 
 ---
 
-## After Training — Test on RunPod
+## Key Notes
+- `env >> /etc/environment` in onstart = env vars visible in SSH sessions
+- `runtype ssh_direct` = direct SSH on port 22 (no proxy)
+- Storage charges start at creation; GPU charges start when running
+- `vastai stop instance` saves storage but stops GPU billing (use if pausing)
+- Offer IDs are dynamic — if rent fails, offer was taken, search again
+- HuggingFace token needed for FLUX.1-dev download (gated model)
 
-Load the LoRA in ComfyUI on RunPod (see `jasmine_runpod_expansion.md`):
-- Trigger word: `jasmakogirl`
-- LoRA strength: 0.8–1.0
-- Base model: Flux.1 Dev
+## HuggingFace Token Setup (on instance)
+```bash
+pip install huggingface_hub
+huggingface-cli login
+# Paste your HF token when prompted
+# Get token from: huggingface.co/settings/tokens
+```
+
+---
+
+## Cost Breakdown
+| Item | Cost |
+|---|---|
+| RTX 4090 ~40 min | ~$0.20 |
+| Storage 50GB | ~$0.02 |
+| **Total** | **~$0.25** |
+| Credit available | $4.56 |
+| Remaining after | ~$4.31 |
