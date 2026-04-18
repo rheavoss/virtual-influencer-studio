@@ -3,6 +3,13 @@
 
 ---
 
+## Session Start Protocol
+<important if="starting any session">
+1. Query G.Brain FIRST: `bun run /Users/user/Desktop/Instagram/.gbrain/src/cli.ts query "<what user is asking about>"`
+2. Check CodeBurn: `npx codeburn status`
+3. Never read project files without querying G.Brain first
+</important>
+
 ## Who You Are Working With
 - **CEO** — India-based, all financials in INR, owns strategy, non-technical on dev.
 - **Antigravity** — second AI advisor. Research, GFE copy, captions, DM scripts. Cannot write files or run code.
