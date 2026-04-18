@@ -1,5 +1,5 @@
 # Jasmine Mako — Phase 0 & Phase 1 Execution Pipeline
-**Updated:** 2026-04-18 (Session 09 — Grok TASK_TABLE_UPDATE_001: P0-29/P0-30/P0-31 added for prompt recovery, dataset gen, LoRA QC)
+**Updated:** 2026-04-18 (Session 09 — Grok TASK_TABLE_UPDATE_001: P0-29/30/31 added; Grok MASTER_FRAMEWORKS_INTEGRATION_001: P0-32/33/34/35 + P1-47 added)
 
 **Legend:**
 - **Assignee:** [Antigravity] (Code/Workflows/OpSec), [Claude Code] (Text Prompts/Scripting), [Grok] (Market Intel/Trends/X & Web Research), [CEO] (Physical accounts/Payments).
@@ -50,6 +50,13 @@
 - [x] **[P0-26]** `[Strategy]` (Claude) *(RICE: N/A - Done)* - Write the 6-Step Chatter Matrix / Script.
 - [x] **[P0-27]** `[Strategy]` (Claude) *(RICE: N/A - Done)* - Write 3 variants of Mass Message PPV blasts.
 - [x] **[P0-28]** `[Strategy]` (Claude) *(RICE: N/A - Done)* - Create Fan Notes Template to tag Whales.
+
+### Master Frameworks + April 15-16 Stack (Added 2026-04-18 — Grok MASTER_FRAMEWORKS_INTEGRATION_001)
+- [ ] **[P0-32]** `[Strategy]` (Grok / Antigravity) *(RICE: 10×10×1.0÷1 = 120)* - Test and integrate Higgsfield as primary cinematic video platform (Veo 3.1 + Kling motion control + Nano Banana Pro reference sheets + image-to-video chaining) with Jasmine Flux.1 LoRA for all 8 CT types. Do NOT start until P0-29 Grok sign-off received.
+- [ ] **[P0-33]** `[Strategy]` (Grok / Claude) *(RICE: 10×10×0.9÷1 = 90)* - Run full stack validation: Open Generative AI → Higgsfield/OpenMontage → Light Reel strategy → Vugola distribution. Document unified Jasmine content engine.
+- [ ] **[P0-34]** `[Tech Ops]` (Grok / Claude) *(RICE: 9×9×1.0÷1 = 85)* - Integrate OpenMontage (agentic video studio) + Light Reel AI into content strategy and iteration workflow (screenshot/share tracking + "Product = Marketing" loop).
+- [ ] **[P0-35]** `[Strategy]` (Claude / Grok) *(RICE: N/A)* - Maintain and update `00_agency/master_frameworks_compilation.md` as living single source of truth for all collected strategies and tools.
+- [ ] **[P1-47]** `[Tech Ops]` (Antigravity) *(RICE: 8×8×1.0÷1 = 65)* - Implement Vugola AI + NotebookLM + Claude cost hack into automation pipeline for clipping, scheduling, and cheap large-context scripting.
 
 ### LoRA Training — Prompt Recovery & Dataset QC (Added 2026-04-18 — Grok TASK_TABLE_UPDATE_001)
 - [ ] **[P0-29]** `[Strategy]` (Grok / Claude) *(RICE: 10×10×1.0÷1 = 100)* - Recover or recreate missing master prompt files (`00_studio_template/master_generator_prompt_system.md` and `01_characters/jasmine/jasmine_generator_prompt.md`) referenced in April 16 Grok session. If intentionally removed, document replacement system in `jasmine_character_bible.json`.
