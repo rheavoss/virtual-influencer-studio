@@ -18,23 +18,23 @@ def extract_frames(input_video: str, output_dir: str, fps: float = 2.0):
     print(f"🔍 Extracting frames from: {input_path.name}")
     print(f"📁 Saving to: {output_path}")
 
-    # Extract sharp keyframes (highest quality)
-    keyframe_cmd = [
-        "ffmpeg", "-i", str(input_path),
-        "-skip_frame", "nokey", "-vsync", "vfr",
-        "-q:v", "2",
-        str(output_path / "keyframe_%04d.png")
-    ]
-    subprocess.run(keyframe_cmd, check=True, capture_output=True)
-
-    # Extract regular frames at fixed interval
+    # Extract frames at fixed interval + select sharpest via scene filter
     regular_cmd = [
         "ffmpeg", "-i", str(input_path),
-        "-vf", f"fps={fps}",
+        "-vf", f"fps={fps},select='gt(scene,0.1)'",
+        "-vsync", "vfr",
         "-q:v", "2",
         str(output_path / "frame_%06d.png")
     ]
-    subprocess.run(regular_cmd, check=True, capture_output=True)
+    result = subprocess.run(regular_cmd, capture_output=True)
+    if result.returncode != 0:
+        # Fallback: plain fps extraction without scene filter
+        subprocess.run([
+            "ffmpeg", "-i", str(input_path),
+            "-vf", f"fps={fps}",
+            "-q:v", "2",
+            str(output_path / "frame_%06d.png")
+        ], check=True, capture_output=True)
 
     print(f"✅ Extraction complete. Frames saved to {output_path}")
 
