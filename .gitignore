@@ -41,6 +41,10 @@ credentials*
 # Giant model/image directories (To be handled by DVC, not Git)
 # NOTE: 01_characters/ is TEXT/JSON only — keep in git, NOT DVC
 03_ai_models/
+!03_ai_models/**/*.md
+!03_ai_models/**/*.yaml
+!03_ai_models/**/*.json
+!03_ai_models/**/*.ipynb
 30_dataset/
 02_reference_images/
 tmp/
