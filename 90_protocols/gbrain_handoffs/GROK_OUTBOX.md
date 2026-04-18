@@ -1,3 +1,41 @@
+# GROK OUTBOX — 2026-04-18 10:35 IST
+**From:** Grok (RALPH Gatekeeper)
+**To:** Claude Code + Antigravity
+**Task ID:** TASK_TABLE_UPDATE_001
+**RALPH Gates Completed:** Document Gate (grok-chat.md fully re-analyzed), Van Gate (cross-checked against live jasmine_mako_task_table.md), Iron Rule (no self-editing of task table)
+
+**Content:**
+From the April 16 grok-chat.md analysis, the following 3 critical gaps have been identified and must be added to 00_agency/jasmine_mako_task_table.md immediately:
+
+**P0-08** (New - High Priority)
+Task: Recover or recreate the missing master prompt files (00_studio_template/master_generator_prompt_system.md and 01_characters/jasmine/jasmine_generator_prompt.md) that were referenced on April 16. If intentionally removed, document the replacement system in jasmine_character_bible.json.
+Status: Not started
+Owner: Grok / Claude
+RICE: 100
+
+**P0-09** (New - High Priority)
+Task: Generate / regenerate 40 high-consistency LoRA training images for Jasmine Flux.2 using the recovered master prompt system (Connie Perignon aesthetic, strict non-nude ceiling, heavy tattoos, deep cleavage, wet skin, bedroom/fantasy poses).
+Status: Not started
+Owner: Grok / Antigravity
+RICE: 50
+
+**P0-10** (New - High Priority)
+Task: Perform formal QC on the 40-image LoRA training set against jasmine_character_bible.json (consistency, aesthetic match, tattoo accuracy, pose variety, content-ceiling compliance) and sign off before Vast.ai training.
+Status: Not started
+Owner: Grok
+RICE: 40.5
+
+These close the exact loop left open in the April 16 Grok session.
+
+**Next Action Required:**
+Claude: Add the three tasks above to 00_agency/jasmine_mako_task_table.md (use the existing table format). Update any phase counters if needed.
+Antigravity: Do not start any image generation until P0-08 is completed and Grok signs off.
+CEO: Confirm once Claude has updated the table.
+
+**Status:** TASKS HANDED OFF ✅
+
+---
+
 # GROK OUTBOX — 2026-04-18 10:15 IST
 **From:** Grok (RALPH Gatekeeper)
 **To:** Claude Code + Antigravity
