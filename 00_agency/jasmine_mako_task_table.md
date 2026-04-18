@@ -15,9 +15,9 @@
 - [x] **[P0-02]** `[Strategy]` (Claude) *(RICE: N/A - Done)* - Character Bible locked (v2.1).
 - [x] **[P0-03]** `[Content]` (Claude) *(RICE: N/A - Done)* - Image Generation 40-prompt JSON Matrix locked.
 - [x] **[P0-04]** `[AI Ops]` (Antigravity) *(RICE: N/A - Done)* - Batch Generation script developed (`jasmine_batch_generator.py`).
-- [ ] **[P0-05]** `[Content]` (Antigravity) *(RICE: 10×10×1.0÷3 = 33.3)* - 47-image hybrid LoRA training dataset assembled, cropped (1024x1024), and curated in target folder.
+- [x] **[P0-05]** `[Content]` (CEO + Claude) *(RICE: N/A - Done)* - LoRA training dataset assembled: 38 images in `03_ai_models/jasmine_mako/training_data/jasmine_dataset/`. Generated via Kling Image 3 series mode (pink bikini reference, face-forward only). Outfits: black gym wear, pink micro bikini, white bodysuit, red bodycon. Completed 2026-04-18.
 - [x] **[P0-06]** `[Strategy]` (Claude) *(RICE: N/A - Done)* - Character Card written.
-- [ ] **[P0-07]** `[AI Ops]` (Antigravity) *(RICE: 10×10×1.0÷3 = 33.3)* - **NEXT:** Rent GPU on Vast.ai (using $10 USD credits) to train Jasmine Flux.1 Dev LoRA. Dataset: 27 images confirmed in jasmine_dataset/ (target 35+ before training). Use ostris/ai-toolkit, 2000 steps, LoRA rank 16. Est. cost ~$2.
+- [ ] **[P0-07]** `[AI Ops]` (CEO) *(RICE: 10×10×1.0÷3 = 33.3)* - **NEXT — UNBLOCKED:** Rent GPU on Vast.ai (using $10 USD credits) to train Jasmine Flux.1 Dev LoRA. Dataset: 38 images confirmed in jasmine_dataset/. Use ostris/ai-toolkit, 2000 steps, LoRA rank 16. Est. cost ~$2.
 - [ ] **[P0-08]** `[Exec Dept]` (CEO) *(RICE: 10×10×1.0÷1 = 100)* - Subscribe to Higgsfield Starter ($9/mo) for Phase 0.
 
 ### Link-in-Bio Setup 

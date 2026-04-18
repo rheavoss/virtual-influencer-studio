@@ -72,8 +72,8 @@ Nothing is live. No LoRA. No Instagram. No Fanvue.
 | Task | Status | Owner |
 |---|---|---|
 | P0-00 Pre-commit hooks + JSON schema | ✅ Done | Claude |
-| P0-01 Generate 47 LoRA training images | ⏳ 21/47 done | CEO (Grok) |
-| P0-03 Train Jasmine Flux.1 Dev LoRA | ⏳ Pending | CEO (Vast.ai) |
+| P0-01 Generate LoRA training images | ✅ 38 images done | CEO + Claude |
+| P0-03 Train Jasmine Flux.1 Dev LoRA | ⏳ UNBLOCKED — ready | CEO (Vast.ai) |
 | P0-05 Set up Instagram account | ⏳ Pending | CEO |
 | P0-06 Set up Fanvue account + pricing | ⏳ Pending | CEO |
 | P0-07 OPSEC pipeline (ExifTool strip + film grain) | ⏳ Pending | Claude |
