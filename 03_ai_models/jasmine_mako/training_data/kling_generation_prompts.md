@@ -6,6 +6,54 @@
 
 ---
 
+## MASTER CHARACTER PROMPT — Jasmine Mako
+> Used to generate the original approved reference image (pink micro bikini).
+> Use this to regenerate Jasmine from scratch or launch a new character variant.
+> Platform: Kling Image 3 (single image, NOT series mode)
+
+```
+photorealistic, ultra-detailed 8k raw photo
+east asian taiwanese female 22 years
+face: wide cheek bones, wide face
+breast: soft, perky, DD breasts with deep plunging cleavage
+body_type: Curvy, voluptuous, wide hips, flat tummy
+hair: Long straight black hair, tied in top bun
+eyes: Blue eyes
+lips: glossy red lipstick, slight pouted, plump
+skin: ultra white skin with micro imperfections, with subtle sheen
+dress: hot pink bikini
+direct intense eye contact with viewer and sultry seductive expression
+overall_aesthetic: Strong sensual curvy look — deep cleavage, confident and seductive
+standing straight looking straight in camera sensually
+bare foot
+head to toe image
+setup: plain white background
+```
+
+**Negative prompt:**
+```
+fit, abs, shiny skin, plastic skin, no belly, no BBW drift
+```
+
+**Workflow after reference is approved:**
+1. Generate single reference image with master prompt above
+2. Approve reference image — this becomes Image1 for all series
+3. Switch to **Series mode** (9 images, 2k, 9:16)
+4. Use series prompts below with "Keep this person's facial features exactly... @Image1"
+
+---
+
+## Backup Architecture (IMPORTANT)
+- **Images** → Google Drive (`virtual-influencer-drive:VirtualInfluencerStudio/`)
+- **Git** → tracks `.md`, `.yaml`, `.json` docs only — NOT image files
+- **Image files are too large for Git** — Drive is the image backup
+- Drive is auto-synced via studio-sync LaunchAgent (fswatch, 4s debounce)
+- Git tracks a manifest/list of what's on Drive, not the files themselves
+
+---
+
+---
+
 ## Batch 1 — Black Gym Wear (Chinese prompt by CEO)
 ```
 商业摄影, 极简主义, 8k分辨率, 杰作, 摄影写实主义，在纯净的白色背景前，(一名面部特征与图1完全一致的女性，有着大眼睛和高盘的深色发髻，她拥有极端的沙漏型身材，包含极丰满的胸部、纤细的腰肢以及宽阔圆润的胯部和大腿)，她穿着(黑色简约运动内衣和黑色紧身运动短裤)，身体面向左前方45度站立，面带自信的微笑。前侧左方45度视角, 三分之二侧面姿势，工作室柔和漫射光 @Image1
