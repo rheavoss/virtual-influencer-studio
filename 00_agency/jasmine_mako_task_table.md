@@ -51,6 +51,11 @@
 - [x] **[P0-27]** `[Strategy]` (Claude) *(RICE: N/A - Done)* - Write 3 variants of Mass Message PPV blasts.
 - [x] **[P0-28]** `[Strategy]` (Claude) *(RICE: N/A - Done)* - Create Fan Notes Template to tag Whales.
 
+### LoRA Training — Prompt Recovery & Dataset QC (Added 2026-04-18 — Grok TASK_TABLE_UPDATE_001)
+- [ ] **[P0-29]** `[Strategy]` (Grok / Claude) *(RICE: 10×10×1.0÷1 = 100)* - Recover or recreate missing master prompt files (`00_studio_template/master_generator_prompt_system.md` and `01_characters/jasmine/jasmine_generator_prompt.md`) referenced in April 16 Grok session. If intentionally removed, document replacement system in `jasmine_character_bible.json`.
+- [ ] **[P0-30]** `[Content]` (Grok / Antigravity) *(RICE: 10×10×1.0÷2 = 50)* - Generate/regenerate 40 high-consistency LoRA training images using recovered master prompt system. Connie Perignon aesthetic, strict non-nude ceiling, heavy tattoos, deep cleavage, wet skin, bedroom/fantasy poses. Do NOT start until P0-29 Grok sign-off received.
+- [ ] **[P0-31]** `[AI Ops]` (Grok) *(RICE: 9×9×0.9÷2 = 40.5)* - Formal QC on 40-image LoRA training set against `jasmine_character_bible.json`: consistency, aesthetic match, tattoo accuracy, pose variety, content-ceiling compliance. Grok sign-off required before Vast.ai training begins.
+
 ---
 
 ## PHASE 1: AUTOMATION & SCALING
