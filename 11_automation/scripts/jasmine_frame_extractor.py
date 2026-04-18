@@ -21,9 +21,9 @@ def extract_frames(input_video: str, output_dir: str, fps: float = 2.0):
     # Extract sharp keyframes (highest quality)
     keyframe_cmd = [
         "ffmpeg", "-i", str(input_path),
-        "-skip_frame", "nokey", "-vsync", "vfr", "-frame_pts", "true",
+        "-skip_frame", "nokey", "-vsync", "vfr",
         "-q:v", "2",
-        str(output_path / "keyframe_%04d_%06.3f.png")
+        str(output_path / "keyframe_%04d.png")
     ]
     subprocess.run(keyframe_cmd, check=True, capture_output=True)
 
