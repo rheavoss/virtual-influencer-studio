@@ -17,7 +17,7 @@
 - [x] **[P0-04]** `[AI Ops]` (Antigravity) *(RICE: N/A - Done)* - Batch Generation script developed (`jasmine_batch_generator.py`).
 - [ ] **[P0-05]** `[Content]` (Antigravity) *(RICE: 10×10×1.0÷3 = 33.3)* - 47-image hybrid LoRA training dataset assembled, cropped (1024x1024), and curated in target folder.
 - [x] **[P0-06]** `[Strategy]` (Claude) *(RICE: N/A - Done)* - Character Card written.
-- [ ] **[P0-07]** `[AI Ops]` (Antigravity) *(RICE: 10×10×1.0÷3 = 33.3)* - **NEXT:** Rent GPU on Vast.ai (using $10 USD credits) to train Jasmine Flux.1 Dev LoRA using the 47-image dataset and generate the 40-image batch.
+- [ ] **[P0-07]** `[AI Ops]` (Antigravity) *(RICE: 10×10×1.0÷3 = 33.3)* - **NEXT:** Rent GPU on Vast.ai (using $10 USD credits) to train Jasmine Flux.1 Dev LoRA. Dataset: 27 images confirmed in jasmine_dataset/ (target 35+ before training). Use ostris/ai-toolkit, 2000 steps, LoRA rank 16. Est. cost ~$2.
 - [ ] **[P0-08]** `[Exec Dept]` (CEO) *(RICE: 10×10×1.0÷1 = 100)* - Subscribe to Higgsfield Starter ($9/mo) for Phase 0.
 
 ### Link-in-Bio Setup 
