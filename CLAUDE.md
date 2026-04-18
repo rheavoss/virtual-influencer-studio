@@ -120,3 +120,9 @@ curl -s -X POST "https://api.supabase.com/v1/projects/vvyexzbtkncitgzraath/datab
 | `01_characters/jasmine/jasmine_character_bible.json` | Character spec (source of truth) |
 | `20_tech/jasmine-dashboard/components/PLDashboard.js` | Dashboard UI — charts, tooltip, table |
 | `20_tech/jasmine-dashboard/lib/fallback-data.js` | Hardcoded P&L fallback data |
+
+---
+
+## GROK INTEGRATION (2026-04-18)
+Grok is now Gatekeeper. All research, verification, and high-stakes tasks must go through GROK_OUTBOX.md first.
+Never start coding without Grok's van-gate research.
