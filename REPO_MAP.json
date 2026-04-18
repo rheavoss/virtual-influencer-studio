@@ -242,6 +242,9 @@
     "remaining": 28
   },
 
+  "gbrain_handoffs_enabled": true,
+  "active_protocol": "RALPH Hybrid",
+
   "agent_roles": {
     "Claude_Code": "File system, spec compliance, code, persistent memory, document management, P&L, task tracking. Runs in VS Code.",
     "Antigravity": "Live browser research, creative strategy, GFE copywriting, captions, DM scripts, code review. Cannot write files or run code.",
