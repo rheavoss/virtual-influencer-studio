@@ -4,6 +4,12 @@ on:
     branches: [ dev ]
   check_run:
     types: [ completed ]
+  workflow_run:
+    workflows: ["RALPH Gate Enforcer (Mechanical Turnstiles v2)"]
+    types: [ completed ]
+  workflow_dispatch:  # manual trigger — Claude or CEO can fire this instantly
+  schedule:
+    - cron: '*/15 * * * *'  # safety net: check every 15 min
 
 permissions:
   contents: write
@@ -32,23 +38,35 @@ jobs:
             echo "PR #$EXISTING already open — no action needed"
           fi
 
-  # Step 2: When enforce-ralph CI passes, auto-merge the PR
+  # Step 2: Merge when CI passes (triggered by check_run, workflow_run, schedule, or manual)
   auto-merge-on-pass:
-    if: |
-      github.event_name == 'check_run' &&
-      github.event.check_run.name == 'enforce-ralph' &&
-      github.event.check_run.conclusion == 'success'
+    if: github.event_name != 'push'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Merge dev → main
+
+      - name: Check if enforce-ralph passed on open dev→main PR
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          PR_NUM=$(gh pr list --base main --head dev --state open --json number --jq '.[0].number')
-          if [ -n "$PR_NUM" ]; then
-            gh pr merge $PR_NUM --squash --subject "auto: dev → main (RALPH gates passed)"
-            echo "✅ Merged PR #$PR_NUM"
-          else
+          PR_NUM=$(gh pr list --base main --head dev --state open --json number --jq '.[0].number' 2>/dev/null || echo "")
+          if [ -z "$PR_NUM" ]; then
             echo "No open PR found — nothing to merge"
+            exit 0
+          fi
+
+          # Get CI status on the PR
+          STATUS=$(gh pr checks $PR_NUM --json name,state --jq '.[] | select(.name=="enforce-ralph") | .state' 2>/dev/null || echo "")
+
+          if [ "$STATUS" = "SUCCESS" ]; then
+            echo "✅ enforce-ralph passed on PR #$PR_NUM — merging now"
+            gh pr merge $PR_NUM --squash \
+              --subject "auto: dev → main (RALPH gates passed)" \
+              --delete-branch=false
+          elif [ "$STATUS" = "FAILURE" ]; then
+            echo "❌ enforce-ralph FAILED on PR #$PR_NUM — blocked, gate files missing"
+            exit 0
+          else
+            echo "⏳ enforce-ralph status: '$STATUS' — not ready yet, will retry"
+            exit 0
           fi
