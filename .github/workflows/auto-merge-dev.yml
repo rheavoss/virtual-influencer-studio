@@ -24,7 +24,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Create PR if none exists
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.RALPH_PAT }}
         run: |
           EXISTING=$(gh pr list --base main --head dev --state open --json number --jq '.[0].number' 2>/dev/null || echo "")
           if [ -z "$EXISTING" ]; then
@@ -38,11 +38,12 @@ jobs:
             echo "PR #$EXISTING already open — no action needed"
           fi
 
-      - name: Trigger gate enforcer (PRs from Actions skip pull_request event)
+      - name: Trigger gate enforcer
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.RALPH_PAT }}
         run: |
-          gh workflow run ralph-gate-enforcer.yml --ref dev || echo "Gate trigger failed — schedule will retry"
+          gh workflow run ralph-gate-enforcer.yml --ref dev
+          echo "Gate enforcer triggered"
 
   # Step 2: Merge when CI passes (triggered by check_run, workflow_run, schedule, or manual)
   auto-merge-on-pass:
