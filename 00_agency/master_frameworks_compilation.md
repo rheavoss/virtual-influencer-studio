@@ -28,7 +28,7 @@ Doc: path/to/strategy_doc.md
 ---
 
 ## 1. Higgsfield All-in-One Video Platform
-**Task:** P0-32 | **Doc:** `04_content_pipeline/higgsfield_cinematic_commercial_pipeline.md`
+**Task:** P0-32 | **Doc:** `11_automation/workflows/higgsfield_cinematic_commercial_pipeline.md`
 **Tools:** Higgsfield (Veo 3.1, Kling, Nano Banana Pro, reference sheets, motion control, upscaling)
 **Process:** Single platform for image-to-video, multi-model selection, audio generation, reference-based consistency, chaining clips.
 **Benefits:** Eliminates tool-hopping, perfect Jasmine identity lock, cinematic quality in one place.
