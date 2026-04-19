@@ -2,6 +2,7 @@ name: RALPH Gate Enforcer (Mechanical Turnstiles v2)
 on:
   pull_request:
     branches: [ main ]
+  workflow_dispatch:
 
 jobs:
   enforce-ralph:
