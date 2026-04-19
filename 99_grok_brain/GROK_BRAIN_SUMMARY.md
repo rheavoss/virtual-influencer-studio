@@ -245,6 +245,34 @@ Violation of this checklist = immediate RALPH violation logged.
 | **Total spent** | **~$3.21 / ₹299** |
 | Vast.ai remaining credit | ~$1.35 |
 
+**Real monthly burn (verified 2026-04-19):**
+| Tool | Cost |
+|---|---|
+| Claude Code | ₹1,860 |
+| Higgsfield | ₹465–₹838 |
+| ElevenLabs | ₹2,048 |
+| Calilio US number | ₹465 |
+| RunPod (pay-per-use) | ₹930–₹1,860 |
+| Domains (prorated) | ₹93–₹370 |
+| **Total** | **₹6,500–₹8,500/month** |
+
+**Native platform monetization (unlocks at 10k followers — Month 1–2):**
+| Platform | Rate | Est. at 10k followers |
+|---|---|---|
+| IG Subscriptions | Creator sets price, IG takes 30% | ₹5,000–₹25,000/month |
+| FB Subscriptions | FB takes 30% | ₹3,000–₹15,000/month |
+| FB In-stream ads | $3–$8 RPM lifestyle niche | ₹2,000–₹8,000/month |
+| YouTube Shorts | $0.03–$0.08 per 1k views | ⚠️ Near zero — cross-post only |
+| YouTube Memberships | Creator keeps 70% | ₹3,000–₹10,000/month |
+
+**Year-1 net projection (with math — see `00_agency/old_vs_new_plan_comparison.md`):**
+- Base (1–2 characters): ₹15–20 lakh
+- Mid (4–5 characters): ₹35–50 lakh
+- Stretch (7+ characters, full execution): ₹70–90 lakh+
+- ₹1.17 Cr = possible only with 7+ characters all hitting mid-tier by Month 10
+
+**Key document for Grok:** `00_agency/old_vs_new_plan_comparison.md` — full comparison, real burn line items, revenue math, native monetization data, Claude vs Grok debate points.
+
 ---
 
 ## 11. REPO STRUCTURE (KEY PATHS)
