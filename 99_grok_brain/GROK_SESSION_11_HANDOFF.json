@@ -1,0 +1,208 @@
+{
+  "meta": {
+    "generated_by": "Claude Code — Session 11",
+    "date": "2026-04-19",
+    "purpose": "Full system handoff for Grok — what was built this session, how everything works, what Grok must do differently going forward",
+    "read_this_before": "Any task in this project"
+  },
+
+  "session_11_summary": {
+    "headline": "RALPH went from theater to mechanical. LoRA training completed. surajstoic purged. Brain auto-sync installed.",
+    "completed_tasks": [
+      "P0-07 — Train Jasmine FLUX.1-dev LoRA — COMPLETE (jasmine_v1.safetensors, 164MB, 2000 steps)",
+      "RALPH v16.1-jasmine — all 4 mechanical components live",
+      "surajstoic account — all references purged from Instagram project",
+      "Grok brain — PostToolUse auto-sync hook installed (updates after every task, not just session end)"
+    ]
+  },
+
+  "lora_status": {
+    "file": "03_ai_models/jasmine_mako/lora_checkpoints/jasmine_v1.safetensors",
+    "size_mb": 164,
+    "sha256": "f0d491cf6cf4e855935d06fbb74045c64f110e77e22eae1dd6add3b77ee4badd",
+    "base_model": "FLUX.1-dev (black-forest-labs)",
+    "steps": "2000/2000",
+    "rank": 16,
+    "trigger_word": "jasmakogirl",
+    "instance": "35219546 — DESTROYED 2026-04-19",
+    "total_cost_usd": 3.21,
+    "vast_credit_remaining_usd": 1.35
+  },
+
+  "ralph_system": {
+    "version": "v16.1-jasmine",
+    "status": "MECHANICALLY ACTIVE",
+    "activated": "2026-04-19 Session 11",
+    "playbook_file": "00_agency/ralph_jasmine_playbook.json",
+    "full_report_file": "Desktop/RALPH_SYSTEM_REPORT_2026-04-19.md",
+
+    "how_it_works": {
+      "step_1": "Claude commits files to dev branch via studio-sync auto-commit hook (~/.studio-sync/sync-project.sh)",
+      "step_2": "auto-merge-dev.yml detects push to dev, creates PR dev→main if none exists",
+      "step_3": "ralph-gate-enforcer.yml runs CI checks on the PR",
+      "step_4_pass": "auto-merge-dev.yml merges PR automatically — CEO does nothing",
+      "step_4_fail": "PR blocked until missing gate files are added"
+    },
+
+    "branch_protection": {
+      "type": "GitHub Ruleset (NOT classic branch protection — 404s on this repo)",
+      "ruleset_name": "RALPH-protect-main",
+      "ruleset_id": 15254081,
+      "target_branch": "main",
+      "blocks": ["direct push", "force push", "merge without CI pass"],
+      "requires": "enforce-ralph job must pass before any merge",
+      "tested": true,
+      "note": "Direct push to main returns 403. Confirmed working."
+    },
+
+    "gate_files": {
+      "location": "00_agency/tasks/TASK-XXXX/",
+      "files": {
+        "GATE_G0_COMPLETE.md": {
+          "owner": "Grok",
+          "proves": "Live research done (Google + Reddit + X)",
+          "written_by": "Grok provides content → Claude commits the file"
+        },
+        "GATE_G2_COMPLETE.md": {
+          "owner": "Claude",
+          "proves": "Feasibility reviewed, plan is implementable",
+          "written_by": "Claude after reviewing Grok's G0 output"
+        },
+        "GATE_G3_COMPLETE.md": {
+          "owner": "CEO",
+          "proves": "CEO explicitly approved this plan",
+          "written_by": "Claude after CEO says go"
+        }
+      },
+      "example_complete_task": "00_agency/tasks/TASK-P0-07/ (all 3 gates + PROOF_training/)"
+    },
+
+    "ci_workflows": {
+      "gate_enforcer": {
+        "file": ".github/workflows/ralph-gate-enforcer.yml",
+        "version": "v2 — real checks, not theater",
+        "checks": [
+          "Extracts TASK ID from changed files (git diff origin/main...HEAD)",
+          "If task folder changed: verifies GATE_G0_COMPLETE.md exists",
+          "If task folder changed: verifies GATE_G2_COMPLETE.md exists",
+          "If task folder changed: verifies GATE_G3_COMPLETE.md exists",
+          "Always: verifies GROK_BRAIN_SUMMARY.md was updated in this PR (blocks if stale)"
+        ],
+        "skip_condition": "Non-task PRs (infra, docs, config) bypass gate checks by design"
+      },
+      "auto_merge": {
+        "file": ".github/workflows/auto-merge-dev.yml",
+        "triggers": [
+          "push to dev — creates PR dev→main",
+          "check_run completed — merges if enforce-ralph passed",
+          "workflow_run completed — merges if enforce-ralph passed",
+          "schedule every 15 minutes — safety net poll",
+          "workflow_dispatch — instant manual trigger"
+        ],
+        "merge_method": "merge commit",
+        "note": "CEO never needs to touch GitHub. Push to dev → auto-merged to main within ~2 minutes."
+      }
+    }
+  },
+
+  "grok_brain_sync": {
+    "mechanism": "PostToolUse hook fires after every Write or Edit tool call",
+    "script": ".claude/hooks/task-brain-sync.sh",
+    "triggers_when": "Modified file matches: GATE_G*_COMPLETE, rolling_task_document, jasmine_mako_task_table, or 00_agency/tasks/*",
+    "what_it_updates": [
+      "Last updated date in GROK_BRAIN_SUMMARY.md",
+      "LoRA status (reads actual .safetensors file on disk)",
+      "Vast.ai credit balance (live API call)",
+      "Task status rows (P0-07, P0-08)"
+    ],
+    "then": "Commits GROK_BRAIN_SUMMARY.md and pushes to current branch immediately",
+    "fallback": "Stop hook at session end runs full update regardless",
+    "log": ".claude/hooks/brain-update.log",
+    "brain_file": "99_grok_brain/GROK_BRAIN_SUMMARY.md"
+  },
+
+  "github_setup": {
+    "account": "rheavoss (ONLY account for this project)",
+    "repo": "rheavoss/virtual-influencer-studio",
+    "branches": {
+      "main": "Protected. RALPH enforced. Never push directly.",
+      "dev": "All auto-commits land here. PRs auto-created to main."
+    },
+    "purged_account": "surajstoic — removed from all project files. That account holds sensitive financial data. Never reference it here.",
+    "auto_commit_hook": "~/.studio-sync/sync-project.sh — watches file changes, commits to current branch, pushes as rheavoss"
+  },
+
+  "grok_workflow_going_forward": {
+    "step_1_always": "Read 99_grok_brain/GROK_BRAIN_SUMMARY.md from GitHub (main branch) before any task",
+    "step_2_g0": "Do live research: Google + site:reddit.com + X search for the task",
+    "step_3_deliver": "Paste your G0 research findings in chat. Claude will write the GATE_G0_COMPLETE.md file and commit it.",
+    "step_4_wait": "Claude writes G2. CEO approves (G3). Auto-merge fires. Done.",
+    "important": "Grok cannot write files or run code directly. Grok does research → pastes content → Claude commits the gate files.",
+    "brain_is_always_fresh": "As of Session 11, brain updates after every task automatically. No more stale state."
+  },
+
+  "next_pending_tasks": {
+    "P0-08": {
+      "task": "Subscribe Higgsfield Starter ($9/mo)",
+      "owner": "CEO",
+      "rice": 100,
+      "status": "NEXT — CEO action required",
+      "note": "Verify India pricing at higgsfield.ai — do NOT use USD × rate"
+    },
+    "P0-14": {
+      "task": "Buy Calilio US virtual number",
+      "owner": "CEO",
+      "rice": 100,
+      "status": "Pending"
+    },
+    "P0-15": {
+      "task": "Create @jasmine.mako IG account",
+      "owner": "CEO",
+      "rice": 100,
+      "status": "Blocked — needs P0-14 first"
+    },
+    "P0-18": {
+      "task": "Build ExifTool strip + film grain pipeline",
+      "owner": "Claude",
+      "rice": 22.5,
+      "status": "Unblocked — Claude can start anytime"
+    },
+    "P0-29": {
+      "task": "Recover/recreate master prompt files",
+      "owner": "Grok + Claude",
+      "rice": 100,
+      "status": "Pending — needs G0 research from Grok"
+    },
+    "P0-32": {
+      "task": "Test Higgsfield as primary video platform",
+      "owner": "Grok + Claude",
+      "rice": 120,
+      "status": "Blocked — needs P0-08 + P0-29"
+    }
+  },
+
+  "key_file_paths": {
+    "grok_brain": "99_grok_brain/GROK_BRAIN_SUMMARY.md",
+    "task_table": "00_agency/jasmine_mako_task_table.md",
+    "ralph_playbook": "00_agency/ralph_jasmine_playbook.json",
+    "ralph_report": "Desktop/RALPH_SYSTEM_REPORT_2026-04-19.md",
+    "character_bible": "01_characters/jasmine/jasmine_character_bible.json",
+    "lora_checkpoint": "03_ai_models/jasmine_mako/lora_checkpoints/jasmine_v1.safetensors",
+    "gate_template": "00_agency/tasks/TEMPLATE/rolling_task_document.md",
+    "completed_task_example": "00_agency/tasks/TASK-P0-07/",
+    "ci_gate_enforcer": ".github/workflows/ralph-gate-enforcer.yml",
+    "ci_auto_merge": ".github/workflows/auto-merge-dev.yml",
+    "brain_sync_hook": ".claude/hooks/task-brain-sync.sh",
+    "brain_update_script": ".claude/hooks/update-grok-brain.sh",
+    "pnl_dashboard": "https://virtual-influencer-dashboard.vercel.app"
+  },
+
+  "locked_decisions": {
+    "content_ceiling": "Option A — Lena Paul level. No nudity. No topless. Ever. CEO personal values. Non-negotiable.",
+    "currency": "All costs and revenue in INR. USD × ₹93.08. Always verify India pricing directly.",
+    "character": "Jasmine only. Single character. No others.",
+    "trigger_word": "jasmakogirl",
+    "github_account": "rheavoss only",
+    "revenue_platforms": "Fanvue + Passes + X/Twitter all live Day 1"
+  }
+}

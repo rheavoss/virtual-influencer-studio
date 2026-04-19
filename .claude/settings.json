@@ -1,0 +1,34 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash /Users/user/Desktop/Instagram/.claude/hooks/task-brain-sync.sh \"$CLAUDE_TOOL_INPUT_FILE_PATH\""
+          }
+        ]
+      },
+      {
+        "matcher": "Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash /Users/user/Desktop/Instagram/.claude/hooks/task-brain-sync.sh \"$CLAUDE_TOOL_INPUT_FILE_PATH\""
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash /Users/user/Desktop/Instagram/.claude/hooks/update-grok-brain.sh"
+          }
+        ]
+      }
+    ]
+  }
+}

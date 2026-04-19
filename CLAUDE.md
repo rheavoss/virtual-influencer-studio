@@ -91,7 +91,7 @@ Full task list: `00_agency/jasmine_mako_task_table.md`
 ```bash
 gh auth switch --user rheavoss && gh api user --jq '.login'
 ```
-Three accounts on this machine: `surajhealth` (default), `surajstoic`, `rheavoss`. Wrong account = push fails.
+This project always uses `rheavoss`. Wrong account = push fails.
 
 **Deploy — `vercel --prod` ALWAYS FAILS. Use API:**
 ```bash

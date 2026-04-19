@@ -1,5 +1,5 @@
 # GROK BRAIN — Jasmine Project State
-**Last updated:** 2026-04-19 (Session 11)
+**Last updated:** 2026-04-19 (auto-updated by Stop hook)
 **Maintained by:** Claude Code after every session
 **Purpose:** Grok reads this file live from GitHub at the start of every task. Single source of truth.
 
@@ -70,35 +70,27 @@
 
 | Item | Status |
 |---|---|
-| LoRA trained | ✅ DONE — jasmine_v1.safetensors (164MB), SHA256: f0d491cf6cf4e855935d06fbb74045c64f110e77e22eae1dd6add3b77ee4badd |
+| LoRA trained | ✅ COMPLETE — jasmine_v1.safetensors (164M) |
+| Local path | `03_ai_models/jasmine_mako/lora_checkpoints/jasmine_v1.safetensors` |
+| SHA256 | `f0d491cf6cf4e855935d06fbb74045c64f110e77e22eae1dd6add3b77ee4badd` |
 | Training tool | ostris/ai-toolkit |
 | Base model | FLUX.1-dev (black-forest-labs) |
-| Steps | 2000 |
+| Steps completed | 2000/2000 |
 | LoRA rank | 16 |
 | Trigger word | `jasmakogirl` |
-| Training config | `03_ai_models/jasmine_mako/vast_ai_training_guide.md` |
+| Instance destroyed | ✅ Instance 35219546 destroyed 2026-04-19 |
+| Total P0-07 cost | ~$3.21 / ₹299 (incl. $2.40 incident) |
+| Remaining Vast.ai credit | ~$1.35 |
 
-**Vast.ai training — INCIDENT (2026-04-19):**
-- $2.40 spent, 7 hours wasted, 0 training steps completed
-- Root cause: picked cheapest instance, no network speed filter — 24GB FLUX model never finished downloading
-- Full report: `INCIDENT_REPORT_VAST_AI_2026-04-19.md` on Desktop
-
-**Correct instance search (DO NOT DEVIATE):**
+**Vast.ai rules — NON-NEGOTIABLE (learned from $2.40 incident):**
 ```
 vastai search offers 'gpu_name=RTX_4090 num_gpus=1 disk_space>=80 reliability>0.98 cuda_vers>=12.8 inet_down>=800' -t on-demand -o dph_total
 ```
-- Docker image: `pytorch/pytorch:2.5.1-cuda12.4-cudnn9-runtime`
+- Docker: `pytorch/pytorch:2.5.1-cuda12.4-cudnn9-runtime`
 - Install torch FIRST: `pip3 install torch==2.6.0 torchvision==0.21.0 --index-url https://download.pytorch.org/whl/cu124`
 - Then: `pip install -r requirements.txt`
-- Download FLUX model explicitly BEFORE starting training. Confirm >23GB before run.
-- Realistic cost: ~$0.45 total
-
-**Vast.ai credentials:**
-- Account: kriger5490@gmail.com
-- Remaining credit: ~$2.16
-- HuggingFace token: stored in `~/Desktop/jasmine_credentials.md` (FLUX.1-dev access granted)
-- vastai CLI: `/tmp/vastai-env/bin/vastai`
-- SSH key: `~/.ssh/id_ed25519`
+- Confirm FLUX >23GB downloaded before training starts
+- Credentials: kriger5490@gmail.com | vastai CLI: `/tmp/vastai-env/bin/vastai` | SSH: `~/.ssh/id_ed25519`
 
 ---
 
@@ -107,18 +99,18 @@ vastai search offers 'gpu_name=RTX_4090 num_gpus=1 disk_space>=80 reliability>0.
 | ID | Task | Owner | RICE | Status |
 |---|---|---|---|---|
 | P0-07 | Train Jasmine FLUX.1 Dev LoRA on Vast.ai | CEO | 33.3 | ✅ COMPLETE |
-| P0-08 | Subscribe Higgsfield Starter ($9/mo) | CEO | 100 | ⏳ Pending |
+| P0-08 | Subscribe Higgsfield Starter ($9/mo) | CEO | 100 | ⏳ NEXT — CEO action |
 | P0-10 | Register domain on Namecheap | CEO | 40 | ⏳ Pending |
 | P0-14 | Buy Calilio US virtual number | CEO | 100 | ⏳ Pending |
-| P0-15 | Create @jasmine.mako IG account | CEO | 100 | ⏳ Pending |
-| P0-18 | Build ExifTool strip + film grain pipeline | Antigravity | 22.5 | ⏳ Pending |
-| P0-19 | Test OPSEC pipeline on sample image | Antigravity | 50 | ⏳ Pending |
+| P0-15 | Create @jasmine.mako IG account | CEO | 100 | ⏳ Pending (needs P0-14) |
+| P0-18 | Build ExifTool strip + film grain pipeline | Claude | 22.5 | ⏳ Pending |
+| P0-19 | Test OPSEC pipeline on sample image | Claude | 50 | ⏳ Pending (needs P0-18) |
 | P0-20 | Set up Fanvue account + pricing | CEO | 33 | ⏳ Pending |
 | P0-29 | Recover/recreate master prompt files | Grok/Claude | 100 | ⏳ Pending |
-| P0-32 | Test Higgsfield as primary video platform | Grok/Antigravity | 120 | ⏳ Blocked (needs P0-29) |
+| P0-32 | Test Higgsfield as primary video platform | Grok/Claude | 120 | ⏳ Blocked (needs P0-08 + P0-29) |
 
 **Completed P0:**
-P0-00 ✅ P0-01 ✅ P0-02 ✅ P0-03 ✅ P0-04 ✅ P0-05 ✅ P0-06 ✅ P0-26 ✅ P0-27 ✅ P0-28 ✅
+P0-00 ✅ P0-01 ✅ P0-02 ✅ P0-03 ✅ P0-04 ✅ P0-05 ✅ P0-06 ✅ P0-07 ✅ P0-26 ✅ P0-27 ✅ P0-28 ✅
 
 ---
 
@@ -127,15 +119,15 @@ P0-00 ✅ P0-01 ✅ P0-02 ✅ P0-03 ✅ P0-04 ✅ P0-05 ✅ P0-06 ✅ P0-26 ✅ 
 | Platform | Purpose | Status |
 |---|---|---|
 | Kling Image 3 | Image generation | ✅ Active |
-| FLUX.1-dev + ai-toolkit | LoRA training | ⏳ Pending training |
-| Vast.ai | GPU rental for training | ⏳ Next use |
+| FLUX.1-dev + jasmine_v1 LoRA | AI image generation (character-locked) | ✅ LoRA ready |
+| Vast.ai | GPU rental for future training | ✅ CLI ready, $1.35 credit |
 | Fanvue | Primary paid content platform | ⏳ Not set up |
 | Instagram | Top of funnel (SFW) | ⏳ Not set up |
 | Passes | Mirror platform | ⏳ Not set up |
 | X/Twitter | SFW teasers | ⏳ Not set up |
-| Higgsfield | AI video (cinematic) | ⏳ Pending subscription |
+| Higgsfield | AI video (cinematic) | ⏳ Pending P0-08 |
 | Metricool | Scheduling | ⏳ Pending Phase 1 |
-| Room 11 | Monetization | ⏳ Pending LoRA |
+| Room 11 | Monetization | ⏳ Pending |
 | Vercel Dashboard | P&L tracking | ✅ Live at virtual-influencer-dashboard.vercel.app |
 
 ---
@@ -148,27 +140,55 @@ P0-00 ✅ P0-01 ✅ P0-02 ✅ P0-03 ✅ P0-04 ✅ P0-05 ✅ P0-06 ✅ P0-26 ✅ 
 - **Currency:** All costs in INR. USD × ₹93.08. Always verify India pricing directly.
 - **Follower count:** Cross-platform total (IG + FB + YouTube + X + Pinterest + Telegram)
 - **LoRA trigger word:** `jasmakogirl`
+- **GitHub account for this project:** `rheavoss` only. No other accounts.
 
 ---
 
 ## 8. RALPH PROTOCOL (GOVERNANCE)
 
-**Status:** ACTIVE as of 2026-04-19
-**Version:** RALPH v16.1-jasmine (fork of master v16.1)
-**Playbook file:** `00_agency/ralph_jasmine_playbook.json`
-**Enforcement:** GitHub CI/CD mechanical turnstiles (`.github/workflows/ralph-gate-enforcer.yml`)
-**Rolling task docs:** `00_agency/tasks/TASK-XXXX/rolling_task_document.md` — eternal, never deleted
+**Status:** MECHANICALLY ACTIVE as of 2026-04-19 (Session 11)
+**Version:** RALPH v16.1-jasmine
+**Playbook:** `00_agency/ralph_jasmine_playbook.json`
+**Full system report:** `Desktop/RALPH_SYSTEM_REPORT_2026-04-19.md`
 
-**Gate sequence (every task must follow):**
-- G0: Grok Research Gate (Google + Reddit + X + task-specific) — MANDATORY FIRST
-- G1: Rolling Task Document created
-- G2: Claude feasibility + counter-questions
-- G3: CEO plan approval
-- G4–G11: Dev → test → verify
-- G12: Eternal docs + forensic PROOF_* folder committed
-- G13: Antigravity browser verification
+### How it works
+```
+Auto-commit hook → pushes to [dev branch]
+                        ↓
+           GitHub Action auto-creates PR dev→main
+                        ↓
+           ralph-gate-enforcer CI checks GATE_*.md files
+                        ↓
+           PASS → auto-merges to main (CEO does nothing)
+           FAIL → PR blocked until gate files added
+```
 
-**Current active task docs:** `00_agency/tasks/TASK-P0-07/` (LoRA training — IN PROGRESS)
+### Branch protection
+- Ruleset `RALPH-protect-main` (ID: 15254081) active on `main`
+- Direct push to `main` **mechanically blocked** — tested and confirmed
+- Requires PR + `enforce-ralph` CI pass before any merge
+
+### Gate files (per task, in `00_agency/tasks/TASK-XXXX/`)
+| File | Owner | Proves |
+|---|---|---|
+| `GATE_G0_COMPLETE.md` | Grok | Live research done |
+| `GATE_G2_COMPLETE.md` | Claude | Feasibility checked |
+| `GATE_G3_COMPLETE.md` | CEO | Plan approved |
+| `PROOF_*/` folder | Claude | Evidence, costs, SHA256 |
+
+### Grok's role in RALPH
+1. Read this file from GitHub before every task
+2. Do live research (Google + `site:reddit.com` + X + task-specific)
+3. Write `GATE_G0_COMPLETE.md` content → Claude commits it
+4. Research output goes into rolling task document under `## G0`
+
+### Workflows in repo
+- `.github/workflows/ralph-gate-enforcer.yml` — CI gate checker (v2, real checks)
+- `.github/workflows/auto-merge-dev.yml` — auto PR + auto-merge on CI pass
+  - Triggers: `push` to dev, `check_run` complete, `workflow_run` complete, schedule every 15min, `workflow_dispatch`
+
+### Known gap
+Auto-merge requires a PR to exist. PRs can't be created via CLI due to a known token/collaborator issue with the `gh` CLI on this machine. The `auto-merge-dev.yml` creates them automatically on push to dev — no manual action needed after initial bootstrap.
 
 ---
 
@@ -177,22 +197,57 @@ P0-00 ✅ P0-01 ✅ P0-02 ✅ P0-03 ✅ P0-04 ✅ P0-05 ✅ P0-06 ✅ P0-26 ✅ 
 | Role | Who | Can do |
 |---|---|---|
 | CEO | Human | Strategy, payments, physical accounts, final decisions |
-| Claude Code | Claude (this instance) | Files, code, memory, task tracking, P&L, document management |
+| Claude Code | Claude (this instance) | Files, code, memory, task tracking, P&L, document management, commits GATE files |
 | Antigravity | AI advisor | Research, GFE copy, captions, DM scripts. Cannot write files or run code |
-| Grok | AI advisor | Live web/X/Reddit research, market intel, van gate verification |
+| Grok | AI advisor | Live web/X/Reddit research, market intel, G0 Research Gate for every task |
 
 ---
 
 ## 10. FINANCIAL SNAPSHOT
 
 **P&L Dashboard:** https://virtual-influencer-dashboard.vercel.app
-**Month 0 spend to date (approx):**
-- Vast.ai training attempts: ~$2.40 (wasted — incident)
-- Remaining Vast.ai credit: ~$2.16
+
+**Month 0 spend to date:**
+| Item | Cost |
+|---|---|
+| Vast.ai P0-07 failed attempts | ~$2.40 / ₹223 |
+| Vast.ai P0-07 successful run | ~$0.81 / ₹75 |
+| **Total spent** | **~$3.21 / ₹299** |
+| Vast.ai remaining credit | ~$1.35 |
 
 ---
 
-## 11. MAINTENANCE RULE
+## 11. REPO STRUCTURE (KEY PATHS)
+
+```
+rheavoss/virtual-influencer-studio (GitHub)
+├── main branch — protected, RALPH enforced
+├── dev branch  — auto-commits land here
+│
+├── 00_agency/
+│   ├── ralph_jasmine_playbook.json
+│   ├── jasmine_mako_task_table.md
+│   └── tasks/
+│       ├── TEMPLATE/rolling_task_document.md
+│       └── TASK-P0-07/  ← complete, all gates closed
+│           ├── rolling_task_document.md
+│           ├── GATE_G0_COMPLETE.md
+│           ├── GATE_G2_COMPLETE.md
+│           ├── GATE_G3_COMPLETE.md
+│           └── PROOF_training/training_receipt.md
+├── 01_characters/jasmine/jasmine_character_bible.json
+├── 03_ai_models/jasmine_mako/
+│   ├── lora_checkpoints/jasmine_v1.safetensors  ← 164MB, ready to use
+│   └── vast_ai_training_guide.md
+├── 99_grok_brain/GROK_BRAIN_SUMMARY.md  ← this file
+└── .github/workflows/
+    ├── ralph-gate-enforcer.yml
+    └── auto-merge-dev.yml
+```
+
+---
+
+## 12. MAINTENANCE RULE
 
 Claude updates this file at the end of every session or after any major change.
 Grok reads this file at the start of every important task before doing anything else.

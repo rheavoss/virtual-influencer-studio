@@ -57,6 +57,18 @@ jobs:
           fi
           echo "✅ G3 passed — $(head -1 00_agency/tasks/$TASK/GATE_G3_COMPLETE.md)"
 
+      - name: Check GROK_BRAIN_SUMMARY.md is not stale
+        run: |
+          # Brain must have been updated in this PR's commits
+          BRAIN_CHANGED=$(git diff --name-only origin/main...HEAD | grep "99_grok_brain/GROK_BRAIN_SUMMARY.md" || echo "")
+          if [ -z "$BRAIN_CHANGED" ]; then
+            echo "❌ GROK BRAIN STALE: 99_grok_brain/GROK_BRAIN_SUMMARY.md was not updated in this PR"
+            echo "Fix: The Stop hook should auto-update it. If it didn't run, update manually and recommit."
+            exit 1
+          fi
+          LAST_UPDATED=$(grep "Last updated:" 99_grok_brain/GROK_BRAIN_SUMMARY.md | head -1)
+          echo "✅ Brain is fresh — $LAST_UPDATED"
+
       - name: All gates passed
         if: steps.taskid.outputs.task != ''
         run: |
