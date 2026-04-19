@@ -67,6 +67,9 @@
 
 ## PHASE 1: AUTOMATION & SCALING
 
+### Growth & SEO
+- [ ] **[P1-05]** `[Growth / SEO]` (Grok) *(RICE: 8×8×0.85÷2 = 27.2)* - Integrate Common Crawl backlinks script (`cc-backlinks.sh`). Create `09_marketing/seo/` folder, save + document the script, run first competitor analysis on top East-Asian GFE / virtual-influencer domains, and prepare backlink acquisition playbook for Jasmine's future domain / Linktree / landing page. Ready for execution once first reels are live.
+
 ### Social Scheduling
 - [ ] **[P1-01]** `[Tech Ops]` (Antigravity) *(RICE: 10×8×1.0÷4 = 20)* - Configure Metricool free tier pipeline for IG+FB+YouTube Shorts scheduling. ~~TikTok DEPRECATED 2026-04-11.~~
 - [ ] **[P1-02]** `[Exec Dept]` (CEO) *(RICE: 5×5×1.0÷1 = 25)* - Upgrade to Metricool paid tier (only when advanced analytics needed).
