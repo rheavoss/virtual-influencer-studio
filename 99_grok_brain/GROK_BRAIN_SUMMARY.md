@@ -70,7 +70,7 @@
 
 | Item | Status |
 |---|---|
-| LoRA trained | ⏳ IN PROGRESS — Instance 35219546, ~step 437/2000 |
+| LoRA trained | ✅ DONE — jasmine_v1.safetensors (164MB), SHA256: f0d491cf6cf4e855935d06fbb74045c64f110e77e22eae1dd6add3b77ee4badd |
 | Training tool | ostris/ai-toolkit |
 | Base model | FLUX.1-dev (black-forest-labs) |
 | Steps | 2000 |
@@ -106,7 +106,7 @@ vastai search offers 'gpu_name=RTX_4090 num_gpus=1 disk_space>=80 reliability>0.
 
 | ID | Task | Owner | RICE | Status |
 |---|---|---|---|---|
-| P0-07 | Train Jasmine FLUX.1 Dev LoRA on Vast.ai | CEO | 33.3 | ⏳ UNBLOCKED — ready |
+| P0-07 | Train Jasmine FLUX.1 Dev LoRA on Vast.ai | CEO | 33.3 | ✅ COMPLETE |
 | P0-08 | Subscribe Higgsfield Starter ($9/mo) | CEO | 100 | ⏳ Pending |
 | P0-10 | Register domain on Namecheap | CEO | 40 | ⏳ Pending |
 | P0-14 | Buy Calilio US virtual number | CEO | 100 | ⏳ Pending |
