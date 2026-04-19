@@ -16,7 +16,7 @@ permissions:
   pull-requests: write
 
 jobs:
-  # Step 1: On every push to dev, ensure a PR dev→main exists
+  # Step 1: On every push to dev, ensure a PR dev→main exists, then kick off gate check
   create-pr:
     if: github.event_name == 'push'
     runs-on: ubuntu-latest
@@ -37,6 +37,12 @@ jobs:
           else
             echo "PR #$EXISTING already open — no action needed"
           fi
+
+      - name: Trigger gate enforcer (PRs from Actions skip pull_request event)
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh workflow run ralph-gate-enforcer.yml --ref dev || echo "Gate trigger failed — schedule will retry"
 
   # Step 2: Merge when CI passes (triggered by check_run, workflow_run, schedule, or manual)
   auto-merge-on-pass:
