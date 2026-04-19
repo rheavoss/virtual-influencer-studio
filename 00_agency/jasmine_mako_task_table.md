@@ -87,6 +87,10 @@
 - [ ] **[P1-57]** `[Tech Ops]` (Antigravity / Claude) *(RICE: 9×9×0.7÷5 = 11.3)* - **UGC Ad Testing Pipeline (Cance 2 API):** Build automated pipeline: Jasmine assets → Cance 2 API → 8+ UGC ad variants → review dashboard → auto-schedule approved ads. 5 hook types × 4 CTA types = 20 possible variants. Full pipeline: `04_content_pipeline/ugc_ad_testing_pipeline.md`. Start Month 2.
 - [ ] **[P1-58]** `[Content]` (Antigravity / CEO) *(RICE: 8×9×1.0÷1 = 72)* - **6-Step Editing SOP:** Lock and apply the 6-step editing system to every Jasmine video: (1) auto-cut, (2) music first, (3) best section first, (4) templates, (5) sound effects, (6) rewatch. Full SOP: `04_content_pipeline/editing_system_sop.md`. Also lock brand kit (font, color, watermark position) into character bible.
 
+### Sponsorships & Brand Deals
+- [ ] **[P1-59]** `[Revenue]` (Claude) *(RICE: 9×9×1.0÷1 = 81)* - **Jasmine Media Kit (USD-denominated):** Build PDF media kit targeting US brands — follower count, engagement rate, audience demographics (US/UK/AU heavy), content style, niche (lifestyle/beauty/fashion), pricing sheet in USD. Include Fanvue-adjacent brands section. Claude drafts, CEO approves. Required before any outbound pitch. Output: `09_marketing/sponsorships/jasmine_media_kit.md` + PDF export.
+- [ ] **[P1-60]** `[Revenue]` (CEO) *(RICE: 9×8×0.9÷1 = 64.8)* - **List Jasmine on Collabstr + Passionfroot + Instagram Creator Marketplace:** List with USD pricing. Collabstr = brands browse and DM. Passionfroot = creator storefront, brands buy directly. Creator Marketplace = Meta's tool, activates once 10k followers hit. All three platforms are location-agnostic — US brands find and pay Indian creators daily. Prereq: P1-59 media kit done + 10k followers. Doc: `09_marketing/sponsorships/brand_deal_platforms_sop.md`.
+
 ### Social Scheduling
 - [ ] **[P1-01]** `[Tech Ops]` (Antigravity) *(RICE: 10×8×1.0÷4 = 20)* - Configure Metricool free tier pipeline for IG+FB+YouTube Shorts scheduling. ~~TikTok DEPRECATED 2026-04-11.~~
 - [ ] **[P1-02]** `[Exec Dept]` (CEO) *(RICE: 5×5×1.0÷1 = 25)* - Upgrade to Metricool paid tier (only when advanced analytics needed).
