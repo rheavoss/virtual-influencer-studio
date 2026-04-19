@@ -41,9 +41,10 @@ Target brands whose products align with Jasmine's aesthetic:
 - Bundle (3 posts): 15% discount
 
 ## Payment Collection
-- Preferred: Payoneer (lowest fees for US→India)
-- Accepted: PayPal, Wise, bank wire
-- Invoice in USD, receive in USD, convert to INR as needed
+- **Direct brand wire transfers → Infinity (infinityapp.in):** 0.5% flat fee all-in (GST + FIRA + transfer). Virtual US account number — brands wire like paying a local US account. Auto FIRA generated for RBI/GST compliance. CEO already signed up.
+- **Collabstr / Passionfroot escrow → Payoneer:** Platforms require Payoneer or PayPal for escrow release.
+- Accepted fallback: Wise, PayPal
+- Invoice in USD. Receive in USD. Infinity converts and settles to Indian bank in 1–2 business days.
 
 ## Rate Card by Milestone
 | Followers | Static Post | Reel |
