@@ -94,23 +94,40 @@ vastai search offers 'gpu_name=RTX_4090 num_gpus=1 disk_space>=80 reliability>0.
 
 ---
 
-## 5. PHASE 0 TASK TABLE — TOP PENDING
+## 5. TASK TABLE — TOP PENDING
 
+**Full task table (authoritative):** `00_agency/jasmine_mako_task_table.md`
+**Read that file for complete list. This section = Grok's quick-reference only.**
+
+### Phase 0 — Top Pending
 | ID | Task | Owner | RICE | Status |
 |---|---|---|---|---|
-| P0-07 | Train Jasmine FLUX.1 Dev LoRA on Vast.ai | CEO | 33.3 | ✅ COMPLETE |
-| P0-08 | Subscribe Higgsfield Starter ($9/mo) | CEO | 100 | ⏳ NEXT — CEO action |
+| P0-08 | Subscribe Higgsfield Starter ($5/mo trial) | CEO | 100 | ⏳ IN PROGRESS — Soul ID being trained |
 | P0-10 | Register domain on Namecheap | CEO | 40 | ⏳ Pending |
 | P0-14 | Buy Calilio US virtual number | CEO | 100 | ⏳ Pending |
 | P0-15 | Create @jasmine.mako IG account | CEO | 100 | ⏳ Pending (needs P0-14) |
 | P0-18 | Build ExifTool strip + film grain pipeline | Claude | 22.5 | ⏳ Pending |
-| P0-19 | Test OPSEC pipeline on sample image | Claude | 50 | ⏳ Pending (needs P0-18) |
 | P0-20 | Set up Fanvue account + pricing | CEO | 33 | ⏳ Pending |
 | P0-29 | Recover/recreate master prompt files | Grok/Claude | 100 | ⏳ Pending |
 | P0-32 | Test Higgsfield as primary video platform | Grok/Claude | 120 | ⏳ Blocked (needs P0-08 + P0-29) |
 
 **Completed P0:**
 P0-00 ✅ P0-01 ✅ P0-02 ✅ P0-03 ✅ P0-04 ✅ P0-05 ✅ P0-06 ✅ P0-07 ✅ P0-26 ✅ P0-27 ✅ P0-28 ✅
+
+### Phase 1 — Key Tasks (NEW — added 2026-04-19)
+| ID | Task | Owner | Doc |
+|---|---|---|---|
+| P1-48 | Programmatic SEO Pages (Cursor + Claude + Firecrawl) | Claude/CEO | `09_marketing/seo/programmatic_seo_strategy.md` |
+| P1-49 | GeoDirectory SEO Flywheel (WordPress/Webflow) | Claude/CEO | `09_marketing/seo/geo_directory_seo_hack.md` |
+| P1-50 | Threads Scaling SOP (7-day warm-up → 20–100 subs/day) | CEO/Antigravity | `09_marketing/threads/threads_scaling_sop.md` |
+| P1-51 | AI Personas Authority Network (10–50 endorser accounts) | Antigravity/Claude | `09_marketing/growth/ai_personas_authority_strategy.md` |
+| P1-52 | Hybrid Faceless RPV YouTube Channels | Antigravity/CEO | `09_marketing/youtube/hybrid_youtube_rpv_strategy.md` |
+| P1-53 | Cance 2 + Arc Ads Cloning Pipeline | Antigravity/Claude | `04_content_pipeline/cance2_arc_ads_cloning_pipeline.md` |
+| P1-54 | Hyperframes HTML-First Video Pipeline | Claude/Antigravity | `04_content_pipeline/hyperframes_video_pipeline.md` |
+| P1-55 | Flow 3D Motion Graphics overlay pipeline | Antigravity | `04_content_pipeline/flow_3d_motion_graphics.md` |
+| P1-56 | 7-Day Instagram Warm-Up SOP | CEO | `09_marketing/instagram/ig_warmup_sop.md` |
+| P1-57 | UGC Ad Testing Pipeline (Cance 2 API + Claude) | Antigravity/Claude | `04_content_pipeline/ugc_ad_testing_pipeline.md` |
+| P1-58 | 6-Step Editing SOP + brand kit lock | Antigravity/CEO | `04_content_pipeline/editing_system_sop.md` |
 
 ---
 
@@ -201,6 +218,19 @@ Auto-merge requires a PR to exist. PRs can't be created via CLI due to a known t
 | Antigravity | AI advisor | Research, GFE copy, captions, DM scripts. Cannot write files or run code |
 | Grok | AI advisor | Live web/X/Reddit research, market intel, G0 Research Gate for every task |
 
+### Grok G0 Research Gate — MANDATORY CHECKLIST (effective immediately)
+Every G0 must include and verify the following items. No shortcuts allowed.
+
+- [ ] Read live GROK_BRAIN_SUMMARY.md from raw GitHub URL
+- [ ] Live search: Google + site:reddit.com + X/Twitter
+- [ ] **Official blogs & changelog** (latest blog posts and release notes)
+- [ ] **Official API / documentation / character / feature pages** (exact relevant product pages, not just homepage/pricing)
+- [ ] Task-specific sources (Vast.ai docs, GitHub repos, etc.)
+- [ ] Document all sources + findings verbatim in GATE_G0_COMPLETE.md and rolling_task_document.md
+- [ ] Explicitly state at the end: "All official blogs, API/docs, and changelog checked — no shortcuts taken"
+
+Violation of this checklist = immediate RALPH violation logged.
+
 ---
 
 ## 10. FINANCIAL SNAPSHOT
@@ -252,3 +282,31 @@ rheavoss/virtual-influencer-studio (GitHub)
 Claude updates this file at the end of every session or after any major change.
 Grok reads this file at the start of every important task before doing anything else.
 This file is the handshake between Grok and the project state.
+
+---
+
+## 13. FRAMEWORK INTAKE RULE (NON-NEGOTIABLE)
+
+**Every strategy, framework, or tool Grok researches or recommends is INCOMPLETE until:**
+1. It has a task ID in `00_agency/jasmine_mako_task_table.md`
+2. It has a strategy/SOP document in the correct folder
+3. This brain file references the task ID and doc path
+
+**Correct folder by type:**
+| Type | Folder |
+|---|---|
+| SEO strategy | `09_marketing/seo/` |
+| Social media SOP | `09_marketing/[platform]/` |
+| Growth strategy | `09_marketing/growth/` |
+| Content production pipeline | `04_content_pipeline/` |
+| Automation / tech | `11_automation/` |
+| Revenue strategy | `07_monetization/` |
+| Research / market intel | `10_research/` |
+
+**Grok's session close checklist — before ending ANY session:**
+- [ ] Every framework discussed → has a task ID
+- [ ] Every task ID → has a doc file path
+- [ ] Every doc file path → file actually exists (Claude confirms)
+- [ ] This brain file updated with new task IDs
+
+**Violation:** If Grok delivers a framework into `master_frameworks_compilation.md` without simultaneously providing the task ID and doc path → that is a documentation gap violation. Claude must flag it immediately and create the missing items before the session closes.
