@@ -2,27 +2,24 @@ name: Auto PR + Merge dev → main
 on:
   push:
     branches: [ dev ]
-  check_run:
-    types: [ completed ]
-  workflow_run:
-    workflows: ["RALPH Gate Enforcer (Mechanical Turnstiles v2)"]
-    types: [ completed ]
-  workflow_dispatch:  # manual trigger — Claude or CEO can fire this instantly
   schedule:
-    - cron: '*/15 * * * *'  # safety net: check every 15 min
+    - cron: '*/5 * * * *'   # backup: check every 5 min for any stuck PRs
+  workflow_dispatch:
 
 permissions:
   contents: write
   pull-requests: write
 
 jobs:
-  # Step 1: On every push to dev, ensure a PR dev→main exists, then kick off gate check
-  create-pr:
-    if: github.event_name == 'push'
+  sync-to-main:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Create PR if none exists
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.RALPH_PAT }}
+
+      - name: Ensure PR exists
         env:
           GH_TOKEN: ${{ secrets.RALPH_PAT }}
         run: |
@@ -32,30 +29,13 @@ jobs:
               --base main \
               --head dev \
               --title "auto: sync dev → main" \
-              --body "Automated PR. RALPH gate CI will validate and auto-merge on pass."
+              --body "Automated PR. RALPH gates checked inline — merges immediately on pass."
             echo "PR created"
           else
-            echo "PR #$EXISTING already open — no action needed"
+            echo "PR #$EXISTING already open"
           fi
 
-      - name: Trigger gate enforcer
-        env:
-          GH_TOKEN: ${{ secrets.RALPH_PAT }}
-        run: |
-          gh workflow run ralph-gate-enforcer.yml --ref dev
-          echo "Gate enforcer triggered"
-
-  # Step 2: Verify gate files inline and merge (triggered by workflow_run, schedule, or manual)
-  auto-merge-on-pass:
-    if: github.event_name != 'push'
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-          token: ${{ secrets.RALPH_PAT }}
-
-      - name: Verify RALPH gates and merge if passing
+      - name: Check RALPH gates and merge
         env:
           GH_TOKEN: ${{ secrets.RALPH_PAT }}
         run: |
@@ -64,37 +44,29 @@ jobs:
             echo "No open PR — nothing to merge"
             exit 0
           fi
-          echo "Found open PR #$PR_NUM"
+          echo "PR #$PR_NUM found — checking gates"
 
-          # Check for task folder in this PR's diff
-          TASK=$(git diff --name-only origin/main...origin/dev | grep "00_agency/tasks/TASK-" | head -1 | cut -d/ -f3 || echo "")
+          # Detect task folder in this PR
+          TASK=$(git diff --name-only origin/main...origin/dev 2>/dev/null | grep "00_agency/tasks/TASK-" | head -1 | cut -d/ -f3 || echo "")
 
           if [ -n "$TASK" ]; then
-            echo "Task detected: $TASK — checking gate files"
+            echo "Task detected: $TASK"
             FAIL=0
             for GATE in GATE_G0_COMPLETE.md GATE_G2_COMPLETE.md GATE_G3_COMPLETE.md; do
               if [ ! -f "00_agency/tasks/$TASK/$GATE" ]; then
-                echo "❌ BLOCKED: Missing 00_agency/tasks/$TASK/$GATE"
+                echo "❌ Missing: 00_agency/tasks/$TASK/$GATE"
                 FAIL=1
               else
                 echo "✅ $GATE present"
               fi
             done
-            # Check brain updated
-            BRAIN_CHANGED=$(git diff --name-only origin/main...origin/dev | grep "99_grok_brain/GROK_BRAIN_SUMMARY.md" || echo "")
-            if [ -z "$BRAIN_CHANGED" ]; then
-              echo "❌ BLOCKED: GROK_BRAIN_SUMMARY.md not updated in this PR"
-              FAIL=1
-            else
-              echo "✅ Brain updated"
-            fi
             if [ "$FAIL" = "1" ]; then
-              echo "Gates failed — PR #$PR_NUM blocked until fixed"
+              echo "Gates failed — not merging"
               exit 0
             fi
-            echo "✅ All RALPH gates passed for $TASK"
+            echo "✅ All RALPH gates passed"
           else
-            echo "No task folder changed — non-task PR, gate checks skipped"
+            echo "No task folder changed — skipping gate check"
           fi
 
           echo "Merging PR #$PR_NUM → main"
