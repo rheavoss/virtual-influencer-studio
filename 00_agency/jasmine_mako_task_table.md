@@ -68,7 +68,9 @@
 ## PHASE 1: AUTOMATION & SCALING
 
 ### Growth & SEO
-- [ ] **[P1-05]** `[Growth / SEO]` (Grok) *(RICE: 8×8×0.85÷2 = 27.2)* - Integrate Common Crawl backlinks script (`cc-backlinks.sh`). Create `09_marketing/seo/` folder, save + document the script, run first competitor analysis on top East-Asian GFE / virtual-influencer domains, and prepare backlink acquisition playbook for Jasmine's future domain / Linktree / landing page. Ready for execution once first reels are live.
+- [ ] **[P1-05]** `[Growth / SEO]` (Grok) *(RICE: 8×8×0.85÷2 = 27.2)* - Integrate Common Crawl backlinks script (`cc-backlinks.sh`). Run first competitor analysis on top East-Asian GFE / virtual-influencer domains, and prepare backlink acquisition playbook for Jasmine's future domain / Linktree / landing page. Deliverables: `09_marketing/seo/competitor_backlinks_YYYY-MM-DD.md` + `backlink_playbook.md`. Ready for execution once first reels are live.
+- [ ] **[P1-48]** `[Growth / SEO]` (Claude / CEO) *(RICE: 9×9×0.8÷5 = 12.9)* - **Programmatic SEO Pages:** Use Cursor + Claude Code + Firecrawl + Perplexity to auto-generate 500+ city/niche landing pages (e.g. "virtual GFE India", "AI girlfriend Mumbai"). Full strategy: `09_marketing/seo/programmatic_seo_strategy.md`. Prerequisites: domain live (P0-10), Grok keyword research. Do NOT start before domain is registered.
+- [ ] **[P1-49]** `[Growth / SEO]` (Claude / CEO) *(RICE: 9×9×0.75÷6 = 10.1)* - **GeoDirectory SEO Flywheel:** Build WordPress + GeoDirectory OR Webflow + Airtable + WhaleSync super-collections site. Auto-generates thousands of location×category pages (7 categories × 13 locations = 91+ pages minimum, scales to 500+). Full strategy: `09_marketing/seo/geo_directory_seo_hack.md`. Run parallel with P1-48 after domain live.
 
 ### Social Scheduling
 - [ ] **[P1-01]** `[Tech Ops]` (Antigravity) *(RICE: 10×8×1.0÷4 = 20)* - Configure Metricool free tier pipeline for IG+FB+YouTube Shorts scheduling. ~~TikTok DEPRECATED 2026-04-11.~~

@@ -1,6 +1,6 @@
 # Jasmine Virtual AI Influencer Business – Master Frameworks Compilation
 **Project:** Jasmine (AI Virtual GFE / OnlyFans-style influencer)
-**Owner:** Suraj Satyarthi
+**Owner:** CEO
 **Purpose:** Single source of truth for all collected strategies, tools, processes, and benefits. Shareable with any AI tool for further analysis or automation.
 **Last Updated:** 2026-04-18
 **Total Frameworks:** 13 + 1 Governance Layer
