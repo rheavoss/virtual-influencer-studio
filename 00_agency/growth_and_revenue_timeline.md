@@ -143,9 +143,11 @@
 | Fanvue: 110 subs × $20 | $2,200 |
 | Passes: 35 subs × $20 | $700 |
 | PPV + voice notes | $700 |
-| **Total MRR** | **~$3,600** |
+| IG/FB native subscriptions (10k+ unlocked) | $300 |
+| First micro brand deal (Collabstr/Passionfroot) | $200 |
+| **Total MRR** | **~$4,100** |
 
-**Milestone:** IG Reels Ads + Taboola/ExoClick activated (organic proof confirmed). Second character evaluation begins (if $500 MRR sustained ×2 months).
+**Milestone:** IG Reels Ads + Taboola/ExoClick activated. Native IG/FB subscriptions unlock (10k followers). List on Collabstr + Passionfroot. Second character evaluation begins.
 
 ---
 
@@ -165,7 +167,9 @@
 | Fanvue: 160 subs × $20 | $3,200 |
 | Passes: 55 subs × $20 | $1,100 |
 | PPV + voice notes | $950 |
-| **Total MRR** | **~$5,250** |
+| IG/FB native subscriptions | $600 |
+| Brand deals (Collabstr/Passionfroot, 20k IG) | $500 |
+| **Total MRR** | **~$6,350** |
 
 **✅ $5,000 MRR milestone hit — Month 5**
 
@@ -189,9 +193,11 @@
 | Passes: 80 subs × $20 | $1,600 |
 | PPV + voice notes | $1,200 |
 | Telegram VIP access | $800 |
-| **Total MRR** | **~$7,800** |
+| IG/FB native subscriptions | $900 |
+| Brand deals (30k IG, micro-macro boundary) | $1,000 |
+| **Total MRR** | **~$9,700** |
 
-**Milestone:** Brand deal outreach begins if Instagram crosses 50,000 (this month or next).
+**Milestone:** Brand deals scaling — 30k IG = $500–$1,500/post on Collabstr. Creator Marketplace active.
 
 ---
 
@@ -213,8 +219,9 @@
 | Passes: 140 subs × $20 | $2,800 |
 | PPV + voice notes | $2,000 |
 | Telegram VIP | $1,500 |
-| First brand deal (est.) | $500 |
-| **Total MRR** | **~$13,800** |
+| IG/FB native subscriptions | $1,500 |
+| Brand deals (50k IG, macro tier entry) | $3,000 |
+| **Total MRR** | **~$17,800** |
 
 ---
 
@@ -236,10 +243,11 @@
 | Passes: 200 subs × $20 | $4,000 |
 | PPV + voice notes | $3,000 |
 | Telegram VIP | $2,200 |
-| Brand deals / Affiliate UGC | $1,500 |
-| **Total MRR** | **~$20,700** |
+| IG/FB native subscriptions | $2,500 |
+| Brand deals (70k IG, $1k–$5k/post × 3) | $8,000 |
+| **Total MRR** | **~$29,700** |
 
-**✅ $20,000 MRR milestone hit — Month 10 (ahead of target)**
+**✅ $20,000 MRR milestone hit — Month 10 (well ahead of target)**
 
 ---
 
@@ -261,8 +269,9 @@
 | Passes: 280 subs × $20 | $5,600 |
 | PPV + voice notes | $4,500 |
 | Telegram VIP | $3,200 |
-| Brand deals / Affiliate / YT Interviews | $2,500 |
-| **Gross MRR** | **~$28,800** |
+| IG/FB native subscriptions | $3,500 |
+| Brand deals (90k IG, $1.5k–$8k/post × 4) | $15,000 |
+| **Gross MRR** | **~$44,800** |
 
 | After Platform Cuts | Amount |
 |---|---|
@@ -301,7 +310,10 @@
 | Voice note average price | $7 |
 | Video pipeline live | Month 3 (5× reach multiplier) |
 | No viral outlier events assumed | Conservative baseline |
-| Brand deals start | Month 8 (50k+ Instagram) |
+| Brand deals start | Month 4 (10k+ Instagram — Collabstr/Passionfroot listing live) |
+| Brand deal market | USD — Western brands only. Jasmine is English-first, US timezone posting. |
+| Native IG/FB monetization start | Month 4 (10k followers unlocks IG Subscriptions + FB Subscriptions) |
+| Sponsorship payment method | Infinity (direct wires, 0.5% all-in) + Payoneer (platform escrow) |
 
 ---
 
@@ -335,9 +347,8 @@
 | ~~Later.com~~ | ~~₹0~~ | ~~₹1,675~~ | **DEPRECATED 2026-04-11 — replaced by Metricool free tier** |
 | Google One | ₹___ ⏳ | ₹___ ⏳ | CEO to confirm annual plan ÷ 12 |
 | Metricool | ₹0 | ₹0 | Free tier — **primary scheduler, replaces Later.com (zero cost)** |
-| **Phase 0 Base** | **₹7,195** | — | Higgsfield ₹838 + ElevenLabs ₹420 + Grok ₹542 + Claude Code ₹4,000 + Calilio ₹1,303 + Namecheap ₹92 |
-| **Phase 1+ Base (M1+)** | — | **₹9,056** | Later.com deprecated — Metricool free covers scheduling |
-| **Phase 1+ Base (M2+)** | — | **₹9,056** | Later.com deprecated — Metricool free. Same base as M1. |
+| **Phase 0 Base** | **₹6,775** | — | Higgsfield ₹838 + VoiceBox ₹0 + Grok ₹542 + Claude Code ₹4,000 + Calilio ₹1,303 + Namecheap ₹92 |
+| **Phase 1+ Base (M1+)** | — | **₹8,636** | ElevenLabs removed. VoiceBox ₹0. All other tools same. |
 
 > **Cost status:** Higgsfield ✅ confirmed two-phase | Calilio ✅ $14/mo | Grok ✅ | Claude Code ✅ | Namecheap ✅ | ElevenLabs ⚠️ India price unverified | Google One ⏳ CEO to confirm
 
