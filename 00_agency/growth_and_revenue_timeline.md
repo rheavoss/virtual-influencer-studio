@@ -326,7 +326,8 @@
 | Tool | Phase 0 | Phase 1+ | Notes |
 |---|---|---|---|
 | Higgsfield | ₹838 ($9/mo) | ₹2,699 ($29/mo) | Upgrade plan at Phase 1 launch — confirmed |
-| ElevenLabs | ₹420 ⚠️ | ₹420 ⚠️ | India price unconfirmed — verify at elevenlabs.io/pricing |
+| ~~ElevenLabs~~ | ~~₹420~~ | ~~₹420~~ | **DEPRECATED 2026-04-19 — replaced by VoiceBox (free, local, voice cloning)** |
+| VoiceBox | ₹0 | ₹0 | Open-source local TTS. Zero-shot voice cloning. Mac DMG. github.com/jamiepine/voicebox |
 | Grok (xAI) | ₹542 ✅ | ₹542 ✅ | ₹6,500/yr ÷ 12 — confirmed by CEO |
 | Claude Code | ₹4,000 ✅ | ₹4,000 ✅ | 2 × ₹2,000 — confirmed |
 | Calilio | ₹1,303 ✅ | ₹1,303 ✅ | $12 seat + $2 US number = $14/mo × ₹93.08 |
