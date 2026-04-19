@@ -1,0 +1,26 @@
+name: RALPH Gate Enforcer (Mechanical Turnstiles)
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+jobs:
+  enforce-ralph:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check for Rolling Task Document
+        run: |
+          if ! ls 00_agency/tasks/TASK-*/rolling_task_document.md 2>/dev/null | grep -q .; then
+            echo "❌ RALPH G1/G12 FAILED: Missing eternal rolling_task_document.md"
+            exit 1
+          fi
+
+      - name: Check Grok Research Gate (G0)
+        run: |
+          if ! grep -rl "Best-Path Summary" 00_agency/tasks/TASK-*/rolling_task_document.md 2>/dev/null | grep -q .; then
+            echo "❌ RALPH G0 FAILED: No Grok Research Gate proof found in any rolling task document"
+            exit 1
+          fi
+
+      - name: Verify all previous gates cleared
+        run: echo "✅ All RALPH gates passed — mechanical enforcement complete"

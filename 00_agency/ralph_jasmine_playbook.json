@@ -1,0 +1,47 @@
+{
+  "protocolVersion": "16.1-jasmine",
+  "lastUpdated": "2026-04-19",
+  "project": "Jasmine Virtual AI Influencer Studio",
+  "enforcement": "GitHub CI/CD + Antigravity sidecar (mechanical turnstiles)",
+  "circularEnforcement": true,
+  "gates": {
+    "G0": {
+      "name": "Grok Research Gate (MANDATORY FIRST STEP)",
+      "owner": "Grok",
+      "description": "Live search on Google + site:reddit.com + X/Twitter + task-specific sites. Output: Best-Path Summary with sources. No task proceeds without this.",
+      "requiredProof": "research_summary.md + citations"
+    },
+    "G1": {
+      "name": "Rolling Task Document Creation",
+      "description": "Create/update 00_agency/tasks/TASK-XXXX/rolling_task_document.md"
+    },
+    "G2": {
+      "name": "Claude Technical Feasibility + Counter-Questions",
+      "owner": "Claude",
+      "description": "Review research, feasibility check, counter-questions"
+    },
+    "G3": {
+      "name": "Plan Approval Gate",
+      "description": "Human (CEO) explicit approval before any dev"
+    },
+    "G4-G11": {
+      "name": "Development → Testing → Verification (inherited from master v16.1)",
+      "description": "Full technical gates with HMAC proofs"
+    },
+    "G12": {
+      "name": "Eternal Documentation Gate",
+      "description": "All steps logged in rolling_task_document.md + forensic evidence folder (PROOF_*) committed forever"
+    },
+    "G13": {
+      "name": "Antigravity Browser + OPSEC Verification",
+      "owner": "Antigravity"
+    }
+  },
+  "roleMatrix": {
+    "Grok": "Research Gate, strategy, planning, Vast.ai/infra, coordination, best-path search",
+    "Claude": "Coding, YAML/configs, feasibility review, counter-questions, detailed docs",
+    "Antigravity": "Browser automation, screenshots, verification, ExifTool/OPSEC pipelines"
+  },
+  "turnstileRule": "No gate N+1 without verifiable proof of gate N (GitHub Action fails PR otherwise)",
+  "documentationRule": "Every task gets permanent rolling_task_document.md in 00_agency/tasks/ — never delete"
+}
