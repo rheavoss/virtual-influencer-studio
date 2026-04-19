@@ -201,6 +201,19 @@ Auto-merge requires a PR to exist. PRs can't be created via CLI due to a known t
 | Antigravity | AI advisor | Research, GFE copy, captions, DM scripts. Cannot write files or run code |
 | Grok | AI advisor | Live web/X/Reddit research, market intel, G0 Research Gate for every task |
 
+### Grok G0 Research Gate — MANDATORY CHECKLIST (effective immediately)
+Every G0 must include and verify the following items. No shortcuts allowed.
+
+- [ ] Read live GROK_BRAIN_SUMMARY.md from raw GitHub URL
+- [ ] Live search: Google + site:reddit.com + X/Twitter
+- [ ] **Official blogs & changelog** (latest blog posts and release notes)
+- [ ] **Official API / documentation / character / feature pages** (exact relevant product pages, not just homepage/pricing)
+- [ ] Task-specific sources (Vast.ai docs, GitHub repos, etc.)
+- [ ] Document all sources + findings verbatim in GATE_G0_COMPLETE.md and rolling_task_document.md
+- [ ] Explicitly state at the end: "All official blogs, API/docs, and changelog checked — no shortcuts taken"
+
+Violation of this checklist = immediate RALPH violation logged.
+
 ---
 
 ## 10. FINANCIAL SNAPSHOT
