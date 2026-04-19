@@ -1,5 +1,5 @@
 # GROK BRAIN — Jasmine Project State
-**Last updated:** 2026-04-19 (Session 11 — end of session)
+**Last updated:** 2026-04-19 (auto-updated by Stop hook)
 **Maintained by:** Claude Code after every session
 **Purpose:** Grok reads this file live from GitHub at the start of every task. Single source of truth.
 
@@ -70,7 +70,7 @@
 
 | Item | Status |
 |---|---|
-| LoRA trained | ✅ COMPLETE — `jasmine_v1.safetensors` (164MB) |
+| LoRA trained | ✅ COMPLETE — jasmine_v1.safetensors (164M) |
 | Local path | `03_ai_models/jasmine_mako/lora_checkpoints/jasmine_v1.safetensors` |
 | SHA256 | `f0d491cf6cf4e855935d06fbb74045c64f110e77e22eae1dd6add3b77ee4badd` |
 | Training tool | ostris/ai-toolkit |
