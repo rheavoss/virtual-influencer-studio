@@ -19,7 +19,7 @@
 
 ## CRITICAL: Account Discipline
 
-Three GitHub accounts exist on this machine: `surajhealth` (default), `surajstoic`, `rheavoss`.  
+This project uses `rheavoss` exclusively.  
 **Always run this FIRST before any git or Vercel operation:**
 
 ```bash
