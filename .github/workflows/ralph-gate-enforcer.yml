@@ -1,26 +1,63 @@
-name: RALPH Gate Enforcer (Mechanical Turnstiles)
+name: RALPH Gate Enforcer (Mechanical Turnstiles v2)
 on:
   pull_request:
-    types: [opened, synchronize, reopened]
+    branches: [ main ]
+
 jobs:
   enforce-ralph:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # full history needed for git diff against origin/main
 
-      - name: Check for Rolling Task Document
+      - name: Extract TASK ID from changed files
+        id: taskid
         run: |
-          if ! ls 00_agency/tasks/TASK-*/rolling_task_document.md 2>/dev/null | grep -q .; then
-            echo "❌ RALPH G1/G12 FAILED: Missing eternal rolling_task_document.md"
+          TASK=$(git diff --name-only origin/main...HEAD | grep "00_agency/tasks/TASK-" | head -1 | cut -d/ -f3 || echo "")
+          echo "task=$TASK" >> $GITHUB_OUTPUT
+          echo "Found task: $TASK"
+
+      - name: Skip gate checks if no task folder changed
+        if: steps.taskid.outputs.task == ''
+        run: |
+          echo "ℹ️ No TASK-* folder changed in this PR — gate checks skipped"
+          echo "Note: non-task PRs (infra, docs, config) bypass gate checks by design"
+
+      - name: Check G0 Gate File (Grok Research)
+        if: steps.taskid.outputs.task != ''
+        run: |
+          TASK="${{ steps.taskid.outputs.task }}"
+          if [ ! -f "00_agency/tasks/$TASK/GATE_G0_COMPLETE.md" ]; then
+            echo "❌ RALPH G0 FAILED: Missing GATE_G0_COMPLETE.md for $TASK"
+            echo "Fix: Grok must complete research gate and drop this file before merge"
             exit 1
           fi
+          echo "✅ G0 passed — $(head -1 00_agency/tasks/$TASK/GATE_G0_COMPLETE.md)"
 
-      - name: Check Grok Research Gate (G0)
+      - name: Check G2 Gate File (Claude Feasibility)
+        if: steps.taskid.outputs.task != ''
         run: |
-          if ! grep -rl "Best-Path Summary" 00_agency/tasks/TASK-*/rolling_task_document.md 2>/dev/null | grep -q .; then
-            echo "❌ RALPH G0 FAILED: No Grok Research Gate proof found in any rolling task document"
+          TASK="${{ steps.taskid.outputs.task }}"
+          if [ ! -f "00_agency/tasks/$TASK/GATE_G2_COMPLETE.md" ]; then
+            echo "❌ RALPH G2 FAILED: Missing GATE_G2_COMPLETE.md for $TASK"
+            echo "Fix: Claude must complete feasibility review and drop this file before merge"
             exit 1
           fi
+          echo "✅ G2 passed — $(head -1 00_agency/tasks/$TASK/GATE_G2_COMPLETE.md)"
 
-      - name: Verify all previous gates cleared
-        run: echo "✅ All RALPH gates passed — mechanical enforcement complete"
+      - name: Check G3 Gate File (CEO Approval)
+        if: steps.taskid.outputs.task != ''
+        run: |
+          TASK="${{ steps.taskid.outputs.task }}"
+          if [ ! -f "00_agency/tasks/$TASK/GATE_G3_COMPLETE.md" ]; then
+            echo "❌ RALPH G3 FAILED: Missing GATE_G3_COMPLETE.md for $TASK"
+            echo "Fix: CEO must drop explicit approval file before merge"
+            exit 1
+          fi
+          echo "✅ G3 passed — $(head -1 00_agency/tasks/$TASK/GATE_G3_COMPLETE.md)"
+
+      - name: All gates passed
+        if: steps.taskid.outputs.task != ''
+        run: |
+          echo "✅ RALPH v16.1-jasmine ALL GATES PASSED for ${{ steps.taskid.outputs.task }}"
