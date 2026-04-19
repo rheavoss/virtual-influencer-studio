@@ -94,23 +94,40 @@ vastai search offers 'gpu_name=RTX_4090 num_gpus=1 disk_space>=80 reliability>0.
 
 ---
 
-## 5. PHASE 0 TASK TABLE — TOP PENDING
+## 5. TASK TABLE — TOP PENDING
 
+**Full task table (authoritative):** `00_agency/jasmine_mako_task_table.md`
+**Read that file for complete list. This section = Grok's quick-reference only.**
+
+### Phase 0 — Top Pending
 | ID | Task | Owner | RICE | Status |
 |---|---|---|---|---|
-| P0-07 | Train Jasmine FLUX.1 Dev LoRA on Vast.ai | CEO | 33.3 | ✅ COMPLETE |
-| P0-08 | Subscribe Higgsfield Starter ($9/mo) | CEO | 100 | ⏳ NEXT — CEO action |
+| P0-08 | Subscribe Higgsfield Starter ($5/mo trial) | CEO | 100 | ⏳ IN PROGRESS — Soul ID being trained |
 | P0-10 | Register domain on Namecheap | CEO | 40 | ⏳ Pending |
 | P0-14 | Buy Calilio US virtual number | CEO | 100 | ⏳ Pending |
 | P0-15 | Create @jasmine.mako IG account | CEO | 100 | ⏳ Pending (needs P0-14) |
 | P0-18 | Build ExifTool strip + film grain pipeline | Claude | 22.5 | ⏳ Pending |
-| P0-19 | Test OPSEC pipeline on sample image | Claude | 50 | ⏳ Pending (needs P0-18) |
 | P0-20 | Set up Fanvue account + pricing | CEO | 33 | ⏳ Pending |
 | P0-29 | Recover/recreate master prompt files | Grok/Claude | 100 | ⏳ Pending |
 | P0-32 | Test Higgsfield as primary video platform | Grok/Claude | 120 | ⏳ Blocked (needs P0-08 + P0-29) |
 
 **Completed P0:**
 P0-00 ✅ P0-01 ✅ P0-02 ✅ P0-03 ✅ P0-04 ✅ P0-05 ✅ P0-06 ✅ P0-07 ✅ P0-26 ✅ P0-27 ✅ P0-28 ✅
+
+### Phase 1 — Key Tasks (NEW — added 2026-04-19)
+| ID | Task | Owner | Doc |
+|---|---|---|---|
+| P1-48 | Programmatic SEO Pages (Cursor + Claude + Firecrawl) | Claude/CEO | `09_marketing/seo/programmatic_seo_strategy.md` |
+| P1-49 | GeoDirectory SEO Flywheel (WordPress/Webflow) | Claude/CEO | `09_marketing/seo/geo_directory_seo_hack.md` |
+| P1-50 | Threads Scaling SOP (7-day warm-up → 20–100 subs/day) | CEO/Antigravity | `09_marketing/threads/threads_scaling_sop.md` |
+| P1-51 | AI Personas Authority Network (10–50 endorser accounts) | Antigravity/Claude | `09_marketing/growth/ai_personas_authority_strategy.md` |
+| P1-52 | Hybrid Faceless RPV YouTube Channels | Antigravity/CEO | `09_marketing/youtube/hybrid_youtube_rpv_strategy.md` |
+| P1-53 | Cance 2 + Arc Ads Cloning Pipeline | Antigravity/Claude | `04_content_pipeline/cance2_arc_ads_cloning_pipeline.md` |
+| P1-54 | Hyperframes HTML-First Video Pipeline | Claude/Antigravity | `04_content_pipeline/hyperframes_video_pipeline.md` |
+| P1-55 | Flow 3D Motion Graphics overlay pipeline | Antigravity | `04_content_pipeline/flow_3d_motion_graphics.md` |
+| P1-56 | 7-Day Instagram Warm-Up SOP | CEO | `09_marketing/instagram/ig_warmup_sop.md` |
+| P1-57 | UGC Ad Testing Pipeline (Cance 2 API + Claude) | Antigravity/Claude | `04_content_pipeline/ugc_ad_testing_pipeline.md` |
+| P1-58 | 6-Step Editing SOP + brand kit lock | Antigravity/CEO | `04_content_pipeline/editing_system_sop.md` |
 
 ---
 
