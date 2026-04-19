@@ -428,6 +428,55 @@
 
 ---
 
+---
+
+## HYBRID STRATEGY — DESI CHARACTER PARALLEL TRACK
+**Decision locked:** 2026-04-19 (Session 12)
+**Trigger:** Real market data — muskankaria ₹15.1L/month (3,869 subs × ₹390), sofia9_official ₹14.3L/month (7,958 subs × ₹180). Indian IG subscription model proven and live.
+**Model:** Jasmine (East Asian, USD-first) stays unchanged. New desi character (Indian-curvy, Hindi/Hinglish) runs parallel from Month 2. Shared infra — 70% reuse, ~₹1,500 one-time extra cost.
+
+### Desi Character — Monthly Revenue Projections (INR, IG Subscriptions)
+
+| Month | IG Subs | Avg Rate | Gross (₹) | Net 80% (₹) | Notes |
+|---|---|---|---|---|---|
+| M1–2 | Building | — | ₹0 | ₹0 | IG warmup, content rhythm |
+| M3 | 200 | ₹250 | ₹50,000 | ₹40,000 | Early subs, Hindi GFE content live |
+| M4 ★ | 600 | ₹270 | ₹1,62,000 | ₹1,29,600 | Native IG sub unlocks at 10k |
+| M5 | 1,200 | ₹270 | ₹3,24,000 | ₹2,59,200 | Compound from Reels reach |
+| M6 | 2,200 | ₹280 | ₹6,16,000 | ₹4,92,800 | — |
+| M8 | 4,500 | ₹290 | ₹13,05,000 | ₹10,44,000 | — |
+| M10 | 6,500 | ₹300 | ₹19,50,000 | ₹15,60,000 | — |
+| M12 | 8,500 | ₹310 | ₹26,35,000 | ₹21,08,000 | Approaching sofia9 scale |
+
+★ IG native subscriptions unlock at 10k followers (~Month 4 based on Jasmine timeline rate)
+
+### Combined Year-1 P&L (Jasmine USD + Desi INR)
+
+| Month | Jasmine Net (₹) | Desi Net (₹) | Combined Net (₹) | Cumulative (₹) |
+|---|---|---|---|---|
+| M1 | ₹11,143 | ₹0 | ₹11,143 | ₹11,143 |
+| M2 | ₹64,385 | ₹0 | ₹64,385 | ₹75,528 |
+| M3 | ₹1,63,145 | ₹40,000 | ₹2,03,145 | ₹2,78,673 |
+| M4 | ₹3,02,084 | ₹1,29,600 | ₹4,31,684 | ₹7,10,357 |
+| M5 | ₹4,54,854 | ₹2,59,200 | ₹7,14,054 | ₹14,24,411 |
+| M6 | ₹6,79,281 | ₹4,92,800 | ₹11,72,081 | ₹25,96,492 |
+| M8 | ₹12,05,576 | ₹10,44,000 | ₹22,49,576 | ~₹58L |
+| M10 | ₹18,00,748 | ₹15,60,000 | ₹33,60,748 | ~₹1.00 Cr |
+| M12 | ₹24,96,995 | ₹21,08,000 | ₹46,04,995 | ~₹1.60 Cr |
+
+**₹1 Cr cumulative hit at Month 10. Year-1 combined net: ₹1.55–1.65 Cr.**
+
+### Desi Character Additional Costs
+
+| Item | Cost | Notes |
+|---|---|---|
+| LoRA training (Vast.ai) | ₹186 (~$2) | One-time |
+| VoiceBox Hindi clone | ₹0 | Local, free, zero-shot |
+| Shared infra (Metricool, Higgsfield, tools) | 70% reuse | No new fixed costs |
+| **Total additional burn** | **~₹200 one-time** | Near-zero ongoing |
+
+---
+
 ## Summary: Investment Required Per Milestone
 
 | Milestone | INR Target | Monthly Tool Cost | Cumulative Cost to Reach It |
