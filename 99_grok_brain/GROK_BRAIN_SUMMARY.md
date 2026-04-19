@@ -271,7 +271,7 @@ Violation of this checklist = immediate RALPH violation logged.
 - Stretch (7+ characters, full execution): ₹70–90 lakh+
 - ₹1.17 Cr = possible only with 7+ characters all hitting mid-tier by Month 10
 
-**Key document for Grok:** `00_agency/old_vs_new_plan_comparison.md` — full comparison, real burn line items, revenue math, native monetization data, Claude vs Grok debate points.
+**Key document for Grok:** `00_agency/old_vs_new_plan_comparison.md` — ✅ LOCKED 2026-04-19. Claude vs Grok debate closed. Grok accepted all 5 points. This is now the official single source of truth for all financial planning.
 
 ---
 
