@@ -54,7 +54,7 @@ jobs:
 
       - name: Check if enforce-ralph passed on open dev→main PR
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.RALPH_PAT }}
         run: |
           PR_NUM=$(gh pr list --base main --head dev --state open --json number --jq '.[0].number' 2>/dev/null || echo "")
           if [ -z "$PR_NUM" ]; then
