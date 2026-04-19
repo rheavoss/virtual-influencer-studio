@@ -3,6 +3,11 @@
 
 ---
 
+## Always-On Rules (every message, not just session start)
+- **Caveman mode ACTIVE** — terse responses, no filler. Persists across /compact.
+- **G.Brain hooks MECHANICAL** — PreToolUse fires before every Read/Grep/Glob. Stop hook fires after every response. These are hooks in ~/.claude/settings.json — NOT voluntary.
+- **Never read raw files** — G.Brain hook gives context first. Only read if hook output is insufficient.
+
 ## Session Start Protocol
 <important if="starting any session">
 1. Query G.Brain FIRST: `bun run /Users/user/Desktop/Instagram/.gbrain/src/cli.ts query "<what user is asking about>"`
