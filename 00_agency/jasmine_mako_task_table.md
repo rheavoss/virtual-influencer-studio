@@ -155,6 +155,19 @@
 
 ---
 
+## PHASE 2 — DESI CHARACTER (Parallel from Month 2)
+> **Decision locked:** 2026-04-19. Real data: muskankaria ₹15.1L/month (3,869 subs × ₹390), sofia9_official ₹14.3L/month (7,958 subs × ₹180). Jasmine stays USD-first. Desi character runs parallel for fast INR cashflow.
+
+- [ ] **[P2-01]** `[Strategy]` (Claude + CEO) *(RICE: 10×10×0.9÷2 = 45)* - Lock desi character spec: name, appearance (Indian-curvy, 22-26yo), Hindi/Hinglish voice persona, content ceiling (same Option A — no nudity). Create `01_characters/desi_character/character_brief.md`.
+- [ ] **[P2-02]** `[AI Ops]` (CEO + Claude) *(RICE: 10×10×0.9÷3 = 30)* - Generate 38 desi character LoRA training images (same pipeline as Jasmine — Kling Image series mode, face-forward, varied outfits). Target: Indian-curvy aesthetic, warm skin tone.
+- [ ] **[P2-03]** `[AI Ops]` (CEO) *(RICE: 10×10×0.9÷3 = 30)* - Train Desi Flux.1 Dev LoRA on Vast.ai. Same settings as P0-07 (ostris/ai-toolkit, 2000 steps, rank 16). Est. cost ~$2.
+- [ ] **[P2-04]** `[Exec Dept]` (CEO) *(RICE: 10×10×1.0÷1 = 100)* - Set up desi character Instagram account. Separate from Jasmine. Hindi/Hinglish bio. Indian girl name.
+- [ ] **[P2-05]** `[Content]` (Antigravity + Claude) *(RICE: 9×9×0.9÷2 = 36.4)* - Generate 30-day Hindi/Hinglish content calendar. Reels captions, story scripts, GFE DM templates in Hindi. Mirror sofia9_official/muskankaria content structure.
+- [ ] **[P2-06]** `[AI Ops]` (Claude) *(RICE: 9×9×0.9÷3 = 24.3)* - Clone Hindi voice via VoiceBox (zero-shot, local). Test lip-sync with Higgsfield using Hindi audio. Confirm quality before launch.
+- [ ] **[P2-07]** `[Exec Dept]` (CEO) *(RICE: 10×10×1.0÷1 = 100)* - Set up IG native subscription at 10k followers (₹250–390/month tier). Target Month 4–5 unlock.
+
+---
+
 ## BACKLOG (Post $500 MRR)
 
 ### Studio Expansion
