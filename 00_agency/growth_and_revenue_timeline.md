@@ -317,6 +317,12 @@
 
 ---
 
+## USD Market Lock (Updated 2026-04-19)
+
+> Jasmine is English-first, Western-facing. All revenue modelled in USD. US timezone posting. US/UK/AU male 18–35 target audience. Indian market addressed via separate character in Year 2.
+
+---
+
 ## What Moves the Numbers Fastest
 
 1. **Video pipeline live (Month 3)** — single biggest lever. Reels reach 5× static images.
@@ -325,6 +331,8 @@
 4. **X/Twitter NSFW content** — drives the highest-intent traffic to Fanvue. Users who find Jasmine on X already know what they're looking for.
 5. **Viral outlier event** — one Saree Transition Reel hitting a trending Bollywood audio can add 10,000 followers overnight. Not modelled above — upside only.
 6. **PPV discipline** — dropping one PPV per month minimum keeps the subs engaged and adds $300–$4,500/month on top of subscriptions depending on scale.
+7. **Brand deals (Month 4+)** — Collabstr/Passionfroot listing live at 10k followers. At 50k IG = $500–$2,000/post. At 100k IG = $5,000–$20,000/post. Brands pay USD regardless of CEO location. Payment via Infinity (direct wire) or Payoneer (platform escrow). Media kit: `09_marketing/sponsorships/jasmine_media_kit.md`.
+8. **Native IG/FB subscriptions (Month 4+)** — Unlocks at 10k followers. $500–$2,000/month passive income layered on top of Fanvue. Zero extra content required.
 
 ---
 
@@ -366,6 +374,8 @@
 ---
 
 ## Month-by-Month P&L (All values in ₹)
+
+> ⚠️ **PENDING RECALCULATION (2026-04-19):** This table was built before native IG/FB monetization and USD brand deals were added. Monthly revenue tables above are updated. P&L table below excludes those new streams — treat gross MRR figures as understated until full recalc is done.
 
 > Revenue: Fanvue/Passes/PPV+Voice in USD × ₹93.08. Telegram/Brand/IG Subs are INR-priced (Indian subscribers).  
 > **Net Revenue** = Fanvue **80%** + Passes/PPV/Telegram/Brand 90% + Instagram subscription 80% keep  
