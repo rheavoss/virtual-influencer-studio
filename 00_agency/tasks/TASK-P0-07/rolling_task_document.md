@@ -72,6 +72,7 @@ vastai search offers 'gpu_name=RTX_4090 num_gpus=1 disk_space>=80 reliability>0.
 | 2026-04-19 00:00 | Baseline samples generated | ai-toolkit | 2 samples in `/workspace/output/jasmine_v1/samples/` |
 | 2026-04-19 00:03 | Step 72/2000 confirmed | Claude | Loss ~0.24–0.43, healthy |
 | 2026-04-19 00:20 | Step 437/2000 confirmed | Claude | ETA ~50 min |
+| 2026-04-19 00:30 | Step 991/2000 — 50% done | Claude | Elapsed 39:49, ETA ~40 min, loss 0.21–0.35 trending down, step-500 checkpoint saved |
 
 ---
 
