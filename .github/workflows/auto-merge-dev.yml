@@ -16,7 +16,7 @@ permissions:
   pull-requests: write
 
 jobs:
-  # Step 1: On every push to dev, ensure a PR dev→main exists
+  # Step 1: On every push to dev, ensure a PR dev→main exists, then kick off gate check
   create-pr:
     if: github.event_name == 'push'
     runs-on: ubuntu-latest
@@ -24,7 +24,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Create PR if none exists
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.RALPH_PAT }}
         run: |
           EXISTING=$(gh pr list --base main --head dev --state open --json number --jq '.[0].number' 2>/dev/null || echo "")
           if [ -z "$EXISTING" ]; then
@@ -38,35 +38,67 @@ jobs:
             echo "PR #$EXISTING already open — no action needed"
           fi
 
-  # Step 2: Merge when CI passes (triggered by check_run, workflow_run, schedule, or manual)
+      - name: Trigger gate enforcer
+        env:
+          GH_TOKEN: ${{ secrets.RALPH_PAT }}
+        run: |
+          gh workflow run ralph-gate-enforcer.yml --ref dev
+          echo "Gate enforcer triggered"
+
+  # Step 2: Verify gate files inline and merge (triggered by workflow_run, schedule, or manual)
   auto-merge-on-pass:
     if: github.event_name != 'push'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.RALPH_PAT }}
 
-      - name: Check if enforce-ralph passed on open dev→main PR
+      - name: Verify RALPH gates and merge if passing
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.RALPH_PAT }}
         run: |
           PR_NUM=$(gh pr list --base main --head dev --state open --json number --jq '.[0].number' 2>/dev/null || echo "")
           if [ -z "$PR_NUM" ]; then
-            echo "No open PR found — nothing to merge"
+            echo "No open PR — nothing to merge"
             exit 0
           fi
+          echo "Found open PR #$PR_NUM"
 
-          # Get CI status on the PR
-          STATUS=$(gh pr checks $PR_NUM --json name,state --jq '.[] | select(.name=="enforce-ralph") | .state' 2>/dev/null || echo "")
+          # Check for task folder in this PR's diff
+          TASK=$(git diff --name-only origin/main...origin/dev | grep "00_agency/tasks/TASK-" | head -1 | cut -d/ -f3 || echo "")
 
-          if [ "$STATUS" = "SUCCESS" ]; then
-            echo "✅ enforce-ralph passed on PR #$PR_NUM — merging now"
-            gh pr merge $PR_NUM --squash \
-              --subject "auto: dev → main (RALPH gates passed)" \
-              --delete-branch=false
-          elif [ "$STATUS" = "FAILURE" ]; then
-            echo "❌ enforce-ralph FAILED on PR #$PR_NUM — blocked, gate files missing"
-            exit 0
+          if [ -n "$TASK" ]; then
+            echo "Task detected: $TASK — checking gate files"
+            FAIL=0
+            for GATE in GATE_G0_COMPLETE.md GATE_G2_COMPLETE.md GATE_G3_COMPLETE.md; do
+              if [ ! -f "00_agency/tasks/$TASK/$GATE" ]; then
+                echo "❌ BLOCKED: Missing 00_agency/tasks/$TASK/$GATE"
+                FAIL=1
+              else
+                echo "✅ $GATE present"
+              fi
+            done
+            # Check brain updated
+            BRAIN_CHANGED=$(git diff --name-only origin/main...origin/dev | grep "99_grok_brain/GROK_BRAIN_SUMMARY.md" || echo "")
+            if [ -z "$BRAIN_CHANGED" ]; then
+              echo "❌ BLOCKED: GROK_BRAIN_SUMMARY.md not updated in this PR"
+              FAIL=1
+            else
+              echo "✅ Brain updated"
+            fi
+            if [ "$FAIL" = "1" ]; then
+              echo "Gates failed — PR #$PR_NUM blocked until fixed"
+              exit 0
+            fi
+            echo "✅ All RALPH gates passed for $TASK"
           else
-            echo "⏳ enforce-ralph status: '$STATUS' — not ready yet, will retry"
-            exit 0
+            echo "No task folder changed — non-task PR, gate checks skipped"
           fi
+
+          echo "Merging PR #$PR_NUM → main"
+          gh pr merge $PR_NUM --merge \
+            --subject "auto: dev → main (RALPH gates passed)" \
+            --delete-branch=false
+          echo "✅ Merged"
