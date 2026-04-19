@@ -1,0 +1,43 @@
+name: Auto PR + Merge dev → main
+on:
+  push:
+    branches: [ dev ]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  auto-pr-merge:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Create or update PR dev → main
+        id: pr
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          EXISTING=$(gh pr list --base main --head dev --state open --json number --jq '.[0].number' 2>/dev/null || echo "")
+          if [ -z "$EXISTING" ]; then
+            PR_NUM=$(gh pr create \
+              --base main \
+              --head dev \
+              --title "auto: sync dev → main" \
+              --body "Automated PR from dev branch. RALPH gate CI will run and auto-merge if all gates pass." \
+              --json number --jq '.number')
+            echo "Created PR #$PR_NUM"
+          else
+            PR_NUM=$EXISTING
+            echo "PR #$PR_NUM already exists"
+          fi
+          echo "pr_number=$PR_NUM" >> $GITHUB_OUTPUT
+
+      - name: Enable auto-merge
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh pr merge ${{ steps.pr.outputs.pr_number }} --auto --squash \
+            --subject "auto: dev → main (RALPH gated)" || true
