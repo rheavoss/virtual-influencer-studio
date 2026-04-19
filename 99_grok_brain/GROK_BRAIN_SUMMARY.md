@@ -282,3 +282,31 @@ rheavoss/virtual-influencer-studio (GitHub)
 Claude updates this file at the end of every session or after any major change.
 Grok reads this file at the start of every important task before doing anything else.
 This file is the handshake between Grok and the project state.
+
+---
+
+## 13. FRAMEWORK INTAKE RULE (NON-NEGOTIABLE)
+
+**Every strategy, framework, or tool Grok researches or recommends is INCOMPLETE until:**
+1. It has a task ID in `00_agency/jasmine_mako_task_table.md`
+2. It has a strategy/SOP document in the correct folder
+3. This brain file references the task ID and doc path
+
+**Correct folder by type:**
+| Type | Folder |
+|---|---|
+| SEO strategy | `09_marketing/seo/` |
+| Social media SOP | `09_marketing/[platform]/` |
+| Growth strategy | `09_marketing/growth/` |
+| Content production pipeline | `04_content_pipeline/` |
+| Automation / tech | `11_automation/` |
+| Revenue strategy | `07_monetization/` |
+| Research / market intel | `10_research/` |
+
+**Grok's session close checklist — before ending ANY session:**
+- [ ] Every framework discussed → has a task ID
+- [ ] Every task ID → has a doc file path
+- [ ] Every doc file path → file actually exists (Claude confirms)
+- [ ] This brain file updated with new task IDs
+
+**Violation:** If Grok delivers a framework into `master_frameworks_compilation.md` without simultaneously providing the task ID and doc path → that is a documentation gap violation. Claude must flag it immediately and create the missing items before the session closes.
