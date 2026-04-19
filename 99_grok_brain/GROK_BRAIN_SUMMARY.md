@@ -70,7 +70,7 @@
 
 | Item | Status |
 |---|---|
-| LoRA trained | ❌ NOT YET |
+| LoRA trained | ⏳ IN PROGRESS — Instance 35219546, ~step 437/2000 |
 | Training tool | ostris/ai-toolkit |
 | Base model | FLUX.1-dev (black-forest-labs) |
 | Steps | 2000 |
@@ -151,7 +151,28 @@ P0-00 ✅ P0-01 ✅ P0-02 ✅ P0-03 ✅ P0-04 ✅ P0-05 ✅ P0-06 ✅ P0-26 ✅ 
 
 ---
 
-## 8. TEAM ROLES
+## 8. RALPH PROTOCOL (GOVERNANCE)
+
+**Status:** ACTIVE as of 2026-04-19
+**Version:** RALPH v16.1-jasmine (fork of master v16.1)
+**Playbook file:** `00_agency/ralph_jasmine_playbook.json`
+**Enforcement:** GitHub CI/CD mechanical turnstiles (`.github/workflows/ralph-gate-enforcer.yml`)
+**Rolling task docs:** `00_agency/tasks/TASK-XXXX/rolling_task_document.md` — eternal, never deleted
+
+**Gate sequence (every task must follow):**
+- G0: Grok Research Gate (Google + Reddit + X + task-specific) — MANDATORY FIRST
+- G1: Rolling Task Document created
+- G2: Claude feasibility + counter-questions
+- G3: CEO plan approval
+- G4–G11: Dev → test → verify
+- G12: Eternal docs + forensic PROOF_* folder committed
+- G13: Antigravity browser verification
+
+**Current active task docs:** `00_agency/tasks/TASK-P0-07/` (LoRA training — IN PROGRESS)
+
+---
+
+## 9. TEAM ROLES
 
 | Role | Who | Can do |
 |---|---|---|
@@ -162,7 +183,7 @@ P0-00 ✅ P0-01 ✅ P0-02 ✅ P0-03 ✅ P0-04 ✅ P0-05 ✅ P0-06 ✅ P0-26 ✅ 
 
 ---
 
-## 9. FINANCIAL SNAPSHOT
+## 10. FINANCIAL SNAPSHOT
 
 **P&L Dashboard:** https://virtual-influencer-dashboard.vercel.app
 **Month 0 spend to date (approx):**
@@ -171,7 +192,7 @@ P0-00 ✅ P0-01 ✅ P0-02 ✅ P0-03 ✅ P0-04 ✅ P0-05 ✅ P0-06 ✅ P0-26 ✅ 
 
 ---
 
-## 10. MAINTENANCE RULE
+## 11. MAINTENANCE RULE
 
 Claude updates this file at the end of every session or after any major change.
 Grok reads this file at the start of every important task before doing anything else.
