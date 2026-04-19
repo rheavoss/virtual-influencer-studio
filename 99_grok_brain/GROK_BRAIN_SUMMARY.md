@@ -250,11 +250,11 @@ Violation of this checklist = immediate RALPH violation logged.
 |---|---|
 | Claude Code | ₹1,860 |
 | Higgsfield | ₹465–₹838 |
-| ElevenLabs | ₹2,048 |
+| VoiceBox (replaces ElevenLabs) | ₹0 (local, open-source) |
 | Calilio US number | ₹465 |
 | RunPod (pay-per-use) | ₹930–₹1,860 |
 | Domains (prorated) | ₹93–₹370 |
-| **Total** | **₹6,500–₹8,500/month** |
+| **Total** | **₹3,800–₹5,400/month** |
 
 **Native platform monetization (unlocks at 10k followers — Month 1–2):**
 | Platform | Rate | Est. at 10k followers |

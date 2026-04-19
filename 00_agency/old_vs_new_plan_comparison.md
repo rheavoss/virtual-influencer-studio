@@ -37,16 +37,16 @@
 |---|---|
 | Claude Code | ₹1,860/month |
 | Higgsfield (trial → standard) | ₹465–₹838/month |
-| ElevenLabs (voice) | ₹2,048/month |
+| VoiceBox (replaces ElevenLabs) | ₹0 (local, open-source) |
 | Calilio US number | ₹465/month |
 | RunPod (pay-per-use, est.) | ₹930–₹1,860/month |
 | Domains (per character, prorated) | ₹93–₹370/month |
 | Metricool/Postiz | ₹0 (free tier initially) |
 | n8n (self-hosted) | ₹0 |
 | Room 11, Fanvue, Passes | ₹0 (revenue share only) |
-| **Total** | **₹6,500–₹8,500/month** |
+| **Total** | **₹3,800–₹5,400/month** |
 
-Grok's "₹4,000–5,000" = missing ElevenLabs + RunPod + Calilio.  
+VoiceBox (github.com/jamiepine/voicebox): zero-shot voice cloning, local Mac DMG, 7 TTS engines incl. Qwen3+Chatterbox. ElevenLabs eliminated — saves ₹2,048/month.  
 Old plan's "₹12,676" = overstated Higgsfield at full price + unnecessary tools.
 
 ---
