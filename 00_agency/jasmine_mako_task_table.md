@@ -10,6 +10,7 @@
 ## 🚨 URGENT — Infra Hotfixes (Do First)
 
 - [ ] **[P0-36]** `[Tech Ops]` (Claude Code) *(RICE: 8×9×1.0÷1 = 72)* — **URGENT** Fix `~/.studio-sync/sync-project.sh` to exclude `.gbrain` from auto-commits. Currently `.gbrain` triggers Vercel Preview builds on every brain-update, burning the 100 deploy/day quota. Add `git reset HEAD .gbrain 2>/dev/null || true` after the existing dashboard exclusion line.
+- [ ] **[P0-38]** `[Tech Ops]` (Claude Code) *(RICE: 9×9×1.0÷2 = 40.5)* — **URGENT** Delete legacy `jasmine-dashboard` Vercel project (prj_3cCte5hEyZuJpwzDQ7EGocr4Gxc1). Character-specific name conflicts with multi-character agency vision. **Pre-condition:** Must first deploy to `virtual-influencer-dashboard` project and re-alias production URL — cannot delete until alias is migrated (alias currently points to jasmine-dashboard deployment). Do after P0-37.
 - [ ] **[P0-37]** `[Tech Ops]` (Claude Code) *(RICE: 8×8×1.0÷1 = 64)* — **URGENT** Fix deploy command in `CLAUDE.md` and `20_tech/jasmine-dashboard/deploy.md`: change `name:"jasmine-dashboard"` → `name:"virtual-influencer-dashboard"`. Wrong project name caused 1hr+ of wasted deploys and tokens on 2026-04-20.
 
 ---
