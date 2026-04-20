@@ -151,13 +151,15 @@ P0-00 ✅ P0-01 ✅ P0-02 ✅ P0-03 ✅ P0-04 ✅ P0-05 ✅ P0-06 ✅ P0-07 ✅ 
 
 ## 7. KEY DECISIONS (LOCKED)
 
-- **Single character only:** Jasmine. No other characters.
-- **All revenue platforms Day 1:** Fanvue + Passes + X/Twitter simultaneously
-- **Content ceiling:** Option A — Lena Paul level. No nudity. No topless. Ever.
+- **Multi-character scaling:** Jasmine = Char 1. Desi = Char 2 (M2 warmup). Plan: 3 chars M4, 4 chars M5, 5 chars M7, 6 chars M9, 7 chars M11, 8 chars M12. Chars 3–N run at 50% efficiency vs chars 1–2.
+- **USD-first strategy:** Fanvue + Passes + PPV target Tier-1 (US/UK/EU) from Day 1. IG Subs + FB Subs + Brand Deals are INR-additive from M4 (10k follower gate). Both markets run in parallel.
+- **All revenue platforms Day 1:** Fanvue + Passes + X/Twitter simultaneously. Room11 = ₹0 until M4 (needs subscriber base).
+- **Content ceiling:** Option A — Lena Paul level. No nudity. No topless. Ever. Non-negotiable.
 - **Currency:** All costs in INR. USD × ₹93.08. Always verify India pricing directly.
 - **Follower count:** Cross-platform total (IG + FB + YouTube + X + Pinterest + Telegram)
 - **LoRA trigger word:** `jasmakogirl`
 - **GitHub account for this project:** `rheavoss` only. No other accounts.
+- **ElevenLabs:** DEPRECATED 2026-04-19. Replaced by VoiceBox (github.com/jamiepine/voicebox) — free, local Mac DMG, zero-shot voice cloning. Cost = ₹0 all months.
 
 ---
 
@@ -235,7 +237,7 @@ Violation of this checklist = immediate RALPH violation logged.
 
 ## 10. FINANCIAL SNAPSHOT
 
-**P&L Dashboard:** https://virtual-influencer-dashboard.vercel.app
+**P&L Dashboard:** https://virtual-influencer-dashboard.vercel.app ✅ LIVE — data from Supabase (updated 2026-04-20)
 
 **Month 0 spend to date:**
 | Item | Cost |
@@ -245,33 +247,43 @@ Violation of this checklist = immediate RALPH violation logged.
 | **Total spent** | **~$3.21 / ₹299** |
 | Vast.ai remaining credit | ~$1.35 |
 
-**Real monthly burn (verified 2026-04-19):**
+**Real monthly burn (verified 2026-04-20):**
 | Tool | Cost |
 |---|---|
-| Claude Code | ₹1,860 |
-| Higgsfield | ₹465–₹838 |
-| VoiceBox (replaces ElevenLabs) | ₹0 (local, open-source) |
-| Calilio US number | ₹465 |
-| RunPod (pay-per-use) | ₹930–₹1,860 |
-| Domains (prorated) | ₹93–₹370 |
-| **Total** | **₹3,800–₹5,400/month** |
+| Higgsfield | ₹2,699 |
+| Grok (X Premium) | ₹542 |
+| Claude Code (×2 seats) | ₹4,000 |
+| Calilio (US number) | ₹1,303 |
+| SpicyChat AI | ₹1,260 |
+| Carrd.co | ₹147 |
+| Dolphin{anty} | ₹930 |
+| Namecheap (domain) | ₹92 |
+| VoiceBox | ₹0 (free, local) |
+| **Fixed base** | **₹10,973/month** |
+| + Variable (IG Ads, Taboola, Research) | ₹0 M1–M2, ₹6,000 M3, ₹9,000+ M4+ |
 
-**Native platform monetization (unlocks at 10k followers — Month 1–2):**
-| Platform | Rate | Est. at 10k followers |
-|---|---|---|
-| IG Subscriptions | Creator sets price, IG takes 30% | ₹5,000–₹25,000/month |
-| FB Subscriptions | FB takes 30% | ₹3,000–₹15,000/month |
-| FB In-stream ads | $3–$8 RPM lifestyle niche | ₹2,000–₹8,000/month |
-| YouTube Shorts | $0.03–$0.08 per 1k views | ⚠️ Near zero — cross-post only |
-| YouTube Memberships | Creator keeps 70% | ₹3,000–₹10,000/month |
+**Corrected Year-1 projections (LOCKED 2026-04-20 — Investor Plan v2):**
+| Metric | Value |
+|---|---|
+| Year-1 pre-tax net | ₹2.25 Cr |
+| Year-1 post-tax (~29% effective) | ₹1.60 Cr |
+| Break-even | M4 |
+| M12 monthly net profit | ~₹50L |
 
-**Year-1 net projection (with math — see `00_agency/old_vs_new_plan_comparison.md`):**
-- Base (1–2 characters): ₹15–20 lakh
-- Mid (4–5 characters): ₹35–50 lakh
-- Stretch (7+ characters, full execution): ₹70–90 lakh+
-- ₹1.17 Cr = possible only with 7+ characters all hitting mid-tier by Month 10
+**Character scaling schedule:**
+M1=1 char · M2=2 chars · M3=2 · M4=3 · M5=4 · M6=4 · M7=5 · M8=5 · M9=6 · M10=6 · M11=7 · M12=8
+Chars 3–N at 50% efficiency vs chars 1–2.
 
-**Key document for Grok:** `00_agency/old_vs_new_plan_comparison.md` — ✅ LOCKED 2026-04-19. Claude vs Grok debate closed. Grok accepted all 5 points. This is now the official single source of truth for all financial planning.
+**Platform keep rates (after platform commission):**
+Fanvue 85% | Room11 60% | Passes 90% | PPV+Voice 90% | Telegram 90% | Brand Deals 90% | IG Subs 80% | FB Subs 70%
+
+**Native platform monetization gates:**
+- IG Subscriptions (₹300/mo): unlocks M4 at 10k followers
+- FB Subscriptions: unlocks M5
+- Brand Deals: micro M4 (₹20K/post) → macro M12 (₹5L/post)
+- Room11 DM monetization: operational from M4 (needs subscriber base)
+
+**Key financial doc:** `00_agency/growth_and_revenue_timeline.md` — authoritative M1–M12 P&L table
 
 ---
 
@@ -313,7 +325,16 @@ This file is the handshake between Grok and the project state.
 
 ---
 
-## 13. FRAMEWORK INTAKE RULE (NON-NEGOTIABLE)
+## 13. SESSION 13 CHANGES (2026-04-20)
+
+- **Investor Plan v2 LOCKED:** All 12 months recalculated. Room11 ₹0 for M1–M3. ElevenLabs ₹0 all months. Multi-char scaling verified. Year-1 pre-tax ₹2.25Cr | post-tax ₹1.60Cr.
+- **Supabase schema fixed:** 7 missing columns added (room11, fb_subs, spicychat, carrd, dolphin, ig_ads, taboola). Dashboard now loads live from Supabase correctly.
+- **Dashboard code fixes:** ElevenLabs column removed, CHARS column added (shows active char count per month), dual-market section updated (was "Tier-1 only" — wrong), brand deal footnote [6] added, cost label mismatch fixed (Taboola was missing, caused columns 5–12 to show wrong labels).
+- **Token savings:** PreToolUse hooks removed from `~/.claude/settings.json`. CLAUDE.md trimmed 50%. Now uses only UserPromptSubmit G.Brain hook (once per message, not per tool call).
+- **Vercel deploy quota burned:** Auto-commit hook + RALPH auto-merge + GitHub integration = 100 deploys/day limit hit. Next reset ~02:01 UTC. Dashboard data correct via Supabase ISR; code changes visible after next deploy.
+- **Team structure:** Operations Lead (₹35–45K) + Brand Outreach (₹30–35K + fixed quarterly bonus) planned for M4 hire when revenue hits ₹2L/month.
+
+## 14. FRAMEWORK INTAKE RULE (NON-NEGOTIABLE)
 
 **Every strategy, framework, or tool Grok researches or recommends is INCOMPLETE until:**
 1. It has a task ID in `00_agency/jasmine_mako_task_table.md`
