@@ -25,7 +25,7 @@ const REV_LABELS = ['Fanvue', 'Room 11', 'Passes', 'PPV+Voice', 'Telegram', 'Bra
 
 // Expense labels — maps 1:1 to cArr indices (ALL 10 items)
 const COST_LABELS = [
-  'Higgsfield', 'ElevenLabs', 'Grok', 'Claude ×2',
+  'Higgsfield', 'Grok', 'Claude ×2',
   'IG Ads', 'Taboola', 'Research', 'Buffer', 'Calilio', 'Namecheap', 'SpicyChat', 'Carrd.co', 'Dolphin',
 ];
 
@@ -226,7 +226,7 @@ function deriveRows(data, costMultiplier = 1) {
   return data.map(row => {
     const rArr  = [row.fanvue, row.room11 || 0, row.passes, row.ppv_voice, row.telegram, row.brand, row.ig_subs, row.fb_subs || 0];
     // ALL cost fields multiplied by costMultiplier
-    const cArr  = [row.higgsfield, row.elevenlabs, row.grok, row.claude_code, row.ig_ads, row.taboola, row.research, row.buffer, row.calilio, row.namecheap, row.spicychat, row.carrd, row.dolphin || 0].map(v => v * costMultiplier);
+    const cArr  = [row.higgsfield, row.grok, row.claude_code, row.ig_ads, row.taboola, row.research, row.buffer, row.calilio, row.namecheap, row.spicychat, row.carrd, row.dolphin || 0].map(v => v * costMultiplier);
     
     const gross = rArr.reduce((a, b) => a + b, 0);
     const platformNet = rArr.reduce((s, v, i) => s + v * KEEP[i], 0);
