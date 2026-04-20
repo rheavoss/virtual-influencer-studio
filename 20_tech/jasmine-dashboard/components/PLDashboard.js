@@ -26,6 +26,18 @@ const REV_LABELS = ['Fanvue', 'Room 11', 'Passes', 'PPV+Voice', 'Telegram', 'Bra
 // Active character count per month
 const CHARS = { 1:1, 2:2, 3:2, 4:3, 5:4, 6:4, 7:5, 8:5, 9:6, 10:6, 11:7, 12:8 };
 
+// Character factory scaling roadmap
+const CHARACTER_SCALING = [
+  { months: 'M1',      chars: 1, names: 'Jasmine (East Asian · Japanese-Korean · USD-first)',          efficiency: '—',              unlock: 'All USD platforms live Day 1: Fanvue, Passes, PPV+Voice' },
+  { months: 'M2',      chars: 2, names: '+ Desi character warmup (Indian · INR-first · ₹0 revenue)',   efficiency: 'Desi: 0%',       unlock: 'Desi builds audience only — no monetization yet' },
+  { months: 'M3',      chars: 2, names: 'Jasmine + Desi (both monetising)',                            efficiency: 'Both: 100%',     unlock: 'Video pipeline live (5× reach). IG Ads + Taboola begin (₹1,500 each)' },
+  { months: 'M4',      chars: 3, names: '+ Character 3 added',                                        efficiency: 'Char 3: 50%',    unlock: 'IG Subscriptions unlock at 10k followers. Room 11 live. Brand deals begin' },
+  { months: 'M5–M6',   chars: 4, names: '+ Character 4 added',                                        efficiency: 'New chars: 50%', unlock: 'FB Subs launch M5. Telegram VIP live M6. Brand deals scaling' },
+  { months: 'M7–M8',   chars: 5, names: '+ Character 5 (chars 3–5 at 50% efficiency vs chars 1–2)',   efficiency: 'Chars 3–5: 50%', unlock: 'Macro brand deals entry (₹1L–₹5L/post). Full automation stable M8' },
+  { months: 'M9–M10',  chars: 6, names: '+ Character 6 added',                                        efficiency: 'Chars 3–6: 50%', unlock: 'M10: ₹1Cr cumulative milestone. Brand deals at macro rates (50k–90k IG)' },
+  { months: 'M11–M12', chars: 8, names: '+ Characters 7 & 8 added',                                   efficiency: 'Chars 3–8: 50%', unlock: 'M12 Year-1 close · ₹2.25Cr pre-tax · ₹1.60Cr post-tax (~29% eff. rate)' },
+];
+
 // Expense labels — maps 1:1 to cArr indices (ALL 10 items)
 const COST_LABELS = [
   'Higgsfield', 'Grok', 'Claude ×2',
