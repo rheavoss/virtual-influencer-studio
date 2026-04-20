@@ -44,7 +44,7 @@ const PLATFORM_FEES = [
 // Fixed monthly tool costs — base values (×1). Multiplied at render time via costMultiplier prop.
 const TOOL_STACK = [
   { name: 'Higgsfield',  cost: 2699, desc: 'AI Video Gen / Animation',        url: 'https://higgsfield.ai' },
-  { name: 'ElevenLabs',  cost: 420,  desc: 'AI Voice Cloning & Synthesis',     url: 'https://elevenlabs.io' },
+  { name: 'ElevenLabs',  cost: 0,    desc: 'Deprecated 2026-04-19 — replaced by VoiceBox (free)', url: 'https://elevenlabs.io' },
   { name: 'Grok (X)',    cost: 542,  desc: 'Training Data / Content Research', url: 'https://x.com' },
   { name: 'Claude x2',   cost: 4000, desc: 'Logic, Scripts & Automation (2 Seats)', url: 'https://claude.ai' },
   { name: 'IG Reels Ads', cost: null, desc: 'SFW lifestyle ads → IG profile growth (safe on Meta)', url: 'https://www.facebook.com/business/ads' },
@@ -99,7 +99,7 @@ const CONTENT_TYPES = [
     components: [
       { role: 'Script',                      tool: 'Claude / manual',                cost: 0 },
       { role: 'Voice (emotion-tagged)',       tool: 'OmniVoice (local/Colab)',        cost: 0 },
-      { role: 'Voice clone ref (M1 only)',    tool: 'ElevenLabs Starter',             cost: 420, m1only: true },
+      { role: 'Voice clone / synthesis',      tool: 'VoiceBox (free) / OmniVoice',    cost: 0 },
       { role: 'Lip-sync video (S2V)',         tool: 'Wan AI S2V',                     cost: 420 },
       { role: 'Background image',            tool: 'Flux Kontext OR Google Whisk',   cost: 0 },
       { role: 'Captions overlay',            tool: 'CapCut',                         cost: 0 },
