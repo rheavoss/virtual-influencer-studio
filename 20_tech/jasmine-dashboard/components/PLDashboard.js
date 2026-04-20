@@ -23,6 +23,9 @@ const KEEP = [0.85, 0.60, 0.90, 0.90, 0.90, 0.90, 0.80, 0.70];
 // Revenue stream labels — maps 1:1 to rArr indices
 const REV_LABELS = ['Fanvue', 'Room 11', 'Passes', 'PPV+Voice', 'Telegram', 'Brand Deals', 'IG Subs', 'FB Subs'];
 
+// Active character count per month
+const CHARS = { 1:1, 2:2, 3:2, 4:3, 5:4, 6:4, 7:5, 8:5, 9:6, 10:6, 11:7, 12:8 };
+
 // Expense labels — maps 1:1 to cArr indices (ALL 10 items)
 const COST_LABELS = [
   'Higgsfield', 'Grok', 'Claude ×2',
@@ -644,6 +647,7 @@ export default function PLDashboard({ data, costMultiplier = 1 }) {
             <thead>
               <tr style={{ background: '#f6f8fa', borderBottom: `2px solid ${C.grid}` }}>
                 <th style={{ padding: '10px 5px', textAlign: 'left', position: 'sticky', left: 0, background: '#f6f8fa' }}>MONTH</th>
+                <th style={{ padding: '10px 5px', textAlign: 'center', color: C.textMut, fontWeight: 500, fontSize: 9 }}>CHARS</th>
                 {/* Revenue sub-columns */}
                 {REV_LABELS.map(l => <th key={l} style={{ padding: '10px 5px', textAlign: 'right', color: C.blue, fontWeight: 500 }}>{l}</th>)}
                 <th style={{ padding: '10px 6px', textAlign: 'right', fontWeight: 800, borderLeft: `2px solid ${C.grid}` }}>GROSS</th>
