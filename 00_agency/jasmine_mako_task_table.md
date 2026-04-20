@@ -1,5 +1,5 @@
 # Jasmine Mako — Phase 0 & Phase 1 Execution Pipeline
-**Updated:** 2026-04-19 (Session 11 — RALPH v16.1-jasmine mechanically active as of 2026-04-19. P0-07 LoRA training IN PROGRESS on Instance 35219546.)
+**Updated:** 2026-04-20 (Session 13 — P0-07 LoRA complete. P0-08 Higgsfield subscribed. Karpathy Protocol expanded. Vercel ignore-build-step fixed.)
 
 **Legend:**
 - **Assignee:** [Antigravity] (Code/Workflows/OpSec), [Claude Code] (Text Prompts/Scripting), [Grok] (Market Intel/Trends/X & Web Research), [CEO] (Physical accounts/Payments).
