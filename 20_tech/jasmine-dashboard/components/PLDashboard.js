@@ -664,6 +664,7 @@ export default function PLDashboard({ data, costMultiplier = 1 }) {
               {rows.map((r, i) => (
                 <tr key={r.month} style={{ borderBottom: `1px solid ${C.grid}`, background: i % 2 === 0 ? '#fff' : '#fafbfc' }}>
                   <td style={{ padding: '7px 5px', fontWeight: 700, position: 'sticky', left: 0, background: i % 2 === 0 ? '#fff' : '#fafbfc' }}>{r.label}</td>
+                  <td style={{ padding: '7px 5px', textAlign: 'center', fontSize: 9, color: C.blue, fontWeight: 700 }}>×{CHARS[r.month] || 1}</td>
                   {r.rArr.map((v, idx) => <td key={idx} style={{ padding: '7px 5px', textAlign: 'right', color: C.textSec }}>{v > 0 ? fi(v) : '—'}</td>)}
                   <td style={{ padding: '7px 6px', textAlign: 'right', fontWeight: 700, borderLeft: `2px solid ${C.grid}` }}>{fi(r.gross)}</td>
                   <td style={{ padding: '7px 6px', textAlign: 'right', color: C.orange }}>{fi(r.cuts)}</td>
