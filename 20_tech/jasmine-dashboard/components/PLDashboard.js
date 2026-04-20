@@ -26,7 +26,7 @@ const REV_LABELS = ['Fanvue', 'Room 11', 'Passes', 'PPV+Voice', 'Telegram', 'Bra
 // Expense labels — maps 1:1 to cArr indices (ALL 10 items)
 const COST_LABELS = [
   'Higgsfield', 'ElevenLabs', 'Grok', 'Claude ×2',
-  'Meta Ads', 'Research', 'Buffer', 'Calilio', 'Namecheap', 'SpicyChat', 'Carrd.co', 'Dolphin',
+  'IG Ads', 'Taboola', 'Research', 'Buffer', 'Calilio', 'Namecheap', 'SpicyChat', 'Carrd.co', 'Dolphin',
 ];
 
 // Platform fee breakdown for display
