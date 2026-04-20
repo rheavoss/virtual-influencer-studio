@@ -679,6 +679,7 @@ export default function PLDashboard({ data, costMultiplier = 1 }) {
             <tfoot>
               <tr style={{ background: '#f6f8fa', fontWeight: 800, borderTop: `2px solid ${C.grid}` }}>
                 <td style={{ padding: '12px 5px', position: 'sticky', left: 0, background: '#f6f8fa' }}>12M TOTAL</td>
+                <td></td>
                 {REV_LABELS.map((_, idx) => <td key={idx} style={{ padding: '12px 5px', textAlign: 'right' }}>{fi(rows.reduce((s, r) => s + r.rArr[idx], 0))}</td>)}
                 <td style={{ padding: '12px 6px', textAlign: 'right', borderLeft: `2px solid ${C.grid}` }}>{fi(T.gross)}</td>
                 <td style={{ padding: '12px 6px', textAlign: 'right', color: C.orange }}>{fi(T.gross - T.net)}</td>
@@ -692,7 +693,7 @@ export default function PLDashboard({ data, costMultiplier = 1 }) {
           </table>
         </div>
         <div style={{ marginTop: 10, fontSize: 10, color: C.textMut }}>
-          * All 10 expense categories are visible. Total Expenses column = sum of all 10. Revenue conversion: Fanvue/Passes/PPV at ₹93.08 = $1.
+          * 12 expense categories visible (ElevenLabs excluded — deprecated, replaced by VoiceBox free). CHARS = active character count that month. Revenue conversion: Fanvue/Passes/PPV at ₹93.08 = $1. Brand Deals from M4 (micro) → M12 (macro ₹5L+/post). <span style={S.fn}>[6]</span>
         </div>
       </div>
 
