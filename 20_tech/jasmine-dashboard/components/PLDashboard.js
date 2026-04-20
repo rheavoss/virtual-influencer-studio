@@ -186,7 +186,7 @@ const GLOSSARY = [
   { t: 'Gross Revenue',       d: 'Total money earned across all platforms before anyone takes their cut. (Fanvue + Passes + PPV/Voice + Telegram + Brand + IG Subs + FB Subs)' },
   { t: 'Platform Cuts',       d: 'Commission fees taken by each platform. Fanvue 15%, Passes/PPV/Telegram/Brand 10%, Instagram Subs 20%, FB Subs 30%.' },
   { t: 'Net Revenue',         d: 'Money that hits your bank account after platform commissions AND Payment Gateway/Forex fees (Razorpay 2.5% on INR + Skydo flat ₹3537 for USD).' },
-  { t: 'Total Costs',         d: 'Everything spent each month: AI tools (Higgsfield ₹2,699 + ElevenLabs ₹420 + Grok ₹542 + Claude ₹4,000 + Calilio ₹1,303 + SpicyChat ₹1,260 + Carrd.co ₹147 + Namecheap ₹92) + variable ads and research.' },
+  { t: 'Total Costs',         d: 'Everything spent each month: AI tools (Higgsfield ₹2,699 + Grok ₹542 + Claude ₹4,000 + Calilio ₹1,303 + SpicyChat ₹1,260 + Carrd.co ₹147 + Dolphin ₹930 + Namecheap ₹92) + variable IG Ads, Taboola, and research. ElevenLabs deprecated M1 — replaced by VoiceBox (free).' },
   { t: 'Net Profit',          d: 'The money you actually keep — after platform fees, gateway fees AND all expenses. (Net Revenue − Total Costs)' },
   { t: 'Cumulative Profit',   d: 'Running total of all net profits since Month 1. (Sum of all Net Profits up to this month)' },
   { t: 'MRR',                 d: 'Monthly Recurring Revenue — predictable subscription income that auto-renews. (Fanvue subscriptions + IG subscriptions)' },
