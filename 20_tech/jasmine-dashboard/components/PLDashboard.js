@@ -361,7 +361,7 @@ export default function PLDashboard({ data, costMultiplier = 1 }) {
       <div style={S.header}>
         <h1 style={S.h1}>Virtual Influencer Infrastructure — 12-Month P&L</h1>
         <div style={S.sub}>
-          ₹93.08 = $1 USD &nbsp;·&nbsp; <strong>Modeled for EXACTLY 1 Influencer</strong>
+          ₹93.08 = $1 USD &nbsp;·&nbsp; <strong>Multi-Character Factory: ×1 character M1 → ×8 characters M12</strong>
         </div>
         <div style={{ ...S.sub, marginTop: 4, fontSize: 11, color: C.accent }}>
           IG Subscriptions (₹300/mo) unlock at M4 (10k follower milestone) &nbsp;·&nbsp; FB Subs launch M5
@@ -400,6 +400,42 @@ export default function PLDashboard({ data, costMultiplier = 1 }) {
           <div style={{ textAlign: 'center', marginTop: 10, fontSize: 10, color: C.textSec }}>
             Break-even: Month 4 &nbsp;·&nbsp; Year-1 Target: ₹1.18Cr+
           </div>
+        </div>
+      </div>
+
+      {/* ── CHARACTER FACTORY ROADMAP ── */}
+      <div style={S.card}>
+        <div style={S.cardTitle}>🏭 Character Factory Roadmap — Account & Model Scaling</div>
+        <div style={{ overflowX: 'auto' }}>
+          <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 10 }}>
+            <thead>
+              <tr style={{ background: '#f6f8fa', borderBottom: `2px solid ${C.grid}` }}>
+                <th style={{ padding: '9px 8px', textAlign: 'left', color: C.textMut, fontWeight: 600 }}>Month</th>
+                <th style={{ padding: '9px 8px', textAlign: 'center', color: C.blue, fontWeight: 600 }}>Active Chars</th>
+                <th style={{ padding: '9px 8px', textAlign: 'left', color: C.textMut, fontWeight: 600 }}>Characters / Models</th>
+                <th style={{ padding: '9px 8px', textAlign: 'center', color: C.orange, fontWeight: 600 }}>New Char Efficiency</th>
+                <th style={{ padding: '9px 8px', textAlign: 'left', color: C.green, fontWeight: 600 }}>Key Unlock / Milestone</th>
+              </tr>
+            </thead>
+            <tbody>
+              {CHARACTER_SCALING.map((r, i) => (
+                <tr key={r.months} style={{ borderBottom: `1px solid ${C.grid}`, background: i % 2 === 0 ? '#fff' : '#fafbfc' }}>
+                  <td style={{ padding: '8px 8px', fontWeight: 700, color: C.textPri }}>{r.months}</td>
+                  <td style={{ padding: '8px 8px', textAlign: 'center', fontWeight: 800, fontSize: 13, color: C.blue }}>×{r.chars}</td>
+                  <td style={{ padding: '8px 8px', color: C.textSec }}>{r.names}</td>
+                  <td style={{ padding: '8px 8px', textAlign: 'center', color: r.efficiency === '—' ? C.textMut : C.orange, fontWeight: 600 }}>{r.efficiency}</td>
+                  <td style={{ padding: '8px 8px', color: C.green, fontWeight: 500 }}>{r.unlock}</td>
+                </tr>
+              ))}
+            </tbody>
+            <tfoot>
+              <tr style={{ background: '#f6f8fa', borderTop: `2px solid ${C.grid}` }}>
+                <td colSpan={5} style={{ padding: '8px', fontSize: 9, color: C.textMut }}>
+                  Chars 1–2 operate at 100% efficiency (primary USD + INR revenue). Chars 3–8 operate at 50% efficiency (conservative factory estimate). All characters share the same content pipeline, tool stack, and OPSEC workflow.
+                </td>
+              </tr>
+            </tfoot>
+          </table>
         </div>
       </div>
 
