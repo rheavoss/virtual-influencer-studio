@@ -396,7 +396,7 @@ export default function PLDashboard({ data, costMultiplier = 1 }) {
               { t: '1. Identity Sovereignty',    d: 'Immortality: no aging, no fatigue, no retirement. Ever.' },
               { t: '2. Structural Consistency',  d: 'Proprietary Flux.1 LoRA identity-lock — perfect face/body every render.' },
               { t: '3. Capital Efficiency',      d: '90%+ lower marginal production cost vs. human influencer operations.' },
-              { t: '4. Yield Arbitrage',         d: 'Targeting US/UK ($400+ yield) from a sub-$100/mo compute base.' },
+              { t: '4. Yield Arbitrage',         d: 'USD streams (Fanvue/PPV) target $400+ yield/sub. INR streams (IG/FB Subs + Brand Deals) layer on from M4 — dual-market compound growth.' },
               { t: '5. Market Lag Advantage',    d: 'Indian market is 2 years behind US/EU. First-mover captures premium.' },
               { t: '6. Omnipresent Scale',       d: '24/7 content production across 7 revenue streams simultaneously.' },
               { t: '7. IP Consolidation',        d: '100% talent equity and character IP retained by the infrastructure.' },
@@ -410,23 +410,27 @@ export default function PLDashboard({ data, costMultiplier = 1 }) {
         </div>
 
         <div style={S.card}>
-          <div style={S.cardTitle}>📍 Target Geography — Yield Gap Analysis</div>
+          <div style={S.cardTitle}>📍 Dual-Market Strategy — Revenue Geography</div>
           <div style={{ background: C.noteBg, border: `1px solid ${C.noteBdr}`, borderRadius: 6, padding: 10, marginBottom: 12, fontSize: 11, color: C.textSec }}>
-            We target <strong>Tier-1 markets only (US, UK, EU, Canada, Australia)</strong>. India has the subscribers but not the spending power. The arbitrage is: run the operation from India, sell to the West.<span style={S.fn}>[4]</span>
+            <strong>USD-first (M1+):</strong> Fanvue, Passes, PPV+Voice target Tier-1 (US/UK/EU/AU) — premium GFE yield. <strong>INR-additive (M4+):</strong> IG Subs ₹300/mo, FB Subs, Brand Deals activate after 10k follower gate. Both markets run in parallel — West pays for content, India scales native reach.<span style={S.fn}>[4]</span>
           </div>
           <table style={{ width: '100%', fontSize: 11, borderCollapse: 'collapse' }}>
             <tbody>
               <tr style={{ borderBottom: `1px solid ${C.grid}` }}>
-                <td style={{ padding: '6px 0', color: C.textSec }}>Annual Yield / Paying Sub (US/UK)</td>
+                <td style={{ padding: '6px 0', color: C.textSec }}>USD Stream Yield / Sub (US/UK/EU)</td>
                 <td style={{ textAlign: 'right', fontWeight: 700, color: C.green }}>$370 – $490 <span style={S.fn}>[3]</span></td>
               </tr>
               <tr style={{ borderBottom: `1px solid ${C.grid}` }}>
                 <td style={{ padding: '6px 0', color: C.textSec }}>Calculation basis</td>
-                <td style={{ textAlign: 'right', fontSize: 10, color: C.textMut }}>$15.99 sub + ~$20 PPV avg × 12</td>
+                <td style={{ textAlign: 'right', fontSize: 10, color: C.textMut }}>Fanvue sub + PPV+Voice avg × 12 @ ₹93.08/$</td>
               </tr>
               <tr style={{ borderBottom: `1px solid ${C.grid}` }}>
-                <td style={{ padding: '6px 0', color: C.textSec }}>Annual Yield / Paying Sub (India)</td>
-                <td style={{ textAlign: 'right', color: C.red }}>$45 – $60</td>
+                <td style={{ padding: '6px 0', color: C.textSec }}>INR Stream — IG Sub price</td>
+                <td style={{ textAlign: 'right', color: C.blue }}>₹300/mo (unlocks M4 @ 10k followers)</td>
+              </tr>
+              <tr style={{ borderBottom: `1px solid ${C.grid}` }}>
+                <td style={{ padding: '6px 0', color: C.textSec }}>INR Stream — Brand Deals range</td>
+                <td style={{ textAlign: 'right', color: C.blue }}>₹20K – ₹5L/post (M4 → M12)</td>
               </tr>
               <tr style={{ borderBottom: `1px solid ${C.grid}` }}>
                 <td style={{ padding: '6px 0', color: C.textSec }}>Meta Ads CPM — US Avg</td>
@@ -437,7 +441,7 @@ export default function PLDashboard({ data, costMultiplier = 1 }) {
                 <td style={{ textAlign: 'right', color: C.textMut }}>$1 – $3</td>
               </tr>
               <tr>
-                <td style={{ padding: '6px 0', fontWeight: 700 }}>Spending Power Multiple</td>
+                <td style={{ padding: '6px 0', fontWeight: 700 }}>USD vs India Spending Power</td>
                 <td style={{ textAlign: 'right', fontWeight: 800, color: C.blue }}>~8x – 10x</td>
               </tr>
             </tbody>
