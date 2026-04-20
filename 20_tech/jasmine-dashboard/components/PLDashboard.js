@@ -17,7 +17,7 @@ ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, BarEleme
 
 // ── CONSTANTS & DATA ───────────────────────────────────────────────────────────
 // Platform fee retention rates (1 - fee%):
-// Fanvue 15%, Passes 10%, PPV+Voice 10%, Telegram 10%, Brand 10%, IG Subs 20%, FB Subs 30%
+// Fanvue 15% | Room11 40% | Passes 10% | PPV+Voice 10% | Telegram 10% | Brand 10% | IG Subs 20% | FB Subs 30%
 const KEEP = [0.85, 0.60, 0.90, 0.90, 0.90, 0.90, 0.80, 0.70];
 
 // Revenue stream labels — maps 1:1 to rArr indices
@@ -215,6 +215,7 @@ const FOOTNOTES = [
   { id: 3, label: 'Tier-1 Subscriber LTV Logic',  text: 'US/UK ARPPU calculation: $15.99 base sub + avg $15–$25 PPV = ~$370–$490/yr per paying subscriber. Source: IMH 2024.',   url: 'https://influencermarketinghub.com/onlyfans-statistics/' },
   { id: 4, label: 'India Market Maturity Lag',     text: 'EY India Influencer Report: Indian market is 2 years behind US/EU in premium creator economy adoption and monetization.', url: 'https://www.ey.com/en_in/media-entertainment/the-state-of-influencer-marketing-in-india' },
   { id: 5, label: 'Virtual Influencer Market Size', text: 'Global virtual influencer market projected to reach $37.8B by 2030 (CAGR 36%). Source: Grand View Research.',          url: 'https://www.grandviewresearch.com/industry-analysis/virtual-influencer-market-report' },
+  { id: 6, label: 'India Brand Deal Pricing Benchmarks', text: 'Nano (1k–10k): ₹5k–₹20k/post. Micro (10k–100k): ₹20k–₹1L/post. Macro (100k–1M): ₹1L–₹5L/post. Source: Influencer Marketing Hub India Report 2024.', url: 'https://influencermarketinghub.com/influencer-marketing-statistics/' },
 ];
 
 // ── HELPERS ────────────────────────────────────────────────────────────────────
