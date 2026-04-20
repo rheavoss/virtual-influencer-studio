@@ -17,8 +17,8 @@
 - [x] **[P0-04]** `[AI Ops]` (Antigravity) *(RICE: N/A - Done)* - Batch Generation script developed (`jasmine_batch_generator.py`).
 - [x] **[P0-05]** `[Content]` (CEO + Claude) *(RICE: N/A - Done)* - LoRA training dataset assembled: 38 images in `03_ai_models/jasmine_mako/training_data/jasmine_dataset/`. Generated via Kling Image 3 series mode (pink bikini reference, face-forward only). Outfits: black gym wear, pink micro bikini, white bodysuit, red bodycon. Completed 2026-04-18.
 - [x] **[P0-06]** `[Strategy]` (Claude) *(RICE: N/A - Done)* - Character Card written.
-- [ ] **[P0-07]** `[AI Ops]` (CEO) *(RICE: 10×10×1.0÷3 = 33.3)* - **NEXT — UNBLOCKED:** Rent GPU on Vast.ai (using $10 USD credits) to train Jasmine Flux.1 Dev LoRA. Dataset: 38 images confirmed in jasmine_dataset/. Use ostris/ai-toolkit, 2000 steps, LoRA rank 16. Est. cost ~$2.
-- [ ] **[P0-08]** `[Exec Dept]` (CEO) *(RICE: 10×10×1.0÷1 = 100)* - Subscribe to Higgsfield Starter ($9/mo) for Phase 0.
+- [x] **[P0-07]** `[AI Ops]` (CEO) *(RICE: 10×10×1.0÷3 = 33.3)* - ✅ COMPLETE 2026-04-19 — `jasmine_v1.safetensors` trained on Vast.ai. ostris/ai-toolkit, 2000 steps, LoRA rank 16. File in `03_ai_models/jasmine_mako/lora_checkpoints/`.
+- [x] **[P0-08]** `[Exec Dept]` (CEO) *(RICE: 10×10×1.0÷1 = 100)* - ✅ COMPLETE — Higgsfield Starter subscribed ($9/mo).
 
 ### Link-in-Bio Setup 
 - [ ] **[P0-10]** `[Exec Dept]` (CEO) *(RICE: 10×8×1.0÷2 = 40)* - Register domain on Namecheap.
