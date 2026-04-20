@@ -230,6 +230,24 @@ const FOOTNOTES = [
   { id: 6, label: 'India Brand Deal Pricing Benchmarks', text: 'Nano (1k–10k): ₹5k–₹20k/post. Micro (10k–100k): ₹20k–₹1L/post. Macro (100k–1M): ₹1L–₹5L/post. Source: Influencer Marketing Hub India Report 2024.', url: 'https://influencermarketinghub.com/influencer-marketing-statistics/' },
 ];
 
+const TEAM = [
+  { role: 'Founder / CEO',          join: 'Day 1', salary: '₹0 (sweat equity)',  equity: '100%',    note: 'Deferred salary until M6 profitability' },
+  { role: 'Content Researcher',     join: 'M4',    salary: '₹35,000/mo',         equity: '—',       note: 'Trend sourcing, captions' },
+  { role: 'Community Manager',      join: 'M4',    salary: '₹25,000/mo',         equity: '—',       note: 'DM ops, fan retention' },
+  { role: 'Virtual Assistant',      join: 'M4',    salary: '₹15,000/mo',         equity: '—',       note: 'Scheduling, admin' },
+  { role: 'Video Editor',           join: 'M7',    salary: '₹25,000/mo',         equity: '—',       note: 'Reels post-production' },
+  { role: 'Sr. Content Strategist', join: 'M10',   salary: '₹30,000/mo',         equity: 'ESOP 2%', note: 'Oversees all characters' },
+];
+
+const RISKS = [
+  { risk: 'Platform AI Policy Shift', prob: 'Med', impact: 'High', mit: 'Multi-platform D1. IG strictly SFW. Fanvue + Passes + Telegram = 3 independent revenue channels.' },
+  { risk: 'USD/INR FX Volatility',    prob: 'Low', impact: 'Med',  mit: 'Skydo for predictable conversion. 3-month INR reserve maintained from M3.' },
+  { risk: 'AI Model Deprecation',     prob: 'Low', impact: 'Med',  mit: 'LoRA weights owned outright — portable to any Flux host in 48h. No vendor lock-in.' },
+  { risk: 'Character Identity Leak',  prob: 'Low', impact: 'High', mit: 'Dolphin OPSEC browser, siloed accounts, zero real-world links to founder.' },
+  { risk: 'Market Saturation',        prob: 'Med', impact: 'Med',  mit: '8-char factory diversifies. India market 2yr behind US — first-mover advantage intact.' },
+  { risk: 'Ops Scale Bottleneck',     prob: 'Med', impact: 'Med',  mit: 'jasmine_agent.py automates 80% of pipeline. Team scales with revenue from M4.' },
+];
+
 // ── HELPERS ────────────────────────────────────────────────────────────────────
 const fi = v => '₹' + Math.round(v).toLocaleString('en-IN');
 const fL = v => {
@@ -682,6 +700,194 @@ export default function PLDashboard({ data, costMultiplier = 1 }) {
               <div key={g.t} style={S.divider}>
                 <div style={{ fontSize: 11, fontWeight: 700 }}>{g.t}</div>
                 <div style={{ fontSize: 10, color: C.textSec, lineHeight: 1.5, marginTop: 3 }}>{g.d}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* ── SUBSCRIBER RAMP ── */}
+      <div style={S.card}>
+        <div style={S.cardTitle}>📈 Subscriber Ramp — Fanvue Factory (Total Subs, All Active Chars ÷ ₹1,200/sub)</div>
+        <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', alignItems: 'flex-end', marginBottom: 10 }}>
+          {rows.map((r, i) => {
+            const subs    = Math.round(r.fanvue / 1200);
+            const maxSubs = Math.round(rows[rows.length - 1].fanvue / 1200);
+            const prevSubs = i > 0 ? Math.round(rows[i - 1].fanvue / 1200) : 0;
+            const milestone = subs >= 150 && prevSubs < 150;
+            const h = Math.max(18, Math.round((subs / maxSubs) * 100));
+            return (
+              <div key={r.month} style={{ textAlign: 'center', minWidth: 50 }}>
+                {milestone && <div style={{ fontSize: 8, color: C.green, fontWeight: 800, marginBottom: 2 }}>★ 150+</div>}
+                <div style={{ height: h, background: milestone ? C.green : C.blue, borderRadius: '3px 3px 0 0', opacity: 0.75 }} />
+                <div style={{ fontSize: 10, fontWeight: 700, marginTop: 3 }}>{subs.toLocaleString('en-IN')}</div>
+                <div style={{ fontSize: 8, color: C.textMut }}>{r.label}</div>
+              </div>
+            );
+          })}
+        </div>
+        <div style={{ fontSize: 9.5, color: C.textMut }}>
+          Derived: Fanvue revenue ÷ ₹1,200/sub avg. ★ = 150-sub milestone (target M3–M4). Lead char (Jasmine) reaches ~162 subs at M4. M12 factory total ~1,274 subs across 8 characters.
+        </div>
+      </div>
+
+      {/* ── SENSITIVITY + FUNDING ── */}
+      <div style={S.grid2}>
+        <div style={S.card}>
+          <div style={S.cardTitle}>🎯 Sensitivity Analysis — 3 Revenue Scenarios</div>
+          <table style={{ width: '100%', fontSize: 11, borderCollapse: 'collapse' }}>
+            <thead>
+              <tr style={{ background: '#f6f8fa', borderBottom: `1px solid ${C.grid}` }}>
+                {['Scenario', 'Gross Rev', 'Net Rev', 'Net Profit', 'ROI'].map(h => (
+                  <th key={h} style={{ padding: '8px 8px', textAlign: h === 'Scenario' ? 'left' : 'right', fontWeight: 600, color: C.textMut }}>{h}</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                { label: '🐻 Bear  (−40% rev)', gMul: 0.60, nMul: 0.60, bg: '#fff5f5' },
+                { label: '📊 Base  (modeled)',  gMul: 1.00, nMul: 1.00, bg: '#f0f6ff' },
+                { label: '🚀 Bull  (+30% rev)', gMul: 1.30, nMul: 1.30, bg: '#dafbe1' },
+              ].map(s => {
+                const sProfit = T.net * s.nMul - T.costs;
+                const roi = T.costs > 0 ? Math.round((sProfit / T.costs) * 100) : 0;
+                return (
+                  <tr key={s.label} style={{ borderBottom: `1px solid ${C.grid}`, background: s.bg }}>
+                    <td style={{ padding: '8px 8px', fontWeight: 700 }}>{s.label}</td>
+                    <td style={{ padding: '8px 8px', textAlign: 'right' }}>{fL(T.gross * s.gMul)}</td>
+                    <td style={{ padding: '8px 8px', textAlign: 'right' }}>{fL(T.net * s.nMul)}</td>
+                    <td style={{ padding: '8px 8px', textAlign: 'right', fontWeight: 800, color: sProfit < 0 ? C.red : C.green }}>{fL(sProfit)}</td>
+                    <td style={{ padding: '8px 8px', textAlign: 'right', fontWeight: 700, color: roi < 0 ? C.red : C.blue }}>{roi}%</td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+          <div style={{ marginTop: 8, fontSize: 9, color: C.textMut }}>
+            Bear: 40% revenue shortfall (slow growth, ad suppression). Bull: 30% above model (viral compound). Costs fixed across all scenarios.
+          </div>
+        </div>
+
+        <div style={S.card}>
+          <div style={S.cardTitle}>💰 Funding Ask — SAFE Note (Round B-15)</div>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, marginBottom: 14 }}>
+            {[
+              { lbl: 'Raise',         val: '$750K – $900K',   sub: '≈ ₹6.3Cr – ₹7.56Cr' },
+              { lbl: 'Instrument',    val: 'SAFE Note',       sub: 'YC standard template' },
+              { lbl: 'Valuation Cap', val: '$7M – $7.5M',     sub: 'Pre-money' },
+              { lbl: 'Discount',      val: '20%',             sub: 'On qualifying priced round' },
+            ].map(item => (
+              <div key={item.lbl} style={{ background: C.noteBg, border: `1px solid ${C.noteBdr}`, borderRadius: 6, padding: '10px 12px' }}>
+                <div style={{ fontSize: 9, color: C.textMut, textTransform: 'uppercase', fontWeight: 600 }}>{item.lbl}</div>
+                <div style={{ fontSize: 14, fontWeight: 800, color: C.textPri, marginTop: 3 }}>{item.val}</div>
+                <div style={{ fontSize: 9, color: C.textMut }}>{item.sub}</div>
+              </div>
+            ))}
+          </div>
+          <div style={{ fontSize: 10, fontWeight: 700, color: C.textSec, textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: 8 }}>Use of Funds</div>
+          {[
+            { pct: 40, label: 'Paid Acquisition — IG Ads + Taboola scale-up' },
+            { pct: 30, label: 'Team Expansion — 4 FTEs M4–M12' },
+            { pct: 20, label: 'Tech Infrastructure — GPU compute, tools' },
+            { pct: 10, label: 'Working Capital — 3-month runway reserve' },
+          ].map(item => (
+            <div key={item.label} style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 7 }}>
+              <div style={{ width: item.pct * 2, height: 10, background: C.blue, borderRadius: 3, flexShrink: 0, opacity: 0.75 }} />
+              <div style={{ fontSize: 10 }}><strong>{item.pct}%</strong> — {item.label}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* ── TEAM + RISK ── */}
+      <div style={S.grid2}>
+        <div style={S.card}>
+          <div style={S.cardTitle}>👥 Team Structure & Founder Equity</div>
+          <table style={{ width: '100%', fontSize: 10.5, borderCollapse: 'collapse' }}>
+            <thead>
+              <tr style={{ background: '#f6f8fa', borderBottom: `1px solid ${C.grid}` }}>
+                {['Role', 'Joins', 'Salary', 'Equity'].map(h => (
+                  <th key={h} style={{ padding: '7px 6px', textAlign: h === 'Role' ? 'left' : 'right', fontWeight: 600, color: C.textMut }}>{h}</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {TEAM.map((t, i) => (
+                <tr key={t.role} style={{ borderBottom: `1px solid ${C.grid}`, background: i % 2 === 0 ? '#fff' : '#fafbfc' }}>
+                  <td style={{ padding: '7px 6px', fontWeight: i === 0 ? 700 : 400 }}>
+                    {t.role}
+                    <div style={{ fontSize: 8.5, color: C.textMut, marginTop: 1 }}>{t.note}</div>
+                  </td>
+                  <td style={{ padding: '7px 6px', textAlign: 'right', color: C.blue, fontWeight: 600 }}>{t.join}</td>
+                  <td style={{ padding: '7px 6px', textAlign: 'right', color: i === 0 ? C.orange : C.textPri }}>{t.salary}</td>
+                  <td style={{ padding: '7px 6px', textAlign: 'right', fontWeight: 700, color: t.equity !== '—' ? C.green : C.textMut }}>{t.equity}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <div style={{ marginTop: 10, background: C.greenBg, border: `1px solid ${C.greenBdr}`, borderRadius: 6, padding: '8px 12px', fontSize: 10 }}>
+            Team cost: M4 ₹75K/mo → M7 ₹1L/mo → M10 ₹1.3L/mo → M12 ₹1.5L/mo &nbsp;·&nbsp; Annual total: ₹9.35L
+          </div>
+        </div>
+
+        <div style={S.card}>
+          <div style={S.cardTitle}>⚠️ Risk & Mitigation Matrix</div>
+          <div style={{ display: 'grid', gap: 10 }}>
+            {RISKS.map(r => (
+              <div key={r.risk} style={{ borderLeft: `3px solid ${r.impact === 'High' ? C.red : C.orange}`, paddingLeft: 10, paddingBottom: 8, borderBottom: `1px solid ${C.grid}` }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <div style={{ fontSize: 11, fontWeight: 700 }}>{r.risk}</div>
+                  <div style={{ fontSize: 9, display: 'flex', gap: 6 }}>
+                    <span style={{ background: r.prob === 'Low' ? C.greenBg : '#fff3cd', border: `1px solid ${r.prob === 'Low' ? C.greenBdr : '#ffc107'}`, borderRadius: 3, padding: '1px 5px', fontWeight: 600 }}>P: {r.prob}</span>
+                    <span style={{ background: r.impact === 'High' ? '#fff5f5' : '#fff3cd', border: `1px solid ${r.impact === 'High' ? C.red : '#ffc107'}`, borderRadius: 3, padding: '1px 5px', fontWeight: 600 }}>I: {r.impact}</span>
+                  </div>
+                </div>
+                <div style={{ fontSize: 9.5, color: C.textSec, marginTop: 3, lineHeight: 1.5 }}>{r.mit}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* ── 3-5YR VISION + TECH ARCHITECTURE ── */}
+      <div style={S.grid2}>
+        <div style={S.card}>
+          <div style={S.cardTitle}>🌏 3–5 Year Vision — Character Factory Scale</div>
+          <div style={{ display: 'grid', gap: 12 }}>
+            {[
+              { yr: 'Year 1', target: '8 chars · ~₹2.16Cr net',  detail: 'Foundation: East Asian + Desi chars. Full pipeline automated. Brand deals macro-entry.' },
+              { yr: 'Year 2', target: '20 chars · ₹8–10Cr net',  detail: 'Diverse ethnicity mix (Latina, European, Indian). pSEO drives organic. White-label SaaS beta.' },
+              { yr: 'Year 3', target: '50 chars · ₹25–35Cr net', detail: 'Agency model: manage 3rd-party AI influencers. Platform licensing to brands.' },
+              { yr: 'Year 5', target: '100+ chars · $5M+ ARR',   detail: 'Series A. Platform play: virtual influencer-as-a-service. US, EU, SEA markets.' },
+            ].map(v => (
+              <div key={v.yr} style={S.divider}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <div style={{ fontSize: 11, fontWeight: 700, color: C.blue }}>{v.yr}</div>
+                  <div style={{ fontSize: 11, fontWeight: 800, color: C.green }}>{v.target}</div>
+                </div>
+                <div style={{ fontSize: 9.5, color: C.textSec, marginTop: 3, lineHeight: 1.5 }}>{v.detail}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div style={S.card}>
+          <div style={S.cardTitle}>🧠 Tech Architecture & G.Brain Moat</div>
+          <div style={{ display: 'grid', gap: 10 }}>
+            {[
+              { layer: 'Character Layer',   tech: 'Flux.1 Dev LoRA (per char)',    moat: 'Face-locked LoRA weights owned outright — portable, impossible to replicate without original training data.' },
+              { layer: 'Video Layer',       tech: 'Wan AI 2.2 + Higgsfield',       moat: 'I2V motion pipeline with DW-Pose skeleton transfer — 5× content velocity vs static images.' },
+              { layer: 'Voice Layer',       tech: 'VoiceBox + OmniVoice (local)',  moat: 'Cloned voice per char at ₹0/mo — replaces ElevenLabs ₹2K/mo at 8-char scale.' },
+              { layer: 'Automation Layer',  tech: 'jasmine_agent.py + Claude API', moat: '80% of content pipeline automated: caption gen, scheduling, DM scripts, trend research.' },
+              { layer: 'Intelligence Layer',tech: 'G.Brain (knowledge graph)',      moat: 'Proprietary graph of character psychology, fan interactions, content performance. No competitor has this.' },
+              { layer: 'OPSEC Layer',       tech: 'Dolphin{anty} + virtual SIMs',  moat: 'Zero footprint. All accounts siloed. Survives platform policy shifts.' },
+            ].map(l => (
+              <div key={l.layer} style={{ borderBottom: `1px solid ${C.grid}`, paddingBottom: 8 }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+                  <div style={{ fontSize: 10, fontWeight: 700 }}>{l.layer}</div>
+                  <div style={{ fontSize: 9, color: C.accent, fontWeight: 600, textAlign: 'right', paddingLeft: 8, flexShrink: 0 }}>{l.tech}</div>
+                </div>
+                <div style={{ fontSize: 9, color: C.textSec, marginTop: 2, lineHeight: 1.4 }}>{l.moat}</div>
               </div>
             ))}
           </div>
