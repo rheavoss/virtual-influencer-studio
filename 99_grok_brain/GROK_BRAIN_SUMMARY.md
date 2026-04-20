@@ -1,5 +1,5 @@
 # GROK BRAIN — Jasmine Project State
-**Last updated:** 2026-04-20 (auto-updated by Stop hook)
+**Last updated:** 2026-04-20 Session 14
 **Maintained by:** Claude Code after every session
 **Purpose:** Grok reads this file live from GitHub at the start of every task. Single source of truth.
 
@@ -324,6 +324,13 @@ Grok reads this file at the start of every important task before doing anything 
 This file is the handshake between Grok and the project state.
 
 ---
+
+## 14. SESSION 14 CHANGES (2026-04-20)
+
+- **Auto-commit burn rate fixed:** Found source — `~/.studio-sync/watcher.sh` + `sync-project.sh` (LaunchAgent `com.rheavoss.studiosync`). `git add .` was staging all files including dashboard → auto-commits → Vercel deploys. Fix: `git reset HEAD 20_tech/jasmine-dashboard/` added after `git add .` in sync-project.sh. Dashboard only deploys on explicit push now.
+- **RALPH failing on brain-update.log commits:** Systemic issue — auto-commits of `.claude/hooks/brain-update.log` don't include GROK_BRAIN_SUMMARY.md → RALPH blocks every merge. Fix: update brain summary explicitly (this commit).
+- **Karpathy Protocol enforced:** Research-first discipline enforced — read all files before proposing fixes. Senior programmer pros/cons analysis required before any technical proposal.
+- **commandForIgnoringBuildStep:** Confirmed working but Vercel token expired. PLDashboard.js touched in this commit to force rebuild with new subtitle + character factory table.
 
 ## 13. SESSION 13 CHANGES (2026-04-20)
 
