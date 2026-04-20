@@ -528,7 +528,7 @@ export default function PLDashboard({ data, costMultiplier = 1 }) {
               </tr>
               <tr style={{ background: '#f6f8fa' }}>
                 <td colSpan={5} style={{ padding: '6px 8px', fontSize: 9, color: C.textMut }}>
-                  Wan AI {fi(420*m)} · Higgsfield {fi(838*m)} · Flux/Fal.ai ~{fi(25*m)} · ElevenLabs {fi(420*m)} (M1 only, then ₹0) · OmniVoice ₹0 · Google Veo 3 ₹0 (already paid) · CapCut ₹0 · FFmpeg/ExifTool ₹0 · Metricool ₹0
+                  Wan AI {fi(420*m)} · Higgsfield {fi(838*m)} · Flux/Fal.ai ~{fi(25*m)} · VoiceBox ₹0 (replaces ElevenLabs) · OmniVoice ₹0 · Google Veo 3 ₹0 (already paid) · CapCut ₹0 · FFmpeg/ExifTool ₹0 · Metricool ₹0
                 </td>
               </tr>
             </tfoot>
