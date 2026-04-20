@@ -396,7 +396,7 @@ export default function PLDashboard({ data, costMultiplier = 1 }) {
               { t: '1. Identity Sovereignty',    d: 'Immortality: no aging, no fatigue, no retirement. Ever.' },
               { t: '2. Structural Consistency',  d: 'Proprietary Flux.1 LoRA identity-lock — perfect face/body every render.' },
               { t: '3. Capital Efficiency',      d: '90%+ lower marginal production cost vs. human influencer operations.' },
-              { t: '4. Yield Arbitrage',         d: 'Targeting US/UK ($400+ yield) from a sub-$100/mo compute base.' },
+              { t: '4. Yield Arbitrage',         d: 'USD streams (Fanvue/PPV) target $400+ yield/sub. INR streams (IG/FB Subs + Brand Deals) layer on from M4 — dual-market compound growth.' },
               { t: '5. Market Lag Advantage',    d: 'Indian market is 2 years behind US/EU. First-mover captures premium.' },
               { t: '6. Omnipresent Scale',       d: '24/7 content production across 7 revenue streams simultaneously.' },
               { t: '7. IP Consolidation',        d: '100% talent equity and character IP retained by the infrastructure.' },
