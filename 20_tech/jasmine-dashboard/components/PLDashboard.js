@@ -26,7 +26,7 @@ const REV_LABELS = ['Fanvue', 'Room 11', 'Passes', 'PPV+Voice', 'Telegram', 'Bra
 // Expense labels — maps 1:1 to cArr indices (ALL 10 items)
 const COST_LABELS = [
   'Higgsfield', 'ElevenLabs', 'Grok', 'Claude ×2',
-  'Meta Ads', 'Research', 'Buffer', 'Calilio', 'Namecheap', 'SpicyChat', 'Carrd.co', 'Dolphin',
+  'IG Ads', 'Taboola', 'Research', 'Buffer', 'Calilio', 'Namecheap', 'SpicyChat', 'Carrd.co', 'Dolphin',
 ];
 
 // Platform fee breakdown for display
@@ -44,7 +44,7 @@ const PLATFORM_FEES = [
 // Fixed monthly tool costs — base values (×1). Multiplied at render time via costMultiplier prop.
 const TOOL_STACK = [
   { name: 'Higgsfield',  cost: 2699, desc: 'AI Video Gen / Animation',        url: 'https://higgsfield.ai' },
-  { name: 'ElevenLabs',  cost: 420,  desc: 'AI Voice Cloning & Synthesis',     url: 'https://elevenlabs.io' },
+  { name: 'ElevenLabs',  cost: 0,    desc: 'Deprecated 2026-04-19 — replaced by VoiceBox (free)', url: 'https://elevenlabs.io' },
   { name: 'Grok (X)',    cost: 542,  desc: 'Training Data / Content Research', url: 'https://x.com' },
   { name: 'Claude x2',   cost: 4000, desc: 'Logic, Scripts & Automation (2 Seats)', url: 'https://claude.ai' },
   { name: 'IG Reels Ads', cost: null, desc: 'SFW lifestyle ads → IG profile growth (safe on Meta)', url: 'https://www.facebook.com/business/ads' },
@@ -99,7 +99,7 @@ const CONTENT_TYPES = [
     components: [
       { role: 'Script',                      tool: 'Claude / manual',                cost: 0 },
       { role: 'Voice (emotion-tagged)',       tool: 'OmniVoice (local/Colab)',        cost: 0 },
-      { role: 'Voice clone ref (M1 only)',    tool: 'ElevenLabs Starter',             cost: 420, m1only: true },
+      { role: 'Voice clone / synthesis',      tool: 'VoiceBox (free) / OmniVoice',    cost: 0 },
       { role: 'Lip-sync video (S2V)',         tool: 'Wan AI S2V',                     cost: 420 },
       { role: 'Background image',            tool: 'Flux Kontext OR Google Whisk',   cost: 0 },
       { role: 'Captions overlay',            tool: 'CapCut',                         cost: 0 },
@@ -186,7 +186,7 @@ const GLOSSARY = [
   { t: 'Gross Revenue',       d: 'Total money earned across all platforms before anyone takes their cut. (Fanvue + Passes + PPV/Voice + Telegram + Brand + IG Subs + FB Subs)' },
   { t: 'Platform Cuts',       d: 'Commission fees taken by each platform. Fanvue 15%, Passes/PPV/Telegram/Brand 10%, Instagram Subs 20%, FB Subs 30%.' },
   { t: 'Net Revenue',         d: 'Money that hits your bank account after platform commissions AND Payment Gateway/Forex fees (Razorpay 2.5% on INR + Skydo flat ₹3537 for USD).' },
-  { t: 'Total Costs',         d: 'Everything spent each month: AI tools (Higgsfield ₹2,699 + ElevenLabs ₹420 + Grok ₹542 + Claude ₹4,000 + Calilio ₹1,303 + SpicyChat ₹1,260 + Carrd.co ₹147 + Namecheap ₹92) + variable ads and research.' },
+  { t: 'Total Costs',         d: 'Everything spent each month: AI tools (Higgsfield ₹2,699 + Grok ₹542 + Claude ₹4,000 + Calilio ₹1,303 + SpicyChat ₹1,260 + Carrd.co ₹147 + Dolphin ₹930 + Namecheap ₹92) + variable IG Ads, Taboola, and research. ElevenLabs deprecated M1 — replaced by VoiceBox (free).' },
   { t: 'Net Profit',          d: 'The money you actually keep — after platform fees, gateway fees AND all expenses. (Net Revenue − Total Costs)' },
   { t: 'Cumulative Profit',   d: 'Running total of all net profits since Month 1. (Sum of all Net Profits up to this month)' },
   { t: 'MRR',                 d: 'Monthly Recurring Revenue — predictable subscription income that auto-renews. (Fanvue subscriptions + IG subscriptions)' },
