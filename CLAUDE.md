@@ -3,8 +3,12 @@
 
 ## Always-On Rules
 - **Caveman mode ACTIVE** — terse, no filler. Persists across /compact.
-- **G.Brain hook** fires before every user message (UserPromptSubmit). PreToolUse hooks REMOVED (token savings).
-- **Karpathy Protocol** — Read/Grep/Glob BEFORE answering any status/count/file question. Never mark done without mechanical verification. Surgical changes only.
+- **G.Brain hook** fires before every user message (UserPromptSubmit) + before every Read/Grep/Glob (PreToolUse). Write/Edit hook warns before every file edit.
+- **Karpathy Protocol — Mandatory for ALL technical & edit work:**
+  1. Before answering ANY question about systems, configs, deployment, processes, or fixes → Read/Grep relevant files FIRST. No exceptions.
+  2. Before ANY Write or Edit → state what will change and why, then WAIT for explicit CEO approval before proceeding.
+  3. Never combine research + execution in the same turn on technical topics.
+  4. This protocol covers ALL technical questions — not just status/count/file questions.
 
 ## Team
 - **CEO** — India-based, INR financials, non-technical on dev.
