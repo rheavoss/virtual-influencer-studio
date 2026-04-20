@@ -1,4 +1,4 @@
-'use client';
+'use client'; // v2026-04-20
 import { useMemo } from 'react';
 import {
   Chart as ChartJS,

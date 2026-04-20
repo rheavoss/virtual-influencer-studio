@@ -325,6 +325,13 @@ This file is the handshake between Grok and the project state.
 
 ---
 
+## 14. SESSION 14 CHANGES (2026-04-20)
+
+- **Auto-commit burn rate fixed:** Found source — `~/.studio-sync/watcher.sh` + `sync-project.sh` (LaunchAgent `com.rheavoss.studiosync`). `git add .` was staging all files including dashboard → auto-commits → Vercel deploys. Fix: `git reset HEAD 20_tech/jasmine-dashboard/` added after `git add .` in sync-project.sh. Dashboard only deploys on explicit push now.
+- **RALPH failing on brain-update.log commits:** Systemic issue — auto-commits of `.claude/hooks/brain-update.log` don't include GROK_BRAIN_SUMMARY.md → RALPH blocks every merge. Fix: update brain summary explicitly (this commit).
+- **Karpathy Protocol enforced:** Research-first discipline enforced — read all files before proposing fixes. Senior programmer pros/cons analysis required before any technical proposal.
+- **commandForIgnoringBuildStep:** Confirmed working but Vercel token expired. PLDashboard.js touched in this commit to force rebuild with new subtitle + character factory table.
+
 ## 13. SESSION 13 CHANGES (2026-04-20)
 
 - **Investor Plan v2 LOCKED:** All 12 months recalculated. Room11 ₹0 for M1–M3. ElevenLabs ₹0 all months. Multi-char scaling verified. Year-1 pre-tax ₹2.25Cr | post-tax ₹1.60Cr.
