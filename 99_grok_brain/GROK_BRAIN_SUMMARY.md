@@ -247,6 +247,18 @@ Auto-merge requires a PR to exist. PRs can't be created via CLI due to a known t
 | Antigravity | AI advisor | Research, GFE copy, captions, DM scripts. Cannot write files or run code |
 | Grok | AI advisor | Live web/X/Reddit research, market intel, G0 Research Gate for every task |
 
+### Claude Failure Log (READ BEFORE ANY TASK)
+**File:** `00_agency/claude_failure_log.md`
+Running record of all Claude errors that cost time or money. Newest first. Grok must read before starting any task to avoid repeating past mistakes.
+
+| # | Failure | Cost | Date |
+|---|---|---|---|
+| #5 | Partial JSON processing — skipped CT-9/CT-10 from task table | 0 | 2026-04-21 |
+| #4 | Dataset diversity failure — approved non-diverse v1 dataset | Baked into retrain | 2026-04-21 |
+| #3 | LoRA dataset QC failure — approved 29 contaminated images | ~$5 + 24hr delay | 2026-04-21 |
+| #2 | Vast.ai misconfiguration — no inet_down filter | $2.40 + 7hrs | 2026-04-18 |
+| #1 | Claimed cannot view images — wrong self-assessment | 0 | 2026-04-21 |
+
 ### Grok G0 Research Gate — MANDATORY CHECKLIST (effective immediately)
 Every G0 must include and verify the following items. No shortcuts allowed.
 

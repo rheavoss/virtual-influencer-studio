@@ -5,6 +5,28 @@
 
 ---
 
+## FAILURE #5 — Partial JSON Processing (Record Keeping Blunder)
+**Date:** 2026-04-21 (Session 16)
+**Cost:** 0 (caught same session by CEO)
+**What happened:**
+CEO shared a JSON with two top-level sections: `dashboard_updates.content_types` (CT-9, CT-10 additions) and `claude_tasks` (CT-01 through CT-08). Claude processed only the `claude_tasks` array and added P1-61–P1-68 to the task table. Completely ignored `content_types` section. CT-9 and CT-10 were left out of the task table entirely despite being explicitly present in the input.
+
+**Impact:**
+- CT-9 and CT-10 missing from task table until CEO caught it
+- Incomplete record keeping — task table did not reflect true content type count (10, not 8)
+- CEO had to explicitly call it out
+
+**Root cause:**
+Selective parsing — processed the array (easy to iterate) and skipped the object (required interpreting). Did not read the full JSON before acting.
+
+**Fix applied:**
+Added P1-69 (CT-09 Soft Tease/Lingerie) and P1-70 (CT-10 PPV/Exclusive Intimate) to task table. Pushed to repo.
+
+**Prevention rule:**
+When processing structured input (JSON, tables, lists), ALWAYS enumerate ALL top-level keys/sections before acting. Confirm to CEO: "I see N sections — processing all of them." Never act on partial input.
+
+---
+
 ## FAILURE #4 — Dataset Diversity Failure (CRITICAL)
 **Date:** 2026-04-18 (Session 10) → flagged 2026-04-21 (Session 14)
 **Cost:** Baked into v1 contamination — same retrain cost
