@@ -5,6 +5,24 @@
 
 ---
 
+## FAILURE #9 — Missing System Dependencies Not Pre-Checked (libGL + gcc)
+**Date:** 2026-04-21 (Session 17)
+**Cost:** ~15 min delay, 3 extra restart cycles
+**What happened:**
+Started training without verifying system dependencies. Instance was missing `libGL.so.1` (needed by cv2) and `gcc` (needed by diffusers). Each caused a separate crash and restart. Both are standard deps for ML training containers that should be checked upfront.
+
+**Impact:**
+- 3 failed training starts
+- Extra time on rented GPU instance = money burned
+
+**Root cause:**
+Did not run a pre-flight dependency check before starting training. Should have verified imports and system libs before launching the long-running process.
+
+**Prevention rule:**
+Before starting any training run: SSH in and run `python3 -c "import torch; import cv2; import diffusers; import transformers; print('all ok')"` to catch import errors upfront. If anything fails, fix it BEFORE starting the background process.
+
+---
+
 ## FAILURE #8 — HuggingFace Token Never Recorded
 **Date:** 2026-04-21 (Session 17)
 **Cost:** Delay — had to ask CEO for token during live training session
