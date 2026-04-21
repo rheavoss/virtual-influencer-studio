@@ -141,8 +141,32 @@ freckles, spots, moles, imperfections, pigmentation, skin marks, blemishes, soft
 
 ---
 
+## Batch 9 — Face Close-Ups ★ VERIFIED CLEAN (6/6 pass) — 10 MORE PLANNED
+**Model:** Kling 3.0 Omni · **Mode:** Exact · **Reference:** Clean red bikini image · **Type:** Face · **Background:** Plain white
+
+**Expression/pose list used:**
+- Sultry direct gaze
+- Soft smile
+- Big laugh, teeth showing
+- Bedroom eyes, lips slightly parted
+- Looking down, lashes visible
+- 3/4 face angle, side profile
+
+```
+photorealistic ultra-detailed 8K raw photo, soft DD breasts deep plunging cleavage natural gravity, dramatically slim defined waist extremely wide curvy hips strong hourglass figure, long straight black hair top bun, glossy red lipstick plump pout, ultra white flawless porcelain skin zero freckles zero spots zero marks zero imperfections, micro triangle string bikini hot pink, confident seductive standing pose direct sultry eye contact, head to toe barefoot
+```
+
+**Negative prompt:**
+```
+freckles, spots, moles, imperfections, pigmentation, skin marks, blemishes, soft tummy, round belly, shiny skin, east asian, taiwanese, BBW
+```
+**Result:** 6 generated — 6 kept ✅ · 10 more planned for expression/angle diversity
+
+---
+
 ## Final Dataset Stats
-- Total generated: ~63 images across 6 batches
-- Total kept: 38 images
-- Keep rate: ~60%
-- Outfits covered: black gym wear, pink micro bikini, white bodysuit, red bodycon, micro string bikini
+- Clean images (v2 dataset): 20 (8 standing + 6 seated/floor + 6 face close-ups)
+- Planned additions: 10 more face close-ups (Batch 9 expansion)
+- Target total: 30 clean images
+- Outfits: pink micro bikini, red bikini (reference), hot pink string bikini
+- Note: v1 dataset (38 images) fully discarded — contaminated by `micro imperfections` prompt
