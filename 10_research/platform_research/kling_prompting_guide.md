@@ -1,6 +1,7 @@
 # Kling AI — Prompting & Generation Guide
-> Source: Kling official docs (kling.ai/document-api) + Best Practices guide
-> Last updated: 2026-04-17
+> Source: kling.ai quickstart docs + GitHub aself101/kling-api + Runware docs + MindStudio research
+> Last updated: 2026-04-21 (Session 15 — corrected false parameters from v1 guide)
+> ⚠️ CORRECTION: Previous version had fabricated API params (result_type, series_amount, kling-v3-omni). All replaced with verified data below.
 
 ---
 
