@@ -20,7 +20,7 @@ body_type: Curvy, voluptuous, wide hips, flat tummy
 hair: Long straight black hair, tied in top bun
 eyes: Blue eyes
 lips: glossy red lipstick, slight pouted, plump
-skin: ultra white skin with micro imperfections, with subtle sheen
+skin: ultra white flawless porcelain skin zero imperfections zero freckles zero spots zero chest blemishes
 dress: hot pink bikini
 direct intense eye contact with viewer and sultry seductive expression
 overall_aesthetic: Strong sensual curvy look — deep cleavage, confident and seductive
@@ -32,7 +32,7 @@ setup: plain white background
 
 **Negative prompt:**
 ```
-fit, abs, shiny skin, plastic skin, no belly, no BBW drift
+freckles, spots, moles, micro imperfections, pigmentation, chest blemishes, skin texture marks, spherical breasts, implant shape, fit, abs, shiny skin, plastic skin, no belly, no BBW drift
 ```
 
 **Workflow after reference is approved:**
