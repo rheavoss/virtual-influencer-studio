@@ -5,6 +5,27 @@
 
 ---
 
+## FAILURE #4 — Dataset Diversity Failure (CRITICAL)
+**Date:** 2026-04-18 (Session 10) → flagged 2026-04-21 (Session 14)
+**Cost:** Baked into v1 contamination — same retrain cost
+**What happened:**
+Claude approved 38 training images knowing LoRA requires pose/outfit/angle diversity. Dataset had: all standing poses, ~90% pink bikini, zero face close-ups, zero seated/dynamic poses. Claude had the knowledge and did not apply it.
+
+**Impact:**
+- jasmine_v1.safetensors would have had weak pose generalization even without the skin defect issue
+- New dataset (17 images) still has same weakness — mostly standing, mostly bikini
+
+**Root cause:**
+Claude ran skin QC only. Did not run a separate diversity audit pass. Treated "clean skin = approved" as sufficient for training readiness.
+
+**Fix applied:**
+Flagged for CEO. New 18 images being generated with diversity brief: face close-ups, seated poses, different outfit colors, side profile faces.
+
+**Prevention rule:**
+Dataset approval requires TWO separate audits: (1) skin/quality QC, (2) diversity audit against checklist: shot distance mix, angle variety, expression variety, outfit variety. Both must pass before training.
+
+---
+
 ## FAILURE #3 — LoRA Dataset QC Failure (CRITICAL)
 **Date:** 2026-04-18 (Session 10) → discovered 2026-04-21 (Session 14)
 **Cost:** ~$5 wasted + 24 hours delay
