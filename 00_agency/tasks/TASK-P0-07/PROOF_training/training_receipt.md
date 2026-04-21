@@ -1,9 +1,13 @@
 # TASK-P0-07 Training Receipt
 
+## ⚠️ V1 DEPRECATED — DELETED 2026-04-21
+**Reason:** Dataset contaminated — 29/38 training images had pigmentation marks baked into model.
+**Action:** jasmine_v1.safetensors trashed. Dataset rebuilt. Retrain required as v2.
+
 ## LoRA File
-- **Filename:** jasmine_v1.safetensors
+- **Filename:** jasmine_v1.safetensors ~~(DELETED)~~
 - **Size:** 164MB
-- **Location:** `03_ai_models/jasmine_mako/lora_checkpoints/jasmine_v1.safetensors`
+- **Location:** ~~`03_ai_models/jasmine_mako/lora_checkpoints/jasmine_v1.safetensors`~~ → Trashed 2026-04-21
 - **SHA256:** `f0d491cf6cf4e855935d06fbb74045c64f110e77e22eae1dd6add3b77ee4badd`
 - **Downloaded:** 2026-04-19 06:56 IST
 

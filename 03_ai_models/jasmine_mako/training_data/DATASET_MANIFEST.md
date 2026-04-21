@@ -1,31 +1,23 @@
 # Jasmine LoRA Dataset — Image Manifest
-**Total images:** 38
-**Location:** Google Drive → `VirtualInfluencerStudio/03_ai_models/jasmine_mako/training_data/jasmine_dataset/`
-**Last updated:** 2026-04-18 (Session 10)
+**Total images:** 20 (clean)
+**Location:** `03_ai_models/jasmine_mako/training_data/jasmine_dataset/` + `/Users/user/Desktop/jasmine_lora_v2/`
+**Last updated:** 2026-04-21 (Session 14)
 
-> Images are stored on Google Drive only — NOT in Git.
-> This file is the Git record of what exists on Drive.
+> Images stored locally in project AND on Desktop in `jasmine_lora_v2/` for Vast.ai upload.
+> V1 dataset (38 images, 29 contaminated) permanently discarded. jasmine_v1.safetensors deleted.
 
 ---
 
-## Images on Drive (38 total)
+## QC Standard
+- Flawless skin — zero pigmentation marks, freckles, blotches, tattoos
+- Pure white studio background only
+- Correct character: East Asian, long dark hair, hourglass proportions
 
-### Batch: Black Gym Wear (4779 + 4865 series)
-| Filename | Outfit | Notes |
-|---|---|---|
-| kling_20260418_IMAGE_Commercial_4779_1.png | Black gym wear | Side view, leggings |
-| kling_20260418_IMAGE_Commercial_4779_3.png | Black gym wear | Close-up face |
-| kling_20260418_IMAGE_Commercial_4779_7.png | Black gym wear | Front, arms crossed |
-| kling_20260418_IMAGE_Commercial_4779_8.png | Black gym wear | Arms raised stretch |
-| kling_20260418_IMAGE_Keep_this__4865_0.png | Black gym wear | Front standing |
-| kling_20260418_IMAGE_Keep_this__4865_1.png | Black gym wear | Side view |
-| kling_20260418_IMAGE_Keep_this__4865_2.png | Black gym wear | Hands on hips |
-| kling_20260418_IMAGE_Keep_this__4865_4.png | Black gym wear | Arm raised |
-| kling_20260418_IMAGE_Keep_this__4865_6.png | Black gym wear | 3/4 front |
-| kling_20260418_IMAGE_Keep_this__4865_7.png | Black gym wear | Arms raised |
-| kling_20260418_IMAGE_Keep_this__4865_8.png | Black gym wear | Leaning forward |
+---
 
-### Batch: Pink Micro Bikini (4584 series)
+## Clean Dataset (20 images)
+
+### Batch: Pink Micro Bikini (4584 series) — 9 images
 | Filename | Outfit | Notes |
 |---|---|---|
 | kling_20260418_IMAGE_Image1Exac_4584_0.png | Pink micro bikini | Front standing — reference match |
@@ -38,32 +30,38 @@
 | kling_20260418_IMAGE_Image1Exac_4584_7.png | Pink micro bikini | Arms raised stretch |
 | kling_20260418_IMAGE_Image1Exac_4584_8.png | Pink micro bikini | Leaning forward |
 
-### Batch: White Bodysuit (4903 series)
+### Batch: Various (4803 series) — 1 image
 | Filename | Outfit | Notes |
 |---|---|---|
-| kling_20260418_IMAGE_Image1Keep_4903_0.png | White bodysuit | Front deep V |
-| kling_20260418_IMAGE_Image1Keep_4903_1.png | White bodysuit | Side cut-out |
-| kling_20260418_IMAGE_Image1Keep_4903_3.png | White bodysuit | Over shoulder |
-| kling_20260418_IMAGE_Image1Keep_4903_4.png | White bodysuit | 3/4 front |
-| kling_20260418_IMAGE_Image1Keep_4903_6.png | White bodysuit | Arms crossed |
-| kling_20260418_IMAGE_Image1Keep_4903_7.png | White bodysuit | Leaning wall |
+| kling_20260420_IMAGE_Image1Keep_4803_0.png | — | Clean skin, white bg |
 
-### Batch: Red Bodycon Dress (4948 series)
+### Batch: Various (4614 series) — 5 images
 | Filename | Outfit | Notes |
 |---|---|---|
-| kling_20260418_IMAGE_Image1Keep_4948_0.png | Red bodycon | Front halter |
-| kling_20260418_IMAGE_Image1Keep_4948_1.png | Red bodycon | 3/4 side — best hourglass |
-| kling_20260418_IMAGE_Image1Keep_4948_2.png | Red bodycon | Hands behind back |
-| kling_20260418_IMAGE_Image1Keep_4948_5.png | Red bodycon | Side, waist defined |
-| kling_20260418_IMAGE_Image1Keep_4948_6.png | Red bodycon | Arms crossed, best face |
-| kling_20260418_IMAGE_Image1Keep_4948_8.png | Red bodycon | Seated |
+| kling_20260420_IMAGE_Keep__Imag_4614_0.png | — | Clean |
+| kling_20260420_IMAGE_Keep__Imag_4614_2.png | — | Clean |
+| kling_20260420_IMAGE_Keep__Imag_4614_3.png | — | Clean |
+| kling_20260420_IMAGE_Keep__Imag_4614_4.png | — | Clean |
+| kling_20260420_IMAGE_Keep__Imag_4614_6.png | — | Clean |
 
-### Batch: Micro String Bikini NSFW (4998 series)
+### Batch: Same Lady (5076 series) — 5 images ★ Best new batch
 | Filename | Outfit | Notes |
 |---|---|---|
-| kling_20260418_IMAGE_Image1Keep_4998_0.png | Micro string bikini | Front standing |
-| kling_20260418_IMAGE_Image1Keep_4998_2.png | Micro string bikini | Hands on hips |
-| kling_20260418_IMAGE_Image1Keep_4998_4.png | Micro string bikini | Close-up face |
-| kling_20260418_IMAGE_Image1Keep_4998_5.png | Micro string bikini | Arm raised |
-| kling_20260418_IMAGE_Image1Keep_4998_8.png | Micro string bikini | Walking |
-| kling_20260418_作品_photoreali_4547_0.png | Pink micro bikini | Front — single image generation |
+| kling_20260420_IMAGE_Same_lady__5076_1.png | — | Clean |
+| kling_20260420_IMAGE_Same_lady__5076_3.png | — | Clean |
+| kling_20260420_IMAGE_Same_lady__5076_5.png | — | Clean |
+| kling_20260420_IMAGE_Same_lady__5076_6.png | — | Clean |
+| kling_20260420_IMAGE_Same_lady__5076_8.png | — | Clean |
+
+---
+
+## Discarded Batches (v1 contaminated — do not use)
+| Batch | Count | Reason |
+|---|---|---|
+| 4779 | 4 | Wrong character + pigmentation |
+| 4865 | 7 | Severe blotchy patches |
+| 4903 | 6 | Heavy thigh/glute pigmentation |
+| 4948 | 5 | Chest freckles |
+| 4998 | 5 | Heavy pigmentation |
+| 4713 | 9 | Wrong background (grey wall) |
+| 4803 (partial) | 8 | Tattoo + freckles |
