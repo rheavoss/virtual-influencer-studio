@@ -1,5 +1,5 @@
 # GROK BRAIN — Jasmine Project State
-**Last updated:** 2026-04-21 (auto-updated by Stop hook)
+**Last updated:** 2026-04-21 (Session 16 — dataset rebuilt to 40 clean images, v2 LoRA training ready)
 **Maintained by:** Claude Code after every session
 **Purpose:** Grok reads this file live from GitHub at the start of every task. Single source of truth.
 
@@ -41,28 +41,48 @@
 
 ## 3. DATASET STATUS
 
+⚠️ **V1 DATASET DEPRECATED** — 38 images fully discarded. Contaminated by `micro imperfections` in negative prompt → skin defects baked into all images. `jasmine_v1.safetensors` deleted.
+
 | Item | Status |
 |---|---|
-| Total images | **38 images** ✅ |
+| Total images (v2) | **40 clean images** ✅ |
 | Location (local) | `03_ai_models/jasmine_mako/training_data/jasmine_dataset/` |
-| Location (Drive) | `VirtualInfluencerStudio/03_ai_models/jasmine_mako/training_data/jasmine_dataset/` |
-| Manifest | `03_ai_models/jasmine_mako/training_data/DATASET_MANIFEST.md` |
-| Generation tool | Kling Image 3, series mode, 9 images/batch, 9:16, 2K |
-| Reference image | Pink micro bikini (approved Jasmine reference) |
+| Location (Desktop backup) | `/Users/user/Desktop/jasmine_lora_v2/` |
+| Manifest | `03_ai_models/jasmine_mako/training_data/dataset_manifest.md` |
+| Generation tool | Kling 3.0 Omni, Exact mode, Face reference type, 9:16, 2K |
+| Reference image | Red bikini (clean approved reference) |
 
-**Outfits in dataset:**
-- Black gym wear: 11 images
-- Pink micro bikini: 9 images
-- White bodysuit: 6 images
-- Red bodycon dress: 6 images
-- Micro string bikini: 5 images
-- Single image: 1
+**V2 Dataset — outfit & pose breakdown (40 images):**
+| Category | Count | Outfits |
+|---|---|---|
+| Standing poses | 8 | Pink micro bikini |
+| Seated / floor poses | 6 | Pink micro bikini |
+| Face close-ups | 6 | Red bikini (bust/face only) |
+| Standing poses | 5 | White sheer mesh crop top + micro white thong |
+| Standing poses | 5 | Black triangle bikini (4) + red bikini (1) |
+| Standing poses | 5 | Nude/beige micro triangle bikini |
+| Standing poses | 5 | Gold metallic bandeau + metallic bikini |
+
+**Naming convention:** `jasmine_[outfit]_[pose/expression].png` — all 40 renamed.
+
+**Diversity achieved (vs v1 failure):**
+- Shot distance: standing full-body + seated/floor + face close-ups ✅
+- Outfit colors: pink, red, black, white, nude/beige, gold ✅
+- Pose variety: 8 standing + 6 seated/floor + 6 face close-ups ✅
+- Expression variety: sultry, soft smile, big laugh, bedroom eyes, side profile ✅
+
+**QC standard (hard rules):**
+- Zero freckles / spots / moles / pigmentation on ANY visible zone — no exceptions
+- Pure white background only (grey mottled wall = LoRA-ok but never post)
+- Any mark = hard reject
 
 **Kling generation rules (hard lessons):**
+- Never use `micro imperfections` in negative prompt — causes skin defect training
 - Never use "extreme" / "极端" — causes BBW drift
 - Always: "face always forward or maximum 45 degrees to camera"
 - Always: "body proportions matching Image1"
-- Face lock method: "Keep this person's facial features exactly" in prompt text (no UI sliders in Image 3)
+- Add `east asian, taiwanese` to negative prompt — prevents ethnicity text overriding face geometry
+- Face lock method: Kling 3.0 Omni → Exact mode → Reference type: Face → `@Image1` in prompt
 
 ---
 
