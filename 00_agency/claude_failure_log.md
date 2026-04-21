@@ -5,6 +5,27 @@
 
 ---
 
+## FAILURE #6 — Wrong Vast.ai Balance (Unauthenticated CLI)
+**Date:** 2026-04-21 (Session 17)
+**Cost:** 0 (caught same session by CEO)
+**What happened:**
+Reported Vast.ai balance as $0. CEO's browser showed $1.34. CLI was using a fresh `/tmp/vastai_env` venv with no API key loaded — it returned a default/empty user object. Claude reported that number without verifying it matched the known account.
+
+**Impact:**
+- Told CEO to top up when account had sufficient funds
+- Lost trust; wasted CEO time
+
+**Root cause:**
+Careless — ran `vastai show user` in a new venv that had never been authenticated. Did not cross-check CLI output against the known account (kriger5490).
+
+**Fix applied:**
+Set API key in new venv: `vastai set api-key <key>`. Balance confirmed $1.34. Training can proceed.
+
+**Prevention rule:**
+After any `vastai show user`, verify the username in the output matches kriger5490. If username is blank or balance is 0, re-authenticate before reporting. Never report $0 balance without confirming account identity.
+
+---
+
 ## FAILURE #5 — Partial JSON Processing (Record Keeping Blunder)
 **Date:** 2026-04-21 (Session 16)
 **Cost:** 0 (caught same session by CEO)
