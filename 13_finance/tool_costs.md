@@ -20,15 +20,15 @@
 
 | Tool | Purpose | Cost | Billing | Status |
 |---|---|---|---|---|
-| Higgsfield | Video generation (Wan 2.6 / Seedream) | ₹2,699 | Monthly | $29/mo Creator — upgrade from Phase 0 $9 plan |
-| ElevenLabs | Voice cloning + TTS | ₹420 ⚠️ | Monthly | Same as Phase 0 |
+| Higgsfield | Video generation / Soul ID | ₹3,630 | Annual ÷ 12 | $39/mo Plus annual (30% off) — upgrade on IG launch day. 1,000 credits/mo (~114 Kling videos). Upgrade to Ultra ($99) at Phase 2. |
+| VoiceBox | Voice cloning + TTS | ₹0 | Free | Same as Phase 0 |
 | Grok (xAI) | Image generation | ₹542 ✅ | Annual ÷ 12 | Same as Phase 0 |
 | Claude Code | AI strategy + ops | ₹4,000 ✅ | Monthly | Same as Phase 0 |
 | Calilio | US virtual number (Instagram verification walls) | ₹1,303 ✅ | Monthly | Same as Phase 0 |
 | Namecheap | Domain registration | ₹92 ✅ | Annual ÷ 12 | Same as Phase 0 |
 | SpicyChat AI Premium | DM/Chat automation generation (SFW/NSFW) | ₹1,260 | Monthly | Content Types 5 & 7 (Custom Dialogues/Roleplay) |
 | Metricool | Social scheduling (Instagram + Facebook + YouTube Shorts) | ₹0 | Free tier | Replaces Later.com; safe from shadowbans |
-| **Phase 1+ Base (confirmed)** | | **₹10,316/mo** | | All above (Metricool covers scheduling) |
+| **Phase 1+ Base (corrected)** | | **₹10,827/mo** | | All above (Metricool covers scheduling) |
 
 > ⚠️ ElevenLabs India pricing unconfirmed. Likely cheaper than USD × rate. Verify at elevenlabs.io/pricing before locking.
 
@@ -55,13 +55,13 @@
 
 | Phase | Base | Ads | Research | Buffer | Total |
 |---|---|---|---|---|---|
-| Phase 0 (setup, pre-launch) | ₹7,195 | ₹0 | ₹0 | ₹0 | **₹7,195** |
-| M1 (live, no ads yet)       | ₹10,316 | ₹0 | ₹0 | ₹0 | **₹10,316** |
-| M2 (live)                   | ₹10,316 | ₹0 | ₹0 | ₹0 | **₹10,316** |
-| M3                          | ₹10,316 | ₹3,000 | ₹3,000 | ₹0 | **₹16,316** |
-| M4–M5                       | ₹10,316 | ₹6,000 | ₹3,000 | ₹0 | **₹19,316** |
-| M6–M7                       | ₹10,316 | ₹6,000 | ₹5,000 | ₹0 | **₹21,316** |
-| M8–M9                       | ₹10,316 | ₹6,000 | ₹5,000 | ₹1,500 | **₹22,816** |
-| M10+                        | ₹10,316 | ₹6,000 | ₹8,000 | ₹1,500 | **₹25,816** |
+| Phase 0 (setup, pre-launch) | ₹6,402 | ₹0 | ₹0 | ₹0 | **₹6,402** |
+| M1 (live, no ads yet)       | ₹10,827 | ₹0 | ₹0 | ₹0 | **₹10,827** |
+| M2 (live)                   | ₹10,827 | ₹0 | ₹0 | ₹0 | **₹10,827** |
+| M3                          | ₹10,827 | ₹3,000 | ₹3,000 | ₹0 | **₹16,827** |
+| M4–M5                       | ₹10,827 | ₹6,000 | ₹3,000 | ₹0 | **₹19,827** |
+| M6–M7                       | ₹10,827 | ₹6,000 | ₹5,000 | ₹0 | **₹21,827** |
+| M8–M9                       | ₹10,827 | ₹6,000 | ₹5,000 | ₹1,500 | **₹23,327** |
+| M10+                        | ₹10,827 | ₹6,000 | ₹8,000 | ₹1,500 | **₹26,327** |
 
-> M1 base = ₹10,316 because Higgsfield upgrades to $29 and SpicyChat ($15) is fully active for subscriber DMs.
+> M1 base = ₹10,827 because Higgsfield upgrades to Plus ($39/mo annual) on IG launch day and SpicyChat ($15) is fully active for subscriber DMs. ElevenLabs replaced by VoiceBox (₹0).
