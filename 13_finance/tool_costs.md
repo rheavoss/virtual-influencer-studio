@@ -1,5 +1,5 @@
 # Tool Costs — Monthly Tracker
-**Updated:** 2026-04-11 (Session 03 — Move 15 sweep)
+**Updated:** 2026-04-21 (Session 16 — Higgsfield pricing corrected from live screenshot; ElevenLabs deprecated → VoiceBox ₹0)
 
 ## Fixed Monthly Costs
 
@@ -7,14 +7,14 @@
 
 | Tool | Purpose | Cost | Billing | Status |
 |---|---|---|---|---|
-| Higgsfield | Video generation (Wan 2.6 / Seedream) | ₹838 | Monthly | $9/mo Starter — Phase 0 only; upgrade to $29 at Phase 1 |
-| ElevenLabs | Voice cloning + TTS (GFE audio PPV) | ₹420 ⚠️ | Monthly | India price unconfirmed — placeholder; verify at elevenlabs.io/pricing |
+| Higgsfield | Video generation / Soul ID | ₹465 | Annual ÷ 12 | $5/mo Basic confirmed from account screenshot — Phase 0 only, 70 credits/mo (~8 Kling videos) |
+| VoiceBox | Voice cloning + TTS (replaces ElevenLabs) | ₹0 | Free | Local Mac DMG, zero-shot cloning. ElevenLabs DEPRECATED 2026-04-19. |
 | Grok (xAI) | Image generation (LoRA training batches) | ₹542 ✅ | Annual ÷ 12 | ₹6,500/yr confirmed by CEO |
 | Claude Code | AI strategy + ops | ₹4,000 ✅ | Monthly | 2 × ₹2,000 confirmed |
 | Calilio | US virtual number (Instagram verification walls) | ₹1,303 ✅ | Monthly | Local US number for IG account creation + SMS verification |
 | Namecheap | Domain registration (jasmine.link or similar) | ₹92 ✅ | Annual ÷ 12 | Bouncy.cc link-in-bio redirect — opens native browser = higher Fanvue conversion |
 | Google One | Colab Pro + storage | ₹___ ⏳ | Annual ÷ 12 | CEO to confirm annual plan amount |
-| **Phase 0 Base (confirmed)** | | **₹7,195/mo** | | Higgsfield + ElevenLabs + Grok + Claude Code + Calilio + Namecheap |
+| **Phase 0 Base (corrected)** | | **₹6,402/mo** | | Higgsfield + VoiceBox + Grok + Claude Code + Calilio + Namecheap |
 
 ### Phase 1+ (Live — Post-LoRA)
 
