@@ -161,6 +161,16 @@
 - [ ] **[P1-31]** `[Tech Ops]` (Antigravity) *(RICE: 8×7×0.9÷2 = 25.2)* - Add manual country-selector dropdown on checkout page as user override for geo-routing (India/International toggle).
 - [ ] **[P1-32]** `[Exec Dept]` (CEO) *(RICE: 10×10×1.0÷1 = 100)* - Run end-to-end test transactions — one Indian payment via Cashfree, one international via WHOP. Verify live flow before launch.
 
+### Content System Build (Sequential: After LoRA Training Complete)
+- [ ] **[P1-61]** `[Strategy]` (Claude) *(RICE: 9×10×0.9÷2 = 40.5)* - **CT-01 Jasmine Character Profile:** Full backstory, personality, niche, current story, vulnerabilities, and savior-syndrome triggers (girl-next-door / student archetype). Output to `01_characters/jasmine/jasmine_character_profile.md`.
+- [ ] **[P1-62]** `[Strategy]` (Claude) *(RICE: 9×10×0.9÷2 = 40.5)* - **CT-02 Master Branding Prompt + System Prompt:** Unified system prompt including personality, tone, story elements, and contrast (soft look vs hidden depth). Output to `01_characters/jasmine/jasmine_system_prompt.md`.
+- [ ] **[P1-63]** `[Strategy]` (Claude) *(RICE: 10×10×0.9÷3 = 30.0)* - **CT-03 DM / Sales Chatting Scripts:** Qualification, girlfriend-experience, teasing, PPV upsell, and retention scripts. Output to `04_content_pipeline/dm_sales_scripts.md`.
+- [ ] **[P1-64]** `[Content]` (Claude) *(RICE: 8×8×0.8÷2 = 25.6)* - **CT-04 Carousel Skill / Prompt Pack:** 8–10 ready-to-use carousel prompts with curiosity loop. Output to `04_content_pipeline/carousel_prompt_pack.md`.
+- [ ] **[P1-65]** `[Content]` (Claude) *(RICE: 8×8×0.8÷2 = 25.6)* - **CT-05 Video Prompt Templates:** Optimized prompts for Reels, talking-head, GRWM, trend reactions, and soft-tease videos for Soul 2.0 / Cinema Studio. Output to `04_content_pipeline/video_prompt_templates.md`.
+- [ ] **[P1-66]** `[Strategy]` (Claude) *(RICE: 10×10×0.9÷1 = 90.0)* - **CT-06 Fanvue Bio + Welcome Message + Automated DM Templates:** Realistic amateur bio, welcome message, and first-message sequences. Output to `06_fanvue/fanvue_onboarding_scripts.md`.
+- [ ] **[P1-67]** `[Strategy]` (Claude) *(RICE: 10×10×0.9÷2 = 45.0)* - **CT-07 PPV Content Strategy + Pricing Tiers:** Exact PPV photo/video packages, pricing, and sales flow for Jasmine. Output to `06_fanvue/ppv_strategy.md`.
+- [ ] **[P1-68]** `[AI Ops]` (Claude) *(RICE: 7×8×0.9÷2 = 25.2)* - **CT-08 Consistency + Negative Prompt Master List:** Final negative prompts and consistency rules for Flux LoRA + Higgsfield. Output to `03_ai_models/jasmine_mako/generation/negative_prompt_master.md`.
+
 ---
 
 ## PHASE 2 — DESI CHARACTER (Parallel from Month 2)
