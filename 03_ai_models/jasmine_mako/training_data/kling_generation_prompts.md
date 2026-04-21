@@ -112,6 +112,19 @@ Keep this person's facial features exactly. Character has high dark bun hairstyl
 
 ---
 
+## Batch 7 — Face Close-Up Series (9 images) ★ NEW
+```
+photorealistic ultra-detailed 8K raw photo, East Asian Taiwanese female 22 years, extreme close-up head and upper chest, face: wide cheekbones wide face, breast: soft DD breasts deep plunging cleavage, hair: long straight black hair top bun, eyes: blue eyes, lips: glossy red lipstick plump slight pout, skin: ultra white flawless porcelain skin zero imperfections zero freckles zero spots zero chest blemishes, hot pink bikini top, varied expressions across series: sultry, soft smile, big laugh, bedroom eyes, lips parted, plain white background, soft beauty lighting, 9:16, 8K @Image1
+```
+**Negative prompt:**
+```
+freckles, spots, moles, micro imperfections, pigmentation, chest blemishes, spherical breasts, implant shape, fit, abs, shiny plastic skin, BBW, belly, full body
+```
+**Settings:** Kling Image 3.0 Omni · Reference type: Face · Count: 9 · 9:16 · 2K
+**Purpose:** Face close-ups for dataset diversity (previously 0% face close-ups)
+
+---
+
 ## Final Dataset Stats
 - Total generated: ~63 images across 6 batches
 - Total kept: 38 images
