@@ -5,6 +5,27 @@
 
 ---
 
+## FAILURE #7 — Ran JoyCaption Without Checking V1 Setup (Broke Instance)
+**Date:** 2026-04-21 (Session 17)
+**Cost:** Time lost + JoyCaption broke torch on instance
+**What happened:**
+Started JoyCaption on instance without first reading v1 rolling doc or G2 feasibility doc. V1 had pre-existing caption .txt files — JoyCaption was never used. JoyCaption's requirements.txt upgraded torch from 2.6.0 → 2.7.0 and broke torchvision, making the instance unusable for training until repaired.
+
+**Impact:**
+- Instance in broken state; torch/torchvision mismatch
+- Extra time to repair + generate captions manually
+
+**Root cause:**
+Did not read v1 docs before executing. Karpathy Protocol violation — executed without reading first.
+
+**Fix applied:**
+Generate captions locally from filenames, upload .txt files, reinstall correct torch on instance, then train.
+
+**Prevention rule:**
+Before ANY training session: read the previous run's rolling_task_document.md AND gate_g2_complete.md FIRST. Map every prerequisite (captions, torch version, config) before touching the instance.
+
+---
+
 ## FAILURE #6 — Wrong Vast.ai Balance (Unauthenticated CLI)
 **Date:** 2026-04-21 (Session 17)
 **Cost:** 0 (caught same session by CEO)
