@@ -90,16 +90,14 @@
 
 | Item | Status |
 |---|---|
-| LoRA trained | ❌ NOT YET |
-| Local path | `03_ai_models/jasmine_mako/lora_checkpoints/jasmine_v1.safetensors` |
-| SHA256 | `f0d491cf6cf4e855935d06fbb74045c64f110e77e22eae1dd6add3b77ee4badd` |
+| **v1 LoRA** | ❌ DEPRECATED + DELETED — trained on contaminated dataset |
+| **v2 LoRA** | ⏳ PENDING — 40 clean images ready, training not yet started |
+| Upload folder | `/Users/user/Desktop/jasmine_lora_v2/` (40 images) |
 | Training tool | ostris/ai-toolkit |
 | Base model | FLUX.1-dev (black-forest-labs) |
-| Steps completed | 2000/2000 |
+| Steps | 2000 |
 | LoRA rank | 16 |
 | Trigger word | `jasmakogirl` |
-| Instance destroyed | ✅ Instance 35219546 destroyed 2026-04-19 |
-| Total P0-07 cost | ~$3.21 / ₹299 (incl. $2.40 incident) |
 | Remaining Vast.ai credit | ~$1.35 |
 
 **Vast.ai rules — NON-NEGOTIABLE (learned from $2.40 incident):**
@@ -134,20 +132,29 @@ vastai search offers 'gpu_name=RTX_4090 num_gpus=1 disk_space>=80 reliability>0.
 **Completed P0:**
 P0-00 ✅ P0-01 ✅ P0-02 ✅ P0-03 ✅ P0-04 ✅ P0-05 ✅ P0-06 ✅ P0-07 ✅ P0-26 ✅ P0-27 ✅ P0-28 ✅
 
-### Phase 1 — Key Tasks (NEW — added 2026-04-19)
+### Phase 1 — Key Tasks
 | ID | Task | Owner | Doc |
 |---|---|---|---|
-| P1-48 | Programmatic SEO Pages (Cursor + Claude + Firecrawl) | Claude/CEO | `09_marketing/seo/programmatic_seo_strategy.md` |
-| P1-49 | GeoDirectory SEO Flywheel (WordPress/Webflow) | Claude/CEO | `09_marketing/seo/geo_directory_seo_hack.md` |
-| P1-50 | Threads Scaling SOP (7-day warm-up → 20–100 subs/day) | CEO/Antigravity | `09_marketing/threads/threads_scaling_sop.md` |
-| P1-51 | AI Personas Authority Network (10–50 endorser accounts) | Antigravity/Claude | `09_marketing/growth/ai_personas_authority_strategy.md` |
+| P1-48 | Programmatic SEO Pages | Claude/CEO | `09_marketing/seo/programmatic_seo_strategy.md` |
+| P1-49 | GeoDirectory SEO Flywheel | Claude/CEO | `09_marketing/seo/geo_directory_seo_hack.md` |
+| P1-50 | Threads Scaling SOP | CEO/Antigravity | `09_marketing/threads/threads_scaling_sop.md` |
+| P1-51 | AI Personas Authority Network | Antigravity/Claude | `09_marketing/growth/ai_personas_authority_strategy.md` |
 | P1-52 | Hybrid Faceless RPV YouTube Channels | Antigravity/CEO | `09_marketing/youtube/hybrid_youtube_rpv_strategy.md` |
 | P1-53 | Cance 2 + Arc Ads Cloning Pipeline | Antigravity/Claude | `04_content_pipeline/cance2_arc_ads_cloning_pipeline.md` |
-| P1-54 | Hyperframes HTML-First Video Pipeline | Claude/Antigravity | `04_content_pipeline/hyperframes_video_pipeline.md` |
-| P1-55 | Flow 3D Motion Graphics overlay pipeline | Antigravity | `04_content_pipeline/flow_3d_motion_graphics.md` |
 | P1-56 | 7-Day Instagram Warm-Up SOP | CEO | `09_marketing/instagram/ig_warmup_sop.md` |
-| P1-57 | UGC Ad Testing Pipeline (Cance 2 API + Claude) | Antigravity/Claude | `04_content_pipeline/ugc_ad_testing_pipeline.md` |
 | P1-58 | 6-Step Editing SOP + brand kit lock | Antigravity/CEO | `04_content_pipeline/editing_system_sop.md` |
+
+### Content System Build — Post-LoRA (Sequential: after v2 training complete)
+| ID | Task | Owner | Priority |
+|---|---|---|---|
+| P1-61 | CT-01 Jasmine Character Profile (backstory, savior triggers) | Claude | High |
+| P1-62 | CT-02 Master Branding + System Prompt | Claude | High |
+| P1-63 | CT-03 DM / Sales Chatting Scripts (GFE, PPV upsell, retention) | Claude | High |
+| P1-64 | CT-04 Carousel Prompt Pack (8–10 prompts with curiosity loop) | Claude | Medium |
+| P1-65 | CT-05 Video Prompt Templates (Reels, GRWM, tease, talking-head) | Claude | Medium |
+| P1-66 | CT-06 Fanvue Bio + Welcome Message + DM Templates | Claude | High |
+| P1-67 | CT-07 PPV Strategy + Pricing Tiers | Claude | High |
+| P1-68 | CT-08 Negative Prompt Master List (Flux LoRA + Higgsfield) | Claude | Medium |
 
 ---
 
@@ -344,6 +351,16 @@ Grok reads this file at the start of every important task before doing anything 
 This file is the handshake between Grok and the project state.
 
 ---
+
+## 15. SESSION 15/16 CHANGES (2026-04-21)
+
+- **V1 dataset fully discarded:** 38 images contaminated by `micro imperfections` in negative prompt — baked skin defects into all images. `jasmine_v1.safetensors` deleted.
+- **V2 dataset complete — 40 clean images:** New batches generated with Kling 3.0 Omni (Exact mode, Face reference). All images renamed with descriptive `jasmine_[outfit]_[pose].png` naming. Both locations updated: `jasmine_dataset/` + Desktop `jasmine_lora_v2/`.
+- **Dataset diversity fixed:** v1 had 100% standing poses + ~90% pink bikini. v2 has standing + seated/floor + face close-ups, 6 outfit colors, varied expressions.
+- **Key negative prompt fix:** `east asian, taiwanese` added to negative prompt — prevents ethnicity text overriding face reference geometry.
+- **Content types expanded:** CT-9 (Soft Tease / Lingerie Stories) and CT-10 (PPV / Exclusive Intimate) added to content strategy.
+- **P1-61–P1-68 added:** Full content system build tasks queued for post-LoRA session (character profile, system prompt, DM scripts, Fanvue bio, PPV strategy, carousel prompts, video templates, negative prompt master list).
+- **Next action:** Train Flux.1 Dev LoRA v2 on Vast.ai — filter `inet_down>=500`, pytorch 2.5.1, upload from `jasmine_lora_v2/`.
 
 ## 14. SESSION 14 CHANGES (2026-04-20)
 
