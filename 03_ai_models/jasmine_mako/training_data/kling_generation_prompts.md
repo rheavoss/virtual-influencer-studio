@@ -125,6 +125,22 @@ freckles, spots, moles, micro imperfections, pigmentation, chest blemishes, sphe
 
 ---
 
+## Batch 8 — Seated/Floor Poses ★ VERIFIED CLEAN (6/6 pass)
+**Model:** Kling 3.0 Omni · **Mode:** Exact · **Reference:** Clean red bikini image · **Type:** Face
+**Poses used:** Seated legs to side, seated leaning back on hands, kneeling facing camera, crouching arms on knees, sitting cross-legged, lying prone propped on elbow
+
+```
+photorealistic ultra-detailed 8K raw photo, soft DD breasts deep plunging cleavage natural gravity, dramatically slim defined waist extremely wide curvy hips strong hourglass figure, long straight black hair top bun, glossy red lipstick plump pout, ultra white flawless porcelain skin zero freckles zero spots zero marks zero imperfections, micro triangle string bikini hot pink, confident seductive pose direct sultry eye contact, head to toe barefoot
+```
+
+**Negative prompt:**
+```
+freckles, spots, moles, imperfections, pigmentation, skin marks, blemishes, soft tummy, round belly, shiny skin, east asian, taiwanese, BBW
+```
+**Result:** 6 generated — 6 kept — best pass rate to date ✅
+
+---
+
 ## Final Dataset Stats
 - Total generated: ~63 images across 6 batches
 - Total kept: 38 images
