@@ -5,6 +5,28 @@
 
 ---
 
+## FAILURE #10 — Watermarks Not Removed from Training Images (Baked Into LoRA)
+**Date:** 2026-04-21 (Session 17)
+**Cost:** v2 LoRA unusable without post-processing on every image; v3 retrain required for clean output
+**What happened:**
+Ran LoRA training on 40 Grok/Kling-generated images without checking for or removing platform watermarks. Every generated image from jasmine_v2.safetensors now has Kling watermarks baked into the bottom corner. The fix (check training images, crop/inpaint watermarks before training) was trivially available — all 40 images were on disk before the instance was even rented.
+
+**Impact:**
+- jasmine_v2 outputs require manual watermark removal on every generated image
+- Clean production use requires v3 retrain with watermark-free dataset
+- All 40 training images need watermark removal pass before v3
+
+**Root cause:**
+Did not audit training images for platform artifacts before training. Grok and Kling both embed watermarks into generated images. This is known behavior. Research would have caught it in 2 minutes.
+
+**Fix applied:**
+None yet. v3 training dataset prep must include watermark removal step (lama-cleaner or crop).
+
+**Prevention rule:**
+Before ANY training run: visually audit 5 random training images for watermarks, logos, and platform artifacts. Any found = remove from ALL images before training. This is mandatory — baked artifacts cannot be removed post-training.
+
+---
+
 ## FAILURE #9 — Missing System Dependencies Not Pre-Checked (libGL + gcc)
 **Date:** 2026-04-21 (Session 17)
 **Cost:** ~15 min delay, 3 extra restart cycles
