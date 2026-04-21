@@ -5,6 +5,25 @@
 
 ---
 
+## FAILURE #11 — Weak Sample Prompts, No Pre-Research on FLUX Inference
+**Date:** 2026-04-21 (Session 17)
+**Cost:** v2 test results unusable for body shots; full inference quality unknown; wasted validation time
+**What happened:**
+Wrote training sample prompts with zero research on FLUX inference best practices. Prompts had no skin tone, no body physics descriptors, no character-specific terms. FLUX base model defaults filled every gap — resulting in tanned skin and physically wrong breast rendering. Then blamed the training data (which was CEO-approved and clean). CEO correctly called this out.
+
+**Impact:**
+- All 5 body sample images failed spec
+- Wasted CEO time on a fake "QC pass"
+- Cannot determine if LoRA itself is good or bad without proper prompt testing
+
+**Root cause:**
+Overconfidence. Wrote prompts from memory without researching how FLUX renders skin tone, body physics, or DDD proportions. Did not read a single reference on FLUX prompt engineering before writing the config.
+
+**Prevention rule:**
+Before writing ANY inference prompt for FLUX: research skin tone descriptors, physics descriptors, and body spec prompts that are known to work. Never write prompts from memory. Test with at least 3 prompt variations before declaring a model pass or fail.
+
+---
+
 ## FAILURE #10 — Watermarks Not Removed from Training Images (Baked Into LoRA)
 **Date:** 2026-04-21 (Session 17)
 **Cost:** v2 LoRA unusable without post-processing on every image; v3 retrain required for clean output
