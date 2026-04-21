@@ -5,6 +5,27 @@
 
 ---
 
+## FAILURE #8 — HuggingFace Token Never Recorded
+**Date:** 2026-04-21 (Session 17)
+**Cost:** Delay — had to ask CEO for token during live training session
+**What happened:**
+G2 feasibility doc marked HuggingFace token as "✅ access granted" but never stored the actual token anywhere. No credentials file, no memory entry, no session log. When v2 training needed the token, Claude had no record of it.
+
+**Impact:**
+- Training blocked waiting for CEO to provide token
+- CEO had to be asked for information Claude should have stored
+
+**Root cause:**
+Record keeper did not record. Marked a prerequisite as "done" without storing the value.
+
+**Fix applied:**
+Token stored in credentials file after CEO provides it this session.
+
+**Prevention rule:**
+Any credential, token, or API key used in a task = store immediately in `/Users/user/Desktop/Instagram/00_agency/credentials.md` AND memory. Never mark a credential as "✅" without recording the actual value.
+
+---
+
 ## FAILURE #7 — Ran JoyCaption Without Checking V1 Setup (Broke Instance)
 **Date:** 2026-04-21 (Session 17)
 **Cost:** Time lost + JoyCaption broke torch on instance
