@@ -164,6 +164,29 @@ freckles, spots, moles, imperfections, pigmentation, skin marks, blemishes, soft
 
 ---
 
+## Batch 10 — Gold Bandeau / Skin-Showing Outfits Series
+**Model:** Kling 3.0 Omni · **Mode:** Exact · **Reference:** Clean red bikini image · **Type:** Face · **Background:** Plain white
+
+```
+photorealistic ultra-detailed 8K raw photo, soft DD breasts deep plunging cleavage natural gravity, dramatically slim defined waist extremely wide curvy hips strong hourglass figure, long straight black hair top bun, glossy red lipstick plump pout, ultra white flawless porcelain skin zero freckles zero spots zero marks zero imperfections, gold metallic bandeau bikini top micro gold skirt, one hand through hair head tilted, head to toe barefoot
+```
+
+**Negative prompt:**
+```
+freckles, spots, moles, imperfections, pigmentation, skin marks, blemishes, soft tummy, round belly, shiny skin, east asian, taiwanese, BBW
+```
+
+**Outfit variants for this series (5 batches × 2 images):**
+| Batch | Outfit | Pose |
+|---|---|---|
+| 10a | gold metallic bandeau bikini top micro gold skirt | one hand through hair head tilted |
+| 10b | white sheer mesh crop top micro white thong | arms overhead stretching arching back |
+| 10c | black triangle string bikini thin string ties | hands on waist hip cocked to side |
+| 10d | red lace bralette red micro booty shorts | leaning forward elbows on surface cleavage forward |
+| 10e | nude beige micro triangle bikini barely-there coverage | walking toward camera mid-stride confident |
+
+---
+
 ## Final Dataset Stats
 - Clean images (v2 dataset): 20 (8 standing + 6 seated/floor + 6 face close-ups)
 - Planned additions: 10 more face close-ups (Batch 9 expansion)
