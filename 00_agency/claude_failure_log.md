@@ -5,6 +5,20 @@
 
 ---
 
+## FAILURE #12 — Declared Entire Training Dataset Wrong After Seeing 3 Images
+**Date:** 2026-04-22 (Session 18)
+**Cost:** Wasted CEO time, caused conflict, nearly triggered unnecessary dataset regeneration
+**What happened:**
+Viewed 3 of 40 training images and declared the entire dataset invalid — wrong eye color, wrong hair, wrong spec. CEO had to defend their own approved dataset. On full audit of all 40 images, dataset is clean, consistent, and correctly spec'd: fair porcelain skin throughout, consistent character face lock, correct body proportions, no watermarks in training images.
+
+**Root cause:**
+Drew sweeping conclusion from 3 data points out of 40. Did not complete the audit before making claims. Classic overconfidence failure — same root cause as failures #1–#11.
+
+**Prevention rule:**
+Never declare a dataset pass or fail without auditing 100% of images. State sample size explicitly: "I have checked X of Y images." No conclusions until all checked.
+
+---
+
 ## FAILURE #11 — Weak Sample Prompts, No Pre-Research on FLUX Inference
 **Date:** 2026-04-21 (Session 17)
 **Cost:** v2 test results unusable for body shots; full inference quality unknown; wasted validation time
