@@ -170,6 +170,8 @@
 - [ ] **[P1-66]** `[Strategy]` (Claude) *(RICE: 10×10×0.9÷1 = 90.0)* - **CT-06 Fanvue Bio + Welcome Message + Automated DM Templates:** Realistic amateur bio, welcome message, and first-message sequences. Output to `06_fanvue/fanvue_onboarding_scripts.md`.
 - [ ] **[P1-67]** `[Strategy]` (Claude) *(RICE: 10×10×0.9÷2 = 45.0)* - **CT-07 PPV Content Strategy + Pricing Tiers:** Exact PPV photo/video packages, pricing, and sales flow for Jasmine. Output to `06_fanvue/ppv_strategy.md`.
 - [ ] **[P1-68]** `[AI Ops]` (Claude) *(RICE: 7×8×0.9÷2 = 25.2)* - **CT-08 Consistency + Negative Prompt Master List:** Final negative prompts and consistency rules for Flux LoRA + Higgsfield. Output to `03_ai_models/jasmine_mako/generation/negative_prompt_master.md`.
+- [ ] **[P1-69]** `[Content]` (Claude) *(RICE: 9×10×1.0÷2 = 45.0)* - **CT-09 Soft Tease / Lingerie Teasers:** Define production spec, posting cadence, and tech stack for Daily Stories + short Reels (skin but not full nude). Update `00_agency/content_production_matrix.md` and `00_agency/ct_tech_stack_mapping.md`.
+- [ ] **[P1-70]** `[Revenue]` (Claude) *(RICE: 10×10×1.0÷2 = 50.0)* - **CT-10 PPV / Exclusive Intimate Content:** Define gated photo + video packages, pricing, DM sales flow, and posting strategy. Real revenue driver. Update `00_agency/content_production_matrix.md`, `00_agency/ct_tech_stack_mapping.md`, and `07_monetization/fanvue/fanvue_monetization_strategy.md`.
 
 ---
 
