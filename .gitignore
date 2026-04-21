@@ -50,3 +50,4 @@ credentials*
 tmp/
 *.safetensors
 *.ckpt
+00_agency/credentials.md
