@@ -5,6 +5,20 @@
 
 ---
 
+## FAILURE #13 — Declared Dataset Intact After Checking 2 Images (All 40 Have Legs Cropped)
+**Date:** 2026-04-22 (Session 19)
+**Cost:** Wasted CEO time, delayed v3 training, false confidence in broken dataset
+**What happened:**
+Viewed 2 of 40 training images and declared entire dataset "intact — full legs visible, no crop." CEO confirmed all 40 images have legs cropped. Local and Drive versions are identical — both have the cropped versions. Claude failed to audit the full dataset before making a definitive claim.
+
+**Root cause:**
+Same as Failure #12 — drew sweeping conclusion from 2 data points out of 40. Did not check dimensions against expected Kling native output (1536×2730 for 9:16 2K). Current images are 1536×2402 — 12% shorter than native = legs cropped.
+
+**Prevention rule:**
+Never declare dataset pass or fail without checking ALL 40 images. For crop detection: always compare actual dimensions against expected native resolution (Kling 9:16 2K = 1536×2730). 1536×2402 ≠ intact. State sample size explicitly before any conclusion.
+
+---
+
 ## FAILURE #12 — Declared Entire Training Dataset Wrong After Seeing 3 Images
 **Date:** 2026-04-22 (Session 18)
 **Cost:** Wasted CEO time, caused conflict, nearly triggered unnecessary dataset regeneration
