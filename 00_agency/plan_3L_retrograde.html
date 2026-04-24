@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jasmine — ₹3L/Month Plan</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0d0d12; color: #e8e8f0; min-height: 100vh; }
+
+  .hero { background: linear-gradient(135deg, #1a0a2e 0%, #0d0d12 60%); padding: 48px 32px 36px; border-bottom: 1px solid #2a2a3a; }
+  .hero-label { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #7b6fa0; margin-bottom: 12px; }
+  .hero-title { font-size: 38px; font-weight: 800; color: #fff; line-height: 1.1; }
+  .hero-title span { color: #a78bfa; }
+  .hero-sub { margin-top: 12px; font-size: 14px; color: #9090b0; max-width: 600px; line-height: 1.6; }
+  .hero-date { margin-top: 16px; font-size: 11px; color: #555570; }
+
+  .container { max-width: 1100px; margin: 0 auto; padding: 32px 24px 80px; }
+
+  .section-label { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: #7b6fa0; margin-bottom: 14px; }
+  .section-title { font-size: 20px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+  .section-sub { font-size: 13px; color: #8080a0; margin-bottom: 24px; }
+
+  /* VERDICT BOX */
+  .verdict { background: linear-gradient(135deg, #1e1040, #1a1a2e); border: 1px solid #4c1d95; border-radius: 14px; padding: 28px 32px; margin: 32px 0; }
+  .verdict-tag { display: inline-block; background: #4c1d95; color: #c4b5fd; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; padding: 4px 10px; border-radius: 20px; margin-bottom: 14px; }
+  .verdict-text { font-size: 17px; font-weight: 600; color: #e2d9f3; line-height: 1.6; }
+  .verdict-text strong { color: #a78bfa; }
+  .verdict-reason { margin-top: 12px; font-size: 13px; color: #9080b0; line-height: 1.7; }
+
+  /* COMPARISON TABLE */
+  .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0 36px; }
+  .compare-card { border-radius: 12px; padding: 24px; border: 1px solid; }
+  .compare-card.global { background: #0f1f0f; border-color: #1a4a1a; }
+  .compare-card.india { background: #1f1208; border-color: #4a2a08; }
+  .compare-card .card-tag { font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 700; margin-bottom: 10px; }
+  .compare-card.global .card-tag { color: #4ade80; }
+  .compare-card.india .card-tag { color: #fb923c; }
+  .compare-card .card-title { font-size: 18px; font-weight: 800; color: #fff; margin-bottom: 6px; }
+  .compare-card .card-verdict { font-size: 12px; font-weight: 700; padding: 4px 10px; border-radius: 20px; display: inline-block; margin-bottom: 16px; }
+  .compare-card.global .card-verdict { background: #14532d; color: #86efac; }
+  .compare-card.india .card-verdict { background: #431407; color: #fdba74; }
+  .compare-card .metric-row { display: flex; justify-content: space-between; align-items: baseline; padding: 7px 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 12px; }
+  .compare-card .metric-row:last-child { border-bottom: none; }
+  .compare-card .metric-label { color: #80809a; }
+  .compare-card.global .metric-value { color: #4ade80; font-weight: 700; }
+  .compare-card.india .metric-value { color: #fb923c; font-weight: 700; }
+  .compare-card .metric-value.neutral { color: #a0a0c0; }
+
+  /* OPSEC */
+  .opsec-box { background: #0f1520; border: 1px solid #1e3050; border-radius: 12px; padding: 24px 28px; margin: 0 0 36px; }
+  .opsec-title { font-size: 15px; font-weight: 700; color: #60a5fa; margin-bottom: 16px; }
+  .opsec-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .opsec-item { border-radius: 8px; padding: 14px 16px; }
+  .opsec-item.drop { background: #1a0a0a; border: 1px solid #3a1010; }
+  .opsec-item.keep { background: #0a1a0a; border: 1px solid #103a10; }
+  .opsec-item .opsec-tag { font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 700; margin-bottom: 6px; }
+  .opsec-item.drop .opsec-tag { color: #f87171; }
+  .opsec-item.keep .opsec-tag { color: #4ade80; }
+  .opsec-item .opsec-name { font-size: 13px; font-weight: 600; color: #e0e0f0; margin-bottom: 3px; }
+  .opsec-item .opsec-note { font-size: 11px; color: #707090; line-height: 1.4; }
+
+  /* MILESTONES */
+  .milestone-table { width: 100%; border-collapse: collapse; margin: 20px 0 36px; }
+  .milestone-table th { font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: #606080; padding: 8px 12px; text-align: left; border-bottom: 1px solid #2a2a3a; }
+  .milestone-table td { padding: 13px 12px; font-size: 13px; border-bottom: 1px solid #1a1a2a; vertical-align: top; }
+  .milestone-table tr:hover td { background: #13132a; }
+  .m-month { font-weight: 800; color: #a78bfa; white-space: nowrap; }
+  .m-target { color: #e0e0f0; font-weight: 600; }
+  .m-driver { color: #9090b0; font-size: 12px; }
+  .m-mrr { font-weight: 800; font-size: 14px; white-space: nowrap; }
+  .m-mrr.low { color: #f59e0b; }
+  .m-mrr.mid { color: #fb923c; }
+  .m-mrr.hit { color: #4ade80; }
+  .m-action { font-size: 11px; color: #7070a0; line-height: 1.5; }
+  .milestone-table .highlight-row td { background: #0f200f; }
+  .badge { display: inline-block; font-size: 9px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 2px 7px; border-radius: 10px; margin-left: 6px; vertical-align: middle; }
+  .badge.target { background: #14532d; color: #86efac; }
+  .badge.unlock { background: #1e3a5f; color: #93c5fd; }
+
+  /* MATH */
+  .math-box { background: #0d1520; border: 1px solid #1a2a3a; border-radius: 12px; padding: 24px 28px; margin: 0 0 36px; }
+  .math-title { font-size: 14px; font-weight: 700; color: #93c5fd; margin-bottom: 16px; }
+  .math-row { display: flex; align-items: baseline; gap: 8px; padding: 8px 0; border-bottom: 1px solid #1a2030; font-size: 13px; }
+  .math-row:last-child { border-bottom: none; }
+  .math-eq { color: #606080; min-width: 220px; }
+  .math-arrow { color: #4a4a6a; }
+  .math-result { color: #e0e0f0; font-weight: 700; }
+  .math-result.green { color: #4ade80; }
+  .math-note { font-size: 11px; color: #606080; margin-left: auto; }
+
+  /* RISK */
+  .risk-row { display: flex; gap: 12px; padding: 12px 0; border-bottom: 1px solid #1a1a2a; align-items: flex-start; }
+  .risk-row:last-child { border-bottom: none; }
+  .risk-dot { width: 8px; height: 8px; border-radius: 50%; margin-top: 5px; flex-shrink: 0; }
+  .risk-dot.high { background: #f87171; }
+  .risk-dot.med { background: #f59e0b; }
+  .risk-dot.low { background: #4ade80; }
+  .risk-name { font-size: 13px; font-weight: 600; color: #d0d0e8; }
+  .risk-mit { font-size: 11px; color: #707090; margin-top: 3px; line-height: 1.5; }
+
+  /* DIVIDER */
+  .divider { height: 1px; background: #1e1e30; margin: 36px 0; }
+
+  .footer { text-align: center; font-size: 11px; color: #404060; padding: 32px; border-top: 1px solid #1a1a2a; }
+
+  @media (max-width: 700px) {
+    .compare-grid { grid-template-columns: 1fr; }
+    .opsec-grid { grid-template-columns: 1fr; }
+    .hero-title { font-size: 28px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div style="max-width:1100px; margin:0 auto;">
+    <div class="hero-label">Jasmine Mako · Retrograde Analysis</div>
+    <div class="hero-title">Path to <span>₹3 Lakhs</span> / Month</div>
+    <div class="hero-sub">Bottom-up roadmap starting from the revenue target and working backwards to the minimum follower count, OPSEC requirements, and monthly milestones needed to get there.</div>
+    <div class="hero-date">Generated: 24 April 2026 · Internal planning document</div>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- VERDICT -->
+  <div class="verdict">
+    <div class="verdict-tag">Verdict</div>
+    <div class="verdict-text">
+      <strong>Global USD path (Jasmine current plan) hits ₹3L in M3–M4.</strong><br>
+      India-only hits ₹3L in M5–M6 at earliest — and needs 2× more followers to do it.
+    </div>
+    <div class="verdict-reason">
+      Indian ARPPU is ₹199–299/mo vs USD ARPPU of ₹850–1,400/mo. To hit ₹3L from India subs alone you need 1,000+ paying subscribers = 100k+ followers at 1% conversion. Brand deals fill the gap but are unpredictable at the micro level. The India-only path is not wrong — it is correct for Character 2 (Desi girl, M2 launch). It is wrong as the primary path for hitting ₹3L ASAP with Jasmine.
+    </div>
+  </div>
+
+  <!-- COMPARISON -->
+  <div class="section-label">Strategy comparison</div>
+  <div class="section-title">Global USD vs India-Only</div>
+  <div class="section-sub">Both paths reach ₹3L — but at very different follower counts and timelines</div>
+
+  <div class="compare-grid">
+    <div class="compare-card global">
+      <div class="card-tag">✅ Recommended</div>
+      <div class="card-title">Global / USD First</div>
+      <div class="card-verdict">Hit ₹3L in M3–M4</div>
+      <div class="metric-row"><span class="metric-label">Primary platform</span><span class="metric-value">Fanvue GFE @ $9.99/mo</span></div>
+      <div class="metric-row"><span class="metric-label">Net per subscriber</span><span class="metric-value">~₹850/mo</span></div>
+      <div class="metric-row"><span class="metric-label">Subs needed for ₹3L</span><span class="metric-value">~355 paying subs</span></div>
+      <div class="metric-row"><span class="metric-label">IG followers needed</span><span class="metric-value">~25,000</span></div>
+      <div class="metric-row"><span class="metric-label">Conversion rate assumed</span><span class="metric-value neutral">1.5%</span></div>
+      <div class="metric-row"><span class="metric-label">Paid ads cost to reach</span><span class="metric-value neutral">₹1.5L–3L total</span></div>
+      <div class="metric-row"><span class="metric-label">OPSEC overhead</span><span class="metric-value neutral">Low (simplified)</span></div>
+      <div class="metric-row"><span class="metric-label">Predictability</span><span class="metric-value">High (recurring subs)</span></div>
+    </div>
+
+    <div class="compare-card india">
+      <div class="card-tag">⚠ Not Recommended for ASAP</div>
+      <div class="card-title">India-Only</div>
+      <div class="card-verdict">Hit ₹3L in M5–M6</div>
+      <div class="metric-row"><span class="metric-label">Primary platform</span><span class="metric-value">IG Subs + Brand Deals</span></div>
+      <div class="metric-row"><span class="metric-label">Net per subscriber</span><span class="metric-value">~₹159–239/mo</span></div>
+      <div class="metric-row"><span class="metric-label">Subs needed for ₹3L</span><span class="metric-value">1,260–1,890 subs</span></div>
+      <div class="metric-row"><span class="metric-label">IG followers needed</span><span class="metric-value">50,000–80,000</span></div>
+      <div class="metric-row"><span class="metric-label">Conversion rate assumed</span><span class="metric-value neutral">1.5–2%</span></div>
+      <div class="metric-row"><span class="metric-label">Paid ads cost to reach</span><span class="metric-value neutral">₹1.5L–4L total</span></div>
+      <div class="metric-row"><span class="metric-label">OPSEC overhead</span><span class="metric-value neutral">Zero</span></div>
+      <div class="metric-row"><span class="metric-label">Predictability</span><span class="metric-value">Med (brand deals vary)</span></div>
+    </div>
+  </div>
+
+  <!-- MATH -->
+  <div class="math-box">
+    <div class="math-title">₹3L Reverse Math — Global Path</div>
+    <div class="math-row">
+      <span class="math-eq">₹3,00,000 ÷ ₹850 net/sub</span>
+      <span class="math-arrow">→</span>
+      <span class="math-result">353 paying Fanvue subscribers needed</span>
+    </div>
+    <div class="math-row">
+      <span class="math-eq">353 subs ÷ 1.5% conversion</span>
+      <span class="math-arrow">→</span>
+      <span class="math-result">23,500 IG followers needed</span>
+    </div>
+    <div class="math-row">
+      <span class="math-eq">23,500 followers @ ₹5–8/follow (Meta Ads India targeting US)</span>
+      <span class="math-arrow">→</span>
+      <span class="math-result">₹1.2L–1.9L total ad spend</span>
+      <span class="math-note">spread over 3 months</span>
+    </div>
+    <div class="math-row">
+      <span class="math-eq">Gross at 353 subs × $9.99</span>
+      <span class="math-arrow">→</span>
+      <span class="math-result green">$3,527 = ₹3,28,000 gross · ₹3,00,000 net ✓</span>
+    </div>
+  </div>
+
+  <!-- OPSEC SIMPLIFICATION -->
+  <div class="section-label">OPSEC overhaul</div>
+  <div class="section-title">Drop the Complexity, Keep What Matters</div>
+  <div class="section-sub">Full OPSEC stack was designed for worst-case. Daily ops don't need it.</div>
+
+  <div class="opsec-box">
+    <div class="opsec-title">🔐 What to drop vs keep</div>
+    <div class="opsec-grid">
+      <div class="opsec-item drop">
+        <div class="opsec-tag">Drop — Daily ops</div>
+        <div class="opsec-name">Dolphin Browser (daily)</div>
+        <div class="opsec-note">Regular Chrome incognito is fine for IG posting. Dolphin overhead not needed every session.</div>
+      </div>
+      <div class="opsec-item keep">
+        <div class="opsec-tag">Keep — One-time setup</div>
+        <div class="opsec-name">Virtual number for IG signup</div>
+        <div class="opsec-note">API verification number. Used once at account creation. Done.</div>
+      </div>
+      <div class="opsec-item drop">
+        <div class="opsec-tag">Drop — Daily ops</div>
+        <div class="opsec-name">Always-on VPN</div>
+        <div class="opsec-note">Only needed when logging into Fanvue. Not for IG posting from your regular connection.</div>
+      </div>
+      <div class="opsec-item keep">
+        <div class="opsec-tag">Keep — Every image/video</div>
+        <div class="opsec-name">ExifTool EXIF strip</div>
+        <div class="opsec-note">Non-negotiable. Strip GPS, device info, creation timestamp from every file before upload.</div>
+      </div>
+      <div class="opsec-item drop">
+        <div class="opsec-tag">Drop</div>
+        <div class="opsec-name">Proxy for IG (ongoing)</div>
+        <div class="opsec-note">India IP posting to IG is fine. IG doesn't geo-restrict posting. Only Fanvue needs non-India IP.</div>
+      </div>
+      <div class="opsec-item keep">
+        <div class="opsec-tag">Keep — Fanvue sessions only</div>
+        <div class="opsec-name">VPN for Fanvue login</div>
+        <div class="opsec-note">Use VPN only when accessing Fanvue dashboard. One dedicated browser profile for Fanvue, nothing else.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- MILESTONES -->
+  <div class="section-label">Retrograde milestones</div>
+  <div class="section-title">Month-by-Month to ₹3L</div>
+  <div class="section-sub">Each month has one primary lever. Hit the lever, the MRR follows.</div>
+
+  <table class="milestone-table">
+    <thead>
+      <tr>
+        <th>Month</th>
+        <th>IG Followers</th>
+        <th>Fanvue Subs</th>
+        <th>Primary lever</th>
+        <th>Est. MRR</th>
+        <th>Key actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="m-month">Pre-launch</span></td>
+        <td><span class="m-target">0</span></td>
+        <td><span class="m-driver">—</span></td>
+        <td><span class="m-driver">LoRA training · content batch · account setup</span></td>
+        <td><span class="m-mrr low">₹0</span></td>
+        <td><span class="m-action">Train LoRA locally (Pinokio + Forge) · Create IG + Fanvue accounts · Batch 30 posts</span></td>
+      </tr>
+      <tr>
+        <td><span class="m-month">M1</span></td>
+        <td><span class="m-target">1,000 – 3,000</span></td>
+        <td><span class="m-driver">20–50 subs</span></td>
+        <td><span class="m-driver">Organic reach + Reel hooks</span></td>
+        <td><span class="m-mrr low">₹17k – ₹43k</span></td>
+        <td><span class="m-action">1 Reel/day · 3 Stories/day · Fanvue free trial week · DM welcome script live · Metricool setup</span></td>
+      </tr>
+      <tr>
+        <td><span class="m-month">M2</span></td>
+        <td><span class="m-target">5,000 – 8,000</span></td>
+        <td><span class="m-driver">80–120 subs</span></td>
+        <td><span class="m-driver">First paid ads (₹3k/mo) · PPV launch</span></td>
+        <td><span class="m-mrr mid">₹68k – ₹1.0L</span></td>
+        <td><span class="m-action">Meta Ads ₹3k/mo (Reel boost) · First PPV campaign · Voice note bundle launch · Viral Reel target: 1 hit</span></td>
+      </tr>
+      <tr>
+        <td><span class="m-month">M3</span></td>
+        <td><span class="m-target">12,000 – 18,000</span></td>
+        <td><span class="m-driver">180–260 subs</span></td>
+        <td><span class="m-driver">Scale ads to ₹8k/mo · GFE upsell</span></td>
+        <td><span class="m-mrr mid">₹1.53L – ₹2.2L</span></td>
+        <td><span class="m-action">IG Subscriptions unlock at 10k · Retargeting ads to profile visitors · First collab shoutout · Reddit SFW seeding</span></td>
+      </tr>
+      <tr class="highlight-row">
+        <td><span class="m-month">M4</span> <span class="badge target">₹3L target</span></td>
+        <td><span class="m-target">22,000 – 28,000</span></td>
+        <td><span class="m-driver">320–400 subs</span></td>
+        <td><span class="m-driver">IG Subs active · Fanvue MRR compound</span></td>
+        <td><span class="m-mrr hit">₹2.7L – ₹3.4L ✓</span></td>
+        <td><span class="m-action">Fanvue subs: ~355 × ₹850 net = ₹3.0L · IG Subs: 10k+ followers, ~150 subs × ₹200 = ₹30k bonus · Brand deals first inquiry</span></td>
+      </tr>
+      <tr>
+        <td><span class="m-month">M5–M6</span> <span class="badge unlock">Scale</span></td>
+        <td><span class="m-target">40,000 – 60,000</span></td>
+        <td><span class="m-driver">500–700 subs</span></td>
+        <td><span class="m-driver">Brand deals live · Telegram VIP · Character 2</span></td>
+        <td><span class="m-mrr hit">₹4.3L – ₹6.0L</span></td>
+        <td><span class="m-action">First micro brand deal ₹30k–50k · Telegram VIP ₹500/mo · Character 2 (Desi girl) seeding begins · Ads scale ₹15k/mo</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="divider"></div>
+
+  <!-- INDIA AS CHAR 2 -->
+  <div class="verdict" style="background: linear-gradient(135deg, #0f1f10, #0d1412); border-color: #1a4a1a;">
+    <div class="verdict-tag" style="background: #14532d; color: #86efac;">India strategy — correct home for it</div>
+    <div class="verdict-text" style="color: #d0e8d0;">
+      <strong style="color: #4ade80;">India-only = Character 2, not Jasmine.</strong><br>
+      Launch the Desi girl at M2 as planned. Zero OPSEC. Real Indian number. Real Indian IP. Target Indian lifestyle/fashion brands. Let her grow on organic + cheap ₹3–5/follow ads. By M6 she hits 50k followers and brand deals start at ₹30k–50k/post. The two characters run in parallel — Jasmine = USD revenue engine, Desi girl = INR brand deals engine.
+    </div>
+    <div class="verdict-reason" style="color: #6a9a6a;">
+      This gives you both: the high-ARPPU USD Fanvue path (Jasmine) AND the zero-OPSEC India brand deals path (Char 2) — without compromising either.
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- RISKS -->
+  <div class="section-label">Key risks on this path</div>
+  <div class="section-title">What Could Slow This Down</div>
+  <div class="section-sub">Know these before they happen</div>
+
+  <div style="margin-bottom: 32px;">
+    <div class="risk-row">
+      <div class="risk-dot high"></div>
+      <div>
+        <div class="risk-name">LoRA training delayed (current blocker)</div>
+        <div class="risk-mit">Full-res images must be recovered from Kling history (legs cropped issue). Every week of training delay = 1 week pushed on M1 launch. CEO action required today.</div>
+      </div>
+    </div>
+    <div class="risk-row">
+      <div class="risk-dot high"></div>
+      <div>
+        <div class="risk-name">No viral Reel in M1–M2</div>
+        <div class="risk-mit">Organic growth stalls without at least 1 breakout Reel. Must batch 20+ Reels in pre-launch and A/B test hooks aggressively. Paid ads compensate but increase burn.</div>
+      </div>
+    </div>
+    <div class="risk-row">
+      <div class="risk-dot med"></div>
+      <div>
+        <div class="risk-name">Fanvue conversion below 1.5%</div>
+        <div class="risk-mit">If conversion is 0.8%, you need 31k followers instead of 25k for ₹3L. Add ₹30k in extra ad spend. Mitigate: aggressive Fanvue CTA in Stories + link-in-bio A/B test.</div>
+      </div>
+    </div>
+    <div class="risk-row">
+      <div class="risk-dot med"></div>
+      <div>
+        <div class="risk-name">IG account flagged / restricted</div>
+        <div class="risk-mit">Risk window: first 30 days. Post only SFW content. No external adult links in bio until 1k followers. Use custom domain redirect (not Linktree) for Fanvue link.</div>
+      </div>
+    </div>
+    <div class="risk-row">
+      <div class="risk-dot low"></div>
+      <div>
+        <div class="risk-name">Meta Ads CPM spike</div>
+        <div class="risk-mit">India CPM for female lifestyle is ₹50–150. Budget built with ₹100 CPM assumption. If CPM doubles, slow the ad spend — organic content velocity compensates.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- IMMEDIATE ACTIONS -->
+  <div class="math-box" style="border-color: #2a1a3a; background: #0e0e1e;">
+    <div class="math-title" style="color: #c084fc;">🎯 Next 3 Actions to Start the Clock</div>
+    <div class="math-row">
+      <span class="math-eq" style="color: #9060c0; font-weight: 600;">1. CEO — Recover Kling images</span>
+      <span class="math-arrow">→</span>
+      <span class="math-result">Unblocks v3 LoRA training. Can't launch without this.</span>
+    </div>
+    <div class="math-row">
+      <span class="math-eq" style="color: #9060c0; font-weight: 600;">2. CEO — Create IG account</span>
+      <span class="math-arrow">→</span>
+      <span class="math-result">Use API verification number (one-time). Real device, India IP is fine for IG.</span>
+    </div>
+    <div class="math-row">
+      <span class="math-eq" style="color: #9060c0; font-weight: 600;">3. Claude — Batch 30 pre-launch posts</span>
+      <span class="math-arrow">→</span>
+      <span class="math-result">Once LoRA ready. 2-week content runway before Day 1 publish.</span>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  Jasmine Mako · Internal Planning Document · 24 April 2026<br>
+  Revenue figures in INR. USD converted at ₹93.08. Platform cuts: Fanvue 15%, IG Subs 20%.
+</div>
+
+</body>
+</html>
