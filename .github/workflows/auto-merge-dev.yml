@@ -2,7 +2,7 @@ name: Auto PR + Merge dev → main
 on:
   push:
     branches: [ dev ]
-workflow_dispatch:
+  workflow_dispatch:
 
 permissions:
   contents: write
