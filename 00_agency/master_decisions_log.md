@@ -103,7 +103,10 @@
 | Stream | Platform | Keep Rate | Notes |
 |---|---|---|---|
 | Subscriptions | Fanvue | 80% | Primary engine. $20/month sub price. |
-| Subscriptions | Passes.com | 90% | Same content, higher margin. Launch Day 1. |
+| Subscriptions | Passes.com | 90% | Same content, highest margin. No-nudity policy fits our ceiling. Day 1. |
+| Subscriptions | MYM.fans | ~80% | Multi-platform. AI allowed with #AI tag. European audience. Day 1. |
+| Subscriptions | Alua | 80% | Paid chat GFE revenue stream. AI allowed. Day 1. |
+| Subscriptions | LoyalFans | 80% | Niche traffic. AI labeled. Day 1. |
 | PPV drops | Fanvue | 80% | Locked exclusive content drops |
 | Voice note PPV | Fanvue | 80% | ~$7/note. 15 sales/month = $105 |
 | DM chatting | Room 11 | 60% (CEO keeps) | 100% automated. Handles PPV, mass message blasts (10–15% conversion). 24/7. |
@@ -133,6 +136,7 @@
 | Method | Why Rejected | Date |
 |---|---|---|
 | TikTok | 2026 algorithm deprioritizes AI content. Ban risk high, no recovery path | 2026-04-11 |
+| Fansly | Photorealistic AI creator bans at payout stage (2026 crackdown). Account + earnings at risk. | 2026-04-24 |
 | Mother-daughter IG link accounts | Instagram 2026 detects coordinated inauthentic behaviour → chain bans entire network | 2026-04-11 |
 | Linktree/Carrd as link-in-bio | In-app browser = logged-out users = low Fanvue signup conversion | Permanent |
 | Direct adult traffic → IG profile | Instant shadowban/ban | Permanent |
@@ -140,6 +144,20 @@
 | HeyGen Digital Twin | $2–6/min makes it 360× more expensive than Wan AI for same output | 2026-04-13 |
 | G-cup body spec | Causes BBW drift in Flux models. Locked at DDD (32DDD). | 2026-04-11 |
 | Heavy tattoo spec (Rhea Voss) | Removed from Jasmine's character spec. Earlier Rhea drafts — deprecated. | 2026-04-13 |
+
+---
+
+## 9. Revenue Targets & Survival Math (Locked 2026-04-24)
+
+| Target | INR/month | Fanvue Subs | IG Followers | Timeline | Status |
+|---|---|---|---|---|---|
+| **Survival (primary)** | **₹1L** | **127 subs** | **~8,500** | **M2** | **Active goal** |
+| Scale | ₹3L | 380 subs | ~25,000 | M4 | Next milestone |
+| Growth | ₹20L | ~2,500 subs | ~170,000 | M12 | Long-term |
+
+**Net per sub:** $9.99 × 85% Fanvue keep × ₹93.08 = ₹789/sub/month  
+**Fixed burn:** ₹10,973/month (10 tools — see `plan_3L_retrograde.html`)  
+**Rule:** Survival first. Scale second. Never reverse order.
 
 ---
 
