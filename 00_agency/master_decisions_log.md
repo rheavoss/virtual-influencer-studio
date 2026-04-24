@@ -157,7 +157,8 @@
 
 **Net per sub:** $9.99 × 85% Fanvue keep × ₹93.08 = ₹789/sub/month  
 **Fixed burn:** ₹10,973/month (10 tools — see `plan_3L_retrograde.html`)  
-**Rule:** Survival first. Scale second. Never reverse order.
+**Rule:** Survival first. Scale second. Never reverse order.  
+**Moat:** Real moat = distribution engine + conversion funnels + chat/upsell system. NOT visuals, AI tools, or content quality — those are table stakes.
 
 ---
 
