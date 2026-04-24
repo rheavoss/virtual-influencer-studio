@@ -11,7 +11,11 @@
 | Decision | Chosen | Rejected | Why |
 |---|---|---|---|
 | Primary monetization | Fanvue | OnlyFans | Fanvue: AI-friendly ecosystem, built-in AI creator discovery, AI messaging tools built-in, Indian audience already paying here |
-| Secondary monetization | Passes.com | — | 90% creator keep rate vs Fanvue's 80%. Same content. Launch Day 1. |
+| Secondary monetization | Passes.com | — | 90% creator keep rate. No-nudity policy = perfect fit for our content ceiling. Launch Day 1. |
+| Multi-platform | MYM.fans | — | ~80% keep. AI allowed + #AI tag required. European traffic. India payout. Day 1. |
+| Multi-platform | Alua | — | 80% keep. AI allowed (no terminations reported). Paid chat GFE revenue. India payout. Day 1. |
+| Multi-platform | LoyalFans | — | 80% keep. AI allowed if labeled #AI. Niche traffic. India payout. Day 1. |
+| Rejected — AI ban risk | ~~Fansly~~ | Fanvue/Alua/LoyalFans | Photorealistic AI creator bans at payout stage (2026 crackdown). Do not use. |
 | Primary traffic (SFW) | Instagram | TikTok | TikTok permanently dropped 2026-04-11: algorithm deprioritizes AI content, ban risk high, no recovery path |
 | Video hosting | YouTube Shorts | TikTok | Zero extra production — Metricool mirrors Reels automatically |
 | Link-in-bio | Bouncy.cc | Linktree/Carrd | Bouncy opens native Safari/Chrome (logged-in users) → higher Fanvue signup conversion |
