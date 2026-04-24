@@ -198,43 +198,22 @@
   </div>
 
   <!-- OPSEC SIMPLIFICATION -->
-  <div class="section-label">OPSEC overhaul</div>
-  <div class="section-title">Drop the Complexity, Keep What Matters</div>
-  <div class="section-sub">Full OPSEC stack was designed for worst-case. Daily ops don't need it.</div>
+  <div class="section-label">OPSEC — simplified</div>
+  <div class="section-title">3 Rules. Nothing Else.</div>
+  <div class="section-sub">Post from your normal phone/laptop. No daily overhead.</div>
 
   <div class="opsec-box">
-    <div class="opsec-title">🔐 What to drop vs keep</div>
-    <div class="opsec-grid">
-      <div class="opsec-item drop">
-        <div class="opsec-tag">Drop — Daily ops</div>
-        <div class="opsec-name">Dolphin Browser (daily)</div>
-        <div class="opsec-note">Regular Chrome incognito is fine for IG posting. Dolphin overhead not needed every session.</div>
-      </div>
-      <div class="opsec-item keep">
-        <div class="opsec-tag">Keep — One-time setup</div>
-        <div class="opsec-name">Virtual number for IG signup</div>
-        <div class="opsec-note">API verification number. Used once at account creation. Done.</div>
-      </div>
-      <div class="opsec-item drop">
-        <div class="opsec-tag">Drop — Daily ops</div>
-        <div class="opsec-name">Always-on VPN</div>
-        <div class="opsec-note">Only needed when logging into Fanvue. Not for IG posting from your regular connection.</div>
-      </div>
-      <div class="opsec-item keep">
-        <div class="opsec-tag">Keep — Every image/video</div>
-        <div class="opsec-name">ExifTool EXIF strip</div>
-        <div class="opsec-note">Non-negotiable. Strip GPS, device info, creation timestamp from every file before upload.</div>
-      </div>
-      <div class="opsec-item drop">
-        <div class="opsec-tag">Drop</div>
-        <div class="opsec-name">Proxy for IG (ongoing)</div>
-        <div class="opsec-note">India IP posting to IG is fine. IG doesn't geo-restrict posting. Only Fanvue needs non-India IP.</div>
-      </div>
-      <div class="opsec-item keep">
-        <div class="opsec-tag">Keep — Fanvue sessions only</div>
-        <div class="opsec-name">VPN for Fanvue login</div>
-        <div class="opsec-note">Use VPN only when accessing Fanvue dashboard. One dedicated browser profile for Fanvue, nothing else.</div>
-      </div>
+    <div class="math-row" style="border-bottom: 1px solid #1a2a3a; padding: 14px 0;">
+      <span style="color: #4ade80; font-size: 18px; margin-right: 14px; flex-shrink:0;">①</span>
+      <div><span style="font-weight: 700; color: #e0e0f0;">Virtual number — one time only.</span><span style="color: #8080a0; font-size: 13px; margin-left: 8px;">Use it to create the IG account. Never needed again.</span></div>
+    </div>
+    <div class="math-row" style="border-bottom: 1px solid #1a2a3a; padding: 14px 0;">
+      <span style="color: #4ade80; font-size: 18px; margin-right: 14px; flex-shrink:0;">②</span>
+      <div><span style="font-weight: 700; color: #e0e0f0;">Strip EXIF from every file before upload.</span><span style="color: #8080a0; font-size: 13px; margin-left: 8px;">ExifTool removes GPS + device data. Automated in pipeline.</span></div>
+    </div>
+    <div class="math-row" style="padding: 14px 0;">
+      <span style="color: #4ade80; font-size: 18px; margin-right: 14px; flex-shrink:0;">③</span>
+      <div><span style="font-weight: 700; color: #e0e0f0;">VPN only when logging into Fanvue.</span><span style="color: #8080a0; font-size: 13px; margin-left: 8px;">One dedicated browser profile. Everything else — your normal device, normal connection.</span></div>
     </div>
   </div>
 
