@@ -2,8 +2,6 @@ name: Auto PR + Merge dev → main
 on:
   push:
     branches: [ dev ]
-  schedule:
-    - cron: '*/5 * * * *'   # backup: check every 5 min for any stuck PRs
   workflow_dispatch:
 
 permissions:
