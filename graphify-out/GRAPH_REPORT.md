@@ -9,21 +9,21 @@
 - Token cost: 18,500 input · 4,200 output
 
 ## Community Hubs (Navigation)
-- [[_COMMUNITY_Community 0|Community 0]]
-- [[_COMMUNITY_Community 1|Community 1]]
-- [[_COMMUNITY_Community 2|Community 2]]
-- [[_COMMUNITY_Community 3|Community 3]]
-- [[_COMMUNITY_Community 4|Community 4]]
-- [[_COMMUNITY_Community 5|Community 5]]
-- [[_COMMUNITY_Community 6|Community 6]]
-- [[_COMMUNITY_Community 7|Community 7]]
-- [[_COMMUNITY_Community 8|Community 8]]
-- [[_COMMUNITY_Community 9|Community 9]]
-- [[_COMMUNITY_Community 10|Community 10]]
-- [[_COMMUNITY_Community 11|Community 11]]
-- [[_COMMUNITY_Community 12|Community 12]]
-- [[_COMMUNITY_Community 13|Community 13]]
-- [[_COMMUNITY_Community 14|Community 14]]
+- [[_COMMUNITY_Content Strategy & Monetization|Content Strategy & Monetization]]
+- [[_COMMUNITY_Project Governance & Finance|Project Governance & Finance]]
+- [[_COMMUNITY_Team Handoffs & Protocols|Team Handoffs & Protocols]]
+- [[_COMMUNITY_Dashboard & Infrastructure|Dashboard & Infrastructure]]
+- [[_COMMUNITY_SEO & Programmatic Growth|SEO & Programmatic Growth]]
+- [[_COMMUNITY_Dashboard UI Components|Dashboard UI Components]]
+- [[_COMMUNITY_LoRA Training Pipeline|LoRA Training Pipeline]]
+- [[_COMMUNITY_Financial Calculation Functions|Financial Calculation Functions]]
+- [[_COMMUNITY_Brand Deals & Sponsorships|Brand Deals & Sponsorships]]
+- [[_COMMUNITY_Supabase Sync Module|Supabase Sync Module]]
+- [[_COMMUNITY_Test Suite|Test Suite]]
+- [[_COMMUNITY_App Layout|App Layout]]
+- [[_COMMUNITY_Next.js Config|Next.js Config]]
+- [[_COMMUNITY_Fallback Data|Fallback Data]]
+- [[_COMMUNITY_Grok Research Queue|Grok Research Queue]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `GROK BRAIN — Jasmine Project State` - 10 edges
@@ -58,90 +58,90 @@
 
 ## Communities
 
-### Community 0 - "Community 0"
+### Community 0 - "Content Strategy & Monetization"
 Cohesion: 0.15
 Nodes (15): Rationale: AI personas create social proof / FOMO / search traffic, AI Personas Authority Strategy (P1-51), Content Ceiling — Option A (Lena Paul Level), Fanvue Platform (GFE Revenue), Instagram Platform (Top-of-Funnel SFW), Jasmine Character (AI Influencer), Higgsfield (AI Video Platform), IG Ban Prevention Rules (+7 more)
 
-### Community 1 - "Community 1"
+### Community 1 - "Project Governance & Finance"
 Cohesion: 0.15
 Nodes (14): Financial Snapshot (₹10,973/month burn), Framework Intake Rule (every strategy needs task ID), Grok G0 Research Gate Checklist, Jasmine Character Spec (jasmakogirl), Multi-Character Scaling Plan, GROK BRAIN — Jasmine Project State, RALPH Protocol (MECHANICALLY ACTIVE), VoiceBox (Free Local Voice Clone) (+6 more)
 
-### Community 2 - "Community 2"
+### Community 2 - "Team Handoffs & Protocols"
 Cohesion: 0.21
 Nodes (13): ANTIGRAVITY INBOX (Task Handoffs), CLAUDE INBOX (Specs from Grok), G.Brain Hook, Jasmine Project (CLAUDE.md), Karpathy Protocol, Antigravity (Research/Copy/Captions), CEO (India-based), Claude Code (Files/Code/Memory) (+5 more)
 
-### Community 3 - "Community 3"
+### Community 3 - "Dashboard & Infrastructure"
 Cohesion: 0.25
 Nodes (9): P&L Dashboard (virtual-influencer-dashboard.vercel.app), Supabase Database (P&L Storage), Vercel Deployment (API-only), Deploy Guide — Jasmine P&L Dashboard, Fallback Data (lib/fallback-data.js), Next.js 14 (App Router), GitHub Account: rheavoss, Vercel API Deployment Process (+1 more)
 
-### Community 4 - "Community 4"
+### Community 4 - "SEO & Programmatic Growth"
 Cohesion: 0.31
 Nodes (9): Path A: Webflow + Airtable + WhaleSync, Path B: WordPress + GeoDirectory Plugin, Rationale: location×category flywheel compounds organic traffic over time, GeoDirectory SEO Flywheel (P1-49), Programmatic SEO Strategy (P1-48), Rationale: thousands of long-tail pages = compounding organic traffic moat, pSEO Toolchain (Cursor + Claude Code + Firecrawl + Perplexity), SEO Strategy Hub (09_marketing/seo/) (+1 more)
 
-### Community 5 - "Community 5"
+### Community 5 - "Dashboard UI Components"
 Cohesion: 0.38
 Nodes (4): getData(), InvestorPage(), Page(), getSupabaseClient()
 
-### Community 6 - "Community 6"
+### Community 6 - "LoRA Training Pipeline"
 Cohesion: 0.33
 Nodes (7): jasmine_lora_v2 Dataset (40 clean images), FLUX.1-dev Base Model, Kling Image 3 (Generation Tool), v2 LoRA Training (PENDING), v3 LoRA Training Crisis (legs cropped + watermarks), jasmine_v1.safetensors (LoRA — DEPRECATED), Vast.ai RTX 4090 Training
 
-### Community 7 - "Community 7"
+### Community 7 - "Financial Calculation Functions"
 Cohesion: 0.4
 Nodes (2): fi(), PLDashboard()
 
-### Community 8 - "Community 8"
+### Community 8 - "Brand Deals & Sponsorships"
 Cohesion: 0.4
 Nodes (5): Collabstr (Brand Deal Platform), Infinity (infinityapp.in — USD payment collection India), Passionfroot (Creator Storefront), Brand Deal Platforms SOP (P1-60), Jasmine Media Kit (P1-59)
 
-### Community 9 - "Community 9"
+### Community 9 - "Supabase Sync Module"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 10 - "Community 10"
+### Community 10 - "Test Suite"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 11 - "Community 11"
+### Community 11 - "App Layout"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 12 - "Community 12"
+### Community 12 - "Next.js Config"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 13 - "Community 13"
+### Community 13 - "Fallback Data"
 Cohesion: 1.0
 Nodes (0): 
 
-### Community 14 - "Community 14"
+### Community 14 - "Grok Research Queue"
 Cohesion: 1.0
 Nodes (1): GROK INBOX (Questions for Grok)
 
 ## Knowledge Gaps
 - **34 isolated node(s):** `Karpathy Protocol`, `G.Brain Hook`, `CEO (India-based)`, `Content Ceiling — Option A (Lena Paul Level)`, `Next.js 14 (App Router)` (+29 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **Thin community `Community 9`** (2 nodes): `sync()`, `sync_supabase.js`
+- **Thin community `Supabase Sync Module`** (2 nodes): `sync()`, `sync_supabase.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 10`** (2 nodes): `deriveRows()`, `test_derive.js`
+- **Thin community `Test Suite`** (2 nodes): `deriveRows()`, `test_derive.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 11`** (2 nodes): `RootLayout()`, `layout.js`
+- **Thin community `App Layout`** (2 nodes): `RootLayout()`, `layout.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 12`** (1 nodes): `next.config.js`
+- **Thin community `Next.js Config`** (1 nodes): `next.config.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 13`** (1 nodes): `fallback-data.js`
+- **Thin community `Fallback Data`** (1 nodes): `fallback-data.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 14`** (1 nodes): `GROK INBOX (Questions for Grok)`
+- **Thin community `Grok Research Queue`** (1 nodes): `GROK INBOX (Questions for Grok)`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `Jasmine Project (CLAUDE.md)` connect `Community 2` to `Community 0`, `Community 1`, `Community 3`?**
+- **Why does `Jasmine Project (CLAUDE.md)` connect `Team Handoffs & Protocols` to `Content Strategy & Monetization`, `Project Governance & Finance`, `Dashboard & Infrastructure`?**
   _High betweenness centrality (0.291) - this node is a cross-community bridge._
-- **Why does `Jasmine Character (AI Influencer)` connect `Community 0` to `Community 1`, `Community 2`?**
+- **Why does `Jasmine Character (AI Influencer)` connect `Content Strategy & Monetization` to `Project Governance & Finance`, `Team Handoffs & Protocols`?**
   _High betweenness centrality (0.242) - this node is a cross-community bridge._
-- **Why does `GROK BRAIN — Jasmine Project State` connect `Community 1` to `Community 2`, `Community 6`?**
+- **Why does `GROK BRAIN — Jasmine Project State` connect `Project Governance & Finance` to `Team Handoffs & Protocols`, `LoRA Training Pipeline`?**
   _High betweenness centrality (0.191) - this node is a cross-community bridge._
 - **What connects `Karpathy Protocol`, `G.Brain Hook`, `CEO (India-based)` to the rest of the system?**
   _34 weakly-connected nodes found - possible documentation gaps or missing edges._
