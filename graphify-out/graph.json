@@ -204,7 +204,7 @@
       "label": "fi()",
       "file_type": "code",
       "source_file": "/Users/user/Desktop/Instagram/20_tech/jasmine-dashboard/components/PLDashboard.js",
-      "source_location": "L252",
+      "source_location": "L286",
       "id": "pldashboard_fi",
       "community": 7,
       "norm_label": "fi()"
@@ -213,7 +213,7 @@
       "label": "fL()",
       "file_type": "code",
       "source_file": "/Users/user/Desktop/Instagram/20_tech/jasmine-dashboard/components/PLDashboard.js",
-      "source_location": "L253",
+      "source_location": "L287",
       "id": "pldashboard_fl",
       "community": 7,
       "norm_label": "fl()"
@@ -222,7 +222,7 @@
       "label": "deriveRows()",
       "file_type": "code",
       "source_file": "/Users/user/Desktop/Instagram/20_tech/jasmine-dashboard/components/PLDashboard.js",
-      "source_location": "L259",
+      "source_location": "L293",
       "id": "pldashboard_deriverows",
       "community": 7,
       "norm_label": "deriverows()"
@@ -231,7 +231,7 @@
       "label": "fCost()",
       "file_type": "code",
       "source_file": "/Users/user/Desktop/Instagram/20_tech/jasmine-dashboard/components/PLDashboard.js",
-      "source_location": "L323",
+      "source_location": "L357",
       "id": "pldashboard_fcost",
       "community": 7,
       "norm_label": "fcost()"
@@ -240,7 +240,7 @@
       "label": "PLDashboard()",
       "file_type": "code",
       "source_file": "/Users/user/Desktop/Instagram/20_tech/jasmine-dashboard/components/PLDashboard.js",
-      "source_location": "L331",
+      "source_location": "L365",
       "id": "pldashboard_pldashboard",
       "community": 7,
       "norm_label": "pldashboard()"
@@ -281,9 +281,9 @@
       "captured_at": "2026-04-19",
       "author": null,
       "contributor": null,
-      "id": "claude_md_jasmine_project",
       "community": 2,
-      "norm_label": "jasmine project (claude.md)"
+      "norm_label": "jasmine project (claude.md)",
+      "id": "claude_md_jasmine_project"
     },
     {
       "label": "Karpathy Protocol",
@@ -294,9 +294,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "claude_md_karpathy_protocol",
       "community": 2,
-      "norm_label": "karpathy protocol"
+      "norm_label": "karpathy protocol",
+      "id": "claude_md_karpathy_protocol"
     },
     {
       "label": "G.Brain Hook",
@@ -307,9 +307,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "claude_md_gbrain_hook",
       "community": 2,
-      "norm_label": "g.brain hook"
+      "norm_label": "g.brain hook",
+      "id": "claude_md_gbrain_hook"
     },
     {
       "label": "CEO (India-based)",
@@ -320,9 +320,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "claude_md_team_ceo",
       "community": 2,
-      "norm_label": "ceo (india-based)"
+      "norm_label": "ceo (india-based)",
+      "id": "claude_md_team_ceo"
     },
     {
       "label": "Grok (Research Gatekeeper)",
@@ -333,9 +333,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "claude_md_team_grok",
       "community": 2,
-      "norm_label": "grok (research gatekeeper)"
+      "norm_label": "grok (research gatekeeper)",
+      "id": "claude_md_team_grok"
     },
     {
       "label": "Antigravity (Research/Copy/Captions)",
@@ -346,9 +346,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "claude_md_team_antigravity",
       "community": 2,
-      "norm_label": "antigravity (research/copy/captions)"
+      "norm_label": "antigravity (research/copy/captions)",
+      "id": "claude_md_team_antigravity"
     },
     {
       "label": "Claude Code (Files/Code/Memory)",
@@ -359,9 +359,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "claude_md_team_claude",
       "community": 2,
-      "norm_label": "claude code (files/code/memory)"
+      "norm_label": "claude code (files/code/memory)",
+      "id": "claude_md_team_claude"
     },
     {
       "label": "Jasmine Character (AI Influencer)",
@@ -372,9 +372,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "claude_md_jasmine_character",
       "community": 0,
-      "norm_label": "jasmine character (ai influencer)"
+      "norm_label": "jasmine character (ai influencer)",
+      "id": "claude_md_jasmine_character"
     },
     {
       "label": "Content Ceiling \u2014 Option A (Lena Paul Level)",
@@ -385,9 +385,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "claude_md_content_ceiling",
       "community": 0,
-      "norm_label": "content ceiling \u2014 option a (lena paul level)"
+      "norm_label": "content ceiling \u2014 option a (lena paul level)",
+      "id": "claude_md_content_ceiling"
     },
     {
       "label": "P&L Dashboard (virtual-influencer-dashboard.vercel.app)",
@@ -398,9 +398,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "claude_md_dashboard",
       "community": 3,
-      "norm_label": "p&l dashboard (virtual-influencer-dashboard.vercel.app)"
+      "norm_label": "p&l dashboard (virtual-influencer-dashboard.vercel.app)",
+      "id": "claude_md_dashboard"
     },
     {
       "label": "Fanvue Platform (GFE Revenue)",
@@ -411,9 +411,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "claude_md_fanvue_platform",
       "community": 0,
-      "norm_label": "fanvue platform (gfe revenue)"
+      "norm_label": "fanvue platform (gfe revenue)",
+      "id": "claude_md_fanvue_platform"
     },
     {
       "label": "Instagram Platform (Top-of-Funnel SFW)",
@@ -424,9 +424,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "claude_md_instagram_platform",
       "community": 0,
-      "norm_label": "instagram platform (top-of-funnel sfw)"
+      "norm_label": "instagram platform (top-of-funnel sfw)",
+      "id": "claude_md_instagram_platform"
     },
     {
       "label": "Vercel Deployment (API-only)",
@@ -437,9 +437,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "claude_md_vercel_deploy",
       "community": 3,
-      "norm_label": "vercel deployment (api-only)"
+      "norm_label": "vercel deployment (api-only)",
+      "id": "claude_md_vercel_deploy"
     },
     {
       "label": "Supabase Database (P&L Storage)",
@@ -450,9 +450,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "claude_md_supabase",
       "community": 3,
-      "norm_label": "supabase database (p&l storage)"
+      "norm_label": "supabase database (p&l storage)",
+      "id": "claude_md_supabase"
     },
     {
       "label": "Deploy Guide \u2014 Jasmine P&L Dashboard",
@@ -463,9 +463,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "deploy_md_deploy_guide",
       "community": 3,
-      "norm_label": "deploy guide \u2014 jasmine p&l dashboard"
+      "norm_label": "deploy guide \u2014 jasmine p&l dashboard",
+      "id": "deploy_md_deploy_guide"
     },
     {
       "label": "Next.js 14 (App Router)",
@@ -476,9 +476,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "deploy_md_nextjs14",
       "community": 3,
-      "norm_label": "next.js 14 (app router)"
+      "norm_label": "next.js 14 (app router)",
+      "id": "deploy_md_nextjs14"
     },
     {
       "label": "Vercel API Deployment Process",
@@ -489,9 +489,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "deploy_md_vercel_api",
       "community": 3,
-      "norm_label": "vercel api deployment process"
+      "norm_label": "vercel api deployment process",
+      "id": "deploy_md_vercel_api"
     },
     {
       "label": "Fallback Data (lib/fallback-data.js)",
@@ -502,9 +502,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "deploy_md_fallback_data",
       "community": 3,
-      "norm_label": "fallback data (lib/fallback-data.js)"
+      "norm_label": "fallback data (lib/fallback-data.js)",
+      "id": "deploy_md_fallback_data"
     },
     {
       "label": "GitHub Account: rheavoss",
@@ -515,9 +515,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "deploy_md_rheavoss_account",
       "community": 3,
-      "norm_label": "github account: rheavoss"
+      "norm_label": "github account: rheavoss",
+      "id": "deploy_md_rheavoss_account"
     },
     {
       "label": "jasmine_v1.safetensors (LoRA \u2014 DEPRECATED)",
@@ -528,9 +528,9 @@
       "captured_at": "2026-04-19",
       "author": null,
       "contributor": null,
-      "id": "grok_verify_ralph_lora_v1",
       "community": 6,
-      "norm_label": "jasmine_v1.safetensors (lora \u2014 deprecated)"
+      "norm_label": "jasmine_v1.safetensors (lora \u2014 deprecated)",
+      "id": "grok_verify_ralph_lora_v1"
     },
     {
       "label": "RALPH v16.1-jasmine (Governance System)",
@@ -541,9 +541,9 @@
       "captured_at": "2026-04-19",
       "author": null,
       "contributor": null,
-      "id": "grok_verify_ralph_system",
       "community": 1,
-      "norm_label": "ralph v16.1-jasmine (governance system)"
+      "norm_label": "ralph v16.1-jasmine (governance system)",
+      "id": "grok_verify_ralph_system"
     },
     {
       "label": "ralph-gate-enforcer.yml (CI Workflow)",
@@ -554,9 +554,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "grok_verify_ralph_gate_enforcer",
       "community": 1,
-      "norm_label": "ralph-gate-enforcer.yml (ci workflow)"
+      "norm_label": "ralph-gate-enforcer.yml (ci workflow)",
+      "id": "grok_verify_ralph_gate_enforcer"
     },
     {
       "label": "auto-merge-dev.yml (CI Workflow)",
@@ -567,9 +567,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "grok_verify_ralph_auto_merge",
       "community": 1,
-      "norm_label": "auto-merge-dev.yml (ci workflow)"
+      "norm_label": "auto-merge-dev.yml (ci workflow)",
+      "id": "grok_verify_ralph_auto_merge"
     },
     {
       "label": "Brain Auto-Sync Hook (task-brain-sync.sh)",
@@ -580,9 +580,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "grok_verify_ralph_brain_sync",
       "community": 1,
-      "norm_label": "brain auto-sync hook (task-brain-sync.sh)"
+      "norm_label": "brain auto-sync hook (task-brain-sync.sh)",
+      "id": "grok_verify_ralph_brain_sync"
     },
     {
       "label": "Vast.ai RTX 4090 Training",
@@ -593,9 +593,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "grok_verify_ralph_vast_ai",
       "community": 6,
-      "norm_label": "vast.ai rtx 4090 training"
+      "norm_label": "vast.ai rtx 4090 training",
+      "id": "grok_verify_ralph_vast_ai"
     },
     {
       "label": "GROK BRAIN \u2014 Jasmine Project State",
@@ -606,9 +606,9 @@
       "captured_at": "2026-04-22",
       "author": null,
       "contributor": null,
-      "id": "grok_brain_project_overview",
       "community": 1,
-      "norm_label": "grok brain \u2014 jasmine project state"
+      "norm_label": "grok brain \u2014 jasmine project state",
+      "id": "grok_brain_project_overview"
     },
     {
       "label": "Jasmine Character Spec (jasmakogirl)",
@@ -619,9 +619,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "grok_brain_jasmine_spec",
       "community": 1,
-      "norm_label": "jasmine character spec (jasmakogirl)"
+      "norm_label": "jasmine character spec (jasmakogirl)",
+      "id": "grok_brain_jasmine_spec"
     },
     {
       "label": "jasmine_lora_v2 Dataset (40 clean images)",
@@ -632,9 +632,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "grok_brain_dataset_v2",
       "community": 6,
-      "norm_label": "jasmine_lora_v2 dataset (40 clean images)"
+      "norm_label": "jasmine_lora_v2 dataset (40 clean images)",
+      "id": "grok_brain_dataset_v2"
     },
     {
       "label": "v2 LoRA Training (PENDING)",
@@ -645,9 +645,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "grok_brain_lora_v2_pending",
       "community": 6,
-      "norm_label": "v2 lora training (pending)"
+      "norm_label": "v2 lora training (pending)",
+      "id": "grok_brain_lora_v2_pending"
     },
     {
       "label": "RALPH Protocol (MECHANICALLY ACTIVE)",
@@ -658,9 +658,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "grok_brain_ralph_protocol",
       "community": 1,
-      "norm_label": "ralph protocol (mechanically active)"
+      "norm_label": "ralph protocol (mechanically active)",
+      "id": "grok_brain_ralph_protocol"
     },
     {
       "label": "Financial Snapshot (\u20b910,973/month burn)",
@@ -671,9 +671,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "grok_brain_financial_snapshot",
       "community": 1,
-      "norm_label": "financial snapshot (\u20b910,973/month burn)"
+      "norm_label": "financial snapshot (\u20b910,973/month burn)",
+      "id": "grok_brain_financial_snapshot"
     },
     {
       "label": "Year-1 Projection (\u20b92.25Cr pre-tax)",
@@ -684,9 +684,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "grok_brain_year1_projection",
       "community": 1,
-      "norm_label": "year-1 projection (\u20b92.25cr pre-tax)"
+      "norm_label": "year-1 projection (\u20b92.25cr pre-tax)",
+      "id": "grok_brain_year1_projection"
     },
     {
       "label": "Multi-Character Scaling Plan",
@@ -697,9 +697,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "grok_brain_multi_char_scaling",
       "community": 1,
-      "norm_label": "multi-character scaling plan"
+      "norm_label": "multi-character scaling plan",
+      "id": "grok_brain_multi_char_scaling"
     },
     {
       "label": "FLUX.1-dev Base Model",
@@ -710,9 +710,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "grok_brain_flux_dev",
       "community": 6,
-      "norm_label": "flux.1-dev base model"
+      "norm_label": "flux.1-dev base model",
+      "id": "grok_brain_flux_dev"
     },
     {
       "label": "Kling Image 3 (Generation Tool)",
@@ -723,9 +723,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "grok_brain_kling_tool",
       "community": 6,
-      "norm_label": "kling image 3 (generation tool)"
+      "norm_label": "kling image 3 (generation tool)",
+      "id": "grok_brain_kling_tool"
     },
     {
       "label": "Higgsfield (AI Video Platform)",
@@ -736,9 +736,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "grok_brain_higgsfield",
       "community": 0,
-      "norm_label": "higgsfield (ai video platform)"
+      "norm_label": "higgsfield (ai video platform)",
+      "id": "grok_brain_higgsfield"
     },
     {
       "label": "VoiceBox (Free Local Voice Clone)",
@@ -749,9 +749,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "grok_brain_voicebox",
       "community": 1,
-      "norm_label": "voicebox (free local voice clone)"
+      "norm_label": "voicebox (free local voice clone)",
+      "id": "grok_brain_voicebox"
     },
     {
       "label": "Grok G0 Research Gate Checklist",
@@ -762,9 +762,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "grok_brain_g0_checklist",
       "community": 1,
-      "norm_label": "grok g0 research gate checklist"
+      "norm_label": "grok g0 research gate checklist",
+      "id": "grok_brain_g0_checklist"
     },
     {
       "label": "Framework Intake Rule (every strategy needs task ID)",
@@ -775,9 +775,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "grok_brain_framework_intake_rule",
       "community": 1,
-      "norm_label": "framework intake rule (every strategy needs task id)"
+      "norm_label": "framework intake rule (every strategy needs task id)",
+      "id": "grok_brain_framework_intake_rule"
     },
     {
       "label": "Hybrid Faceless RPV YouTube Strategy (P1-52)",
@@ -788,9 +788,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "youtube_rpv_strategy",
       "community": 0,
-      "norm_label": "hybrid faceless rpv youtube strategy (p1-52)"
+      "norm_label": "hybrid faceless rpv youtube strategy (p1-52)",
+      "id": "youtube_rpv_strategy"
     },
     {
       "label": "YouTube Channel A \u2014 AI Creator Insider (English)",
@@ -801,9 +801,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "youtube_rpv_channel_a",
       "community": 0,
-      "norm_label": "youtube channel a \u2014 ai creator insider (english)"
+      "norm_label": "youtube channel a \u2014 ai creator insider (english)",
+      "id": "youtube_rpv_channel_a"
     },
     {
       "label": "YouTube Channel B \u2014 Jasmine Hindi",
@@ -814,9 +814,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "youtube_rpv_channel_b",
       "community": 0,
-      "norm_label": "youtube channel b \u2014 jasmine hindi"
+      "norm_label": "youtube channel b \u2014 jasmine hindi",
+      "id": "youtube_rpv_channel_b"
     },
     {
       "label": "Rationale: YouTube RPV stacks AdSense + affiliate + Fanvue CTAs",
@@ -827,9 +827,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "youtube_rpv_rationale",
       "community": 0,
-      "norm_label": "rationale: youtube rpv stacks adsense + affiliate + fanvue ctas"
+      "norm_label": "rationale: youtube rpv stacks adsense + affiliate + fanvue ctas",
+      "id": "youtube_rpv_rationale"
     },
     {
       "label": "AI Personas Authority Strategy (P1-51)",
@@ -840,9 +840,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "ai_personas_strategy",
       "community": 0,
-      "norm_label": "ai personas authority strategy (p1-51)"
+      "norm_label": "ai personas authority strategy (p1-51)",
+      "id": "ai_personas_strategy"
     },
     {
       "label": "Rationale: AI personas create social proof / FOMO / search traffic",
@@ -853,9 +853,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "ai_personas_rationale",
       "community": 0,
-      "norm_label": "rationale: ai personas create social proof / fomo / search traffic"
+      "norm_label": "rationale: ai personas create social proof / fomo / search traffic",
+      "id": "ai_personas_rationale"
     },
     {
       "label": "Threads Scaling SOP (P1-50)",
@@ -866,9 +866,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "threads_scaling_sop",
       "community": 0,
-      "norm_label": "threads scaling sop (p1-50)"
+      "norm_label": "threads scaling sop (p1-50)",
+      "id": "threads_scaling_sop"
     },
     {
       "label": "7-Day Threads Account Warm-Up",
@@ -879,9 +879,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "threads_7day_warmup",
       "community": 0,
-      "norm_label": "7-day threads account warm-up"
+      "norm_label": "7-day threads account warm-up",
+      "id": "threads_7day_warmup"
     },
     {
       "label": "SEO Strategy Hub (09_marketing/seo/)",
@@ -892,9 +892,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "seo_readme",
       "community": 4,
-      "norm_label": "seo strategy hub (09_marketing/seo/)"
+      "norm_label": "seo strategy hub (09_marketing/seo/)",
+      "id": "seo_readme"
     },
     {
       "label": "Three-Layer SEO Approach (Backlinks + pSEO + GeoDirectory)",
@@ -905,9 +905,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "seo_three_layer",
       "community": 4,
-      "norm_label": "three-layer seo approach (backlinks + pseo + geodirectory)"
+      "norm_label": "three-layer seo approach (backlinks + pseo + geodirectory)",
+      "id": "seo_three_layer"
     },
     {
       "label": "GeoDirectory SEO Flywheel (P1-49)",
@@ -918,9 +918,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "geo_directory_seo",
       "community": 4,
-      "norm_label": "geodirectory seo flywheel (p1-49)"
+      "norm_label": "geodirectory seo flywheel (p1-49)",
+      "id": "geo_directory_seo"
     },
     {
       "label": "Path A: Webflow + Airtable + WhaleSync",
@@ -931,9 +931,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "geo_directory_path_a",
       "community": 4,
-      "norm_label": "path a: webflow + airtable + whalesync"
+      "norm_label": "path a: webflow + airtable + whalesync",
+      "id": "geo_directory_path_a"
     },
     {
       "label": "Path B: WordPress + GeoDirectory Plugin",
@@ -944,9 +944,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "geo_directory_path_b",
       "community": 4,
-      "norm_label": "path b: wordpress + geodirectory plugin"
+      "norm_label": "path b: wordpress + geodirectory plugin",
+      "id": "geo_directory_path_b"
     },
     {
       "label": "Rationale: location\u00d7category flywheel compounds organic traffic over time",
@@ -957,9 +957,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "geo_directory_rationale",
       "community": 4,
-      "norm_label": "rationale: location\u00d7category flywheel compounds organic traffic over time"
+      "norm_label": "rationale: location\u00d7category flywheel compounds organic traffic over time",
+      "id": "geo_directory_rationale"
     },
     {
       "label": "Programmatic SEO Strategy (P1-48)",
@@ -970,9 +970,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "programmatic_seo",
       "community": 4,
-      "norm_label": "programmatic seo strategy (p1-48)"
+      "norm_label": "programmatic seo strategy (p1-48)",
+      "id": "programmatic_seo"
     },
     {
       "label": "pSEO Toolchain (Cursor + Claude Code + Firecrawl + Perplexity)",
@@ -983,9 +983,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "programmatic_seo_tools",
       "community": 4,
-      "norm_label": "pseo toolchain (cursor + claude code + firecrawl + perplexity)"
+      "norm_label": "pseo toolchain (cursor + claude code + firecrawl + perplexity)",
+      "id": "programmatic_seo_tools"
     },
     {
       "label": "Rationale: thousands of long-tail pages = compounding organic traffic moat",
@@ -996,9 +996,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "programmatic_seo_rationale",
       "community": 4,
-      "norm_label": "rationale: thousands of long-tail pages = compounding organic traffic moat"
+      "norm_label": "rationale: thousands of long-tail pages = compounding organic traffic moat",
+      "id": "programmatic_seo_rationale"
     },
     {
       "label": "Jasmine Media Kit (P1-59)",
@@ -1009,9 +1009,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "jasmine_media_kit",
       "community": 8,
-      "norm_label": "jasmine media kit (p1-59)"
+      "norm_label": "jasmine media kit (p1-59)",
+      "id": "jasmine_media_kit"
     },
     {
       "label": "Brand Deal Platforms SOP (P1-60)",
@@ -1022,9 +1022,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "brand_deal_sop",
       "community": 8,
-      "norm_label": "brand deal platforms sop (p1-60)"
+      "norm_label": "brand deal platforms sop (p1-60)",
+      "id": "brand_deal_sop"
     },
     {
       "label": "Collabstr (Brand Deal Platform)",
@@ -1035,9 +1035,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "brand_deal_collabstr",
       "community": 8,
-      "norm_label": "collabstr (brand deal platform)"
+      "norm_label": "collabstr (brand deal platform)",
+      "id": "brand_deal_collabstr"
     },
     {
       "label": "Passionfroot (Creator Storefront)",
@@ -1048,9 +1048,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "brand_deal_passionfroot",
       "community": 8,
-      "norm_label": "passionfroot (creator storefront)"
+      "norm_label": "passionfroot (creator storefront)",
+      "id": "brand_deal_passionfroot"
     },
     {
       "label": "Infinity (infinityapp.in \u2014 USD payment collection India)",
@@ -1061,9 +1061,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "brand_deal_infinity",
       "community": 8,
-      "norm_label": "infinity (infinityapp.in \u2014 usd payment collection india)"
+      "norm_label": "infinity (infinityapp.in \u2014 usd payment collection india)",
+      "id": "brand_deal_infinity"
     },
     {
       "label": "7-Day Instagram Warm-Up SOP (P1-56)",
@@ -1074,9 +1074,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "ig_warmup_sop",
       "community": 0,
-      "norm_label": "7-day instagram warm-up sop (p1-56)"
+      "norm_label": "7-day instagram warm-up sop (p1-56)",
+      "id": "ig_warmup_sop"
     },
     {
       "label": "IG Ban Prevention Rules",
@@ -1087,9 +1087,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "ig_warmup_ban_prevention",
       "community": 0,
-      "norm_label": "ig ban prevention rules"
+      "norm_label": "ig ban prevention rules",
+      "id": "ig_warmup_ban_prevention"
     },
     {
       "label": "Studio Template (duplication_script.sh)",
@@ -1100,9 +1100,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "studio_template_readme",
       "community": 1,
-      "norm_label": "studio template (duplication_script.sh)"
+      "norm_label": "studio template (duplication_script.sh)",
+      "id": "studio_template_readme"
     },
     {
       "label": "Hybrid Workflow (Grok + Claude + Antigravity)",
@@ -1113,9 +1113,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "hybrid_workflow",
       "community": 2,
-      "norm_label": "hybrid workflow (grok + claude + antigravity)"
+      "norm_label": "hybrid workflow (grok + claude + antigravity)",
+      "id": "hybrid_workflow"
     },
     {
       "label": "GROK OUTBOX (Handoff Log)",
@@ -1126,9 +1126,9 @@
       "captured_at": "2026-04-22",
       "author": null,
       "contributor": null,
-      "id": "grok_outbox",
       "community": 2,
-      "norm_label": "grok outbox (handoff log)"
+      "norm_label": "grok outbox (handoff log)",
+      "id": "grok_outbox"
     },
     {
       "label": "v3 LoRA Training Crisis (legs cropped + watermarks)",
@@ -1139,9 +1139,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "grok_outbox_v3_crisis",
       "community": 6,
-      "norm_label": "v3 lora training crisis (legs cropped + watermarks)"
+      "norm_label": "v3 lora training crisis (legs cropped + watermarks)",
+      "id": "grok_outbox_v3_crisis"
     },
     {
       "label": "ANTIGRAVITY INBOX (Task Handoffs)",
@@ -1152,9 +1152,9 @@
       "captured_at": "2026-04-22",
       "author": null,
       "contributor": null,
-      "id": "antigravity_inbox",
       "community": 2,
-      "norm_label": "antigravity inbox (task handoffs)"
+      "norm_label": "antigravity inbox (task handoffs)",
+      "id": "antigravity_inbox"
     },
     {
       "label": "CLAUDE INBOX (Specs from Grok)",
@@ -1165,9 +1165,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "claude_inbox",
       "community": 2,
-      "norm_label": "claude inbox (specs from grok)"
+      "norm_label": "claude inbox (specs from grok)",
+      "id": "claude_inbox"
     },
     {
       "label": "RALPH Live Checklist (Grok Enforces)",
@@ -1178,9 +1178,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "ralph_checklist",
       "community": 2,
-      "norm_label": "ralph live checklist (grok enforces)"
+      "norm_label": "ralph live checklist (grok enforces)",
+      "id": "ralph_checklist"
     },
     {
       "label": "GROK INBOX (Questions for Grok)",
@@ -1191,9 +1191,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "grok_inbox",
       "community": 14,
-      "norm_label": "grok inbox (questions for grok)"
+      "norm_label": "grok inbox (questions for grok)",
+      "id": "grok_inbox"
     },
     {
       "label": "G.Brain Handoff Template",
@@ -1204,9 +1204,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "handoff_template",
       "community": 2,
-      "norm_label": "g.brain handoff template"
+      "norm_label": "g.brain handoff template",
+      "id": "handoff_template"
     },
     {
       "label": "graph.html (Knowledge Graph Visualizer)",
@@ -1217,9 +1217,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "graph_html_dashboard_viz",
       "community": 3,
-      "norm_label": "graph.html (knowledge graph visualizer)"
+      "norm_label": "graph.html (knowledge graph visualizer)",
+      "id": "graph_html_dashboard_viz"
     }
   ],
   "links": [
@@ -1347,7 +1347,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "/Users/user/Desktop/Instagram/20_tech/jasmine-dashboard/components/PLDashboard.js",
-      "source_location": "L252",
+      "source_location": "L286",
       "weight": 1.0,
       "_src": "users_user_desktop_instagram_20_tech_jasmine_dashboard_components_pldashboard_js",
       "_tgt": "pldashboard_fi",
@@ -1359,7 +1359,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "/Users/user/Desktop/Instagram/20_tech/jasmine-dashboard/components/PLDashboard.js",
-      "source_location": "L253",
+      "source_location": "L287",
       "weight": 1.0,
       "_src": "users_user_desktop_instagram_20_tech_jasmine_dashboard_components_pldashboard_js",
       "_tgt": "pldashboard_fl",
@@ -1371,7 +1371,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "/Users/user/Desktop/Instagram/20_tech/jasmine-dashboard/components/PLDashboard.js",
-      "source_location": "L259",
+      "source_location": "L293",
       "weight": 1.0,
       "_src": "users_user_desktop_instagram_20_tech_jasmine_dashboard_components_pldashboard_js",
       "_tgt": "pldashboard_deriverows",
@@ -1383,7 +1383,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "/Users/user/Desktop/Instagram/20_tech/jasmine-dashboard/components/PLDashboard.js",
-      "source_location": "L323",
+      "source_location": "L357",
       "weight": 1.0,
       "_src": "users_user_desktop_instagram_20_tech_jasmine_dashboard_components_pldashboard_js",
       "_tgt": "pldashboard_fcost",
@@ -1395,7 +1395,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "/Users/user/Desktop/Instagram/20_tech/jasmine-dashboard/components/PLDashboard.js",
-      "source_location": "L331",
+      "source_location": "L365",
       "weight": 1.0,
       "_src": "users_user_desktop_instagram_20_tech_jasmine_dashboard_components_pldashboard_js",
       "_tgt": "pldashboard_pldashboard",
@@ -1407,7 +1407,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "/Users/user/Desktop/Instagram/20_tech/jasmine-dashboard/components/PLDashboard.js",
-      "source_location": "L593",
+      "source_location": "L640",
       "weight": 1.0,
       "_src": "pldashboard_pldashboard",
       "_tgt": "pldashboard_fi",
@@ -1530,8 +1530,8 @@
       "source_file": "99_grok_brain/GROK_BRAIN_SUMMARY.md",
       "source_location": null,
       "weight": 1.0,
-      "_src": "grok_brain_project_overview",
-      "_tgt": "claude_md_jasmine_project",
+      "_src": "claude_md_jasmine_project",
+      "_tgt": "grok_brain_project_overview",
       "source": "claude_md_jasmine_project",
       "target": "grok_brain_project_overview"
     },
@@ -1542,8 +1542,8 @@
       "source_file": "99_grok_brain/GROK_VERIFY_RALPH.md",
       "source_location": null,
       "weight": 0.85,
-      "_src": "grok_verify_ralph_system",
-      "_tgt": "claude_md_team_grok",
+      "_src": "claude_md_team_grok",
+      "_tgt": "grok_verify_ralph_system",
       "source": "claude_md_team_grok",
       "target": "grok_verify_ralph_system"
     },
@@ -1554,8 +1554,8 @@
       "source_file": "90_protocols/HYBRID_WORKFLOW.md",
       "source_location": null,
       "weight": 1.0,
-      "_src": "hybrid_workflow",
-      "_tgt": "claude_md_team_grok",
+      "_src": "claude_md_team_grok",
+      "_tgt": "hybrid_workflow",
       "source": "claude_md_team_grok",
       "target": "hybrid_workflow"
     },
@@ -1566,8 +1566,8 @@
       "source_file": "90_protocols/HYBRID_WORKFLOW.md",
       "source_location": null,
       "weight": 1.0,
-      "_src": "hybrid_workflow",
-      "_tgt": "claude_md_team_antigravity",
+      "_src": "claude_md_team_antigravity",
+      "_tgt": "hybrid_workflow",
       "source": "claude_md_team_antigravity",
       "target": "hybrid_workflow"
     },
@@ -1578,8 +1578,8 @@
       "source_file": "90_protocols/HYBRID_WORKFLOW.md",
       "source_location": null,
       "weight": 1.0,
-      "_src": "hybrid_workflow",
-      "_tgt": "claude_md_team_claude",
+      "_src": "claude_md_team_claude",
+      "_tgt": "hybrid_workflow",
       "source": "claude_md_team_claude",
       "target": "hybrid_workflow"
     },
@@ -1626,8 +1626,8 @@
       "source_file": "99_grok_brain/GROK_BRAIN_SUMMARY.md",
       "source_location": null,
       "weight": 0.9,
-      "_src": "grok_brain_jasmine_spec",
-      "_tgt": "claude_md_jasmine_character",
+      "_src": "claude_md_jasmine_character",
+      "_tgt": "grok_brain_jasmine_spec",
       "source": "claude_md_jasmine_character",
       "target": "grok_brain_jasmine_spec"
     },
@@ -1638,8 +1638,8 @@
       "source_file": "09_marketing/growth/ai_personas_authority_strategy.md",
       "source_location": null,
       "weight": 1.0,
-      "_src": "ai_personas_strategy",
-      "_tgt": "claude_md_jasmine_character",
+      "_src": "claude_md_jasmine_character",
+      "_tgt": "ai_personas_strategy",
       "source": "claude_md_jasmine_character",
       "target": "ai_personas_strategy"
     },
@@ -1674,8 +1674,8 @@
       "source_file": "20_tech/jasmine-dashboard/public/graph.html",
       "source_location": null,
       "weight": 0.75,
-      "_src": "graph_html_dashboard_viz",
-      "_tgt": "claude_md_dashboard",
+      "_src": "claude_md_dashboard",
+      "_tgt": "graph_html_dashboard_viz",
       "source": "claude_md_dashboard",
       "target": "graph_html_dashboard_viz"
     },
@@ -1686,8 +1686,8 @@
       "source_file": "09_marketing/youtube/hybrid_youtube_rpv_strategy.md",
       "source_location": null,
       "weight": 1.0,
-      "_src": "youtube_rpv_strategy",
-      "_tgt": "claude_md_fanvue_platform",
+      "_src": "claude_md_fanvue_platform",
+      "_tgt": "youtube_rpv_strategy",
       "source": "claude_md_fanvue_platform",
       "target": "youtube_rpv_strategy"
     },
@@ -1698,8 +1698,8 @@
       "source_file": "09_marketing/growth/ai_personas_authority_strategy.md",
       "source_location": null,
       "weight": 1.0,
-      "_src": "ai_personas_strategy",
-      "_tgt": "claude_md_fanvue_platform",
+      "_src": "claude_md_fanvue_platform",
+      "_tgt": "ai_personas_strategy",
       "source": "claude_md_fanvue_platform",
       "target": "ai_personas_strategy"
     },
@@ -1710,8 +1710,8 @@
       "source_file": "09_marketing/threads/threads_scaling_sop.md",
       "source_location": null,
       "weight": 1.0,
-      "_src": "threads_scaling_sop",
-      "_tgt": "claude_md_fanvue_platform",
+      "_src": "claude_md_fanvue_platform",
+      "_tgt": "threads_scaling_sop",
       "source": "claude_md_fanvue_platform",
       "target": "threads_scaling_sop"
     },
@@ -1722,8 +1722,8 @@
       "source_file": "09_marketing/seo/programmatic_seo_strategy.md",
       "source_location": null,
       "weight": 1.0,
-      "_src": "programmatic_seo",
-      "_tgt": "claude_md_fanvue_platform",
+      "_src": "claude_md_fanvue_platform",
+      "_tgt": "programmatic_seo",
       "source": "claude_md_fanvue_platform",
       "target": "programmatic_seo"
     },
@@ -1734,8 +1734,8 @@
       "source_file": "09_marketing/seo/programmatic_seo_strategy.md",
       "source_location": null,
       "weight": 1.0,
-      "_src": "programmatic_seo",
-      "_tgt": "claude_md_instagram_platform",
+      "_src": "claude_md_instagram_platform",
+      "_tgt": "programmatic_seo",
       "source": "claude_md_instagram_platform",
       "target": "programmatic_seo"
     },
@@ -1746,8 +1746,8 @@
       "source_file": "09_marketing/instagram/ig_warmup_sop.md",
       "source_location": null,
       "weight": 0.85,
-      "_src": "ig_warmup_sop",
-      "_tgt": "claude_md_instagram_platform",
+      "_src": "claude_md_instagram_platform",
+      "_tgt": "ig_warmup_sop",
       "source": "claude_md_instagram_platform",
       "target": "ig_warmup_sop"
     },
@@ -1758,8 +1758,8 @@
       "source_file": "20_tech/jasmine-dashboard/DEPLOY.md",
       "source_location": null,
       "weight": 0.9,
-      "_src": "deploy_md_vercel_api",
-      "_tgt": "claude_md_vercel_deploy",
+      "_src": "claude_md_vercel_deploy",
+      "_tgt": "deploy_md_vercel_api",
       "source": "claude_md_vercel_deploy",
       "target": "deploy_md_vercel_api"
     },
@@ -1770,8 +1770,8 @@
       "source_file": "20_tech/jasmine-dashboard/DEPLOY.md",
       "source_location": null,
       "weight": 1.0,
-      "_src": "deploy_md_deploy_guide",
-      "_tgt": "claude_md_supabase",
+      "_src": "claude_md_supabase",
+      "_tgt": "deploy_md_deploy_guide",
       "source": "claude_md_supabase",
       "target": "deploy_md_deploy_guide"
     },
@@ -1878,8 +1878,8 @@
       "source_file": "99_grok_brain/GROK_BRAIN_SUMMARY.md",
       "source_location": null,
       "weight": 0.9,
-      "_src": "grok_brain_ralph_protocol",
-      "_tgt": "grok_verify_ralph_system",
+      "_src": "grok_verify_ralph_system",
+      "_tgt": "grok_brain_ralph_protocol",
       "source": "grok_verify_ralph_system",
       "target": "grok_brain_ralph_protocol"
     },
@@ -1890,8 +1890,8 @@
       "source_file": "90_protocols/HYBRID_WORKFLOW.md",
       "source_location": null,
       "weight": 1.0,
-      "_src": "hybrid_workflow",
-      "_tgt": "grok_verify_ralph_system",
+      "_src": "grok_verify_ralph_system",
+      "_tgt": "hybrid_workflow",
       "source": "grok_verify_ralph_system",
       "target": "hybrid_workflow"
     },
@@ -1902,8 +1902,8 @@
       "source_file": "99_grok_brain/GROK_BRAIN_SUMMARY.md",
       "source_location": null,
       "weight": 0.8,
-      "_src": "grok_brain_g0_checklist",
-      "_tgt": "grok_verify_ralph_gate_enforcer",
+      "_src": "grok_verify_ralph_gate_enforcer",
+      "_tgt": "grok_brain_g0_checklist",
       "source": "grok_verify_ralph_gate_enforcer",
       "target": "grok_brain_g0_checklist"
     },
@@ -1914,8 +1914,8 @@
       "source_file": "99_grok_brain/GROK_BRAIN_SUMMARY.md",
       "source_location": null,
       "weight": 1.0,
-      "_src": "grok_brain_lora_v2_pending",
-      "_tgt": "grok_verify_ralph_vast_ai",
+      "_src": "grok_verify_ralph_vast_ai",
+      "_tgt": "grok_brain_lora_v2_pending",
       "source": "grok_verify_ralph_vast_ai",
       "target": "grok_brain_lora_v2_pending"
     },
@@ -2058,8 +2058,8 @@
       "source_file": "90_protocols/gbrain_handoffs/GROK_OUTBOX.md",
       "source_location": null,
       "weight": 1.0,
-      "_src": "grok_outbox_v3_crisis",
-      "_tgt": "grok_brain_dataset_v2",
+      "_src": "grok_brain_dataset_v2",
+      "_tgt": "grok_outbox_v3_crisis",
       "source": "grok_brain_dataset_v2",
       "target": "grok_outbox_v3_crisis"
     },
@@ -2082,8 +2082,8 @@
       "source_file": "90_protocols/gbrain_handoffs/GROK_OUTBOX.md",
       "source_location": null,
       "weight": 0.85,
-      "_src": "grok_outbox_v3_crisis",
-      "_tgt": "grok_brain_lora_v2_pending",
+      "_src": "grok_brain_lora_v2_pending",
+      "_tgt": "grok_outbox_v3_crisis",
       "source": "grok_brain_lora_v2_pending",
       "target": "grok_outbox_v3_crisis"
     },
@@ -2106,8 +2106,8 @@
       "source_file": "00_studio_template/README.md",
       "source_location": null,
       "weight": 0.7,
-      "_src": "studio_template_readme",
-      "_tgt": "grok_brain_multi_char_scaling",
+      "_src": "grok_brain_multi_char_scaling",
+      "_tgt": "studio_template_readme",
       "source": "grok_brain_multi_char_scaling",
       "target": "studio_template_readme"
     },
@@ -2118,8 +2118,8 @@
       "source_file": "09_marketing/youtube/hybrid_youtube_rpv_strategy.md",
       "source_location": null,
       "weight": 1.0,
-      "_src": "youtube_rpv_strategy",
-      "_tgt": "grok_brain_higgsfield",
+      "_src": "grok_brain_higgsfield",
+      "_tgt": "youtube_rpv_strategy",
       "source": "grok_brain_higgsfield",
       "target": "youtube_rpv_strategy"
     },
@@ -2154,8 +2154,8 @@
       "source_file": "09_marketing/youtube/hybrid_youtube_rpv_strategy.md",
       "source_location": null,
       "weight": 1.0,
-      "_src": "youtube_rpv_rationale",
-      "_tgt": "youtube_rpv_strategy",
+      "_src": "youtube_rpv_strategy",
+      "_tgt": "youtube_rpv_rationale",
       "source": "youtube_rpv_strategy",
       "target": "youtube_rpv_rationale"
     },
@@ -2166,8 +2166,8 @@
       "source_file": "09_marketing/growth/ai_personas_authority_strategy.md",
       "source_location": null,
       "weight": 1.0,
-      "_src": "ai_personas_rationale",
-      "_tgt": "ai_personas_strategy",
+      "_src": "ai_personas_strategy",
+      "_tgt": "ai_personas_rationale",
       "source": "ai_personas_strategy",
       "target": "ai_personas_rationale"
     },
@@ -2286,8 +2286,8 @@
       "source_file": "09_marketing/seo/geo_directory_seo_hack.md",
       "source_location": null,
       "weight": 1.0,
-      "_src": "geo_directory_rationale",
-      "_tgt": "geo_directory_seo",
+      "_src": "geo_directory_seo",
+      "_tgt": "geo_directory_rationale",
       "source": "geo_directory_seo",
       "target": "geo_directory_rationale"
     },
@@ -2322,8 +2322,8 @@
       "source_file": "09_marketing/seo/programmatic_seo_strategy.md",
       "source_location": null,
       "weight": 1.0,
-      "_src": "programmatic_seo_rationale",
-      "_tgt": "programmatic_seo",
+      "_src": "programmatic_seo",
+      "_tgt": "programmatic_seo_rationale",
       "source": "programmatic_seo",
       "target": "programmatic_seo_rationale"
     },
@@ -2334,8 +2334,8 @@
       "source_file": "09_marketing/sponsorships/brand_deal_platforms_sop.md",
       "source_location": null,
       "weight": 1.0,
-      "_src": "brand_deal_sop",
-      "_tgt": "jasmine_media_kit",
+      "_src": "jasmine_media_kit",
+      "_tgt": "brand_deal_sop",
       "source": "jasmine_media_kit",
       "target": "brand_deal_sop"
     },
@@ -2454,8 +2454,8 @@
       "source_file": "90_protocols/gbrain_handoffs/HANDOFF_TEMPLATE.md",
       "source_location": null,
       "weight": 0.8,
-      "_src": "handoff_template",
-      "_tgt": "grok_outbox",
+      "_src": "grok_outbox",
+      "_tgt": "handoff_template",
       "source": "grok_outbox",
       "target": "handoff_template"
     },
@@ -2466,8 +2466,8 @@
       "source_file": "90_protocols/gbrain_handoffs/HANDOFF_TEMPLATE.md",
       "source_location": null,
       "weight": 0.8,
-      "_src": "handoff_template",
-      "_tgt": "antigravity_inbox",
+      "_src": "antigravity_inbox",
+      "_tgt": "handoff_template",
       "source": "antigravity_inbox",
       "target": "handoff_template"
     },
@@ -2478,8 +2478,8 @@
       "source_file": "90_protocols/gbrain_handoffs/HANDOFF_TEMPLATE.md",
       "source_location": null,
       "weight": 0.8,
-      "_src": "handoff_template",
-      "_tgt": "claude_inbox",
+      "_src": "claude_inbox",
+      "_tgt": "handoff_template",
       "source": "claude_inbox",
       "target": "handoff_template"
     }
