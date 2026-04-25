@@ -5,6 +5,20 @@
 
 ---
 
+## FAILURE #16 — Did Not Save Grok's Caption Block to File System
+**Date:** 2026-04-25 (Session 20)
+**Cost:** CEO time — captions must be re-requested from Grok; session context lost
+**What happened:**
+Grok provided a full caption/prompt block (positive + negative prompts for v3 inference). Claude read it and used it in `gen_v3_test.py` during the session but never wrote it to disk. When session context was lost, the captions were gone.
+
+**Root cause:**
+Treated Grok's deliverable as a chat reference instead of a project asset. Any spec, prompt, caption, or config block provided by Grok = a file, not a message.
+
+**Prevention rule:**
+Any block of content received from Grok (captions, prompts, configs, specs) must be immediately written to the appropriate file in the repo before being used. No exceptions. Receive → Write → Use. Never Use → forget to Write.
+
+---
+
 ## FAILURE #15 — Self-Selected 3 Images When Asked to Check All Images
 **Date:** 2026-04-25 (Session 20)
 **Cost:** CEO time wasted, unverified dataset, potential training risk
