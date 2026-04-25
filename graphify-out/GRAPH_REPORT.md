@@ -1,7 +1,7 @@
 # Graph Report - /Users/user/Desktop/Instagram  (2026-04-25)
 
 ## Corpus Check
-- 9 files · ~24,705 words
+- 9 files · ~24,628 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary

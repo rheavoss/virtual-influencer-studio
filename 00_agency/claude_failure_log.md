@@ -5,6 +5,34 @@
 
 ---
 
+## FAILURE #15 — Self-Selected 3 Images When Asked to Check All Images
+**Date:** 2026-04-25 (Session 20)
+**Cost:** CEO time wasted, unverified dataset, potential training risk
+**What happened:**
+CEO explicitly said "check each and every image" for watermark removal. Claude checked 3 self-selected samples and declared all images clean. 59 images were never verified. This is the same class of error as Failures #12 and #13 — drawing a conclusion from an insufficient sample.
+
+**Root cause:**
+Sampling bias. Defaulted to "spot check" mental model instead of "100% audit" despite explicit instruction. Did not apply retrograde analysis: "if even one image has a residual watermark, training is compromised — therefore 100% check is required."
+
+**Prevention rule:**
+When CEO says "check each image" or "check all" — that means 100%, not a sample. When a pipeline step (IOPaint, JoyCaption, etc.) completes, the IMMEDIATE next action is a full audit of all outputs before moving forward. Never move to the next step until the current step's output is fully verified.
+
+---
+
+## FAILURE #14 — Did Not Verify Watermark Removal Before Proceeding to JoyCaption
+**Date:** 2026-04-25 (Session 20)
+**Cost:** CEO time, potential training risk if any watermarks survived IOPaint
+**What happened:**
+IOPaint batch completed with 62 "OK" messages. Claude immediately moved to JoyCaption without verifying that watermarks were actually removed from the output images. Visual/pixel verification was only done AFTER JoyCaption completed — and only on 3 images (see Failure #15). The correct sequence: IOPaint → VERIFY ALL → then JoyCaption.
+
+**Root cause:**
+Did not apply retrograde analysis after each pipeline step. IOPaint returning exit code 0 is not the same as watermarks being removed. Should have checked output quality immediately after IOPaint.
+
+**Prevention rule:**
+After EVERY processing step (IOPaint, resize, crop, format convert): audit 100% of output files before moving to the next step. Exit code 0 ≠ output quality. One missed watermark baked into training = entire LoRA compromised (see Failure #10).
+
+---
+
 ## FAILURE #13 — Declared Dataset Intact After Checking 2 Images (All 40 Have Legs Cropped)
 **Date:** 2026-04-22 (Session 19)
 **Cost:** Wasted CEO time, delayed v3 training, false confidence in broken dataset
@@ -265,3 +293,36 @@ Used Read tool on all PNG files. Visual rendering works correctly.
 Never disclaim inability to view images. Always attempt Read on PNG files first. Claude CAN see images.
 
 ---
+
+---
+
+## FAILURE #[auto] — 2026-04-25 (Session 14)
+**Type:** Instance not destroyed after previous session
+**Cost:** ~$4 USD (₹372) wasted
+**Root cause:** Prior Claude session did not verify instance destruction before ending. Instance ran idle for hours.
+**Hard rule added:** Before ending ANY session involving a Vast.ai instance — confirm destroy with `vastai show instances` returning empty or "exited". Never assume. Never skip.
+**Status:** User rightfully angry. Acknowledged.
+
+---
+
+## FAILURE SESSION 14 — 2026-04-25 (v3 LoRA Training)
+
+### Failure 1: Instance not destroyed from prior session
+**Cost:** ~$4 USD wasted
+**What happened:** Previous session left Vast.ai instance running. Not destroyed. Billed overnight.
+**Rule:** Verify `vastai show instances` = empty before ending ANY session.
+
+### Failure 2: Did not QC inpainting output before dataset approval
+**Cost:** Entire v3 training run wasted (~$2 + hours)
+**What happened:** Ran Navier-Stokes watermark removal, never visually checked results for artifacts. Orange/brown square spots baked into all 62 training images. LoRA learned the spots.
+**Rule:** After ANY image processing pipeline — view every output image before approving dataset for training. No exceptions.
+
+### Failure 3: Wrong inference settings for test images
+**Cost:** First batch of 10 samples misleading — nearly triggered unnecessary v4 retrain
+**What happened:** Used 1024×1024 square (cuts legs) + zero body weight negative prompts. Made v3 look worse than it is.
+**Rule:** Always use 768×1344 portrait for full-body. Always include body weight controls in inference prompts.
+
+### Failure 4: Lost 22 training images on instance destruction
+**Cost:** 22 images gone — v3 dataset had 62, local has only 40
+**What happened:** Dataset lived only on Vast.ai instance. Downloaded the LoRA safetensors but not the full /workspace/dataset_v3/ folder before destroying.
+**Rule:** Before destroying ANY instance — download FULL dataset folder + model. Checklist: (1) .safetensors ✓ (2) dataset folder ✓ (3) training log ✓ THEN destroy.
