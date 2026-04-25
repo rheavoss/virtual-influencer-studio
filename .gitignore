@@ -40,7 +40,10 @@ credentials*
 
 # Giant model/image directories (To be handled by DVC, not Git)
 # NOTE: 01_characters/ is TEXT/JSON only — keep in git, NOT DVC
-03_ai_models/
+# NOTE: 03_ai_models/** + un-ignore dirs allows .md/.yaml/.json/.ipynb exceptions to work
+#       (03_ai_models/ would block git from traversing inside — exceptions silently fail)
+03_ai_models/**
+!03_ai_models/**/
 !03_ai_models/**/*.md
 !03_ai_models/**/*.yaml
 !03_ai_models/**/*.json

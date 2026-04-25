@@ -5,6 +5,34 @@
 
 ---
 
+## FAILURE #17 — False Damage Assessment: Declared 22 Images Lost Without Checking Local Mac
+**Date:** 2026-04-25 (Session 20)
+**Cost:** CEO trust, wasted audit credibility, false alarm in REPO_AUDIT_20260425.md
+**What happened:**
+Wrote in the audit report that 22 training images were "permanently lost" because the Vast.ai instance was destroyed. Did not check the local Mac first. All 62 images were sitting on Desktop in `~/Desktop/jasmine_lora_v3/` and `~/Desktop/dataset_v3_review/`. CEO had to correct this.
+
+**Root cause:**
+Same pattern as Failures #12, #13, #15 — drew a conclusion without doing the full check first. Assumed "not in the repo = lost" without searching the local filesystem.
+
+**Prevention rule:**
+Before declaring ANY asset lost: search the full local Mac (`find ~/Desktop ~/Downloads ~/Documents`) BEFORE writing a damage assessment. Never declare data loss without exhausting local sources first.
+
+---
+
+## FAILURE #16 — Did Not Save Grok's Caption Block to File System
+**Date:** 2026-04-25 (Session 20)
+**Cost:** CEO time — captions must be re-requested from Grok; session context lost
+**What happened:**
+Grok provided a full caption/prompt block (positive + negative prompts for v3 inference). Claude read it and used it in `gen_v3_test.py` during the session but never wrote it to disk. When session context was lost, the captions were gone.
+
+**Root cause:**
+Treated Grok's deliverable as a chat reference instead of a project asset. Any spec, prompt, caption, or config block provided by Grok = a file, not a message.
+
+**Prevention rule:**
+Any block of content received from Grok (captions, prompts, configs, specs) must be immediately written to the appropriate file in the repo before being used. No exceptions. Receive → Write → Use. Never Use → forget to Write.
+
+---
+
 ## FAILURE #15 — Self-Selected 3 Images When Asked to Check All Images
 **Date:** 2026-04-25 (Session 20)
 **Cost:** CEO time wasted, unverified dataset, potential training risk
