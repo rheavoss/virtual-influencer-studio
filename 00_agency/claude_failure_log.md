@@ -293,3 +293,12 @@ Used Read tool on all PNG files. Visual rendering works correctly.
 Never disclaim inability to view images. Always attempt Read on PNG files first. Claude CAN see images.
 
 ---
+
+---
+
+## FAILURE #[auto] — 2026-04-25 (Session 14)
+**Type:** Instance not destroyed after previous session
+**Cost:** ~$4 USD (₹372) wasted
+**Root cause:** Prior Claude session did not verify instance destruction before ending. Instance ran idle for hours.
+**Hard rule added:** Before ending ANY session involving a Vast.ai instance — confirm destroy with `vastai show instances` returning empty or "exited". Never assume. Never skip.
+**Status:** User rightfully angry. Acknowledged.
