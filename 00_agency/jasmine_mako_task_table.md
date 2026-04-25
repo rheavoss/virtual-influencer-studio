@@ -1,5 +1,5 @@
 # Jasmine Mako — Phase 0 & Phase 1 Execution Pipeline
-**Updated:** 2026-04-20 (Session 13 — P0-07 LoRA complete. P0-08 Higgsfield subscribed. Karpathy Protocol expanded. Vercel ignore-build-step fixed.)
+**Updated:** 2026-04-25 (Session 20 — v3 LoRA trained but DO NOT USE (Navier-Stokes inpainting artifacts baked in). v4 retrain blocked on 5 items — see P0-39 to P0-44. Full workspace audit complete (REPO_AUDIT_20260425.md). 17 documented Claude failures.)
 
 **Legend:**
 - **Assignee:** [Antigravity] (Code/Workflows/OpSec), [Claude Code] (Text Prompts/Scripting), [Grok] (Market Intel/Trends/X & Web Research), [CEO] (Physical accounts/Payments).
