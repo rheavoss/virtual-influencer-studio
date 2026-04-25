@@ -5,6 +5,34 @@
 
 ---
 
+## FAILURE #15 — Self-Selected 3 Images When Asked to Check All Images
+**Date:** 2026-04-25 (Session 20)
+**Cost:** CEO time wasted, unverified dataset, potential training risk
+**What happened:**
+CEO explicitly said "check each and every image" for watermark removal. Claude checked 3 self-selected samples and declared all images clean. 59 images were never verified. This is the same class of error as Failures #12 and #13 — drawing a conclusion from an insufficient sample.
+
+**Root cause:**
+Sampling bias. Defaulted to "spot check" mental model instead of "100% audit" despite explicit instruction. Did not apply retrograde analysis: "if even one image has a residual watermark, training is compromised — therefore 100% check is required."
+
+**Prevention rule:**
+When CEO says "check each image" or "check all" — that means 100%, not a sample. When a pipeline step (IOPaint, JoyCaption, etc.) completes, the IMMEDIATE next action is a full audit of all outputs before moving forward. Never move to the next step until the current step's output is fully verified.
+
+---
+
+## FAILURE #14 — Did Not Verify Watermark Removal Before Proceeding to JoyCaption
+**Date:** 2026-04-25 (Session 20)
+**Cost:** CEO time, potential training risk if any watermarks survived IOPaint
+**What happened:**
+IOPaint batch completed with 62 "OK" messages. Claude immediately moved to JoyCaption without verifying that watermarks were actually removed from the output images. Visual/pixel verification was only done AFTER JoyCaption completed — and only on 3 images (see Failure #15). The correct sequence: IOPaint → VERIFY ALL → then JoyCaption.
+
+**Root cause:**
+Did not apply retrograde analysis after each pipeline step. IOPaint returning exit code 0 is not the same as watermarks being removed. Should have checked output quality immediately after IOPaint.
+
+**Prevention rule:**
+After EVERY processing step (IOPaint, resize, crop, format convert): audit 100% of output files before moving to the next step. Exit code 0 ≠ output quality. One missed watermark baked into training = entire LoRA compromised (see Failure #10).
+
+---
+
 ## FAILURE #13 — Declared Dataset Intact After Checking 2 Images (All 40 Have Legs Cropped)
 **Date:** 2026-04-22 (Session 19)
 **Cost:** Wasted CEO time, delayed v3 training, false confidence in broken dataset
