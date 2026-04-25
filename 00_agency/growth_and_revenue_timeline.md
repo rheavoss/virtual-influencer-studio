@@ -1,8 +1,9 @@
 # Jasmine — Growth & Revenue Timeline
-**Target:** $2,000 MRR ASAP → $20,000 MRR by Month 12  
-**Model:** Every revenue platform live on Day 1  
+**Survival target:** ₹1L/month at M2 (127 Fanvue subs, 8,500 IG followers)  
+**Scale target:** ₹3L/month at M4 (380 subs, 25k followers) → ₹20L by M12  
+**Model:** Every revenue platform live on Day 1 — 5-platform stack  
 **Follower count:** Cross-platform total  
-**Last updated:** April 2026
+**Last updated:** 2026-04-24
 
 ---
 
@@ -16,7 +17,7 @@
 | Adult networks daily volume | ₹3,000/mo | 500–1,000 visits/day | High volume, lower quality vs IG ads |
 | Organic (hacks playbook) | ₹0 | — | Community pages, Reddit, Telegram bridge |
 
-**Passes.com note:** 90% creator keep rate vs Fanvue's 80%. Same content, higher margin. Launch same day as Fanvue.
+**5-platform Day 1 stack:** Fanvue (80% keep, primary) · Passes.com (90% keep, no-nudity policy = perfect fit) · MYM.fans (~80%, AI + #AI tag, European traffic) · Alua (80%, paid chat GFE) · LoyalFans (80%, niche traffic). Same content batch to all 5. Fansly = rejected (AI bans at payout).
 
 **Non-nude viability (research confirmed):** Top non-nude/softcore creators earn $5k–$30k/month. Fitness/travel niche earns $1,500–$6,000/month. Content ceiling (Lena Paul level) is fully commercially viable.
 
@@ -35,8 +36,11 @@
 | X / Twitter | Traffic + Revenue | 🔴 NSFW | Tips + direct Fanvue link + uncensored teasers |
 | Pinterest | Traffic | 🟢 SFW | Long shelf life, zero extra production |
 | Reddit | Traffic | 🔴 NSFW subs | Manual posts to AI model communities |
-| **Fanvue** | **Revenue** | 🔴 Full NSFW | Primary revenue engine |
-| **Passes.com** | **Revenue** | 🔴 Full NSFW | 90% keep rate — launches same day as Fanvue |
+| **Fanvue** | **Revenue** | 🔴 Full NSFW | Primary revenue engine — 80% keep |
+| **Passes.com** | **Revenue** | 🟡 Edge/Non-nude | 90% keep — no-nudity policy fits our ceiling |
+| **MYM.fans** | **Revenue** | 🔴 Full NSFW | ~80% keep — AI allowed, European traffic |
+| **Alua** | **Revenue** | 🔴 Full NSFW | 80% keep — paid chat GFE revenue |
+| **LoyalFans** | **Revenue** | 🔴 Full NSFW | 80% keep — AI allowed if labeled |
 
 ### Month 3 Addition
 | Platform | Role | Why Month 3 |
