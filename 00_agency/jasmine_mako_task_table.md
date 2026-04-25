@@ -25,7 +25,7 @@
 - [x] **[P0-04]** `[AI Ops]` (Antigravity) *(RICE: N/A - Done)* - Batch Generation script developed (`jasmine_batch_generator.py`).
 - [x] **[P0-05]** `[Content]` (CEO + Claude) *(RICE: N/A - Done)* - LoRA training dataset assembled: 38 images in `03_ai_models/jasmine_mako/training_data/jasmine_dataset/`. Generated via Kling Image 3 series mode (pink bikini reference, face-forward only). Outfits: black gym wear, pink micro bikini, white bodysuit, red bodycon. Completed 2026-04-18.
 - [x] **[P0-06]** `[Strategy]` (Claude) *(RICE: N/A - Done)* - Character Card written.
-- [x] **[P0-07]** `[AI Ops]` (CEO) *(RICE: 10×10×1.0÷3 = 33.3)* - ✅ COMPLETE 2026-04-19 — `jasmine_v1.safetensors` trained on Vast.ai. ostris/ai-toolkit, 2000 steps, LoRA rank 16. File in `03_ai_models/jasmine_mako/lora_checkpoints/`.
+- [x] **[P0-07]** `[AI Ops]` (CEO) *(RICE: 10×10×1.0÷3 = 33.3)* - ✅ COMPLETE 2026-04-19 — `jasmine_v1.safetensors` trained on Vast.ai. ostris/ai-toolkit, 2000 steps, LoRA rank 16. File in `03_ai_models/jasmine_mako/lora_checkpoints/`. **Training history:** v2 trained 2026-04-21 (watermarks baked in — DO NOT USE). v3 trained 2026-04-25 (Navier-Stokes inpainting artifacts on shoulders/chest — DO NOT USE). v4 retrain required — see P0-39 to P0-44.
 - [x] **[P0-08]** `[Exec Dept]` (CEO) *(RICE: 10×10×1.0÷1 = 100)* - ✅ COMPLETE — Higgsfield Starter subscribed ($9/mo).
 
 ### Link-in-Bio Setup 
@@ -65,6 +65,17 @@
 - [ ] **[P0-34]** `[Tech Ops]` (Grok / Claude) *(RICE: 9×9×1.0÷1 = 85)* - Integrate OpenMontage (agentic video studio) + Light Reel AI into content strategy and iteration workflow (screenshot/share tracking + "Product = Marketing" loop).
 - [ ] **[P0-35]** `[Strategy]` (Claude / Grok) *(RICE: N/A)* - Maintain and update `00_agency/master_frameworks_compilation.md` as living single source of truth for all collected strategies and tools.
 - [ ] **[P1-47]** `[Tech Ops]` (Antigravity) *(RICE: 8×8×1.0÷1 = 65)* - Implement Vugola AI + NotebookLM + Claude cost hack into automation pipeline for clipping, scheduling, and cheap large-context scripting.
+
+### v4 LoRA Retrain — CURRENT BLOCKER (2026-04-25)
+> **v3 verdict: DO NOT USE.** Navier-Stokes inpainting left brown/orange square spots on shoulders/chest — baked into model. Face 10/10. Body artifacts 6/10. v4 retrain required.
+> **Dataset state:** 62 images on CEO Desktop (`~/Desktop/jasmine_lora_v3/`). All legs cropped (1536×2402 actual vs 1536×2730 Kling 9:16 2K native). Zero caption .txt files (generated on Vast.ai instance, never downloaded — Failure #16).
+
+- [ ] **[P0-39]** `[AI Ops]` (Claude) *(RICE: 10×10×1.0÷1 = 100)* — **AWAITING CEO APPROVAL** LAMA local cleanup: remove Navier-Stokes square artifact spots from all 62 training images. ~15 min, ₹0 cost. After cleanup, show CEO 3 sample cleaned images for visual approval before proceeding to captions.
+- [ ] **[P0-40]** `[AI Ops]` (Grok) *(RICE: 10×10×1.0÷1 = 100)* — **GROK ACTION REQUIRED** Provide updated caption/prompt block with breast physics language for v4 training. v3 block lost on instance destruction (never saved to disk). Required before caption regeneration can begin.
+- [ ] **[P0-41]** `[Strategy]` (CEO + Grok) *(RICE: 10×10×1.0÷1 = 100)* — **DECISION NEEDED** Train v4 on 40 images (original repo subset, already in `03_ai_models/.../jasmine_dataset/`) or all 62 (full Kling recovery on Desktop, requires LAMA cleanup first)? Gates Step 5 of v4 sequence.
+- [ ] **[P0-42]** `[Exec Dept]` (CEO) *(RICE: 10×9×1.0÷2 = 45)* — **CEO ACTION** Fix leg-crop: regenerate 62 images at 1536×2730 via Kling OR confirm training proceeds on current 1536×2402 cropped versions. All images currently 12% shorter than Kling 9:16 2K native — legs cut off in every image.
+- [ ] **[P0-43]** `[AI Ops]` (Claude) *(RICE: 10×10×1.0÷2 = 50)* — **BLOCKED ON P0-40 + P0-42** Regenerate captions for all images via JoyCaption (local run). Do not start until Grok caption block (P0-40) and leg-crop decision (P0-42) are resolved.
+- [ ] **[P0-44]** `[AI Ops]` (CEO + Claude) *(RICE: 10×10×1.0÷3 = 33)* — **BLOCKED ON P0-39 to P0-43** Rent Vast.ai instance (inet_down≥500, pytorch 2.5.1), train `jasmine_v4.safetensors` at 768×1344. Mandatory pre-destroy checklist: .safetensors ✓ + full dataset/ folder ✓ + training log ✓. Do NOT destroy until all three confirmed downloaded.
 
 ### LoRA Training — Prompt Recovery & Dataset QC (Added 2026-04-18 — Grok TASK_TABLE_UPDATE_001)
 - [ ] **[P0-29]** `[Strategy]` (Grok / Claude) *(RICE: 10×10×1.0÷1 = 100)* - Recover or recreate missing master prompt files (`00_studio_template/master_generator_prompt_system.md` and `01_characters/jasmine/jasmine_generator_prompt.md`) referenced in April 16 Grok session. If intentionally removed, document replacement system in `jasmine_character_bible.json`.
