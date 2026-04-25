@@ -1,5 +1,5 @@
 # Jasmine Mako — Phase 0 & Phase 1 Execution Pipeline
-**Updated:** 2026-04-25 (Session 20 — v3 LoRA trained but DO NOT USE (Navier-Stokes inpainting artifacts baked in). v4 retrain blocked on 5 items — see P0-39 to P0-44. Full workspace audit complete (REPO_AUDIT_20260425.md). 17 documented Claude failures.)
+**Updated:** 2026-04-25 18:30 IST (Session 20 — v3 LoRA trained but DO NOT USE (Navier-Stokes inpainting artifacts baked in). v4 retrain blocked on 5 items — see P0-39 to P0-44. Full workspace audit complete (REPO_AUDIT_20260425.md). 17 documented Claude failures.)
 
 **Legend:**
 - **Assignee:** [Antigravity] (Code/Workflows/OpSec), [Claude Code] (Text Prompts/Scripting), [Grok] (Market Intel/Trends/X & Web Research), [CEO] (Physical accounts/Payments).
@@ -25,7 +25,7 @@
 - [x] **[P0-04]** `[AI Ops]` (Antigravity) *(RICE: N/A - Done)* - Batch Generation script developed (`jasmine_batch_generator.py`).
 - [x] **[P0-05]** `[Content]` (CEO + Claude) *(RICE: N/A - Done)* - LoRA training dataset assembled: 38 images in `03_ai_models/jasmine_mako/training_data/jasmine_dataset/`. Generated via Kling Image 3 series mode (pink bikini reference, face-forward only). Outfits: black gym wear, pink micro bikini, white bodysuit, red bodycon. Completed 2026-04-18.
 - [x] **[P0-06]** `[Strategy]` (Claude) *(RICE: N/A - Done)* - Character Card written.
-- [x] **[P0-07]** `[AI Ops]` (CEO) *(RICE: 10×10×1.0÷3 = 33.3)* - ✅ COMPLETE 2026-04-19 — `jasmine_v1.safetensors` trained on Vast.ai. ostris/ai-toolkit, 2000 steps, LoRA rank 16. File in `03_ai_models/jasmine_mako/lora_checkpoints/`. **Training history:** v2 trained 2026-04-21 (watermarks baked in — DO NOT USE). v3 trained 2026-04-25 (Navier-Stokes inpainting artifacts on shoulders/chest — DO NOT USE). v4 retrain required — see P0-39 to P0-44.
+- [ ] **[P0-07]** `[AI Ops]` (CEO) *(RICE: 10×10×1.0÷3 = 33.3)* - ⏳ IN PROGRESS — No usable LoRA exists yet. v4 retrain required before any content generation. **Full training history:** v1 trained 2026-04-19 (skin defects baked in — DO NOT USE). v2 trained 2026-04-21 (Kling watermarks baked in — DO NOT USE). v3 trained 2026-04-25 (Navier-Stokes inpainting artifacts on shoulders/chest — DO NOT USE). **Blocker:** see P0-39 to P0-44 for v4 sequence.
 - [x] **[P0-08]** `[Exec Dept]` (CEO) *(RICE: 10×10×1.0÷1 = 100)* - ✅ COMPLETE — Higgsfield Starter subscribed ($9/mo).
 
 ### Link-in-Bio Setup 
