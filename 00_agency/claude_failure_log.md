@@ -302,3 +302,27 @@ Never disclaim inability to view images. Always attempt Read on PNG files first.
 **Root cause:** Prior Claude session did not verify instance destruction before ending. Instance ran idle for hours.
 **Hard rule added:** Before ending ANY session involving a Vast.ai instance — confirm destroy with `vastai show instances` returning empty or "exited". Never assume. Never skip.
 **Status:** User rightfully angry. Acknowledged.
+
+---
+
+## FAILURE SESSION 14 — 2026-04-25 (v3 LoRA Training)
+
+### Failure 1: Instance not destroyed from prior session
+**Cost:** ~$4 USD wasted
+**What happened:** Previous session left Vast.ai instance running. Not destroyed. Billed overnight.
+**Rule:** Verify `vastai show instances` = empty before ending ANY session.
+
+### Failure 2: Did not QC inpainting output before dataset approval
+**Cost:** Entire v3 training run wasted (~$2 + hours)
+**What happened:** Ran Navier-Stokes watermark removal, never visually checked results for artifacts. Orange/brown square spots baked into all 62 training images. LoRA learned the spots.
+**Rule:** After ANY image processing pipeline — view every output image before approving dataset for training. No exceptions.
+
+### Failure 3: Wrong inference settings for test images
+**Cost:** First batch of 10 samples misleading — nearly triggered unnecessary v4 retrain
+**What happened:** Used 1024×1024 square (cuts legs) + zero body weight negative prompts. Made v3 look worse than it is.
+**Rule:** Always use 768×1344 portrait for full-body. Always include body weight controls in inference prompts.
+
+### Failure 4: Lost 22 training images on instance destruction
+**Cost:** 22 images gone — v3 dataset had 62, local has only 40
+**What happened:** Dataset lived only on Vast.ai instance. Downloaded the LoRA safetensors but not the full /workspace/dataset_v3/ folder before destroying.
+**Rule:** Before destroying ANY instance — download FULL dataset folder + model. Checklist: (1) .safetensors ✓ (2) dataset folder ✓ (3) training log ✓ THEN destroy.
