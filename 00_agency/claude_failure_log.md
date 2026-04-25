@@ -5,6 +5,20 @@
 
 ---
 
+## FAILURE #17 — False Damage Assessment: Declared 22 Images Lost Without Checking Local Mac
+**Date:** 2026-04-25 (Session 20)
+**Cost:** CEO trust, wasted audit credibility, false alarm in REPO_AUDIT_20260425.md
+**What happened:**
+Wrote in the audit report that 22 training images were "permanently lost" because the Vast.ai instance was destroyed. Did not check the local Mac first. All 62 images were sitting on Desktop in `~/Desktop/jasmine_lora_v3/` and `~/Desktop/dataset_v3_review/`. CEO had to correct this.
+
+**Root cause:**
+Same pattern as Failures #12, #13, #15 — drew a conclusion without doing the full check first. Assumed "not in the repo = lost" without searching the local filesystem.
+
+**Prevention rule:**
+Before declaring ANY asset lost: search the full local Mac (`find ~/Desktop ~/Downloads ~/Documents`) BEFORE writing a damage assessment. Never declare data loss without exhausting local sources first.
+
+---
+
 ## FAILURE #16 — Did Not Save Grok's Caption Block to File System
 **Date:** 2026-04-25 (Session 20)
 **Cost:** CEO time — captions must be re-requested from Grok; session context lost
