@@ -5,6 +5,20 @@
 
 ---
 
+## FAILURE #18 — No Environment Research Before Attempting iopaint Installation (P0-39)
+**Date:** 2026-04-25 (Session 21)
+**Cost:** ~2 hours CEO time wasted, P0-39 LAMA cleanup still not started
+**What happened:**
+CEO approved LAMA cleanup (P0-39). Claude immediately attempted to install iopaint via pip3 with zero prior research into the Mac environment. Spent 2 hours hitting sequential walls: (1) project venv uses Python 3.9 — no prebuilt opencv wheel, build from source fails; (2) `PIP_REQUIRE_VIRTUALENV=true` blocks all pip installs outside venv; (3) Python 3.12 system pip blocked by PEP 668 externally-managed-environment; (4) multiple background install attempts with no progress visible to CEO. CEO had to abort and escalate to Grok.
+
+**Root cause:**
+Jumped straight to execution without reading environment first. Never checked: Python version in venv, pip constraints, whether prebuilt wheels existed for this platform, or whether alternative install paths (pipx, brew, fresh venv) were available. Classic Karpathy Protocol violation — execute without research.
+
+**Prevention rule:**
+Before ANY install on the CEO's Mac: (1) check which Python versions are available, (2) check `PIP_REQUIRE_VIRTUALENV` env var, (3) check if target package has prebuilt wheels for the installed Python version, (4) identify the correct install path (pipx / fresh venv / brew) BEFORE touching pip. Research first, execute after Grok gate.
+
+---
+
 ## FAILURE #17 — False Damage Assessment: Declared 22 Images Lost Without Checking Local Mac
 **Date:** 2026-04-25 (Session 20)
 **Cost:** CEO trust, wasted audit credibility, false alarm in REPO_AUDIT_20260425.md
