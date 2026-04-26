@@ -67,3 +67,15 @@ filenameX.png → Reason: CP1 - heavy background blob...
 ### 4. Failure Handling
 - If >20% rejects → immediately tell Suraj "High reject rate — recommend regenerating batch".
 - Log every reject in `claude_failure_log.md` with date and reason.
+
+### 5. Reusable Assets (for future characters / v5+ training)
+
+**LAMA Colab Notebook:**  
+`03_ai_models/jasmine_mako/playbooks/jasmine_lama_cleanup_template.ipynb`  
+6-cell notebook. Cell 4 = dual-mask LAMA (watermark + NS artifacts). T4 GPU required.
+
+**Local method (no Colab needed if images already downloaded):**  
+Images in local folder → copy approved to `TRAINING_DATASET_[date]_XX_images/` → zip locally → upload direct to Vast.ai.
+
+**Watermark mask dimensions (Kling 1536×2402):**  
+`mask[h - int(h*0.065):, w - int(w*0.22):] = 255` (bottom 6.5% height × right 22% width)
