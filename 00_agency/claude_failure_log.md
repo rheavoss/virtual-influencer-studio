@@ -5,6 +5,20 @@
 
 ---
 
+## FAILURE #21 — False "Files Not Saved" Report When Files Were Already in Git
+**Date:** 2026-04-26 (Session 24)
+**Cost:** CEO trust, wasted session time re-copying 18 files that were already committed
+**What happened:**
+CEO said files from ~/Desktop/md files/ had been analyzed and saved 3 days ago. Claude (previous session) ran grep searches, found zero content matches, and reported the work was lost — likely due to G.Brain corruption or a crashed session. CEO confirmed this was wrong. In this session, running `git ls-files` showed all 18 files were already tracked in the repo under commit `cfd5c74 auto: 15 files updated`. The work was never lost. Claude gave CEO a false damage report without checking git first.
+
+**Root cause:**
+Previous session searched for file content via grep (which found nothing — wrong search pattern or wrong scope) and concluded files were not saved. Never ran `git ls-files <path>` to verify git tracking. Then filed a confident false conclusion to CEO. This session then re-copied all 18 files redundantly before discovering they were already in git.
+
+**Prevention rule:**
+Before declaring ANY file or work "not saved" or "lost" — run `git ls-files <path>` first. If it returns the file, it is in git. Grep finding no results ≠ file not saved. Never report data loss without checking git tracking explicitly.
+
+---
+
 ## FAILURE #20 — Passed 27 Disqualified Images Through QC for v4 LoRA Training (CRITICAL)
 **Date:** 2026-04-26 (Session 23)
 **Cost:** ~3 hrs CEO time (Kling generation of 27 wasted images + Google Drive upload + Colab T4 LAMA run + download + audit session) + Kling credits for 27 images
