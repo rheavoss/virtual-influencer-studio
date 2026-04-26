@@ -56,13 +56,14 @@ filenameX.png → Reason: CP1 - heavy background blob...
   - Zip it as `jasmine_v4_training_XX.zip`
 - Then and only then prepare the RunPod / dashboard training command.
 
-### 3. The 5 Checkpoints (Claude must check every image, every time)
+### 3. The 6 Checkpoints (Claude must check every image, every time)
 
 1. **CP1 Background Clean** — plain studio wall only. Any blob, stain, smudge, artifact = reject.
 2. **CP2 Style Consistent** — 100% photorealistic. Any painterly, illustrated, plastic look = reject.
 3. **CP3 Anatomy Correct** — correct proportions, natural DD breast gravity, no distortions = reject anything wrong.
 4. **CP4 Expression Usable** — natural/seductive smile or look. Eyes fully closed, extreme laugh, drowsy = reject.
 5. **CP5 Watermark Status** — completely gone after LAMA. Any ghosting = reject.
+6. **CP6 Skin Quality** — flawless porcelain smooth skin, perfect even tone. Any blemishes, pigmentation marks, red spots, discoloration, visible pores, oily shine, or plastic/waxy look = reject. (This is the criterion that caused Failure #3 — 29 contaminated images baked into v1 LoRA.)
 
 ### 4. Failure Handling
 - If >20% rejects → immediately tell Suraj "High reject rate — recommend regenerating batch".
