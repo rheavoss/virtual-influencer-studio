@@ -5,6 +5,20 @@
 
 ---
 
+## FAILURE #19 — Did Not Warn About Colab Upload Time or Provide Faster Alternative Upfront (P0-39)
+**Date:** 2026-04-26 (Session 22)
+**Cost:** ~20 min CEO time wasted waiting on slow browser upload
+**What happened:**
+Gave CEO step-by-step Colab instructions including "upload jasmine_v4_clean_62.zip (264MB)" without flagging that browser uploads to Colab are slow (~20min for 264MB) or that a faster alternative exists (upload to Google Drive first, then mount Drive in Colab — reduces wait to seconds). CEO discovered the slowness mid-upload and called it out.
+
+**Root cause:**
+Did not research the full execution path before giving instructions. Knew the file was 264MB, knew Colab's browser upload is slow, but did not connect those facts into a proactive warning. Optimised for "give the steps" instead of "give the steps WITH gotchas."
+
+**Prevention rule:**
+Before giving any step involving a file upload to an external service: check file size. If >50MB, flag upload time estimate AND provide the faster alternative in the same message. Never make CEO discover a bottleneck mid-execution.
+
+---
+
 ## FAILURE #18 — No Environment Research Before Attempting iopaint Installation (P0-39)
 **Date:** 2026-04-25 (Session 21)
 **Cost:** ~2 hours CEO time wasted, P0-39 LAMA cleanup still not started
