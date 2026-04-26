@@ -63,7 +63,7 @@ filenameX.png → Reason: CP1 - heavy background blob...
 3. **CP3 Anatomy Correct** — correct proportions, natural DD breast gravity, no distortions = reject anything wrong.
 4. **CP4 Expression Usable** — natural/seductive smile or look. Eyes fully closed, extreme laugh, drowsy = reject.
 5. **CP5 Watermark Status** — completely gone after LAMA. Any ghosting = reject.
-6. **CP6 Skin Quality** — flawless porcelain smooth skin, perfect even tone. Any blemishes, pigmentation marks, red spots, discoloration, visible pores, oily shine, or plastic/waxy look = reject. (This is the criterion that caused Failure #3 — 29 contaminated images baked into v1 LoRA.)
+6. **CP6 Skin Quality** — flawless realistic human skin, perfect even tone. Any blemishes, pigmentation marks, red spots, discoloration, visible pores, oily shine, or plastic/waxy look = reject. (This is the criterion that caused Failure #3 — 29 contaminated images baked into v1 LoRA.)
 
 ### 4. Failure Handling
 - If >20% rejects → immediately tell Suraj "High reject rate — recommend regenerating batch".
