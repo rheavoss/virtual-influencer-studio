@@ -5,6 +5,54 @@
 
 ---
 
+## FAILURE #20 — Passed 27 Disqualified Images Through QC for v4 LoRA Training (CRITICAL)
+**Date:** 2026-04-26 (Session 23)
+**Cost:** ~3 hrs CEO time (Kling generation of 27 wasted images + Google Drive upload + Colab T4 LAMA run + download + audit session) + Kling credits for 27 images
+**What happened:**
+CEO explicitly instructed Claude to audit every Kling image for full training quality before LAMA processing. Claude audited for watermark presence only. 27 of 62 images sent through LAMA had visible disqualifying defects that should have been caught before the Colab run:
+- 4723_0–6: Heavy Kling generation blob artifacts on background (7 images)
+- 5028_0/1/3/4: Same background blob artifacts (4 images)
+- 5038_2/3/4: Same background blob artifacts (3 images)
+- 343_0/0_1/2/2_1: Heavily illustrated/painterly style inconsistent with photorealistic training data (4 images)
+- 343_4_1: LAMA itself introduced yellow-orange splotches on chest/belly — a processing artifact (1 image)
+- 4818_2: Extreme wide-open laugh expression (1 image)
+- 356_3: Severely distorted body anatomy (1 image)
+All were visible on plain inspection. None required special tooling to detect.
+
+**Root cause:**
+Direct failure to follow CEO instruction. CEO said "audit each image for quality." Claude scoped the audit to "watermark only" without reading or applying the full QC criteria. This is the 4th consecutive QC failure across 4 LoRA training attempts (v1: skin defects passed; v2: watermarks passed; v3: Navier-Stokes artifacts passed; v4: background blobs + illustrated style + anatomy distortion passed). Same failure pattern — incomplete audit scope — repeated across all four attempts.
+
+**Impact:**
+- 27/62 LAMA processing slots wasted on images that will never train
+- CEO wasted: Kling generation time, 264MB Drive upload, ~12 min of T4 LAMA time, full zip download, this entire audit session
+- v4 training dataset reduced from 62 to 35 usable images
+- This is the 4th time LoRA training has been blocked by a QC failure Claude was responsible for
+
+**Prevention rule:**
+Before ANY image goes to LAMA or any processing pipeline, a written multi-criteria checklist must pass for every single image:
+1. Background clean — no blobs, no generation artifacts, no heavy shadows
+2. Style consistent — photorealistic, NOT illustrated/painterly
+3. Anatomy correct — no distorted proportions
+4. Expression usable — no extreme/unusable expressions
+5. Watermark visible — bottom-right corner check
+ALL 5 criteria must pass per image. The reject list must be written and shown to CEO BEFORE the LAMA run begins. No exceptions.
+
+---
+
+## FAILURE #19 — Did Not Warn About Colab Upload Time or Provide Faster Alternative Upfront (P0-39)
+**Date:** 2026-04-26 (Session 22)
+**Cost:** ~20 min CEO time wasted waiting on slow browser upload
+**What happened:**
+Gave CEO step-by-step Colab instructions including "upload jasmine_v4_clean_62.zip (264MB)" without flagging that browser uploads to Colab are slow (~20min for 264MB) or that a faster alternative exists (upload to Google Drive first, then mount Drive in Colab — reduces wait to seconds). CEO discovered the slowness mid-upload and called it out.
+
+**Root cause:**
+Did not research the full execution path before giving instructions. Knew the file was 264MB, knew Colab's browser upload is slow, but did not connect those facts into a proactive warning. Optimised for "give the steps" instead of "give the steps WITH gotchas."
+
+**Prevention rule:**
+Before giving any step involving a file upload to an external service: check file size. If >50MB, flag upload time estimate AND provide the faster alternative in the same message. Never make CEO discover a bottleneck mid-execution.
+
+---
+
 ## FAILURE #18 — No Environment Research Before Attempting iopaint Installation (P0-39)
 **Date:** 2026-04-25 (Session 21)
 **Cost:** ~2 hours CEO time wasted, P0-39 LAMA cleanup still not started
