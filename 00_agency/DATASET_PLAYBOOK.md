@@ -1,5 +1,5 @@
 # JASMINE GFE FACTORY — DATASET PLAYBOOK (ZERO EXPERIMENTATION EDITION)
-**Version**: 1.0  
+**Version**: 1.1  
 **Date**: 26 April 2026  
 **Owner**: Grok (Team Lead)  
 **Enforced on**: Claude (file/code agent only)  
@@ -23,7 +23,7 @@ If you deviate even one time, Grok will log it as a new failure and you will be 
 - Do NOT move them anywhere else yet.
 
 **Step 1: Pre-QC Gate (MUST DO BEFORE ANYTHING)**
-- Run the **5-Checkpoint QC** on **EVERY** raw image.
+- Run the **6-Checkpoint QC** on **EVERY** raw image.
 - Output ONLY this format:
 ```
 === RAW QC RESULT ===
@@ -75,8 +75,11 @@ filenameX.png → Reason: CP1 - heavy background blob...
 `03_ai_models/jasmine_mako/playbooks/jasmine_lama_cleanup_template.ipynb`  
 6-cell notebook. Cell 4 = dual-mask LAMA (watermark + NS artifacts). T4 GPU required.
 
-**Local method (no Colab needed if images already downloaded):**  
-Images in local folder → copy approved to `TRAINING_DATASET_[date]_XX_images/` → zip locally → upload direct to Vast.ai.
+**Local Dataset Creation Method (Preferred — no Colab needed if images already downloaded):**  
+1. Create folder `TRAINING_DATASET_[date]_XX_images/` in `03_ai_models/jasmine_mako/02_training_data/`
+2. Copy only the final approved PNGs (and their `.txt` captions) into that folder
+3. Create `dataset_info.md` inside with exact count, QC summary, and source folder
+4. Zip the entire folder as `jasmine_v4_training_XX.zip` (same directory) → upload direct to Vast.ai
 
 **Watermark mask dimensions (Kling 1536×2402):**  
 `mask[h - int(h*0.065):, w - int(w*0.22):] = 255` (bottom 6.5% height × right 22% width)

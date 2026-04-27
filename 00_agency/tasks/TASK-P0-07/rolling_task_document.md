@@ -4,7 +4,7 @@
 **Task Name:** Train Jasmine FLUX.1-dev LoRA on Vast.ai
 **Date Opened:** 2026-04-18
 **Owner:** CEO (execution) + Claude (configs/code) + Grok (research gate)
-**Status:** ✅ COMPLETE — LoRA downloaded, instance destroyed 2026-04-19
+**Status:** ✅ COMPLETE — v4 LoRA downloaded, instance destroyed 2026-04-26
 
 ---
 

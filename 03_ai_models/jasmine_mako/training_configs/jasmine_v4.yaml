@@ -1,0 +1,54 @@
+job: extension
+config:
+  name: jasmine_v4
+  process:
+    - type: 'sd_trainer'
+      training_folder: "/workspace/output"
+      device: cuda:0
+      trigger_word: "jasminemakogirl"
+      network:
+        type: "lora"
+        linear: 16
+        linear_alpha: 16
+      save:
+        dtype: float16
+        save_every: 500
+        max_step_saves_to_keep: 4
+      datasets:
+        - folder_path: "/workspace/dataset"
+          caption_ext: "txt"
+          caption_dropout_rate: 0.05
+          shuffle_tokens: false
+          cache_latents_to_disk: true
+          resolution: [512, 768, 1024]
+      train:
+        batch_size: 1
+        steps: 2000
+        gradient_accumulation_steps: 1
+        train_unet: true
+        train_text_encoder: false
+        gradient_checkpointing: true
+        noise_scheduler: "flowmatch"
+        optimizer: "adamw8bit"
+        lr: 5e-5
+        ema_config:
+          use_ema: true
+          ema_decay: 0.99
+        dtype: bf16
+      model:
+        name_or_path: "black-forest-labs/FLUX.1-dev"
+        is_flux: true
+        quantize: true
+      sample:
+        sampler: "flowmatch"
+        sample_every: 500
+        width: 768
+        height: 1024
+        prompts:
+          - "jasminemakogirl, photorealistic portrait photograph, 24-year-old East Asian woman, broad oval face, almond eyes, dark brown irises, fair even-toned skin, matte natural skin finish, very long dark black-brown straight silky hair, soft overcast natural daylight"
+          - "jasminemakogirl, photorealistic full body photograph, 24-year-old East Asian woman, DDD cup heavy natural bust deep cleavage, slim waist, wearing black bikini, standing, fair even-toned skin, very long dark black-brown straight hair"
+        neg: ""
+        seed: 42
+        walk_seed: true
+        guidance_scale: 4
+        sample_steps: 20
