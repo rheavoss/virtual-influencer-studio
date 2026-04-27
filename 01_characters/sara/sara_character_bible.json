@@ -18,7 +18,7 @@
       "skin_tone": "Fair, warm undertone, even — no redness, no flush",
       "hair_color": "Jet black, long, straight",
       "hair_length": "Mid-back",
-      "eye_color": "Green",
+      "eye_color": "Blue",
       "brows": "Strong, dark, well-defined",
       "lips": "Full, natural pink — no overline",
       "nose": "Straight, soft tip",
@@ -41,7 +41,7 @@
     },
 
     "face_reference": {
-      "description": "Grok-generated AI face — white Caucasian, dark black hair, green eyes, strong brows, warm smile, black turtleneck, wooden background",
+      "description": "Grok-generated AI face — white Caucasian, dark black hair, blue eyes, strong brows, soft smile, beige top, interview setting",
       "file": "face_reference/sara_face_ref.jpg",
       "notes": "CEO-approved 2026-04-27. Fully synthetic — no real person. Safe to use."
     },
