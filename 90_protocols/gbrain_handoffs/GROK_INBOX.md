@@ -2,6 +2,94 @@
 
 ---
 
+## CRITICAL RESEARCH REQUEST: Switch from FLUX to Qwen-Image LoRA Pipeline
+**Date:** 2026-04-27
+**From:** Claude Code
+**Priority:** CRITICAL — project survival. 5 failed FLUX LoRA training attempts. CEO has declared FLUX abandoned.
+**Decision needed:** Full Qwen-Image character LoRA pipeline spec before we spend another dollar.
+
+---
+
+### BACKGROUND — Why We're Switching
+
+5 FLUX.1-dev LoRA training attempts across Jasmine (v1–v4) and inkqueen (v1):
+- **v1**: Skin defect QC failure
+- **v2**: Watermark baked into weights
+- **v3**: Blocked — all 40 images leg-cropped (wrong resolution)
+- **v4**: 27/62 images had artifacts; only 31 usable. Trained. Moderate results.
+- **inkqueen v1**: Trained 2000 steps. Body renders as BBW/plus-size on full-body shots. Tattoo style inconsistent every generation. Body spec (36-28-45, 28" waist) not learned.
+
+YouTube creators using **Qwen-Image** (not FLUX) are getting superior, consistent character outputs: correct body proportions, locked face, consistent style. We have identified the full stack they use. We need Grok to validate it end-to-end before we proceed.
+
+---
+
+### THE STACK WE IDENTIFIED (needs Grok validation)
+
+From YouTube tutorials (transcripts reviewed by Claude):
+- **Base model**: `Qwen/Qwen-Image-Edit-2511` (HuggingFace)
+- **Training tool**: ostris/ai-toolkit — example config `train_lora_qwen_image_24gb.yaml`
+- **Inference**: ComfyUI + InstantX `Qwen-Image-ControlNet-Union` (pose + depth + canny + edge)
+- **Style LoRAs stacked at inference**: 1GIRL QWEN-IMAGE v3.0 + NiceGirls UltraReal v0.5 + SamsungCam UltraReal
+- **Face detailer**: ComfyUI face detailer node with character LoRA re-applied
+- **Dataset**: 20–40 images, same caption format
+
+---
+
+### RESEARCH QUESTIONS — Grok must answer ALL before we proceed
+
+#### Q1 — Model Validation
+- Is `Qwen/Qwen-Image-Edit-2511` the correct model for character LoRA training in 2026? Or is there a newer/better Qwen-Image variant (2512, 2.0, etc.)?
+- Is the "Edit" variant better for LoRA training than the base T2I model? Why/why not?
+- Any known architecture issues or limitations for photorealistic human character LoRAs specifically?
+- What VRAM does Qwen-Image-Edit-2511 require for inference at 768×1024? Does it fit on RTX 4090 24GB?
+
+#### Q2 — ai-toolkit Qwen-Image Config (CRITICAL)
+- Does the `train_lora_qwen_image_24gb.yaml` example in ai-toolkit actually work for Qwen-Image-Edit-2511, or is it for a different variant?
+- What are the PROVEN working hyperparameters for a character/person LoRA on Qwen-Image: steps, rank, lr, batch size, optimizer?
+- Does Qwen-Image LoRA training require a HuggingFace token? Is the model gated?
+- Any known issues with ai-toolkit + Qwen-Image (missing dependencies, import errors, CUDA versions)?
+- Recommended Vast.ai docker image for Qwen-Image training (we know `runtime` not `devel` — does this still apply)?
+
+#### Q3 — Dataset Strategy
+- For a consistent body-type character (specific measurements: 36-28-45 waist, large bust, tattoos): how many training images minimum? What pose/shot variety is needed?
+- The YouTubers generate their dataset synthetically using Qwen-Image-Edit itself (face swap → generate 20-25 poses). Is this better than real photos for character LoRA? Why?
+- Caption strategy for Qwen-Image LoRA: trigger word only? Detailed per-image descriptions? JoyCaption still recommended?
+- Can we reuse our existing 40 inkqueen images (real photos, JPG, 512–1024px), or must dataset be regenerated for Qwen-Image?
+
+#### Q4 — Inference Pipeline Validation
+- Confirm: does `InstantX/Qwen-Image-ControlNet-Union` work in ComfyUI for pose control? Is it production stable?
+- The style LoRAs (1GIRL QWEN-IMAGE v3.0, NiceGirls UltraReal, SamsungCam) — do they actually improve character output consistency and body realism, or are they marketing? Real user results?
+- Two-sampler pass + face detailer — is this standard ComfyUI setup? Any guide or workflow link?
+- Does RunPod have a ready ComfyUI template with Qwen-Image + ControlNet pre-loaded? Or must we build from scratch?
+
+#### Q5 — Cost Estimate
+- Qwen-Image-Edit-2511 model size? Download cost on Vast.ai at $0.039/GB?
+- Estimated training time for 2000 steps, 40 images, RTX 4090?
+- Total estimated cost per training run (GPU compute + model download + storage)?
+- Is the model cached if we reuse the same Vast.ai instance, or does it re-download every time?
+
+#### Q6 — Known Failure Modes (MOST IMPORTANT)
+- What are the top 3 ways Qwen-Image character LoRAs fail in production?
+- Body size / measurements: does Qwen-Image actually learn specific body proportions from captions (e.g., "36-28-45")? Or does it have the same problem as FLUX?
+- Tattoo style consistency: does Qwen-Image lock tattoo styles better than FLUX, or is this a dataset problem regardless of base model?
+- Any creators who've trained AI influencer character LoRAs on Qwen-Image and published results? Links?
+
+---
+
+### WHAT CLAUDE HAS ALREADY CONFIRMED (do not re-research)
+- ai-toolkit supports Qwen-Image LoRA (example config exists in repo)
+- InstantX ControlNet-Union released and HuggingFace URL confirmed
+- All 3 style LoRAs exist on CivitAI and are free
+- ComfyUI has official Qwen-Image workflow at docs.comfy.org
+- VRAM needed: 24GB minimum
+
+### WHAT GROK MUST VALIDATE
+All 6 question sets above. Specifically Q2 (exact working hyperparameters), Q3 (synthetic dataset vs real photos), and Q6 (known failure modes) are BLOCKING.
+
+**Do NOT proceed to any Vast.ai instance, training run, or spend until Grok clears this gate.**
+
+---
+
 ## RESEARCH REQUEST: Jasmine v3 LoRA Training Pipeline
 **Date:** 2026-04-25
 **From:** Claude
