@@ -7,7 +7,7 @@
 
 ```
 photorealistic portrait photograph, saragirl, 24-year-old white woman,
-long jet black straight hair mid-back length, striking green eyes,
+long jet black straight hair mid-back length, striking blue eyes,
 strong dark well-defined eyebrows, full natural lips, warm bright smile,
 fair warm skin tone, no tattoos, no piercings except ears,
 hourglass body — extremely large natural heavy breasts with realistic gravity,
@@ -43,7 +43,7 @@ bad anatomy, bad proportions, mutation
 Base instruction for Grok / Qwen-Image-Edit:
 ```
 Take this reference image of saragirl and regenerate her in [POSE] wearing [OUTFIT].
-Keep: same face, same green eyes, same dark hair, same body proportions exactly.
+Keep: same face, same blue eyes, same dark hair, same body proportions exactly.
 Change: pose, outfit, background only.
 Outfit must cover nipples at all times. Style: [STYLE].
 ```
