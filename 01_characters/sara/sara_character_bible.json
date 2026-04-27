@@ -1,0 +1,73 @@
+{
+  "character": {
+    "character_id": "sara",
+    "name": "Sara",
+    "trigger_word": "saragirl",
+    "age": 24,
+    "ethnicity": "White / Caucasian",
+    "nationality": "American",
+    "persona": "Confident, warm, girlfriend-next-door energy. Approachable but magnetic.",
+
+    "physical": {
+      "height_cm": 170,
+      "weight_kg": 58,
+      "body_type": "Hourglass — large bust, defined waist, wide hips",
+      "bust": "34DD",
+      "waist_inches": 26,
+      "hips_inches": 38,
+      "skin_tone": "Fair, warm undertone, even — no redness, no flush",
+      "hair_color": "Jet black, long, straight",
+      "hair_length": "Mid-back",
+      "eye_color": "Green",
+      "brows": "Strong, dark, well-defined",
+      "lips": "Full, natural pink — no overline",
+      "nose": "Straight, soft tip",
+      "jaw": "Defined but feminine",
+      "smile": "Warm, bright white teeth",
+      "tattoos": "None",
+      "piercings": "Ears only"
+    },
+
+    "content_ceiling": {
+      "level": "Option A — Lena Paul equivalent",
+      "allowed": ["Deep cleavage", "Micro bikini", "Sheer — nipples always covered", "Lingerie — covered"],
+      "never": ["Nudity", "Topless", "Nipple exposure"]
+    },
+
+    "body_donor_reference": {
+      "description": "White Caucasian woman, large bust, hourglass body, white bikini, poolside setting",
+      "file": "body_reference — save to face_reference/body_donor.jpg",
+      "notes": "CEO-approved 2026-04-27. Used for face-swap + Carousel Engine dataset generation."
+    },
+
+    "face_reference": {
+      "description": "Grok-generated AI face — white Caucasian, dark black hair, green eyes, strong brows, warm smile, black turtleneck, wooden background",
+      "file": "face_reference/sara_face_ref.jpg",
+      "notes": "CEO-approved 2026-04-27. Fully synthetic — no real person. Safe to use."
+    },
+
+    "training": {
+      "base_model": "Qwen/Qwen-Image-Edit-2511",
+      "method": "Hybrid engineered dataset — face-swap + Carousel Engine synthetic poses",
+      "dataset_target_images": 25,
+      "trigger_word": "saragirl",
+      "planned_steps": 3000,
+      "rank": 16,
+      "alpha": 16,
+      "lr": 0.0001,
+      "optimizer": "AdamW8Bit",
+      "status": "PENDING — awaiting engineered dataset"
+    },
+
+    "platforms": {
+      "instagram": "SFW — lifestyle, bikini, fashion, girlfriend content",
+      "fanvue": "GFE — paid subscription, deeper access"
+    },
+
+    "character_voice": {
+      "tone": "Warm, playful, direct. Feels real — not scripted.",
+      "captions_style": "Short, casual, first-person. Relatable moments.",
+      "dms_style": "GFE — attentive, personal, curious about subscriber"
+    }
+  }
+}
