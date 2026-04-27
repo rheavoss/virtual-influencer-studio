@@ -166,13 +166,38 @@
 
 ---
 
+## GENESIS ENGINE ALTERNATIVE (RECOMMENDED — try before Vast.ai training)
+
+**What it is:** Midnight Lab Genesis Engine = Qwen Image Edit 2511 + Lightning LoRA + Gemini 2.5 Pro art director. No LoRA training required. 1 face image → 10 consistent shots.
+
+**Cost (April 2026 verified):**
+
+| Item | Cost |
+|---|---|
+| Midnight Lab membership (Ghost tier — full access) | **$10–20/month** |
+| Genesis Engine workflow (individual, one-time) | $10–15 one-time |
+| Lightning LoRA + Angle LoRA | Included in membership |
+| Gemini 2.5 Pro per 10-shot run | $0.01–0.05 |
+| Qwen Image Edit inference (RunPod) per 10 images | $0.20–0.30 |
+| **Total per 10-shot photoshoot** | **Under $0.40** |
+
+**Recommendation:** Join Midnight Lab membership ($10–20/mo) → get Genesis Engine V2 + all other workflows (Carousel, Muse Engine, etc.) + all future updates.
+
+**Source:** Midnight Lab Gumroad → midnightlab.gumroad.com/l/labmembers
+
+---
+
 ## CURRENT STATUS
 
 - [x] Sara character bible created
 - [x] Face reference locked (`sara_face_ref.jpg`)
 - [x] Body donor locked (`body_donor.jpg`, watermark cropped)
 - [x] Face swap attempted (`sara_composite_v1.png` — verify quality)
-- [ ] **BLOCKED: CEO needs to run Carousel Engine (25 poses) on ComfyUI + Qwen**
+- [x] Genesis Engine pricing confirmed ($10–20/mo membership + <$0.40/shoot)
+- [ ] **CEO: Join Midnight Lab membership + get Gemini API key**
+- [ ] **CEO: Run Genesis Engine with `sara_face_ref.jpg` → 10-shot test shoot**
+- [ ] If Genesis Engine output approved → use as dataset (skip Vast.ai training)
+- [ ] If Genesis Engine fails → run Carousel Engine (25 poses) on ComfyUI + Qwen
 - [ ] Captions (Claude — after images received)
-- [ ] Training on Vast.ai (Claude — after captions)
+- [ ] Training on Vast.ai (Claude — after captions, only if Genesis Engine path skipped)
 - [ ] Inference + content generation
