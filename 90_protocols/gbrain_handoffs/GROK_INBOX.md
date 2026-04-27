@@ -2,6 +2,91 @@
 
 ---
 
+## TASK: Sara — Face-Swap + Carousel Engine Dataset Generation
+**Date:** 2026-04-27
+**From:** Claude Code
+**Priority:** HIGH — blocks all training
+**Character:** Sara (trigger: `saragirl`) — new character replacing Jasmine/inkqueen
+
+### CONTEXT
+We have locked Sara's character spec:
+- White Caucasian, 24yo, long jet black hair, green eyes, strong dark brows
+- Body: large bust (34DD), defined 26" waist, 38" hips — hourglass
+- No tattoos, no piercings except ears
+- Content ceiling: Option A (Lena Paul level — nipples always covered)
+
+Two reference images are in the GitHub repo:
+- **Face:** `01_characters/sara/face_reference/sara_face_ref.jpg`
+- **Body donor:** `01_characters/sara/face_reference/body_donor.jpg`
+
+Repo: `https://github.com/rheavoss/virtual-influencer-studio`
+
+---
+
+### STEP 1 — FACE-SWAP
+Use your best face-swap tool (Reactor, InsightFace, or equivalent) to:
+- Take Sara's face from `sara_face_ref.jpg`
+- Paste it onto the body in `body_donor.jpg`
+- Result: 1 composite image — Sara's face + correct body proportions
+- Requirements: skin tone must blend at neck, hair must flow naturally, no seam artifacts
+
+---
+
+### STEP 2 — CAROUSEL ENGINE (25 poses)
+Using the face-swapped composite as the seed image, generate 25 varied poses via Qwen-Image-Edit.
+
+**Non-negotiable rules for ALL 25 images:**
+- Same face (Sara's green eyes, dark hair, strong brows) — locked
+- Same body proportions (large bust, defined waist, hourglass) — locked
+- Nipples covered in every single image — no exceptions
+- No tattoos visible
+- Photorealistic, natural lighting, 8k quality
+
+**The 25 poses:**
+
+| # | Pose | Outfit | Setting |
+|---|---|---|---|
+| 01 | Standing front, slight smile | White triangle bikini | Pool edge, bright day |
+| 02 | Standing 3/4 angle | Red bikini | Beach, golden hour |
+| 03 | Sitting pool edge, feet in water | Black bikini | Outdoor pool |
+| 04 | Walking toward camera | Floral sundress | Street, daytime |
+| 05 | Leaning on railing, arms crossed | Crop top + high-waist jeans | Rooftop city view |
+| 06 | Sitting cross-legged on bed | Oversized white tee | Cozy bedroom |
+| 07 | Standing mirror selfie | Sports bra + leggings | Gym |
+| 08 | Sitting at cafe table, laughing | Summer dress | Outdoor cafe |
+| 09 | Lying on beach towel, propped on elbows | Bikini | Beach |
+| 10 | Standing in kitchen | Casual tank + shorts | Modern kitchen |
+| 11 | Kneeling on bed, looking at camera | Lace lingerie (fully covered) | Soft bedroom lighting |
+| 12 | Leaning against wall, arms raised | Leather jacket + bodysuit | Street, night |
+| 13 | Standing in doorway | Swimsuit coverup | Resort/hotel |
+| 14 | Sitting on couch, legs tucked | Body-con mini dress | Living room |
+| 15 | Shoulders-up, wet hair, steamy | Bare shoulders only (collarbone up) | Shower/bathroom |
+| 16 | Walking on beach, wind in hair | White bikini | Beach, waves |
+| 17 | Sitting in car, arm out window | Casual outfit, sunglasses | Car interior |
+| 18 | Standing by window, golden light | Sheer top + visible bra | Apartment |
+| 19 | Gym mirror selfie, hand on hip | High-waist shorts + sports bra | Gym |
+| 20 | Lying on bed, reading, relaxed | Casual pyjamas | Bedroom |
+| 21 | Back to camera, looking over shoulder | Bikini bottom | Pool edge |
+| 22 | Seated on chair, legs crossed | Elegant evening dress | Luxury interior |
+| 23 | Outdoor cafe, laughing at phone | Light summer outfit | Street cafe |
+| 24 | Standing by hotel window, arms raised | Short silk robe | Hotel room, city view |
+| 25 | Standing front, hand on hip, confident | Black bikini | Clean white studio |
+
+---
+
+### OUTPUT REQUIREMENTS
+- 25 PNG or JPG images, minimum 1024×1024px, ideally 1536×2048px portrait
+- Save to a folder named `sara_carousel_dataset`
+- Share folder or individual images back to CEO
+- CEO will drop them into `03_ai_models/sara/training_data/dataset_raw/`
+
+### WHAT HAPPENS NEXT
+Claude captions all 25 images → trains Qwen-Image-Edit-2511 LoRA on Vast.ai → Sara character locked permanently.
+
+**Do not proceed to Vast.ai or any spend until these 25 images are delivered and approved by CEO.**
+
+---
+
 ## CRITICAL RESEARCH REQUEST: Switch from FLUX to Qwen-Image LoRA Pipeline
 **Date:** 2026-04-27
 **From:** Claude Code
