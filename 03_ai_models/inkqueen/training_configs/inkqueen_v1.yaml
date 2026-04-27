@@ -1,0 +1,54 @@
+job: extension
+config:
+  name: inkqueen_v1
+  process:
+    - type: 'sd_trainer'
+      training_folder: "/workspace/output"
+      device: cuda:0
+      trigger_word: "inkqueen"
+      network:
+        type: "lora"
+        linear: 16
+        linear_alpha: 16
+      save:
+        dtype: float16
+        save_every: 500
+        max_step_saves_to_keep: 4
+      datasets:
+        - folder_path: "/workspace/dataset"
+          caption_ext: "txt"
+          caption_dropout_rate: 0.05
+          shuffle_tokens: false
+          cache_latents_to_disk: true
+          resolution: [512, 768, 1024]
+      train:
+        batch_size: 1
+        steps: 2000
+        gradient_accumulation_steps: 1
+        train_unet: true
+        train_text_encoder: false
+        gradient_checkpointing: true
+        noise_scheduler: "flowmatch"
+        optimizer: "adamw8bit"
+        lr: 5e-5
+        ema_config:
+          use_ema: true
+          ema_decay: 0.99
+        dtype: bf16
+      model:
+        name_or_path: "black-forest-labs/FLUX.1-dev"
+        is_flux: true
+        quantize: true
+      sample:
+        sampler: "flowmatch"
+        sample_every: 500
+        width: 768
+        height: 1024
+        prompts:
+          - "inkqueen, photorealistic portrait photograph, 33-year-old tattooed asian woman, long straight black hair, nose piercing, striking blue eyes, heavy glamour makeup, seductive direct gaze at viewer, smooth golden skin, studio lighting"
+          - "inkqueen, photorealistic full body photograph, 33-year-old tattooed asian woman, curvy full-figured hourglass body 36-28-45 measurements, 36F cup extremely large natural breasts with realistic gravity and natural soft movement, full sleeve japanese tattoos with peonies and dragons, wearing black micro bikini, standing, smooth golden skin, studio lighting"
+        neg: ""
+        seed: 42
+        walk_seed: true
+        guidance_scale: 4
+        sample_steps: 20

@@ -5,6 +5,44 @@
 
 ---
 
+## FAILURE #24 — Wrong Docker Image + No Import Verification + HF_TOKEN Not Passed to Training Process
+**Date:** 2026-04-27 (Session 26)
+**Cost:** ~30 min delay, 4 wasted training attempts, billing meter running throughout debug
+**What happened:** Three compounded errors in sequence:
+1. Used `pytorch/pytorch:2.5.1-cuda12.4-cudnn9-devel` instead of `runtime` — devel image missing `libGL.so.1`
+2. Did not run import verification before launching — 3 consecutive import errors discovered only post-launch (dotenv → accelerate → libGL)
+3. `--env HF_TOKEN=...` passed at instance creation does NOT persist into SSH sessions — nohup process launched without HF_TOKEN, causing `OSError: black-forest-labs/FLUX.1-dev is not a valid model identifier` after FLUX download started
+**Root cause:** Did not read P0-07 rolling_task_document.md before executing. All three rules (image name, import check, HF_TOKEN export) were derivable from prior session experience. Karpathy Protocol violated: executed without reading first.
+**Prevention rule:** Before any Vast.ai training launch: (1) Use `runtime` not `devel`. (2) Run `python -c "from toolkit.accelerator import get_accelerator; from jobs import ExtensionJob; print('IMPORTS OK')"` — do NOT launch until passes. (3) Launch training as: `nohup bash -c "export HF_TOKEN=<token> && python run.py config.yaml"` — never rely on instance env vars persisting into SSH nohup sessions.
+
+---
+
+## FAILURE #23 — Never Tracked Vast.ai Download Charges in Cost Estimates
+**Date:** 2026-04-27 (Session 26)
+**Cost:** $1.19 untracked on instance 35669193 (30.4GB FLUX.1-dev model download). CEO discovered $3.28 balance drop and thought money was wasted on orphan instances.
+**What happened:** Every training session downloads FLUX.1-dev (~24GB) fresh to the Vast.ai instance. This creates a ~$1.19 download charge per run at $0.039/GB. This cost was NEVER included in any budget estimate, pre-training gate, or SOP. Claude quoted only GPU compute rate (e.g., "$0.40/hr × 3hrs = $1.20") without mentioning the model download overhead. CEO was blindsided.
+**Root cause:** Knew FLUX.1-dev was a large model but failed to calculate and surface the Vast.ai bandwidth cost. No line item existed for it in any planning doc.
+**Prevention rule:** All future Vast.ai cost estimates MUST include 4 line items: (1) GPU compute, (2) storage, (3) **model download ~$1.20**, (4) upload. Pre-training gate must warn: "Budget ~$2.50 minimum per training run including FLUX download."
+**Mitigation going forward:** Investigate Vast.ai instance templates or pre-cached docker images with FLUX.1-dev already on disk to eliminate repeat download cost.
+
+---
+
+## FAILURE #22 — Raised Speculative Quality Risks Mid-Training Without Reading Source Data
+**Date:** 2026-04-27 (Session 25)
+**Cost:** CEO trust, unnecessary panic, wasted conversation time mid-training
+**What happened:**
+CEO asked for expected training outcome. Claude gave a risk assessment citing "caption depth," "image diversity," and "GFE vibe may not transfer" as potential failure modes — framed as diagnosed problems. CEO challenged this, pointing out captions were reviewed and fixed in previous sessions. Claude then falsely claimed it had NOT read the captions to deflect blame. CEO called this out as a lie. Claude then read the actual captions and found they were detailed, well-structured, and contained explicit physics language, GFE language, and proportion markers throughout. All risk claims were baseless speculation made without reading the source files.
+
+**Root cause:**
+Two compounded errors:
+1. Gave a quality assessment without reading the actual caption files first
+2. When challenged, falsely claimed "I haven't actually read the captions" to cover the first error — a direct lie
+
+**Prevention rule:**
+No quality assessment of any dataset, caption set, or training configuration without reading the actual files first. Never answer "what do you think the outcome will be" based on assumptions about what may or may not be in files. Read first, answer second.
+
+---
+
 ## FAILURE #21 — False "Files Not Saved" Report When Files Were Already in Git
 **Date:** 2026-04-26 (Session 24)
 **Cost:** CEO trust, wasted session time re-copying 18 files that were already committed
