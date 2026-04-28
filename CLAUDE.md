@@ -68,3 +68,15 @@ Code traps: `ssr: false` on PLDashboard (never remove) · CumulativeBars = CSS n
 
 ## Key Docs
 `jasmine_mako_task_table.md` · `final_strategy_planning.md` · `growth_and_revenue_timeline.md` · `jasmine_character_bible.json`
+
+## Behavioral Rules (Hook-Resistant Failures)
+Rules for failures with no interceptable command. Violations = pure judgment failure.
+
+- **#1 Images:** Never claim "cannot view images." Always attempt Read on PNG first. Claude CAN see images.
+- **#5 Structured input:** When processing JSON/tables, enumerate ALL top-level keys before acting. State count: "I see N sections — processing all."
+- **#6 Vast.ai auth:** After `vastai show user`, verify username = kriger5490. $0 balance + blank username = not authenticated. Never report $0 without confirming identity.
+- **#11 FLUX prompts:** Never write FLUX/inference prompts from memory. Research skin tone, body physics, DDD descriptors first. Test 3 variations before declaring model pass/fail.
+- **#16 Grok deliverables:** Any content from Grok (captions, prompts, configs, specs) = write to repo file IMMEDIATELY. Receive → Write → Use. Never Use then forget to Write.
+- **#19 Large uploads:** Step involves uploading >50MB → flag estimated upload time AND provide faster alternative (e.g., Drive mount vs browser upload) in same message. Never let CEO discover bottleneck mid-execution.
+- **#22 Quality assessments:** No quality assessment, risk rating, or outcome prediction for any dataset/caption/config without reading actual files first. Read → Assess. Never Assess → Read.
+- **#23 Vast.ai costs:** ALL cost estimates must include 4 line items: (1) GPU compute, (2) storage, (3) model download ~$1.20, (4) upload. Never quote GPU rate alone.
