@@ -76,12 +76,12 @@ saragirl, white Caucasian woman, striking blue eyes, long straight jet black hai
 | Model format | **Q8 GUF quantized** (NOT full precision — fits 24GB VRAM) |
 | Precision | BF-16 loaded via FP8 |
 
-## STYLE LoRA STRENGTHS (exact values from transcript)
+## STYLE LoRA STRENGTHS (Grok-confirmed values 2026-04-28)
 | LoRA | Strength |
 |---|---|
-| 1GIRL Qwen Image v3.0 | 0.8 |
-| NiceGirls UltraReal v0.5 | 0.7 |
-| SamsungCam UltraReal | 0.6 |
+| 1GIRL Qwen Image v3.0 | 0.85 |
+| NiceGirls UltraReal v0.5 | 0.80 |
+| SamsungCam UltraReal | 0.75 |
 | Lightning LoRA | 1.0 |
 
 ## NEGATIVE PROMPT (paste into negative node)
