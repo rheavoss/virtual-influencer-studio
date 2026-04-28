@@ -59,6 +59,7 @@ jobs:
           echo "✅ G3 passed — $(head -1 00_agency/tasks/$TASK/GATE_G3_COMPLETE.md)"
 
       - name: Check GROK_BRAIN_SUMMARY.md is not stale
+        if: steps.taskid.outputs.task != ''
         run: |
           # Brain must have been updated in this PR's commits
           BRAIN_CHANGED=$(git diff --name-only origin/main...HEAD | grep "99_grok_brain/GROK_BRAIN_SUMMARY.md" || echo "")
