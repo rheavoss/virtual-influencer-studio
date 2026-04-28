@@ -5,6 +5,41 @@
 
 ---
 
+## FAILURE #27 — Wrong Body Proportions in Training Dataset — Training Aborted Mid-Run
+**Date:** 2026-04-28 (Session 27)
+**Cost:** ~$1.18 fal.ai (25 images, wrong body type) + ~$0.30 Vast.ai training time (aborted ~100 steps) = **~$1.50 wasted**
+**What happened:** Ran Sara LoRA training for ~100 steps before CEO caught that all 3 sample images showed a slim/average-body woman — completely opposite of the body donor (DDD+ breasts, full curvy hourglass, deep cleavage). Immediately stopped training and destroyed instance.
+**Root cause sequence:**
+1. The 25 fal.ai training images were generated from text prompts that specified clothing, pose, and setting — but NEVER specified body proportions (no "large breasts", "voluptuous", "curvy hourglass", "deep cleavage").
+2. fal.ai defaulted to a slim/average body type — industry default when not specified.
+3. Captions were written from visual inspection of those wrong-body images, making the dataset internally consistent but wrong vs. the character spec.
+4. **CRITICAL MISS:** Before launching training, Claude should have cross-checked 5+ training images against the body donor reference image. This was not done. Visual audit rule existed in the failure log (#19 prevention rule) and was ignored.
+5. $1.18 in fal.ai generation + training compute wasted on a dataset that doesn't match the character.
+**Prevention rule:** Before ANY training run — pull 3–5 training images, visually compare against the character reference (body donor). If body proportions, breast size, or build don't match: DO NOT TRAIN. Regenerate dataset first. This check is mandatory and must happen before renting any instance.
+
+---
+
+## FAILURE #26 — Wrong Training Config + libGL Missing + Cheapest Instance Chosen (Sara Training Setup)
+**Date:** 2026-04-28 (Session 27)
+**Cost:** ~30 min delay, billing meter running during debug
+**What happened:** Three compounded errors on Sara v1 training launch:
+1. **Wrong Vast.ai instance** — picked cheapest (Hong Kong, $0.254/hr) instead of most reliable. Rule from Failure #19 says "never optimize cheapest." Had to destroy and re-rent.
+2. **libGL.so.1 missing** — used `pytorch:2.5.1-cuda12.4-cudnn9-devel` image (same image as Failure #24 which documented this exact problem). Should have used `runtime` image OR known to pre-install libGL.
+3. **Wrong training config** — wrote YAML from memory instead of reading the official ai-toolkit example first. Had wrong model name (`Qwen2.5-VL-7B-Instruct` instead of `Qwen/Qwen-Image`), missing `arch: qwen_image`, wrong `qtype` (missing uint3 ARA), missing `cache_text_embeddings: true` (required for 24GB), wrong `gradient_accumulation` key name.
+**Root cause:** Failures #24 already documented devel image + libGL problem. Did not re-read Vast.ai SOP or failure log before launching. Karpathy Protocol violated: executed without reading first. Also did not read official ai-toolkit example config before writing our own — wrote from memory.
+**Prevention rule:** Before ANY Vast.ai training launch: (1) Read failure log entries #19 and #24. (2) Read the official ai-toolkit example config for the model being used — NEVER write config from memory. (3) Use `runtime` image or pre-install libGL. (4) Filter instances with `reliability>0.98`, never optimize for cheapest rate alone.
+
+---
+
+## FAILURE #25 — fal.ai image_url vs image_urls (Sara Dataset Generation)
+**Date:** 2026-04-28 (Session 27)
+**Cost:** ~10 min delay
+**What happened:** Called fal.ai API with field `image_url` (singular) instead of `image_urls` (array). Script errored immediately on first run.
+**Root cause:** Did not check fal.ai API docs for the correct field name before writing the generation script. Assumed singular based on naming convention.
+**Prevention rule:** For any new API endpoint: read the official docs or test with one image first before writing a 25-image batch script.
+
+---
+
 ## FAILURE #24 — Wrong Docker Image + No Import Verification + HF_TOKEN Not Passed to Training Process
 **Date:** 2026-04-27 (Session 26)
 **Cost:** ~30 min delay, 4 wasted training attempts, billing meter running throughout debug
