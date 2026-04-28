@@ -166,7 +166,17 @@
 
 ---
 
-## GENESIS ENGINE ALTERNATIVE (RECOMMENDED — try before Vast.ai training)
+## FREE PATH — Qwen Multi-Angles LoRA (Start Here — $0)
+
+**Full checklist:** `00_agency/sara_free_multiangle_checklist.md`
+
+Uses: Qwen-Image-Edit-2511 + fal Multi-Angles LoRA (96 camera angles) + ComfyUI-qwenmultiangle node. One hybrid reference image → 10–20+ varied professional shots. Fully local, no subscription.
+
+**Try this first. Upgrade to Genesis Engine only if results underperform.**
+
+---
+
+## GENESIS ENGINE ALTERNATIVE (Paid — $10–20/mo, try if free path underperforms)
 
 **What it is:** Midnight Lab Genesis Engine = Qwen Image Edit 2511 + Lightning LoRA + Gemini 2.5 Pro art director. No LoRA training required. 1 face image → 10 consistent shots.
 
