@@ -19,13 +19,15 @@
 **Steps:**
 1. Open face-swap tool
 2. Input A: `sara_face_ref.jpg` (Sara's face)
-3. Input B: `body_donor.jpg` (blue dress body)
+3. Input B: `body_donor.jpg` (red bikini Maui balcony body)
 4. Run → download result
 5. Save as `01_characters/sara/face_reference/sara_composite_v1.png`
 
 **Notes from transcript:**
 - No tattoos on body donor preferred — ✅ already done
 - Do this once. All 25 dataset images come from this 1 composite.
+
+**STATUS: ✅ COMPLETE** — `sara_composite_v1.png` locked. Face crop also generated (`sara_face_crop.jpg`).
 
 ---
 
