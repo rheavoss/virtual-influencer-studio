@@ -47,7 +47,7 @@ saragirl, white Caucasian woman, striking blue eyes, long straight jet black hai
 
 saragirl, white Caucasian woman, striking blue eyes, long straight jet black hair, strong dark brows, warm smile, large natural heavy bust, hourglass figure, fair warm skin, sitting in car arm on window, casual outfit sunglasses, daytime, photorealistic, 8k
 
-saragirl, white Caucasian woman, striking blue eyes, long straight jet black hair, strong dark brows, warm smile, large natural heavy bust, hourglass figure, fair warm skin, standing by apartment window, sheer top visible bra underneath, golden light, photorealistic, 8k
+saragirl, white Caucasian woman, striking blue eyes, long straight jet black hair, strong dark brows, warm smile, large natural heavy bust, hourglass figure, fair warm skin, standing by apartment window, sheer white top with bra fully visible underneath nipples covered, golden light, photorealistic, 8k
 
 saragirl, white Caucasian woman, striking blue eyes, long straight jet black hair, strong dark brows, confident expression, large natural heavy bust, hourglass figure, fair warm skin, gym mirror selfie hand on hip, high-waist shorts and sports bra, photorealistic, 8k
 
@@ -71,8 +71,18 @@ saragirl, white Caucasian woman, striking blue eyes, long straight jet black hai
 | Steps | 6 (with Lightning LoRA) |
 | Scheduler | Euler + Beta |
 | Noise | 1.0 |
-| Resolution | 1024×1536 (portrait) |
+| Resolution | 1024×1536 (portrait) = ~1 megapixel |
 | Clip | Qwen 2.5 |
+| Model format | **Q8 GUF quantized** (NOT full precision — fits 24GB VRAM) |
+| Precision | BF-16 loaded via FP8 |
+
+## STYLE LoRA STRENGTHS (exact values from transcript)
+| LoRA | Strength |
+|---|---|
+| 1GIRL Qwen Image v3.0 | 0.8 |
+| NiceGirls UltraReal v0.5 | 0.7 |
+| SamsungCam UltraReal | 0.6 |
+| Lightning LoRA | 1.0 |
 
 ## NEGATIVE PROMPT (paste into negative node)
 ```
