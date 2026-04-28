@@ -166,17 +166,27 @@
 
 ---
 
-## FREE PATH — Qwen Multi-Angles LoRA (Start Here — $0)
+## ✅ CONFIRMED PATH — Option C: Carousel Engine (Grok-validated 2026-04-28)
 
-**Full checklist:** `00_agency/sara_free_multiangle_checklist.md`
+**Grok decision:** Option C is lowest-risk, highest-success-probability. Matches transcripts exactly.
+**Full playbook:** Phase 2 above (25 preset prompts, style LoRA stack, CFG=1, 6 steps, Euler+Beta)
 
-Uses: Qwen-Image-Edit-2511 + fal Multi-Angles LoRA (96 camera angles) + ComfyUI-qwenmultiangle node. One hybrid reference image → 10–20+ varied professional shots. Fully local, no subscription.
+**Spec corrections (Grok had stale data — ignore these in Grok's response):**
+- Body donor = **red bikini** (Maui balcony) — NOT blue dress
+- Eye color = **blue** — NOT green
 
-**Try this first. Upgrade to Genesis Engine only if results underperform.**
+**Dataset target:** 25–30 images (20 minimum, 35+ risks dilution per Grok)
 
 ---
 
-## GENESIS ENGINE ALTERNATIVE (Paid — $10–20/mo, try if free path underperforms)
+## Option A — Qwen Multi-Angles LoRA (test only if Option C underperforms)
+
+**Full checklist:** `00_agency/sara_free_multiangle_checklist.md`
+Grok: "Promising but least validated for photorealistic Caucasian characters April 2026."
+
+---
+
+## Option B — Genesis Engine (Paid — $10–20/mo, fallback only)
 
 **What it is:** Midnight Lab Genesis Engine = Qwen Image Edit 2511 + Lightning LoRA + Gemini 2.5 Pro art director. No LoRA training required. 1 face image → 10 consistent shots.
 
@@ -200,14 +210,13 @@ Uses: Qwen-Image-Edit-2511 + fal Multi-Angles LoRA (96 camera angles) + ComfyUI-
 ## CURRENT STATUS
 
 - [x] Sara character bible created
-- [x] Face reference locked (`sara_face_ref.jpg`)
-- [x] Body donor locked (`body_donor.jpg`, watermark cropped)
-- [x] Face swap attempted (`sara_composite_v1.png` — verify quality)
-- [x] Genesis Engine pricing confirmed ($10–20/mo membership + <$0.40/shoot)
-- [ ] **CEO: Join Midnight Lab membership + get Gemini API key**
-- [ ] **CEO: Run Genesis Engine with `sara_face_ref.jpg` → 10-shot test shoot**
-- [ ] If Genesis Engine output approved → use as dataset (skip Vast.ai training)
-- [ ] If Genesis Engine fails → run Carousel Engine (25 poses) on ComfyUI + Qwen
-- [ ] Captions (Claude — after images received)
-- [ ] Training on Vast.ai (Claude — after captions, only if Genesis Engine path skipped)
-- [ ] Inference + content generation
+- [x] Face reference locked (`sara_face_ref.jpg`) — blue eyes, dark hair
+- [x] Body donor locked (`body_donor.jpg`) — red bikini, Maui balcony, watermark cropped
+- [x] Composite locked (`sara_composite_v1.png` — swap_2026-04-27_23-58-46)
+- [x] Pipeline validated by Grok (2026-04-28) — Option C confirmed
+- [ ] **CEO: Visually verify `sara_composite_v1.png` — confirm face aligned, no seams**
+- [ ] **CEO: Spin up RunPod RTX 4090 + ComfyUI template**
+- [ ] **CEO: Load style LoRA stack + run 25–30 Carousel prompts → download outputs**
+- [ ] Claude: QC all images + GPT-batch caption (trigger: `saragirl,`)
+- [ ] Claude: Train on Vast.ai (Rank 16, LR 0.0001, 3000 steps, AdamW8Bit)
+- [ ] Claude + CEO: Verify Sara LoRA output → lock character permanently
