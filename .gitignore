@@ -48,6 +48,7 @@ credentials*
 !03_ai_models/**/*.yaml
 !03_ai_models/**/*.json
 !03_ai_models/**/*.ipynb
+!03_ai_models/**/*.txt
 30_dataset/
 02_reference_images/
 tmp/

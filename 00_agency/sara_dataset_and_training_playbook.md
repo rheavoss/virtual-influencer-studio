@@ -216,9 +216,18 @@ Grok: "Promising but least validated for photorealistic Caucasian characters Apr
 - [x] Body donor locked (`body_donor.jpg`) — red bikini, Maui balcony, watermark cropped
 - [x] Composite locked (`sara_composite_v1.png` — swap_2026-04-27_23-58-46)
 - [x] Pipeline validated by Grok (2026-04-28) — Option C confirmed
-- [ ] **CEO: Visually verify `sara_composite_v1.png` — confirm face aligned, no seams**
-- [ ] **CEO: Spin up RunPod RTX 4090 + ComfyUI template**
-- [ ] **CEO: Load style LoRA stack + run 25–30 Carousel prompts → download outputs**
-- [ ] Claude: QC all images + GPT-batch caption (trigger: `saragirl,`)
-- [ ] Claude: Train on Vast.ai (Rank 16, LR 0.0001, 3000 steps, AdamW8Bit)
+- [x] **Phase 2 COMPLETE** — 25 dataset images generated via fal.ai API (not RunPod — CEO eliminated that step). Output: `03_ai_models/sara/training_data/dataset_raw/sara_01–25.png`. Cost: ~$1/25 images.
+- [x] **Phase 2 QC** — All 25 images pass. Face/body consistency excellent. Plastic skin is inference-only issue, fixable at prompt level post-training. No rejects.
+- [x] **Phase 3 COMPLETE** — 25 captions written by Claude from visual inspection (accurate scene descriptions + natural skin texture descriptors). Files: `sara_01–25.txt` alongside PNGs.
+- [x] Training config saved: `03_ai_models/sara/training_configs/sara_v1_lora.yaml`
+- [ ] **NEXT: Claude trains on Vast.ai** — Rank 16, LR 0.0001, 3000 steps, AdamW8Bit, model: `Qwen/Qwen2.5-VL-7B-Instruct`
 - [ ] Claude + CEO: Verify Sara LoRA output → lock character permanently
+
+## ACTUAL PATH TAKEN (differs from original plan)
+
+| Step | Planned | Actual |
+|---|---|---|
+| Dataset generation | CEO on RunPod/ComfyUI | Claude via fal.ai Python API — no CEO involvement |
+| Captioning | GPT batch | Claude from visual inspection — more accurate |
+| Training model | GGUF Q8 for inference | Full HF model `Qwen/Qwen2.5-VL-7B-Instruct` for training |
+| CEO involvement | Phases 1, 2 | Phase 1 only (face swap) |

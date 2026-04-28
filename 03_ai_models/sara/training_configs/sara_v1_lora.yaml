@@ -1,0 +1,70 @@
+# Sara v1 LoRA Training Config — ai-toolkit (ostris)
+# Model: Qwen/Qwen2.5-VL-7B-Instruct (full HF model — NOT GGUF, GGUF is inference-only)
+# Trigger word: saragirl
+# Dataset: 25 images + captions in training_data/dataset_raw/
+# Target GPU: RTX 4090 24GB (Vast.ai)
+# Estimated time: 1.5–2 hrs | Cost: ~$0.70–1.00
+
+job: extension
+config:
+  name: sara_v1
+  process:
+    - type: sd_trainer
+      training_folder: /workspace/output/sara_v1
+      device: cuda:0
+
+      trigger_word: saragirl
+
+      network:
+        type: lora
+        linear: 16
+        linear_alpha: 16
+
+      save:
+        dtype: float16
+        save_every: 500
+        max_step_saves_to_keep: 4
+
+      datasets:
+        - folder_path: /workspace/sara_dataset
+          caption_ext: txt
+          caption_dropout_rate: 0.05
+          shuffle_tokens: false
+          cache_latents_to_disk: true
+          resolution: [1024, 1024]
+
+      train:
+        batch_size: 1
+        steps: 3000
+        gradient_accumulation_steps: 4
+        train_unet: true
+        train_text_encoder: false
+        gradient_checkpointing: true
+        noise_scheduler: flowmatch
+        optimizer: adamw8bit
+        lr: 0.0001
+        lr_scheduler: cosine
+        lr_warmup_steps: 100
+        ema_config:
+          use_ema: true
+          ema_decay: 0.99
+
+      model:
+        name_or_path: Qwen/Qwen2.5-VL-7B-Instruct
+        is_flux: false
+        quantize: true
+        low_vram: false
+
+      sample:
+        sampler: flowmatch
+        sample_every: 500
+        width: 1024
+        height: 1536
+        prompts:
+          - saragirl, beautiful Caucasian woman with striking blue eyes and long straight black hair, warm genuine smile, white bikini, beach, golden hour, natural skin texture with visible pores, realistic photography
+          - saragirl, beautiful Caucasian woman with striking blue eyes and long straight black hair, confident expression, black sports bra and shorts, gym mirror selfie, realistic skin texture, realistic photography
+        neg: plastic skin, waxy skin, airbrushed, overly smooth, flat lighting, CGI, cartoon, bad anatomy
+        seed: 42
+        walk_seed: true
+        guidance_scale: 7
+        sample_steps: 20
