@@ -2,6 +2,30 @@
 
 ---
 
+## BLOCKING QUESTION: Qwen-Image-Edit-2511 Model Format on RunPod
+**Date:** 2026-04-28
+**From:** Claude Code
+**Priority:** BLOCKING — CEO cannot run Carousel Engine until this is confirmed
+
+### Context
+We are about to run the Carousel Engine on RunPod (RTX 4090 24GB) using ComfyUI + Qwen-Image-Edit-2511.
+The YouTube transcripts (our source) specify the model must be loaded as **Q8 GUF quantized** format (not full precision) to fit in 24GB VRAM without quality loss.
+
+Full pipeline context: `https://github.com/rheavoss/virtual-influencer-studio`
+- Prompts ready: `00_agency/sara_carousel_prompts_final.md`
+- Playbook: `00_agency/sara_dataset_and_training_playbook.md`
+
+### Question (one answer needed)
+When CEO launches the standard **RunPod ComfyUI template** and loads Qwen-Image-Edit-2511:
+
+1. Does the template auto-download the Q8 GUF quantized checkpoint, OR must CEO manually download a specific quantized file from HuggingFace before running?
+2. If manual: what is the exact HuggingFace repo + filename for the Q8 GUF quantized Qwen-Image-Edit-2511?
+3. Is there a specific RunPod template (from Midnight Lab or transcript creator) that comes pre-loaded with the correct quantized model + all required nodes?
+
+**This is the last unresolved question before CEO hits RunPod. Everything else is ready.**
+
+---
+
 ## ~~TASK: Sara — Face-Swap + Carousel Engine Dataset Generation~~ [VOIDED 2026-04-28]
 > **REASON VOIDED:** Grok cannot generate images. This task was incorrectly assigned.
 > Carousel Engine = CEO action using ComfyUI + Qwen-Image-Edit on RunPod. See playbook: `00_agency/sara_dataset_and_training_playbook.md`
