@@ -31,33 +31,45 @@
 
 ---
 
-### PHASE 2 — CAROUSEL ENGINE (CEO action, ComfyUI + Qwen)
+### PHASE 2 — DATASET GENERATION (Claude action, ComfyUI + PuLID + Flux on RunPod)
 
-**Goal:** Generate 20-25 varied pose images from the composite
+> ⚠️ **Qwen pipeline ABANDONED** — Lightning LoRA poisoning + tensor mismatch + grid artifacts. See `20260429_qwen_image_edit_failure_analysis.md`. Do NOT use Qwen for dataset generation.
 
-**Tool:** ComfyUI on RunPod (use template from transcript creator's Patreon/description)
+**Goal:** Generate 25–30 varied pose images from sara_composite_v1.png with consistent face
 
-**Model:** `Qwen-Image-Edit-2511` loaded as Q8 GUF quantized (saves VRAM, no quality loss)
+**Tool:** ComfyUI on RunPod RTX 4090 + PuLID Flux node
+**Full SOP:** `00_agency/session_logs/2026-04-29_sara_pulid_session_log.md`
 
-**Critical settings from transcript:**
+**Confirmed working stack (2026-04-29):**
+- Node: `balazik/ComfyUI-PuLID-Flux` (master) — NOT cubiq (SDXL only)
+- Base: `flux1-dev-fp8.safetensors` (Comfy-Org, public)
+- PuLID model: `pulid_flux_v0.9.1.safetensors` (guozinan/PuLID)
+- CLIP: `clip_l.safetensors` + `t5xxl_fp8_e4m3fn.safetensors` (comfyanonymous)
+- VAE: `ae.safetensors` (black-forest-labs, needs HF token)
+- InsightFace: antelopev2 (MonsterMMORPG)
+- EVA-CLIP: `EVA02_CLIP_L_336_psz14_s6B.pt` (QuanSun, place in models/clip/)
+
+**Critical settings (CEO-approved 2026-04-29):**
 | Parameter | Value | Why |
 |---|---|---|
-| Base model | Qwen Image Q8 GUF | Quantized — fits VRAM |
-| Clip | Qwen 2.5 | Understands spatial relationships better than SDXL |
-| Image scale | 1 megapixel | Gold standard — avoids face stretching artifacts |
-| CFG | **1** | HIGH CFG = overburns image. Keep at 1. |
-| Steps | 6 (with Lightning LoRA) | Speed mode for dataset generation |
-| Scheduler | Euler + Beta | From transcript — do not change |
-| Noise | 1.0 | Building new frames from scratch from reference |
-| Precision | BF-16 loaded via FP8 | Saves VRAM without losing precision |
+| FluxGuidance node | guidance=3.5 | MANDATORY — without this = cartoon output |
+| KSampler CFG | **1.0** | Flux ignores KSampler CFG — guidance from FluxGuidance |
+| Steps | 28 | Quality vs speed balance |
+| Sampler | euler | Grok spec |
+| Scheduler | beta | Grok spec |
+| Denoise | 1.0 | txt2img from scratch |
+| PuLID weight | 0.9 | Face lock strength |
+| PuLID method | (not required for balazik node) | |
+| Resolution | 1024×1536 | Portrait, ~1.5MP |
 
-**Style LoRA stack (apply at inference):**
-- 1GIRL Qwen Image v3.0
-- NiceGirls UltraReal v0.5
-- SamsungCam UltraReal
-- (All free on CivitAI)
+**Required patch to node (ComfyUI 0.20.1 compat):**
+Add `**kwargs` to `forward_orig` in `pulidflux.py` — without this: `forward_orig() got unexpected keyword argument 'timestep_zero_index'`
 
-**Workflow:** Use CR Prompt List node — 25 preset prompts, runs automatically
+**PENDING FIX — body too slim (Grok approval needed):**
+PuLID locks FACE only. Body = 100% from prompt. Current prompt too weak.
+Use exact Grok spec: `very large heavy natural breasts with realistic gravity and soft tissue drape, deep cleavage, slim waist, wide hips, thick thighs, natural physics, soft realistic skin, natural skin texture, long straight dark hair worn down loose, no bun, no updo`
+
+**Workflow:** Use `sara_pulid_batch.py` script (Claude writes, runs inside pod via SSH, calls localhost:8188)
 
 **The 25 pose prompts for Sara:**
 ```
