@@ -1,0 +1,80 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2639
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 LucidaGrande;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \{\
+  "project": "Jasmine Virtual AI Influencer Studio",\
+  "version": "12 - Full Granular Master Task List (58 entries)",\
+  "last_updated": "22 April 2026",\
+  "tokens_status": "Exhausted on both Claude Code subscriptions (return Friday 1 AM IST)",\
+  "phase": "Post-LoRA Groundwork Complete \'96 Waiting for Tokens",\
+  "total_tasks": 58,\
+  "next_immediate_action": "Resume P0-07 v2 clean LoRA training the moment tokens return",\
+  "tasks": [\
+    \{"id": "P0-001", "task": "Install latest Pinokio", "priority": "Critical", "status": "Pending", "reference_file": "JASMINE_FLUX_LORA_TRAINING_GUIDE_v2_EXHAUSTIVE.md", "notes": "Phase 1 Environment"\},\
+    \{"id": "P0-002", "task": "Install Forge inside Pinokio", "priority": "Critical", "status": "Pending", "reference_file": "JASMINE_FLUX_LORA_TRAINING_GUIDE_v2_EXHAUSTIVE.md", "notes": "Phase 1"\},\
+    \{"id": "P0-003", "task": "Install Flex Gym inside Pinokio", "priority": "Critical", "status": "Pending", "reference_file": "JASMINE_FLUX_LORA_TRAINING_GUIDE_v2_EXHAUSTIVE.md", "notes": "Phase 1"\},\
+    \{"id": "P0-004", "task": "Update Forge and Flex Gym to latest versions", "priority": "Critical", "status": "Pending", "reference_file": "JASMINE_FLUX_LORA_TRAINING_GUIDE_v2_EXHAUSTIVE.md", "notes": "Phase 1"\},\
+    \{"id": "P0-005", "task": "Verify GPU \uc0\u8805 12 GB VRAM and \u8805 40 GB free disk", "priority": "Critical", "status": "Pending", "reference_file": "JASMINE_FLUX_LORA_TRAINING_GUIDE_v2_EXHAUSTIVE.md", "notes": "Pre-flight"\},\
+    \{"id": "P0-006", "task": "Set HuggingFace token if required", "priority": "High", "status": "Pending", "reference_file": "JASMINE_FLUX_LORA_TRAINING_GUIDE_v2_EXHAUSTIVE.md", "notes": "Pre-flight"\},\
+    \{"id": "P0-007", "task": "Run full PRE-FLIGHT CHECKLIST before every training", "priority": "Critical", "status": "Blocked", "reference_file": "JASMINE_FLUX_LORA_TRAINING_GUIDE_v2_EXHAUSTIVE.md", "notes": "Tokens locked"\},\
+    \{"id": "P0-008", "task": "Perform full Dataset QC on all 54 clean images (individual review)", "priority": "Critical", "status": "Ready", "reference_file": "JASMINE_DATASET_QC_CHECKLIST.md", "notes": "Skin, face, body, hair, technical"\},\
+    \{"id": "P0-009", "task": "Log any DISCARD images with exact filename + reason", "priority": "Critical", "status": "Ready", "reference_file": "JASMINE_DATASET_QC_CHECKLIST.md", "notes": ""\},\
+    \{"id": "P0-010", "task": "Confirm final KEEP count \uc0\u8805 50 images", "priority": "Critical", "status": "Ready", "reference_file": "JASMINE_DATASET_QC_CHECKLIST.md", "notes": ""\},\
+    \{"id": "P0-011", "task": "Prepare captions (Option A or B) for all KEEP images", "priority": "High", "status": "Ready", "reference_file": "JASMINE_FLUX_LORA_TRAINING_GUIDE_v2_EXHAUSTIVE.md", "notes": ""\},\
+    \{"id": "P0-012", "task": "Create new LoRA project in Flex Gym", "priority": "Critical", "status": "Ready", "reference_file": "JASMINE_FLUX_LORA_TRAINING_GUIDE_v2_EXHAUSTIVE.md", "notes": "Phase 3"\},\
+    \{"id": "P0-013", "task": "Set Base model = Flux.1 Dev", "priority": "Critical", "status": "Ready", "reference_file": "JASMINE_FLUX_LORA_TRAINING_GUIDE_v2_EXHAUSTIVE.md", "notes": ""\},\
+    \{"id": "P0-014", "task": "Set LoRA name = jasmakogirl + Trigger word = jasmakogirl", "priority": "Critical", "status": "Ready", "reference_file": "JASMINE_TRIGGER_AND_ADVANCED_PROMPT_STRATEGY.md", "notes": ""\},\
+    \{"id": "P0-015", "task": "Set training steps 1800\'962500, Rank 16\'9632, LR 1e-4", "priority": "Critical", "status": "Ready", "reference_file": "JASMINE_FLUX_LORA_TRAINING_GUIDE_v2_EXHAUSTIVE.md", "notes": ""\},\
+    \{"id": "P0-016", "task": "Upload all cleaned + captioned images to Flex Gym", "priority": "Critical", "status": "Ready", "reference_file": "JASMINE_FLUX_LORA_TRAINING_GUIDE_v2_EXHAUSTIVE.md", "notes": ""\},\
+    \{"id": "P0-017", "task": "Start LoRA training (v2 clean run)", "priority": "Critical", "status": "Blocked", "reference_file": "JASMINE_FLUX_LORA_TRAINING_GUIDE_v2_EXHAUSTIVE.md", "notes": "P0-07 main task"\},\
+    \{"id": "P0-018", "task": "Monitor training & enable sampling every 250\'96300 steps", "priority": "High", "status": "Blocked", "reference_file": "JASMINE_FLUX_LORA_TRAINING_GUIDE_v2_EXHAUSTIVE.md", "notes": ""\},\
+    \{"id": "P0-019", "task": "Locate .safetensors file after training completes", "priority": "Critical", "status": "Ready", "reference_file": "JASMINE_POST_LORA_ACTIVATION_CHECKLIST.md", "notes": "Post-training"\},\
+    \{"id": "P0-020", "task": "Copy LoRA to Forge 
+\f1 \uc0\u8594 
+\f0  models/Lora folder", "priority": "Critical", "status": "Ready", "reference_file": "JASMINE_POST_LORA_ACTIVATION_CHECKLIST.md", "notes": ""\},\
+    \{"id": "P0-021", "task": "Load Flux.1 Dev + jasmakogirl LoRA at weight 0.85", "priority": "Critical", "status": "Ready", "reference_file": "JASMINE_POST_LORA_ACTIVATION_CHECKLIST.md", "notes": ""\},\
+    \{"id": "P0-022", "task": "Run 5\'9610 test generations with Core Base Prompt", "priority": "Critical", "status": "Ready", "reference_file": "JASMINE_POST_LORA_ACTIVATION_CHECKLIST.md", "notes": ""\},\
+    \{"id": "P0-023", "task": "Verify face lock, skin quality, breast physics", "priority": "Critical", "status": "Ready", "reference_file": "JASMINE_POST_LORA_ACTIVATION_CHECKLIST.md", "notes": "Success gate"\},\
+    \{"id": "P0-024", "task": "Create Soul ID in Higgsfield (Jasmine Mako)", "priority": "Critical", "status": "Ready", "reference_file": "JASMINE_SOUL_ID_AND_9SHOT_GRID_GUIDE.md", "notes": "P0-32"\},\
+    \{"id": "P0-025", "task": "Upload best full-body + 4\'966 supporting images", "priority": "Critical", "status": "Ready", "reference_file": "JASMINE_SOUL_ID_AND_9SHOT_GRID_GUIDE.md", "notes": ""\},\
+    \{"id": "P0-026", "task": "Train Soul ID", "priority": "Critical", "status": "Ready", "reference_file": "JASMINE_SOUL_ID_AND_9SHOT_GRID_GUIDE.md", "notes": ""\},\
+    \{"id": "P0-027", "task": "Generate official 9-shot Character Reference Grid", "priority": "Critical", "status": "Ready", "reference_file": "JASMINE_SOUL_ID_AND_9SHOT_GRID_GUIDE.md", "notes": "P0-32 final"\},\
+    \{"id": "P0-028", "task": "Implement ControlNet (OpenPose + Depth + Canny)", "priority": "High", "status": "Ready", "reference_file": "JASMINE_CONTROLNET_AND_UPSCALE_QUICKSTART.md", "notes": "P0-39"\},\
+    \{"id": "P0-029", "task": "Set ControlNet strength 0.65\'960.80", "priority": "High", "status": "Ready", "reference_file": "JASMINE_CONTROLNET_AND_UPSCALE_QUICKSTART.md", "notes": ""\},\
+    \{"id": "P0-030", "task": "Implement two-step upscale (Latent 1.5\'d7 + SeedVR 2)", "priority": "High", "status": "Ready", "reference_file": "JASMINE_CONTROLNET_AND_UPSCALE_QUICKSTART.md", "notes": "P0-40"\},\
+    \{"id": "P0-031", "task": "Create simple inpainting workflow", "priority": "Medium", "status": "Pending", "reference_file": "-", "notes": "P0-41"\},\
+    \{"id": "P0-032", "task": "Evaluate Flashboards + SeaDance 2 Omni", "priority": "Medium", "status": "Pending", "reference_file": "JASMINE_FLASHBOARDS_AND_SEADANCE_2_QUICKSTART.md", "notes": "P0-42"\},\
+    \{"id": "P0-033", "task": "Integrate Video Use tool for CT-1 Reels", "priority": "High", "status": "Pending", "reference_file": "-", "notes": "P0-33"\},\
+    \{"id": "P0-034", "task": "Test Dream Dance as cheaper video alternative", "priority": "Medium", "status": "Pending", "reference_file": "-", "notes": "P0-34"\},\
+    \{"id": "P0-035", "task": "Implement token-saving habits across all workflows", "priority": "High", "status": "Pending", "reference_file": "-", "notes": "P0-35"\},\
+    \{"id": "P0-036", "task": "Generate 1 sample each of CT-1 to CT-11 using Prompt Library", "priority": "High", "status": "Ready", "reference_file": "JASMINE_PROMPT_LIBRARY.md", "notes": "P0-45"\},\
+    \{"id": "P0-037", "task": "Update live dashboard to 11 content types (v11)", "priority": "High", "status": "Ready", "reference_file": "JASMINE_DASHBOARD_UPDATE_v11.md", "notes": "P0-47"\},\
+    \{"id": "P0-038", "task": "Set up ComfyUI synthetic dataset workflow", "priority": "High", "status": "Pending", "reference_file": "-", "notes": "P0-38"\},\
+    \{"id": "P0-039", "task": "Create full 30-day content calendar execution plan", "priority": "Medium", "status": "Completed", "reference_file": "JASMINE_CONTENT_CALENDAR_AND_7_PROMPT_SYSTEM.md", "notes": "P0-36"\},\
+    \{"id": "P0-040", "task": "Lock final negative prompt & settings", "priority": "High", "status": "Completed", "reference_file": "JASMINE_NEGATIVE_PROMPT_AND_SETTINGS.md", "notes": "P0-44"\},\
+    \{"id": "P0-041", "task": "Lock trigger word + Core Base Prompt", "priority": "High", "status": "Completed", "reference_file": "JASMINE_TRIGGER_AND_ADVANCED_PROMPT_STRATEGY.md", "notes": "P0-37"\},\
+    \{"id": "P0-042", "task": "Finalize CT-11 UGC Ad playbook", "priority": "High", "status": "Completed", "reference_file": "JASMINE_CT11_UGC_AD_GUIDELINES.md", "notes": "P0-46"\},\
+    \{"id": "P0-043", "task": "Prepare 7-prompt system usage guide", "priority": "Medium", "status": "Completed", "reference_file": "JASMINE_CONTENT_CALENDAR_AND_7_PROMPT_SYSTEM.md", "notes": ""\},\
+    \{"id": "P0-044", "task": "Test first Reel (CT-1) with ControlNet + 9-shot", "priority": "High", "status": "Ready", "reference_file": "JASMINE_PROMPT_LIBRARY.md", "notes": "Post-LoRA"\},\
+    \{"id": "P0-045", "task": "Test first UGC Ad sample (CT-11)", "priority": "High", "status": "Ready", "reference_file": "JASMINE_CT11_UGC_AD_GUIDELINES.md", "notes": ""\},\
+    \{"id": "P0-046", "task": "Create caption + hook library for all 11 CTs", "priority": "High", "status": "Ready", "reference_file": "JASMINE_PROMPT_LIBRARY.md", "notes": ""\},\
+    \{"id": "P0-047", "task": "Set up daily content production pipeline", "priority": "High", "status": "Pending", "reference_file": "JASMINE_CONTENT_CALENDAR_AND_7_PROMPT_SYSTEM.md", "notes": ""\},\
+    \{"id": "P0-048", "task": "Define brand deal intake process for CT-11", "priority": "Medium", "status": "Pending", "reference_file": "JASMINE_CT11_UGC_AD_GUIDELINES.md", "notes": ""\},\
+    \{"id": "P0-049", "task": "Create Instagram Stories template pack (CT-2)", "priority": "Medium", "status": "Pending", "reference_file": "-", "notes": ""\},\
+    \{"id": "P0-050", "task": "Create Carousel template pack (CT-3)", "priority": "Medium", "status": "Pending", "reference_file": "-", "notes": ""\},\
+    \{"id": "P0-051", "task": "Create PPV funnel (CT-9 
+\f1 \uc0\u8594 
+\f0  CT-10)", "priority": "High", "status": "Pending", "reference_file": "-", "notes": ""\},\
+    \{"id": "P0-052", "task": "Build emotional GFE / Savior post library (CT-5)", "priority": "High", "status": "Pending", "reference_file": "-", "notes": ""\},\
+    \{"id": "P0-053", "task": "Prepare 4K export settings for all platforms", "priority": "High", "status": "Ready", "reference_file": "JASMINE_CONTROLNET_AND_UPSCALE_QUICKSTART.md", "notes": ""\},\
+    \{"id": "P0-054", "task": "Set up folder structure for daily content output", "priority": "Medium", "status": "Pending", "reference_file": "-", "notes": ""\},\
+    \{"id": "P0-055", "task": "Create failure logging system (claude_failure_log.md)", "priority": "High", "status": "Pending", "reference_file": "All files", "notes": "Ongoing"\},\
+    \{"id": "P0-056", "task": "Document token-saving checklist", "priority": "High", "status": "Pending", "reference_file": "-", "notes": "P0-35"\},\
+    \{"id": "P0-057", "task": "Run full end-to-end test of one complete day of content", "priority": "High", "status": "Ready", "reference_file": "All files", "notes": "After P0-045"\},\
+    \{"id": "P0-058", "task": "Launch first 7-day content batch on Instagram", "priority": "High", "status": "Pending", "reference_file": "JASMINE_CONTENT_CALENDAR_AND_7_PROMPT_SYSTEM.md", "notes": "Go-live milestone"\}\
+  ]\
+\}}
