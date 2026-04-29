@@ -58,16 +58,34 @@
 | Sampler | euler | Grok spec |
 | Scheduler | beta | Grok spec |
 | Denoise | 1.0 | txt2img from scratch |
-| PuLID weight | 0.9 | Face lock strength |
+| PuLID weight | **0.95–1.0** | Grok SARA_BODY_FIX_001 (was 0.9) |
+| PuLID start_timestep | 4 | Grok spec |
+| PuLID end_timestep | 8 | Grok spec |
 | PuLID method | (not required for balazik node) | |
 | Resolution | 1024×1536 | Portrait, ~1.5MP |
 
 **Required patch to node (ComfyUI 0.20.1 compat):**
 Add `**kwargs` to `forward_orig` in `pulidflux.py` — without this: `forward_orig() got unexpected keyword argument 'timestep_zero_index'`
 
-**PENDING FIX — body too slim (Grok approval needed):**
-PuLID locks FACE only. Body = 100% from prompt. Current prompt too weak.
-Use exact Grok spec: `very large heavy natural breasts with realistic gravity and soft tissue drape, deep cleavage, slim waist, wide hips, thick thighs, natural physics, soft realistic skin, natural skin texture, long straight dark hair worn down loose, no bun, no updo`
+**✅ GROK DECISION (SARA_BODY_FIX_001 — 2026-04-29):**
+- Body fix method: **stronger txt2img prompt only** — img2img at denoise=0.65 REJECTED
+- PuLID strength: **0.95–1.0** (was 0.9), start_timestep: 4, end_timestep: 8
+- Dataset size: **25–30 images** confirmed
+
+**LOCKED body descriptor (use verbatim in every prompt):**
+```
+41 year old white woman, 5 feet 2 inches tall, 130 pounds, extremely voluptuous hourglass figure, 42-27-41 inch measurements, massive natural 32H breasts with realistic weight and soft movement, deep cleavage, soft realistic belly with natural softness and slight belly pooch, narrow waist, very wide hips, thick juicy thighs, full round ass, curvy soft body with realistic fat distribution and natural skin folds, realistic detailed skin texture with visible pores, subtle imperfections and natural skin sheen, photorealistic
+```
+
+**Full positive prompt template:**
+```
+Sara, exact same woman as in reference photo, 41 year old white woman, 5 feet 2 inches tall, 130 pounds, extremely voluptuous hourglass figure, 42-27-41 inch measurements, massive natural 32H breasts with realistic weight and soft movement, deep cleavage, soft realistic belly with natural softness and slight belly pooch, narrow waist, very wide hips, thick juicy thighs, full round ass, curvy soft body with realistic fat distribution and natural skin folds, realistic detailed skin texture with visible pores, subtle imperfections and natural skin sheen, photorealistic, 8k, sharp focus, perfect anatomy, both feet firmly on the ground, correct toes, detailed feet, long straight dark brunette hair worn down loose, no bun, no updo, blue eyes, [OUTFIT AND SETTING]
+```
+
+**Negative prompt:**
+```
+blurry, low quality, deformed, mutated, extra limbs, bad anatomy, malformed feet, fused toes, extra toes, missing fingers, deformed hands, ugly, distorted proportions, cartoon, 3d render, painting, text, watermark, plastic skin, waxy skin, barbie skin, airbrushed skin, overly smooth skin, slim athletic body, flat chest, narrow hips, small breasts, grid artifacts, bun, updo
+```
 
 **Workflow:** Use `sara_pulid_batch.py` script (Claude writes, runs inside pod via SSH, calls localhost:8188)
 
