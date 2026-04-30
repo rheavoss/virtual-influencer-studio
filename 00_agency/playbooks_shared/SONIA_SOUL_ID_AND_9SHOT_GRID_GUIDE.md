@@ -58,8 +58,8 @@
 \cf5 \strokec5 3.\cf4 \strokec4  Upload your strongest full-body image as the main reference.\
 \cf5 \strokec5 4.\cf4 \strokec4  Upload the additional 4\'966 images as supporting references.\
 \cf5 \strokec5 5.\cf4 \strokec4  Set:\
-\cf5 \strokec5    -\cf4 \strokec4  Soul Name: \cf6 \strokec6 `Jasmine Mako`\cf4 \strokec4 \
-\cf5 \strokec5    -\cf4 \strokec4  Description: \cf6 \strokec6 `Girl-next-door student GFE, flawless porcelain skin, high top bun, natural teardrop DD breasts, realistic gravity`\cf4 \strokec4 \
+\cf5 \strokec5    -\cf4 \strokec4  Soul Name: \cf6 \strokec6 `Sonia`\cf4 \strokec4 \
+\cf5 \strokec5    -\cf4 \strokec4  Description: \cf6 \strokec6 `Girl-next-door student GFE, Indian / South Asian, natural teardrop DD breasts, realistic gravity`\cf4 \strokec4 \
 \cf5 \strokec5    -\cf4 \strokec4  Strength: Default or slightly higher for face lock\
 \cf5 \strokec5 6.\cf4 \strokec4  Click 
 \f0\b \cf2 \strokec2 **Train Soul**
@@ -76,14 +76,14 @@ Once Soul ID is ready:\
 \f1\b0 \cf4 \strokec4  or 
 \f0\b \cf2 \strokec2 **Character Reference Grid**
 \f1\b0 \cf4 \strokec4  tool in Higgsfield.\
-\cf5 \strokec5 2.\cf4 \strokec4  Select your new \cf6 \strokec6 `Jasmine Mako`\cf4 \strokec4  Soul ID.\
+\cf5 \strokec5 2.\cf4 \strokec4  Select your new \cf6 \strokec6 `Sonia`\cf4 \strokec4  Soul ID.\
 \cf5 \strokec5 3.\cf4 \strokec4  Use this exact prompt for the grid:\
 \pard\pardeftab720\partightenfactor0
 
 \f3\fs24 \cf0 \cb1 \strokec7 \
 \
 \pard\pardeftab720\sa240\partightenfactor0
-\cf0 jasmakogirl, keep this person\'92s facial features exactly, flawless porcelain smooth skin, high top bun hairstyle, natural teardrop DD breasts with realistic gravity, plain white studio background, full body turntable, 9 different angles and expressions\
+\cf0 soniagfe, keep this person\'92s facial features exactly, Indian / South Asian skin tone, natural teardrop DD breasts with realistic gravity, plain white studio background, full body turntable, 9 different angles and expressions\
 \pard\pardeftab720\partightenfactor0
 \cf0 text\
 \
@@ -112,11 +112,11 @@ Save this file on your desktop. It is now your official post-LoRA activation map
 \
 **You now have 5 complete groundwork files saved:**\
 \
-1. JASMINE_TRIGGER_AND_ADVANCED_PROMPT_STRATEGY.md  \
-2. JASMINE_NEGATIVE_PROMPT_AND_SETTINGS.md  \
-3. JASMINE_POST_LORA_ACTIVATION_CHECKLIST.md  \
-4. JASMINE_CONTROLNET_AND_UPSCALE_QUICKSTART.md  \
-5. JASMINE_SOUL_ID_AND_9SHOT_GRID_GUIDE.md 
+1. SONIA_TRIGGER_AND_ADVANCED_PROMPT_STRATEGY.md  \
+2. SONIA_NEGATIVE_PROMPT_AND_SETTINGS.md  \
+3. SONIA_POST_LORA_ACTIVATION_CHECKLIST.md  \
+4. SONIA_CONTROLNET_AND_UPSCALE_QUICKSTART.md  \
+5. SONIA_SOUL_ID_AND_9SHOT_GRID_GUIDE.md 
 \f2 \uc0\u8592 
 \f1  just added\
 }
