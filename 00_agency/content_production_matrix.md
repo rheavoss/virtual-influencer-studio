@@ -8,9 +8,9 @@
 
 | Layer | What It Does | Tool | Cost |
 |---|---|---|---|
-| **Character Identity — Images** | Locks Jasmine's face/body/tattoos in static images | Z-Image Base + Turbo + Jasmine Z-Image LoRA | ~₹0 (Fal.ai, negligible) |
-| **Character Identity — Video** | Locks Jasmine's face during video generation | Wan 2.2 T2V + Jasmine Wan LoRA | $5/month (Wan AI Pro) |
-| **Voice Identity** | Jasmine's cloned voice + emotion tags | OmniVoice (Local/Colab) — Initial reference via ElevenLabs | ₹0/month |
+| **Character Identity — Images** | Locks Sonia's face/body in static images | Z-Image Base + Turbo + Sonia Z-Image LoRA | ~₹0 (Fal.ai, negligible) |
+| **Character Identity — Video** | Locks Sonia's face during video generation | Wan 2.2 T2V + Sonia Wan LoRA | $5/month (Wan AI Pro) |
+| **Voice Identity** | Sonia's cloned voice + emotion tags | OmniVoice (Local/Colab) — Initial reference via ElevenLabs | ₹0/month |
 | **OPSEC** | EXIF strip, film grain, metadata clean before every post | ExifTool + FFmpeg | ₹0 |
 | **Frame Extraction** | Lossless frame extraction from driving Reels | FFmpeg (`ffmpeg -i reel.mp4 -ss 00:00:01 -vframes 1 frame1.png`) | ₹0 |
 | **Caption + Platform Text** | IG caption + Fanvue teaser + X thread per post | jasmine_agent.py (triple-text output) | ₹0 |
