@@ -1,0 +1,78 @@
+{
+  "character": {
+    "name": "Sonia",
+    "trigger_word": "soniagfe",
+    "status": "ACTIVE",
+    "created": "2026-04-30",
+    "instagram_handle": "TBD",
+    "target_reference": "@zaraso_phia (517K followers, 6 months old)"
+  },
+  "spec": {
+    "age": 22,
+    "ethnicity": "Indian / South Asian",
+    "skin": "Porcelain fair white skin with warm undertones — highly realistic texture, visible pores, subtle imperfections, natural sheen and soft flush",
+    "body_type": "Ultra-voluptuous hourglass",
+    "breasts": "Large full natural breasts with realistic soft tissue physics, natural weight, gravity, deep cleavage with visible compression folds and underboob crease",
+    "waist": "Narrow cinched waist",
+    "stomach": "Soft flat stomach with subtle natural folds when posed",
+    "hips": "Wide hips",
+    "thighs": "Thick juicy thighs with realistic skin creases and compression",
+    "legs": "Long toned legs",
+    "hair": "Long thick dark brown with subtle caramel highlights, past waist in soft loose waves with face-framing strands",
+    "eyes": "Large captivating almond-shaped hazel-brown, long thick black eyelashes, perfectly arched thick eyebrows",
+    "face": "Symmetrical, straight delicate nose, high cheekbones, full plump glossy lips, soft seductive confident expression with direct gaze",
+    "beauty_marks": "NONE — explicitly prohibited",
+    "tattoos": "NONE"
+  },
+  "content_ceiling": {
+    "allowed": ["deep cleavage", "micro-bikini", "sheer lingerie", "sensual poses", "wet skin", "bedroom/fantasy settings"],
+    "hard_limits": ["NO nudity", "NO topless", "NO genital exposure"],
+    "reference": "Lena Paul level. Not one step beyond. Non-negotiable."
+  },
+  "pipeline": {
+    "image_base": "Flux.2 Klein 9B",
+    "character_lora": "sonia_v1.safetensors (pending training)",
+    "lora_strength": "0.8–1.0",
+    "face_lock": "PuLID",
+    "pulid_strength": "0.95–1.0",
+    "pulid_start_timestep": 4,
+    "pulid_end_timestep": 8,
+    "supporting_lora": "DeZi Coffee (ZIT base)",
+    "supporting_lora_trigger": "d351 l1ght",
+    "video": "Kling AI 3.0 Image-to-Video (Subject Reference)"
+  },
+  "prompts": {
+    "positive_template": "soniagfe, exact same woman as in reference photo, a breathtakingly beautiful 22-year-old Indian/South Asian woman with an ultra-voluptuous hourglass figure, large full natural breasts with realistic soft tissue physics, natural weight, gravity, deep cleavage showing visible compression folds and underboob crease, narrow cinched waist, soft flat stomach with subtle natural folds when posed, wide hips, thick juicy thighs with realistic skin creases and compression, long toned legs, porcelain fair white skin with warm undertones, highly realistic texture including visible pores, subtle natural imperfections and freckles, natural sheen and soft flush, long thick voluminous dark brown hair with subtle caramel highlights reaching past her waist in soft loose waves with face-framing strands, incredibly symmetrical and feminine face, large captivating almond-shaped hazel-brown eyes with long thick black eyelashes and perfectly arched thick eyebrows, straight delicate nose, high cheekbones, full plump glossy lips, soft seductive confident expression with direct gaze, glamorous yet natural makeup, masterpiece, best quality, ultra-detailed skin texture and pores, realistic skin folds and creases, natural body physics, d351 l1ght, 8k RAW photo, photorealistic, highly detailed, sharp focus, cinematic lighting, [OUTFIT AND SETTING]",
+    "negative": "blurry, low quality, deformed, mutated, extra limbs, bad anatomy, malformed feet, fused toes, extra toes, missing fingers, deformed hands, ugly, distorted proportions, cartoon, 3d render, painting, text, watermark, plastic skin, waxy skin, barbie skin, airbrushed skin, overly smooth skin, slim athletic body, flat chest, narrow hips, small breasts, extremely large breasts, dark olive skin, tanned skin, grid artifacts, bun, updo, beauty mark, mole"
+  },
+  "dataset": {
+    "face_reference": "PENDING — CEO to provide 1 face photo",
+    "pose_reference_folder": "~/Downloads/target/ (700 zaraso_phia images)",
+    "target_count": "20–25 images",
+    "generation_method": "Flux.2 Klein 9B + PuLID with face reference",
+    "note": "zaraso_phia images = pose/composition reference ONLY, not training data"
+  },
+  "training": {
+    "status": "BLOCKED — face reference pending",
+    "base_model": "Flux.2 Klein 9B",
+    "steps": "4000–6000",
+    "rank": "32–64",
+    "lr": "1e-4",
+    "platform": "Vast.ai RTX 4090"
+  },
+  "files": {
+    "character_bible": "01_characters/sonia/sonia_character_bible.json",
+    "face_reference": "01_characters/sonia/face_reference/ (pending)",
+    "generation_prompt": "01_characters/sonia/sonia_generation_prompt.md (pending)",
+    "playbooks": "03_ai_models/sonia/playbooks/",
+    "training_data": "03_ai_models/sonia/training_data/",
+    "training_configs": "03_ai_models/sonia/training_configs/"
+  },
+  "version_history": [
+    {
+      "version": "1.0",
+      "date": "2026-04-30",
+      "note": "Character launched. Replaces Sara (abandoned) and Jasmine (abandoned). Spec locked from zaraso_phia reverse-engineering + Grok pipeline research."
+    }
+  ]
+}
