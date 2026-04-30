@@ -10,7 +10,7 @@
 \pard\pardeftab720\partightenfactor0
 
 \f0\b\fs23\fsmilli11700 \cf2 \cb3 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 # JASMINE_DATASET_QC_CHECKLIST.md
+\outl0\strokewidth0 \strokec2 # SONIA_DATASET_QC_CHECKLIST.md
 \f1\b0 \cf4 \strokec4 \
 \
 
@@ -66,7 +66,7 @@
 \f0\b \cf2 \strokec2 ### 2. Face Consistency
 \f1\b0 \cf4 \strokec4 \
 \pard\pardeftab720\partightenfactor0
-\cf5 \strokec5 -\cf4 \strokec4  [ ] Exact Jasmine facial features (wide cheekbones, eye shape, nose, lips, jawline)  \
+\cf5 \strokec5 -\cf4 \strokec4  [ ] Exact Sonia facial features (consistent eye shape, nose, lips, jawline)  \
 \cf5 \strokec5 -\cf4 \strokec4  [ ] Highly detailed face, sharp eyes  \
 \cf5 \strokec5 -\cf4 \strokec4  [ ] Consistent expression across similar angles  \
 \
