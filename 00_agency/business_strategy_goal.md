@@ -1,4 +1,4 @@
-# Jasmine — Accelerated $2000 MRR Business Strategy
+# Sonia — Accelerated $2000 MRR Business Strategy
 
 ---
 
@@ -56,7 +56,7 @@ To hit our goal rapidly, we will operate like a tech startup, not a standard inf
 1. **Competitor Data Extraction (Days 1-3):** 
    - Use Metricool/Popsters to rip the exact visual formats and engagement hooks from top earners.
 2. **Automated Content Factory (Days 4-7):** 
-   - Deploy the `jasmine_agent` to batch-produce 30 days of high-quality, hot yoga + travel content (ensuring the extreme sweat and realism we established).
+   - Deploy the `sonia_agent` to batch-produce 30 days of high-quality, hot yoga + travel content (ensuring the extreme sweat and realism we established).
 3. **Ad Optimization (Months 1-3):**
    - Two separate ad channels (never confuse them):
      - **IG Reels Ads** (Meta): ₹1,500–2,000/month SFW lifestyle content → IG profile growth only. NEVER link to Fanvue from Meta ads.
