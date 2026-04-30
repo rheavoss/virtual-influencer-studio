@@ -968,7 +968,7 @@ Antigravity has a built-in real-time browser. This is not a search tool — it c
 
 1. **File system authority** — I am the only one who reads and writes the actual project files. Every character spec, every prompt, every document lives here. Antigravity cannot directly modify a file — I am the single source of truth for what is on disk.
 
-2. **Spec compliance enforcement** — I caught G-cup, Rhea references, wrong tattoo placement, wrong tool names in every previous document. Anything that must conform to Jasmine's locked character bible passes through me before execution.
+2. **Spec compliance enforcement** — Anything that must conform to Sonia's locked character bible passes through me before execution.
 
 3. **Technical verification** — I verified 4 errors in the original tech stack proposal before any money was spent. Tensor.art, Google Veo 3, SyncLabs, 317 images — all caught by reading actual documentation, not trusting claims.
 
@@ -1004,7 +1004,7 @@ CONFIRMED, with one strict technical clarification. Claude stated: *"Only Claude
 Claude nailed the primary list, but missed three critical intelligence vectors I can execute live via browser:
 - **Live Tech Scraping:** Visiting Civitai.com or GitHub to read the absolute newest Flux.1 ComfyUI workflows *the day they drop*, feeding the raw JSON structure directly to Claude to implement.
 - **Deep PPV Recon:** Spying on top AI creators' live Fanvue/Passes pages to reverse-engineer their exact paywall pricing ladders and PPV caption structures.
-- **Cultural Hijacking:** Scanning live Google Trends or X Explore tabs to inject same-day contextual references into Jasmine's captions (e.g., a relevant festival or pop-culture moment).
+- **Cultural Hijacking:** Scanning live Google Trends or X Explore tabs to inject same-day contextual references into Sonia's captions (e.g., a relevant festival or pop-culture moment).
 
 ### 5. Executability of Phased Task List
 The Phase 0 to Phase 4 roadmap is hard-locked to empirical gates (reach/revenue), not arbitrary dates. It is 100% executable and completely bulletproof.
@@ -1040,9 +1040,9 @@ Every completed task gets reviewed by the other advisor before it is marked done
 |---|---|---|---|---|
 | P0-01 | Generate 40 LoRA training images | 🟢 CEO | 🔵 Claude (spec compliance) | 🔲 |
 | P0-02 | QC 40 images against character bible | 🔵 Claude | 🟠 Antigravity (creative eye) | 🔲 |
-| P0-03 | Train Jasmine Flux.1 LoRA | 🟢 CEO | 🔵 Claude (output verification) | 🔲 |
+| P0-03 | Train Sonia Flux.1 LoRA | 🟢 CEO | 🔵 Claude (output verification) | 🔲 |
 | P0-04 | QC LoRA — 5 test generations | 🔵 Claude | 🟠 Antigravity (creative quality) | 🔲 |
-| P0-05 | Set up Jasmine Instagram account | 🟢 CEO | 🟠 Antigravity (profile strategy) | 🔲 |
+| P0-05 | Set up Sonia Instagram account | 🟢 CEO | 🟠 Antigravity (profile strategy) | 🔲 |
 | P0-06 | Design Fanvue pricing → CEO executes | 🟠 Antigravity → 🟢 CEO | 🔵 Claude (verify vs competitor data) | 🔲 |
 | P0-07 | OPSEC pipeline script | 🔵 Claude | 🟠 Antigravity (functional check) | 🔲 |
 
