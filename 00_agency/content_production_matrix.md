@@ -65,7 +65,7 @@
 - Wan model: **TEXT-TO-VIDEO** (not image-to-video — I2V doesn't work for this use case)
 - **Denoise 0.4–0.5**: lower = more original motion preserved, higher = more Sonia identity
 - Resolution: 960×540 recommended, 720 for speed
-- No flickering during occlusion (hand over face) — LoRA knows the face
+- No flickering during occlusion (hand over face) — LoRA knows Sonia's face
 
 ---
 
@@ -76,7 +76,7 @@
 ### Building Components
 1. Write script (gym tips, travel commentary, GFE personal chat)
 2. OmniVoice generates voice with emotion tags: [laughter], [sigh], [energetic]
-3. Wan AI S2V (Speech-to-Video) lip-syncs Jasmine's static reference image to audio
+3. Wan AI S2V (Speech-to-Video) lip-syncs Sonia's static reference image to audio
 4. Add background (lifestyle location image via Flux Kontext or Google Whisk)
 5. Captions overlay (CapCut)
 6. OPSEC
@@ -91,16 +91,16 @@
 **Format:** Instagram Reel, portrait. High saves content
 
 ### Building Components
-1. Generate Jasmine in Outfit 1 (Z-Image Base + Turbo + Jasmine LoRA) → e.g., gym wear
-2. Generate Jasmine in Outfit 2 → e.g., evening dress
-3. Generate Jasmine in Outfit 3 (optional) → e.g., travel casual
+1. Generate Sonia in Outfit 1 (Z-Image Base + Turbo + Sonia LoRA) → e.g., gym wear
+2. Generate Sonia in Outfit 2 → e.g., evening dress
+3. Generate Sonia in Outfit 3 (optional) → e.g., travel casual
 4. VACE chaining: links outfit segments with face lock between transitions
 5. Optional: OmniVoice voiceover ("okay, so which one are you taking to Goa?")
 6. Trending audio overlay (CapCut music library)
 7. OPSEC
 
 ### Tools
-`Z-Image Base+Turbo (Fal.ai) + Jasmine Z-Image LoRA → Wan VACE → OmniVoice (optional) → CapCut`
+`Z-Image Base+Turbo (Fal.ai) + Sonia Z-Image LoRA → Wan VACE → OmniVoice (optional) → CapCut`
 
 ---
 
