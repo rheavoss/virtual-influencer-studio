@@ -557,26 +557,26 @@ Instagram/
 
 ---
 
-### Item 3 — One Model: Jasmine Only
+### Item 3 — One Model: Sonia Only
 
-One character folder exists on disk: `01_characters/jasmine/`. No other character exists anywhere in the project.
+One character folder exists on disk: `01_characters/sonia/`. No other character exists anywhere in the project.
 
 "Rhea" is fully retired. All Rhea content is in `04_content_pipeline/archive/rhea/` — archived, never referenced. All Rhea planning docs are in `00_agency/archive/` — dead.
 
-**The only product is Jasmine.** No second character is considered until Jasmine hits $500 MRR. Every generation prompt, caption, DM script, and strategy document is for Jasmine only. Both advisors default every character question to Jasmine with zero discussion.
+**The only product is Sonia.** No second character is considered until Sonia hits $500 MRR. Every generation prompt, caption, DM script, and strategy document is for Sonia only. Both advisors default every character question to Sonia with zero discussion.
 
 ---
 
 ### Item 4 — Exhaustive Master Product Definition
 
-Every variable that defines Jasmine as a product. Source: `jasmine_character_bible.json` v2.0.
+Every variable that defines Sonia as a product. Source: `sonia_character_bible.json` v2.0.
 
 #### A. Identity Lock
 
 | Variable | Locked Value |
 |---|---|
 | Age | 24 — looks exactly 24, not younger, not older |
-| Ethnicity | East Asian woman |
+| Ethnicity | Indian / South Asian woman |
 | Face shape | Broad oval, wide prominent cheekbones — width is the defining structural feature |
 | Eyes | East Asian almond, slightly hooded, relaxed — not wide, not narrow |
 | Eye color | Dark brown warm hazel irises |
