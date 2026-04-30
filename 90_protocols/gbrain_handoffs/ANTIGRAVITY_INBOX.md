@@ -25,10 +25,10 @@ CEO needs to log into Kling account and re-download the original training images
 - Find the 10 batches of Jasmine images (generated 2026-04-18)
 - Re-download each image at full resolution — must be **1536×2730** (9:16 2K native)
 - The cropped versions on disk are **1536×2402** — reject these, they have legs cut off
-- Save fresh downloads to: `/Users/user/Desktop/Instagram/03_ai_models/jasmine_mako/training_data/jasmine_dataset/`
+- Save fresh downloads to: `/Users/user/Desktop/Instagram/03_ai_models/sonia/training_data/jasmine_dataset/`
 
 If Kling history has expired or images are gone → regenerate using exact prompts in:
-`03_ai_models/jasmine_mako/training_data/kling_generation_prompts.md` (Batches 1–10)
+`03_ai_models/sonia/training_data/kling_generation_prompts.md` (Batches 1–10)
 
 **STEP 2 — Once CEO has 40 fresh uncropped images, confirm to Claude**
 
@@ -58,4 +58,4 @@ While CEO recovers dataset, you can work on other Phase 0 tasks:
 - Caption templates for first 9 posts
 - Bio copy for IG + Fanvue
 
-Check `00_agency/jasmine_mako_task_table.md` for open Phase 1 items assigned to Antigravity.
+Check `00_agency/sonia_task_table.md` for open Phase 1 items assigned to Antigravity.

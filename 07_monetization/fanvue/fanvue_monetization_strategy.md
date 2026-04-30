@@ -55,4 +55,4 @@ This is where the real MRR accelerator lives.
 To run this without you sitting at a keyboard 12 hours a day:
 1. **The Content Agent** generates the Fanvue post backlog.
 2. **Claude Chatbot Workflow:** When a VIP messages her, you paste their message into Claude alongside the prompt: *"You are Jasmine. Answering a $25/mo VIP patron named Mark. Respond flirtatiously to this."*
-3. **ElevenLabs:** Use the "soft warm East Asian accent" voice clone to generate 5-second voice replies for tips over $10.
+3. **ElevenLabs:** Use the "soft warm Indian/South Asian accent" voice clone to generate 5-second voice replies for tips over $10.

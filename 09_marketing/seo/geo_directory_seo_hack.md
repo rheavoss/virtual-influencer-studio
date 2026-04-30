@@ -1,4 +1,4 @@
-# Super-Collections + GeoDirectory SEO Hack — Jasmine Mako
+# Super-Collections + GeoDirectory SEO Hack — Sonia
 **Source:** YouTube transcript analysis (April 15–16 sessions, Framework 8)
 **Task:** P1-49
 **Owner:** Claude / CEO
@@ -43,7 +43,7 @@ Each auto-generated page targets: `[Category] in [City]` or `[Keyword] + [Locati
 - "virtual girlfriend Mumbai"
 - "GFE subscription India"
 - "AI influencer Fanvue Hindi"
-- "East Asian virtual girlfriend Delhi"
+- "Indian/South Asian virtual girlfriend Delhi"
 - "non-nude GFE creator India"
 
 **Page structure:**
@@ -58,7 +58,7 @@ Each auto-generated page targets: `[Category] in [City]` or `[Keyword] + [Locati
 ## Keyword Matrix (Starting Point)
 
 **Categories (vertical):**
-GFE, virtual girlfriend, AI influencer, subscription content, non-nude creator, Hindi GFE, East Asian model
+GFE, virtual girlfriend, AI influencer, subscription content, non-nude creator, Hindi GFE, Indian/South Asian model
 
 **Locations (horizontal):**
 Mumbai, Delhi, Bangalore, Hyderabad, Chennai, Pune, Kolkata, India (national), plus: UK, US, Canada, Australia

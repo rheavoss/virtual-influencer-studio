@@ -1,4 +1,4 @@
-# Jasmine Project — Non-Negotiable Operational Guidelines
+# Virtual Influencer Studio — Non-Negotiable Operational Guidelines
 **Created:** 2026-04-09
 **Authority:** These rules are non-negotiable and override any urgency or convenience in all future sessions.
 

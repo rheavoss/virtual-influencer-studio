@@ -1,6 +1,6 @@
 # Facebook Stars & Gifts Strategy
 **Date:** 2026-04-11
-**Target Character:** Jasmine Mako
+**Target Character:** Sonia
 
 ## 1. Applicability (What can receive Stars?)
 Initially, Stars were restricted to Live Streams and gaming. However, Meta has expanded this globally. As seen in your screenshot, **Facebook Stars are now formally applicable to:**

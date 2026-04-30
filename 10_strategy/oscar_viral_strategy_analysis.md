@@ -37,7 +37,7 @@ This strategy is **perfectly aligned** with our 8-character emotional GFE factor
 We are **not** using Oscar's implied Nano Banana Pro + Kling 3.0 stack (heavily censored for NSFW).
 
 **Our superior NSFW-optimised stack** (already in the dashboard):
-- **Images** → Flux.1 Dev + jasmakogirl LoRA + Flux Kontext 9B (Fal.ai)
+- **Images** → Flux.1 Dev + soniagfe LoRA + Flux Kontext 9B (Fal.ai)
 - **Video/Reels** → Wan AI Animate 2.2 **Spicy** (I2V) + Wan VACE + Higgsfield Cinema Studio
 - **Polish** → SeedVR 2 + CapCut (auto-captions, trending audio)
 - **Automation** → jasmine_agent.py + Metricool
@@ -50,7 +50,7 @@ We are **not** using Oscar's implied Nano Banana Pro + Kling 3.0 stack (heavily 
 
 ## Implementation Plan for Jasmine v4
 1. Complete **P0-39 LAMA cleanup** on 62 clean images (current blocker)
-2. Visual approval → feed into next **jasmakogirl Flux LoRA** training (RunPod)
+2. Visual approval → feed into next **soniagfe Flux LoRA** training (RunPod)
 3. Generate base images with Flux Kontext 9B
 4. Convert to Reels using **Wan AI 2.2 Spicy** (motion control)
 5. Create **9 variants per formula** (CapCut)

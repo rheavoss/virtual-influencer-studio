@@ -38,10 +38,10 @@
 | Skin | Fair, warm neutral-peachy, matte natural finish | No pink flush, no oily skin |
 | Skin imperfections | Visible pores on cheeks/nose, 2–3 acne marks left cheek, slight under-eye shadow | Realism — prevents "plastic skin" AI look |
 | Tattoos | **NONE** | Removed from spec. Earlier Rhea Voss drafts had tattoos — those are deprecated |
-| Voice accent | Soft warm East Asian accent, gentle and intimate tone | Must be in every single video/voice prompt — never leave vague |
+| Voice accent | Soft warm Indian/South Asian accent, gentle and intimate tone | Must be in every single video/voice prompt — never leave vague |
 | Content ceiling | Lena Paul level — deep cleavage, micro bikini, sheer. No nudity. No topless. Ever. | CEO personal values |
 | Age | 24 | Locked |
-| Ethnicity | East Asian — Japanese-Korean blend | Locked |
+| Ethnicity | Indian/South Asian — Indian/South Asian blend | Locked |
 
 ---
 
@@ -125,7 +125,7 @@
 | Content ceiling | Lena Paul level. Deep cleavage, micro bikini, sheer. No nipple/areola. No nudity. No topless. Ever. |
 | Instagram hard line | Female nipple/areola = instant ban. All IG content stays SFW. |
 | OPSEC before every upload | ExifTool strip + film grain on every image/video before uploading to any platform |
-| Voice prompt rule | Always include "soft warm East Asian accent, gentle and intimate tone" in every voice/video prompt |
+| Voice prompt rule | Always include "soft warm Indian/South Asian accent, gentle and intimate tone" in every voice/video prompt |
 | Ad traffic routing | Adult networks → mediator ONLY. Never direct to IG profile. |
 | No personal accounts | All platforms use Calilio US number. Never personal Indian SIM. |
 

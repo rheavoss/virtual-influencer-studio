@@ -9,7 +9,7 @@
 ## ⚠️ INTAKE RULE — MANDATORY FOR ALL NEW FRAMEWORKS
 
 **A framework added to this file is NOT complete until ALL three are true:**
-1. ✅ Task ID exists in `00_agency/jasmine_mako_task_table.md`
+1. ✅ Task ID exists in `00_agency/sonia_task_table.md`
 2. ✅ Strategy/SOP document exists at the correct path
 3. ✅ `99_grok_brain/GROK_BRAIN_SUMMARY.md` lists the task ID + doc path
 

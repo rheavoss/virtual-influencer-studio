@@ -1,4 +1,4 @@
-# Jasmine Mako — Master Research Summary
+# Sonia — Master Research Summary
 **Compiled:** April 10, 2026
 
 ## SECTION 1: LOCKED STRATEGIC DECISIONS
@@ -44,7 +44,7 @@
 ### 1.4 Content Strategy — 3 Pillars
 | Pillar | Format | Example |
 |---|---|---|
-| **Transformation** | Before/after | User films their own hand grabbing the camera -> SeaDance Start Frame -> Seamless transition into Jasmine Mako. |
+| **Transformation** | Before/after | User films their own hand grabbing the camera -> SeaDance Start Frame -> Seamless transition into Sonia. |
 | **Talking/Voiceover** | Speaking to camera | Opinion, confession, advice (GFE tone) |
 | **Cultural/Desi** | Ethnic fashion | Diwali look, lehenga reveal, Holi celebration |
 
