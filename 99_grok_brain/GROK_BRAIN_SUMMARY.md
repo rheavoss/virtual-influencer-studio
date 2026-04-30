@@ -91,7 +91,7 @@ blurry, low quality, deformed, mutated, extra limbs, bad anatomy, malformed feet
 
 | Item | Status |
 |---|---|
-| Sonia LoRA | ⏳ BLOCKED — face reference needed first |
+| Sonia LoRA | ⏳ READY TO START — face reference locked, dataset generation next |
 | Training tool | ostris/ai-toolkit |
 | Base model | Flux.2 Klein 9B |
 | Steps | 4000–6000 |
