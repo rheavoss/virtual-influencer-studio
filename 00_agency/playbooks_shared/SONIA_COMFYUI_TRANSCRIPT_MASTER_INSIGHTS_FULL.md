@@ -5,11 +5,11 @@
 \paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
-\f0\fs24 \cf0 # JASMINE_COMFYUI_TRANSCRIPT_MASTER_INSIGHTS_FULL.md\
+\f0\fs24 \cf0 # SONIA_COMFYUI_TRANSCRIPT_MASTER_INSIGHTS_FULL.md\
 \
 **Date**: 22 April 2026  \
 **Status**: Complete compilation of every useful point from all 3minut node transcripts  \
-**Purpose**: Single authoritative offline reference for all ComfyUI techniques relevant to Jasmine Virtual AI Influencer Studio.\
+**Purpose**: Single authoritative offline reference for all ComfyUI techniques relevant to Virtual Influencer Studio.\
 \
 ## 1. Video Generation & Cinematic Techniques (SeaDance 2 / Higgsfield / LTX 2.3)\
 \
