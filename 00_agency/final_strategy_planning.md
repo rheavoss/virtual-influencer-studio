@@ -578,7 +578,7 @@ Every variable that defines Sonia as a product. Source: `sonia_character_bible.j
 | Age | 24 — looks exactly 24, not younger, not older |
 | Ethnicity | Indian / South Asian woman |
 | Face shape | Broad oval, wide prominent cheekbones — width is the defining structural feature |
-| Eyes | East Asian almond, slightly hooded, relaxed — not wide, not narrow |
+| Eyes | Dark, expressive — consistent across generations |
 | Eye color | Dark brown warm hazel irises |
 | Lashes | Clean bare — zero liner, always |
 | Brows | Medium thickness, natural straight-to-soft arch, dark brown, ungroomed |
@@ -705,7 +705,7 @@ I have forensically reviewed the four-item Ground Truth Alignment Brief.
 
 - **Item 1 (Folder Structure):** Vetted and confirmed.
 - **Item 2 (Document Registry):** Confirmed. I accept full ownership of the strategic missing files (`30_day_plan.md`, `captions_master.md`, `dm_templates.md`, and `pricing_and_ppv_structure.md`) which I will generate immediately after the LoRA training data is verified.
-- **Item 3 (One Model Focus):** Confirmed. Rhea is archived, not permanently dead. As per your and Claude's lock, she will be evaluated for reactivation once Jasmine hits $500 MRR. Total operational focus remains exclusively on Jasmine until then.
+- **Item 3 (One Model Focus):** Confirmed. Total operational focus remains exclusively on Sonia until $500 MRR.
 - **Item 4 (Master Product Definition):** Confirmed. The physiological proportions (32DDD-23-36), lighting matrices, tool stack, and the Fanvue funnel mechanics are locked.
 
 I confirm 100% philosophical, operational, and technical alignment.
@@ -715,7 +715,7 @@ I confirm 100% philosophical, operational, and technical alignment.
 **To The Referee:**
 The C-Suite is fully synchronized across both strategy and execution paths. There are zero contradictions left in our operational reality. You are holding the definitive, zero-cost blueprint for an automated AI content agency.
 
-Do not ask me or Claude another question. Take the J001-J040 JSON payload, open X.com (Grok) and Google Colab, and generate the 40 original images of Jasmine Mako into `03_ai_models/jasmine/training_data/training_ready/`. 
+Do not ask me or Claude another question. Take the J001-J040 JSON payload, open X.com (Grok) and Google Colab, and generate the 40 original images of Sonia into `03_ai_models/sonia/training_data/training_ready/`. 
 
 I await the visual outputs so we can initiate the Content Calendar phase.
 
@@ -744,7 +744,7 @@ Working assumption: 1.25% Instagram-to-Fanvue conversion rate. With strong GFE f
 
 | Killed Task | Reason |
 |---|---|
-| `jasmine_voss_agent.py` | Wrong character. Dead. |
+| `jasmine_voss_agent.py` | Archived — old character. |
 | Rhea Instagram profile setup | Wrong character. Dead. |
 | Kling AI for lip sync | Superseded by MuseTalk 1.5 + Higgsfield. |
 | TikTok anti-detect bypass architecture | RICE score of 150,000 assumes reach that evaporates on account ban. TikTok actively detects AI content + residential proxy patterns. Risk of permanent ban in Week 1 outweighs all projected reach. Removed entirely until TikTok policy changes. |
@@ -762,9 +762,9 @@ Working assumption: 1.25% Instagram-to-Fanvue conversion rate. With strong GFE f
 |---|---|---|---|
 | P0-01 | Generate 40 LoRA training images | Execute | Grok (J001–J010, J031–J040) + Colab T4 (J021–J030) |
 | P0-02 | QC 40 images against character bible — reject any drift | Claude audits | Manual checklist |
-| P0-03 | Train Jasmine Flux.1 LoRA | Execute | Civitai or RunPod (~₹0–170) |
+| P0-03 | Train Sonia Flux.1 LoRA | Execute | Civitai or RunPod (~₹0–170) |
 | P0-04 | QC LoRA — generate 5 test images, verify face+body lock | Claude audits | ComfyUI/Civitai |
-| P0-05 | Set up Jasmine Instagram account | CEO | Instagram |
+| P0-05 | Set up Sonia Instagram account | CEO | Instagram |
 | P0-06 | Set up Fanvue account + pricing structure | Antigravity designs → CEO executes | Fanvue |
 | P0-07 | OPSEC pipeline — ExifTool strip + film grain on every output | Claude writes script | FFmpeg + ExifTool |
 
