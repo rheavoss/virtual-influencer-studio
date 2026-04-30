@@ -1446,7 +1446,7 @@ Phase 0 (image generation only): $9/mo tier. Phase 1 (SeaDance 2.0 video product
 ### Ruling 4 — Carrd.co Double Redirect Mandatory (Mother-Daughter Killed)
 
 **What it means operationally:**
-Only one Instagram account: `@jasmine.mako`. No `@jasmine.mako.link` dummy account. Bio links to a custom domain (e.g., `jasminemako.com` or `linkjasmine.com`) → Cloudflare proxy → Carrd.co SFW page → Fanvue/Room 11.
+Only one Instagram account: `@sonia`. No dummy account. Bio links to a custom domain → Cloudflare proxy → Carrd.co SFW page → Fanvue/Room 11.
 
 New Phase 0 task added: Purchase Namecheap domain (~$10–12/yr = ₹77/mo amortised).
 
@@ -1455,7 +1455,7 @@ New Phase 0 task added: Purchase Namecheap domain (~$10–12/yr = ₹77/mo amort
   - `[ ] Purchase Namecheap custom domain (~$10/yr)`
   - `[ ] Configure Cloudflare proxy on domain`
   - `[ ] Build Carrd.co SFW bridge page (lifestyle branding, no adult references)`
-  - `[ ] Set domain as single bio link on @jasmine.mako`
+  - `[ ] Set domain as single bio link on @sonia`
 - `master_research_summary.md` — deprecate Section 1.3 (Mother-Daughter Link Method)
 - `CLAUDE.md` — update OPSEC section with new link architecture
 - `13_finance/tool_costs.md` — add Namecheap domain as one-time Phase 0 cost (~₹1,100 one-time)
@@ -1467,7 +1467,7 @@ New Phase 0 task added: Purchase Namecheap domain (~$10–12/yr = ₹77/mo amort
 ### Ruling 5 — Physical Phone for Phase 0, Dolphin{anty} at Phase 4
 
 **What it means operationally:**
-Phase 0: CEO uses one dedicated physical phone + US residential proxy/SIM + Calilio US number ($12/mo) to create and warm `@jasmine.mako`. Safe for a single account.
+Phase 0: CEO uses one dedicated physical phone + US residential proxy/SIM + Calilio US number ($12/mo) to create and warm `@sonia`. Safe for a single account.
 Phase 4 (second account trigger): Migrate to Dolphin{anty} + US Dedicated Residential ISP Proxy (~$10/mo).
 
 **New Phase 0 budget item:** Calilio $12/mo = ₹1,117/mo.
@@ -1539,7 +1539,7 @@ All five rulings from Move 14 are now committed to disk. Below is the permanent 
 ### Files Updated
 - `13_finance/tool_costs.md` — revised Phase 0 and Phase 1 base costs, all new tools added
 - `CLAUDE.md` — Room 11 added to revenue model, link architecture updated, device protocol updated
-- `00_agency/jasmine_mako_task_table.md` — mother-daughter tasks replaced, Room 11 sequenced after LoRA, Later.com added to Phase 1
+- `00_agency/jasmine_mako_task_table.md` — mother-daughter tasks replaced, Room 11 sequenced after LoRA, Later.com added to Phase 1 (historical)
 - `00_agency/master_research_summary.md` — TikTok and mother-daughter sections deprecated
 - `00_agency/growth_and_revenue_timeline.md` — Phase 0 and Phase 1+ base costs updated
 - `20_tech/jasmine-dashboard/lib/fallback-data.js` — cost rows updated
