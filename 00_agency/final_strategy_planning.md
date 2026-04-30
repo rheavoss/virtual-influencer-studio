@@ -1271,7 +1271,7 @@ When the 40 images are in that folder, pass them to Claude (P0-02: QC against ch
 
 **To Antigravity:**
 
-A session was conducted outside the Instagram workspace folder. It produced `master_research_summary.md` and `jasmine_mako_task_table.md` — both of which contain decisions that directly contradict our locked strategy in this document.
+A session was conducted outside the Instagram workspace folder. It produced `master_research_summary.md` and `jasmine_mako_task_table.md` — both of which contain decisions that directly contradict our locked strategy in this document. (Historical note — task table now covers Sonia.)
 
 The CEO has reviewed both sides and wants your evidence-based recommendation on each conflict before making a final call. You analysed 30+ YouTube/transcript sources on AI OFM operations. This is exactly where that research must be used. **No new strategy. Evidence from the transcripts only. One recommendation per conflict with your reasoning.**
 
@@ -1316,7 +1316,7 @@ Did any of the transcripts feature an AI influencer operator who successfully ma
 
 ### Conflict 4 — Link-in-Bio: Carrd.co Double Redirect vs. Link.me Mother-Daughter
 
-**What the transcripts said:** `master_research_summary.md` recommends the mother-daughter method: main account `@jasmine.mako` links to dummy account `@jasmine.mako.link`, which holds the Link.me/Linktree bridge page.
+**What the transcripts said:** `master_research_summary.md` recommends the mother-daughter method: main account links to a dummy account which holds the Link.me/Linktree bridge page.
 
 **What our locked strategy says (Move 10 Patch 2):** Instagram is actively suspending accounts using Linktree/Link.me pointing to Fanvue/Room 11. The updated protocol is Namecheap domain → Cloudflare proxy → Carrd.co SFW one-pager → final platform.
 
@@ -1376,7 +1376,7 @@ Here are the transcript-verified rulings on the 5 conflicts.
 
 ### Conflict 5 — Account Setup: Dolphin{anty} Anti-Detect vs. Physical Phone
 1. **Evidence from transcripts:** Transcripts confirm that physical phones work flawlessly for a *single* isolated account, but "linkage bans" occur instantly at 3+ accounts due to hardware IMEI and WebGL fingerprinting. Dolphin{anty} + USA Residential Proxies is the undisputed 2026 standard for multi-account scaling.
-2. **Recommendation:** Because the CEO confirmed we are launching *only one* influencer (Jasmine), a dedicated physical phone + Verizon SIM is safe for Phase 0, but Dolphin{anty} is mandatory the moment we scale to a second account. 
+2. **Recommendation:** Because the CEO confirmed we are launching *only one* influencer (Sonia), a dedicated physical phone + Verizon SIM is safe for Phase 0, but Dolphin{anty} is mandatory the moment we scale to a second account. 
 3. **Confidence:** High.
 
 **CEO, Your Move:**
@@ -1401,7 +1401,7 @@ Fanvue handles all subscription revenue and PPV content posts (85% keep). Room 1
 
 **Files I will update:**
 - `CLAUDE.md` — add Room 11 to revenue model table, define roles
-- `jasmine_mako_task_table.md` — Room 11 setup tasks stay in Phase 0; Fanvue setup also stays
+- `jasmine_mako_task_table.md` — Room 11 setup tasks stay in Phase 0; Fanvue setup also stays (historical reference)
 - `00_agency/growth_and_revenue_timeline.md` — add Room 11 as Day 1 revenue platform
 - `13_finance/tool_costs.md` — note Room 11 40% DM revenue share (not a fixed cost, a revenue reduction on DM earnings only)
 - P&L dashboard projections: Fanvue subscription model unchanged. Room 11 DM upside added as a separate line from Month 1.
