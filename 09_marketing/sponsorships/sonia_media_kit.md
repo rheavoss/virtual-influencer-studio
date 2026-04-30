@@ -1,10 +1,10 @@
-# Jasmine — Media Kit
+# Sonia — Media Kit
 **Task:** P1-59 | **Status:** DRAFT — pending first follower milestone
 
 ---
 
-## About Jasmine
-24-year-old East Asian lifestyle & fashion creator. Known for premium aesthetic content — beauty routines, fashion, intimate lifestyle.
+## About Sonia
+22-year-old Indian / South Asian lifestyle & fashion creator. Known for premium aesthetic content — beauty routines, fashion, intimate lifestyle.
 
 **Niche:** Lifestyle / Beauty / Fashion / Wellness
 **Audience:** Males 18–35, primarily US/UK/AU/CA
@@ -59,7 +59,7 @@
 
 ## Contact
 **Email:** [CEO email]
-**Instagram DM:** @jasmine.mako
+**Instagram DM:** @sonia
 **Collabstr:** [link when listed]
 **Passionfroot:** [link when listed]
 
