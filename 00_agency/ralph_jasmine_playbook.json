@@ -1,7 +1,7 @@
 {
-  "protocolVersion": "16.1-jasmine",
+  "protocolVersion": "16.1-sonia",
   "lastUpdated": "2026-04-19",
-  "project": "Jasmine Virtual AI Influencer Studio",
+  "project": "Virtual Influencer Studio — Sonia",
   "enforcement": "GitHub CI/CD + Antigravity sidecar (mechanical turnstiles)",
   "circularEnforcement": true,
   "gates": {
