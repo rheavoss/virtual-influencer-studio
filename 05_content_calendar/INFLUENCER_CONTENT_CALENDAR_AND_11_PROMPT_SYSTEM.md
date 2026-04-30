@@ -9,7 +9,7 @@
 
 ## 7-PROMPT SYSTEM (The Engine)
 
-Use these 7 proven prompt frameworks to create Jasmine content:
+Use these 7 proven prompt frameworks to create Sonia content:
 
 1. Pattern Break Architect – Hook that stops scroll
 2. Hook That Hijacks – Emotional / curiosity hook

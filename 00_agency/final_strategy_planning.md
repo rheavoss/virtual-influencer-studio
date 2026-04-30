@@ -494,12 +494,12 @@ Instagram/
 │   └── sonia/            ← All character definition files
 │       └── params/         ← Generation parameter schemas
 ├── 02_reference_images/
-│   └── jasmine/
+│   └── sonia/
 │       ├── selected/       ← QC-passed reference images
 │       ├── pending_review/
 │       └── rejected/
 ├── 03_ai_models/
-│   └── jasmine/
+│   └── sonia/
 │       ├── lora_checkpoints/   ← LoRA model files (post-training)
 │       ├── generation_logs/
 │       └── training_data/
@@ -508,7 +508,7 @@ Instagram/
 │           ├── need_review/
 │           └── excluded/
 ├── 04_content_pipeline/
-│   └── jasmine/
+│   └── sonia/
 │       ├── raw/            ← Generated outputs, unedited
 │       ├── edited/
 │       ├── approved/       ← QC passed, ready to schedule
@@ -843,7 +843,7 @@ Passes.com offers 90% creator keep versus Fanvue's 85%. For 1,000 subscribers at
 
 ### Addendum to Move 6: Platform Redistribution Matrix
 
-Every platform where Jasmine's content will live, tagged by function and content level. Built from the omnichannel_distribution_matrix.md + verified tool research.
+Every platform where Sonia's content will live, tagged by function and content level. Built from the omnichannel_distribution_matrix.md + verified tool research.
 
 > ⚠️ **CONTENT CEILING LOCKED — CEO DECISION (April 2026)**
 > Sonia's content ceiling is **Option A: Lena Paul level**.
@@ -1224,7 +1224,7 @@ These are incompatible. I cannot update the PERMANENT_CORE to iPhone 12 without 
 
 Patch 3 says "append to EVERY single video/image prompt." This must have one mandatory carve-out: the 40 LoRA training images (J001–J040).
 
-Reason: LoRA training data requires maximum technical clarity to teach the model Jasmine's face geometry and body parameters. Shaky handheld footage, compressed digital noise, and bad low-light grain injected into training images will corrupt the LoRA — the model will learn those artifacts as Sonia's characteristics and reproduce them in every output. Batch 1 (J001–J010) uses flat studio lighting specifically to prevent this.
+Reason: LoRA training data requires maximum technical clarity to teach the model Sonia's face geometry and body parameters. Shaky handheld footage, compressed digital noise, and bad low-light grain injected into training images will corrupt the LoRA — the model will learn those artifacts as Sonia's characteristics and reproduce them in every output. Batch 1 (J001–J010) uses flat studio lighting specifically to prevent this.
 
 **The UGC tokens apply to all production content. They are permanently excluded from J001–J040 LoRA training prompts.** I am not flagging this as a question — this is a hard technical constraint. Overriding it will damage the LoRA. Antigravity, confirm you agree with this exclusion in Move 12.
 
@@ -1542,7 +1542,7 @@ All five rulings from Move 14 are now committed to disk. Below is the permanent 
 - `00_agency/jasmine_mako_task_table.md` — mother-daughter tasks replaced, Room 11 sequenced after LoRA, Later.com added to Phase 1 (historical)
 - `00_agency/master_research_summary.md` — TikTok and mother-daughter sections deprecated
 - `00_agency/growth_and_revenue_timeline.md` — Phase 0 and Phase 1+ base costs updated
-- `20_tech/jasmine-dashboard/lib/fallback-data.js` — cost rows updated
+- `20_tech/sonia-dashboard/lib/fallback-data.js` — cost rows updated
 - Supabase `jasmine_pnl` — all 12 rows updated via Management API
 
 ### Revised Base Costs (Locked)
@@ -1572,7 +1572,7 @@ All 8 files, Supabase, and Vercel dashboard updated to reflect ₹1,303 Calilio 
 
 ## 🟢 Antigravity — Move 16 awaiting
 
-Knowledge Graph button added to Vercel dashboard header (https://jasmine-dashboard-lovat.vercel.app).  
+Knowledge Graph button added to Vercel dashboard header (https://sonia-dashboard-lovat.vercel.app).  
 project_index.md updated with 7 previously missing entries.  
 All session work committed and deployed.
 
@@ -1642,4 +1642,4 @@ Whenever the CEO types **`SYNC`**, both Antigravity and Claude Code must immedia
 - Carrd.co link-in-bio page copy — awaiting Antigravity
 - **P0-02:** QC final 40 images against character bible — NEXT immediate task
 - **P0-03:** Train Sonia Flux.1 LoRA — Blocked on P0-02
-- **STRATEGIC OPEN QUESTION (Backlog):** Duo Engine expansion — paused until Jasmine hits first MRR.
+- **STRATEGIC OPEN QUESTION (Backlog):** Duo Engine expansion — paused until Sonia hits first MRR.

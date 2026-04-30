@@ -10,10 +10,10 @@
 ### Where Instagram Draws the Line
 Instagram’s "Adult Nudity and Sexual Activity" guidelines use computer vision to scan for extremely specific geometrical variables.
 
-> ⚠️ **GENERATION SPEC NOTE:** While Instagram allows G-cup in real human content, Flux.1 Dev models exhibit BBW drift at G-cup. Jasmine's character spec is **LOCKED at 32DDD** (NOT G-cup). See `master_decisions_log.md` §2.
+> ⚠️ **GENERATION SPEC NOTE:** While Instagram allows G-cup in real human content, Flux.1 Dev models exhibit BBW drift at G-cup. Sonia's character spec is **LOCKED at 32DDD** (NOT G-cup). See `master_decisions_log.md` §2.
 
 **Instagram WILL ALLOW:**
-*   **Extreme Cleavage:** There is no volume limit on cleavage. However: Jasmine's character spec uses **32DDD** — not G-cup. G-cup causes BBW drift in Flux generation models.
+*   **Extreme Cleavage:** There is no volume limit on cleavage. However: Sonia's character spec uses **32DDD** — not G-cup. G-cup causes BBW drift in Flux generation models.
 *   **Tight/Wet Clothing:** As long as opaque fabric covers the restricted zones, the physics of how tight it is does not matter.
 *   **Suggestive Poses:** "Utility" poses (bending over, gym squats, stretching) are permitted as they are classified in the fitness/lifestyle taxonomy.
 *   **Thongs & Lingerie:** Thongs from behind and opaque lingerie sets are allowed as they fit within fashion/model framing.
@@ -32,7 +32,7 @@ Instagram’s "Adult Nudity and Sexual Activity" guidelines use computer vision 
 
 | Tier | Content Allowed | Required Tool | Cost / Execution |
 |---|---|---|---|
-| **Tier 1: Instagram Safe / Edge** | Bikini, deep cleavage, thong from behind, opaque lingerie, sheer fabric (nipple covered). | **Civitai** + Jasmine LoRA <br> **Higgsfield** Seedream 4.0 | Civitai: Crypto/Buzz credits. <br> Higgsfield: ~$9/mo web-based. |
+| **Tier 1: Instagram Safe / Edge** | Bikini, deep cleavage, thong from behind, opaque lingerie, sheer fabric (nipple covered). | **Civitai** + Sonia LoRA <br> **Higgsfield** Seedream 4.0 | Civitai: Crypto/Buzz credits. <br> Higgsfield: ~$9/mo web-based. |
 | **Tier 2: Fanvue Explicit (Off-Platform)** | Sheer visible, explicit nudity, hardcore Fanvue unlockables. | **Local ComfyUI** (RunPod) **Only** | ~₹85–170/session. The only fully unrestricted option in the stack. No corporate filters. |
 
 ---

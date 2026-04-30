@@ -13,7 +13,7 @@
 | **Fanvue** | Primary monetization (GFE subscription) | Phase 0 — Day 1 |
 | **Room 11** | Secondary monetization — 100% automated DM chatting | After LoRA — requires 30–40 LoRA photos |
 
-> ~~**TikTok row above DEPRECATED 2026-04-11:**~~ TikTok permanently removed from strategy. Antigravity confirmed via 30+ YouTube creator transcripts: TikTok algorithm deprioritizes AI-generated content and ban risk is high with no recovery path. Do not create any TikTok account for Jasmine.
+> ~~**TikTok row above DEPRECATED 2026-04-11:**~~ TikTok permanently removed from strategy. Antigravity confirmed via 30+ YouTube creator transcripts: TikTok algorithm deprioritizes AI-generated content and ban risk is high with no recovery path. Do not create any TikTok account for Sonia.
 
 ### 1.1b Room 11 Setup Architecture
 > **⚠️ PARTIALLY DEPRECATED 2026-04-11:** The "removing Fanvue entirely" instruction below is superseded. Antigravity's Move 13 ruling locks **Fanvue as primary** and Room 11 as secondary. Do not route all traffic to Room 11 only.
@@ -27,19 +27,19 @@
 - *Calilio Cost:* ₹1,303/month ($12 seat + $2 US number = $14/mo × ₹93.08) — 1 US local number + 100 SMS packets. Sufficient for IG verification.
 - ~~For TikTok, purchase expired US Verizon SIM cards from Amazon~~ — TikTok permanently removed from strategy. See 1.1 deprecation note.
 
-1. **Day 1–3:** Create `@jasmine.mako` via physical phone. Add profile/soft bio (student, saving money, nothing sexy). Follow 5–20 USA accounts (Logan Paul, brands). Watch competitor reels only, do not like or comment. Wait 24 hrs. NO LINK.
+1. **Day 1–3:** Create `@sonia.mako` via physical phone. Add profile/soft bio (student, saving money, nothing sexy). Follow 5–20 USA accounts (Logan Paul, brands). Watch competitor reels only, do not like or comment. Wait 24 hrs. NO LINK.
 2. **Day 4–7:** Post 1 SFW photo daily. Still NO LINK in bio. Let algorithm train based on watch-time.
 3. **Day 8:** Add **Bouncy.cc** link-in-bio URL (opens native Safari/Chrome = logged-in users = higher Fanvue conversion). ~~Carrd.co is DEPRECATED — in-app browser = logged-out users = low conversion.~~ Begin Reels. **Do NOT use mother-daughter method — see Section 1.3 deprecation.**
 4. **Day 8–14:** Boost 2–3 static images at $5/day to males 30–50, USA.
 
 ### 1.3 Mother-Daughter Link Method — ⛔ DEPRECATED 2026-04-11
 
-> **DEPRECATED:** Instagram chain-banning of linked accounts confirmed in 2026. Creating a dummy @jasmine.mako.link account for the mother-daughter method will trigger IG's coordinated inauthentic behavior detection and ban both accounts. Link.me is also flagged. Do not use this method.
+> **DEPRECATED:** Instagram chain-banning of linked accounts confirmed in 2026. Creating a dummy @sonia.mako.link account for the mother-daughter method will trigger IG's coordinated inauthentic behavior detection and ban both accounts. Link.me is also flagged. Do not use this method.
 >
-> **Replacement:** Single account `@jasmine.mako` with bio pointing directly to Namecheap domain → Cloudflare → Bouncy.cc link-in-bio page. See Section 1.2 Day 8 for updated bio link activation timing.
+> **Replacement:** Single account `@sonia.mako` with bio pointing directly to Namecheap domain → Cloudflare → Bouncy.cc link-in-bio page. See Section 1.2 Day 8 for updated bio link activation timing.
 
-~~- **Main account:** `@jasmine.mako` — bio reads: `link in @jasmine.mako.link 👇`~~
-~~- **Dummy account:** `@jasmine.mako.link` — bio contains ONLY the bridge page link (Link.me/Linktree).~~
+~~- **Main account:** `@sonia.mako` — bio reads: `link in @sonia.mako.link 👇`~~
+~~- **Dummy account:** `@sonia.mako.link` — bio contains ONLY the bridge page link (Link.me/Linktree).~~
 
 ### 1.4 Content Strategy — 3 Pillars
 | Pillar | Format | Example |
@@ -57,7 +57,7 @@
 ### ~~1.4c Long-Form PPV & Dialogue Pipeline (Avatar 5.0)~~ — ⚠️ DEPRECATED 2026-04-17
 > **DEPRECATED:** Avatar 5.0 is not in current stack. Use **Wan AI S2V** for talking head / long-form video. See `master_decisions_log.md` §4 and tech stack table above.
 - ~~**The Zero-Drift Strategy:** SeaDance is for 15s cinematic hooks. For 1-to-10 minute talking head videos (Direct-to-camera Reals or $50 PPV DMs on Fanvue), we use Avatar 5.0.~~
-- ~~**The 15-Second Source:** We will feed Avatar 5 a 15-second reference video of a real human with Jasmine's deepfake applied. Avatar 5 learns the micro-movements, allowing us to drop 10-minute scripts that it will generate flawlessly without the "cousin drift" hallucination typical of image-based models.~~
+- ~~**The 15-Second Source:** We will feed Avatar 5 a 15-second reference video of a real human with Sonia's deepfake applied. Avatar 5 learns the micro-movements, allowing us to drop 10-minute scripts that it will generate flawlessly without the "cousin drift" hallucination typical of image-based models.~~
 
 ### 1.5 Revenue Architecture & Chatting (6-Step Ladder)
 - **Revenue Split:** Focus on generating volume traffic so the Room 11 managed chatters can convert PPV Messages (50-60%) and Mass Message PPVs (10-15%).
@@ -73,7 +73,7 @@
 | Tool | Purpose | Cost |
 |---|---|---|
 | **Higgsfield Plus** | Images (NanaBanana Pro unlimited), Video (SeaDance 2.0 / Kling 3.0), Audio (ElevenLabs v3), Motion Control | $29/mo (annual) |
-| **Loomflow AI** | The "Uncensored" alternative for SeaDance 2.0. To be used immediately if Higgsfield begins throwing "Face Detected / Violation" errors for Jasmine's realism. Features a built-in automated Prompt Agent, eliminating the need for Claude. | Pay-per-use |
+| **Loomflow AI** | The "Uncensored" alternative for SeaDance 2.0. To be used immediately if Higgsfield begins throwing "Face Detected / Violation" errors for Sonia's realism. Features a built-in automated Prompt Agent, eliminating the need for Claude. | Pay-per-use |
 | ~~**Avatar 5.0**~~ | ~~Long-form Video-to-Video generation.~~ **DEPRECATED — not in current stack.** Use Wan AI S2V for talking head video instead. | — |
 | **Google Colab + Flux.1** | NSFW Batch 2-3 image generation (uncensored) | Free |
 | **fal.ai** | API for Kling 3.0 batch video generation (Phase 2 automation) | Pay-per-use |
@@ -83,5 +83,5 @@
 
 ## SECTION 3: NEW TECHNIQUES
 
-**1. Voice Consistency:** Utilize Claude to analyze Jasmine's base parameters. Create a universal voice prompt defining accent, tone, pacing, and emotional delivery. Prepend this to EVERY dialogue video.
-**2. Advanced Competitor Scraping:** Utilize Apify via Claude Code to scrape top 30 competitor reels, extracting view counts and transcripts, feeding to Gemini to extract viral hooks and rewrite them for Jasmine.
+**1. Voice Consistency:** Utilize Claude to analyze Sonia's base parameters. Create a universal voice prompt defining accent, tone, pacing, and emotional delivery. Prepend this to EVERY dialogue video.
+**2. Advanced Competitor Scraping:** Utilize Apify via Claude Code to scrape top 30 competitor reels, extracting view counts and transcripts, feeding to Gemini to extract viral hooks and rewrite them for Sonia.

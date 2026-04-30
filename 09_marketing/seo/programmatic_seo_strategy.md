@@ -36,7 +36,7 @@ Each page targets a specific keyword combination. Thousands of pages = compoundi
 
 1. **Keyword research** — Use Perplexity to find 200–500 long-tail keywords in the GFE / virtual influencer niche
 2. **Competitor scrape** — Use Firecrawl to extract page structure from top-ranking competitor sites
-3. **Template creation** — Build one master landing page template (headline, description, CTA, Jasmine image)
+3. **Template creation** — Build one master landing page template (headline, description, CTA, Sonia image)
 4. **Generator script** — Claude Code writes a script that takes keyword list → outputs 500+ unique pages
 5. **Deploy** — Push all pages to domain (jasminemako.com or similar)
 6. **Link internally** — Cross-link pages to build SEO authority
@@ -61,12 +61,12 @@ Each page targets a specific keyword combination. Thousands of pages = compoundi
 
 - [ ] Domain registered (P0-10)
 - [ ] Site live with at least basic pages
-- [ ] Minimum 50 Jasmine images for page content
+- [ ] Minimum 50 Sonia images for page content
 - [ ] LoRA outputs ready for page illustrations
 
 ---
 
-## Integration With Jasmine Funnel
+## Integration With Sonia Funnel
 
 ```
 Google search "virtual GFE India"

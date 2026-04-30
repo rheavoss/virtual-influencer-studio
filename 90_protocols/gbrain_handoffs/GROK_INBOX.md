@@ -43,7 +43,7 @@ When CEO launches the standard **RunPod ComfyUI template** and loads Qwen-Image-
 
 ### BACKGROUND — Why We're Switching
 
-5 FLUX.1-dev LoRA training attempts across Jasmine (v1–v4) and inkqueen (v1):
+5 FLUX.1-dev LoRA training attempts across Sonia (v1–v4) and inkqueen (v1):
 - **v1**: Skin defect QC failure
 - **v2**: Watermark baked into weights
 - **v3**: Blocked — all 40 images leg-cropped (wrong resolution)
@@ -121,7 +121,7 @@ All 6 question sets above. Specifically Q2 (exact working hyperparameters), Q3 (
 
 ---
 
-## RESEARCH REQUEST: Jasmine v3 LoRA Training Pipeline
+## RESEARCH REQUEST: Sonia v3 LoRA Training Pipeline
 **Date:** 2026-04-25
 **From:** Claude
 **Priority:** CRITICAL — blocks training execution

@@ -8,7 +8,7 @@
 
 ## What Is It
 
-Jasmine appears as a personal brand AI avatar on high-RPV (Revenue Per View) YouTube channels. Channels stack ads + affiliates + own GFE/PPV offers simultaneously.
+Sonia appears as a personal brand AI avatar on high-RPV (Revenue Per View) YouTube channels. Channels stack ads + affiliates + own GFE/PPV offers simultaneously.
 
 **RPV** = revenue per 1,000 views. High-RPV niches ($5–$30 RPM) vs low-RPV ($0.50–$2 RPM).
 
@@ -20,14 +20,14 @@ Jasmine appears as a personal brand AI avatar on high-RPV (Revenue Per View) You
 |---|---|
 | YouTube AdSense | $500–$5,000 |
 | Affiliate links | $500–$3,000 |
-| Jasmine Fanvue CTAs | $1,000–$10,000 |
+| Sonia Fanvue CTAs | $1,000–$10,000 |
 | **Total per channel** | **$2,000–$18,000** |
 
 Target: 2–3 channels = $5,000–$30,000/month evergreen.
 
 ---
 
-## High-RPV Content Types for Jasmine
+## High-RPV Content Types for Sonia
 
 | Type | RPM | Description |
 |---|---|---|
@@ -43,18 +43,18 @@ Target: 2–3 channels = $5,000–$30,000/month evergreen.
 
 ```
 Channel A — "AI Creator Insider" (English, international)
-  Jasmine as host/avatar
+  Sonia as host/avatar
   Content: Case studies, income reveals, AI tool reviews
   Monetization: AdSense + affiliate (Higgsfield/Kling referrals) + Fanvue CTA
 
-Channel B — "Jasmine Hindi" (Hindi, India market)  
-  Jasmine Hindi voice (ElevenLabs dub pipeline — P1-38)
+Channel B — "Sonia Hindi" (Hindi, India market)  
+  Sonia Hindi voice (ElevenLabs dub pipeline — P1-38)
   Content: Hindi GFE explainers, relationship advice, lifestyle
   Monetization: AdSense (lower RPM but huge TAM) + Fanvue Hindi subs
 
 Channel C (Phase 3) — "AI Girlfriend World" (faceless, no avatar)
   Educational/entertainment about AI GFE niche
-  No character shown — pure information + Jasmine CTAs
+  No character shown — pure information + Sonia CTAs
 ```
 
 ---
@@ -62,20 +62,20 @@ Channel C (Phase 3) — "AI Girlfriend World" (faceless, no avatar)
 ## Production Pipeline
 
 1. **Script** — Claude writes 800–1,200 word YouTube script
-2. **Voiceover** — ElevenLabs Jasmine voice clone
-3. **Video** — Higgsfield generates Jasmine b-roll clips from script scenes
+2. **Voiceover** — ElevenLabs Sonia voice clone
+3. **Video** — Higgsfield generates Sonia b-roll clips from script scenes
 4. **Edit** — Premiere Pro / CapCut (6-step editing system — Framework 13)
-5. **Thumbnail** — Jasmine LoRA image + title text
+5. **Thumbnail** — Sonia LoRA image + title text
 6. **Upload** — Manual or Vugola auto-distribution
 
 ---
 
 ## Prerequisites
 
-- [ ] Jasmine voice clone live (ElevenLabs)
+- [ ] Sonia voice clone live (ElevenLabs)
 - [ ] Fanvue established with content (P0-20)
 - [ ] Hindi dub pipeline tested (P1-38)
-- [ ] 20+ Jasmine video clips available
+- [ ] 20+ Sonia video clips available
 
 ---
 
@@ -94,7 +94,7 @@ Channel C (Phase 3) — "AI Girlfriend World" (faceless, no avatar)
 
 | Tool | Purpose | Cost |
 |---|---|---|
-| ElevenLabs | Jasmine voiceover | ₹1,660/month |
+| ElevenLabs | Sonia voiceover | ₹1,660/month |
 | Higgsfield | B-roll video generation | Already subscribed |
 | Vugola | Auto-distribution to YouTube | Free tier |
 | Premiere Pro / CapCut | Editing | Free tier |

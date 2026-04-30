@@ -89,7 +89,7 @@
 | Decision | Chosen | Rejected | Why |
 |---|---|---|---|
 | Primary video engine | Wan AI ($5/mo) | HeyGen | HeyGen Digital Twin: $2–6/min = ₹18,000–55,000/month for same 40–60 Reels output. Wan: $5/month |
-| Image generation | Flux.1 Dev + Jasmine LoRA | MidJourney / Krea | Open weights = no censorship = Fanvue content viable |
+| Image generation | Flux.1 Dev + Sonia LoRA | MidJourney / Krea | Open weights = no censorship = Fanvue content viable |
 | Static image workflow | Always generate image first → use as Start Frame | Text-to-video directly | 30–40% better consistency |
 | Prompt format (Wan/Seedance) | Subject + Scene + Motion + Aesthetic + Stylization, 80–120 words natural language | Keyword stacking | Keyword stacking degrades video model output |
 | Scene reference | Pinterest → Qwen 3VL caption → prompt | Manual prompt writing | Research-backed, ultra-detailed scene prompts |
@@ -143,7 +143,7 @@
 | Google Veo 3 (primary pipeline) | Evaluated but requires Google approval. Using Wan AI + Higgsfield instead | 2026-04-13 |
 | HeyGen Digital Twin | $2–6/min makes it 360× more expensive than Wan AI for same output | 2026-04-13 |
 | G-cup body spec | Causes BBW drift in Flux models. Locked at DDD (32DDD). | 2026-04-11 |
-| Heavy tattoo spec (Rhea Voss) | Removed from Jasmine's character spec. Earlier Rhea drafts — deprecated. | 2026-04-13 |
+| Heavy tattoo spec (Rhea Voss) | Removed from Sonia's character spec. Earlier Rhea drafts — deprecated. | 2026-04-13 |
 
 ---
 

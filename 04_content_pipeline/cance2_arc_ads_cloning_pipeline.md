@@ -2,13 +2,13 @@
 **Source:** Master Frameworks Compilation — Framework 2
 **Task:** P1-53
 **Owner:** Antigravity / Claude
-**Phase:** Phase 1 (after first Jasmine videos live)
+**Phase:** Phase 1 (after first Sonia videos live)
 
 ---
 
 ## What Is It
 
-Drag a high-converting competitor ad → AI analyzes vibe/pacing/shots → auto-generates a cloned version starring Jasmine.
+Drag a high-converting competitor ad → AI analyzes vibe/pacing/shots → auto-generates a cloned version starring Sonia.
 
 **Tool:** Claude Code + Arc Ads API + Cance 2 (accepts image, video, and audio inputs)
 
@@ -34,13 +34,13 @@ Drag a high-converting competitor ad → AI analyzes vibe/pacing/shots → auto-
 2. Upload the winning ad video
 3. AI analyzes: pacing, shot types, music vibe, CTA placement, caption style
 
-### Step 3 — Generate Jasmine Version
-1. Select Jasmine as the "actor" (upload reference image)
-2. Cance 2 generates a Jasmine version of the same ad
+### Step 3 — Generate Sonia Version
+1. Select Sonia as the "actor" (upload reference image)
+2. Cance 2 generates a Sonia version of the same ad
 3. Download payload (video + caption + CTA)
 
 ### Step 4 — A/B Test
-- Run original competitor structure vs your Jasmine version
+- Run original competitor structure vs your Sonia version
 - Track: CTR, cost per click, Fanvue conversion rate
 - Scale the winner, kill the loser
 
@@ -52,7 +52,7 @@ Claude Code handles the full loop:
 ```
 1. Monitor Facebook Ad Library for new winning ads in GFE niche
 2. Auto-download top performers
-3. Pass to Cance 2 API with Jasmine reference image
+3. Pass to Cance 2 API with Sonia reference image
 4. Receive generated video
 5. Post to staging folder for CEO review
 6. CEO approves → auto-schedule via Metricool
@@ -77,7 +77,7 @@ Reference task: P1-08 (build Antigravity `.md` skill for this)
 ## Prerequisites
 
 - [ ] Cance 2 / Arcads account created
-- [ ] Jasmine video reference assets ready (5+ clips)
+- [ ] Sonia video reference assets ready (5+ clips)
 - [ ] Fanvue funnel live and converting organically first
 - [ ] Budget allocated for ad testing
 

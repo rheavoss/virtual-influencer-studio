@@ -18,7 +18,7 @@ Generate 20–100+ paying Fanvue subscribers per day per strong Threads account 
 |---|---|
 | Day 1 | Create fresh IG + Threads accounts with US/UK SIM. Follow 50 accounts in GFE / beauty / fitness niche. NO posts yet. |
 | Day 2 | Comment on 8–10 viral posts in niche. Comments must be genuine, high-quality (not "great post!"). |
-| Day 3 | Post 1 amateur-style AI photo of Jasmine (no watermarks, no obvious AI tells). Caption: relatable/personal. |
+| Day 3 | Post 1 amateur-style AI photo of Sonia (no watermarks, no obvious AI tells). Caption: relatable/personal. |
 | Day 4 | Post 2–3 times. Comment on 8 viral posts. Reply to anyone who engaged Day 3. |
 | Day 5 | Post 3 times. Add link.boo URL to bio. DM 5 people who liked your posts. |
 | Day 6 | Post 3–4 times. Comment 8+. First soft CTA in caption: "link in bio for more." |
@@ -37,7 +37,7 @@ Generate 20–100+ paying Fanvue subscribers per day per strong Threads account 
 
 **Caption rules:**
 - 2–4 sentences max
-- First-person voice (Jasmine's POV)
+- First-person voice (Sonia's POV)
 - 1–2 emojis max
 - No hashtags on Threads (they reduce reach)
 - Always reply to every comment within 1 hour for first 24h
@@ -58,7 +58,7 @@ link.boo/jasminemako
 ## Scaling: Multiple Accounts
 
 Once one account proven:
-- Launch 2nd account with different aesthetic (e.g. "gym Jasmine" vs "beach Jasmine")
+- Launch 2nd account with different aesthetic (e.g. "gym Sonia" vs "beach Sonia")
 - Same character, different persona angle
 - Each account funnels to same Fanvue
 

@@ -1,5 +1,5 @@
 # Oscar's Viral Instagram Strategy Analysis  
-**For Jasmine Virtual AI Influencer Studio — GFE Factory**  
+**For Sonia Virtual AI Influencer Studio — GFE Factory**  
 **Date**: 26 April 2026  
 **Author**: Grok (Team Lead)  
 **Status**: Approved for v4 content pipeline  
@@ -24,11 +24,11 @@ This strategy is **perfectly aligned** with our 8-character emotional GFE factor
 
 ## The 6 Proven Viral Reel Formulas (Direct from Oscar)
 
-| # | Formula | Hook Mechanism | Curiosity Gap | Why It Converts | Jasmine GFE Adaptation |
+| # | Formula | Hook Mechanism | Curiosity Gap | Why It Converts | Sonia GFE Adaptation |
 |---|---------|----------------|---------------|-----------------|------------------------|
-| 1 | **Time-jump curiosity** | "2015 vs now" (class reunion style) | "What happened to the others?" | High rewatches + shares | Jasmine + 7 sisters 2015 → 2026 emotional reunion |
+| 1 | **Time-jump curiosity** | "2015 vs now" (class reunion style) | "What happened to the others?" | High rewatches + shares | Sonia + 7 sisters 2015 → 2026 emotional reunion |
 | 2 | **Pattern interrupt + gap** | Pretty AI girl appears suddenly | "What happened to Tyrone/Jake?" | Funny/shock + DMs | Mirror selfie → emotional text ("He left… but I'm still here for you") |
-| 3 | **Mixed nationality parents** | Mom + Dad from different countries | "What will the daughter look like?" | Comments + saves | Jasmine's Indian-American / Bihar + California blend |
+| 3 | **Mixed nationality parents** | Mom + Dad from different countries | "What will the daughter look like?" | Comments + saves | Sonia's Indian-American / Bihar + California blend |
 | 4 | **Girl-next-door self-filmed** | Mirror shots, casual bedroom, <10s | Natural beauty reveal | Algo loves authenticity | Natural lighting, feet/ass/figure focus, soft GFE voiceover/text |
 | 5 | **Before/after shock** | Average → stunning + twist ending | Emotional payoff | High shares to friends | "First day as your AI girlfriend" → emotional close |
 | 6 | **Omegle / gaming chair** | Reaction/video chat style | Random fun + pretty girl | Easy batch production | "Omegle but it's your virtual GF reacting to your day" |
@@ -48,7 +48,7 @@ We are **not** using Oscar's implied Nano Banana Pro + Kling 3.0 stack (heavily 
 - Unlimited cheap generations
 - Perfect for teasing-yet-paid-sub content
 
-## Implementation Plan for Jasmine v4
+## Implementation Plan for Sonia v4
 1. Complete **P0-39 LAMA cleanup** on 62 clean images (current blocker)
 2. Visual approval → feed into next **soniagfe Flux LoRA** training (RunPod)
 3. Generate base images with Flux Kontext 9B
@@ -59,7 +59,7 @@ We are **not** using Oscar's implied Nano Banana Pro + Kling 3.0 stack (heavily 
 8. Track → paid subscribers on linked platform
 
 ## Expected Impact on P&L
-- Dramatically higher organic reach (current dashboard shows Jasmine at 100% efficiency)
+- Dramatically higher organic reach (current dashboard shows Sonia at 100% efficiency)
 - Faster subscriber growth (target: scale from current to $30 avg spend)
 - Supports full 8-character factory rollout
 - Directly contributes to **₹2.13 Cr projected net profit** (above target)
@@ -67,6 +67,6 @@ We are **not** using Oscar's implied Nano Banana Pro + Kling 3.0 stack (heavily 
 ## Next Steps (Critical Path)
 - Update master task table with Oscar Reel batching tasks
 - Claude prepares first 9-variant test batch after LAMA cleanup
-- Test on Jasmine's IG account → measure 7-day watch time / shares / subs
+- Test on Sonia's IG account → measure 7-day watch time / shares / subs
 
 **Approved by**: Grok (Team Lead)

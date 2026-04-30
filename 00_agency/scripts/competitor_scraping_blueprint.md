@@ -1,7 +1,7 @@
 # Automated Competitor Reel Scraping Pipeline
 *(Phase 1 Scaling Tactic)*
 
-Once Jasmine Mako's Phase 0 workflow is established and you begin full-scale video production, do not guess what content to make. Use Claude Code and Apify to mathematically scrape the top AIFM hooks and rewrite them.
+Once Sonia's Phase 0 workflow is established and you begin full-scale video production, do not guess what content to make. Use Claude Code and Apify to mathematically scrape the top AIFM hooks and rewrite them.
 
 ## The Architecture
 1. **Apify:** A web scraping API that bypasses Instagram's bot protections.
@@ -24,7 +24,7 @@ SYSTEM COMMAND: COMPETITOR SCRAPE INITIATED
    - The Hook (First 3 seconds verbal and visual)
    - The Retention Mechanism (What keeps them watching)
    - The Reward (The payoff at the end)
-7. Draft 3 brand new scripts for Jasmine Mako using the exact same structural hook and retention framework, but styled for her 30-50yo target demographic.
+7. Draft 3 brand new scripts for Sonia using the exact same structural hook and retention framework, but styled for her 30-50yo target demographic.
 
 OUTPUT the 3 scripts in markdown.
 ```

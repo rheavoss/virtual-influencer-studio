@@ -10,7 +10,7 @@ Real competitors earning ₹13–35L/month from IG subscriptions alone:
 - muskankaria: 3,869 subs × ₹390 = ₹15.1L/month
 - sofia9_official: 7,958 subs × ₹180 = ₹14.3L/month
 
-Jasmine (East Asian, USD-first) cannot capture this market. Separate character required.
+Sonia (Indian/South Asian, USD-first) cannot capture this market. Separate character required.
 
 ---
 
@@ -24,7 +24,7 @@ Jasmine (East Asian, USD-first) cannot capture this market. Separate character r
 | Height / Weight | 160cm / 58kg |
 | Language | Hindi primary, Hinglish secondary |
 | Tone | Warm, playful, girlfriend-next-door |
-| Content ceiling | **Option A — same as Jasmine. No nudity. No topless. Ever.** |
+| Content ceiling | **Option A — same as Sonia. No nudity. No topless. Ever.** |
 
 ---
 
@@ -40,7 +40,7 @@ Jasmine (East Asian, USD-first) cannot capture this market. Separate character r
 
 ---
 
-## Tech Stack (Shared with Jasmine)
+## Tech Stack (Shared with Sonia)
 
 | Tool | Use | Cost |
 |---|---|---|

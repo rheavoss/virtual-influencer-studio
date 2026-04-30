@@ -1,5 +1,5 @@
-# Jasmine Virtual AI Influencer Business – Master Frameworks Compilation
-**Project:** Jasmine (AI Virtual GFE / OnlyFans-style influencer)
+# Sonia Virtual AI Influencer Business – Master Frameworks Compilation
+**Project:** Sonia (AI Virtual GFE / OnlyFans-style influencer)
 **Owner:** CEO
 **Last Updated:** 2026-04-19
 **Total Frameworks:** 13 + 1 Governance Layer
@@ -31,7 +31,7 @@ Doc: path/to/strategy_doc.md
 **Task:** P0-32 | **Doc:** `11_automation/workflows/higgsfield_cinematic_commercial_pipeline.md`
 **Tools:** Higgsfield (Veo 3.1, Kling, Nano Banana Pro, reference sheets, motion control, upscaling)
 **Process:** Single platform for image-to-video, multi-model selection, audio generation, reference-based consistency, chaining clips.
-**Benefits:** Eliminates tool-hopping, perfect Jasmine identity lock, cinematic quality in one place.
+**Benefits:** Eliminates tool-hopping, perfect Sonia identity lock, cinematic quality in one place.
 **Relevance Score:** 9.9/10
 
 ---
@@ -39,7 +39,7 @@ Doc: path/to/strategy_doc.md
 ## 2. Claude Code + Arc Ads Ad-Cloning Agent (Cance 2)
 **Task:** P1-53 | **Doc:** `04_content_pipeline/cance2_arc_ads_cloning_pipeline.md`
 **Tools:** Claude Code + Arc Ads API + Cance 2 (multi-input: image/video/audio)
-**Process:** Drag winning ad → AI analyzes vibe/pacing/shots → auto-generates payload → renders cloned video with Jasmine.
+**Process:** Drag winning ad → AI analyzes vibe/pacing/shots → auto-generates payload → renders cloned video with Sonia.
 **Benefits:** Clone high-converting UGC ads in minutes, massive creative scale.
 **Relevance Score:** 9.9/10
 
@@ -66,7 +66,7 @@ Doc: path/to/strategy_doc.md
 ## 5. Ethical Manufactured Third-Party Authority (AI Personas)
 **Task:** P1-51 | **Doc:** `09_marketing/growth/ai_personas_authority_strategy.md`
 **Tools:** Claude Code + Higgsfield/Cance 2 + multiple supporting accounts
-**Process:** Create 10–50+ AI "experts/users/coaches" that consistently endorse Jasmine across Threads/X/IG.
+**Process:** Create 10–50+ AI "experts/users/coaches" that consistently endorse Sonia across Threads/X/IG.
 **Benefits:** Massive social proof and trust without deception.
 **Relevance Score:** 9.8/10
 
@@ -146,7 +146,7 @@ Doc: path/to/strategy_doc.md
 
 ## 14. RALPH Protocol (Governance Layer)
 **Task:** N/A (system-wide) | **Doc:** `00_agency/ralph_jasmine_playbook.json`
-**Tools:** RALPH v16.1-jasmine gate system
+**Tools:** RALPH v16.1-sonia gate system
 **Process:** Mandatory gates (G0 research → G2 feasibility → G3 CEO approval → PROOF evidence).
 **Benefits:** Prevents shortcuts, factual errors, and wasted time.
 **Relevance Score:** 10/10 (critical infrastructure)
