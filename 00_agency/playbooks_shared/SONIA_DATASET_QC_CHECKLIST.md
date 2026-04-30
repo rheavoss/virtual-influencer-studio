@@ -119,7 +119,7 @@
 \f2\i __
 \f1\i0 ____ (target \uc0\u8805 50)  \
 \cf5 \strokec5 -\cf4 \strokec4  [ ] All DISCARD images logged with exact filename + reason  \
-\cf5 \strokec5 -\cf4 \strokec4  [ ] Trigger word \cf6 \strokec6 `jasmakogirl`\cf4 \strokec4  will be used  \
+\cf5 \strokec5 -\cf4 \strokec4  [ ] Trigger word \cf6 \strokec6 `soniagfe`\cf4 \strokec4  will be used  \
 \cf5 \strokec5 -\cf4 \strokec4  [ ] Captions prepared (Option A or B)  \
 \
 \pard\pardeftab720\partightenfactor0
@@ -139,7 +139,7 @@
 \pard\pardeftab720\partightenfactor0
 \cf5 \strokec5 -\cf4 \strokec4  Open it every time before training.\
 \cf5 \strokec5 -\cf4 \strokec4  Go through the checklist systematically.\
-\cf5 \strokec5 -\cf4 \strokec4  Save a dated copy (e.g. \cf6 \strokec6 `JASMINE_DATASET_QC_22APR2026.md`\cf4 \strokec4 ) after each full QC round.\
+\cf5 \strokec5 -\cf4 \strokec4  Save a dated copy (e.g. \cf6 \strokec6 `SONIA_DATASET_QC_22APR2026.md`\cf4 \strokec4 ) after each full QC round.\
 \
 This checklist was built directly from our past failure log and all analysed transcripts.\
  
