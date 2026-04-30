@@ -1,4 +1,4 @@
-# 09_marketing/seo — Jasmine SEO Strategy Hub
+# 09_marketing/seo — Sonia SEO Strategy Hub
 
 **Phase:** Phase 1 (unlocked after domain live + first reels published)
 
@@ -18,7 +18,7 @@
 
 ## SEO Strategy Overview
 
-Three-layer SEO approach for Jasmine:
+Three-layer SEO approach for Sonia:
 
 ```
 Layer 1 — Backlinks (P1-05)

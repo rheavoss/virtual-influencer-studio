@@ -22,11 +22,11 @@
 ### 3. Instagram Creator Marketplace (at 10k followers)
 - Meta's native tool — Settings → Creator → Brand Partnerships
 - Brands filter by: niche, audience location, follower count, engagement
-- US brands actively use this — Jasmine's US-heavy audience makes her discoverable
+- US brands actively use this — Sonia's US-heavy audience makes her discoverable
 - Accept/decline briefs directly in app
 
 ### 4. Outbound (Month 2+)
-Target brands whose products align with Jasmine's aesthetic:
+Target brands whose products align with Sonia's aesthetic:
 - Find Instagram brand accounts in niche
 - Identify marketing manager on LinkedIn
 - Send cold email with media kit attached

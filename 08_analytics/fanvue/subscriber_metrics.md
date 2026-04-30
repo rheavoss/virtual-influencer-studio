@@ -1,4 +1,4 @@
-# Fanvue Subscriber Metrics — Jasmine
+# Fanvue Subscriber Metrics — Sonia
 **Started:** 2026-04-10
 
 ## Monthly Log

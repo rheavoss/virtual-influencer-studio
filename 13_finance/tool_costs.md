@@ -12,7 +12,7 @@
 | Grok (xAI) | Image generation (LoRA training batches) | ₹542 ✅ | Annual ÷ 12 | ₹6,500/yr confirmed by CEO |
 | Claude Code | AI strategy + ops | ₹4,000 ✅ | Monthly | 2 × ₹2,000 confirmed |
 | Calilio | US virtual number (Instagram verification walls) | ₹1,303 ✅ | Monthly | Local US number for IG account creation + SMS verification |
-| Namecheap | Domain registration (jasmine.link or similar) | ₹92 ✅ | Annual ÷ 12 | Bouncy.cc link-in-bio redirect — opens native browser = higher Fanvue conversion |
+| Namecheap | Domain registration (sonia.link or similar) | ₹92 ✅ | Annual ÷ 12 | Bouncy.cc link-in-bio redirect — opens native browser = higher Fanvue conversion |
 | Google One | Colab Pro + storage | ₹___ ⏳ | Annual ÷ 12 | CEO to confirm annual plan amount |
 | **Phase 0 Base (corrected)** | | **₹6,402/mo** | | Higgsfield + VoiceBox + Grok + Claude Code + Calilio + Namecheap |
 
@@ -48,7 +48,7 @@
 
 | Item | Cost | Date |
 |---|---|---|
-| Jasmine Flux.1 LoRA training (RunPod / Civitai) | ~₹168–₹336 ($1–2) | TBD — Phase 0 |
+| Sonia Flux.1 LoRA training (RunPod / Civitai) | ~₹168–₹336 ($1–2) | TBD — Phase 0 |
 | Bouncy.cc (link-in-bio) | ₹0 (free tier sufficient) | Phase 0 — replaces Carrd.co. Opens native browser = higher Fanvue conversion. |
 
 ## Monthly Cost by Phase

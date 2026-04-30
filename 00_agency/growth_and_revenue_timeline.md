@@ -315,7 +315,7 @@
 | Video pipeline live | Month 3 (5× reach multiplier) |
 | No viral outlier events assumed | Conservative baseline |
 | Brand deals start | Month 4 (10k+ Instagram — Collabstr/Passionfroot listing live) |
-| Brand deal market | USD — Western brands only. Jasmine is English-first, US timezone posting. |
+| Brand deal market | USD — Western brands only. Sonia is English-first, US timezone posting. |
 | Native IG/FB monetization start | Month 4 (10k followers unlocks IG Subscriptions + FB Subscriptions) |
 | Sponsorship payment method | Infinity (direct wires, 0.5% all-in) + Payoneer (platform escrow) |
 
@@ -323,7 +323,7 @@
 
 ## USD Market Lock (Updated 2026-04-19)
 
-> Jasmine is English-first, Western-facing. All revenue modelled in USD. US timezone posting. US/UK/AU male 18–35 target audience. Indian market addressed via separate character in Year 2.
+> Sonia is English-first, Western-facing. All revenue modelled in USD. US timezone posting. US/UK/AU male 18–35 target audience. Indian market addressed via separate character in Year 2.
 
 ---
 
@@ -332,7 +332,7 @@
 1. **Video pipeline live (Month 3)** — single biggest lever. Reels reach 5× static images.
 2. **Passes on Day 1** — captures revenue that was being left behind. No extra work.
 3. **Facebook Stars (Month 2+)** — 100% passive "free money" from audiences tipping the same SFW images you already cross-post via Metricool. Zero extra production effort.
-4. **X/Twitter NSFW content** — drives the highest-intent traffic to Fanvue. Users who find Jasmine on X already know what they're looking for.
+4. **X/Twitter NSFW content** — drives the highest-intent traffic to Fanvue. Users who find Sonia on X already know what they're looking for.
 5. **Viral outlier event** — one Saree Transition Reel hitting a trending Bollywood audio can add 10,000 followers overnight. Not modelled above — upside only.
 6. **PPV discipline** — dropping one PPV per month minimum keeps the subs engaged and adds $300–$4,500/month on top of subscriptions depending on scale.
 7. **Brand deals (Month 4+)** — Collabstr/Passionfroot listing live at 10k followers. At 50k IG = $500–$2,000/post. At 100k IG = $5,000–$20,000/post. Brands pay USD regardless of CEO location. Payment via Infinity (direct wire) or Payoneer (platform escrow). Media kit: `09_marketing/sponsorships/jasmine_media_kit.md`.
@@ -384,7 +384,7 @@
 > Revenue: Fanvue/Passes/PPV+Voice in USD × ₹93.08. Telegram/Brand/IG Subs are INR-priced (Indian subscribers).  
 > **Net Revenue** = Fanvue **80%** + Passes/PPV/Telegram/Brand 90% + Instagram subscription 80% keep  
 > **Tool Costs** = Phase 1+ base ₹9,056 (M1+, Later.com deprecated) + Ads + Research (scales) + buffer  
-> **Net Profit** = Net Revenue − Tool Costs | **Live dashboard: https://jasmine-dashboard-lovat.vercel.app**
+> **Net Profit** = Net Revenue − Tool Costs | **Live dashboard: https://sonia-dashboard-lovat.vercel.app**
 
 | Month | Gross Revenue | Net Revenue | Tool Costs | **Net Profit** | Cumulative |
 |---|---|---|---|---|---|
@@ -437,7 +437,7 @@
 ## HYBRID STRATEGY — DESI CHARACTER PARALLEL TRACK
 **Decision locked:** 2026-04-19 (Session 12)
 **Trigger:** Real market data — muskankaria ₹15.1L/month (3,869 subs × ₹390), sofia9_official ₹14.3L/month (7,958 subs × ₹180). Indian IG subscription model proven and live.
-**Model:** Jasmine (East Asian, USD-first) stays unchanged. New desi character (Indian-curvy, Hindi/Hinglish) runs parallel from Month 2. Shared infra — 70% reuse, ~₹1,500 one-time extra cost.
+**Model:** Sonia (Indian/South Asian, USD-first) stays unchanged. New desi character (Indian-curvy, Hindi/Hinglish) runs parallel from Month 2. Shared infra — 70% reuse, ~₹1,500 one-time extra cost.
 
 ### Desi Character — Monthly Revenue Projections (INR, IG Subscriptions)
 
@@ -452,11 +452,11 @@
 | M10 | 6,500 | ₹300 | ₹19,50,000 | ₹15,60,000 | — |
 | M12 | 8,500 | ₹310 | ₹26,35,000 | ₹21,08,000 | Approaching sofia9 scale |
 
-★ IG native subscriptions unlock at 10k followers (~Month 4 based on Jasmine timeline rate)
+★ IG native subscriptions unlock at 10k followers (~Month 4 based on Sonia timeline rate)
 
-### Combined Year-1 P&L (Jasmine USD + Desi INR)
+### Combined Year-1 P&L (Sonia USD + Desi INR)
 
-| Month | Jasmine Net (₹) | Desi Net (₹) | Combined Net (₹) | Cumulative (₹) |
+| Month | Sonia Net (₹) | Desi Net (₹) | Combined Net (₹) | Cumulative (₹) |
 |---|---|---|---|---|
 | M1 | ₹11,143 | ₹0 | ₹11,143 | ₹11,143 |
 | M2 | ₹64,385 | ₹0 | ₹64,385 | ₹75,528 |

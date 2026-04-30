@@ -58,12 +58,12 @@
 4. **Makeup Transformation** — 1M+
 5. **Bike / Lifestyle** — 1.2M
 
-**These are our motion transfer templates.** The dance Shorts (especially Dholna at 17M views) are the exact format to clone for Jasmine via Wan AI motion transfer. Same choreography, Jasmine's face and body swapped in.
+**These are our motion transfer templates.** The dance Shorts (especially Dholna at 17M views) are the exact format to clone for Sonia via Wan AI motion transfer. Same choreography, Sonia's face and body swapped in.
 
 **Critical insight — YouTube vs IG Subscription disconnect:**
 Sofia has 855K YouTube subscribers and 73M views but only 7,412 IG subscribers. This confirms again: YouTube builds mass awareness but does NOT build parasocial GFE depth. Her 73M YouTube views generate almost zero paid subscribers because YouTube audiences treat her as entertainment, not a personal connection.
 
-**For Jasmine:** Sofia's YouTube content style (especially dance Shorts) is the viral format blueprint. Her Dholna Short at 17M views is the clearest proof that Indian folk dance + model = algorithmic gold. This is a recurring content pillar for Jasmine.
+**For Sonia:** Sofia's YouTube content style (especially dance Shorts) is the viral format blueprint. Her Dholna Short at 17M views is the clearest proof that Indian folk dance + model = algorithmic gold. This is a recurring content pillar for Sonia.
 
 ### Facebook Page: facebook.com/sofiaansari9f
 
@@ -89,7 +89,7 @@ Sofia has 855K YouTube subscribers and 73M views but only 7,412 IG subscribers. 
 | Green saree, standing | 15K |
 
 **Key Observations:**
-- She does NOT cross-promote her Instagram subscription in Facebook post captions — **this is a gap we will exploit**. Every Jasmine Facebook Reel ends with CTA: *"Subscribe on Instagram 👑 link in bio"*
+- She does NOT cross-promote her Instagram subscription in Facebook post captions — **this is a gap we will exploit**. Every Sonia Facebook Reel ends with CTA: *"Subscribe on Instagram 👑 link in bio"*
 - Facebook Subscription at ₹869/month is significantly higher than her IG price of ₹180/month — smaller but more dedicated paying audience
 - Content on Facebook mirrors Instagram exactly — same Reels repurposed, zero extra production
 - Top Reel (429K) is a close-up modeling shot, NOT a dance — confirms that on Facebook, visual impact beats choreography
@@ -106,7 +106,7 @@ Sofia has 855K YouTube subscribers and 73M views but only 7,412 IG subscribers. 
 
 **She does NOT actively redirect these groups to her Instagram subscription.** The groups are organic fan communities that amplify her brand passively. 425K group members who are fans of her — completely untapped for subscription conversion.
 
-**Strategic gap for Jasmine:** Once Jasmine has fan groups forming (which happens organically after ~50K followers), we actively seed them with subscription CTAs. Even a 1% conversion from 425K group members = 4,250 new subscribers. At ₹499/month = **₹21 lakh additional monthly revenue** from this one untapped channel alone.
+**Strategic gap for Sonia:** Once Sonia has fan groups forming (which happens organically after ~50K followers), we actively seed them with subscription CTAs. Even a 1% conversion from 425K group members = 4,250 new subscribers. At ₹499/month = **₹21 lakh additional monthly revenue** from this one untapped channel alone.
 
 ### Facebook Channel (her official broadcast channel)
 
@@ -120,7 +120,7 @@ Sofia has 855K YouTube subscribers and 73M views but only 7,412 IG subscribers. 
 
 **Facebook Channels** = one-way broadcast tool (like Instagram Broadcast Channels / WhatsApp Channels). She controls the message, members receive it. Zero interaction cost.
 
-**Jasmine action:** Create an official Facebook Channel from Day 1 — even before 10K followers. Use it to broadcast teaser content, exclusive previews, and subscription CTAs. It's free and builds a captive push-notification audience separate from the main feed algorithm.
+**Sonia action:** Create an official Facebook Channel from Day 1 — even before 10K followers. Use it to broadcast teaser content, exclusive previews, and subscription CTAs. It's free and builds a captive push-notification audience separate from the main feed algorithm.
 
 
 
@@ -148,9 +148,9 @@ Sofia has 855K YouTube subscribers and 73M views but only 7,412 IG subscribers. 
 | **Content exclusivity feel** | High — she's NOT everywhere | Low — she's on every platform as celebrity |
 | **Conversion** | 8.7% | 0.047% |
 
-### The Jasmine Implication — NON-NEGOTIABLE RULE
+### The Sonia Implication — NON-NEGOTIABLE RULE
 
-> **Jasmine must ALWAYS be GFE-focused. The moment she becomes a mainstream "model" account, conversion collapses 185× to Sofia levels.**
+> **Sonia must ALWAYS be GFE-focused. The moment she becomes a mainstream "model" account, conversion collapses 185× to Sofia levels.**
 
 This means:
 - Stories feel personal, not performed
@@ -197,7 +197,7 @@ Note: Sofia is a valid content clone source because her posts are 6+ months old 
 
 **Why she's on Threads:** Threads indexes in Google search and gets algorithmic distribution from Meta. It's free reach with zero extra content production — same images/Reels repurposed. Adds another discovery funnel.
 
-**Jasmine on Threads:** Create @jasmine.mako Threads account on Day 1. Same content auto-repurposed. Threads has 200M+ users and is growing rapidly in India. Zero cost, builds additional SEO presence for the Jasmine persona name.
+**Sonia on Threads:** Create @sonia.mako Threads account on Day 1. Same content auto-repurposed. Threads has 200M+ users and is growing rapidly in India. Zero cost, builds additional SEO presence for the Sonia persona name.
 
 ---
 
@@ -264,7 +264,7 @@ Instagram @purplehalcyon (277K followers)
 
 **8.7% is elite.** Industry standard for IG subscriptions is 1–3%. This means her content selection, price point, and GFE trust-building are near-perfect.
 
-**8.7% is our internal benchmark target.** We should not claim success until Jasmine matches this ratio at every follower milestone.
+**8.7% is our internal benchmark target.** We should not claim success until Sonia matches this ratio at every follower milestone.
 
 | Our Follower Milestone | Target Subs at 8.7% | Monthly Revenue (Fanvue $9.99 × ₹713 net) |
 |---|---|---|
@@ -275,9 +275,9 @@ Instagram @purplehalcyon (277K followers)
 
 ---
 
-## Why Jasmine Structurally Beats This Model
+## Why Sonia Structurally Beats This Model
 
-| Dimension | @purplehalcyon (Human) | Jasmine (AI) |
+| Dimension | @purplehalcyon (Human) | Sonia (AI) |
 |---|---|---|
 | **Production cost** | High — personal time, travel, equipment | ₹865/month total |
 | **Content volume speed** | 135 posts over multiple years | 135 posts in 45 days |
@@ -292,26 +292,26 @@ Instagram @purplehalcyon (277K followers)
 
 ---
 
-## Replicated Funnel for Jasmine
+## Replicated Funnel for Sonia
 
 This is the EXACT structure we will copy:
 
 ```
-Jasmine YouTube Shorts
+Sonia YouTube Shorts
 ├── Same Reels exported as Shorts (zero extra production via Metricool)
 ├── Goal: 500K+ views driving IG profile visits
 └── No monetization — pure top-of-funnel
 
          ↓
 
-Jasmine Facebook Page
+Sonia Facebook Page
 ├── Same content auto-repurposed (Metricool mirrors automatically)
 ├── Target: 50K+ Indian Facebook followers
 └── Bio → Instagram profile link
 
          ↓
 
-Jasmine Instagram @jasmine.mako
+Sonia Instagram @sonia.mako
 ├── GFE persona — fitness/travel/lifestyle
 ├── Full content matrix (content_production_matrix.md)
 └── → Subscription paywall (post 10K followers) + Fanvue link in bio
@@ -329,9 +329,9 @@ Fanvue ($20/month, 80% creator keep)
 
 1. **YouTube Shorts is non-negotiable.** She has 3,630 YouTube subscribers but 722,000 views. Shorts go viral independent of subscriber count. This means we get free traffic from Day 1 even with zero YouTube subscribers. Every Reel must be simultaneously posted as a YouTube Short.
 
-2. **The "Scam Warning" trust mechanism is replicable.** Create a "⚠️ Official" or "Real Account 🔒" Instagram Highlight that warns about fakes. This paradoxically makes Jasmine MORE believable as a real persona — an AI character fighting "impersonation" is brilliant positioning.
+2. **The "Scam Warning" trust mechanism is replicable.** Create a "⚠️ Official" or "Real Account 🔒" Instagram Highlight that warns about fakes. This paradoxically makes Sonia MORE believable as a real persona — an AI character fighting "impersonation" is brilliant positioning.
 
-3. **Geographic status signal matters.** In her case: London UK. For Jasmine: "Mumbai → Goa → Bali" in the bio signals aspirational travel, not local content.
+3. **Geographic status signal matters.** In her case: London UK. For Sonia: "Mumbai → Goa → Bali" in the bio signals aspirational travel, not local content.
 
 4. **Activate Instagram Subscriptions at 10,000 followers** as a secondary revenue stream alongside Fanvue. At her 8.7% conversion rate, 10K followers = 870 subscribers × ₹399 (Indian pricing) = ₹3.47 lakh gross additional per month.
 
@@ -384,9 +384,9 @@ No manual application form. Facebook determines eligibility automatically.
 
 **Meta's own platform fee is currently 0%** (promotional period extended through 2025 — subject to future change). This is the best revenue share of all platforms: better than Fanvue (15% cut) and better than IG native (Apple/Google 30%).
 
-Sofia prices FB at **₹869/month** vs ₹180/month on IG — 4.8× higher. FB audience is older, more premium, less price-sensitive. **Jasmine should always price FB subscriptions higher than IG subscriptions.**
+Sofia prices FB at **₹869/month** vs ₹180/month on IG — 4.8× higher. FB audience is older, more premium, less price-sensitive. **Sonia should always price FB subscriptions higher than IG subscriptions.**
 
-### ⚠️ AI Content Rules on Facebook — Non-Negotiable for Jasmine
+### ⚠️ AI Content Rules on Facebook — Non-Negotiable for Sonia
 
 | Rule | Detail |
 |---|---|
@@ -396,11 +396,11 @@ Sofia prices FB at **₹869/month** vs ₹180/month on IG — 4.8× higher. FB a
 | **Penalty for skipping** | Reduced reach, downranking, potential demonetization |
 | **"AI Slop" penalty** | Mass-produced, repetitive, low-quality AI content is algorithmically demoted |
 | **AI creators banned?** | ❌ NO — AI content is explicitly allowed. Only transparency (labeling) is required |
-| **Impersonation ban** | ❌ Cannot impersonate a real existing person — Jasmine is a fictional persona, so this is fine |
+| **Impersonation ban** | ❌ Cannot impersonate a real existing person — Sonia is a fictional persona, so this is fine |
 
-**Jasmine Facebook rule:** Label all AI content with "AI Info" on upload. This does NOT prevent monetization — it just adds a label. Many AI content creators operate successfully on Facebook with this label.
+**Sonia Facebook rule:** Label all AI content with "AI Info" on upload. This does NOT prevent monetization — it just adds a label. Many AI content creators operate successfully on Facebook with this label.
 
-### Revenue Projections — Jasmine Facebook Subscribers
+### Revenue Projections — Sonia Facebook Subscribers
 
 | FB Followers | Subscriptions Status | Subscribers (8.7% rate) | Price | Gross Monthly |
 |---|---|---|---|---|
@@ -411,7 +411,7 @@ Sofia prices FB at **₹869/month** vs ₹180/month on IG — 4.8× higher. FB a
 Note: FB subscribers are a separate revenue stream ON TOP OF IG subscriptions + Fanvue. All three run simultaneously.
 
 ### New Tasks Added to Roadmap
-- **Task 78:** Create Jasmine Facebook professional Page (separate from personal profile)
+- **Task 78:** Create Sonia Facebook professional Page (separate from personal profile)
 - **Task 79:** Grow FB Page to 10,000 followers to unlock Fan Subscriptions
 - **Task 80:** Enable FB Subscriber Hub at 10K followers — price ₹499–₹869/month
 - **Standing rule:** All AI-generated FB content must carry "AI Info" label

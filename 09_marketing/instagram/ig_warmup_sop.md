@@ -19,9 +19,9 @@
 
 ### Day 1 — Account Creation + Setup
 - Create account via physical device + Calilio US number
-- Username: `@jasmine.mako`
+- Username: `@sonia.mako`
 - Bio: Blank for now (no links Day 1)
-- Profile photo: First Jasmine image (SFW, non-AI-looking)
+- Profile photo: First Sonia image (SFW, non-AI-looking)
 - Action: Follow 30–50 accounts (fitness, beauty, lifestyle — NOT GFE)
 - **NO POSTS. NO LINKS.**
 
@@ -32,7 +32,7 @@
 - **NO POSTS YET.**
 
 ### Day 3 — First Post
-- Post 1 SFW Jasmine photo (casual, non-AI-looking style)
+- Post 1 SFW Sonia photo (casual, non-AI-looking style)
 - Caption: personal, relatable tone ("finally took a break from the gym 😅")
 - NO external links in caption or bio yet
 - Watch comments/likes for first 2 hours — reply to everything

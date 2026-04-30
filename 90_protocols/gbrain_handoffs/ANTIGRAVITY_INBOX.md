@@ -22,7 +22,7 @@ CEO needs to log into Kling account and re-download the original training images
 
 - Kling account email: kriger5490@gmail.com (check `00_agency/credentials.md` for password)
 - Go to: kling.ai → Generation History
-- Find the 10 batches of Jasmine images (generated 2026-04-18)
+- Find the 10 batches of Sonia images (generated 2026-04-18)
 - Re-download each image at full resolution — must be **1536×2730** (9:16 2K native)
 - The cropped versions on disk are **1536×2402** — reject these, they have legs cut off
 - Save fresh downloads to: `/Users/user/Desktop/Instagram/03_ai_models/sonia/training_data/jasmine_dataset/`
@@ -41,7 +41,7 @@ Claude will then: check watermarks → write config → rent GPU → train → d
 
 - Full v3 training SOP: `00_agency/tasks/task-p0-07/v3_training_sop.md`
 - Inference test script: `/tmp/test_v2_vastai.py` (Claude will update for v3)
-- Training config sample prompts: already in SOP, sourced from `01_characters/jasmine/jasmine_generation_prompt.md`
+- Training config sample prompts: already in SOP, sourced from `01_characters/sonia/jasmine_generation_prompt.md`
 
 ---
 

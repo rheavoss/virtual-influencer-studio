@@ -8,7 +8,7 @@
 
 ## What Is It
 
-Use Flow + ChatGPT master prompts to generate unlimited 3D animated elements and overlays — free professional polish for all Jasmine videos.
+Use Flow + ChatGPT master prompts to generate unlimited 3D animated elements and overlays — free professional polish for all Sonia videos.
 
 **Effect:** Transforms average AI video into premium-looking content. Virality booster.
 
@@ -25,7 +25,7 @@ Use Flow + ChatGPT master prompts to generate unlimited 3D animated elements and
 
 ---
 
-## Integration Points in Jasmine Pipeline
+## Integration Points in Sonia Pipeline
 
 | Video Type | Flow Elements to Add |
 |---|---|

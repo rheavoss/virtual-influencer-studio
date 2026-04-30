@@ -49,7 +49,7 @@ Each auto-generated page targets: `[Category] in [City]` or `[Keyword] + [Locati
 **Page structure:**
 1. H1: `[Keyword] in [Location]` — exact match for ranking
 2. Short intro paragraph (Claude-generated, unique per page)
-3. Jasmine profile card with CTA
+3. Sonia profile card with CTA
 4. FAQ section (3–5 questions, Claude-generated)
 5. Internal links to related pages
 

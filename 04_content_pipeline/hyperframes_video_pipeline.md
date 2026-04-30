@@ -16,7 +16,7 @@ Deterministic = same HTML input always produces the same output. No randomness, 
 
 ---
 
-## Why Deterministic Matters for Jasmine
+## Why Deterministic Matters for Sonia
 
 Normal AI video: different results every generation → face drift, body inconsistency, wasted credits.
 
@@ -35,11 +35,11 @@ Hyperframes: HTML describes exactly what happens → consistent output every tim
 </scene>
 ```
 
-Agent reads this HTML → renders video with Jasmine in exact pose/expression/setting.
+Agent reads this HTML → renders video with Sonia in exact pose/expression/setting.
 
 ---
 
-## Use Cases for Jasmine
+## Use Cases for Sonia
 
 | Use Case | Template Type |
 |---|---|
@@ -47,7 +47,7 @@ Agent reads this HTML → renders video with Jasmine in exact pose/expression/se
 | Fanvue teaser | 3-scene: hook + reveal + CTA |
 | X/Twitter teaser | 6-second loop clip |
 | Story slide | Static-to-motion transition |
-| Caption overlay reel | Music + Jasmine + animated text |
+| Caption overlay reel | Music + Sonia + animated text |
 
 ---
 
@@ -55,7 +55,7 @@ Agent reads this HTML → renders video with Jasmine in exact pose/expression/se
 
 1. **Get repo** — Hyperframes GitHub (Claude researches current repo link in G0)
 2. **Install** — Node.js + Playwright or similar renderer
-3. **Create Jasmine templates** — 5 base HTML templates for content types above
+3. **Create Sonia templates** — 5 base HTML templates for content types above
 4. **Test render** — Confirm output quality vs Higgsfield
 5. **Integrate** — Add to content pipeline as "fast track" option
 
@@ -79,4 +79,4 @@ Agent reads this HTML → renders video with Jasmine in exact pose/expression/se
 
 - [ ] Grok G0 research on current Hyperframes repo status and compatibility
 - [ ] Node.js environment available
-- [ ] Jasmine reference images ready
+- [ ] Sonia reference images ready

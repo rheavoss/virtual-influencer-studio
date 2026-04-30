@@ -34,7 +34,7 @@ A 6-step editing formula that turns raw AI video output into polished, publish-r
 - Prevents starting with the hardest part (reduces burnout)
 
 ### Step 4 — Apply Templates
-- Use a consistent Jasmine template:
+- Use a consistent Sonia template:
   - Font: [locked in brand kit]
   - Text size: 60–80pt
   - Position: bottom third
@@ -75,9 +75,9 @@ If editing takes longer → the raw clip is bad, not the editor. Regenerate the 
 | Element | Value |
 |---|---|
 | Primary font | [To be decided — add to character bible] |
-| Accent color | Jasmine brand pink (#E85D9C or similar) |
+| Accent color | Sonia brand pink (#E85D9C or similar) |
 | Text style | White bold, thin black outline |
-| Watermark | `@jasmine.mako` bottom-right, 40% opacity |
+| Watermark | `@sonia.mako` bottom-right, 40% opacity |
 | Transition style | Cut or slow fade only — NO flashy transitions |
 
 ---
@@ -85,5 +85,5 @@ If editing takes longer → the raw clip is bad, not the editor. Regenerate the 
 ## Notes
 
 - This system applies EQUALLY whether the source is Higgsfield, Hyperframes, or Kling
-- Consistency in editing style = Jasmine brand recognition
+- Consistency in editing style = Sonia brand recognition
 - If CEO is editing: follow steps 1–6 in exact order every time. Do not freestyle.

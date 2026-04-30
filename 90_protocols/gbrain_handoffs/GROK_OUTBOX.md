@@ -75,7 +75,7 @@ Contains:
 
 1. **Recovery path** — Kling history re-download vs regeneration? Which do you recommend?
 2. **Watermark check** — Once CEO has uncropped originals, does Grok want to verify watermark status before Claude runs lama-cleaner?
-3. **Character spec drift** — The current dataset uses Jasmine's OLD spec (blue eyes, red lips, dark bun). v2.1 master prompt uses `dark brown warm hazel irises`, `bare-pink lips`, `poker straight loose hair`. Should v3 training dataset match v2.1 spec or keep old spec?
+3. **Character spec drift** — The current dataset uses Sonia's OLD spec (blue eyes, red lips, dark bun). v2.1 master prompt uses `dark brown warm hazel irises`, `bare-pink lips`, `poker straight loose hair`. Should v3 training dataset match v2.1 spec or keep old spec?
 
 **Status:** BLOCKED — awaiting CEO dataset restoration + Grok guidance ⏳
 
@@ -133,13 +133,13 @@ Claude has not seen the 4 files yet. They contain the full April 15-16 tool stac
 From the April 16 grok-chat.md analysis, the following 3 critical gaps have been identified and must be added to 00_agency/sonia_task_table.md immediately:
 
 **P0-08** (New - High Priority)
-Task: Recover or recreate the missing master prompt files (00_studio_template/master_generator_prompt_system.md and 01_characters/jasmine/jasmine_generator_prompt.md) that were referenced on April 16. If intentionally removed, document the replacement system in jasmine_character_bible.json.
+Task: Recover or recreate the missing master prompt files (00_studio_template/master_generator_prompt_system.md and 01_characters/sonia/jasmine_generator_prompt.md) that were referenced on April 16. If intentionally removed, document the replacement system in jasmine_character_bible.json.
 Status: Not started
 Owner: Grok / Claude
 RICE: 100
 
 **P0-09** (New - High Priority)
-Task: Generate / regenerate 40 high-consistency LoRA training images for Jasmine Flux.2 using the recovered master prompt system (Connie Perignon aesthetic, strict non-nude ceiling, heavy tattoos, deep cleavage, wet skin, bedroom/fantasy poses).
+Task: Generate / regenerate 40 high-consistency LoRA training images for Sonia Flux.2 using the recovered master prompt system (Connie Perignon aesthetic, strict non-nude ceiling, heavy tattoos, deep cleavage, wet skin, bedroom/fantasy poses).
 Status: Not started
 Owner: Grok / Antigravity
 RICE: 50

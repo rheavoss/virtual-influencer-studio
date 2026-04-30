@@ -16,7 +16,7 @@ This is the exact pipeline for generating consistent, multi-scene character vide
 #### Step 1: Generate the Base Character (Soul Cinema)
 *   **Prompting:** Keep it basic and let the model do the heavy lifting (e.g., `cartoon style man waking up in bedroom`).
 *   **Enhancer:** Turn on the Soul Cinema Enhancer to discover unique visual styles easily.
-*   **Correction:** If the character generated does *not* match your target identity, **DO NOT re-roll**. Take the styled image directly into **Nana Banana Pro** and request a character swap to match your target identity (e.g., Jasmine).
+*   **Correction:** If the character generated does *not* match your target identity, **DO NOT re-roll**. Take the styled image directly into **Nana Banana Pro** and request a character swap to match your target identity (e.g., Sonia).
 
 #### Step 2: Establish Prop Consistency (Claude + Nanob)
 *   If a specific prop (like a watch, a protein bar, or gym gear) appears across multiple scenes, it must be locked.

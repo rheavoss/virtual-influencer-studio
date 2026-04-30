@@ -1,5 +1,5 @@
 ---
-description: Display the current Jasmine Task Tracking Table
+description: Display the current Sonia Task Tracking Table
 ---
 When the user asks to see the task table:
 1. You MUST display the full Markdown table in the chat output.

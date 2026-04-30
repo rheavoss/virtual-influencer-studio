@@ -53,13 +53,13 @@
 
 ### Building Components
 1. Find driving video (viral Reel, any source)
-2. Jasmine's Wan 2.2 LoRA loaded (trained on Wan 2.2 text-to-video, low noise only)
+2. Sonia's Wan 2.2 LoRA loaded (trained on Wan 2.2 text-to-video, low noise only)
 3. Wan 2.2 **TEXT-TO-VIDEO** + Sonia LoRA + denoise at 0.4–0.5
 4. Color correct (CapCut)
 5. OPSEC
 
 ### Tools
-`Source video → Wan AI T2V + Jasmine Wan LoRA → CapCut`
+`Source video → Wan AI T2V + Sonia Wan LoRA → CapCut`
 
 ### Critical Technical Parameters
 - Wan model: **TEXT-TO-VIDEO** (not image-to-video — I2V doesn't work for this use case)
@@ -110,7 +110,7 @@
 
 ### Building Components
 1. Pinterest reference images for location (Goa beach, Himalayan trail, luxury hotel)
-2. Jasmine reference + location mood board → Wan Animate multi-reference OR Higgsfield Seedance 2.0
+2. Sonia reference + location mood board → Wan Animate multi-reference OR Higgsfield Seedance 2.0
 3. Optional ambient OmniVoice narration ("three days in Goa was everything I needed")
 4. iPhone-style grain filter (CapCut)
 5. OPSEC
@@ -203,11 +203,11 @@ Slide 4: standing by mirror, gym bag on shoulder, ready to leave
 
 ### Rule 1: Start Frame Technique (ALWAYS generate image first)
 **Never prompt text directly into a video model.** Always:
-1. Generate a perfect static image of Jasmine in the exact pose/outfit/scene using Flux Kontext or Z-Image
+1. Generate a perfect static image of Sonia in the exact pose/outfit/scene using Flux Kontext or Z-Image
 2. Feed that image as the **Start Frame** into Wan AI / Kling / Seedance
 3. This improves consistency by 30–40% vs text-only video prompts
 
-For motion transfer specifically: extract Frame 1 of the driving video → face-swap Jasmine onto it → use THAT as Start Frame. This locks her face from frame 1.
+For motion transfer specifically: extract Frame 1 of the driving video → face-swap Sonia onto it → use THAT as Start Frame. This locks her face from frame 1.
 
 ---
 
@@ -225,7 +225,7 @@ her hair. Cinematic teal-orange grade, shallow depth of field, smooth motion.
 
 **Bad (keyword stacking — degrades output):**
 ```
-jasmine, beach, walking, golden hour, 4k, photorealistic, bokeh, high quality
+sonia, beach, walking, golden hour, 4k, photorealistic, bokeh, high quality
 ```
 
 ---
@@ -238,7 +238,7 @@ Natural language description of the final scene. Best for lifestyle/travel.
 
 **Type B — Structural (timeline breakdown):**
 ```
-[00:00–00:03] Jasmine standing at hotel balcony, looking at city skyline, wind in hair.
+[00:00–00:03] Sonia standing at hotel balcony, looking at city skyline, wind in hair.
 [00:03–00:06] She slowly turns toward camera, soft smile, raises glass of wine.
 [00:06–00:10] Close-up on her face, warm sunset light, confident expression.
 ```
