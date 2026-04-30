@@ -1051,3 +1051,13 @@ To https://github.com/rheavoss/virtual-influencer-studio.git
 [2026-04-30 16:09:30] No real changes — brain update skipped
 [2026-04-30 16:12:55] No real changes — brain update skipped
 [2026-04-30 16:19:02] No real changes — brain update skipped
+[gbrain hook] syncing brain index...
+  Run `gbrain doctor` for a full diagnosis.
+  Original error: Aborted(). Build with -sASSERTIONS for more info.
+[gbrain hook] brain sync complete
+[dev ab2d681] auto: grok-brain sync — 2026-04-30
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+To https://github.com/rheavoss/virtual-influencer-studio.git
+ ! [remote rejected] dev -> dev (cannot lock ref 'refs/heads/dev': is at ab2d6817b5d8e18358a8113afc9a1e88f4018b59 but expected 4f0d9e3b2d1635f6646bab23267c071eb7cb645f)
+error: failed to push some refs to 'https://github.com/rheavoss/virtual-influencer-studio.git'
+[2026-04-30 16:34:13] Brain synced. Changed: 20_tech/jasmine-dashboard/DEPLOY.md
