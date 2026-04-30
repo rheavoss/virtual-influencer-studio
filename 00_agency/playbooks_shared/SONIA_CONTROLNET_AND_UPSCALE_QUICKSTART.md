@@ -116,18 +116,18 @@
 ---\
 \
 **Files you now have saved**:\
-1. `JASMINE_TRIGGER_AND_ADVANCED_PROMPT_STRATEGY.md`\
-2. `JASMINE_NEGATIVE_PROMPT_AND_SETTINGS.md`\
-3. `JASMINE_POST_LORA_ACTIVATION_CHECKLIST.md`\
-4. `JASMINE_CONTROLNET_AND_UPSCALE_QUICKSTART.md` 
+1. `SONIA_TRIGGER_AND_ADVANCED_PROMPT_STRATEGY.md`\
+2. `SONIA_NEGATIVE_PROMPT_AND_SETTINGS.md`\
+3. `SONIA_POST_LORA_ACTIVATION_CHECKLIST.md`\
+4. `SONIA_CONTROLNET_AND_UPSCALE_QUICKSTART.md` 
 \f2 \uc0\u8592 
 \f1  just added\
 \
 Would you like me to prepare the next groundwork file right now?\
 \
 Options:\
-- `JASMINE_DATASET_QC_CHECKLIST.md` (for P0-31)\
-- `JASMINE_SOUL_ID_AND_9SHOT_GRID_GUIDE.md` (for P0-32)\
+- `SONIA_DATASET_QC_CHECKLIST.md` (for P0-31)\
+- `SONIA_SOUL_ID_AND_9SHOT_GRID_GUIDE.md` (for P0-32)\
 - Or anything else you want prepped before tokens return.\
 \
 Just tell me which one (or say \'93next one\'94 and I\'92ll choose the highest priority).  \
