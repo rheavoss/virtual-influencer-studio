@@ -10,7 +10,7 @@
 \pard\pardeftab720\partightenfactor0
 
 \f0\b\fs23\fsmilli11700 \cf2 \cb3 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 # JASMINE_CT11_UGC_AD_GUIDELINES.md
+\outl0\strokewidth0 \strokec2 # SONIA_CT11_UGC_AD_GUIDELINES.md
 \f1\b0 \cf4 \strokec4 \
 \
 
