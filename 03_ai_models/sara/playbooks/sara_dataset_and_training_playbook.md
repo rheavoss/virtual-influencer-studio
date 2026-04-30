@@ -246,11 +246,12 @@ Grok: "Promising but least validated for photorealistic Caucasian characters Apr
 - [x] Body donor locked (`body_donor.jpg`) — red bikini, Maui balcony, watermark cropped
 - [x] Composite locked (`sara_composite_v1.png` — swap_2026-04-27_23-58-46)
 - [x] Pipeline validated by Grok (2026-04-28) — Option C confirmed
-- [x] **Phase 2 COMPLETE** — 25 dataset images generated via fal.ai API (not RunPod — CEO eliminated that step). Output: `03_ai_models/sara/training_data/dataset_raw/sara_01–25.png`. Cost: ~$1/25 images.
-- [x] **Phase 2 QC** — All 25 images pass. Face/body consistency excellent. Plastic skin is inference-only issue, fixable at prompt level post-training. No rejects.
-- [x] **Phase 3 COMPLETE** — 25 captions written by Claude from visual inspection (accurate scene descriptions + natural skin texture descriptors). Files: `sara_01–25.txt` alongside PNGs.
+- [x] **Phase 2 GENERATED** — 25 dataset images generated via fal.ai API. Output: `03_ai_models/sara/training_data/dataset_raw/sara_01–25.png`. Cost: ~$1/25 images.
+- [x] **Phase 3 COMPLETE** — 25 captions written alongside PNGs. Files: `sara_01–25.txt`. NOTE: captions are for rejected images — must be rewritten once new dataset is approved.
 - [x] Training config saved: `03_ai_models/sara/training_configs/sara_v1_lora.yaml`
-- [ ] **NEXT: Claude trains on Vast.ai** — Rank 16, LR 0.0001, 3000 steps, AdamW8Bit, model: `Qwen/Qwen2.5-VL-7B-Instruct`
+- [ ] **Phase 2 QC: ❌ REJECTED (2026-04-29)** — All 25 images rejected by CEO. Issue: plastic skin — waxy/airbrushed appearance, not photorealistic. Dataset unusable for training.
+- [ ] **NEXT: Regenerate dataset** — Fix plastic skin before training. New pipeline or prompt fix required. Grok gate mandatory before proceeding.
+- [ ] Claude trains on Vast.ai — BLOCKED until new dataset approved by CEO
 - [ ] Claude + CEO: Verify Sara LoRA output → lock character permanently
 
 ## ACTUAL PATH TAKEN (differs from original plan)
