@@ -1271,7 +1271,7 @@ When the 40 images are in that folder, pass them to Claude (P0-02: QC against ch
 
 **To Antigravity:**
 
-A session was conducted outside the Instagram workspace folder. It produced `master_research_summary.md` and `jasmine_mako_task_table.md` — both of which contain decisions that directly contradict our locked strategy in this document. (Historical note — task table now covers Sonia.)
+A session was conducted outside the Instagram workspace folder. It produced `master_research_summary.md` and `sonia_task_table.md` — both of which contain decisions that directly contradict our locked strategy in this document. (Historical note — task table now covers Sonia.)
 
 The CEO has reviewed both sides and wants your evidence-based recommendation on each conflict before making a final call. You analysed 30+ YouTube/transcript sources on AI OFM operations. This is exactly where that research must be used. **No new strategy. Evidence from the transcripts only. One recommendation per conflict with your reasoning.**
 
@@ -1401,7 +1401,7 @@ Fanvue handles all subscription revenue and PPV content posts (85% keep). Room 1
 
 **Files I will update:**
 - `CLAUDE.md` — add Room 11 to revenue model table, define roles
-- `jasmine_mako_task_table.md` — Room 11 setup tasks stay in Phase 0; Fanvue setup also stays (historical reference)
+- `sonia_task_table.md` — Room 11 setup tasks stay in Phase 0; Fanvue setup also stays (historical reference)
 - `00_agency/growth_and_revenue_timeline.md` — add Room 11 as Day 1 revenue platform
 - `13_finance/tool_costs.md` — note Room 11 40% DM revenue share (not a fixed cost, a revenue reduction on DM earnings only)
 - P&L dashboard projections: Fanvue subscription model unchanged. Room 11 DM upside added as a separate line from Month 1.
@@ -1439,7 +1439,7 @@ Phase 0 (image generation only): $9/mo tier. Phase 1 (SeaDance 2.0 video product
 
 **Files I will update:**
 - `master_research_summary.md` — add deprecation notice to Section 1.1 TikTok entry: *"Killed — Move 6. AI detection chain-bans confirmed across 30+ transcripts (2026). Do not reopen until policy changes."*
-- `jasmine_mako_task_table.md` — no TikTok tasks exist (confirmed clean)
+- `sonia_task_table.md` — no TikTok tasks exist (confirmed clean)
 
 ---
 
@@ -1451,7 +1451,7 @@ Only one Instagram account: `@sonia`. No dummy account. Bio links to a custom do
 New Phase 0 task added: Purchase Namecheap domain (~$10–12/yr = ₹77/mo amortised).
 
 **Files I will update:**
-- `jasmine_mako_task_table.md` — replace all mother-daughter + Link.me tasks with:
+- `sonia_task_table.md` — replace all mother-daughter + Link.me tasks with:
   - `[ ] Purchase Namecheap custom domain (~$10/yr)`
   - `[ ] Configure Cloudflare proxy on domain`
   - `[ ] Build Carrd.co SFW bridge page (lifestyle branding, no adult references)`
@@ -1474,7 +1474,7 @@ Phase 4 (second account trigger): Migrate to Dolphin{anty} + US Dedicated Reside
 
 **Files I will update:**
 - `13_finance/tool_costs.md` — add Calilio ₹1,117/mo to Phase 0 base costs
-- `jasmine_mako_task_table.md` — Phase 0 device steps stay as-is (correct for single account)
+- `sonia_task_table.md` — Phase 0 device steps stay as-is (correct for single account)
 - `CLAUDE.md` — update Phase 0 device protocol note
 
 ---
@@ -1539,7 +1539,7 @@ All five rulings from Move 14 are now committed to disk. Below is the permanent 
 ### Files Updated
 - `13_finance/tool_costs.md` — revised Phase 0 and Phase 1 base costs, all new tools added
 - `CLAUDE.md` — Room 11 added to revenue model, link architecture updated, device protocol updated
-- `00_agency/jasmine_mako_task_table.md` — mother-daughter tasks replaced, Room 11 sequenced after LoRA, Later.com added to Phase 1 (historical)
+- `00_agency/sonia_task_table.md` — mother-daughter tasks replaced, Room 11 sequenced after LoRA, Later.com added to Phase 1 (historical)
 - `00_agency/master_research_summary.md` — TikTok and mother-daughter sections deprecated
 - `00_agency/growth_and_revenue_timeline.md` — Phase 0 and Phase 1+ base costs updated
 - `20_tech/sonia-dashboard/lib/fallback-data.js` — cost rows updated
