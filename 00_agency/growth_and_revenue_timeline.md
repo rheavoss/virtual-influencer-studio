@@ -1,4 +1,4 @@
-# Jasmine — Growth & Revenue Timeline
+# Sonia — Growth & Revenue Timeline
 **Survival target:** ₹1L/month at M2 (127 Fanvue subs, 8,500 IG followers)  
 **Scale target:** ₹3L/month at M4 (380 subs, 25k followers) → ₹20L by M12  
 **Model:** Every revenue platform live on Day 1 — 5-platform stack  
