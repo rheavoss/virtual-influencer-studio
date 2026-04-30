@@ -1,5 +1,5 @@
-# Jasmine CT → Tech Stack Mapping
-**Project:** Jasmine Virtual AI Influencer
+# Sonia CT → Tech Stack Mapping
+**Project:** Virtual Influencer Studio — Sonia
 **Version:** 2026-04-18 (Grok-verified, final)
 **Source:** Grok analysis + Claude draft → Grok finalised
 **Status:** OFFICIAL — use this for all production decisions
