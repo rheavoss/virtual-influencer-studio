@@ -10,7 +10,7 @@
 \pard\pardeftab720\partightenfactor0
 
 \f0\b\fs23\fsmilli11700 \cf2 \cb3 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 # JASMINE_NEGATIVE_PROMPT_AND_SETTINGS.md
+\outl0\strokewidth0 \strokec2 # SONIA_NEGATIVE_PROMPT_AND_SETTINGS.md
 \f1\b0 \cf4 \strokec4 \
 \
 
@@ -21,7 +21,7 @@
 \f1\b0 \cf4 \strokec4 : 1.0  \
 
 \f0\b \cf2 \strokec2 **Usage**
-\f1\b0 \cf4 \strokec4 : Use these exact settings with the Jasmine LoRA in Forge / ComfyUI / ZImage Turbo\
+\f1\b0 \cf4 \strokec4 : Use these exact settings with the Sonia LoRA in Forge / ComfyUI / ZImage Turbo\
 \
 
 \f0\b \cf2 \strokec2 ### Recommended Negative Prompt (copy-paste this)
