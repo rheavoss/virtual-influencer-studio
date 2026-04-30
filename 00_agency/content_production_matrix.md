@@ -13,7 +13,7 @@
 | **Voice Identity** | Sonia's cloned voice + emotion tags | OmniVoice (Local/Colab) — Initial reference via ElevenLabs | ₹0/month |
 | **OPSEC** | EXIF strip, film grain, metadata clean before every post | ExifTool + FFmpeg | ₹0 |
 | **Frame Extraction** | Lossless frame extraction from driving Reels | FFmpeg (`ffmpeg -i reel.mp4 -ss 00:00:01 -vframes 1 frame1.png`) | ₹0 |
-| **Caption + Platform Text** | IG caption + Fanvue teaser + X thread per post | jasmine_agent.py (triple-text output) | ₹0 |
+| **Caption + Platform Text** | IG caption + Fanvue teaser + X thread per post | sonia_agent.py (triple-text output) | ₹0 |
 | **Scheduling** | Auto-post across platforms | Metricool (free tier) | ₹0 |
 | **Color Correction** | Fix Wan AI washed-out colors after every video | CapCut (free) | ₹0 |
 
