@@ -1,4 +1,4 @@
-# JASMINE_CONTENT_CALENDAR_AND_7_PROMPT_SYSTEM.md
+# SONIA_CONTENT_CALENDAR_AND_7_PROMPT_SYSTEM.md
 
 **Date**: 22 April 2026  
 **Version**: 1.1 (11 content types)
@@ -9,7 +9,7 @@
 
 ## 7-PROMPT SYSTEM (The Engine)
 
-Use these 7 proven prompt frameworks to create Jasmine content:
+Use these 7 proven prompt frameworks to create Sonia content:
 
 1. Pattern Break Architect – Hook that stops scroll
 2. Hook That Hijacks – Emotional / curiosity hook
@@ -21,7 +21,7 @@ Use these 7 proven prompt frameworks to create Jasmine content:
 
 ## 30-DAY CONTENT CALENDAR (Ready to Use)
 
-**Weekly Theme**: “Your Secret Student Girlfriend”
+**Weekly Theme**: "Your Secret Student Girlfriend"
 
 **Daily Output Goal** (after LoRA is ready):
 
@@ -35,18 +35,18 @@ Use these 7 proven prompt frameworks to create Jasmine content:
 **Day 1**
 
 - Reel: Morning stretch in oversized hoodie (CT-1)
-- Carousel: “5 things I do when I miss you” (CT-5)
+- Carousel: "5 things I do when I miss you" (CT-5)
 - Story: Mirror selfie in camisole (CT-7)
 
 **Day 2**
 
-- Reel: “POV: I’m your secret girlfriend” (CT-1)
+- Reel: "POV: I'm your secret girlfriend" (CT-1)
 - Carousel: Outfit try-on (black lace → white silk) (CT-8)
 - PPV: Private bedtime voice note + video (CT-10)
 
 **Day 3**
 
-- Reel: “What my day looks like as your secret girlfriend” (CT-1)
+- Reel: "What my day looks like as your secret girlfriend" (CT-1)
 - UGC Ad: Honest review of new skincare (holding product, genuine reaction) (CT-11)
 - Story: Casual kitchen moment (CT-6)
 
