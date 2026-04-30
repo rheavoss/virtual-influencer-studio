@@ -1,6 +1,6 @@
-# 🚀 Growth Hacks Playbook — Jasmine Mako
+# 🚀 Growth Hacks Playbook — Sonia
 **Created:** 2026-04-11  
-**Goal:** Drive zero-cost, high-volume traffic from Indian male audiences to Jasmine's Instagram → Fanvue funnel  
+**Goal:** Drive zero-cost, high-volume traffic from Indian male audiences to Sonia's Instagram → Fanvue funnel  
 **Rule:** Every hack must have zero or near-zero cost. No paid ads until organic proof exists.
 
 ---
