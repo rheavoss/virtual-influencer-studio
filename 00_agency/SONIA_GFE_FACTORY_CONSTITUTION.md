@@ -1,19 +1,19 @@
-# Jasmine GFE Factory Constitution
+# Sonia GFE Factory Constitution
 **Phase 1 — Core LoRA Factory Operating System**
 
 **Version:** 1.3 (Final — April 27, 2026)  
-**Current Phase:** Phase 1 — Complete Jasmine v5 training, validate identity lock, natural physics, and GFE quality.  
-**Mission:** Build one rock-solid locked-identity emotional GFE character (Jasmine) using real photos and natural-physics LoRAs. Zero tolerance for shortcuts on the final LoRA ownership attempt.
+**Current Phase:** Phase 1 — Complete Sonia v5 training, validate identity lock, natural physics, and GFE quality.  
+**Mission:** Build one rock-solid locked-identity emotional GFE character (Sonia) using real photos and natural-physics LoRAs. Zero tolerance for shortcuts on the final LoRA ownership attempt.
 
 This Constitution is binding. Every AI collaborator must follow it on every task.
 
 ---
 
-## Reference Documents (Read Before Any Jasmine Task)
-- Character spec: `01_characters/jasmine/jasmine_character_bible.json`
+## Reference Documents (Read Before Any Sonia Task)
+- Character spec: `01_characters/sonia/sonia_character_bible.json`
 - Dataset rules: `00_agency/DATASET_PLAYBOOK.md`
-- Training SOP: `03_ai_models/jasmine_mako/playbooks/JASMINE_VAST_AI_TRAINING_SOP_v4.md` (use most recent version)
-- Gate scripts: `03_ai_models/jasmine_mako/scripts/` — pre_training_gate.sh, ssh_preflight.sh, post_training_gate.sh
+- Training SOP: `03_ai_models/sonia/playbooks/SONIA_VAST_AI_TRAINING_SOP_v4.md` (use most recent version)
+- Gate scripts: `03_ai_models/sonia/scripts/` — pre_training_gate.sh, ssh_preflight.sh, post_training_gate.sh
 - Knowledge store: G.Brain (query first, read files second)
 
 ---
@@ -99,7 +99,7 @@ Before **any** high-risk action (training run, instance rental, large generation
 
 ## 7. Phase 1 Exit Criteria (Explicit & Measurable)
 Phase 1 is **complete** only when v5 produces **≥20 consistent face-locked generations** at 768×1024 that meet **all** of the following, judged acceptable by the founder:
-- Correct 32DDD-23-36 proportions
+- Correct proportions
 - Natural breast gravity and soft tissue physics
 - Strong GFE warmth and emotional connection (no dead eyes, stiff posture, disconnected gaze, or generic stock-photo energy)
 
@@ -122,8 +122,8 @@ A new LoRA version is triggered only by:
 ---
 
 ## Non-Negotiable Rules
-1. **Trigger Word:** Every caption **must** start with `jasminemakogirl`.
-2. **Natural Physics:** Always emphasize real breast gravity, soft tissue movement, skin texture, and 32DDD-23-36 proportions.
+1. **Trigger Word:** Every caption **must** start with `soniagfe`.
+2. **Natural Physics:** Always emphasize real breast gravity, soft tissue movement, skin texture, and proportions.
 3. **Identity Lock:** Face consistency is sacred.
 4. **GFE Vibe Rejection Criteria:** Reject dead eyes, unnatural stiff posture, disconnected gaze, or generic stock-photo energy. Human judgment is final.
 5. **No Shortcuts:** This is our last pure LoRA attempt.
@@ -135,4 +135,4 @@ I will treat this Constitution as my core operating system. I will execute every
 
 We are building a real factory. Phase 1 must be executed perfectly.
 
-**Approved for immediate use in all Jasmine GFE Factory conversations.**
+**Approved for immediate use in all Sonia GFE Factory conversations.**
