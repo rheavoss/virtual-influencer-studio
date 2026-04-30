@@ -73,7 +73,7 @@ One term in the taxonomy must be corrected before any generation runs:
 
 **PERMANENT_CORE** (prepended to every prompt):
 ```
-photorealistic portrait photograph, Jasmine, 24-year-old East Asian woman who looks exactly 24, broad oval face with wide prominent cheekbones, East Asian almond eyes slightly hooded relaxed and natural, dark brown warm hazel irises, clean bare lashes no liner, medium thickness natural dark brows, medium straight-bridged nose with soft natural tip, medium fullness natural bare-pink lips soft natural shape, slender neck, soft moderately defined jawline, fair even-toned skin with warm neutral-peachy undertone no flush no redness anywhere, visible natural pores on cheeks and nose, 2-3 small acne marks on left cheek, no freckles, natural slight under-eye shadow, clean smooth forehead, matte natural skin finish zero skin smoothing, very long dark uniform black-brown hair with slight natural waves falling loosely over both shoulders, slim petite frame, slender natural arms, DDD cup heavy natural bust with natural drop and weight deep cleavage, flat firm toned midsection, dramatically slim defined waist, full feminine hips, toned fit legs, slim busty hourglass figure — slim everywhere except the bust
+photorealistic portrait photograph, Sonia, 22-year-old Indian / South Asian woman who looks exactly 22, consistent facial features, dark expressive eyes, clean bare lashes no liner, medium thickness natural dark brows, medium straight-bridged nose with soft natural tip, medium fullness natural bare-pink lips soft natural shape, slender neck, soft moderately defined jawline, warm olive-toned skin with natural undertone no flush no redness anywhere, visible natural pores on cheeks and nose, natural slight under-eye shadow, clean smooth forehead, matte natural skin finish zero skin smoothing, very long dark uniform hair with slight natural waves falling loosely over both shoulders, slim petite frame, slender natural arms, DDD cup heavy natural bust with natural drop and weight deep cleavage, flat firm toned midsection, dramatically slim defined waist, full feminine hips, toned fit legs, slim busty hourglass figure — slim everywhere except the bust
 ```
 
 **STANDARD_NEGATIVE** (applied to every prompt):
@@ -444,7 +444,7 @@ The user already has Grok access via X.com. Grok includes free image generation 
 1. Run Batch 1 on Civitai first — confirm face lock before proceeding
 2. If Batch 1 face output matches character bible: proceed to Batches 2 and 4 on Civitai
 3. Run Batch 3 on RunPod ComfyUI — use `skip_nsfw_filter: true` in ComfyUI node settings
-4. QC all 40 images against the variety checklist in `jasmine_reference_prompts.json` before submitting to LoRA training
+4. QC all 40 images against the variety checklist in `sonia_reference_prompts.json` before submitting to LoRA training
 5. Reject any image where: face has drifted, BBW body drift appears, flush/redness appears on face
 
 **Antigravity, your move: review this dataset for creative variety gaps before we lock and execute.**
