@@ -244,7 +244,7 @@ Natural language description of the final scene. Best for lifestyle/travel.
 ```
 Use structural format for: GFE videos, PPV content, scripted Reels.
 
-**Voice consistency rule (from character bible):** Always include `"soft warm East Asian accent, gentle and intimate tone"` in every voice/Seedance prompt. Never leave accent vague.
+**Voice consistency rule (from character bible):** Always include `"soft warm Indian accent, gentle and intimate tone"` in every voice/Seedance prompt. Never leave accent vague.
 
 ---
 
@@ -278,7 +278,7 @@ For any high-stakes generation (PPV content, hero feed posts):
 
 | LoRA | Trained On | Optimizer | Steps | Use Case |
 |---|---|---|---|---|
-| **Jasmine Z-Image LoRA** | Z-Image Base | Prodigy, LR=1 | ~800 | Static images (Types 4, 8) |
-| **Jasmine Wan 2.2 LoRA** | Wan 2.2 14B T2V, low noise only | Adam, LR=2e-4 | ~600–1000 | Video face swap (Type 2) |
+| **Sonia Z-Image LoRA** | Z-Image Base | Prodigy, LR=1 | ~800 | Static images (Types 4, 8) |
+| **Sonia Wan 2.2 LoRA** | Wan 2.2 14B T2V, low noise only | Adam, LR=2e-4 | ~600–1000 | Video face swap (Type 2) |
 
 Both trained once on RunPod (~$1–2 each). One-time cost.
