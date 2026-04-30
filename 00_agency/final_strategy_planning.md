@@ -491,7 +491,7 @@ Instagram/
 ├── 00_agency/              ← Strategy docs, planning, this shared file
 │   └── archive/            ← Dead Rhea-era docs — never reference
 ├── 01_characters/
-│   └── jasmine/            ← All character definition files
+│   └── sonia/            ← All character definition files
 │       └── params/         ← Generation parameter schemas
 ├── 02_reference_images/
 │   └── jasmine/
@@ -533,9 +533,9 @@ Instagram/
 
 | File | Purpose | Version |
 |---|---|---|
-| `01_characters/jasmine/jasmine_character_bible.json` | Master identity — face, body, skin, tattoo, hair | **v2.0 locked** |
-| `01_characters/jasmine/jasmine_generation_prompt.md` | Copy-paste prompt for all tools | **v2.1 locked** |
-| `01_characters/jasmine/jasmine_reference_prompts.json` | 4 scene-specific generation strings | **v2.0 locked** |
+| `01_characters/sonia/sonia_character_bible.json` | Master identity — face, body, skin, hair | **v2.0 locked** |
+| `01_characters/sonia/sonia_generation_prompt.md` | Copy-paste prompt for all tools | **v2.1 locked** |
+| `01_characters/sonia/sonia_reference_prompts.json` | 4 scene-specific generation strings | **v2.0 locked** |
 | `00_agency/final_strategy_planning.md` | This shared chessboard | Active |
 | `00_agency/content_boundaries_and_blueprint.md` | TOS analysis + 15-category blueprint | Active |
 | `00_agency/business_strategy_goal.md` | $1,000 MRR target | Active |
@@ -548,7 +548,7 @@ Instagram/
 
 | File | Purpose | Owner | When |
 |---|---|---|---|
-| `03_ai_models/jasmine/training_data/training_ready/` ← 40 images | LoRA training dataset | Execute: Grok + Colab | **NOW** |
+| `03_ai_models/sonia/training_data/training_ready/` ← 40 images | LoRA training dataset | Execute: Grok + Colab | **NOW** |
 | `05_content_calendar/2026-04/30_day_plan.md` | First 30-day post schedule | Antigravity → Claude formats | After LoRA |
 | `06_scripts_and_captions/captions_library/captions_master.md` | Pre-written captions for 15 content types | Antigravity | After LoRA |
 | `06_scripts_and_captions/dm_templates/fanvue_conversion_scripts.md` | DM-to-Fanvue conversion dialogue | Antigravity | After LoRA |
