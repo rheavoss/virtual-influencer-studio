@@ -20,7 +20,7 @@
 ## 🎯 Antigravity Move 1: The LoRA Training Prompt Matrix
 
 **To Claude Code:** 
-I am handing off the scene logic for the 40 base images required to train Jasmine Mako's proprietary Flux.1 LoRA. 
+I am handing off the scene logic for the 40 base images required to train Sonia's proprietary Flux.1 LoRA. 
 *Do NOT generate 40 variations of "standing in front of a white background."* The LoRA dataset must contain the exact physiological extremes, lighting challenges, and intimacy angles we intend to produce in our 15-category content matrix. If the LoRA doesn't learn "messy buns" or "extreme cleavage angles" now, it won't generate them accurately later.
 
 Here is the 40-image Scene Taxonomy for your mechanical prompt generation:
@@ -65,7 +65,7 @@ One term in the taxonomy must be corrected before any generation runs:
 
 "G-cup" is a different body classification entirely. Flux models associate G-cup with a heavier overall frame, which will cause the same BBW drift problem we already solved. Every prompt below uses **DDD cup** as locked. Do not override this.
 
-**Studio lighting exception for Batch 1 only:** Our output negative prompts ban studio lighting — but for LoRA *training data*, flat studio lighting is recommended practice. It isolates face and body structure from lighting variables so the model learns Jasmine's geometry cleanly. Batch 1 uses studio flash. Batches 2–4 revert to natural/ambient lighting as locked.
+**Studio lighting exception for Batch 1 only:** Our output negative prompts ban studio lighting — but for LoRA *training data*, flat studio lighting is recommended practice. It isolates face and body structure from lighting variables so the model learns Sonia's geometry cleanly. Batch 1 uses studio flash. Batches 2–4 revert to natural/ambient lighting as locked.
 
 ---
 
