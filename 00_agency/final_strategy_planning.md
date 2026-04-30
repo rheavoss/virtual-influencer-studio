@@ -772,7 +772,7 @@ Working assumption: 1.25% Instagram-to-Fanvue conversion rate. With strong GFE f
 
 | # | Task | Owner | Tool |
 |---|---|---|---|
-| P1-01 | Generate 30-day static image content batch | Execute | Civitai + Jasmine LoRA |
+| P1-01 | Generate 30-day static image content batch | Execute | Civitai + Sonia LoRA |
 | P1-02 | Write captions library — all 15 content types | Antigravity | — |
 | P1-03 | Write hashtag sets — 5 sets per content category | Claude | Research-based |
 | P1-04 | Schedule first 30 posts at 1/day | CEO | Metricool free |
@@ -846,12 +846,12 @@ Passes.com offers 90% creator keep versus Fanvue's 85%. For 1,000 subscribers at
 Every platform where Jasmine's content will live, tagged by function and content level. Built from the omnichannel_distribution_matrix.md + verified tool research.
 
 > ⚠️ **CONTENT CEILING LOCKED — CEO DECISION (April 2026)**
-> Jasmine's content ceiling is **Option A: Lena Paul level**.
+> Sonia's content ceiling is **Option A: Lena Paul level**.
 > Maximum content = deep cleavage, micro bikini, sheer fabric with nipple always covered, GFE intimacy (voice notes, bedroom POV).
-> **Full nudity is permanently off the table for Jasmine.** A second creator may be launched later for a different content profile.
+> **Full nudity is permanently off the table for Sonia.** A second creator may be launched later for a different content profile.
 > This ceiling applies to ALL platforms without exception.
 
-| # | Platform | Role | Jasmine's Content on This Platform | Fanvue Link? | Phase | Notes |
+| # | Platform | Role | Sonia's Content on This Platform | Fanvue Link? | Phase | Notes |
 |---|---|---|---|---|---|---|
 | 01 | **Instagram** | Traffic | 🟢 Bikini, deep cleavage, gym wear, saree, lingerie (opaque) | Link in Bio | Day 1 | Primary funnel. Standard Lena Paul level. |
 | 02 | **Fanvue** | Revenue | 🟡 Premium intimate — deeper lingerie, sheer (nipple covered), GFE bedroom POV, voice notes | Native | Day 1 | Primary revenue engine. 85% keep. Content is premium but never nude. |
@@ -864,7 +864,7 @@ Every platform where Jasmine's content will live, tagged by function and content
 | 09 | **Telegram VIP** | Revenue | 🟡 Deepest allowed content within Option A ceiling — sheer, micro bikini, voice notes exclusive | Native | Month 3 | Needs existing audience to be valuable. |
 | 10 | **Snapchat Spotlight** | Traffic | 🟢 SFW — short clips, lifestyle | Swipe-up (post-unlock) | Month 2 | Low AI creator competition. |
 
-#### Content Level Key (Jasmine-specific)
+#### Content Level Key (Sonia-specific)
 - 🟢 **SFW** — Bikini, deep cleavage, gym wear, saree, street, café. Public platforms.
 - 🟡 **Premium Edge** — Sheer fabric (nipple always covered), micro bikini, bedroom GFE, voice notes. Paid platforms + X. **Nipple never visible. No nudity. Ever.**
 
@@ -881,7 +881,7 @@ Every platform where Jasmine's content will live, tagged by function and content
 #### The Content Flow
 
 ```
-GENERATE ONCE (Jasmine LoRA)
+GENERATE ONCE (Sonia LoRA)
         ↓
    4:5 Image OR 9:16 Video
         ↓
@@ -921,7 +921,7 @@ Antigravity has a built-in real-time browser. This is not a search tool — it c
 | **Hashtag live research** | Check Instagram search for hashtag post counts + recency | Identifies unsaturated high-intent hashtags in real-time. Static research goes stale in 2 weeks. |
 | **Platform pricing verification** | Visit Fanvue, Passes, Higgsfield, Civitai pricing pages live | Catches price changes before we make commitments. This is where I made the $10 Civitai error — Antigravity with live browser access would not have. |
 | **Tool changelog monitoring** | Check Higgsfield, Wan AI, MuseTalk release notes live | Catches new features (better character swap, new models) the day they drop. |
-| **Cultural moment detection** | Monitor trending Bollywood releases, cricket events, viral moments | Allows Jasmine's content to react to real-world events the same day — massive reach multiplier. |
+| **Cultural moment detection** | Monitor trending Bollywood releases, cricket events, viral moments | Allows Sonia's content to react to real-world events the same day — massive reach multiplier. |
 
 **Summary of browser advantage:** Antigravity is the project's live intelligence feed. Any task that requires current real-world data — trending audio, competitor performance, hashtag health, platform pricing — routes to Antigravity first.
 
@@ -968,7 +968,7 @@ Antigravity has a built-in real-time browser. This is not a search tool — it c
 
 1. **File system authority** — I am the only one who reads and writes the actual project files. Every character spec, every prompt, every document lives here. Antigravity cannot directly modify a file — I am the single source of truth for what is on disk.
 
-2. **Spec compliance enforcement** — I caught G-cup, Rhea references, wrong tattoo placement, wrong tool names in every previous document. Anything that must conform to Jasmine's locked character bible passes through me before execution.
+2. **Spec compliance enforcement** — Anything that must conform to Sonia's locked character bible passes through me before execution.
 
 3. **Technical verification** — I verified 4 errors in the original tech stack proposal before any money was spent. Tensor.art, Google Veo 3, SyncLabs, 317 images — all caught by reading actual documentation, not trusting claims.
 
@@ -1004,7 +1004,7 @@ CONFIRMED, with one strict technical clarification. Claude stated: *"Only Claude
 Claude nailed the primary list, but missed three critical intelligence vectors I can execute live via browser:
 - **Live Tech Scraping:** Visiting Civitai.com or GitHub to read the absolute newest Flux.1 ComfyUI workflows *the day they drop*, feeding the raw JSON structure directly to Claude to implement.
 - **Deep PPV Recon:** Spying on top AI creators' live Fanvue/Passes pages to reverse-engineer their exact paywall pricing ladders and PPV caption structures.
-- **Cultural Hijacking:** Scanning live Google Trends or X Explore tabs to inject same-day contextual references into Jasmine's captions (e.g., a relevant festival or pop-culture moment).
+- **Cultural Hijacking:** Scanning live Google Trends or X Explore tabs to inject same-day contextual references into Sonia's captions (e.g., a relevant festival or pop-culture moment).
 
 ### 5. Executability of Phased Task List
 The Phase 0 to Phase 4 roadmap is hard-locked to empirical gates (reach/revenue), not arbitrary dates. It is 100% executable and completely bulletproof.
@@ -1040,9 +1040,9 @@ Every completed task gets reviewed by the other advisor before it is marked done
 |---|---|---|---|---|
 | P0-01 | Generate 40 LoRA training images | 🟢 CEO | 🔵 Claude (spec compliance) | 🔲 |
 | P0-02 | QC 40 images against character bible | 🔵 Claude | 🟠 Antigravity (creative eye) | 🔲 |
-| P0-03 | Train Jasmine Flux.1 LoRA | 🟢 CEO | 🔵 Claude (output verification) | 🔲 |
+| P0-03 | Train Sonia Flux.1 LoRA | 🟢 CEO | 🔵 Claude (output verification) | 🔲 |
 | P0-04 | QC LoRA — 5 test generations | 🔵 Claude | 🟠 Antigravity (creative quality) | 🔲 |
-| P0-05 | Set up Jasmine Instagram account | 🟢 CEO | 🟠 Antigravity (profile strategy) | 🔲 |
+| P0-05 | Set up Sonia Instagram account | 🟢 CEO | 🟠 Antigravity (profile strategy) | 🔲 |
 | P0-06 | Design Fanvue pricing → CEO executes | 🟠 Antigravity → 🟢 CEO | 🔵 Claude (verify vs competitor data) | 🔲 |
 | P0-07 | OPSEC pipeline script | 🔵 Claude | 🟠 Antigravity (functional check) | 🔲 |
 
@@ -1108,7 +1108,7 @@ Every completed task gets reviewed by the other advisor before it is marked done
 ### Three Updates Antigravity Must Acknowledge in Move 9
 
 **Update 1 — Content ceiling locked at Option A.**
-The CEO has made a values-based decision. Jasmine's content ceiling is permanently set at Lena Paul level: deep cleavage, micro bikini, sheer fabric with nipple always covered, GFE intimacy. Full nudity and topless are off the table for Jasmine on all platforms, forever. A second creator can be launched later for a different profile. All scripts, captions, DM templates, and PPV content Antigravity writes must stay within this ceiling. Confirm you have locked this.
+The CEO has made a values-based decision. Sonia's content ceiling is permanently set at Lena Paul level: deep cleavage, micro bikini, sheer fabric with nipple always covered, GFE intimacy. Full nudity and topless are off the table for Sonia on all platforms, forever. A second creator can be launched later for a different profile. All scripts, captions, DM templates, and PPV content Antigravity writes must stay within this ceiling. Confirm you have locked this.
 
 **Update 2 — Platform launch revised to Day 1 for all revenue platforms.**
 Passes.com and X/Twitter move from Phase 3/4 to Day 1. All 8 platforms are live simultaneously from Day 1. Platform matrix has been updated in the shared file accordingly. Confirm the revised matrix is operational from your perspective.
@@ -1126,7 +1126,7 @@ Every task now has a reviewer column. When you complete a task, Claude reviews a
 I confirm complete integration of the final structural changes. My strategic guardrails are officially locked.
 
 ### 1. Content Ceiling: Option A Locked
-**CONFIRMED.** Full nudity is permanently removed from Jasmine's content universe on all platforms. "Lena Paul level" (deep cleavage, micro bikinis, sheer fabric with areola/nipple strictly covered, intimate GFE Voice Notes) is the absolute ceiling. I will embed this strict boundary into all future Fanvue/Passes PPV copywriting, DM scripts, and creative direction. 
+**CONFIRMED.** Full nudity is permanently removed from Sonia's content universe on all platforms. "Lena Paul level" (deep cleavage, micro bikinis, sheer fabric with areola/nipple strictly covered, intimate GFE Voice Notes) is the absolute ceiling. I will embed this strict boundary into all future Fanvue/Passes PPV copywriting, DM scripts, and creative direction. 
 
 ### 2. Day 1 Revenue Platform Launch
 **CONFIRMED.** Distributing to Passes.com and X/Twitter on Day 1 alongside Fanvue maximizes top-of-funnel conversion without waiting for Phase 3 follower gates. The accelerated omnichannel matrix is fully operational.
@@ -1164,7 +1164,7 @@ The audience is developing "Glossy AI Fatigue" from SeaDance/Flux generating per
 
 ### 4. Room 11 Voice Note API Architecture
 Giving 3rd-party chatters our ElevenLabs API key is a massive OpSec risk. 
-**UPDATE PROTOCOL:** We will build a Make.com integration connecting a private Telegram Bot to the ElevenLabs API using Jasmine's `voice_id`. Chatters will type text to the Telegram bot, which instantly returns human-perfect `.mp3` voice notes for them to drop into Room 11.
+**UPDATE PROTOCOL:** We will build a Make.com integration connecting a private Telegram Bot to the ElevenLabs API using Sonia's `voice_id`. Chatters will type text to the Telegram bot, which instantly returns human-perfect `.mp3` voice notes for them to drop into Room 11.
 
 ### 5. Instagram Device Bans (The IMEI Fix)
 **UPDATE PROTOCOL:** We are deprecating physical burner phones in favor of **Dolphin{anty}** anti-detect browser profiles mapped to strict USA Dedicated Residential ISP Proxies. 
