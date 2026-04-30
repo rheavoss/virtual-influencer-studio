@@ -10,7 +10,7 @@
 
 | CT Type | Primary Tool(s) | Why Best Fit | Cost per Piece (approx.) | Automation (API?) |
 |---|---|---|---|---|
-| **CT1 — Viral Clone Reel** | Higgsfield (Kling/Veo) + Flux LoRA | Best cinematic motion transfer + identity lock; reference sheets ensure Jasmine consistency | ₹15–35 | Higgsfield API + fal.ai ✅ |
+| **CT1 — Viral Clone Reel** | Higgsfield (Kling/Veo) + Flux LoRA | Best cinematic motion transfer + identity lock; reference sheets ensure Sonia consistency | ₹15–35 | Higgsfield API + fal.ai ✅ |
 | **CT2 — Face Swap Reel** | Wan AI 2.2 T2V + Jasmine Wan LoRA | Excellent face swap + motion preservation; low cost | ₹8–20 | Wan API (fal.ai) ✅ |
 | **CT3 — Talking Head** | Higgsfield (Veo 3.1) + OmniVoice | Native audio/dialogue + lip-sync; cinematic quality | ₹6–12 | Higgsfield API ✅ + local voice |
 | **CT4 — GRWM / Outfit Transition** | Higgsfield (Nano Banana Pro + VACE) + Flux LoRA | Perfect outfit consistency + seamless transitions | ₹12–25 | Higgsfield API ✅ |
