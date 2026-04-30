@@ -27,7 +27,7 @@
 1. Identify 6-month-old viral Reel from target influencer (Instaloader scrape)
 2. Download without watermark (Instaloader or SnapSave)
 3. Extract Frame 1: `ffmpeg -i driving_reel.mp4 -ss 00:00:00.5 -vframes 1 frame1.png`
-4. Flux Kontext 9B generates Jasmine in same pose/outfit/background as Frame 1
+4. Flux Kontext 9B generates Sonia in same pose/outfit/background as Frame 1
 5. DW Pose extracts full skeleton from driving video
 6. Wan Animate 2.2 **IMAGE-TO-VIDEO** (start frame + skeleton → video output)
 7. Frame interpolation: 16fps → 32fps (within Wan workflow)
@@ -36,7 +36,7 @@
 10. OPSEC: EXIF strip + film grain + metadata clean
 
 ### Tools
-`Instaloader → FFmpeg (frame extract) → Flux Kontext 9B FP8 → Wan AI Animate 2.2 I2V → CapCut`
+`Instaloader → FFmpeg (frame extract) → Flux Kontext 9B FP8 → Wan AI Animate 2.2 I2V → CapCut` (Sonia identity)
 
 ### Critical Technical Parameters
 - Wan model: IMAGE-TO-VIDEO (not text-to-video)
@@ -54,7 +54,7 @@
 ### Building Components
 1. Find driving video (viral Reel, any source)
 2. Jasmine's Wan 2.2 LoRA loaded (trained on Wan 2.2 text-to-video, low noise only)
-3. Wan 2.2 **TEXT-TO-VIDEO** + Jasmine LoRA + denoise at 0.4–0.5
+3. Wan 2.2 **TEXT-TO-VIDEO** + Sonia LoRA + denoise at 0.4–0.5
 4. Color correct (CapCut)
 5. OPSEC
 
@@ -63,7 +63,7 @@
 
 ### Critical Technical Parameters
 - Wan model: **TEXT-TO-VIDEO** (not image-to-video — I2V doesn't work for this use case)
-- **Denoise 0.4–0.5**: lower = more original motion preserved, higher = more Jasmine identity
+- **Denoise 0.4–0.5**: lower = more original motion preserved, higher = more Sonia identity
 - Resolution: 960×540 recommended, 720 for speed
 - No flickering during occlusion (hand over face) — LoRA knows the face
 
