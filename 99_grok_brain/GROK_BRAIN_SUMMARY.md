@@ -72,11 +72,11 @@ blurry, low quality, deformed, mutated, extra limbs, bad anatomy, malformed feet
 
 | Item | Status |
 |---|---|
-| Face reference | ⏳ PENDING — CEO to provide 1 face photo for Sonia |
+| Face reference | ✅ LOCKED — `01_characters/sonia/face_reference/sonia_face_reference_v1.png` |
 | Pose reference images | ✅ 700 zaraso_phia images in `~/Downloads/target/` |
-| Training images | ⏳ NOT STARTED — generate after face reference locked |
-| Dataset target | 20–25 images (zaraso_phia-style body compositions + new Sonia face via PuLID) |
-| Generation tool | Flux.2 Klein 9B + PuLID (using face reference) |
+| Training images | ⏳ NOT STARTED — ready to generate now |
+| Dataset target | 20–25 images (zaraso_phia-style body compositions + Sonia face via PuLID) |
+| Generation tool | Flux.2 Klein 9B + PuLID (using `sonia_face_reference_v1.png`) |
 
 **Note:** zaraso_phia's 700 images = pose/composition reference ONLY. Not training data. Sonia needs her own unique face.
 
