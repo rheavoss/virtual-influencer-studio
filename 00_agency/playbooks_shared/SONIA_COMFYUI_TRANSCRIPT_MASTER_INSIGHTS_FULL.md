@@ -5,11 +5,11 @@
 \paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
-\f0\fs24 \cf0 # JASMINE_COMFYUI_TRANSCRIPT_MASTER_INSIGHTS_FULL.md\
+\f0\fs24 \cf0 # SONIA_COMFYUI_TRANSCRIPT_MASTER_INSIGHTS_FULL.md\
 \
 **Date**: 22 April 2026  \
 **Status**: Complete compilation of every useful point from all 3minut node transcripts  \
-**Purpose**: Single authoritative offline reference for all ComfyUI techniques relevant to Jasmine Virtual AI Influencer Studio.\
+**Purpose**: Single authoritative offline reference for all ComfyUI techniques relevant to Virtual Influencer Studio.\
 \
 ## 1. Video Generation & Cinematic Techniques (SeaDance 2 / Higgsfield / LTX 2.3)\
 \
@@ -52,7 +52,7 @@
 \
 - Method A \'96 Latent Upscale: Faster (~24s) but more artifacts in hair/face.\
 - Method B \'96 Decode + Img2Img + final low-denoising KSampler: Slightly slower (~25.7s) but significantly cleaner and more professional.\
-- Verdict: Use Method B for Jasmine (quality > 1-second speed difference).\
+- Verdict: Use Method B for Sonia (quality > 1-second speed difference).\
 - Two-KSampler Latent Upscale shortcut is the fastest clean high-res path.\
 - For A1111 replication: Use BlenderNico/Inspire pack nodes + match noise mode exactly.\
 \
