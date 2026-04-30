@@ -72,11 +72,11 @@ blurry, low quality, deformed, mutated, extra limbs, bad anatomy, malformed feet
 
 | Item | Status |
 |---|---|
-| Face reference | ⏳ PENDING — CEO to provide 1 face photo for Sonia |
+| Face reference | ✅ LOCKED — `01_characters/sonia/face_reference/sonia_face_reference_v1.png` |
 | Pose reference images | ✅ 700 zaraso_phia images in `~/Downloads/target/` |
-| Training images | ⏳ NOT STARTED — generate after face reference locked |
-| Dataset target | 20–25 images (zaraso_phia-style body compositions + new Sonia face via PuLID) |
-| Generation tool | Flux.2 Klein 9B + PuLID (using face reference) |
+| Training images | ⏳ NOT STARTED — ready to generate now |
+| Dataset target | 20–25 images (zaraso_phia-style body compositions + Sonia face via PuLID) |
+| Generation tool | Flux.2 Klein 9B + PuLID (using `sonia_face_reference_v1.png`) |
 
 **Note:** zaraso_phia's 700 images = pose/composition reference ONLY. Not training data. Sonia needs her own unique face.
 
@@ -91,7 +91,7 @@ blurry, low quality, deformed, mutated, extra limbs, bad anatomy, malformed feet
 
 | Item | Status |
 |---|---|
-| Sonia LoRA | ⏳ BLOCKED — face reference needed first |
+| Sonia LoRA | ⏳ READY TO START — face reference locked, dataset generation next |
 | Training tool | ostris/ai-toolkit |
 | Base model | Flux.2 Klein 9B |
 | Steps | 4000–6000 |
@@ -112,17 +112,17 @@ vastai search offers 'gpu_name=RTX_4090 num_gpus=1 disk_space>=80 reliability>0.
 
 ## 6. TASK TABLE — TOP PENDING
 
-**Next action:** CEO provides Sonia face reference photo → Claude generates 20–25 training images → LoRA training on Vast.ai
+**Next action:** Generate 20–25 Sonia training images using `sonia_face_reference_v1.png` + zaraso_phia pose refs → LoRA training on Vast.ai
 
 | Priority | Task | Owner | Status |
 |---|---|---|---|
-| 1 | Provide Sonia face reference photo | CEO | ⏳ BLOCKING |
-| 2 | Generate 20–25 Sonia training images (Flux.2 Klein + PuLID) | Claude | Blocked on #1 |
+| 1 | Provide Sonia face reference photo | CEO | ✅ DONE — `01_characters/sonia/face_reference/sonia_face_reference_v1.png` |
+| 2 | Generate 20–25 Sonia training images (Flux.2 Klein + PuLID) | Claude | ⏳ NEXT — unblocked |
 | 3 | Train Sonia LoRA on Vast.ai (Flux.2 Klein 9B) | Claude | Blocked on #2 |
 | 4 | Generate first 4-image test batch | Claude + CEO QC | Blocked on #3 |
 | 5 | Set up Instagram account | CEO | ⏳ Pending |
 | 6 | Set up Fanvue account | CEO | ⏳ Pending |
-| 7 | Create Sonia character bible + folder structure | Claude | ⏳ In progress |
+| 7 | Create Sonia character bible + folder structure | Claude | ✅ DONE |
 | 8 | Update content calendar + post queue for Sonia | Claude + Antigravity | Blocked on #4 |
 
 ---
