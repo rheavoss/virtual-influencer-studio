@@ -772,7 +772,7 @@ Working assumption: 1.25% Instagram-to-Fanvue conversion rate. With strong GFE f
 
 | # | Task | Owner | Tool |
 |---|---|---|---|
-| P1-01 | Generate 30-day static image content batch | Execute | Civitai + Jasmine LoRA |
+| P1-01 | Generate 30-day static image content batch | Execute | Civitai + Sonia LoRA |
 | P1-02 | Write captions library — all 15 content types | Antigravity | — |
 | P1-03 | Write hashtag sets — 5 sets per content category | Claude | Research-based |
 | P1-04 | Schedule first 30 posts at 1/day | CEO | Metricool free |
@@ -846,12 +846,12 @@ Passes.com offers 90% creator keep versus Fanvue's 85%. For 1,000 subscribers at
 Every platform where Jasmine's content will live, tagged by function and content level. Built from the omnichannel_distribution_matrix.md + verified tool research.
 
 > ⚠️ **CONTENT CEILING LOCKED — CEO DECISION (April 2026)**
-> Jasmine's content ceiling is **Option A: Lena Paul level**.
+> Sonia's content ceiling is **Option A: Lena Paul level**.
 > Maximum content = deep cleavage, micro bikini, sheer fabric with nipple always covered, GFE intimacy (voice notes, bedroom POV).
-> **Full nudity is permanently off the table for Jasmine.** A second creator may be launched later for a different content profile.
+> **Full nudity is permanently off the table for Sonia.** A second creator may be launched later for a different content profile.
 > This ceiling applies to ALL platforms without exception.
 
-| # | Platform | Role | Jasmine's Content on This Platform | Fanvue Link? | Phase | Notes |
+| # | Platform | Role | Sonia's Content on This Platform | Fanvue Link? | Phase | Notes |
 |---|---|---|---|---|---|---|
 | 01 | **Instagram** | Traffic | 🟢 Bikini, deep cleavage, gym wear, saree, lingerie (opaque) | Link in Bio | Day 1 | Primary funnel. Standard Lena Paul level. |
 | 02 | **Fanvue** | Revenue | 🟡 Premium intimate — deeper lingerie, sheer (nipple covered), GFE bedroom POV, voice notes | Native | Day 1 | Primary revenue engine. 85% keep. Content is premium but never nude. |
@@ -864,7 +864,7 @@ Every platform where Jasmine's content will live, tagged by function and content
 | 09 | **Telegram VIP** | Revenue | 🟡 Deepest allowed content within Option A ceiling — sheer, micro bikini, voice notes exclusive | Native | Month 3 | Needs existing audience to be valuable. |
 | 10 | **Snapchat Spotlight** | Traffic | 🟢 SFW — short clips, lifestyle | Swipe-up (post-unlock) | Month 2 | Low AI creator competition. |
 
-#### Content Level Key (Jasmine-specific)
+#### Content Level Key (Sonia-specific)
 - 🟢 **SFW** — Bikini, deep cleavage, gym wear, saree, street, café. Public platforms.
 - 🟡 **Premium Edge** — Sheer fabric (nipple always covered), micro bikini, bedroom GFE, voice notes. Paid platforms + X. **Nipple never visible. No nudity. Ever.**
 
@@ -881,7 +881,7 @@ Every platform where Jasmine's content will live, tagged by function and content
 #### The Content Flow
 
 ```
-GENERATE ONCE (Jasmine LoRA)
+GENERATE ONCE (Sonia LoRA)
         ↓
    4:5 Image OR 9:16 Video
         ↓
@@ -921,7 +921,7 @@ Antigravity has a built-in real-time browser. This is not a search tool — it c
 | **Hashtag live research** | Check Instagram search for hashtag post counts + recency | Identifies unsaturated high-intent hashtags in real-time. Static research goes stale in 2 weeks. |
 | **Platform pricing verification** | Visit Fanvue, Passes, Higgsfield, Civitai pricing pages live | Catches price changes before we make commitments. This is where I made the $10 Civitai error — Antigravity with live browser access would not have. |
 | **Tool changelog monitoring** | Check Higgsfield, Wan AI, MuseTalk release notes live | Catches new features (better character swap, new models) the day they drop. |
-| **Cultural moment detection** | Monitor trending Bollywood releases, cricket events, viral moments | Allows Jasmine's content to react to real-world events the same day — massive reach multiplier. |
+| **Cultural moment detection** | Monitor trending Bollywood releases, cricket events, viral moments | Allows Sonia's content to react to real-world events the same day — massive reach multiplier. |
 
 **Summary of browser advantage:** Antigravity is the project's live intelligence feed. Any task that requires current real-world data — trending audio, competitor performance, hashtag health, platform pricing — routes to Antigravity first.
 
