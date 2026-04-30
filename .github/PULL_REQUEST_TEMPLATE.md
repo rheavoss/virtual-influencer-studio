@@ -1,4 +1,4 @@
-## RALPH v16.1-jasmine CHECKLIST (must all be checked before merge)
+## RALPH v16.1-sonia CHECKLIST (must all be checked before merge)
 
 - [ ] G0: Grok Research Gate completed (Best-Path Summary in rolling doc)
 - [ ] G1: rolling_task_document.md created/updated in 00_agency/tasks/
