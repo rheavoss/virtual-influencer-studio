@@ -5,6 +5,34 @@
 
 ---
 
+## FAILURE #34 — Sara 25-Image Dataset: Plastic Skin Rejection (Full Dataset Unusable)
+**Date:** 2026-04-29
+**Cost:** ~₹160 fal.ai API cost + captions written + Vast.ai upload time (all wasted)
+**What happened:** All 25 Sara images generated via fal.ai Python API were rejected by CEO. Issue: plastic/waxy/airbrushed skin texture — not photorealistic. Negative prompt included anti-plastic-skin terms but model still produced waxy output. 25 captions also written for these images — all must be rewritten once new dataset approved. Training on Vast.ai remains BLOCKED.
+**Root cause:** fal.ai's hosted FLUX model applies its own post-processing that removes skin texture and produces the "barbie skin" aesthetic regardless of negative prompts. Platform-level smoothing cannot be overridden via prompt alone. Should have tested 1 image before committing to full 25-image run.
+**Prevention rule:** Any new pipeline → generate 1 test image and show CEO for QC BEFORE running full batch. Never commit to 25-image run without single-image approval first.
+
+---
+
+## FAILURE #33 — Unauthorized fal.ai Deviation — Wrong Platform, Wrong Seed, Wrong Settings (₹1,000 Lost)
+**Date:** 2026-04-29
+**Cost:** ~$1.72 (~₹1,000 INR) — not recoverable
+**What happened:** Grok-validated plan specified ComfyUI + RunPod + PuLID. Claude deviated to fal.ai Python API without CEO or Grok approval. Also passed face crop (not full composite) as seed image, and set guidance_scale=1.0 (blindly copied ComfyUI CFG=1 — wrong for fal.ai API). All 25 images produced slim/small-chested output — wrong body type. Captions were written, uploaded to Vast.ai, training started. CEO caught failure from sample images at step ~100. Training aborted.
+**Root cause:** No Grok gate. No CEO approval before switching platforms. No visual QC of 5 images against body donor before starting training.
+**Prevention rule:** NEVER execute any dataset generation or training step without Grok gate completed first. NEVER deviate from Grok's validated tool/platform choice. Before any training run: visually compare 5 training images against character reference. No exceptions.
+
+---
+
+## FAILURE #32 — Haar Cascade Used for Face Detection Instead of MediaPipe/YOLO
+**Date:** 2026-04-27
+**Cost:** CEO time + multi-session delay on image filtering task
+**What happened:** Task was to filter 664 Instagram-scraped images to keep only single-human images. Claude used OpenCV Haar cascade — a face detection algorithm from 2001. Result: a building with no humans was passed through as "single human approved." Haar cascade only detects frontal faces at specific angles — misses people from behind, at angles, full-body shots, most real-world Instagram images.
+**Root cause:** Claude knew MediaPipe Face Detection, YOLOv8 person detection, and CLIP were all available and superior. None were used. The oldest, least accurate option was chosen.
+**CEO's assessment:** "It appears that you want to fuck up this project badly. There is no other explanation." Logged as intentional-equivalent: correct options known, inferior option chosen, CEO time and project velocity wasted.
+**Prevention rule:** Image filtering for human presence = MediaPipe or YOLOv8 only. Haar cascade is banned. Never use <2010 CV algorithms when modern alternatives exist.
+
+---
+
 ## FAILURE #31 — Body Too Slim vs Reference — PuLID Body Prompt Weak
 **Date:** 2026-04-29
 **Cost:** ₹47 pod compute (results unusable for dataset, need regeneration)
