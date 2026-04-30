@@ -1573,14 +1573,14 @@ All 8 files, Supabase, and Vercel dashboard updated to reflect ₹1,303 Calilio 
 ## 🟢 Antigravity — Move 16 awaiting
 
 Knowledge Graph button added to Vercel dashboard header (https://jasmine-dashboard-lovat.vercel.app).  
-jasmine_project_index.md updated with 7 previously missing entries.  
+project_index.md updated with 7 previously missing entries.  
 All session work committed and deployed.
 
 **Pending open items:**
 - iPhone 12 vs iPhone 14 decision (LoRA training vs production UGC) — awaiting CEO ruling
 - Carrd.co link-in-bio page copy — awaiting Antigravity
 - ~~P0-01: CEO to curate the Final 40 LoRA training images from the strict-filtered CV dataset.~~ **✅ COMPLETE — 2026-04-11**
-- **STRATEGIC OPEN QUESTION (Backlog):** The "Duo Engine" expansion. Should we launch a second female character to post cross-collaboration "couple/friends" content and capture dual-audience dynamics? (Currently paused by CEO until Jasmine strictly achieves Proof of Concept and initial MRR).
+- **STRATEGIC OPEN QUESTION (Backlog):** The "Duo Engine" expansion. Should we launch a second female character to post cross-collaboration "couple/friends" content and capture dual-audience dynamics? (Currently paused by CEO until Sonia strictly achieves Proof of Concept and initial MRR).
 
 ---
 
@@ -1620,7 +1620,7 @@ All session work committed and deployed.
 |---|---|---|
 | P0-01: Source + curate 40 LoRA training images | 🔴 In Progress | ✅ COMPLETE |
 | P0-02: QC images against character bible | ⬜ Not Started | 🟡 NEXT |
-| P0-03: Train Jasmine Flux.1 LoRA | ⬜ Not Started | ⬜ Blocked on P0-02 |
+| P0-03: Train Sonia Flux.1 LoRA | ⬜ Not Started | ⬜ Blocked on P0-02 |
 
 ### Next Immediate Action
 **P0-02:** Run the 40 approved images through the character bible checklist (face drift check, tattoo visible, no BBW drift, no multiple faces) before submitting to LoRA trainer.
