@@ -52,7 +52,7 @@
 \
 - Method A \'96 Latent Upscale: Faster (~24s) but more artifacts in hair/face.\
 - Method B \'96 Decode + Img2Img + final low-denoising KSampler: Slightly slower (~25.7s) but significantly cleaner and more professional.\
-- Verdict: Use Method B for Jasmine (quality > 1-second speed difference).\
+- Verdict: Use Method B for Sonia (quality > 1-second speed difference).\
 - Two-KSampler Latent Upscale shortcut is the fastest clean high-res path.\
 - For A1111 replication: Use BlenderNico/Inspire pack nodes + match noise mode exactly.\
 \
