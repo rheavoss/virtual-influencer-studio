@@ -10,7 +10,7 @@
 \pard\pardeftab720\partightenfactor0
 
 \f0\b\fs23\fsmilli11700 \cf2 \cb3 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 # JASMINE_CONTROLNET_AND_UPSCALE_QUICKSTART.md
+\outl0\strokewidth0 \strokec2 # SONIA_CONTROLNET_AND_UPSCALE_QUICKSTART.md
 \f1\b0 \cf4 \strokec4 \
 \
 
@@ -28,7 +28,7 @@
 \f1\b0 \cf4 \strokec4 \
 \
 
-\f0\b \cf2 \strokec2 **Recommended ControlNet types for Jasmine**
+\f0\b \cf2 \strokec2 **Recommended ControlNet types for Sonia**
 \f1\b0 \cf4 \strokec4 :\
 \pard\pardeftab720\partightenfactor0
 \cf5 \strokec5 -\cf4 \strokec4  OpenPose (best for body pose)\
@@ -50,7 +50,7 @@
 \f0\b \cf2 \strokec2 **How to use**
 \f1\b0 \cf4 \strokec4 :\
 \pard\pardeftab720\partightenfactor0
-\cf5 \strokec5 1.\cf4 \strokec4  Load Flux.1 Dev + jasmakogirl LoRA (weight 0.85\'961.0)\
+\cf5 \strokec5 1.\cf4 \strokec4  Load Flux.1 Dev + soniagfe LoRA (weight 0.85\'961.0)\
 \cf5 \strokec5 2.\cf4 \strokec4  Enable ControlNet\
 \cf5 \strokec5 3.\cf4 \strokec4  Upload a pose reference from the 9-shot grid or a lifestyle photo\
 \cf5 \strokec5 4.\cf4 \strokec4  Use the Core Base Prompt + specific scene description\
@@ -93,7 +93,7 @@
 \f3\fs24 \cf0 \cb1 \strokec6 \
 \
 \pard\pardeftab720\sa240\partightenfactor0
-\cf0 jasmakogirl, [full core base prompt], wearing black lace micro bikini, seductive pose, bedroom setting, soft warm lighting\
+\cf0 soniagfe, [full core base prompt], wearing black lace micro bikini, seductive pose, bedroom setting, soft warm lighting\
 \pard\pardeftab720\partightenfactor0
 \cf0 text\
 \
