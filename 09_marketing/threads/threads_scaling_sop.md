@@ -1,4 +1,4 @@
-# Threads Scaling SOP — Jasmine Mako Subscriber Acquisition
+# Threads Scaling SOP — Sonia Subscriber Acquisition
 **Source:** Master Frameworks Compilation — Framework 4
 **Task:** P1-50
 **Owner:** CEO / Antigravity

@@ -11,7 +11,7 @@ A bootstrapped, multi-character AI influencer factory generating recurring subsc
 
 ## Business Model
 
-**Content type:** AI-generated East Asian + diverse female characters. SFW on Instagram. GFE on Fanvue/Passes (deep cleavage, micro bikini — nipple always covered).
+**Content type:** AI-generated Indian/South Asian + diverse female characters. SFW on Instagram. GFE on Fanvue/Passes (deep cleavage, micro bikini — nipple always covered).
 
 **Revenue streams (8 channels):**
 | Platform | Fee | We Keep | Model |
@@ -33,7 +33,7 @@ A bootstrapped, multi-character AI influencer factory generating recurring subsc
 
 | Month | Active Chars | New Char | Efficiency |
 |---|---|---|---|
-| M1 | 1 | Jasmine (East Asian, USD-first) | 100% |
+| M1 | 1 | Jasmine (Indian/South Asian, USD-first) | 100% |
 | M2 | 2 | Desi (INR-first, warmup only) | Desi: 0% revenue |
 | M3 | 2 | Both monetising | 100% |
 | M4 | 3 | Character 3 added | Char 3: 50% |

@@ -1,4 +1,4 @@
-# 7-Day Instagram Warm-Up SOP — Jasmine Mako
+# 7-Day Instagram Warm-Up SOP — Sonia
 **Source:** Master Frameworks Compilation — Framework 11
 **Task:** P1-56 (complements P0-15, P0-16, P0-17)
 **Owner:** CEO

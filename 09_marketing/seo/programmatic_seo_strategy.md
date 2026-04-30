@@ -1,4 +1,4 @@
-# Programmatic SEO Strategy — Jasmine Mako
+# Programmatic SEO Strategy — Sonia
 **Source:** YouTube transcript analysis (April 15–16 sessions, Framework 7)
 **Task:** P1-48
 **Owner:** Claude / CEO
@@ -14,7 +14,7 @@ Use Cursor + Claude Code + Firecrawl + Perplexity to automatically build hundred
 - "GFE in Mumbai"
 - "AI girlfriend experience India"
 - "virtual girlfriend Hindi"
-- "East Asian virtual influencer Fanvue"
+- "Indian/South Asian virtual influencer Fanvue"
 
 Each page targets a specific keyword combination. Thousands of pages = compounding organic traffic with zero paid spend.
 

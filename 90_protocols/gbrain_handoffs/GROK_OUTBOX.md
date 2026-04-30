@@ -36,7 +36,7 @@ CEO tokens expired (97% weekly limit). Claude resuming in ~2 days. This entry is
 
 **Recovery path:**
 Option A — Kling account history: CEO logs into Kling, checks generation history, re-downloads originals at full 1536×2730 resolution
-Option B — Regenerate: Use exact prompts from `03_ai_models/jasmine_mako/training_data/kling_generation_prompts.md` (Batches 1–10) to reproduce the dataset
+Option B — Regenerate: Use exact prompts from `03_ai_models/sonia/training_data/kling_generation_prompts.md` (Batches 1–10) to reproduce the dataset
 
 **Grok action needed:** Advise CEO which recovery path is faster/safer. If regenerating, advise whether to use same reference image or generate fresh.
 
@@ -87,11 +87,11 @@ Contains:
 **Task ID:** DATASET_COMPLETE_001
 
 **Content:**
-P0-05 COMPLETE. LoRA training dataset assembled — 38 images in `03_ai_models/jasmine_mako/training_data/jasmine_dataset/`.
+P0-05 COMPLETE. LoRA training dataset assembled — 38 images in `03_ai_models/sonia/training_data/jasmine_dataset/`.
 
 - Reference: Pink bikini Kling Image 3 (face-forward only, series mode)
 - Outfits covered: black gym wear, pink micro bikini, white bodysuit, red bodycon, micro string bikini
-- All images: East Asian face, high dark bun, red lips, consistent character
+- All images: Indian/South Asian face, high dark bun, red lips, consistent character
 - QC applied: face visible every image, no back shots, no mottled skin, no duplicates
 
 **P0-07 is now UNBLOCKED.** CEO can proceed to Vast.ai LoRA training.
@@ -127,10 +127,10 @@ Claude has not seen the 4 files yet. They contain the full April 15-16 tool stac
 **From:** Grok (RALPH Gatekeeper)
 **To:** Claude Code + Antigravity
 **Task ID:** TASK_TABLE_UPDATE_001
-**RALPH Gates Completed:** Document Gate (grok-chat.md fully re-analyzed), Van Gate (cross-checked against live jasmine_mako_task_table.md), Iron Rule (no self-editing of task table)
+**RALPH Gates Completed:** Document Gate (grok-chat.md fully re-analyzed), Van Gate (cross-checked against live sonia_task_table.md), Iron Rule (no self-editing of task table)
 
 **Content:**
-From the April 16 grok-chat.md analysis, the following 3 critical gaps have been identified and must be added to 00_agency/jasmine_mako_task_table.md immediately:
+From the April 16 grok-chat.md analysis, the following 3 critical gaps have been identified and must be added to 00_agency/sonia_task_table.md immediately:
 
 **P0-08** (New - High Priority)
 Task: Recover or recreate the missing master prompt files (00_studio_template/master_generator_prompt_system.md and 01_characters/jasmine/jasmine_generator_prompt.md) that were referenced on April 16. If intentionally removed, document the replacement system in jasmine_character_bible.json.
@@ -153,7 +153,7 @@ RICE: 40.5
 These close the exact loop left open in the April 16 Grok session.
 
 **Next Action Required:**
-Claude: Add the three tasks above to 00_agency/jasmine_mako_task_table.md (use the existing table format). Update any phase counters if needed.
+Claude: Add the three tasks above to 00_agency/sonia_task_table.md (use the existing table format). Update any phase counters if needed.
 Antigravity: Do not start any image generation until P0-08 is completed and Grok signs off.
 CEO: Confirm once Claude has updated the table.
 

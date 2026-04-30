@@ -48,7 +48,7 @@ chmod +x cc-backlinks.sh
 
 Arguments: `<domain> <max_results>`
 
-**First run targets (East Asian GFE / virtual influencer domains):**
+**First run targets (Indian/South Asian GFE / virtual influencer domains):**
 - Top 5–10 competitor accounts with landing pages / Linktrees
 - Any AI virtual influencer sites ranking in GFE niche
 

@@ -72,11 +72,11 @@ filenameX.png → Reason: CP1 - heavy background blob...
 ### 5. Reusable Assets (for future characters / v5+ training)
 
 **LAMA Colab Notebook:**  
-`03_ai_models/jasmine_mako/playbooks/jasmine_lama_cleanup_template.ipynb`  
+`03_ai_models/sonia/playbooks/jasmine_lama_cleanup_template.ipynb`  
 6-cell notebook. Cell 4 = dual-mask LAMA (watermark + NS artifacts). T4 GPU required.
 
 **Local Dataset Creation Method (Preferred — no Colab needed if images already downloaded):**  
-1. Create folder `TRAINING_DATASET_[date]_XX_images/` in `03_ai_models/jasmine_mako/02_training_data/`
+1. Create folder `TRAINING_DATASET_[date]_XX_images/` in `03_ai_models/sonia/02_training_data/`
 2. Copy only the final approved PNGs (and their `.txt` captions) into that folder
 3. Create `dataset_info.md` inside with exact count, QC summary, and source folder
 4. Zip the entire folder as `jasmine_v4_training_XX.zip` (same directory) → upload direct to Vast.ai
