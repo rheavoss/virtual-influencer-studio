@@ -1,4 +1,4 @@
-# JASMINE_POST_LORA_ACTIVATION_CHECKLIST.md
+# SONIA_POST_LORA_ACTIVATION_CHECKLIST.md
 
 **Date**: 22 April 2026  
 **Task**: Immediate action plan the moment LoRA training finishes
@@ -6,9 +6,9 @@
 **When the LoRA finishes training, do these steps in exact order:**
 
 1. Locate the `.safetensors` file in Flex Gym output folder.
-2. Copy it to Forge → models/Lora folder (rename to `jasmakogirl.safetensors` if needed).
+2. Copy it to Forge → models/Lora folder (rename to `soniagfe.safetensors` if needed).
 3. Open Forge and load Flux.1 Dev + your new LoRA at weight 0.85.
-4. Test with the official base prompt from `JASMINE_TRIGGER_AND_ADVANCED_PROMPT_STRATEGY.md`.
+4. Test with the official base prompt from `SONIA_TRIGGER_AND_ADVANCED_PROMPT_STRATEGY.md`.
 5. Run 5–10 test generations with different seeds.
 6. If face/skin is good → proceed to Soul ID in Higgsfield.
 7. Generate 9-shot Character Reference Grid (P0-32).
