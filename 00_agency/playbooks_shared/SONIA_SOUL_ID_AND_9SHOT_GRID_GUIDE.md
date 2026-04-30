@@ -10,7 +10,7 @@
 \pard\pardeftab720\partightenfactor0
 
 \f0\b\fs23\fsmilli11700 \cf2 \cb3 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 # JASMINE_SOUL_ID_AND_9SHOT_GRID_GUIDE.md
+\outl0\strokewidth0 \strokec2 # SONIA_SOUL_ID_AND_9SHOT_GRID_GUIDE.md
 \f1\b0 \cf4 \strokec4 \
 \
 
@@ -21,11 +21,11 @@
 \f1\b0 \cf4 \strokec4 : 1.0  \
 
 \f0\b \cf2 \strokec2 **Task**
-\f1\b0 \cf4 \strokec4 : P0-32 \'96 Generate Jasmine 9-shot Character Reference Grid in Higgsfield\
+\f1\b0 \cf4 \strokec4 : P0-32 \'96 Generate Sonia 9-shot Character Reference Grid in Higgsfield\
 \
 
 \f0\b \cf2 \strokec2 **When to use this guide**
-\f1\b0 \cf4 \strokec4 : Immediately after your Flux LoRA (jasmakogirl.safetensors) finishes training and you have tested it successfully.\
+\f1\b0 \cf4 \strokec4 : Immediately after your Flux LoRA (soniagfe.safetensors) finishes training and you have tested it successfully.\
 \
 
 \f0\b \cf2 \strokec2 ---
