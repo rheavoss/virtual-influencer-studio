@@ -1641,5 +1641,5 @@ Whenever the CEO types **`SYNC`**, both Antigravity and Claude Code must immedia
 - iPhone 12 vs iPhone 14 decision (LoRA training vs production UGC) — awaiting CEO ruling
 - Carrd.co link-in-bio page copy — awaiting Antigravity
 - **P0-02:** QC final 40 images against character bible — NEXT immediate task
-- **P0-03:** Train Jasmine Flux.1 LoRA — Blocked on P0-02
+- **P0-03:** Train Sonia Flux.1 LoRA — Blocked on P0-02
 - **STRATEGIC OPEN QUESTION (Backlog):** Duo Engine expansion — paused until Jasmine hits first MRR.
