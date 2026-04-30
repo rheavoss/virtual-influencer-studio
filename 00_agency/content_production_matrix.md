@@ -1,4 +1,4 @@
-# Jasmine — Content Production Matrix
+# Sonia — Content Production Matrix
 **Last Updated:** 2026-04-09
 **Purpose:** Reference spec for all 8 content types, their individual building components, and the exact tools used at each step.
 

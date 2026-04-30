@@ -14,7 +14,7 @@ Instagram’s "Adult Nudity and Sexual Activity" guidelines use computer vision 
 > ⚠️ **GENERATION SPEC NOTE:** While Instagram allows G-cup in real human content, Flux.1 Dev models exhibit BBW drift at G-cup. Sonia's character spec is **LOCKED at 32DDD** (NOT G-cup). See `master_decisions_log.md` §2.
 
 **Instagram WILL ALLOW:**
-*   **Extreme Cleavage:** There is no volume limit on cleavage. However: Jasmine's character spec uses **32DDD** — not G-cup. G-cup causes BBW drift in Flux generation models.
+*   **Extreme Cleavage:** There is no volume limit on cleavage. However: Sonia's character spec uses **32DDD** — not G-cup. G-cup causes BBW drift in Flux generation models.
 *   **Tight/Wet Clothing:** As long as opaque fabric covers the restricted zones, the physics of how tight it is does not matter.
 *   **Suggestive Poses:** "Utility" poses (bending over, gym squats, stretching) are permitted as they are classified in the fitness/lifestyle taxonomy.
 
@@ -23,7 +23,7 @@ Instagram’s "Adult Nudity and Sexual Activity" guidelines use computer vision 
 *   **Genitalia & Explicit Sexual Acts:** Any exposed genitalia or imagery explicitly simulating a sex act.
 *   **Zoomed/Disembodied Sexual Focus:** A close-up shot *only* of a crotch or breasts without a face or wider body context triggers "Sexual Solicitation" shadowbans.
 
-**The Golden Execution Rule for Jasmine:** 
+**The Golden Execution Rule for Sonia:** 
 Cover the absolute bare minimum (the areola) but expose maximum cleavage volume and skin texture. Generation must prioritize **maximum physics, zero explicit visibility**.
 
 ### Tooling for "Edge-of-TOS" Generation
