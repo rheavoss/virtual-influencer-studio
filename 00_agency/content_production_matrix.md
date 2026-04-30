@@ -126,7 +126,7 @@
 
 ### Building Components
 1. Source viral trend clip from Reels/TikTok
-2. VACE picture-in-picture: Jasmine reaction box beside trend footage
+2. VACE picture-in-picture: Sonia reaction box beside trend footage
 3. OmniVoice voice reaction: "[laughs] okay wait, did she really just—"
 4. Trending audio + captions (CapCut)
 5. OPSEC
@@ -143,7 +143,7 @@
 ### Building Components
 1. Source raw real-world affiliate product image (e.g., from Instagram Shop/Brand)
 2. Execute custom Antigravity `.md` Skill file via Claude Code
-3. Claude automatically hits Higgsfield API to mass-generate Static ad frames (Jasmine holding product) and writes voiceover scripts.
+3. Claude automatically hits Higgsfield API to mass-generate Static ad frames (Sonia holding product) and writes voiceover scripts.
 4. Select best A-roll frame -> Feed to Higgsfield Cinema Studio for Speech-to-Video.
 5. Generate Voice using OmniVoice.
 6. Editor (CapCut/Premiere) splices A-roll, generated B-roll, and Audio.
@@ -159,7 +159,7 @@
 **Format:** Instagram Carousel post (4–8 slides). Maximum saves format
 
 ### Building Components
-1. One Jasmine reference image + Jasmine Z-Image LoRA
+1. One Sonia reference image + Sonia Z-Image LoRA
 2. Flux Kontext carousel workflow in ComfyUI
 3. One pose prompt per slide — **must press Enter between each prompt** (no ghost images between generations)
 4. Same background auto-maintained across all slides
@@ -168,7 +168,7 @@
 7. OPSEC (each image individually processed)
 
 ### Tools
-`Flux Kontext 9B + Jasmine Z-Image LoRA → CapCut (compile) → Instagram Carousel upload`
+`Flux Kontext 9B + Sonia Z-Image LoRA → CapCut (compile) → Instagram Carousel upload`
 
 ### Example Pose Prompts (Fitness Theme, Same Gym Location)
 ```
@@ -217,7 +217,7 @@ For motion transfer specifically: extract Frame 1 of the driving video → face-
 
 **Good example:**
 ```
-Jasmine, a young East Asian woman with long black hair and a voluptuous figure,
+Sonia, a young Indian / South Asian woman with long dark hair and a voluptuous figure,
 walks slowly through a sunlit Goa beach. She turns her head toward the camera
 with a soft confident smile. Warm golden hour light, gentle ocean breeze moves
 her hair. Cinematic teal-orange grade, shallow depth of field, smooth motion.
