@@ -309,7 +309,9 @@ This file is the handshake between Grok and the project state.
 - **Trigger word locked:** `soniagfe`
 - **Beauty marks:** Explicitly prohibited by CEO
 - **Face reference method:** Option A — unique new face photo (CEO to provide)
-- **Dataset plan:** 20–25 images from new face + zaraso_phia pose compositions
+- **Face reference LOCKED:** Grok-generated, beauty-mark-free — `01_characters/sonia/face_reference/sonia_face_reference_v1.png`
+- **Dataset plan:** 20–25 images from `sonia_face_reference_v1.png` + zaraso_phia pose compositions
+- **Competitor research updated:** BizzIndia + zaraso_phia subscription screenshots → `10_research/competitor_research/subscription_screenshots/`
 - **Sara rejected dataset deleted:** 25 PNGs + 25 captions removed 2026-04-30
 - **ARCHIVED:** jasmine_mako/, sara/ (both model and character folders)
 - **Failure log:** Updated to #34 (Haar cascade, fal.ai deviation, Sara plastic skin)
