@@ -335,7 +335,7 @@
 4. **X/Twitter NSFW content** — drives the highest-intent traffic to Fanvue. Users who find Sonia on X already know what they're looking for.
 5. **Viral outlier event** — one Saree Transition Reel hitting a trending Bollywood audio can add 10,000 followers overnight. Not modelled above — upside only.
 6. **PPV discipline** — dropping one PPV per month minimum keeps the subs engaged and adds $300–$4,500/month on top of subscriptions depending on scale.
-7. **Brand deals (Month 4+)** — Collabstr/Passionfroot listing live at 10k followers. At 50k IG = $500–$2,000/post. At 100k IG = $5,000–$20,000/post. Brands pay USD regardless of CEO location. Payment via Infinity (direct wire) or Payoneer (platform escrow). Media kit: `09_marketing/sponsorships/jasmine_media_kit.md`.
+7. **Brand deals (Month 4+)** — Collabstr/Passionfroot listing live at 10k followers. At 50k IG = $500–$2,000/post. At 100k IG = $5,000–$20,000/post. Brands pay USD regardless of CEO location. Payment via Infinity (direct wire) or Payoneer (platform escrow). Media kit: `09_marketing/sponsorships/sonia_media_kit.md`.
 8. **Native IG/FB subscriptions (Month 4+)** — Unlocks at 10k followers. $500–$2,000/month passive income layered on top of Fanvue. Zero extra content required.
 
 ---
